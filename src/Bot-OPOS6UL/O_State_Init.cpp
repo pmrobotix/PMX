@@ -15,6 +15,7 @@ O_State_Init::execute(Robot&)
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     robot.actions().start();
 
+
     //BEGIN
     begin:
 

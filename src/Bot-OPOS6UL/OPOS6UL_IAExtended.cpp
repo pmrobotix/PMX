@@ -45,7 +45,7 @@ void OPOS6UL_IAExtended::initPlayground() {
 //    p_->add_rectangle(3000, 1000, 140, 2000, 0); //right
 
 //2023
-    p_->add_rectangle_lower_left_symmetrical(this->area_start_green, this->area_start_blue, 1400.0, 0.0, 650.0, 650.0, 0.0);
+    //p_->add_rectangle_lower_left_symmetrical(this->area_start_green, this->area_start_blue, 1400.0, 0.0, 650.0, 650.0, 0.0);
    //p_->add_rectangle_lower_left(this->area_start_green, this->area_start_blue, 1400.0, 0.0, 650.0, 650.0, 0.0);
 
     //p_->enable(this->area_start_green, false);

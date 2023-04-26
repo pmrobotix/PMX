@@ -106,8 +106,8 @@ void O_ServoObjectsTest::run(int argc, char** argv) {
         robot.actions().aspiration_closed_init(-1);
         robot.actions().turbine_aspiration(true);
         robot.actions().aspi_tete_init();
-        robot.actions().aspi_droite(-1, 150);
-        robot.actions().aspi_gauche(-1, 150);
+        robot.actions().aspi_droite(-1, 70);
+        robot.actions().aspi_gauche(-1, 70);
         robot.actions().aspi_centre(-1);
         robot.actions().turbine_aspiration(false);
     }
