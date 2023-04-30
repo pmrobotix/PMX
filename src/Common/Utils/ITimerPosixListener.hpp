@@ -3,6 +3,8 @@
  * \brief Définition de l'interface ITimerPosixListener.
  *
  *  LINKER Add -lrt to your link command. timer_create and timer_settime are not part of the C Standard library.
+ *  reference
+ *  https://quirk.ch/2009/07/how-to-use-posix-timer-within-c-classes
  */
 
 #ifndef COMMON_UTILS_ITIMERPOSIXLISTENER_HPP

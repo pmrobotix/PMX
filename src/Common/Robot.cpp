@@ -78,7 +78,7 @@ void Robot::configureDefaultConsoleArgs() {
 
     cArgs_.addOption('k', "skip setup");
 
-    cArgs_.addOption('v', "color VIOLET (without YELLOW)");
+    cArgs_.addOption('b', "color BLEU"); //(without PMXYELLOW!!)
 
     cArgs_.addArgument("type", "Type of match (t)est/(m)atch/(p)ause", "m");
     {
@@ -87,7 +87,7 @@ void Robot::configureDefaultConsoleArgs() {
         cArgs_.addOption(cOpt);
     }
 
-    //deprencated, replaced by /v
+    //deprecated, replaced by /v
 //    {
 //        Arguments::Option cOpt('c', "");
 //        cOpt.addArgument("color", "color of robot [y]ellow/[v]iolet", "y");
@@ -242,8 +242,8 @@ void Robot::begin(int argc, char** argv) {
 //        this->setMyColor(PMXYELLOW);
 //    }
 
-    if (cArgs_['v']) {
-        logger().debug() << "v = " << (int) cArgs_['v'] << logs::end;
+    if (cArgs_['b']) {
+        logger().debug() << "b = " << (int) cArgs_['b'] << logs::end;
         this->setMyColor(PMXVIOLET);
     }
     else this->setMyColor(PMXYELLOW);//defaut si aucune couleur n'est specifiée

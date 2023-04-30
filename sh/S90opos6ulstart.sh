@@ -39,7 +39,8 @@ iwconfig
 ifconfig wlan0 up
 #lister les reseaux disponible
 #iwlist wlan0 s 
-wpa_supplicant -Dwext -i wlan0 -c /etc/wpa_supplicant.conf -B
+# wpa_supplicant -Dwext -i wlan0 -c /etc/wpa_supplicant.conf -B #wlan0: Unsupported driver 'wext'
+wpa_supplicant -i wlan0 -c /etc/wpa_supplicant.conf -B
 
 #pour eviter une connexion à internet.. les DNS sont ajoutés après l'activation du wifi...
 #echo "nameserver 127.0.0.1" > /etc/resolv.conf
@@ -49,7 +50,7 @@ wpa_supplicant -Dwext -i wlan0 -c /etc/wpa_supplicant.conf -B
 #ifconfig wlan0 192.168.3.104 netmask 255.255.255.0 up
 
 #IP for PMX_AP_5G (box 6137)
-ifconfig wlan0 192.168.4.103 netmask 255.255.255.0 up
+ifconfig wlan0 192.168.3.103 netmask 255.255.255.0 up
 
 
 echo ifconfig
@@ -60,8 +61,10 @@ echo check I2c address
 i2cdetect -y -a 0
 #I2C UART5
 i2cdetect -y -a 1
-i2cdetect -y -a 2
-i2cdetect -y -a 3
+
+#si pas d'écran
+#i2cdetect -y -a 2
+#i2cdetect -y -a 3
 
 #liste des i2c
 #bus 0

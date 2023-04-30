@@ -48,6 +48,9 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
             break;
         }
 
+
+        /*
+
         if (robot.activate_push_2022 > 0) {
             int x_push = robot.asserv().pos_getX_mm();
             this->logger().info() << "x_push=" << x_push << logs::end;
@@ -142,7 +145,9 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
             std::this_thread::sleep_for(std::chrono::microseconds(25000));
         }
         else std::this_thread::sleep_for(std::chrono::microseconds(50000));
+*/
 
+        std::this_thread::sleep_for(std::chrono::microseconds(50000));
         if (c % 20 == 0) {
             robot.displayPoints();
             this->logger().info() << "chrono " << robot.chrono().getElapsedTimeInSec() << logs::end;

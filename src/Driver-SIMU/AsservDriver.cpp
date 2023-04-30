@@ -110,6 +110,7 @@ void AsservDriver::execute() {
     utils::Chronometer chrono("AsservDriver::execute().SIMU");
     chrono.setTimer(periodTime_us);
     RobotPosition p;
+    RobotPosition pp; //position oprécédente
     while (1) {
 
         if (asservSimuStarted_) {
@@ -120,24 +121,29 @@ void AsservDriver::execute() {
 
             //TODO avoir accès au robot pour afficher du SVG
             //robot_->svgw().writePosition_BotPos(p.x, p.y, p.theta);
-//
-//            loggerSvg().info() << "<circle cx=\""
-//                    << p.x
-//                    << "\" cy=\""
-//                    << -p.y
-//                    << "\" r=\"1\" fill=\"blue\" />"
-//                    << "<line x1=\""
-//                    << p.x
-//                    << "\" y1=\""
-//                    << -p.y
-//                    << "\" x2=\""
-//                    << p.x + cos(p.theta) * 25
-//                    << "\" y2=\""
-//                    << -p.y - sin(p.theta) * 25
-//                    << "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
-//                    << logs::end;
+
+            //si different du precedent
+            if(!(p.x == pp.x && p.y == pp.y))
+            {
+                loggerSvg().info() << "<circle cx=\""
+                    << p.x
+                    << "\" cy=\""
+                    << -p.y
+                    << "\" r=\"1\" fill=\"blue\" />"
+                    << "<line x1=\""
+                    << p.x
+                    << "\" y1=\""
+                    << -p.y
+                    << "\" x2=\""
+                    << p.x + cos(p.theta) * 25
+                    << "\" y2=\""
+                    << -p.y - sin(p.theta) * 25
+                    << "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
+                    << logs::end;
+            }
+            pp=p;
         }
-        chrono.waitTimer(); //TODO ITimerPosix ?
+        chrono.waitTimer();
     }
 }
 

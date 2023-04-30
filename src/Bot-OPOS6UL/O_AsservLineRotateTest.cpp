@@ -20,7 +20,7 @@
 
 using namespace std;
 
-void O_AsservLineRotateTest::configureConsoleArgs(int argc, char** argv) //surcharge
+void O_AsservLineRotateTest::configureConsoleArgs(int argc, char **argv) //surcharge
 {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
@@ -44,7 +44,8 @@ void O_AsservLineRotateTest::configureConsoleArgs(int argc, char** argv) //surch
     robot.parseConsoleArgs(argc, argv);
 }
 
-void O_AsservLineRotateTest::run(int argc, char** argv) {
+void O_AsservLineRotateTest::run(int argc, char **argv)
+{
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
 
@@ -100,19 +101,8 @@ void O_AsservLineRotateTest::run(int argc, char** argv) {
 
     robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
     RobotPosition p = robot.asserv().pos_getPosition();
-    logger().info() << "time= "
-            << robot.chrono().getElapsedTimeInMilliSec()
-            << "ms ; left= "
-            << left
-            << " ; right= "
-            << right
-            << " x="
-            << p.x
-            << " y="
-            << p.y
-            << " deg="
-            << p.theta * 180.0 / M_PI
-            << logs::end;
+    logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
+            << right << " x=" << p.x << " y=" << p.y << " deg=" << p.theta * 180.0 / M_PI << logs::end;
 
     robot.svgPrintPosition();
 
@@ -140,7 +130,8 @@ void O_AsservLineRotateTest::run(int argc, char** argv) {
             logger().info() << "go...d=" << d << "mm" << logs::end;
             if (d >= 0) {
                 while (ts != TRAJ_FINISHED) {
-                    ts = robot.ia().iAbyPath().whileMoveForwardTo(d, robot.asserv().pos_getY_mm(), false, 2000000, 1, 1, false);
+                    ts = robot.ia().iAbyPath().whileMoveForwardTo(d, robot.asserv().pos_getY_mm(), false, 2000000, 1, 1,
+                            false);
                     if (ts == TRAJ_NEAR_OBSTACLE) {
                         logger().info() << "===== TRAJ_NEAR_OBSTACLE CONFIRMED" << logs::end;
                         robot.asserv().resetEmergencyOnTraj();
@@ -152,10 +143,10 @@ void O_AsservLineRotateTest::run(int argc, char** argv) {
                     //sleep(3);
                     break;
                 }
-            }
-            else if (d < 0) {
+            } else if (d < 0) {
                 while (ts != TRAJ_FINISHED) {
-                    ts = robot.ia().iAbyPath().whileMoveBackwardTo(d, robot.asserv().pos_getY_mm(), false, 1000000, 4, 4, false);
+                    ts = robot.ia().iAbyPath().whileMoveBackwardTo(d, robot.asserv().pos_getY_mm(), false, 1000000, 4,
+                            4, false);
                     if (ts == TRAJ_NEAR_OBSTACLE) {
                         logger().info() << "===== TRAJ_NEAR_OBSTACLE CONFIRMED" << logs::end;
                         robot.asserv().resetEmergencyOnTraj();
@@ -169,8 +160,6 @@ void O_AsservLineRotateTest::run(int argc, char** argv) {
                 }
             }
         }
-
-
 
         if (a != 0) {
             ts = TRAJ_OK;
@@ -194,25 +183,27 @@ void O_AsservLineRotateTest::run(int argc, char** argv) {
         }
 
         if (!(x == 0 && y == 0)) {
-                   ts = TRAJ_OK;
-                   logger().info() << "go Forward... x=" << x << ", y=" << y << logs::end;
-                   while (ts != TRAJ_FINISHED) {
-                       ts = TRAJ_OK;
-                       ts = robot.ia().iAbyPath().whileMoveForwardTo(x, y, false, 2000000, 3, 3, byPathfinding);
+            ts = TRAJ_OK;
+            logger().info() << "go Forward... x=" << x << ", y=" << y << logs::end;
+            while (ts != TRAJ_FINISHED) {
+                ts = TRAJ_OK;
+                ts = robot.ia().iAbyPath().whileMoveForwardTo(x, y, false, 2000000, 3, 3, byPathfinding);
 
-                       if (ts == TRAJ_NEAR_OBSTACLE) {
-                           logger().error() << "===== TRAJ_NEAR_OBSTACLE FINAL" << logs::end;
-                           robot.asserv().resetEmergencyOnTraj("robot.ia().iAbyPath().whileMoveForwardTo FINAL TRAJ_NEAR_OBSTACLE");
-                       }
-                       if (ts == TRAJ_COLLISION) {
-                           logger().error() << "===== COLLISION ASSERV FINAL" << logs::end;
-                           robot.asserv().resetEmergencyOnTraj("robot.ia().iAbyPath().whileMoveForwardTo FINAL TRAJ_COLLISION");
-                       }
-                       //sleep(2);
-                       break;
-                   }
-                   robot.svgPrintPosition();
-               }
+                if (ts == TRAJ_NEAR_OBSTACLE) {
+                    logger().error() << "===== TRAJ_NEAR_OBSTACLE FINAL" << logs::end;
+                    robot.asserv().resetEmergencyOnTraj(
+                            "robot.ia().iAbyPath().whileMoveForwardTo FINAL TRAJ_NEAR_OBSTACLE");
+                }
+                if (ts == TRAJ_COLLISION) {
+                    logger().error() << "===== COLLISION ASSERV FINAL" << logs::end;
+                    robot.asserv().resetEmergencyOnTraj(
+                            "robot.ia().iAbyPath().whileMoveForwardTo FINAL TRAJ_COLLISION");
+                }
+                //sleep(2);
+                break;
+            }
+            robot.svgPrintPosition();
+        }
 
         d += d;
     }
@@ -220,19 +211,8 @@ void O_AsservLineRotateTest::run(int argc, char** argv) {
 
     robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
     p = robot.asserv().pos_getPosition();
-    logger().info() << "time= "
-            << robot.chrono().getElapsedTimeInMilliSec()
-            << "ms ; left= "
-            << left
-            << " ; right= "
-            << right
-            << " x="
-            << p.x
-            << " y="
-            << p.y
-            << " deg="
-            << p.theta * 180.0 / M_PI
-            << logs::end;
+    logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
+            << right << " x=" << p.x << " y=" << p.y << " deg=" << p.theta * 180.0 / M_PI << logs::end;
 
     robot.svgPrintPosition();
 

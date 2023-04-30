@@ -19,6 +19,7 @@
 #include "CCAx12Teensy.hpp"
 
 CCAx12Teensy::CCAx12Teensy() : //TODO Une SEULE CARTE est possible a mettre en paramettre adresse + port mais attention à l'instance unique
+//Connexion i2C 5V
         i2c_CCAx12Teensy_(1), connected_(false)
 {
     i2c_aAddr_ = 0;

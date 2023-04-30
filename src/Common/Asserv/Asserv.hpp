@@ -76,6 +76,9 @@ protected:
 
     RobotPosition adv_pos_centre_;
 
+    //automatic conversion
+    int x_ground_table_;
+
 public:
 
     /*!
@@ -219,7 +222,7 @@ public:
         //printf("matchcolor:%d", matchColorPosition_);
         //logger().error() << "color==" << matchColorPosition_ << " width=" << width<< logs::end;
         if (matchColorPosition_ != 0) {
-            return 3000 - x_mm - width;
+            return x_ground_table_ - x_mm - width;
         }
         return x_mm + width;
     }
@@ -228,7 +231,7 @@ public:
         //printf("matchcolor:%d", matchColorPosition_);
         //logger().error() << "color==" << matchColorPosition_ << " width=" << width<< logs::end;
         if (matchColorPosition_ != 0) {
-            return 3000 - x_mm - width;
+            return x_ground_table_ - x_mm - width;
         }
         return x_mm;
     }

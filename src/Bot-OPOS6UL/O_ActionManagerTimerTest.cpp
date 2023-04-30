@@ -22,7 +22,6 @@ void O_ActionManagerTimerTest::run(int argc, char **argv)
     robot.actions().start();
 
     logger().info() << " test=>4 actions 5sec" << logs::end;
-
     robot.actions().addAction(new TestAction(*this, "action1"));
     robot.actions().addAction(new TestAction(*this, "action2"));
     robot.actions().addAction(new TestAction(*this, "action3"));

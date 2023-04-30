@@ -29,6 +29,11 @@ Asserv::Asserv(std::string botId, Robot *robot) {
 
     adv_pos_centre_ = {-100.0, -100.0, 0, 0};
 
+    //table horizontale
+    //x_ground_table_ = 3000;
+    //table verticale
+    x_ground_table_ = 2000;
+
 }
 Asserv::~Asserv() {
     delete asservdriver_;

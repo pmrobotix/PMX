@@ -87,6 +87,7 @@ private:
 
     void tokenize(std::string const &str, const char delim, std::vector<std::string> &out);
 
+    RobotPosition pp_; //position precedente
 protected:
 
     virtual void execute();

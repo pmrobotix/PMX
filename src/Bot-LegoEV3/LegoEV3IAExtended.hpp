@@ -22,8 +22,7 @@ private:
 public:
 
     //Configuration per robot and strategy
-
-
+/*
     PlaygroundObjectID area_start_violet;
     PlaygroundObjectID area_start_yellow;
 
@@ -41,12 +40,12 @@ public:
 
     PlaygroundObjectID area_galerie_violet;
     PlaygroundObjectID area_galerie_yellow;
+    */
 
-
-    PlaygroundObjectID opponent1;
-    PlaygroundObjectID opponent2;
-    PlaygroundObjectID opponent3;
-
+    PlaygroundObjectID opponent_1;
+    PlaygroundObjectID opponent_2;
+    PlaygroundObjectID opponent_3;
+    PlaygroundObjectID opponent_4;
 
     LegoEV3IAExtended(std::string botId, Robot *robot);
 
@@ -54,12 +53,12 @@ public:
     {
     }
 
-    IAbyZone & iAbyZone()
+    IAbyZone& iAbyZone()
     {
         return iaz_;
     }
 
-    IAbyPath & iAbyPath()
+    IAbyPath& iAbyPath()
     {
         return iap_;
     }

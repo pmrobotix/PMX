@@ -75,8 +75,8 @@ L_State_Init::execute(Robot&)
                 robot.actions().lcd().display_content_string("  ", 5);
                 if (b == BUTTON_LEFT_KEY) {
                     robot.actions().lcd().clear();
-                    //logger().info() << "BUTTON_LEFT_KEY - YELLOW" << logs::end;
-                    robot.actions().lcd().display_content_string("YELLOW ", 3, 3);
+                    //logger().info() << "BUTTON_LEFT_KEY - VERT" << logs::end;
+                    robot.actions().lcd().display_content_string("VERT ", 3, 3);
 
                     robot.actions().ledBar().stop(true);
                     robot.actions().ledBar().set(1, LED_YELLOW);
@@ -87,7 +87,7 @@ L_State_Init::execute(Robot&)
 
                     robot.actions().lcd().clear();
                     //logger().info() << "BUTTON_RIGHT_KEY - VIOLET" << logs::end;
-                    robot.actions().lcd().display_content_string("VIOLET ", 3, 3);
+                    robot.actions().lcd().display_content_string("BLEU ", 3, 3);
                     robot.actions().lcd().setCursor(0, 0);
                     robot.actions().ledBar().stop(true);
                     robot.actions().ledBar().set(0, LED_RED);
@@ -282,12 +282,12 @@ L_State_Init::execute(Robot&)
         robot.actions().lcd().clear();
         //logger().info() << "PMX...WAIT TIRETTE !";
         if (robot.getMyColor() == PMXYELLOW) {
-            //logger().info() << "YELLOW ";
-            robot.actions().lcd().display_content_string("YELLOW", 3, 2);
+            //logger().info() << "VERT ";
+            robot.actions().lcd().display_content_string("VERT", 3, 2);
         }
         else {
-            //logger().info() << "VIOLET ";
-            robot.actions().lcd().display_content_string("VIOLET", 3, 2);
+            //logger().info() << "BLEU ";
+            robot.actions().lcd().display_content_string("BLEU", 3, 2);
         }
         robot.actions().lcd().display_content_string(robot.configVRR(), 4, 2);
         robot.actions().lcd().display_content_string(robot.strategy(), 5, 2);
@@ -327,7 +327,7 @@ L_State_Init::execute(Robot&)
             exit(0);
         }
         else {
-            logger().info() << "COLOR is " << (robot.getMyColor() == PMXYELLOW ? "YELLOW" : "VIOLET  ") << logs::end;
+            logger().info() << "COLOR is " << (robot.getMyColor() == PMXYELLOW ? "VERT" : "BLEU  ") << logs::end;
         }
 
         logger().info() << "ENLEVER TIRETTE !!!" << logs::end;
@@ -370,9 +370,8 @@ void L_State_Init::setPos() {
     robot.asserv().resetEncoders();
 
     robot.asserv().startMotionTimerAndOdo(false); //demarrage asserv sans assistedhandling
-    //position Suisse : robot.asserv().setPositionAndColor(126, 1590 - 247 / 2.0, 0.0, (robot.getMyColor() != PMXYELLOW)); //au coin du distributeur
-    int yy = 1010 + 247 / 2.0;
-    robot.asserv().setPositionAndColor(126, yy, 0.0, (robot.getMyColor() != PMXYELLOW)); //au coin du distributeur
+
+    robot.asserv().setPositionAndColor(126, 200, 0.0, (robot.getMyColor() != PMXYELLOW)); //au coin du distributeur
     robot.svgPrintPosition();
 
     //active l'asservissement
@@ -381,12 +380,12 @@ void L_State_Init::setPos() {
 
     robot.asserv().doLineAbs(100);
 
-    robot.asserv().doMoveForwardTo(260, yy);
+    robot.asserv().doMoveForwardTo(260, 200);
 
 //Faire un faceTo sur le point de destination
     robot.asserv().doFaceTo(430, 430);
 
-    robot.asserv().doLineAbs(-10);
+    //robot.asserv().doLineAbs(-10);
 
     robot.svgPrintPosition();
     logger().debug() << "setPos() executed" << logs::end;

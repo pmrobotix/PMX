@@ -6,6 +6,7 @@
 /*** CONSTRUCTOR AND DESTRUCTOR ***/
 
 MD25::MD25() :
+//connexion i2c 5V
         i2c_MD25_(1), connected_(true)
 {
     /* Default values */
