@@ -42,6 +42,8 @@ public:
     {
     }
 
+    bool is_connected();
+
     void setMotorPosition(int power, int pos, int ramptimems = 0);
 
     long getInternalEncoder();

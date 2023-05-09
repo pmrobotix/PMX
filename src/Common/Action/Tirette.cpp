@@ -19,6 +19,13 @@ Tirette::~Tirette()
     delete switchdriver_;
 }
 
+
+bool Tirette::is_connected()
+{
+    return switchdriver_->is_connected();
+}
+
+
 int Tirette::pressed()
 {
     int temp = switchdriver_->tirettePressed();

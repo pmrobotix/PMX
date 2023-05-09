@@ -24,6 +24,8 @@ public:
     {
     }
 
+    virtual bool is_connected() = 0;
+
     virtual void clear() = 0;
 
     virtual void home() = 0;

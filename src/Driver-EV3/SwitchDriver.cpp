@@ -81,6 +81,11 @@ SwitchDriver::SwitchDriver() {
     }
 }
 
+bool SwitchDriver::is_connected()
+{
+    return touch_.connected();
+}
+
 SwitchDriver::~SwitchDriver() {
 }
 //

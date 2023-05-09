@@ -23,6 +23,7 @@ private:
         return instance;
     }
 
+    int connected_;
     BeaconSensors beaconSensors_;
     Registers regs_;
 
@@ -45,6 +46,8 @@ public:
      * \brief Destructor.
      */
     ~SensorsDriver();
+
+    bool is_connected();
 
     int sync(); //synchronise les données avec la balise
     ASensorsDriver::bot_positions getvPositionsAdv(); //retourne les dernieres positions connues

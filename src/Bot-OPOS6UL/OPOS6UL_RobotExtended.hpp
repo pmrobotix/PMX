@@ -47,6 +47,7 @@ public:
         return r_ia;
     }
 
+    //begin the state and the decisionmaker
     void begin(int argc, char** argv);
 
     void displayPoints();

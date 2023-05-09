@@ -16,16 +16,22 @@ ASwitchDriver * ASwitchDriver::create(std::string)
 
 SwitchDriver::SwitchDriver()
 {
-    bool c = GpioPCA9555::instance().isConnected();
+
+    bool c = GpioPCA9555::instance().begin();
     if (c) {
         //logger().debug() << "GpioPCA9555 CONNECTED !" << logs::end;
-        GpioPCA9555::instance().setOnP0(0);
+        GpioPCA9555::instance().setOnP0(0); //set up PIN0
     } else
-        logger().error() << "SwitchDriver() : GpioPCA9555 NOT CONNECTED !" << logs::end;
+        logger().debug() << "SwitchDriver() : GpioPCA9555 NOT CONNECTED !" << logs::end;
 }
 
 SwitchDriver::~SwitchDriver()
 {
+}
+
+bool SwitchDriver::is_connected()
+{
+    return GpioPCA9555::instance().isConnected();
 }
 
 int SwitchDriver::pressed(unsigned char pin)

@@ -40,6 +40,8 @@ public:
      */
     ~ServoUsingMotor();
 
+    bool is_connected();
+
     void turn(int speed);
 
     void stop();

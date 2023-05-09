@@ -18,7 +18,8 @@
 #include "LegoEV3AsservExtended.hpp"
 #include "LegoEV3RobotExtended.hpp"
 
-IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
+IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
+{
     logger().info() << "executing..." << logs::end;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
@@ -34,7 +35,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
     int carre_2022_todo = 0;
     int nb_carre = 0;
 
-    while (robot.chrono().getElapsedTimeInSec() <= 100 || stop == true) {
+    while (robot.chrono().getElapsedTimeInSec() <= 95 || stop == true) {
 
         //ARU
         if (robot.actions().tirette().pressed()) {
@@ -48,105 +49,6 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
             break;
         }
 
-
-        /*
-
-        if (robot.activate_push_2022 > 0) {
-            int x_push = robot.asserv().pos_getX_mm();
-            this->logger().info() << "x_push=" << x_push << logs::end;
-
-            if (robot.getMyColor() == PMXYELLOW) {
-                //carré 2 //852
-                if (x_push > 820 && x_push < 890) {
-                    carre_2022_todo = 1;
-                    robot.points += 5;
-                }
-                //carré 3 //1037
-                if (robot.square_pattern != 3 && (x_push > 1030 && x_push < 1055)) {
-                    carre_2022_todo = 1;
-                    robot.points += 5;
-                }
-                //carré 4 //1222
-                if (x_push > (1200) && x_push < (1240)) {
-                    carre_2022_todo = 1;
-                    //robot.points += 5;
-                }
-                //carré 5 //1222+185
-                if (x_push > (1200 + 185) && x_push < (1240 + 185)) {
-                    carre_2022_todo = 1;
-                    robot.points += 5;
-                }
-                //carré 6 //1222+185+185
-                if (x_push > (1200 + 185 + 185) && x_push < (1240 + 185 + 185)) {
-                    carre_2022_todo = 1;
-                    //robot.points += 5;
-                }
-
-                //carré 7 //1222+185+185+185
-                if (x_push > (1200 + 185 + 185 + 185) && x_push < (1240 + 185 + 185 + 185)) {
-                    carre_2022_todo = 1;
-                    robot.points += 5;
-                }
-            }
-            else {
-                //VIOLET
-
-                //carré 2 //852
-                if (x_push < (3000-820) && x_push > (3000-890)) {
-                    carre_2022_todo = 1;
-                    robot.points += 5;
-                }
-                //carré 3 //1037
-                if (robot.square_pattern != 3 && (x_push < (3000 - 1030) && x_push > (3000-1055))) {
-                    carre_2022_todo = 1;
-                    robot.points += 5;
-                }
-                //carré 4 //1222
-                if (x_push < (3000-1200) && x_push > (3000- 1240)) {
-                    carre_2022_todo = 1;
-                    //robot.points += 5;
-                }
-                //carré 5 //1222+185
-                if (x_push < (3000- (1200 + 185)) && x_push > (3000- (1240 + 185))) {
-                    carre_2022_todo = 1;
-                    robot.points += 5;
-                }
-                //carré 6 //1222+185+185
-                if (x_push < (3000 - (1200 + 185 + 185)) && x_push > (3000 - (1240 + 185 + 185))) {
-                    carre_2022_todo = 1;
-                    //robot.points += 5;
-                }
-
-                //carré 7 //1222+185+185+185
-                if (x_push < (3000 - (1200 + 185 + 185 + 185)) && x_push > (3000 - (1240 + 185 + 185 + 185))) {
-                    carre_2022_todo = 1;
-                    robot.points += 5;
-                }
-
-            }
-
-            if (carre_2022_todo) {
-                nb_carre++;
-                this->logger().info() << "PUSH SQUARE  with x_push=" << x_push << " nb=" << nb_carre << logs::end;
-
-                if (robot.getMyColor() == PMXYELLOW) {
-                    robot.actions().square_push_right(500);
-                    robot.actions().square_middle_init(0);
-                }
-                else {
-                    robot.actions().square_push_left(500);
-                    robot.actions().square_middle_init(0);
-                }
-                carre_2022_todo = 0; //une seule fois
-            }
-
-        }
-        if (robot.activate_push_2022 > 0) {
-            std::this_thread::sleep_for(std::chrono::microseconds(25000));
-        }
-        else std::this_thread::sleep_for(std::chrono::microseconds(50000));
-*/
-
         std::this_thread::sleep_for(std::chrono::microseconds(50000));
         if (c % 20 == 0) {
             robot.displayPoints();
@@ -158,6 +60,10 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
     this->logger().debug() << "execute end100s...stop... " << robot.chrono().getElapsedTimeInSec() << logs::end;
     robot.asserv().stopMotors();
 
+    if (!stop) {
+        robot.actions().funny_action();
+        robot.points += 5;
+    }
     robot.end90s(true); //indique que l'action est effectuée au prog princ
 
     if (robot.decisionMaker_ != NULL) {
@@ -208,8 +114,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&) {
             }
             std::this_thread::sleep_for(std::chrono::microseconds(20000));
         }
-    }
-    else {
+    } else {
 
         while (1) {
             logger().debug() << "Cas de ARU unpressed" << logs::end;

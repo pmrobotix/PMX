@@ -8,6 +8,10 @@ LcdShield::LcdShield(std::string botId, Actions & actions) :
         AActionsElement(actions), botId_(botId)
 {
     lcdshielddriver_ = ALcdShieldDriver::create(botId);
+    if(!(lcdshielddriver_->is_connected()))
+    {
+        logger().debug() << "lcdshielddriver_->is_connected() FALSE !" << logs::end;
+    }
 }
 
 LcdShield::~LcdShield()
@@ -36,6 +40,11 @@ void LcdShield::setBacklightOff()
 void LcdShield::setCursor(uint8_t col, uint8_t row)
 {
     lcdshielddriver_->setCursor(col, row);
+}
+
+bool LcdShield::is_connected()
+{
+    return lcdshielddriver_->is_connected();
 }
 
 void LcdShield::init()

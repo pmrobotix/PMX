@@ -16,11 +16,13 @@ private:
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref LcdShieldDriver(OPOS6UL).
      */
-    static inline const logs::Logger & logger()
+    static inline const logs::Logger& logger()
     {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("LcdShieldDriver.OPO");
+        static const logs::Logger &instance = logs::LoggerFactory::logger("LcdShieldDriver.OPO");
         return instance;
     }
+
+    bool connected_;
 
 public:
 
@@ -34,6 +36,8 @@ public:
      */
     ~LcdShieldDriver();
 
+    bool is_connected();
+
     void clear();
 
     void home();
@@ -46,11 +50,9 @@ public:
 
     size_t write(uint8_t value);
 
+    void print_content_string(std::string str, int row, int col = 1);
 
-
-    void print_content_string(std::string str, int row, int col=1);
-
-    void print_content_integer(int value, int row, int col=1);
+    void print_content_integer(int value, int row, int col = 1);
 
 };
 

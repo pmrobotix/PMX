@@ -35,6 +35,8 @@ public:
      */
     ~Tirette();
 
+    bool is_connected();
+
     int pressed();
 
     void monitor(int nb);

@@ -349,7 +349,7 @@ void O_State_Init::setPos() {
     robot.actions().lcd2x16().print("SET POSITION...");
 
     robot.asserv().startMotionTimerAndOdo(true);
-    robot.asserv().setPositionAndColor(130, 250, 0.0, (robot.getMyColor() != PMXYELLOW));
+    robot.asserv().setPositionAndColor(130, 1650+130, 0.0, (robot.getMyColor() != PMXYELLOW));
     logger().info() << "O_State_Init::setPos() svgPrintPosition x="
             << robot.asserv().pos_getX_mm()
             << " y="
@@ -359,7 +359,7 @@ void O_State_Init::setPos() {
             << logs::end;
     robot.svgPrintPosition();
 
-    //robot.actions().ax12_init();
+
 
     robot.actions().lcd2x16().clear();
 
@@ -376,7 +376,7 @@ void O_State_Init::setPos() {
     robot.asserv().setLowSpeedForward(true, 60);
     //robot.asserv().setLowSpeedForward(true, 100);
 
-    ts = robot.asserv().doMoveForwardTo(300, 300);
+    ts = robot.asserv().doMoveForwardAndRotateTo(300,1800,-45);
     robot.actions().ax12_init();
 
     /*

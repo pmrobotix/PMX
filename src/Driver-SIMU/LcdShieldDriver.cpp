@@ -22,6 +22,11 @@ LcdShieldDriver::~LcdShieldDriver()
 {
 }
 
+bool LcdShieldDriver::is_connected()
+{
+    return true;
+}
+
 void LcdShieldDriver::clear()
 {
 

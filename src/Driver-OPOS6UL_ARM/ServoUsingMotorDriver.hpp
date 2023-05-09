@@ -33,6 +33,8 @@ public:
     inline ~ServoUsingMotorDriver() {
     }
 
+    bool is_connected();
+
     void setMotorPosition(int power, int pos, int timems);
 
     long getInternalEncoder();

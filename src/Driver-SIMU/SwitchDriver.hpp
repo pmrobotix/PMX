@@ -31,6 +31,8 @@ public:
 	 */
 	~SwitchDriver();
 
+	bool is_connected();
+
 	int tirettePressed();
 	int backLeftPressed();
 	int backRightPressed();

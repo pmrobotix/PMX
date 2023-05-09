@@ -57,7 +57,7 @@ TestAction::TestAction(O_ActionManagerTimerTest &amt, std::string name) :
 //execution de la tâche
 bool TestAction::execute()
 {
-    logger().info() << name_ << " executing time=" << chrono_.getElapsedTimeInMicroSec() << " us i=" << i_ << logs::end;
+    logger().info() << name_ << " execute() " << this->info() << " time=" << chrono_.getElapsedTimeInMicroSec() << " us i=" << i_ << logs::end;
 
     i_++;
     if (i_ >= 10)

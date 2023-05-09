@@ -36,7 +36,7 @@ void L_ActionManagerTimerTest::run(int argc, char** argv) {
     robot.actions().addAction(new TestAction(*this, "action7"));
     robot.actions().stopTimer("timer2");
 
-
+    utils::sleep_for_secs(2);
     logger().info() << "Happy End." << logs::end;
 }
 
@@ -49,7 +49,7 @@ TestAction::TestAction(L_ActionManagerTimerTest & amt, std::string label) :
 
 //execution de la tâche
 bool TestAction::execute() {
-    logger().info() << " !!!!! execution time=" << chrono_.getElapsedTimeInMicroSec() << " us i=" << i_ << logs::end;
+    logger().info() << " execute() " << this->info() << " time=" << chrono_.getElapsedTimeInMicroSec() << " us i=" << i_ << logs::end;
 
     i_++;
     if (i_ >= 5) return false;

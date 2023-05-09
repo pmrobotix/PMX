@@ -32,6 +32,8 @@ private:
     Registers regs_;
     Settings settings_;
 
+    bool beacon_connected_;
+
 //    Gp2y0e02b gp2_1_;
 //    Gp2y0e02b gp2_2_;
 
@@ -57,6 +59,7 @@ public:
      */
     ~SensorsDriver();
 
+    bool is_connected();
 
     void displayNumber(int number);
     int getAnalogPinData();

@@ -153,7 +153,7 @@ public:
     /*!
      * \brief Init 12C.
      */
-    bool connect();
+    bool connect(); //TODO RENAME BEGIN
 
     /*!
      *  \brief get distance in mm.

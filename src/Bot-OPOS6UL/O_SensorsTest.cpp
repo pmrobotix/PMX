@@ -72,7 +72,7 @@ void O_SensorsTest::run(int argc, char** argv) {
                     << " y="
                     << vadv[i].y
                     << " a="
-                    << vadv[i].theta
+                    << vadv[i].theta_deg
                     << " d="
                     << vadv[i].d
                     << logs::end;

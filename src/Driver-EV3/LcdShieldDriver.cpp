@@ -44,6 +44,10 @@ LcdShieldDriver::~LcdShieldDriver()
     prog_exit();
 }
 
+bool LcdShieldDriver::is_connected()
+{
+    return true;
+}
 void LcdShieldDriver::clear()
 {
     prog_clearscreen();

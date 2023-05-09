@@ -21,9 +21,12 @@ void L_SensorsTest::run(int argc, char** argv) {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     robot.setMyColor(PMXYELLOW);
     robot.asserv().startMotionTimerAndOdo(false); //assistedHandling is enabled with "true" !
-    robot.asserv().setPositionAndColor(1000.0, 1000.0, 0.0, (robot.getMyColor() != PMXYELLOW)); //pour mettre une position dans la table
+    robot.asserv().setPositionAndColor(400.0, 200.0, -45.0, (robot.getMyColor() != PMXYELLOW)); //pour mettre une position dans la table
     RobotPosition p = robot.asserv().pos_getPosition();
-    logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
+    logger().error() << "p= " << p.x  << " " << p.y  << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
+
+
+
 
     int front = 0, back = 0;
     ASensorsDriver::bot_positions vadv;
@@ -56,7 +59,7 @@ void L_SensorsTest::run(int argc, char** argv) {
 
         for (ASensorsDriver::bot_positions::size_type i = 0; i < vadv.size(); i++) {
             logger().info() << " vadv nb=" << vadv.size() << " detected=" << vadv[i].nbDetectedBots << " x=" << vadv[i].x << " y=" << vadv[i].y
-                    << " a=" << vadv[i].theta << " d=" << vadv[i].d << logs::end;
+                    << " a_deg=" << vadv[i].theta_deg << " d=" << vadv[i].d << logs::end;
         }
 
         front = robot.actions().sensors().front(true);
@@ -66,10 +69,10 @@ void L_SensorsTest::run(int argc, char** argv) {
         //4,7k =>462
         //1k=>340
         //470=>246
-        int adc = robot.actions().sensors().getADC();
+        //int adc = robot.actions().sensors().getADC();
 
         usleep(1000000);
-        logger().info() << " adc=" << adc << " front=" << front << " back=" << back << logs::end;
+        logger().info() << " front=" << front << " back=" << back << logs::end;
     }
 
     logger().info() << "Happy End." << logs::end;

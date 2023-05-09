@@ -11,13 +11,13 @@ public:
     int nbDetectedBots; //nb de position de robot detectée (dupliqué dans chaque)
     int x; //millimetres
     int y; //millimetres
-    float theta; //degre // angle de déplacement par rapport à l'avant derniere position
+    float theta_deg; //degre // angle de déplacement par rapport à l'avant derniere position
     int d; //dist en mm à partir du robot
 
     RobotPos(int x_, int y_, float a_, int d_, int nb) {
         x = x_;
         y = y_;
-        theta = a_;
+        theta_deg = a_;
         d = d_;
         nbDetectedBots = nb;
     }
@@ -37,6 +37,9 @@ public:
      * \brief ASensorsDriver instance creation.
      */
     static ASensorsDriver * create(std::string botName);
+
+
+    virtual bool is_connected() = 0;
 
     /*!
      * \brief synchronise les données de la balise.

@@ -9,7 +9,7 @@
 
 #include "../Log/Logger.hpp"
 
-ALedDriver * ALedDriver::create(std::string, int nb)
+ALedDriver* ALedDriver::create(std::string, int nb)
 {
     return new LedDriver(nb);
 }
@@ -27,22 +27,22 @@ LedDriver::LedDriver(int nb)
     //GPIO5_6 = (4 x 32) + 6 = 134
     //GPIO5_5 = (4 x 32) + 5 = 133
     //GPIO5_4 = (4 x 32) + 4 = 132
-    //GPIO5_3 = (4 x 32) + 3 = 131
+    //GPIO5_3 = (4 x 32) + 3 = 131 //a inverser avec new OPOS6UL ?
     //GPIO5_2 = (4 x 32) + 2 = 130
-    //GPIO5_1 = (4 x 32) + 1 = 129
+    //GPIO5_1 = (4 x 32) + 1 = 129 //a inverser
     gpio[0] = new AsGpio(136);
     gpio[1] = new AsGpio(135);
     gpio[2] = new AsGpio(134);
     gpio[3] = new AsGpio(133);
     gpio[4] = new AsGpio(132);
-    gpio[5] = new AsGpio(131);
+    gpio[5] = new AsGpio(129);
     gpio[6] = new AsGpio(130);
-    gpio[7] = new AsGpio(129);
+    gpio[7] = new AsGpio(131);
 
     for (int i = 0; i < 8; i++) {
         if (gpio[i] != NULL) {
-            gpio[i]->setPinDirection((char *)"out");
-            gpio[i]->setIrqMode((char *)"none");
+            gpio[i]->setPinDirection((char*) "out");
+            gpio[i]->setIrqMode((char*) "none");
             gpio[i]->setPinValue(0);
         }
     }

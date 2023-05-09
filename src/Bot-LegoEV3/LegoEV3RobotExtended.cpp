@@ -34,10 +34,7 @@ LegoEV3RobotExtended::LegoEV3RobotExtended() {
 
     svg_->beginHeader();
 
-    alea_done = false;
-    trophy_taken = false;
-    square_pattern = 0;
-    activate_push_2022 = 0;
+    force_end_of_match = false;
 }
 
 LegoEV3RobotExtended::~LegoEV3RobotExtended()

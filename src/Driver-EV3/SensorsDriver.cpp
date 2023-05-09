@@ -22,13 +22,18 @@ SensorsDriver::SensorsDriver() :
 //                "ev3-ports:in4:i2c81:mux2"), IR_4_AR_G("ev3-ports:in3:i2c82:mux3")
 {
 
-    int connected = beaconSensors_.connect();
+    connected_ = beaconSensors_.connect(); //TODO rename begin
 //    logger().debug() << "SensorsDriver()... " << logs::end;
 //    beacon_.ScanBus(); //NE FCT PAS ?
 
 }
 
 SensorsDriver::~SensorsDriver() {
+}
+
+bool SensorsDriver::is_connected()
+{
+    return connected_;
 }
 
 ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv() {

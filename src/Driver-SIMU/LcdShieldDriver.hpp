@@ -34,6 +34,8 @@ public:
      */
     ~LcdShieldDriver();
 
+    bool is_connected();
+
     void clear();
 
     void home();

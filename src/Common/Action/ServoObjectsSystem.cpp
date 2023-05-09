@@ -15,13 +15,16 @@ ServoObjectsSystem::~ServoObjectsSystem() {
     delete servodriver_;
 }
 
-void ServoObjectsSystem::setup(int servo, AServoDriver::ServoType type, int valueMinPulse, int valueMidPulse, int valueMaxPulse, bool inversed) {
+bool ServoObjectsSystem::setup(int servo, AServoDriver::ServoType type, int valueMinPulse, int valueMidPulse, int valueMaxPulse, bool inversed) {
 
-    int p = servodriver_->ping(servo);
-    if (p < 0) logger().info() << "servo=" << servo << " ERROR PING" << logs::end;
-    if (p == 0) {
-        logger().info() << "servo=" << servo << " NO PING" << logs::end;
-        return;
+    if (type == AServoDriver::SERVO_DYNAMIXEL)
+    {
+        int p = servodriver_->ping(servo);
+        //if (p < 0) logger().debug() << "servo=" << servo << " ERROR PING" << logs::end;
+        if (p <= 0) {
+            logger().error() << "servo=" << servo << " NO PING" << logs::end;
+            return false;
+        }
     }
 
     servodriver_->release(servo);
@@ -33,7 +36,7 @@ void ServoObjectsSystem::setup(int servo, AServoDriver::ServoType type, int valu
         servodriver_->setMidPulse(servo, valueMidPulse);
         servodriver_->setMaxPulse(servo, valueMaxPulse);
     }
-
+    return true;
 }
 
 //keep_millisec = -1 : wait moving until position
@@ -42,7 +45,7 @@ void ServoObjectsSystem::setup(int servo, AServoDriver::ServoType type, int valu
 void ServoObjectsSystem::deployWithVelocity(int servo, int pos, int keep_millisec , int velocity )
 {
     hold(servo);
-        servodriver_->setPulsePos(servo, pos, velocity); // percentage
+        servodriver_->setPulsePos(servo, pos, velocity); // percentage ms0to90°
         if (keep_millisec > 0) {
             utils::sleep_for_micros(keep_millisec * 1000); //TODO verifier la torque
             release(servo);
@@ -82,7 +85,7 @@ void ServoObjectsSystem::deployWithVelocity(int servo, int pos, int keep_millise
 }
 
 //keep_millisec = -1 : wait moving until position
-//keep_millisec > 0 : time to wait
+//keep_millisec > 0 : time ms to wait
 //keep_millisec = 0 : continue and hold
 void ServoObjectsSystem::deploy(int servo, int pos, int keep_millisec) {
     hold(servo);

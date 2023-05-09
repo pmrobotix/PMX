@@ -22,7 +22,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
     logger().info() << "Start Chronometer" << logs::end;
     robot.chrono().start();
 
-    while (robot.chrono().getElapsedTimeInSec() <= 90) {
+    while (robot.chrono().getElapsedTimeInSec() <= 95) {
 
 
         std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -43,7 +43,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
 
     robot.actions().funny_action_deploy(2000);
 
-    robot.points += 5;
+    //robot.points += 5;
     robot.displayPoints();
 
 /*

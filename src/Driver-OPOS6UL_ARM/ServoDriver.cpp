@@ -16,12 +16,12 @@ AServoDriver * AServoDriver::create() {
     return instance;
 }
 
-ServoDriver::ServoDriver() :
-        connected_(1)
+ServoDriver::ServoDriver()
+
 {
     logger().debug() << "ServoDriver::ServoDriver()" << logs::end;
 
-    int conn = CCAx12Teensy::instance().connect(AX12TEENSY_ADDR);
+    connected_ = CCAx12Teensy::instance().connect(AX12TEENSY_ADDR);
 
     /*
      setRate(1007, 1023);
@@ -46,6 +46,7 @@ void ServoDriver::setType(int servo, ServoType type) {
 }
 
 void ServoDriver::hold(int servo) {
+    if (!connected_) return;
     if (!testIf(servo, 0, MAXPORTNUM)) return;
     int port = servo / 1000;
     if (port == 10) {
@@ -60,6 +61,7 @@ void ServoDriver::hold(int servo) {
 
 //TODO rate_milli a refaire, actuellement c'est la velocity de 0 à 1023
 void ServoDriver::setPulsePos(int servo, int pulsewidth, int rate_milli) {
+    if (!connected_) return;
     if (!testIf(servo, 0, MAXPORTNUM)) return;
     int port = servo / 1000;
     if (port == 10) {
@@ -95,11 +97,13 @@ void ServoDriver::setPulsePos(int servo, int pulsewidth, int rate_milli) {
 }
 
 void ServoDriver::turn(int servo, int speed) {
+    if (!connected_) return;
     if (!testIf(servo, 0, MAXPORTNUM)) return;
     logger().error() << "ServoDriver::turn() NOT IMPLEMENTED !" << logs::end;
 }
 
 void ServoDriver::release(int servo) {
+    if (!connected_) return;
     if (!testIf(servo, 0, MAXPORTNUM)) return;
     int port = servo / 1000;
     if (port == 10) {
@@ -108,11 +112,12 @@ void ServoDriver::release(int servo) {
     else if (port < 5) {
         servo -= (1000 * port);
         int r = CCAx12Teensy::instance().writeAXData(port, servo, P_TORQUE_ENABLE, 0);
-        if (r < 0) logger().error() << "release() ERROR! port=" << port << "servo=" << servo << logs::end;
+        if (r < 0) logger().debug() << "release() ERROR! port=" << port << " servo=" << servo << logs::end;
     }
 }
 
 void ServoDriver::setRate(int servo, int speed) { //TODO renommer set torque
+    if (!connected_) return;
     if (!testIf(servo, 0, MAXPORTNUM)) return;
     int port = servo / 1000;
     if (port == 10) {
@@ -127,6 +132,7 @@ void ServoDriver::setRate(int servo, int speed) { //TODO renommer set torque
 
 //return 1 when in progress, 0 when idle, -1 on error
 int ServoDriver::getMoving(int servo) {
+    if (!connected_) return -100;
     if (!testIf(servo, 0, MAXPORTNUM)) return -10;
     int port = servo / 1000;
     if (port == 10) {
@@ -144,6 +150,7 @@ int ServoDriver::getMoving(int servo) {
 }
 
 int ServoDriver::getPulsePos(int servo) {
+    if (!connected_) return -100;
     if (!testIf(servo, 0, MAXPORTNUM)) return -10;
     int port = servo / 1000;
     if (port == 10) {
@@ -162,6 +169,7 @@ int ServoDriver::getPulsePos(int servo) {
 
 //return true if available
 int ServoDriver::ping(int servo) {
+    if (!connected_) return -100;
     if (!testIf(servo, 0, MAXPORTNUM)) return -10;
     int port = servo / 1000;
     if (port == 10) {
@@ -202,6 +210,7 @@ void ServoDriver::setPolarity(int servo, bool inversed) {
 }
 
 int ServoDriver::getTorque(int servo) {
+    if (!connected_) return -100;
     if (!testIf(servo, 0, MAXPORTNUM)) return -10;
     int port = servo / 1000;
     if (port == 10) {

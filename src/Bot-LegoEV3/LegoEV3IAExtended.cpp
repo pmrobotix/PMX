@@ -7,6 +7,14 @@ class Robot;
 LegoEV3IAExtended::LegoEV3IAExtended(std::string botId, Robot *robot) :
         iaz_(robot), iap_(robot)
 {
+    opponent_1 = Playground::INVALID;
+    opponent_2 = Playground::INVALID;
+    opponent_3 = Playground::INVALID;
+    opponent_4 = Playground::INVALID;
+
+    area_B4 = Playground::INVALID;
+    area_C4 = Playground::INVALID;
+    area_B3 = Playground::INVALID;
 
     //terrain horizontal
     //p_ = new SymmetricalPlayground(0.0, 0.0, 3400.0, 2500.0, 0.5, 1.0, 1500.0);
@@ -14,7 +22,6 @@ LegoEV3IAExtended::LegoEV3IAExtended(std::string botId, Robot *robot) :
     p_ = new SymmetricalPlayground(0.0, 0.0, 2400.0, 3200.0, 0.5, 1.0, 1000.0);
 
     initPlayground();
-
 }
 
 void LegoEV3IAExtended::initPlayground()
@@ -40,6 +47,22 @@ void LegoEV3IAExtended::initPlayground()
     p_->add_rectangle_lower_left(2000, 0, -125, 3000, 0); //cote droit
     p_->add_rectangle_lower_left(0, 0, 2000, 125, 0); //bas
     p_->add_rectangle_lower_left(0, 3000 - 125, 2000, 3000, 0); //haut
+
+    //zone bleu adv A3
+    p_->add_rectangle_lower_left(0, 800, 558, 650, 0);
+    //zone bleu adv D4
+    p_->add_rectangle_lower_left(1445, 1550, 558, 650, 0);
+
+    //marron C3
+    p_->add_rectangle(1275, 1125, 380, 380, 0);
+    //marron B3
+    p_->add_rectangle(area_B3, 725, 1125, 340, 340, 0);
+
+    //marron C4
+    p_->add_rectangle(area_C4, 1275, 1875, 380, 380, 0);
+
+    //marron B4
+    p_->add_rectangle(this->area_B4, 725, 1875, 340, 340, 0);
 
     /*
      //zone depart

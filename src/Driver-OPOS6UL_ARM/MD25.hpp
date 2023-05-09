@@ -78,7 +78,7 @@ private:
 
     /* Variables */
     int mode;
-    bool connected_;
+    bool connected_; //MD25 board connected and configured
 
     /* Generic methods */
     int write(unsigned char reg_addr, unsigned char *data, int bytes);
@@ -98,7 +98,7 @@ public:
     virtual inline ~MD25() {
     }
 
-    void begin();
+    bool begin();
 
     bool isConnected() {
         return connected_;

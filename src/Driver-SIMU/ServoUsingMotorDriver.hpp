@@ -36,6 +36,7 @@ public:
 	inline ~ServoUsingMotorDriver()
 	{
 	}
+	bool is_connected();
 
 	void setMotorPosition(int pos, int timems, int power);
 

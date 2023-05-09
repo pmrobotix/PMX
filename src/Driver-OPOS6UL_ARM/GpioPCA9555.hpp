@@ -78,7 +78,7 @@ public:
     {
     }
 
-    void begin();
+    bool begin();
 
     bool isConnected()
     {
@@ -89,7 +89,7 @@ public:
     void setValueP0(int port, int pin, int value);
     void setOnP0(int pin);
     void setOffP0(int pin);
-    void setup();
+    bool setup();
 
 };
 

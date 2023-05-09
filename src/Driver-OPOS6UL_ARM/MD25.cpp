@@ -14,7 +14,7 @@ MD25::MD25() :
 
 }
 
-void MD25::begin() {
+bool MD25::begin() {
 
     //open i2c and setslave
     i2c_MD25_.setSlaveAddr(ADDR_MD25);
@@ -37,8 +37,9 @@ void MD25::begin() {
     }else
     {
         connected_ = false;
-        logger().error() << "begin() : MD25 NOT CONNECTED !" << logs::end;
+        logger().debug() << "begin() : MD25 NOT CONNECTED !" << logs::end;
     }
+    return connected_;
 }
 
 /*** GENERIC METHODS ***/

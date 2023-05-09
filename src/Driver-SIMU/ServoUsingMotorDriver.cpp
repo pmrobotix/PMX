@@ -21,8 +21,11 @@ ServoUsingMotorDriver::ServoUsingMotorDriver() :
 		connected_(0)
 {
 	logger().debug() << "ServoUsingMotorDriver()" << logs::end;
+}
 
-
+bool ServoUsingMotorDriver::is_connected()
+{
+    return true;
 }
 
 void ServoUsingMotorDriver::setMotorPosition(int pos, int ramptimems, int power)

@@ -33,6 +33,8 @@ public:
      */
     ~SwitchDriver();
 
+    bool is_connected();
+
     int pressed(unsigned char pin);
     int tirettePressed();
     int backLeftPressed();

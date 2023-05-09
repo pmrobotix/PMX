@@ -131,7 +131,7 @@ public:
         setBacklight(0);
     }
 
-    void begin(uint8_t cols, uint8_t rows, uint8_t charsize = LCD_5x8DOTS);
+    bool begin(uint8_t cols, uint8_t rows, uint8_t charsize = LCD_5x8DOTS);
 
     void clear();
     void home();

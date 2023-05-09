@@ -25,7 +25,8 @@ void L_ServoObjectTest::configureConsoleArgs(int argc, char **argv) //surcharge
     robot.parseConsoleArgs(argc, argv);
 }
 
-void L_ServoObjectTest::run(int argc, char **argv) {
+void L_ServoObjectTest::run(int argc, char **argv)
+{
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
     configureConsoleArgs(argc, argv);
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
@@ -45,31 +46,23 @@ void L_ServoObjectTest::run(int argc, char **argv) {
         robot.actions().init_servos();
     }
 
-    if (action == "SQ") {
-        robot.actions().square_push_right(1500);
-        robot.actions().square_middle_init(1500);
-        robot.actions().square_push_right(1500);
-        robot.actions().square_middle_init(1500);
-    }
-    if (action == "CU") {
-        logger().info() << "init_mettre_cube" << logs::end;
-        robot.actions().init_mettre_cube();
-
-        sleep(4);
-
-        logger().info() << "cube_push_and_take_trophy" << logs::end;
-        robot.actions().cube_push_and_take_trophy(0);
-
-        sleep(2);
-        robot.actions().cube_normal_pos(4000); //depose
-    }
-
     if (action == "AL") {
-        robot.actions().arm_left_deploy(2000);
+        robot.actions().arm_left_deploy(1500);
     }
 
     if (action == "AR") {
-        robot.actions().arm_right_deploy(2000);
+        robot.actions().arm_right_deploy(1500);
+    }
+
+    if (action == "FRH") {
+        robot.actions().fork_front_right_deploy_half(1500);
+    }
+
+    if (action == "FRF") {
+        robot.actions().fork_front_right_deploy(1500);
+    }
+    if (action == "FRI") {
+        robot.actions().fork_front_right_init(1500);
     }
 
     /*

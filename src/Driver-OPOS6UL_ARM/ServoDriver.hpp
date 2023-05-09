@@ -23,6 +23,8 @@ private:
         return instance;
     }
 
+    bool testIf(long value, long valeurMin, long valeurMax);
+
     int connected_;
     //ServoType servo_type_[NB_SERVO_DYN];
 
@@ -42,7 +44,7 @@ public:
 
     }
 
-    bool testIf(long value, long valeurMin, long valeurMax);
+
 
     void hold(int servo);
 

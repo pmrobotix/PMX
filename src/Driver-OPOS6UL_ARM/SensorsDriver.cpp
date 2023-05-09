@@ -16,6 +16,9 @@ ASensorsDriver * ASensorsDriver::create(std::string) {
 SensorsDriver::SensorsDriver() :
         beaconSensors_(0, ADDRESS_BeaconSensors), connected_gp2y0e02b_(false) //, gp2_1_(0, ADDRESS_gp2y0e02b), gp2_2_(1, ADDRESS_gp2y0e02b)
 {
+
+    beacon_connected_ = beaconSensors_.begin(settings_);
+
     regs_ = {};
     settings_ = {}; //TODO à ecrire/initialiser en i2c?
     vadv_.clear();
@@ -30,7 +33,12 @@ void SensorsDriver::displayNumber(int number)
 }
 
 
-int SensorsDriver::getAnalogPinData()
+bool SensorsDriver::is_connected()
+{
+    return beacon_connected_;
+}
+
+int SensorsDriver::getAnalogPinData() //TODO DEPRECATED
 {
     return -1;
 }
@@ -42,7 +50,7 @@ ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv() {
     return vadv_;
 }
 int SensorsDriver::sync() {
-    //logger().debug() << "beaconSensors_.getData()"<< logs::end;
+    logger().debug() << "beaconSensors_.getData()"<< logs::end;
     msync_.lock();
 
     for (int t = 0; t <= 2; t++) {

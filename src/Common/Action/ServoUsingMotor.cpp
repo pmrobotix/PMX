@@ -20,6 +20,11 @@ ServoUsingMotor::~ServoUsingMotor()
     delete servoMotordriver_;
 }
 
+bool ServoUsingMotor::is_connected()
+{
+    return servoMotordriver_->is_connected();
+}
+
 void ServoUsingMotor::turn(int power)
 {
     servoMotordriver_->setMotorPosition(power,0,0);

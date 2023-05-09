@@ -21,6 +21,11 @@ SwitchDriver::~SwitchDriver()
 {
 }
 
+bool SwitchDriver::is_connected()
+{
+    return true;
+}
+
 int SwitchDriver::tirettePressed()
 {
     return 0;

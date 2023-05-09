@@ -90,10 +90,12 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo(bool assistedHandlingEnabled)
     }
 
 }
-
+//dist_detect_mm : distance detecté de l'objet
+//lateral_pos_sensor_mm : position du capteur : gauche -1 ; droite +1
 bool LegoEV3AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc)
 {
 
+    float dist_sensor_from_axis_robot_mm = 110.0;
     //logger().error() << "==== filtreInsideTable" << logs::end;
     float distmm = dist_detect_mm;
     //On filtre si c'est pas à l'exterieur du terrain
@@ -101,28 +103,36 @@ bool LegoEV3AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int lateral
     float y = 0.0;
     bool result = false;
     RobotPosition p = pos_getPosition();
-    x = p.x + ((lateral_pos_sensor_mm * 110.0 ) * cos(p.theta - M_PI_2)) + (distmm * cos(p.theta));
-    y = p.y + ((lateral_pos_sensor_mm * 110.0 ) * sin(p.theta - M_PI_2)) + (distmm * sin(p.theta));
+    x = p.x + ((lateral_pos_sensor_mm * dist_sensor_from_axis_robot_mm ) * cos(p.theta - M_PI_2)) + (distmm * cos(p.theta));
+    y = p.y + ((lateral_pos_sensor_mm * dist_sensor_from_axis_robot_mm ) * sin(p.theta - M_PI_2)) + (distmm * sin(p.theta));
 
     //TODO utiliser les zones de l'ia ???
 
-    //filtre table
-    if ((x > 150 && x < 2850) && (y > 150 && y < 1850)) //en mm
-        result = true;
-    else
-        result = false;
 
-    //2022 filtre triangle yellow //todo violet !!!!!!!!!!!!!!!!!!!!!!!!
-    if(y <= (700 - (x)))
-        result = false;
 
-    if(y <= (-2300 + (x)))
-        result = false;
+    //filtre table Horizontale
+//    if ((x > 150 && x < 2850) && (y > 150 && y < 1850)) //en mm
+//        result = true;
+//    else
+//        result = false;
 
-    logger().debug() << desc << " filtreInsideTable : dist=" << dist_detect_mm
-            << " capteur:" << lateral_pos_sensor_mm
-            << " p.x=" << p.x << " p.y=" << p.y << " p.T=" << p.theta << " x=" << x
-            << " y=" << y << " result = " << result << logs::end;
+    //filtre table verticale
+        if ((x > 150 && x < 1850) && (y > 150 && y < 2850)) //en mm
+            result = true;
+        else
+            result = false;
+
+//    //2022 filtre triangle yellow //todo violet !!!!!!!!!!!!!!!!!!!!!!!!
+//    if(y <= (700 - (x)))
+//        result = false;
+//
+//    if(y <= (-2300 + (x)))
+//        result = false;
+
+//    logger().debug() << desc << " filtreInsideTable : dist=" << dist_detect_mm
+//            << " capteur:" << lateral_pos_sensor_mm
+//            << " p.x=" << p.x << " p.y=" << p.y << " p.T=" << p.theta << " x=" << x
+//            << " y=" << y << " result = " << result << logs::end;
 
     if (result) {
         logger().debug() << desc << " filtreInsideTable : dist=" << dist_detect_mm

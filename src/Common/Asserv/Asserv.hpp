@@ -92,6 +92,9 @@ public:
      */
     virtual ~Asserv();
 
+
+    bool filtre_IsInsideTableXY(int d, int x, int y, float a); //TODO A surcharger si non identique pour les 2 robots
+
     /*!
      * \brief return objet movingBase. DEPRECATED
      * \return movingBase_.
@@ -141,8 +144,8 @@ public:
     virtual void setPositionReal(float x_mm, float y_mm, float thetaInRad);
 
     virtual bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc = "");
-    virtual bool filtre_IsInFront(int dist_mm, int x_mm, int y_mm, float theta);
-    virtual bool filtre_IsInBack(int dist_mm, int x_mm, int y_mm, float theta);
+    virtual bool filtre_IsInFront(int threshold_mm, int dist_mm, int x_mm, int y_mm, float theta);
+    virtual bool filtre_IsInBack(int threshold_mm, int dist_mm, int x_mm, int y_mm, float theta);
 
     virtual void warnFrontCollisionOnTraj(int frontlevel, float x_adv__mm, float y_adv_mm); // X, Y dans le repère du robot
     virtual void warnBackCollisionOnTraj(float x_adv_mm, float y_adv_mm); // X, Y dans le repère du robot

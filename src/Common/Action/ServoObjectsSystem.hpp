@@ -43,7 +43,7 @@ public:
     /*!
      * \brief setup 1 servo with type, min, mid, max, inv values.
      */
-    void setup(int servo, AServoDriver::ServoType type, int valueMinPulse, int valueMidPulse, int valueMaxPulse, bool inversed = false);
+    bool setup(int servo, AServoDriver::ServoType type, int valueMinPulse, int valueMidPulse, int valueMaxPulse, bool inversed = false);
 
     /*!
      * \brief move 1 servo.

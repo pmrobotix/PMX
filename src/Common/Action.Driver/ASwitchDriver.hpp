@@ -12,6 +12,7 @@ public:
      */
     static ASwitchDriver * create(std::string);
 
+    virtual bool is_connected() = 0;
     /*
      *\brief pressed pour la tirette
      */

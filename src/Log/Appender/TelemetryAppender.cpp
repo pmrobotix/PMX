@@ -38,7 +38,7 @@ logs::TelemetryAppender::TelemetryAppender(std::string Id_Robot, std::string Plo
     int err = hostname_to_ip(hostname, ip_);
     if (err == 1) {
         //printf("Impossible to resolve PLOTJUGGLER VM on %s ; err=%d => EXIT !\n", hostname, err);
-        std::string ip = "192.168.4.104";
+        std::string ip = "192.168.3.104"; //TODO IP ADDRESS A CONFIGURER par ROBOT !!!!!!!!
         //std::cout << "Impossible to resolve PLOTJUGGLER VM on " << PlotJuggler_hostname << "; err="<< err <<" => ip="<< ip << std::endl;
 
         strcpy(ip_, ip.c_str());
@@ -102,6 +102,8 @@ void logs::TelemetryAppender::writeMessage(const logs::Logger &logger, const log
 void logs::TelemetryAppender::writeMessageWithJsonTime(std::string id, const logs::Logger & logger, const logs::Level &level,
         const std::string & message)
 {
+    //TODO CORRIGER l'ERRUEUR qui intervient de temps en temps sur nlohmann
+
 
     uint64_t duration = (duration_cast<microseconds>(system_clock::now() - start_).count());
     uint64_t ms = duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
@@ -120,7 +122,6 @@ void logs::TelemetryAppender::writeMessageWithJsonTime(std::string id, const log
             std::cout << "!!!!!!!ERROR msg is" << message << std::endl;
             exit(0);
         }
-
     }
     else if (level == logs::Level::ERROR) {
         j[id][logger.name()]["ERROR"][message] = duration;
@@ -129,6 +130,7 @@ void logs::TelemetryAppender::writeMessageWithJsonTime(std::string id, const log
     this->lockMessages();
     this->messagesjson_.push_back(j.dump());
     this->unlockMessages();
+
 }
 
 //return 1 if error

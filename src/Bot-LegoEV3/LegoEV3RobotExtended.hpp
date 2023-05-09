@@ -48,11 +48,11 @@ public:
     }
 
     //DATA custom
-    bool trophy_taken;
-    bool alea_done;
-    int square_pattern;
+    //bool trophy_taken;
+    //bool alea_done;
+    //int square_pattern;
 
-    int activate_push_2022;
+    bool force_end_of_match;
 
 
     void begin(int argc, char** argv);

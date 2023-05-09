@@ -28,6 +28,8 @@ public:
 	{
 	}
 
+	virtual bool is_connected() = 0;
+
 	virtual void setMotorPosition(int power, int pos, int ramptimems = 0) = 0;
 
 	virtual long getInternalEncoder()= 0;

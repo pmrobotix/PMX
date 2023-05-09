@@ -123,20 +123,10 @@ void Sensors::display(int n) {
     sensorsdriver_->displayNumber(n);
 }
 
-int Sensors::getADC() {
-    return sensorsdriver_->getAnalogPinData();
-}
 
-int Sensors::RecordADC(bool activate) {
-
-    if (activate) { //uniquement en cas d'activation, on reset puis on releve les données
-        for (int i = 0; i < 100; i++) {
-            tabADC[i] = -1;
-        }
-        index_adc = 0;
-    }
-
-    recordADC = activate;
+bool Sensors::is_connected()
+{
+    return sensorsdriver_->is_connected();
 }
 
 int Sensors::sync(std::string sensorname) {
@@ -270,27 +260,31 @@ int Sensors::front(bool display) {
         }
     }
     if (enableFrontCenter_) {
-        //trouver la distance de detection
+        // detection avec la balise
         vpos = Sensors::getPositionsAdv();
         bool is_in_front = false;
 
         for (auto botpos : vpos) {
-            //std::cout << botpos.d << " " << botpos.x << " " << botpos.y << " " << botpos.theta << std::endl;
-            if (botpos.d < frontCenterThreshold_) //seuil de distance
-                    {
+//std::cout << botpos.d << " " << botpos.x << " " << botpos.y << " " << botpos.theta
+//        << " frontCenterThreshold_= " << frontCenterThreshold_<< std::endl;
+            if (botpos.d < frontCenterThreshold_) //seuil de distance par rapport à la config
+            {
                 //test si devant le robot/filtre devant le robot ou pas.
-                is_in_front |= this->robot()->asserv()->filtre_IsInFront(botpos.d, botpos.x, botpos.y, botpos.theta);
+                is_in_front |= this->robot()->asserv()->filtre_IsInFront(frontCenterThreshold_, botpos.d, botpos.x, botpos.y, botpos.theta_deg);
 
-                if (is_in_front) {
+                if (is_in_front)
+                {
                     //TODO filtre dans la table ou non
-                    //bool fC_filter = this->robot()->asserv()->filtre_IsInsideTable(botpos.d, 0, "fC");
-
-                    level = 1;
-                    logger().info() << "1 frontCenter= " << botpos.d << " is_in_front=" << is_in_front << logs::end;
-                    if (botpos.d < frontCenterVeryClosedThreshold_) { //seuil de level 2
-                        level = 2;
-                        logger().info() << "2 frontCenter= " << botpos.d << " is_in_front=" << is_in_front << logs::end;
-
+                    bool fC_filter = this->robot()->asserv()->filtre_IsInsideTableXY(botpos.d, botpos.x, botpos.y, botpos.theta_deg);
+                    if (fC_filter)
+                    {
+                        level = 1;
+                        logger().info() << "1 frontCenter= " << botpos.d << " is_in_front=" << is_in_front << logs::end;
+                        if (botpos.d < frontCenterVeryClosedThreshold_)
+                        { //seuil de level 2
+                            level = 2;
+                            logger().info() << "2 frontCenter= " << botpos.d << " is_in_front=" << is_in_front << logs::end;
+                        }
                     }
                 }
 
@@ -419,7 +413,7 @@ int Sensors::back(bool display) {
             if (botpos.d < backCenterThreshold_) //seuil de distance
                     {
                 //test si devant le robot/filtre devant le robot ou pas.
-                is_in_back |= this->robot()->asserv()->filtre_IsInBack(botpos.d, botpos.x, botpos.y, botpos.theta);
+                is_in_back |= this->robot()->asserv()->filtre_IsInBack(backCenterThreshold_, botpos.d, botpos.x, botpos.y, botpos.theta_deg);
 
                 if (is_in_back) {
                     //TODO filtre dans la table ou non
@@ -521,7 +515,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono) {
         logger().error() << ">> SYNC BAD DATA! NO UPDATE" << logs::end;
         return;
     }
-
+/*
     //cas du record ADC de LegoEV3Robot pour 2022
     if (sensors_.robot()->getID() == "LegoEV3Robot") {
         //traitement 2022 ADC
@@ -551,6 +545,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono) {
 
         }
     }
+*/
 
     //TODO mODIFIER LE FRONT POUR INCLURE LES POSITIONS adv
     //TODO mettre a jour les zones adv

@@ -20,11 +20,19 @@ ALcdShieldDriver * ALcdShieldDriver::create(std::string botId)
 
 LcdShieldDriver::LcdShieldDriver()
 {
+    connected_ = 0;
+    //configuration LCD 16 colonnes x 2 lignes
+    connected_ = Adafruit_RGBLCDShield::instance().begin(16, 2);
     Adafruit_RGBLCDShield::instance().clear();
 }
 
 LcdShieldDriver::~LcdShieldDriver()
 {
+}
+
+bool LcdShieldDriver::is_connected()
+{
+    return connected_;
 }
 
 void LcdShieldDriver::clear()
@@ -57,7 +65,6 @@ size_t LcdShieldDriver::write(uint8_t value)
     size_t s = Adafruit_RGBLCDShield::instance().write__(value);
     return s;
 }
-
 
 
 void LcdShieldDriver::print_content_string(std::string str, int row, int col)

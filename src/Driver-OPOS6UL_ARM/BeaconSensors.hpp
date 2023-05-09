@@ -1,5 +1,4 @@
 
-
 #ifndef DRIVER_OPOS6UL_ARM_BEACONSENSORS_HPP_
 #define DRIVER_OPOS6UL_ARM_BEACONSENSORS_HPP_
 
@@ -11,7 +10,6 @@
 #define DATA_BeaconSensors      0x04 //addresse des données à recupérer
 #define NUMOFBOTS_BeaconSensors 0x00
 
-
 //WEBSITE REFERENCE : convert float to byte array  source: http://mbed.org/forum/helloworld/topic/2053/
 
 union float2bytes_t // union consists of one variable represented in a number of different ways
@@ -21,15 +19,17 @@ union float2bytes_t // union consists of one variable represented in a number of
 };
 
 // Registers that the caller can both read and write
-struct Settings {
+struct Settings
+{
     int8_t numOfBots;         // Register 0. Number of Robot which may to be detected, default 3.
-    int8_t ledDisplay;        // Register 1. Writable. Sets the mode for led display. 0 => OFF. 100 => FULL ON. 50 => Half luminosity.
-    int8_t tempNumber;        // Register 2.//TODO shift_rad angle en parametre ? //TODO ajouter le decalage d'angle en settings ?
+    int8_t ledDisplay; // Register 1. Writable. Sets the mode for led display. 0 => OFF. 100 => FULL ON. 50 => Half luminosity.
+    int8_t tempNumber; // Register 2.//TODO shift_rad angle en parametre ? //TODO ajouter le decalage d'angle en settings ?
     int8_t reserved = 0;      //NOT use yet
 };
 
 // Registers that the caller can only read
-struct Registers {
+struct Registers
+{
     uint8_t flags = 0;        // Register 4. bit 0 => new data available
     //TODO FLAGS
     //overflow more than 3 beacons
@@ -71,7 +71,7 @@ struct Registers {
 
 //TODO decaler de 2
     int8_t z1_p = 0;          // Register 62. position de la zone z1_1 (entre 0 et 71).
-    int8_t z1_n = 0;          // Register 63. nombre de zones detectées pour la balise z1 (entre 1 et 7) afin d'economiser les données.
+    int8_t z1_n = 0; // Register 63. nombre de zones detectées pour la balise z1 (entre 1 et 7) afin d'economiser les données.
     int16_t z1_1 = 0;         // Register 64.
     int16_t z1_2 = 0;         // Register 66.
     int16_t z1_3 = 0;         // Register 68.
@@ -81,7 +81,7 @@ struct Registers {
     int16_t z1_7 = 0;         // Register 76.
 
     int8_t z2_p = 0;          // Register 78.position de la zone z2_1 (entre 0 et 71).
-    int8_t z2_n = 0;          // Register 79.nombre de zones detectées pour la balise z2 (entre 1 et 7) afin d'economiser les données.
+    int8_t z2_n = 0; // Register 79.nombre de zones detectées pour la balise z2 (entre 1 et 7) afin d'economiser les données.
     int16_t z2_1 = 0;         // Register 80.
     int16_t z2_2 = 0;         // Register 82.
     int16_t z2_3 = 0;         // Register 84.
@@ -91,7 +91,7 @@ struct Registers {
     int16_t z2_7 = 0;         // Register 92.
 
     int8_t z3_p = 0;          // Register 94.position de la zone z3_1 (entre 0 et 71).
-    int8_t z3_n = 0;          // Register 95.nombre de zones detectées pour la balise z3 (entre 1 et 7) afin d'economiser les données.
+    int8_t z3_n = 0; // Register 95.nombre de zones detectées pour la balise z3 (entre 1 et 7) afin d'economiser les données.
     int16_t z3_1 = 0;         // Register 96.
     int16_t z3_2 = 0;         // Register 98.
     int16_t z3_3 = 0;         // Register 100.
@@ -101,7 +101,7 @@ struct Registers {
     int16_t z3_7 = 0;         // Register 108.
 
     int8_t z4_p = 0;          // Register 110.position de la zone z4_1 (entre 0 et 71).
-    int8_t z4_n = 0;          // Register 111.nombre de zones detectées pour la balise z4 (entre 1 et 7) afin d'economiser les données.
+    int8_t z4_n = 0; // Register 111.nombre de zones detectées pour la balise z4 (entre 1 et 7) afin d'economiser les données.
     int16_t z4_1 = 0;         // Register 112.
     int16_t z4_2 = 0;         // Register 114.
     int16_t z4_3 = 0;         // Register 116.
@@ -112,7 +112,6 @@ struct Registers {
 
 };
 
-
 class BeaconSensors
 {
 private:
@@ -120,9 +119,9 @@ private:
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref BeaconSensors(OPOS6UL).
      */
-    static inline const logs::Logger & logger()
+    static inline const logs::Logger& logger()
     {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("BeaconSensors.OPO");
+        static const logs::Logger &instance = logs::LoggerFactory::logger("BeaconSensors.OPO");
         return instance;
     }
 
@@ -135,12 +134,12 @@ private:
     unsigned char readAddr(unsigned char address);
     unsigned char readRegByte(unsigned char command);
     /*
-    int readReg2Bytes(unsigned char command, unsigned char *aData);
-    int readReg3Bytes(unsigned char command, unsigned char *aData);
+     int readReg2Bytes(unsigned char command, unsigned char *aData);
+     int readReg3Bytes(unsigned char command, unsigned char *aData);
 
-    int writeRegByte(unsigned char command, unsigned char aData1);
-    int writeReg2Bytes(unsigned char command, unsigned char aData1, unsigned char aData2);
-*/
+     int writeRegByte(unsigned char command, unsigned char aData1);
+     int writeReg2Bytes(unsigned char command, unsigned char aData1, unsigned char aData2);
+     */
 public:
 
     /*!
@@ -154,6 +153,11 @@ public:
     ~BeaconSensors()
     {
     }
+    /*!
+     *  \brief initialise i2c
+     *
+     */
+    bool begin(Settings settings);
 
     /*!
      *  \brief get distance in mm.

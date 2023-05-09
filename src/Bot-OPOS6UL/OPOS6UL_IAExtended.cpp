@@ -12,9 +12,9 @@ OPOS6UL_IAExtended::OPOS6UL_IAExtended(std::string botId, Robot *robot) :
     opponent_3 = Playground::INVALID;
     opponent_4 = Playground::INVALID;
 
-    area_start_green = Playground::INVALID;
-    area_start_blue = Playground::INVALID;
-
+    area_B4 = Playground::INVALID;
+    area_C4 = Playground::INVALID;
+    area_B3 = Playground::INVALID;
 
     //terrain horizontal
     //p_ = new SymmetricalPlayground(0.0, 0.0, 3400.0, 2500.0, 0.5, 1.0, 1500.0);
@@ -45,6 +45,29 @@ void OPOS6UL_IAExtended::initPlayground() {
 //    p_->add_rectangle(3000, 1000, 140, 2000, 0); //right
 
 //2023
+
+
+
+    //zone bleu adv A3
+    p_->add_rectangle_lower_left(0, 800, 558, 650, 0);
+    //zone bleu adv D4
+    p_->add_rectangle_lower_left(1445, 1550, 558, 650, 0);
+
+    //marron C3
+    p_->add_rectangle(1275, 1125, 380, 380, 0);
+    //marron B3
+    p_->add_rectangle(area_B3, 725, 1125, 340, 340, 0);
+
+    //marron C4
+    p_->add_rectangle(area_C4, 1275, 1875, 380, 380, 0);
+
+    //marron B4
+    p_->add_rectangle(this->area_B4, 725, 1875, 340, 340, 0);
+
+
+
+
+
     //p_->add_rectangle_lower_left_symmetrical(this->area_start_green, this->area_start_blue, 1400.0, 0.0, 650.0, 650.0, 0.0);
    //p_->add_rectangle_lower_left(this->area_start_green, this->area_start_blue, 1400.0, 0.0, 650.0, 650.0, 0.0);
 

@@ -49,18 +49,18 @@ Adafruit_RGBLCDShield::Adafruit_RGBLCDShield()
     _button_pins[4] = 4;
 
     //configuration LCD 16 colonnes x 2 lignes
-    begin(16, 2);
+    //begin(16, 2);
 
 }
 
-void Adafruit_RGBLCDShield::begin(uint8_t, uint8_t lines, uint8_t dotsize) //cols, lines, dotsize
+bool Adafruit_RGBLCDShield::begin(uint8_t, uint8_t lines, uint8_t dotsize) //cols, lines, dotsize
 {
 
     int err = _i2c.begin();
     if (err == -1) {
         connected_ = false;
-        logger().error() << "Adafruit_RGBLCDShield::begin() : NOT CONNECTED !" << logs::end;
-        return;
+        logger().debug() << "Adafruit_RGBLCDShield::begin() : NOT CONNECTED !" << logs::end;
+        return connected_;
     } else {
         connected_ = true;
 
@@ -157,6 +157,7 @@ void Adafruit_RGBLCDShield::begin(uint8_t, uint8_t lines, uint8_t dotsize) //col
         command(LCD_ENTRYMODESET | _displaymode);
 
     }
+    return connected_;
 }
 
 /********** high level commands, for the user! */

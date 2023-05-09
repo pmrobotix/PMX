@@ -10,33 +10,33 @@
 #include "../Log/Logger.hpp"
 
 GpioPCA9555::GpioPCA9555() :
-        i2cGB_(1), connected_(true), port0Value_(0), port1Value_(0)
+        i2cGB_(1), connected_(false), port0Value_(0), port1Value_(0)
 {
-    begin();
+
 }
 
-void GpioPCA9555::begin()
+bool GpioPCA9555::begin()
 {
     //open i2c and setslave
     i2cGB_.setSlaveAddr(GPIOBOARD_PCA9555);
-    setup(); //setup and enable IN/OUT
+    return setup(); //setup and enable IN/OUT
 }
 
-void GpioPCA9555::setup()
+bool GpioPCA9555::setup()
 {
-
     long r = write_i2c(CONFIG_P0, 0x00); //defines all pins on Port0 are outputs
     if (r < 0) {
         connected_ = false;
-        logger().error() << "setup() : GpioBoard NOT CONNECTED !" << logs::end;
-        return;
+        logger().debug() << "setup() : GpioBoard NOT CONNECTED !" << logs::end;
+        return connected_;
     } else {
+        connected_ = true;
         write_i2c(OUT_P0, 0x00); //clears all relays
         write_i2c(CONFIG_P1, 0xFF); //defines all pins on Port1 are inputs
         write_i2c(IN_P1, 0x00); //clears all relays
         utils::sleep_for_micros(PAUSE);
     }
-
+    return connected_;
 }
 
 void GpioPCA9555::setValueP0(int port, int pin, int value)

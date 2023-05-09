@@ -14,8 +14,8 @@ LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot)
     //min mid max, //TODO inversed(NOT IMPLEMENTED YET)
     servos().setup(SERVO_1_ARM_R, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
     servos().setup(SERVO_3_FORK_R, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
-    servos().setup(SERVO_7_PUSH_SQUARES, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
-    servos().setup(SERVO_11_TAKE_TROPHY, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+    //servos().setup(SERVO_7_PUSH_SQUARES, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+    //servos().setup(SERVO_11_TAKE_TROPHY, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
     servos().setup(SERVO_13_FORK_L, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
     servos().setup(SERVO_15_ARM_L, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
 
@@ -24,11 +24,11 @@ LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot)
     sensors_.addConfigFront(false, true, false);
     sensors_.addConfigBack(false, true, false);
 
-    sensors_.addThresholdFront(50+360, 500, 50+360);
-    sensors_.addThresholdFrontVeryClosed(50+120, 360, 50+120);
+    sensors_.addThresholdFront(50+360, 650, 50+360);
+    sensors_.addThresholdFrontVeryClosed(50+120, 450, 50+120);
 
-    sensors_.addThresholdBack(50+300, 500, 50+300);
-    sensors_.addThresholdBackVeryClosed(50+120, 360, 50+120);
+    sensors_.addThresholdBack(50+300, 650, 50+300);
+    sensors_.addThresholdBackVeryClosed(50+120, 450, 50+120);
 
 
 

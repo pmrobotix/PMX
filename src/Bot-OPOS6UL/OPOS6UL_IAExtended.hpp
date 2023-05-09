@@ -8,14 +8,15 @@
 #include "../Common/IA/IAbyZone.hpp"
 
 //Definition de ce qui existe pour ce robot, quelle ia il utilise
-class OPOS6UL_IAExtended {
+class OPOS6UL_IAExtended
+{
 private:
 
     IAbyZone iaz_; //old IA
     IAbyPath iap_; //new IA
 
     //Playground *p_;
-    SymmetricalPlayground * p_;
+    SymmetricalPlayground *p_;
 
 public:
 
@@ -24,10 +25,9 @@ public:
     PlaygroundObjectID opponent_3;
     PlaygroundObjectID opponent_4;
 
-
-    PlaygroundObjectID area_start_blue;
-    PlaygroundObjectID area_start_green;
-
+    PlaygroundObjectID area_B4;
+    PlaygroundObjectID area_C4;
+    PlaygroundObjectID area_B3;
 
 //    PlaygroundObjectID area_alea_violet;
 //    PlaygroundObjectID area_alea_yellow;
@@ -65,17 +65,20 @@ public:
 
     OPOS6UL_IAExtended(std::string botId, Robot *robot);
 
-    ~OPOS6UL_IAExtended() {
+    ~OPOS6UL_IAExtended()
+    {
 
     }
 
     //old IA
-    IAbyZone & iAbyZone() {
+    IAbyZone& iAbyZone()
+    {
         return iaz_;
     }
 
     //New IA using pathfinding
-    IAbyPath & iAbyPath() {
+    IAbyPath& iAbyPath()
+    {
         return iap_;
     }
 

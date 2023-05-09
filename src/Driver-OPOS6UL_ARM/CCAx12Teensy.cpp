@@ -29,14 +29,19 @@ CCAx12Teensy::CCAx12Teensy() : //TODO Une SEULE CARTE est possible a mettre en p
 bool CCAx12Teensy::connect(short int i2c_aAddr) {
     i2c_aAddr_ = i2c_aAddr;
 
-    int err = i2c_CCAx12Teensy_.setSlaveAddr(i2c_aAddr);
-    if (err >= 0) {
-        connected_ = true;
-    }
-    else {
-        connected_ = false;
-        logger().error() << "CCAx12Teensy::connect() : NOT CONNECTED!" << logs::end;
-    }
+    i2c_CCAx12Teensy_.setSlaveAddr(i2c_aAddr);
+
+    connected_ = true;
+//    int err = setLedOff(3);
+//    if (err >= 0) {
+//        connected_ = true;
+//    }
+//    else {
+//        connected_ = false;
+//        logger().error() << "CCAx12Teensy::connect() : NOT CONNECTED!" << logs::end;
+//    }
+
+
 
     return connected_;
 }

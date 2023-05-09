@@ -1,5 +1,26 @@
 #! /bin/bash
 
+
+#  1. LedBar
+#  2. ButtonBar
+#  3. SoundBar
+#  4. Tirette
+#  5. Lcd
+#  6. Sensors
+#  7. ServoObject
+#  8. ServoStep
+#  9. ServoUsingMotor
+# 10. MovingBase
+# 11. Asserv_LineRotate
+# 12. Asserv_Square
+# 13. Asserv_EsialR
+# 14. Asserv_Run
+# 15. IAbyZone
+# 16. IAbyPath
+# 17. ActionManagerTimer
+# 18. Asserv recalage
+ 
+ 
 #Se connecter une première fois avec ssh robot@[IP] pour enregistrer le mot de passe de la connexion ssh.
 #EV3 CHO
 IPUSB="10.42.0.199" #USB LINUX
@@ -10,7 +31,7 @@ IPWIFI="192.168.2.104"
 IPHOME="192.168.0.123" #WIFI HOME CHO INDEED2G
 #IPHOME="192.168.0.220" #WIFI HOME CHO INDEED
 #IP5GHZ="192.168.3.102" #WIFI1 PMX5G 
-IP5GHZ="192.168.4.104" #WIFI2 PMX5G 
+IP5GHZ="192.168.3.105" #WIFI2 PMX5G 
 #IP5GHZ="192.168.4.101" #WIFI2 PMX2G 
 
 
@@ -21,6 +42,7 @@ all()
 }
 arm()
 {
+	/install/arm-2014.05-29/bin/arm-none-linux-gnueabi-strip -s ../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3
 	ssh robot@$IP "killall Bot_LegoMindstorm_EV3";
 	scp "../Bot_LegoMindstorm_EV3/Release/Bot_LegoMindstorm_EV3" "../src/Bot-LegoEV3/config_LegoEV3Robot.txt" robot@$IP:/home/robot/pmx
 }

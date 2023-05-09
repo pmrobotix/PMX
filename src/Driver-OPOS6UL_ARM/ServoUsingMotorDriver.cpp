@@ -21,8 +21,13 @@ ServoUsingMotorDriver::ServoUsingMotorDriver() :
         connected_(0)
 {
     logger().debug() << "ServoUsingMotorDriver()" << logs::end;
-    MD25::instance().begin();
+    connected_ = MD25::instance().begin();
 
+}
+
+bool ServoUsingMotorDriver::is_connected()
+{
+    return connected_;
 }
 
 void ServoUsingMotorDriver::setMotorPosition(int power, int pos, int ramptimems) {

@@ -88,14 +88,7 @@ public:
         return robot_;
     }
 
-    int RecordADC(bool activate);
-
-    //default=>510
-    //4,7k =>462
-    //1k=>340
-    //470=>246
-    //courcircuit = >0
-    int getADC();
+    bool is_connected();
 
     void display(int n);
 

@@ -19,6 +19,13 @@ L_State_Init::execute(Robot&)
     logger().debug() << "L_StateInit executing..." << logs::end;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+
+
+
+
+    //TODO verifier que la balise est bien branchée ???
+
+
     //demarre le actionManagerTimer
     robot.actions().start();
 
@@ -171,12 +178,12 @@ L_State_Init::execute(Robot&)
                 }
 
                 if (robot.getMyColor() == PMXYELLOW) {
-                    robot.actions().square_push_right(1500);
-                    robot.actions().square_middle_init(1500);
+//                    robot.actions().square_push_right(1500);
+//                    robot.actions().square_middle_init(1500);
                 }
                 else {
-                    robot.actions().square_push_left(1500);
-                    robot.actions().square_middle_init(1500);
+//                    robot.actions().square_push_left(1500);
+//                    robot.actions().square_middle_init(1500);
                 }
 
                 if (robot.getMyColor() == PMXYELLOW) {
@@ -190,7 +197,7 @@ L_State_Init::execute(Robot&)
 
                 std::this_thread::sleep_for(std::chrono::microseconds(2000000));
                 //usleep(2000000);
-                robot.actions().init_mettre_cube();
+
             }
             if (b == BUTTON_DOWN_KEY) {
                 //logger().info() << "BUTTON_DOWN_KEY - IA" << logs::end;
@@ -241,9 +248,15 @@ L_State_Init::execute(Robot&)
             std::this_thread::sleep_for(std::chrono::microseconds(1000));
 
 
-            logger().info() << "ADC=" << robot.actions().sensors().getADC() << logs::end;
+            //logger().info() << "ADC=" << robot.actions().sensors().getADC() << logs::end;
 
-            //on bouge le bras si le dialogue avec la balise et les servos.
+            //on bouge le bras si le dialogue avec la balise et les servos.//TODO avec autre chose que l'ADC!!!
+            //Est ce possible de debrnacher rebrancher a ce moment là ?
+
+
+
+
+            /*
             if (robot.actions().sensors().getADC() > 500 && robot.actions().sensors().getADC() < 520) {
 
                 sw++;
@@ -264,7 +277,7 @@ L_State_Init::execute(Robot&)
                         robot.actions().arm_left_init(0);
                     }
                 }
-            }
+            }*/
 
         }
 
@@ -371,7 +384,9 @@ void L_State_Init::setPos() {
 
     robot.asserv().startMotionTimerAndOdo(false); //demarrage asserv sans assistedhandling
 
-    robot.asserv().setPositionAndColor(126, 200, 0.0, (robot.getMyColor() != PMXYELLOW)); //au coin du distributeur
+    //robot place a gauche de la ligne verte foncée!!!
+
+    robot.asserv().setPositionAndColor(447-126, 126, 90.0, (robot.getMyColor() != PMXYELLOW)); //au coin du distributeur
     robot.svgPrintPosition();
 
     //active l'asservissement
@@ -380,12 +395,14 @@ void L_State_Init::setPos() {
 
     robot.asserv().doLineAbs(100);
 
-    robot.asserv().doMoveForwardTo(260, 200);
+    robot.asserv().doMoveForwardTo(450-160, 300);
 
 //Faire un faceTo sur le point de destination
-    robot.asserv().doFaceTo(430, 430);
+    robot.asserv().doFaceTo(500, 675);
 
     //robot.asserv().doLineAbs(-10);
+
+    robot.points +=5; //panier present
 
     robot.svgPrintPosition();
     logger().debug() << "setPos() executed" << logs::end;

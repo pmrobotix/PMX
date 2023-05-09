@@ -22,7 +22,7 @@ void O_LcdBoardTest::run(int argc, char** argv)
 
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
-    robot.asserv().startMotionTimerAndOdo(true);
+    //robot.asserv().startMotionTimerAndOdo(true);
 
     robot.actions().lcd2x16().clear();
     robot.actions().lcd2x16().setBacklightOn();

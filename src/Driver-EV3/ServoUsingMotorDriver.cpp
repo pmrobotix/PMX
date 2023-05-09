@@ -38,6 +38,11 @@ ServoUsingMotorDriver::ServoUsingMotorDriver() :
     }
 }
 
+bool ServoUsingMotorDriver::is_connected()
+{
+    return _servo_device.connected();
+}
+
 void ServoUsingMotorDriver::setMotorPosition(int power, int ticks, int ramptimems) {
     if (_servo_device.connected()) {
         _servo_device.set_ramp_down_sp(ramptimems);

@@ -21,6 +21,24 @@ O_State_DecisionMakerIA::O_State_DecisionMakerIA(Robot &robot) :
         robot_(robot)
 {
 }
+bool O_launch_balls_1() {
+    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+    robot.logger().info() << "start O_launch_balls_1." << logs::end;
+    TRAJ_STATE ts = TRAJ_OK;
+    RobotPosition zone;
+
+    robot.ia().iAbyPath().goToZone("zone_launch1", &zone);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 2000000, 3, 3, true, 40);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << "O_launch_balls_1 : zone_launch1  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+        return false;
+    }
+    robot.svgPrintPosition();
+
+    return true; //return true si ok sinon false si interruption
+}
+
 
 bool O_take_ball_BC1() {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
@@ -138,7 +156,10 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone() {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     logger().debug() << "color = " << robot.getMyColor() << logs::end;
 
-    robot.ia().iAbyPath().ia_createZone("zone_end", 0, 1650, 450, 450, 500, 1600, 0);
+
+    robot.ia().iAbyPath().ia_createZone("zone_launch1", 0, 0, 450, 200, 1000, 600, -90);
+
+    robot.ia().iAbyPath().ia_createZone("zone_end", 0, 1650, 450, 450, 500, 1650, 0);
     robot.ia().iAbyPath().ia_createZone("zone_ball_D3", 1800, 1350, 200, 300, 1800, 1500, 0);
 
     robot.ia().iAbyPath().ia_createZone("zone_ball_BC1", 900, 0, 200, 300, 750, 160, 0);
@@ -148,10 +169,10 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone() {
 //    robot.ia().iAbyPath().ia_createZone("zone_distrib", 0, 600, 200, 300, 300, 750, 180);
 //    robot.ia().iAbyPath().ia_createZone("zone_depose1", 450, 1900, 800, 100, 1100, 1750, 180);
 */
-    robot.ia().iAbyPath().ia_addAction("take_ball_D3", &O_take_ball_BC1);
-    robot.ia().iAbyPath().ia_addAction("take_ball_D3", &O_take_ball_D3);
-    //robot.ia().iAbyPath().ia_addAction("take_distrib_partage", &O_take_distrib_partage);
-//    robot.ia().iAbyPath().ia_addAction("take_distrib", &O_take_distrib);
+    robot.ia().iAbyPath().ia_addAction("launch_balls_1", &O_launch_balls_1);
+    //robot.ia().iAbyPath().ia_addAction("take_ball_D3", &O_take_ball_BC1);
+    //robot.ia().iAbyPath().ia_addAction("take_ball_D3", &O_take_ball_D3);
+
 
     robot.ia().iAbyPath().ia_addAction("end_of_match", &O_end_of_match);
 

@@ -14,11 +14,13 @@
 #include "../Common/Action.Driver/AServoDriver.hpp"
 #include "../Common/Action/ServoUsingMotor.hpp"
 
-class OPOS6UL_ActionsExtended: public Actions {
+class OPOS6UL_ActionsExtended: public Actions
+{
 private:
 
-    static inline const logs::Logger & logger() {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("OPOS6UL_ActionsExtended");
+    static inline const logs::Logger& logger()
+    {
+        static const logs::Logger &instance = logs::LoggerFactory::logger("OPOS6UL_ActionsExtended");
         return instance;
     }
 
@@ -52,7 +54,6 @@ private:
      */
     ServoObjectsSystem servos_;
 
-
     ServoUsingMotor lanceurCerises_;
 
 public:
@@ -62,7 +63,8 @@ public:
      * port-servo port1-4=1000-4000 servo=1-255 => 1000 à 4255
      * [num port] * 1000 + [num servo]
      */
-    enum ServoAx12Label {
+    enum ServoAx12Label
+    {
         AX12_SERVO_BRAS_D = 1 * 1000 + 5, //AX12
 
         AX12_SERVO_BRAS_G = 1000 + 7, //AX12
@@ -71,9 +73,11 @@ public:
 
         AX12_SERVO_FUNNY = 1000 + 51, //AX12
 
-        AX12_SERVO_TETE_ASPI = 1000 + 50, //AX12
+        AX12_SERVO_MOUSTACHE_GAUCHE = 1000 + 50, //AX12
 
-        AX18_SERVO_RUSSEL_LINKAGE = 1000 + 180, //AX18
+        AX12_SERVO_MOUSTACHE_DROITE = 1000 + 53, //AX12
+
+        //AX18_SERVO_RUSSEL_LINKAGE = 1000 + 180, //AX18
 
         AX12_enumTypeEnd
     };
@@ -82,7 +86,8 @@ public:
      * \brief Enumération des libellés des servos STD associés au numéro de servo
      *  port=10000
      */
-    enum ServoStdLabel {
+    enum ServoStdLabel
+    {
 
         STD_SERVO_3 = 10000 * 5,
 
@@ -93,18 +98,21 @@ public:
 
     OPOS6UL_ActionsExtended(std::string botId, Robot *robot);
 
-    ~OPOS6UL_ActionsExtended() {
+    ~OPOS6UL_ActionsExtended()
+    {
     }
 
     /*!
      * \brief Cette methode retourne l'objet ledbar.
      * \return ledbar_.
      */
-    LedBar& ledBar() {
+    LedBar& ledBar()
+    {
         return ledbar_;
     }
 
-    ButtonBar& buttonBar() {
+    ButtonBar& buttonBar()
+    {
         return buttonbar_;
     }
 
@@ -112,7 +120,8 @@ public:
      * \brief Cette methode retourne l'objet LcdShield.
      * \return lcd2x16_.
      */
-    LcdShield& lcd2x16() {
+    LcdShield& lcd2x16()
+    {
         return lcd2x16_;
     }
 
@@ -120,7 +129,8 @@ public:
      * \brief Cette methode retourne l'objet tirette.
      * \return tirette_.
      */
-    Tirette& tirette() {
+    Tirette& tirette()
+    {
         return tirette_;
     }
 
@@ -128,7 +138,8 @@ public:
      * \brief Cette methode retourne l'objet lanceur.
      * \return tirette_.
      */
-    ServoUsingMotor& lanceur() {
+    ServoUsingMotor& lanceur()
+    {
         return lanceurCerises_;
     }
 
@@ -136,7 +147,8 @@ public:
      * \brief Cette methode retourne l'objet sensors.
      * \return sensors_.
      */
-    Sensors& sensors() {
+    Sensors& sensors()
+    {
         return sensors_;
     }
 
@@ -144,11 +156,13 @@ public:
      * \brief Cette methode retourne l'objet servos.
      * \return servos_.
      */
-    ServoObjectsSystem& servos() {
+    ServoObjectsSystem& servos()
+    {
         return servos_;
     }
 
-    void stopExtra() {
+    void stopExtra()
+    {
 
         sensors_.stopTimerSensors(); //TODO rename stop
         ledbar_.stop();
@@ -164,7 +178,6 @@ public:
     //Actions 2023
     //--------------------------------------------------------------
 
-
     void ax12_init()
     {
         ax12_bras_droit();
@@ -174,37 +187,40 @@ public:
 
         aspiration_closed_init();
 
-        aspi_tete_init();
-        aspi_centre(-1);
-
+        moustache_G_take_balls(-1);
+        moustache_D_init_high(-1);
+        moustache_G_init_medium_below_D(-1);
         funny_init(-1);
 
     }
 
-
-    void turbine_aspiration(int activate) {
+    void turbine_aspiration(int activate)
+    {
         tirette().setGPIO(4, activate);
     }
 
     //0 à 127
-    void lancer_les_balles(int vitesse) {
+    void lancer_les_balles(int vitesse)
+    {
 
         lanceur().turn(vitesse);
     }
-    void stopper_lanceur_de_balles() {
+    void stopper_lanceur_de_balles()
+    {
 
         lanceur().stop();
     }
 
-    void releaseAll() {
+    void releaseAll()
+    {
 
         servos().release(AX12_SERVO_BRAS_D);
         servos().release(AX12_SERVO_BRAS_G);
 
         servos().release(AX12_SERVO_ASPIRATION);
         servos().release(AX12_SERVO_FUNNY);
-        servos().release(AX12_SERVO_TETE_ASPI);
-        servos().release(AX18_SERVO_RUSSEL_LINKAGE);
+        servos().release(AX12_SERVO_MOUSTACHE_DROITE);
+        servos().release(AX12_SERVO_MOUSTACHE_GAUCHE);
 
 //        for (int fooInt = 0; fooInt != AX12_enumTypeEnd; fooInt++) {
 //            ServoAx12Label foo = static_cast<ServoAx12Label>(fooInt);
@@ -225,96 +241,122 @@ public:
 //          }
     }
 
-    void ax12_bras_droit_init(int keep = 0, int speed = 1023) {
+    void ax12_bras_droit_init(int keep = 0, int speed = 1023)
+    {
         servos().setSpeed(AX12_SERVO_BRAS_D, speed);
         servos().deploy(AX12_SERVO_BRAS_D, 815, keep);
     }
-    void ax12_bras_droit(int keep = 0, int speed = 1023) {
+    void ax12_bras_droit(int keep = 0, int speed = 1023)
+    {
         servos().setSpeed(AX12_SERVO_BRAS_D, speed);
         servos().deploy(AX12_SERVO_BRAS_D, 480, keep);
     }
 
-    void ax12_bras_gauche_init(int keep = 0, int speed = 1023) {
+    void ax12_bras_gauche_init(int keep = 0, int speed = 1023)
+    {
         servos().setSpeed(AX12_SERVO_BRAS_G, speed);
         servos().deploy(AX12_SERVO_BRAS_G, 205, keep);
     }
-    void ax12_bras_gauche(int keep = 0, int speed = 1023) {
+    void ax12_bras_gauche(int keep = 0, int speed = 1023)
+    {
         servos().setSpeed(AX12_SERVO_BRAS_G, speed);
         servos().deploy(AX12_SERVO_BRAS_G, 512, keep);
     }
 
-    void aspiration_closed_init(int keep = 0, int speed = 150) {
-
+    void aspiration_closed_init(int keep = 0, int speed = 150)
+    {
         servos().deployWithVelocity(AX12_SERVO_ASPIRATION, 512, keep, speed);
-
     }
-    void aspiration_lacher_les_balles(int keep = -1, int speed = 200) {
-
+    void aspiration_lacher_les_balles(int keep = -1, int speed = 200)
+    {
         servos().setTorque(AX12_SERVO_ASPIRATION, 800);
         servos().deployWithVelocity(AX12_SERVO_ASPIRATION, 615, keep, speed);
-
     }
 
-    void funny_init(int keep = 0, int speed = 150) {
-
+    void funny_init(int keep = 0, int speed = 150)
+    {
         servos().deployWithVelocity(AX12_SERVO_FUNNY, 512, keep, speed);
-
     }
 
-    void funny_action_deploy(int keep = 1000, int speed = 1023) {
-
+    void funny_action_deploy(int keep = 1000, int speed = 1023)
+    {
         servos().deployWithVelocity(AX12_SERVO_FUNNY, 680, keep, speed);
-
     }
 
-    void aspi_tete_init(int keep = 0, int speed = 150) {
-
-        servos().deployWithVelocity(AX12_SERVO_TETE_ASPI, 512, keep, speed);
-
+    void moustache_D_init_high(int keep = 0, int speed = 150)
+    {
+        servos().deployWithVelocity(AX12_SERVO_MOUSTACHE_DROITE, 253, keep, speed);
     }
 
-    void aspi_tete_gauche(int keep = 0, int speed = 150) {
-
-        servos().deployWithVelocity(AX12_SERVO_TETE_ASPI, 430, keep, speed);
-        //TODO torque 150
+    void moustache_D_take_balls(int keep = 0, int speed = 150)
+    {
+        servos().setTorque(AX12_SERVO_MOUSTACHE_DROITE, 1023);
+        servos().deployWithVelocity(AX12_SERVO_MOUSTACHE_DROITE, 497, keep, speed);
     }
 
-    void aspi_tete_droite(int keep = 0, int speed = 150) {
-
-        servos().deployWithVelocity(AX12_SERVO_TETE_ASPI, 430, keep, speed);
-        //TODO torque 150
+    void moustache_G_init_medium_below_D(int keep = 0, int speed = 150)
+    {
+        servos().deployWithVelocity(AX12_SERVO_MOUSTACHE_GAUCHE, 670, keep, speed);
     }
 
-    void aspi_centre(int keep = 0, int speed = 150) {
-
-        servos().deployWithVelocity(AX18_SERVO_RUSSEL_LINKAGE, 450, keep, speed);
-
+    void moustache_G_init_high(int keep = 0, int speed = 150)
+    {
+        servos().deployWithVelocity(AX12_SERVO_MOUSTACHE_GAUCHE, 781, keep, speed);
     }
 
-    void aspi_droite(int keep = 0, int speed = 150) {
-
-        servos().deployWithVelocity(AX18_SERVO_RUSSEL_LINKAGE, 205, keep, speed);
-
-    }
-    void aspi_droite_full(int keep = 0, int speed = 150) {
-
-        servos().deployWithVelocity(AX18_SERVO_RUSSEL_LINKAGE, 105, keep, speed);
-
+    void moustache_G_take_balls(int keep = 0, int speed = 150)
+    {
+        servos().setTorque(AX12_SERVO_MOUSTACHE_GAUCHE, 1023);
+        servos().deployWithVelocity(AX12_SERVO_MOUSTACHE_GAUCHE, 528, keep, speed);
     }
 
-    void aspi_gauche(int keep = 0, int speed = 150) {
+    /*
+     void aspi_tete_init(int keep = 0, int speed = 150) {
 
-        servos().deployWithVelocity(AX18_SERVO_RUSSEL_LINKAGE, 688, keep, speed);
+     servos().deployWithVelocity(AX12_SERVO_TETE_ASPI, 512, keep, speed);
 
-    }
-    void aspi_gauche_full(int keep = 0, int speed = 150) {
+     }
 
-        servos().deployWithVelocity(AX18_SERVO_RUSSEL_LINKAGE, 788, keep, speed);
+     void aspi_tete_gauche(int keep = 0, int speed = 150) {
 
-    }
+     servos().deployWithVelocity(AX12_SERVO_TETE_ASPI, 430, keep, speed);
+     //TODO torque 150
+     }
 
+     void aspi_tete_droite(int keep = 0, int speed = 150) {
 
+     servos().deployWithVelocity(AX12_SERVO_TETE_ASPI, 430, keep, speed);
+     //TODO torque 150
+     }
 
+     void aspi_centre(int keep = 0, int speed = 150) {
+
+     servos().deployWithVelocity(AX18_SERVO_RUSSEL_LINKAGE, 450, keep, speed);
+
+     }
+
+     void aspi_droite(int keep = 0, int speed = 150) {
+
+     servos().deployWithVelocity(AX18_SERVO_RUSSEL_LINKAGE, 205, keep, speed);
+
+     }
+     void aspi_droite_full(int keep = 0, int speed = 150) {
+
+     servos().deployWithVelocity(AX18_SERVO_RUSSEL_LINKAGE, 105, keep, speed);
+
+     }
+
+     void aspi_gauche(int keep = 0, int speed = 150) {
+
+     servos().deployWithVelocity(AX18_SERVO_RUSSEL_LINKAGE, 688, keep, speed);
+
+     }
+     void aspi_gauche_full(int keep = 0, int speed = 150) {
+
+     servos().deployWithVelocity(AX18_SERVO_RUSSEL_LINKAGE, 788, keep, speed);
+
+     }
+     */
 
     /*//2022
      void elevator2022_init(int keep = 0, int speed = 1024) {

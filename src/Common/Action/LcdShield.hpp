@@ -34,8 +34,6 @@ public:
      */
     std::string botId_;
 
-
-
     /*!
      * \brief Constructor.
      *
@@ -43,6 +41,7 @@ public:
      */
     LcdShield(std::string botId, Actions & actions);
 
+    bool is_connected();
     void init();
     void reset();
 
