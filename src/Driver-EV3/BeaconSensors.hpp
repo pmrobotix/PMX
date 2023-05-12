@@ -5,7 +5,11 @@
 
 #include "../Log/LoggerFactory.hpp"
 
+#define CMD_Beacon_DISPLAY     0x02
+
 #define DATA_BeaconSensors      0x04 //addresse des données à recupérer
+#define DATA_BeaconSensors_ALIVE 0x200
+
 #define NUMOFBOTS_BeaconSensors 0x00
 
 //WEBSITE REFERENCE : convert float to byte array  source: http://mbed.org/forum/helloworld/topic/2053/
@@ -155,6 +159,8 @@ public:
      */
     bool connect(); //TODO RENAME BEGIN
 
+
+    bool is_alive();
     /*!
      *  \brief get distance in mm.
      *  //every 250 ms

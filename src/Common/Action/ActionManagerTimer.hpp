@@ -21,14 +21,16 @@
 /*!
  * \brief Classe de gestion des actions du robot et des actions par timer
  */
-class ActionManagerTimer: public utils::Thread {
+class ActionManagerTimer: public utils::Thread
+{
 private:
 
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref ActionManagerTimer.
      */
-    static inline const logs::Logger & logger() {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("ActionManagerTimer");
+    static inline const logs::Logger& logger()
+    {
+        static const logs::Logger &instance = logs::LoggerFactory::logger("ActionManagerTimer");
         return instance;
     }
 
@@ -93,12 +95,15 @@ protected:
      */
     virtual void execute();
 
-    void unblock(std::string debug = "ActionManagerTimer") {
+    void unblock(std::string debug = "ActionManagerTimer")
+    {
         sem_getvalue(&AMT, &val);
         //logger().info() << debug << " val =" << val << logs::end;
-        if (val > 1) logger().error() << "ERROR - la valeur de semaphore est > 1 !!" << val << logs::end;
+        if (val > 1)
+            logger().error() << "ERROR - la valeur de semaphore est > 1 !!" << val << logs::end;
         //dans le cas d'une attente, on débloque.
-        if (val == 0) sem_post(&AMT);
+        if (val == 0)
+            sem_post(&AMT);
     }
 
 public:
@@ -111,14 +116,16 @@ public:
     /*!
      * \brief Destructeur de la classe.
      */
-    virtual ~ActionManagerTimer() {
+    virtual ~ActionManagerTimer()
+    {
         sem_destroy(&AMT);
     }
 
     /*!
      * \brief Retourne le nombre d'actions.
      */
-    int countActions() {
+    int countActions()
+    {
         maction_.lock();
         int size = this->actions_.size();
         maction_.unlock();
@@ -128,7 +135,8 @@ public:
     /*!
      * \brief Retourne le nombre de timers.
      */
-    int countTimers() {
+    int countTimers()
+    {
         mtimer_.lock();
         int size = this->timers_.size();
         mtimer_.unlock();
@@ -137,7 +145,8 @@ public:
     /*!
      * \brief Retourne le nombre de timers posix.
      */
-    int countPTimers() {
+    int countPTimers()
+    {
         mtimer_.lock();
         int size = this->ptimers_.size();
         mtimer_.unlock();
@@ -149,7 +158,8 @@ public:
      * \param action
      *        L'action à ajouter.
      */
-    void addAction(IAction * action) {
+    void addAction(IAction *action)
+    {
         maction_.lock();
         actions_.push_back(action);
         maction_.unlock();
@@ -161,7 +171,8 @@ public:
      * \param timer
      *        le timer à ajouter.
      */
-    void addTimer(ITimerListener * timer) {
+    void addTimer(ITimerListener *timer)
+    {
         if (timer->timeSpan() != 0) {
             mtimer_.lock();
             timers_.push_back(timer);
@@ -174,7 +185,8 @@ public:
      * \param timer
      *        le timer posix à ajouter.
      */
-    void addTimer(ITimerPosixListener * timer) {
+    void addTimer(ITimerPosixListener *timer)
+    {
         if (timer->timeSpan_us() != 0) {
             mtimer_.lock();
             ptimers_tobestarted_.push_back(timer);
@@ -183,8 +195,7 @@ public:
             //give the signal
             unblock("addTimerPosix");
 
-        }
-        else {
+        } else {
             logger().error() << "timeSpan_us is 0 !!" << logs::end;
         }
     }
@@ -203,6 +214,13 @@ public:
     void stopPTimer(std::string timerNameToDelete);
 
     /*!
+     * \brief trouve un timer posix spécifique.
+     * \param name
+     *        Le label du timer.
+     */
+    bool findPTimer(std::string timerNameToFind);
+
+    /*!
      * \brief arrete tous les timers posix. Permet d'executer leur action de fin puis les supprime de la liste.
      */
     void stopAllPTimers();
@@ -210,7 +228,8 @@ public:
     /*!
      * \brief Vide la liste des actions actuellement enregistrées.
      */
-    void clearActions() {
+    void clearActions()
+    {
         maction_.lock();
         actions_.clear();
         maction_.unlock();
@@ -219,7 +238,8 @@ public:
     /*!
      * \brief Vide la liste des timers actuellement enregistrés.
      */
-    void clearTimers() {
+    void clearTimers()
+    {
         mtimer_.lock();
         timers_.clear();
         ptimers_.clear();

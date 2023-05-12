@@ -263,7 +263,7 @@ void O_State_DecisionMakerIA::execute() {
      robot.points += 35;
      robot.displayPoints();
 
-     if (robot.getMyColor() == PMXYELLOW) {
+     if (robot.getMyColor() == PMXGREEN) {
      robot.ia().iAbyPath().enable(robot.ia().area_alea_yellow, 0);
      } else {
      robot.ia().iAbyPath().enable(robot.ia().area_alea_violet, 0);
@@ -307,7 +307,7 @@ void O_State_DecisionMakerIA::execute() {
  robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
  robot.asserv().setLowSpeedForward(true, 35);
 
- if (robot.getMyColor() == PMXYELLOW) {
+ if (robot.getMyColor() == PMXGREEN) {
  robot.actions().ax12_bras_droit(0);
  robot.actions().ax12_bras_gauche(-1);
 
@@ -333,7 +333,7 @@ void O_State_DecisionMakerIA::execute() {
  //robot.asserv().setLowSpeedForward(true, 35);
 
  robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
- if (robot.getMyColor() == PMXYELLOW) {
+ if (robot.getMyColor() == PMXGREEN) {
  robot.actions().ax12_bras_gauche_init(-1);
  robot.actions().ax12_bras_droit_init(-1);
 
@@ -453,7 +453,7 @@ void O_State_DecisionMakerIA::execute() {
  ts = robot.asserv().doRelativeRotateBy(0);
  robot.svgPrintPosition();
 
- if (robot.getMyColor() == PMXYELLOW) {
+ if (robot.getMyColor() == PMXGREEN) {
 
  robot.actions().ax12_bras_gauche_fanion(-1);
  }

@@ -59,7 +59,7 @@ void L_AsservPidTest::run(int argc, char **argv)
     }
 
     robot.asserv().startMotionTimerAndOdo(true);
-    robot.asserv().setPositionAndColor(400, 400, 0.0, (robot.getMyColor() != PMXYELLOW));
+    robot.asserv().setPositionAndColor(400, 400, 0.0, (robot.getMyColor() != PMXGREEN));
     robot.svgPrintPosition();
     chrono.start();
 

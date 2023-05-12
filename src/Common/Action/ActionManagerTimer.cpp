@@ -151,7 +151,7 @@ void ActionManagerTimer::stopTimer(std::string timerNameToDelete) {
     mtimer_.unlock();
 }
 
-void ActionManagerTimer::stopPTimer(std::string timerNameToDelete) {
+void ActionManagerTimer::stopPTimer(std::string ptimerNameToDelete) {
 
     bool found = false;
     utils::PointerList<ITimerPosixListener *>::iterator save;
@@ -160,7 +160,7 @@ void ActionManagerTimer::stopPTimer(std::string timerNameToDelete) {
     while (i != ptimers_.end()) {
         ITimerPosixListener * ptimer = *i;
         //logger().debug() << "PTimer [" << ptimer->name() << "] found" << logs::end;
-        if (ptimer->name() == timerNameToDelete) {
+        if (ptimer->name() == ptimerNameToDelete) {
             save = i;
             found = true;
             ptimer->onTimerEnd(chronoTimer_);
@@ -169,10 +169,34 @@ void ActionManagerTimer::stopPTimer(std::string timerNameToDelete) {
         i++;
     }
     if (found) ptimers_.erase(save);
-    else logger().debug() << "PTimer [" << timerNameToDelete << "] not found or already deleted." << logs::end;
+    else logger().debug() << "PTimer [" << ptimerNameToDelete << "] not found or already deleted." << logs::end;
 
     mtimer_.unlock();
     unblock("stopPTimer");
+
+}
+
+bool ActionManagerTimer::findPTimer(std::string timerNameToFind) {
+
+    bool found = false;
+    utils::PointerList<ITimerPosixListener *>::iterator save;
+    utils::PointerList<ITimerPosixListener *>::iterator i = ptimers_.begin();
+    mtimer_.lock();
+    while (i != ptimers_.end()) {
+        ITimerPosixListener * ptimer = *i;
+        //logger().debug() << "PTimer [" << ptimer->name() << "] found" << logs::end;
+        if (ptimer->name() == timerNameToFind) {
+            save = i;
+            found = true;
+            ptimer->onTimerEnd(chronoTimer_);
+            ptimer->remove();
+        }
+        i++;
+    }
+
+    mtimer_.unlock();
+    unblock("stopPTimer");
+    return found;
 
 }
 void ActionManagerTimer::stopAllPTimers() {

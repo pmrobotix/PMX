@@ -65,7 +65,7 @@ A_State1::execute(Robot&)//, void *data)
 				robot.actions().lcd2x16().clear();
 				robot.actions().lcd2x16().home();
 				robot.actions().lcd2x16().print("YELLOW");
-				robot.setMyColor(PMXYELLOW);
+				robot.setMyColor(PMXGREEN);
 			}
 			if (b == BUTTON_UP_KEY)
 			{

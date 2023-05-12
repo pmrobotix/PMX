@@ -13,20 +13,28 @@
 class ASensorsDriver;
 class Robot;
 
-class Sensors: public AActionsElement {
+class Sensors: public AActionsElement
+{
 private:
 
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref Sensors.
      */
-    static inline const logs::Logger & logger() {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("Sensors");
+    static inline const logs::Logger& logger()
+    {
+        static const logs::Logger &instance = logs::LoggerFactory::logger("Sensors");
         return instance;
     }
 
-    Robot * robot_;
+    static inline const logs::Logger& loggersvg()
+    {
+        static const logs::Logger &instance = logs::LoggerFactory::logger("SvgSensors");
+        return instance;
+    }
 
-    ASensorsDriver* sensorsdriver_;
+    Robot *robot_;
+
+    ASensorsDriver *sensorsdriver_;
 
     int frontLeftThreshold_;
     int frontCenterThreshold_;
@@ -60,14 +68,7 @@ private:
     bool ignoreBackCenter_;
     bool ignoreBackRight_;
 
-
-
 public:
-
-    //2022 specific
-    bool recordADC;
-    int tabADC[100];
-    int index_adc;
 
     //distance de ce qu'il y a devant le robot
     float x_adv_mm;
@@ -77,18 +78,21 @@ public:
      * \brief Constructor.
      *
      */
-    Sensors(Actions & actions, Robot * robot);
+    Sensors(Actions &actions, Robot *robot);
 
     /*!
      * \brief Destructor.
      */
     ~Sensors();
 
-    Robot * robot() {
+    Robot* robot()
+    {
         return robot_;
     }
 
-    bool is_connected();
+    bool is_connected(); //is connected and alive
+
+//    bool is_alive();
 
     void display(int n);
 
@@ -135,21 +139,23 @@ public:
  * \brief Le timer associé aux sensors
  *
  */
-class SensorsTimer: public ITimerPosixListener {
+class SensorsTimer: public ITimerPosixListener
+{
 private:
 
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref SensorsTimer.
      */
-    static const logs::Logger & logger() {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("SensorsTimer");
+    static const logs::Logger& logger()
+    {
+        static const logs::Logger &instance = logs::LoggerFactory::logger("SensorsTimer");
         return instance;
     }
 
     /*!
      * \brief Référence vers sensors.
      */
-    Sensors & sensors_;
+    Sensors &sensors_;
 
     //utils::Chronometer chrono_;
 
@@ -175,12 +181,13 @@ public:
      * \param name
      *        Libellé du timer.
      */
-    SensorsTimer(Sensors & sensors, int timeSpan_ms, std::string name);
+    SensorsTimer(Sensors &sensors, int timeSpan_ms, std::string name);
 
     /*!
      * \brief Destructeur de la classe.
      */
-    virtual inline ~SensorsTimer() {
+    virtual inline ~SensorsTimer()
+    {
     }
 
     virtual void onTimer(utils::Chronometer chrono);

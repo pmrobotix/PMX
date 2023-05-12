@@ -40,6 +40,7 @@ public:
      */
     ~ServoObjectsSystem();
 
+    bool is_connected();
     /*!
      * \brief setup 1 servo with type, min, mid, max, inv values.
      */
@@ -56,7 +57,9 @@ public:
 
     //void deployByTimerTask(int servo, int pos, int keep_millisec = -1);
     void deploy(int servo, int pos, int keep_millisec = -1);
-    void deployWithVelocity(int servo, int pos, int keep_millisec = -1, int velocity = 1023);
+
+    //velocity est differente entre type de servo! ax12 =1023 ; servo std = time_ms from 0 to 90°
+    void deployWithVelocity(int servo, int pos, int keep_millisec = -1, int velocity = 0);
 
     void turn(int servo, int speed, int keep_millisec = 0);
     void release(int servo);

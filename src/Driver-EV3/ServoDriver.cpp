@@ -34,8 +34,9 @@ ServoDriver::ServoDriver() :
         servo_type_[i] = AServoDriver::SERVO_STANDARD;
     }
 
-    int connected = pwm_.connect(50); //freq 50 (periode 20ms) pour servo analogique
-    if (!connected) logger().error() << "ServoDriver() pwm 0x60 not CONNECTED!" << logs::end;
+    connected_ = pwm_.connect(50); //freq 50 (periode 20ms) pour servo analogique
+
+    if (!connected_) logger().error() << "ServoDriver() pwm 0x60 not CONNECTED!" << logs::end;
 
 //    CCAx12Adc::instance().connect(0x08);
 //
@@ -179,6 +180,11 @@ ServoDriver::ServoDriver() :
      usleep(800000);
      }
      */
+}
+
+bool ServoDriver::is_connected()
+{
+    return connected_;
 }
 
 void ServoDriver::setPulsePosWithRate(int servo, int pos_microsec, int millisec0To90) {

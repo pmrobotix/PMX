@@ -6,7 +6,8 @@
 
 #include "../Utils/PointerList.hpp"
 
-class RobotPos {
+class RobotPos
+{
 public:
     int nbDetectedBots; //nb de position de robot detectée (dupliqué dans chaque)
     int x; //millimetres
@@ -14,7 +15,8 @@ public:
     float theta_deg; //degre // angle de déplacement par rapport à l'avant derniere position
     int d; //dist en mm à partir du robot
 
-    RobotPos(int x_, int y_, float a_, int d_, int nb) {
+    RobotPos(int x_, int y_, float a_, int d_, int nb)
+    {
         x = x_;
         y = y_;
         theta_deg = a_;
@@ -24,7 +26,8 @@ public:
     //void show() { std::cout<<x<<std::endl; }
 };
 
-class ASensorsDriver {
+class ASensorsDriver
+{
 
 public:
 
@@ -36,10 +39,13 @@ public:
     /*!
      * \brief ASensorsDriver instance creation.
      */
-    static ASensorsDriver * create(std::string botName);
-
+    static ASensorsDriver* create(std::string botName);
 
     virtual bool is_connected() = 0;
+    /*!
+     * \brief return true if communication is alive.
+     */
+    //virtual bool is_alive() = 0;
 
     /*!
      * \brief synchronise les données de la balise.
@@ -67,7 +73,8 @@ public:
     /*!
      * \brief Destructor.
      */
-    virtual ~ASensorsDriver() {
+    virtual ~ASensorsDriver()
+    {
     }
 
 protected:
@@ -75,7 +82,8 @@ protected:
     /*!
      * \brief Constructor.
      */
-    ASensorsDriver() {
+    ASensorsDriver()
+    {
     }
 
 };

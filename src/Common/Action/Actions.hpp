@@ -13,14 +13,16 @@ class IAction;
 /*!
  * List of robot actions. It contains all common RobotElement.
  */
-class Actions {
+class Actions
+{
 private:
 
     /*!
      * \brief Return \ref Logger linked to \ref Actions.
      */
-    static inline const logs::Logger & logger() {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("Actions");
+    static inline const logs::Logger& logger()
+    {
+        static const logs::Logger &instance = logs::LoggerFactory::logger("Actions");
         return instance;
     }
 
@@ -40,7 +42,8 @@ public:
     /*!
      * \brief Destructor.
      */
-    ~Actions() {
+    ~Actions()
+    {
     }
 
     /*!
@@ -48,7 +51,8 @@ public:
      * \param action
      *        L'action à ajouter.
      */
-    inline void addAction(IAction * action) {
+    inline void addAction(IAction *action)
+    {
         actionManagerTimer_.addAction(action);
     }
 
@@ -56,12 +60,19 @@ public:
 //        actionManagerTimer_.addTimer(timer);
 //    }
 
-    inline void addTimer(ITimerPosixListener * timer) {
+    inline void addTimer(ITimerPosixListener *timer)
+    {
         actionManagerTimer_.addTimer(timer);
     }
 
-    inline void stopTimer(std::string name) {
+    inline void stopTimer(std::string name)
+    {
         actionManagerTimer_.stopPTimer(name);
+    }
+
+    inline bool findTimer(std::string name)
+    {
+        return actionManagerTimer_.findPTimer(name);
     }
 
     /*!

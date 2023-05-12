@@ -12,12 +12,14 @@ LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot)
     logger().debug() << "LegoEV3ActionsExtended()" << logs::end;
 
     //min mid max, //TODO inversed(NOT IMPLEMENTED YET)
-    servos().setup(SERVO_1_ARM_R, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
-    servos().setup(SERVO_3_FORK_R, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+    bool up = false;
+    up &= servos().setup(SERVO_1_ARM_R, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+    up &= servos().setup(SERVO_3_FORK_R, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
     //servos().setup(SERVO_7_PUSH_SQUARES, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
     //servos().setup(SERVO_11_TAKE_TROPHY, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
-    servos().setup(SERVO_13_FORK_L, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
-    servos().setup(SERVO_15_ARM_L, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+    up &= servos().setup(SERVO_13_FORK_L, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+    up &= servos().setup(SERVO_15_ARM_L, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+
 
 
 

@@ -30,12 +30,6 @@ Sensors::Sensors(Actions &actions, Robot *robot) :
     x_adv_mm = -1.0;
     y_adv_mm = -1.0;
 
-    recordADC = false;
-    for (int i = 0; i < 100; i++) {
-        tabADC[i] = 0;
-    }
-    index_adc = 0;
-
 }
 Sensors::~Sensors() {
     delete sensorsdriver_;
@@ -123,11 +117,17 @@ void Sensors::display(int n) {
     sensorsdriver_->displayNumber(n);
 }
 
-
+//is connected and alive
 bool Sensors::is_connected()
 {
     return sensorsdriver_->is_connected();
 }
+//
+////used in is_connected
+//bool Sensors::is_alive()
+//{
+//    return sensorsdriver_->is_alive();
+//}
 
 int Sensors::sync(std::string sensorname) {
     //synchronise les données sur les sensors drivers
@@ -497,6 +497,14 @@ int Sensors::back(bool display) {
 }
 
 void Sensors::addTimerSensors(int timeSpan_ms) {
+    //On supprime s'il existe déjà
+
+    if (this->actions().findTimer("Sensors"))
+    {
+        logger().debug() << "PT Sensors already exists! stop then restart it!" << logs::end;
+        this->actions().stopTimer("Sensors");
+    }
+
     logger().debug() << "startSensors" << logs::end;
     this->actions().addTimer(new SensorsTimer(*this, timeSpan_ms, "Sensors"));
 }

@@ -5,39 +5,51 @@
 #ifndef ASERVODRIVER_HPP_
 #define ASERVODRIVER_HPP_
 
-class AServoDriver {
+class AServoDriver
+{
 
 public:
 
-    enum ServoType {
+    enum ServoType
+    {
         SERVO_STANDARD, SERVO_DYNAMIXEL
     };
 
     /*!
      * \brief single instance creation.
      */
-    static AServoDriver * create();
+    static AServoDriver* create();
 
     /*!
      * \brief Destructor.
      */
-    virtual ~AServoDriver() {
+    virtual ~AServoDriver()
+    {
     }
 
     /*!
      * \brief Constructor.
      */
-    AServoDriver() {
+    AServoDriver()
+    {
     }
 
     //Limitation d'une valeur à un intervalle [valeurMin , valeurMax]
-    long constrain(long value, long valeurMin, long valeurMax) {
-        if (value < valeurMin) return valeurMin;
+    long constrain(long value, long valeurMin, long valeurMax)
+    {
+        if (value < valeurMin)
+            return valeurMin;
 
-        if (value > valeurMax) return valeurMax;
+        if (value > valeurMax)
+            return valeurMax;
 
         return value;
     }
+
+    /*!
+     * \brief est-ce que la carte des servo est bien connectée.
+     */
+    virtual bool is_connected() = 0;
     /*!
      * \brief Tenir la position sur un servo.
      */
@@ -69,6 +81,7 @@ public:
 
     virtual void setPolarity(int servo, bool inversed) = 0;
 
+    //DEPRECATED ?
     virtual void setType(int servo, ServoType) = 0;
 
     virtual int ping(int servo) = 0;

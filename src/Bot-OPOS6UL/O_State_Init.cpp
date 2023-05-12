@@ -78,14 +78,14 @@ O_State_Init::execute(Robot&)
 
                     robot.actions().lcd2x16().setCursor(2, 0);
                     robot.actions().lcd2x16().print("VERT ");
-                    robot.setMyColor(PMXYELLOW);
+                    robot.setMyColor(PMXGREEN);
                 }
                 if (b == BUTTON_RIGHT_KEY) {
                     logger().info() << "BUTTON_RIGHT_KEY - BLUE selected" << logs::end;
 
                     robot.actions().lcd2x16().setCursor(2, 0);
                     robot.actions().lcd2x16().print("BLUE ");
-                    robot.setMyColor(PMXVIOLET);
+                    robot.setMyColor(PMXBLUE);
                 }
             }
             else if (mode == 2) {
@@ -258,7 +258,7 @@ O_State_Init::execute(Robot&)
         robot.actions().lcd2x16().setCursor(0, 1);
         robot.actions().lcd2x16().print("WAITING TIRETT...");
         logger().info() << "PMX...WAIT TIRETTE !!!!!!!!!!!!!!!";
-        if (robot.getMyColor() == PMXYELLOW) {
+        if (robot.getMyColor() == PMXGREEN) {
             robot.actions().lcd2x16().setCursor(0, 0);
             robot.actions().lcd2x16().print("VER");
             logger().info() << "GREEN";
@@ -305,7 +305,7 @@ O_State_Init::execute(Robot&)
             exit(0);
         }
         else {
-            logger().info() << "COLOR is " << (robot.getMyColor() == PMXYELLOW ? "VERT" : "BLUE ") << logs::end;
+            logger().info() << "COLOR is " << (robot.getMyColor() == PMXGREEN ? "VERT" : "BLUE ") << logs::end;
         }
 
         robot.actions().lcd2x16().home();
@@ -349,7 +349,7 @@ void O_State_Init::setPos() {
     robot.actions().lcd2x16().print("SET POSITION...");
 
     robot.asserv().startMotionTimerAndOdo(true);
-    robot.asserv().setPositionAndColor(130, 1650+130, 0.0, (robot.getMyColor() != PMXYELLOW));
+    robot.asserv().setPositionAndColor(130, 1650+130, 0.0, (robot.getMyColor() != PMXGREEN));
     logger().info() << "O_State_Init::setPos() svgPrintPosition x="
             << robot.asserv().pos_getX_mm()
             << " y="

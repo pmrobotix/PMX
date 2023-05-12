@@ -66,7 +66,7 @@ bool L_push_3() {
     robot.svgPrintPosition();
 
     //desactivation de la zone de prise
-    if (robot.getMyColor() == PMXYELLOW) {
+    if (robot.getMyColor() == PMXGREEN) {
         robot.ia().iAbyPath().enable(robot.ia().area_3_start_yellow, 0);
     }
     else {
@@ -190,7 +190,7 @@ bool L_push_all_carres() {
     RobotPosition zone;
 
     robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
-//    if (robot.getMyColor() == PMXYELLOW) {
+//    if (robot.getMyColor() == PMXGREEN) {
 //        robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, true);
 //    }
 //    else {
@@ -209,7 +209,7 @@ bool L_push_all_carres() {
 
 
     //tabaisse du bras pour lire la resistance
-    if (robot.getMyColor() == PMXYELLOW) {
+    if (robot.getMyColor() == PMXGREEN) {
         robot.actions().arm_right_deploy(500);
     }
     else {
@@ -279,7 +279,7 @@ bool L_push_all_carres() {
 
     //on remonte le bras
     robot.logger().info() << "L_push_all_carres : on remonte le bras" << logs::end;
-    if (robot.getMyColor() == PMXYELLOW) {
+    if (robot.getMyColor() == PMXGREEN) {
         robot.actions().arm_right_init(0);
     }
     else {
@@ -289,7 +289,7 @@ bool L_push_all_carres() {
     //carre 1
     if (robot.square_pattern == 3) {
         robot.logger().info() << "L_push_all_carres PATTERN 3 - on pousse le carré 1" << logs::end;
-        if (robot.getMyColor() == PMXYELLOW) {
+        if (robot.getMyColor() == PMXGREEN) {
             robot.actions().square_push_right(500);
             robot.actions().square_middle_init(0);
         }

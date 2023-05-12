@@ -14,15 +14,18 @@ BeaconSensors::BeaconSensors(int bus, unsigned char i2c_addr) :
     i2c_aAddr_ = i2c_addr;
 }
 
-bool BeaconSensors::connect() {
-    if (connected_BeaconSensors_) return connected_BeaconSensors_;
+bool BeaconSensors::connect()
+{
+    if (connected_BeaconSensors_)
+        return connected_BeaconSensors_;
 
     //open i2c and setslave
     int err = i2c_BeaconSensors_.begin(i2c_aAddr_);
-    if (err >= 0) connected_BeaconSensors_ = true;
+    if (err >= 0)
+        connected_BeaconSensors_ = true;
     else {
         connected_BeaconSensors_ = false;
-        logger().error() << "BeaconSensors::begin() : NOT CONNECTED!" << logs::end;
+        logger().debug() << "BeaconSensors::begin() : NOT CONNECTED!" << logs::end;
     }
 
 //    while (1) {
@@ -47,15 +50,34 @@ bool BeaconSensors::connect() {
     return connected_BeaconSensors_;
 }
 
-void BeaconSensors::display(int number) {
+bool BeaconSensors::is_alive()
+{
+    unsigned char buf[1] = { 0x00 };
+    int err = readRegnBytes(DATA_BeaconSensors, buf, 1);
+    if (err < 0) {
+        logger().debug() << "is_alive() : readRegnBytes ERROR !" << logs::end;
+        return false;
+    }
+    //logger().error() << "buf: " << reinterpret_cast<void*>(buf[0]) << " " << reinterpret_cast<void*>((buf[0] & 0x80))  << logs::end;
+    //alive bit is bit 7
+    if ((buf[0] & 0x80) == 0x80)
+    {
+        return true;
+    }else
+        return false;
+}
+
+void BeaconSensors::display(int number)
+{
     uint8_t n = (uint8_t) number;
-    int err = i2c_BeaconSensors_.writeReg(0x02, &n, 1);
+    int err = i2c_BeaconSensors_.writeReg(CMD_Beacon_DISPLAY, &n, 1);
     if (err < 0) {
         logger().error() << "BeaconSensors::display() : error writereg err=" << err << logs::end;
     }
 }
 
-Registers BeaconSensors::getData() {
+Registers BeaconSensors::getData()
+{
 
     unsigned char buf[18] = { 0 };
     Registers regs;
@@ -78,27 +100,9 @@ Registers BeaconSensors::getData() {
     regs.c7_mm = buf[14] | (buf[15] << 8); //back
     regs.c8_mm = buf[16] | (buf[17] << 8); //back
 
-    logger().debug() << "data = FLAGS:"
-            << (int) regs.flags
-            << " NB:"
-            << (int) regs.nbDetectedBots
-            << " C1:"
-            << regs.c1_mm
-            << " "
-            << regs.c2_mm
-            << " "
-            << regs.c3_mm
-            << " "
-            << regs.c4_mm
-            << " "
-            << regs.c5_mm
-            << " "
-            << regs.c6_mm
-            << " "
-            << regs.c7_mm
-            << " C8:"
-            << regs.c8_mm
-            << logs::end;
+    logger().debug() << "data = FLAGS:" << (int) regs.flags << " NB:" << (int) regs.nbDetectedBots << " C1:"
+            << regs.c1_mm << " " << regs.c2_mm << " " << regs.c3_mm << " " << regs.c4_mm << " " << regs.c5_mm << " "
+            << regs.c6_mm << " " << regs.c7_mm << " C8:" << regs.c8_mm << logs::end;
 
     //cas de l'ADC 2022
     //default=>510
@@ -195,14 +199,16 @@ Registers BeaconSensors::getData() {
     regs.d3_mm = buf[4] | (buf[5] << 8);
     regs.d4_mm = buf[6] | (buf[7] << 8);
 
-    logger().debug() << " d1:" << regs.d1_mm << " " << regs.d2_mm << " " << regs.d3_mm << " " << regs.d4_mm << logs::end;
+    logger().debug() << " d1:" << regs.d1_mm << " " << regs.d2_mm << " " << regs.d3_mm << " " << regs.d4_mm
+            << logs::end;
 
     return regs;
 }
 
 //________________________________________________
 
-int BeaconSensors::ScanBus() {
+int BeaconSensors::ScanBus()
+{
     logger().debug() << "I2C Scanner starting... " << logs::end;
     int nDevices;
     unsigned char error, address, data;
@@ -212,35 +218,39 @@ int BeaconSensors::ScanBus() {
 
         if (error == 0) {
 
-            if (address < 16) logger().error() << "I2C device found at address 0x0" << (address << 1) << " !" << logs::end;
-            else logger().error() << "I2C device found at address 0x" << (address << 1) << " !" << logs::end;
+            if (address < 16)
+                logger().error() << "I2C device found at address 0x0" << (address << 1) << " !" << logs::end;
+            else
+                logger().error() << "I2C device found at address 0x" << (address << 1) << " !" << logs::end;
 
             nDevices++;
-        }
-        else if (error == 4) {
+        } else if (error == 4) {
 
-            if (address < 16) logger().error() << "Unknown error at address 0x0" << (address << 1) << " !" << logs::end;
-            else logger().error() << "Unknown error at address 0x" << (address << 1) << " !" << logs::end;
+            if (address < 16)
+                logger().error() << "Unknown error at address 0x0" << (address << 1) << " !" << logs::end;
+            else
+                logger().error() << "Unknown error at address 0x" << (address << 1) << " !" << logs::end;
 
         }
     }
     if (nDevices == 0) {
         logger().info() << "No I2C devices found!" << logs::end;
         return 0;
-    }
-    else {
+    } else {
         logger().info() << nDevices << " devices found. I2C Scanner done." << logs::end;
         return nDevices;
     }
 }
 
-int BeaconSensors::readRegnBytes(uint8_t command, uint8_t *aData, uint length_data) {
+int BeaconSensors::readRegnBytes(uint8_t command, uint8_t *aData, uint length_data)
+{
     //return (int) i2c_BeaconSensors_.readReg(command, aData, nb + 1);
     int err = i2c_BeaconSensors_.readReg(command, aData, length_data);
     return err;
 }
 
-int BeaconSensors::readAddr(uint8_t address, uint8_t * data) {
+int BeaconSensors::readAddr(uint8_t address, uint8_t *data)
+{
     //return (unsigned char) i2c_BeaconSensors_.read(&address, 0);
 
     //return i2c_BeaconSensors_.readReg(address, 0, 0);

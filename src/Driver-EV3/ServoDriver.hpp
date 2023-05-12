@@ -23,6 +23,8 @@ private:
 
     Adafruit_PWMServoDriver pwm_;
 
+    bool connected_;
+
     int servo_current_usec_[NB_SERVO_STD];
     int servo_min_[NB_SERVO_STD]; //minPulseWidth
     int servo_mid_[NB_SERVO_STD]; //midPulseWidth
@@ -42,6 +44,8 @@ public:
      */
     inline ~ServoDriver() {
     }
+
+    bool is_connected();
 
     void hold(int servo);
 

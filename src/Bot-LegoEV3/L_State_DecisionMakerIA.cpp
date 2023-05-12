@@ -247,7 +247,7 @@ void L_State_DecisionMakerIA::execute()
         std::this_thread::sleep_for(std::chrono::microseconds(50000));
     }
 
-    logger().info() << "Strategy to be applied = " << robot.strategy() << logs::end;
+    logger().debug() << "Strategy to be applied = " << robot.strategy() << logs::end;
 
     if (robot.strategy() == "tabletest") {
         IASetupActivitiesZoneTableTest();
@@ -278,6 +278,7 @@ void L_State_DecisionMakerIA::execute()
 //On ajoute le timer de detection
     robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+
     robot.actions().sensors().addTimerSensors(200);
 
     //robot.points += 4; //POINT - depose statuette + vitrine

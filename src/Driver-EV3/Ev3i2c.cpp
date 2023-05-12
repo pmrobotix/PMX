@@ -61,7 +61,7 @@ int Ev3i2c::begin(uint address) {
     int err = ioctl(i2cHandle_, I2C_SLAVE, address);
     unlock();
     if (err < 0) { //Using ioctl set the i2c device to talk to address in the "addr" variable.
-        std::cout << "Ev3i2c Can't set the I2C address for the slave device" << std::endl; //Display error setting the address for the slave.
+        //std::cout << "Ev3i2c Can't set the I2C address for the slave device" << std::endl; //Display error setting the address for the slave.
         return err * 100;
     }
 
@@ -77,7 +77,7 @@ int Ev3i2c::begin(uint address) {
 
     err = ping();
     if (err < 0) {
-        std::cout << "Ev3i2c Oh dear, something went wrong - No ping with 0x" << std::hex << address << " at " << filename_str_ << std::endl;
+        //std::cout << "Ev3i2c Oh dear, something went wrong - No ping with 0x" << std::hex << address << " at " << filename_str_ << std::endl;
         //exit(EXIT_FAILURE);
         return err;
     }

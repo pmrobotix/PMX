@@ -49,6 +49,8 @@ public:
 
     bool is_connected();
 
+    bool is_alive();
+
     int sync(); //synchronise les données avec la balise
     ASensorsDriver::bot_positions getvPositionsAdv(); //retourne les dernieres positions connues
 

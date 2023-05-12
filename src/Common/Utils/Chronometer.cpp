@@ -78,7 +78,8 @@ int utils::Chronometer::waitTimer(int delay_us, bool debug) {
         std::this_thread::sleep_for(std::chrono::microseconds(t-delay_us));
     }
     else {
-        logger().error() << "!!! OVERFLOW overTime=" << t << " ; " << timerPeriod_us_ << "!!!" << logs::end;
+        //logger().error() << "!!! OVERFLOW overTime=" << t << " ; " << timerPeriod_us_ << "!!!" << logs::end;
+        logger().error() << "!OVERFLOW" << logs::end;
     }
 
 // fin

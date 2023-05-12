@@ -19,11 +19,11 @@ void L_SensorsTest::run(int argc, char** argv) {
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-    robot.setMyColor(PMXYELLOW);
+    robot.setMyColor(PMXGREEN);
     robot.asserv().startMotionTimerAndOdo(false); //assistedHandling is enabled with "true" !
-    robot.asserv().setPositionAndColor(400.0, 200.0, -45.0, (robot.getMyColor() != PMXYELLOW)); //pour mettre une position dans la table
+    robot.asserv().setPositionAndColor(400.0, 200.0, -45.0, (robot.getMyColor() != PMXGREEN)); //pour mettre une position dans la table
     RobotPosition p = robot.asserv().pos_getPosition();
-    logger().error() << "p= " << p.x  << " " << p.y  << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
+    logger().info() << "p= " << p.x  << " " << p.y  << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
 
 
 
@@ -46,6 +46,12 @@ void L_SensorsTest::run(int argc, char** argv) {
     //detection adverse
     robot.actions().start();
     robot.actions().sensors().addTimerSensors(200);
+
+    bool alive = robot.actions().sensors().is_connected();
+    if (!alive)
+    logger().error() << "!!!!!!!! NON alive =" << alive << logs::end;
+    else
+        logger().info() << "alive =" << alive << logs::end;
 
 //    robot.actions().arm_right_init();
 //    robot.actions().arm_left_init(1000);

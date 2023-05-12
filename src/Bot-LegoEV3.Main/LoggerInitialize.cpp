@@ -18,6 +18,7 @@ void logs::LoggerFactory::initialize()
     add("console", new ConsoleAppender());
     add("svg", new SvgAppender("svgEV3.svg"));
     add("svgia", new SvgAppender("svgIA.svg"));
+    add("svgsensors", new SvgAppender("svgSensorsEV3.svg"));
     //add("memory", new MemoryAppender());
     //add("fileAsserv", new FileAppender("logAsserv.csv"));
     //add("fileRegul", new FileAppender("logRegul.csv"));
@@ -49,6 +50,7 @@ void logs::LoggerFactory::initialize()
     //SVG
     add(logs::Level::INFO, "Svg4LegoEV3Robot", "svg");
     add(logs::Level::INFO, "IAbyPath4LegoEV3Robot", "svgia");
+    add(logs::Level::INFO, "SvgSensors", "svgsensors");
 
     //File DEBUG
     //add(logs::Level::DEBUG, "logFileAsservInsa", "file");
@@ -96,8 +98,8 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "AsservDriver.EV3", "console");
     add(logs::Level::INFO, "ButtonDriver.EV3", "console");
     add(logs::Level::INFO, "BeaconSensors.EV3", "console");
-    add(logs::Level::DEBUG, "CCAx12Adc.EV3", "console");
-    add(logs::Level::DEBUG, "CCAx12Teensy.EV3", "console");
+    add(logs::Level::INFO, "CCAx12Adc.EV3", "console");
+    add(logs::Level::INFO, "CCAx12Teensy.EV3", "console");
     add(logs::Level::INFO, "LedDriver.EV3", "net");
     add(logs::Level::INFO, "LegoIRSensor.EV3", "console");
     add(logs::Level::INFO, "LegoAngleSensor.EV3", "console");

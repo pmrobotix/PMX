@@ -47,7 +47,7 @@ void L_AsservEsialTest::run(int argc, char **argv) {
     }
 
     robot.asserv().startMotionTimerAndOdo(false);
-    robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXYELLOW));
+    robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXGREEN));
 
     robot.chrono().start();
 

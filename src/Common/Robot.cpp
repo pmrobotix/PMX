@@ -78,7 +78,7 @@ void Robot::configureDefaultConsoleArgs() {
 
     cArgs_.addOption('k', "skip setup");
 
-    cArgs_.addOption('b', "color BLEU"); //(without PMXYELLOW!!)
+    cArgs_.addOption('b', "color BLEU"); //(without PMXGREEN!!)
 
     cArgs_.addArgument("type", "Type of match (t)est/(m)atch/(p)ause", "m");
     {
@@ -228,8 +228,8 @@ void Robot::begin(int argc, char** argv) {
 
 //    if (cArgs_['c']) {
 //        color = cArgs_['c']["color"];
-//        if (color == "violet" || color == "v") this->setMyColor(PMXVIOLET);
-//        else if (color == "yellow" || color == "jaune" || color == "j" || color == "y") this->setMyColor(PMXYELLOW);
+//        if (color == "violet" || color == "v") this->setMyColor(PMXBLUE);
+//        else if (color == "yellow" || color == "jaune" || color == "j" || color == "y") this->setMyColor(PMXGREEN);
 //        else {
 //            this->setMyColor(PMXNOCOLOR);
 //            logger().error() << "setMyColor(NOCOLOR)" << logs::end;
@@ -239,14 +239,14 @@ void Robot::begin(int argc, char** argv) {
 //    }
 //    else {
 //        //defaut si aucune couleur n'est specifiée
-//        this->setMyColor(PMXYELLOW);
+//        this->setMyColor(PMXGREEN);
 //    }
 
     if (cArgs_['b']) {
         logger().debug() << "b = " << (int) cArgs_['b'] << logs::end;
-        this->setMyColor(PMXVIOLET);
+        this->setMyColor(PMXBLUE);
     }
-    else this->setMyColor(PMXYELLOW);//defaut si aucune couleur n'est specifiée
+    else this->setMyColor(PMXGREEN);//defaut si aucune couleur n'est specifiée
     logger().debug() << "setMyColor done; getMyColor() = " << getMyColor() << logs::end;
 
 

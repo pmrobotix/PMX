@@ -20,7 +20,7 @@ void O_SensorsTest::run(int argc, char** argv) {
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
 
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-    robot.setMyColor(PMXYELLOW);
+    robot.setMyColor(PMXGREEN);
     //robot.asserv().startMotionTimerAndOdo(false); //assistedHandling is enabled with "true" !
     utils::Chronometer chrono("O_SensorsTest");
     chrono.start();
@@ -51,7 +51,7 @@ void O_SensorsTest::run(int argc, char** argv) {
     }
 */
     //il faut mettre une position pour le filtre table
-    //robot.asserv().setPositionAndColor(800, 200, 0,(robot.getMyColor() != PMXYELLOW));
+    //robot.asserv().setPositionAndColor(800, 200, 0,(robot.getMyColor() != PMXGREEN));
 
     robot.actions().sensors().setIgnoreAllFrontNearObstacle(false);
     robot.actions().sensors().setIgnoreAllBackNearObstacle(false);
@@ -91,7 +91,7 @@ void O_SensorsTest::run(int argc, char** argv) {
 
 
 //    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-//    robot.setMyColor(PMXVIOLET);//YELLOW
+//    robot.setMyColor(PMXBLUE);//YELLOW
 //    robot.asserv().startMotionTimerAndOdo(false); //assistedHandling is enabled with "true" !
 //    robot.asserv().setPositionAndColor(400.0, 400.0, 0.0, (robot.getMyColor() != PMXVIOLET));//YELLOW
 //    RobotPosition p = robot.asserv().pos_getPosition();

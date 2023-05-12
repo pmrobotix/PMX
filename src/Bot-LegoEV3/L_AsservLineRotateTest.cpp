@@ -115,7 +115,7 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
 
     logger().info() << "COORD avec x=" << coordx << " y=" << coordy << " a=" << coorda_deg << logs::end;
 
-    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXYELLOW));
+    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXGREEN));
 
     robot.asserv().getEncodersCounts(&right, &left);
 

@@ -26,6 +26,7 @@ SensorsDriver::SensorsDriver() :
 //    logger().debug() << "SensorsDriver()... " << logs::end;
 //    beacon_.ScanBus(); //NE FCT PAS ?
 
+    beaconSensors_.display(0);
 }
 
 SensorsDriver::~SensorsDriver() {
@@ -33,7 +34,15 @@ SensorsDriver::~SensorsDriver() {
 
 bool SensorsDriver::is_connected()
 {
-    return connected_;
+    if (connected_)
+        return is_alive();
+    else
+        return false;
+}
+
+bool SensorsDriver::is_alive()
+{
+    return beaconSensors_.is_alive();
 }
 
 ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv() {
