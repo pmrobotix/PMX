@@ -2,7 +2,7 @@
 
 #include "LedDriver.hpp"
 
-#include <bitset>
+#include <unistd.h>
 #include <sstream>
 #include <string>
 
@@ -34,6 +34,7 @@ void LedDriver::setBit(int index, LedColor color)
 {
     gpio[index] = color;
 
+    //usleep(10000);
     /*
      Changing the nth bit to x
 
@@ -60,6 +61,8 @@ void LedDriver::setBit(int index, LedColor color)
 
 void LedDriver::setBytes(uint hex, LedColor color)
 {
+    //usleep(10000);
+
     hexa = hex;
 
     for (int i = 0; i < nb_; i++) {

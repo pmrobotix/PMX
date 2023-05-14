@@ -11,7 +11,7 @@
 #include "../Common/Action/IAction.hpp"
 #include "../Common/FunctionalTest.hpp"
 #include "../Common/Utils/Chronometer.hpp"
-#include "../Common/Utils/ITimerPosixListener.hpp"
+#include "../Common/Action/ITimerPosixListener.hpp"
 #include "../Log/LoggerFactory.hpp"
 
 /*!

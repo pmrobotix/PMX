@@ -38,6 +38,16 @@ void L_ServoObjectTest::run(int argc, char **argv)
         logger().info() << "Arg action set " << args["action"] << ", action = " << action << logs::end;
     }
 
+    if (action == "GETALL") {
+
+        robot.actions().init_servos();
+
+        int fb = robot.actions().servos().getPulseWidth(SERVO_7_fUNNY_BACK);
+        int ff = robot.actions().servos().getPulseWidth(SERVO_8_fUNNY_FRONT);
+
+        logger().info() << "fb=" << fb << " ff=" << ff << logs::end;
+    }
+
     if (action == "RR") {
         robot.actions().releaseAll();
     }
@@ -64,6 +74,27 @@ void L_ServoObjectTest::run(int argc, char **argv)
     if (action == "FRI") {
         robot.actions().fork_front_right_init(1500);
     }
+
+    if (action == "FKI") {
+        logger().info() << "FKI.. " << logs::end;
+        robot.actions().start();
+        robot.actions().fork_open_init_parallele();
+
+        utils::sleep_for_micros(6000000);
+
+        //robot.actions().servo().stop(true); //TODO a stop pour les servos
+
+    }
+
+    //FUNNY
+    if (action == "FA") {
+        robot.actions().funny_action();
+    }
+    if (action == "FI") {
+        robot.actions().funny_action_init();
+    }
+
+    robot.actions().stopExtra();
 
     /*
      logger().info() << "init_servo" << logs::end;

@@ -17,7 +17,8 @@ ActionManagerTimer::ActionManagerTimer() :
     //0 = pause
 }
 
-void ActionManagerTimer::execute() {
+void ActionManagerTimer::execute()
+{
     //logger().debug() << "ActionManagerTimer is started" << logs::end;
 
     int sizeT = 0;
@@ -25,6 +26,7 @@ void ActionManagerTimer::execute() {
     int sizeA = 0;
     long tps = 0;
     long starttime = 0;
+    bool found = false;
 
     chronoTimer_.start();
 
@@ -38,30 +40,39 @@ void ActionManagerTimer::execute() {
             //on laisse le temps de faire autre chose s'il n'y a rien à faire
             logger().debug("nothing to do... wait semaphore...");
             sem_wait(&AMT);
-        }
-        else {
+        } else {
             this->yield();
             utils::Thread::sleep_for_micros(1);
         }
 
-        //on traite les timers (deprecated)
+        //on traite les timers par boucle
         //___________________________________________________________________
         mtimer_.lock();
         // On teste s'il y a un timer à executer
         sizeT = timers_.size();
 
         if (sizeT > 0 && !stopActionsAndTimers_) {
-            starttime = chronoTimer_.getElapsedTimeInMicroSec();
-            utils::PointerList<ITimerListener *>::iterator i = timers_.begin();
-            while (i != timers_.end() && !stopActionsAndTimers_) {
-                ITimerListener * timer = *i;
-                tps = starttime - timer->getLastTime();
 
-                if (tps >= (timer->timeSpan() * 1000)) {
+            starttime = chronoTimer_.getElapsedTimeInMicroSec();
+            found = false;
+            utils::PointerList<ITimerListener*>::iterator save;
+            utils::PointerList<ITimerListener*>::iterator i = timers_.begin();
+            while (i != timers_.end() && !stopActionsAndTimers_) {
+                ITimerListener *timer = *i;
+                tps = starttime - timer->getLastTime();
+                if (timer->requestToStop()) {
+                    save = i;
+                    found = true;
+                    timer->onTimerEnd(chronoTimer_);
+                    break; //on va le supprimer directement //TODO mieux gérer par une liste à supprimer
+                } else if (tps >= (timer->timeSpan() * 1000)) {
                     timer->onTimer(chronoTimer_);
                     timer->setLastTime(starttime);
                 }
                 i++;
+            }
+            if (found) {
+                timers_.erase(save); //on supprime dans la liste un à la fois, apres l'execution du onTimerEnd
             }
             utils::Thread::sleep_for_micros(1); //permet de ne pas avoir 100% du processeur
         }
@@ -71,27 +82,52 @@ void ActionManagerTimer::execute() {
         //on laisse le temps de faire autre chose si besoin
         this->yield();
 
-        //on parcours la liste de timer
-        //logger().debug() << "PTIMERS sizePT=" << ptimers_.size() << logs::end;
         mtimer_.lock();
         sizePT = ptimers_tobestarted_.size();
 
+        //on parcours la liste de timer POSIX à démarrer
         if (sizePT > 0 && !stopActionsAndTimers_) {
             while (sizePT != 0) {
-                ITimerPosixListener * ptimer = ptimers_tobestarted_.front();
+                ITimerPosixListener *ptimer = ptimers_tobestarted_.front();
                 if (ptimer == NULL) {
                     logger().error("ptimers_notrunning_ is NULL");
                 }
                 if (!ptimer->getRunning()) {
                     ptimer->startTimer();
-                }
-                else {
+                } else {
                     logger().error() << "ptimers already started, name=" << ptimer->name() << logs::end;
                 }
                 ptimers_.push_back(ptimer);
                 ptimers_tobestarted_.pop_front();
                 sizePT = ptimers_tobestarted_.size();
             }
+        }
+        mtimer_.unlock();
+
+        this->yield();
+
+        mtimer_.lock();
+        //on parcours la liste de timer POSIX à supprimer
+        sizePT = ptimers_.size();
+        if (sizePT > 0 && !stopActionsAndTimers_) {
+            starttime = chronoTimer_.getElapsedTimeInMicroSec();
+            found = false;
+            utils::PointerList<ITimerPosixListener*>::iterator save;
+            utils::PointerList<ITimerPosixListener*>::iterator i = ptimers_.begin();
+            while (i != ptimers_.end() && !stopActionsAndTimers_) {
+                ITimerPosixListener *timer = *i;
+                if (timer->requestToStop()) {
+                    save = i;
+                    found = true;
+                    timer->onTimerEnd(chronoTimer_);
+                    timer->remove(); //suppression du timer POSIX
+                    break;
+                }
+                i++;
+            }
+            if (found)
+                ptimers_.erase(save); //on supprime dans la liste un à la fois, apres l'execution du onTimerEnd
+            utils::Thread::sleep_for_micros(1); //permet de ne pas avoir 100% du processeur
         }
         mtimer_.unlock();
 
@@ -105,11 +141,10 @@ void ActionManagerTimer::execute() {
             while (sizeA != 0) {
                 //logger().debug() << "ACTIONS sizeA = " << sizeA << logs::end;
 
-                IAction * action = actions_.front();
+                IAction *action = actions_.front();
                 if (action == NULL) {
                     logger().error("action is NULL");
-                }
-                else {
+                } else {
                     actions_.pop_front();
                     maction_.unlock();
 
@@ -131,34 +166,39 @@ void ActionManagerTimer::execute() {
     stopActionsAndTimers_ = false; //on reinitialise le stop.
 }
 
-void ActionManagerTimer::stopTimer(std::string timerNameToDelete) {
+void ActionManagerTimer::stopTimer(std::string timerNameToDelete)
+{
     bool found = false;
-    utils::PointerList<ITimerListener *>::iterator save;
-    utils::PointerList<ITimerListener *>::iterator i = timers_.begin();
+    utils::PointerList<ITimerListener*>::iterator save;
+    utils::PointerList<ITimerListener*>::iterator i = timers_.begin();
     mtimer_.lock();
     while (i != timers_.end()) {
-        ITimerListener * timer = *i;
+        ITimerListener *timer = *i;
         if (timer->name() == timerNameToDelete) {
             save = i;
             found = true;
             timer->onTimerEnd(chronoTimer_);
+            timer->remove();
         }
         i++;
     }
-    if (found) timers_.erase(save);
-    else logger().debug() << "Timer [" << timerNameToDelete << "] not found or already deleted." << logs::end;
+    if (found)
+        timers_.erase(save);
+    else
+        logger().debug() << "Timer [" << timerNameToDelete << "] not found or already deleted." << logs::end;
 
     mtimer_.unlock();
 }
 
-void ActionManagerTimer::stopPTimer(std::string ptimerNameToDelete) {
+void ActionManagerTimer::stopPTimer(std::string ptimerNameToDelete)
+{
 
     bool found = false;
-    utils::PointerList<ITimerPosixListener *>::iterator save;
-    utils::PointerList<ITimerPosixListener *>::iterator i = ptimers_.begin();
+    utils::PointerList<ITimerPosixListener*>::iterator save;
+    utils::PointerList<ITimerPosixListener*>::iterator i = ptimers_.begin();
     mtimer_.lock();
     while (i != ptimers_.end()) {
-        ITimerPosixListener * ptimer = *i;
+        ITimerPosixListener *ptimer = *i;
         //logger().debug() << "PTimer [" << ptimer->name() << "] found" << logs::end;
         if (ptimer->name() == ptimerNameToDelete) {
             save = i;
@@ -168,28 +208,31 @@ void ActionManagerTimer::stopPTimer(std::string ptimerNameToDelete) {
         }
         i++;
     }
-    if (found) ptimers_.erase(save);
-    else logger().debug() << "PTimer [" << ptimerNameToDelete << "] not found or already deleted." << logs::end;
+    if (found)
+        ptimers_.erase(save); //TODO attention difference entre remove et erase ???
+    else
+        logger().debug() << "PTimer [" << ptimerNameToDelete << "] not found or already deleted." << logs::end;
 
     mtimer_.unlock();
     unblock("stopPTimer");
 
 }
 
-bool ActionManagerTimer::findPTimer(std::string timerNameToFind) {
+bool ActionManagerTimer::findPTimer(std::string timerNameToFind)
+{
 
     bool found = false;
-    utils::PointerList<ITimerPosixListener *>::iterator save;
-    utils::PointerList<ITimerPosixListener *>::iterator i = ptimers_.begin();
+    utils::PointerList<ITimerPosixListener*>::iterator save;
+    utils::PointerList<ITimerPosixListener*>::iterator i = ptimers_.begin();
     mtimer_.lock();
     while (i != ptimers_.end()) {
-        ITimerPosixListener * ptimer = *i;
+        ITimerPosixListener *ptimer = *i;
         //logger().debug() << "PTimer [" << ptimer->name() << "] found" << logs::end;
         if (ptimer->name() == timerNameToFind) {
             save = i;
             found = true;
-            ptimer->onTimerEnd(chronoTimer_);
-            ptimer->remove();
+//            ptimer->onTimerEnd(chronoTimer_);
+//            ptimer->remove();
         }
         i++;
     }
@@ -199,15 +242,15 @@ bool ActionManagerTimer::findPTimer(std::string timerNameToFind) {
     return found;
 
 }
-void ActionManagerTimer::stopAllPTimers() {
+void ActionManagerTimer::stopAllPTimers()
+{
     mtimer_.lock();
     ptimers_tobestarted_.clear();
     while (ptimers_.size() != 0) {
-        ITimerPosixListener * ptimer = ptimers_.front();
+        ITimerPosixListener *ptimer = ptimers_.front();
         if (ptimer == NULL) {
             logger().error("ptimers_ is NULL");
-        }
-        else {
+        } else {
             //appel de la fonction de fin
             ptimer->onTimerEnd(chronoTimer_);
             //suppression du timer en cours d'execution
@@ -217,13 +260,29 @@ void ActionManagerTimer::stopAllPTimers() {
         }
     }
     ptimers_.clear();
+
+    while (timers_.size() != 0) {
+        ITimerListener *timer = timers_.front();
+        if (timer == NULL) {
+            logger().error("timers_ is NULL");
+        } else {
+            //appel de la fonction de fin
+            timer->onTimerEnd(chronoTimer_);
+            //suppression du timer en cours d'execution
+            timer->remove();
+            //suppression de la liste
+            timers_.pop_front();
+        }
+    }
+    timers_.clear();
     mtimer_.unlock();
 
     unblock("stopAllPTimers");
 
 }
 
-void ActionManagerTimer::stop() {
+void ActionManagerTimer::stop()
+{
     logger().debug() << "stop all ActionManagerTimer..." << logs::end;
     this->stopActionsAndTimers_ = true;
     stopAllPTimers();
@@ -231,29 +290,32 @@ void ActionManagerTimer::stop() {
     this->waitForEnd();
 }
 
-void ActionManagerTimer::pause(bool value) {
+void ActionManagerTimer::pause(bool value)
+{
     this->pause_ = value;
     //on parcours et on mets en pause tous les timers courants
-    utils::PointerList<ITimerPosixListener *>::iterator i = ptimers_.begin();
+    utils::PointerList<ITimerPosixListener*>::iterator i = ptimers_.begin();
     mtimer_.lock();
     while (i != ptimers_.end()) {
-        ITimerPosixListener * ptimer = *i;
+        ITimerPosixListener *ptimer = *i;
         ptimer->setPause(value);
         i++;
     }
     mtimer_.unlock();
     sem_getvalue(&AMT, &val);
-    if (val == 0) sem_post(&AMT);
+    if (val == 0)
+        sem_post(&AMT);
 }
 
-void ActionManagerTimer::debugActions() {
+void ActionManagerTimer::debugActions()
+{
 
     std::ostringstream temp;
     temp << "Print current actions";
     maction_.lock();
-    utils::PointerList<IAction *>::iterator i = actions_.begin();
+    utils::PointerList<IAction*>::iterator i = actions_.begin();
     while (i != actions_.end()) {
-        IAction * action = *i;
+        IAction *action = *i;
         temp << " - " << action->info();
         i++;
     }
@@ -261,15 +323,16 @@ void ActionManagerTimer::debugActions() {
     logger().debug() << temp.str() << logs::end;
 }
 
-void ActionManagerTimer::debugPTimers() {
+void ActionManagerTimer::debugPTimers()
+{
     std::ostringstream temp;
     temp << "Print posixtimers to be started :";
     mtimer_.lock();
     if (ptimers_tobestarted_.size() != 0) {
 
-        utils::PointerList<ITimerPosixListener *>::iterator i = ptimers_tobestarted_.begin();
+        utils::PointerList<ITimerPosixListener*>::iterator i = ptimers_tobestarted_.begin();
         while (i != ptimers_tobestarted_.end()) {
-            ITimerPosixListener * ptimer = *i;
+            ITimerPosixListener *ptimer = *i;
             temp << " - " << ptimer->name();
             i++;
         }
@@ -281,9 +344,9 @@ void ActionManagerTimer::debugPTimers() {
     temp2 << "Print current posixtimers :";
     mtimer_.lock();
     if (ptimers_.size() != 0) {
-        utils::PointerList<ITimerPosixListener *>::iterator ii = ptimers_.begin();
+        utils::PointerList<ITimerPosixListener*>::iterator ii = ptimers_.begin();
         while (ii != ptimers_.end()) {
-            ITimerPosixListener * ptimer = *ii;
+            ITimerPosixListener *ptimer = *ii;
             temp2 << " - " << ptimer->name();
             ii++;
         }
@@ -293,15 +356,16 @@ void ActionManagerTimer::debugPTimers() {
 }
 
 //deprecated
-void ActionManagerTimer::debugTimers() {
+void ActionManagerTimer::debugTimers()
+{
     //().debug() << "Print Defined timers" << logs::end;
     std::ostringstream temp;
-        temp << "Print Defined timers :";
+    temp << "Print Defined timers :";
     mtimer_.lock();
     if (timers_.size() != 0) {
-        utils::PointerList<ITimerListener *>::iterator i = timers_.begin();
+        utils::PointerList<ITimerListener*>::iterator i = timers_.begin();
         while (i != timers_.end()) {
-            ITimerListener * timer = *i;
+            ITimerListener *timer = *i;
             temp << " - " << timer->name();
             i++;
         }

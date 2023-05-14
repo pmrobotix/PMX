@@ -13,9 +13,14 @@ AServoDriver * AServoDriver::create()
 }
 
 ServoDriver::ServoDriver() :
-        connected_(0)
+        connected_(true)
 {
     logger().debug() << "ServoDriver()" << logs::end;
+}
+
+bool ServoDriver::is_connected()
+{
+    return connected_;
 }
 
 void ServoDriver::setType(int servo, ServoType)

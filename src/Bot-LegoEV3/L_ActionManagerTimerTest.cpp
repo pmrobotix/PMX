@@ -32,9 +32,9 @@ void L_ActionManagerTimerTest::run(int argc, char** argv) {
     robot.actions().addAction(new TestAction(*this, "action6"));
 
     utils::sleep_for_secs(7);
-    robot.actions().stopTimer("timer1");
+    robot.actions().stopPTimer("timer1");
     robot.actions().addAction(new TestAction(*this, "action7"));
-    robot.actions().stopTimer("timer2");
+    robot.actions().stopPTimer("timer2");
 
     utils::sleep_for_secs(2);
     logger().info() << "Happy End." << logs::end;

@@ -186,12 +186,12 @@ bool ServoDriver::is_connected()
 {
     return connected_;
 }
-
+//move 1 servo
 void ServoDriver::setPulsePosWithRate(int servo, int pos_microsec, int millisec0To90) {
 
     servo = constrain(servo, 0, NB_SERVO_STD - 1);
 
-    if (millisec0To90 > 0) {
+    if (millisec0To90 >= 0) {
         setRate(servo, millisec0To90);
     }
 
@@ -199,7 +199,8 @@ void ServoDriver::setPulsePosWithRate(int servo, int pos_microsec, int millisec0
     utils::Chronometer chrono("ServoDriver::setPositionWithRate");
     int order_pos_microsec_ = constrain(pos_microsec, servo_min_[servo], servo_max_[servo]);
     int current_pos_ = servo_current_usec_[servo];
-    int rate_ms_per_1000 = servo_rate_[servo];
+    //int rate_ms_per_1000 = servo_rate_[servo];
+    int rate_ms_per_1000 = millisec0To90;
     if (rate_ms_per_1000 == 0) {
         setpwm(servo, order_pos_microsec_);
         servo_current_usec_[servo] = order_pos_microsec_;
@@ -395,8 +396,8 @@ int ServoDriver::getPulsePos(int servo) {
 
     if (servo_type_[servo] == AServoDriver::SERVO_STANDARD) {
 
-//mets a jour le pwm
-        int pwm = pwm_.getPWM(servo, true);
+//mets a jour le pwm //TODO NE FCT PAS
+        int pwm = pwm_.getPWM(servo, false); //on recup la partie OFF
         if (pwm == 0) {
             logger().error() << "getPWM servo=" << servo << " pwm=" << pwm << logs::end;
             pwm = 1500;

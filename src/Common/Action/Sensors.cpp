@@ -499,10 +499,10 @@ int Sensors::back(bool display) {
 void Sensors::addTimerSensors(int timeSpan_ms) {
     //On supprime s'il existe déjà
 
-    if (this->actions().findTimer("Sensors"))
+    if (this->actions().findPTimer("Sensors"))
     {
         logger().debug() << "PT Sensors already exists! stop then restart it!" << logs::end;
-        this->actions().stopTimer("Sensors");
+        this->actions().stopPTimer("Sensors");
     }
 
     logger().debug() << "startSensors" << logs::end;
@@ -511,7 +511,7 @@ void Sensors::addTimerSensors(int timeSpan_ms) {
 
 void Sensors::stopTimerSensors() {
     logger().debug() << "stopSensors" << logs::end;
-    this->actions().stopTimer("Sensors");
+    this->actions().stopPTimer("Sensors");
 }
 
 void SensorsTimer::onTimer(utils::Chronometer chrono) {

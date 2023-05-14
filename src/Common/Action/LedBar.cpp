@@ -19,13 +19,13 @@ LedBar::~LedBar() {
     delete leddriver_;
 }
 
-
+//TODO à ramener sut ITimerListener ou ITimerPosixListener ??
 void LedBar::stop(bool wait) {
     t_requestToStop_ = true;
     a_requestToStop_ = true;
     if (wait) {
 
-        this->waiting(wait, 10000000);
+        this->waiting(wait, 1000);//ms
 
         t_requestToStop_ = false;
         a_requestToStop_ = false;
@@ -34,6 +34,7 @@ void LedBar::stop(bool wait) {
 
 void LedBar::set(int pos, LedColor color) {
     leddriver_->setBit(pos, color);
+
     //telemetry log
     nlohmann::json j;
     j["pos"] = pos;
@@ -43,6 +44,7 @@ void LedBar::set(int pos, LedColor color) {
 
 void LedBar::flash(uint hexPosition, LedColor color) {
     leddriver_->setBytes(hexPosition, color);
+
     //telemetry log
     nlohmann::json j;
     j["hex"] = hexPosition;
@@ -245,10 +247,10 @@ LedBarTimer::LedBarTimer(LedBar & ledbar, LedBarTimerName name, uint timeSpan_us
         ledBar_(ledbar), timerAction_(name), timeus_(timeSpan_us), nb_(nb), color_(color), hex_(hexValue), hexNext_(hexValueNext)
 , tmp_nb_current_(0), tmp_pos_current_(0), tmp_pos_inc_(true)
 {
-    name_ = name;
+    name_ = std::to_string(name);
+    //init du timer
     this->init(name_, timeSpan_us);
 }
-
 
 
 void LedBarTimer::onTimer(utils::Chronometer chrono) {

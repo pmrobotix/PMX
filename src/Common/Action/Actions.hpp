@@ -56,21 +56,24 @@ public:
         actionManagerTimer_.addAction(action);
     }
 
-//    inline void addTimer(ITimerListener * timer) {
-//        actionManagerTimer_.addTimer(timer);
-//    }
+    inline void addTimer(ITimerListener * timer) {
+        actionManagerTimer_.addTimer(timer);
+    }
 
     inline void addTimer(ITimerPosixListener *timer)
     {
         actionManagerTimer_.addTimer(timer);
     }
 
-    inline void stopTimer(std::string name)
+
+
+
+    inline void stopPTimer(std::string name)
     {
         actionManagerTimer_.stopPTimer(name);
     }
 
-    inline bool findTimer(std::string name)
+    inline bool findPTimer(std::string name)
     {
         return actionManagerTimer_.findPTimer(name);
     }

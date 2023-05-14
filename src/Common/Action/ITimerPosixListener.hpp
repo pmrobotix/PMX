@@ -19,7 +19,10 @@
 #include <time.h>
 
 #include "../Utils/Chronometer.hpp"
+#include "../../Thread/Mutex.hpp"
 
+static utils::Mutex mAlarm_;
+static utils::Mutex mfct_;
 /*!
  * \brief Cette interface représente une action executée par un timer lorsqu'il
  * atteint son seuil d'execution.
@@ -57,8 +60,9 @@ public:
         return timeSpan_us_;
     }
 
-    void startTimer()
+    inline void startTimer()
     {
+        mfct_.lock();
         if (!started_) {
             // Install the Timer
             //std::cout << "Create the timer, name:" << this->name() << std::endl;
@@ -94,44 +98,56 @@ public:
             std::cout << "ERROR ITimerPosixListener timer already started, id:" << this->timerID << " name:"
                     << this->name() << std::endl;
         }
+        mfct_.unlock();
     }
 
-    bool getRunning()
+    inline bool getRunning()
     {
         return started_;
     }
 
-    bool requestToStop()
+    inline bool requestToStop()
     {
         return requestToStop_;
     }
 
-    void setPause(bool paused)
+    inline void setPause(bool paused)
     {
         paused_ = paused;
     }
 
     //deprecated
-    void remove(timer_t thistimerID)
+    inline void remove(timer_t thistimerID)
     {
-        started_ = false;
+        mfct_.lock();
+
         if (timer_delete(thistimerID) != 0) { // timer id koennte mit private probleme geben
             std::cout << "ERROR ITimerPosixListener remove - Could not delete the timerID: " << thistimerID
                     << std::endl;
-            perror("ERROR ITimerPosixListener remove - Could not delete the timer");
+
+        } else {
+            started_ = false;
+            requestToStop_ = false;
         }
-        requestToStop_ = false;
+
+        mfct_.unlock();
     }
 
-    void remove()
+    inline void remove()
     {
-        started_ = false;
+        mfct_.lock();
+
         if (timer_delete(this->timerID) != 0) { // timer id koennte mit private probleme geben
             std::cout << "ERROR ITimerPosixListener remove - Could not delete the timerID: " << this->timerID
                     << std::endl;
-            perror("ERROR ITimerPosixListener remove - Could not delete the timer");
+            //perror("ERROR ITimerPosixListener remove - Could not delete the timer");
+
+        } else {
+            started_ = false;
+            requestToStop_ = false;
         }
-        requestToStop_ = false;
+
+        mfct_.unlock();
     }
 
     /**
@@ -140,17 +156,40 @@ public:
     //static void alarmFunction(int sigNumb, siginfo_t *si, void *uc) {
     static void alarmFunction(int sigNumb, siginfo_t *si, void *uc)
     {
+
+        // lock mAlarm_
+        mAlarm_.lock();
+
         //std::cout << "get the pointer out of the siginfo structure" << std::endl;
+        mfct_.lock();
 // get the pointer out of the siginfo structure and asign it to a new pointer variable
         ITimerPosixListener *ptrTimerPosix = reinterpret_cast<ITimerPosixListener*>(si->si_value.sival_ptr);
 // call the member function
-        //std::cout << "call the member function, name:" << ptrTimerPosix->name() << " started=" << ptrTimerPosix->started_<< std::endl;
-        if (!ptrTimerPosix->paused_ && ptrTimerPosix->started_)
+        //std::cout << "alarmFunction START, name:" << ptrTimerPosix->name() << " started=" << ptrTimerPosix->started_<< std::endl;
+        if (!ptrTimerPosix->paused_ && ptrTimerPosix->started_) {
+            //std::cout << "alarmFunction 1a, name:" << ptrTimerPosix->name() << " started=" << ptrTimerPosix->started_<< std::endl;
+
             ptrTimerPosix->onTimer(ptrTimerPosix->chrono);
-        if (ptrTimerPosix->requestToStop()) {
-            ptrTimerPosix->onTimerEnd(ptrTimerPosix->chrono);
-            ptrTimerPosix->remove();
+
         }
+        mfct_.unlock();
+        //std::cout << "alarmFunction 2a, name:" << ptrTimerPosix->name() << " started=" << ptrTimerPosix->started_                << std::endl;
+        if (ptrTimerPosix->requestToStop()) {
+
+            //std::cout << "alarmFunction 1b, name:" << ptrTimerPosix->name() << " started=" << ptrTimerPosix->started_<< std::endl;
+            mfct_.lock();
+            ptrTimerPosix->onTimerEnd(ptrTimerPosix->chrono);
+            mfct_.unlock();
+
+            //std::cout << "alarmFunction 2b, name:" << ptrTimerPosix->name() << " started=" << ptrTimerPosix->started_ << std::endl;
+            ptrTimerPosix->remove(ptrTimerPosix->timerID);
+            //std::cout << "alarmFunction 3b, name:" << ptrTimerPosix->name() << " started=" << ptrTimerPosix->started_ << std::endl;
+
+        }
+        //std::cout << "alarmFunction END, name:" << ptrTimerPosix->name() << " started=" << ptrTimerPosix->started_<< std::endl;
+
+        // unlock
+        mAlarm_.unlock();
     }
 
     /*!
@@ -161,6 +200,9 @@ public:
     }
 
 protected:
+
+    //static utils::Mutex mfct_;
+    //static utils::Mutex mAlarm_;
 
     std::string name_;
     long timeSpan_us_;
@@ -184,22 +226,25 @@ protected:
 
     void init(std::string label, uint time_us)
     {
+        mfct_.lock();
+
         name_ = label;
         timeSpan_us_ = time_us;
         chrono = utils::Chronometer("ITimerListener-" + name_);
         started_ = false;
         paused_ = false;
         timerID = 0;
+        requestToStop_ = false;
 
         // One second till first occurrence
-        this->timerSpecs.it_value.tv_sec = 0;
-        this->timerSpecs.it_value.tv_nsec = 1000000; //lancement de la tache dans 1000ms
+        this->timerSpecs.it_value.tv_sec = 0;  // first execution time
+        this->timerSpecs.it_value.tv_nsec = 500000;
         // and then all 3 seconds a timer alarm
         if (timeSpan_us_ >= 1000000)
             this->timerSpecs.it_interval.tv_sec = (int) (timeSpan_us_ / 1000000.0);
         else
             this->timerSpecs.it_interval.tv_sec = 0;
-        this->timerSpecs.it_interval.tv_nsec = (timeSpan_us_ % 1000000) * 1000;
+        this->timerSpecs.it_interval.tv_nsec = (int) ((timeSpan_us_ % 1000000) * 1000.0);
 
 //        std::cout << name()
 //                << " timerSpecs it_interval.tv_sec="
@@ -228,6 +273,8 @@ protected:
 
         this->signalEvent.sigev_signo = SIGALRM;
 
+        mfct_.unlock();
+
     }
 
     /*!
@@ -243,7 +290,6 @@ protected:
         timeSpan_us_ = 0;
         name_ = "ITimerPosixListener_default";
     }
-}
-;
+};
 
 #endif

@@ -10,7 +10,6 @@
 #include "../Log/Level.hpp"
 #include "../Log/LoggerFactory.hpp"
 
-
 void logs::LoggerFactory::initialize()
 {
     setPriority(1); //set lowest priority of the Log //99 is high priority
@@ -41,6 +40,9 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "Chronometer", "console");
     add(logs::Level::INFO, "IAbyPath", "console");
     add(logs::Level::INFO, "LedBar", "net");
+    add(logs::Level::INFO, "ActionManagerTimer", "console");
+    add(logs::Level::DEBUG, "ServoObjectsSystem", "console");
+    add(logs::Level::DEBUG, "ServoObjectsTimer", "console");
 
     //STATE
     add(logs::Level::INFO, "L_State_Init", "console");
@@ -94,7 +96,6 @@ void logs::LoggerFactory::initialize()
     //add(logs::Level::INFO, "AsservDriverMemory.SIMU", "console");
 
     //DRIVERS EV3
-    add(logs::Level::INFO, "ActionManagerTimer", "console");
     add(logs::Level::INFO, "AsservDriver.EV3", "console");
     add(logs::Level::INFO, "ButtonDriver.EV3", "console");
     add(logs::Level::INFO, "BeaconSensors.EV3", "console");
@@ -111,8 +112,6 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "ServoDriver.EV3", "console");
     add(logs::Level::INFO, "ServoMotorExtend.EV3", "console");
     add(logs::Level::INFO, "SensorsDriver.EV3", "console");
-
-
 
     add(logs::Level::INFO, "Asserv", "console");
     //add(logs::Level::INFO, "AsservInsa", "console");

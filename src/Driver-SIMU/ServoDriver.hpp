@@ -36,6 +36,8 @@ public:
     {
     }
 
+    bool is_connected();
+
     void setType(int servo, ServoType);
 
     void hold(int servo);

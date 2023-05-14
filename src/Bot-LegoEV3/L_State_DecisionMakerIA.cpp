@@ -61,7 +61,8 @@ bool L_push_cake_A2()
 
     //on ferme les fork pour prendre les cakes
     robot.actions().fork_front_right_deploy(0);
-    robot.actions().fork_front_left_deploy(2000);
+    robot.actions().fork_front_left_deploy(0);
+    //sleep?
 
     robot.asserv().setLowSpeedForward(false);
 
@@ -131,7 +132,7 @@ bool L_push_cake_D5()
     robot.asserv().setLowSpeedForward(false);
 
     //on depose directement
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(2000 - 250, 3000 - 300, true, 1000000, 2, 2, false);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x + 250, zone.y + 375, true, 1000000, 2, 2, false);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error()
                 << "L_push_cake_D5 : move closed to the 2 cakes ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
@@ -222,16 +223,15 @@ void L_State_DecisionMakerIA::IASetupActivitiesZoneTableTest()
 
     robot.tabletest = true;
 
-//pour le test sur TABLETEST on desactive la zone alea
-    //robot.ia().iAbyPath().enable(robot.ia().area_alea_yellow, 0);
-    //robot.ia().iAbyPath().enable(robot.ia().area_alea_violet, 0);
 
     int decalagetabletest = 390;
 //definition des zones (en zone VERT uniquement, c'est dupliqué automatiquement)
-    robot.ia().iAbyPath().ia_createZone("zone_end", 0, 1650, 450, 450, 500, 1200, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_end", 0, 1650, 450, 450, 600, 1300, 0);
     robot.ia().iAbyPath().ia_createZone("zone_cake_A2", 0, 450, 450, 450, 500, 675, -180);
+    robot.ia().iAbyPath().ia_createZone("zone_cake_D5", 600, 600, 450, 450, 600, 700, 0);
 
     robot.ia().iAbyPath().ia_addAction("push_cake_A2", &L_push_cake_A2);
+    robot.ia().iAbyPath().ia_addAction("push_cake_D5", &L_push_cake_D5);
     robot.ia().iAbyPath().ia_addAction("end_of_match", &L_end_of_match);
 
     logger().debug() << " END IASetup TableTest !!!!!!!!!!!!!!!!!!!!!" << logs::end;
@@ -269,7 +269,7 @@ void L_State_DecisionMakerIA::execute()
 
 //wait for the start of the chrono !
     while (!robot.chrono().started()) {
-        std::this_thread::sleep_for(std::chrono::microseconds(50000));
+        std::this_thread::sleep_for(std::chrono::microseconds(5000));
         //usleep(50000);
     }
 
@@ -279,15 +279,15 @@ void L_State_DecisionMakerIA::execute()
     robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
-    robot.actions().sensors().addTimerSensors(200);
+    //robot.actions().sensors().addTimerSensors(200);
 
     //robot.points += 4; //POINT - depose statuette + vitrine
 
 //start IA
     robot.ia().iAbyPath().ia_start();
 
+//End IA
     robot.freeMotion();
-
     robot.svgPrintEndOfFile();
     logger().info() << "L_State_DecisionMakerIA svgPrintEndOfFile" << logs::end;
 }

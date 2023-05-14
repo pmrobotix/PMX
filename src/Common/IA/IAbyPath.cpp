@@ -30,28 +30,31 @@
 #include "../../Log/SvgWriter.hpp"
 #include "../Asserv/Asserv.hpp"
 
-IAbyPath::IAbyPath(Robot *robot) {
+IAbyPath::IAbyPath(Robot *robot)
+{
     ia_clear();
     robot_ = robot;
     p_ = NULL;
 }
 
-void IAbyPath::addPlayground(Playground * p) {
+void IAbyPath::addPlayground(Playground *p)
+{
     p_ = p;
 }
 
-void IAbyPath::enable(PlaygroundObjectID id, bool enable) {
+void IAbyPath::enable(PlaygroundObjectID id, bool enable)
+{
     p_->enable(id, enable);
 
     //TODO afficher une croix sur le SVG si disable
 }
 
-void IAbyPath::toSVG() {
+void IAbyPath::toSVG()
+{
     if (p_ == NULL) {
         logger().error() << "!! Playground is NULL !! " << logs::end;
-    }
-    else {
-        PathFinder * pf = p_->get_path_finder();
+    } else {
+        PathFinder *pf = p_->get_path_finder();
         std::vector<Zone*>::iterator zones_it;
         std::vector<Edge*>::iterator edges_it;
         std::vector<Node*>::iterator nodes_it;
@@ -62,23 +65,22 @@ void IAbyPath::toSVG() {
 
         svg::Document doc("ia", lay);
 
-        doc << svg::elemStart("g") << svg::attribute("transform", "translate(200,3200) scale(1,-1)") << svg::emptyElemEnd(false);
+        doc << svg::elemStart("g") << svg::attribute("transform", "translate(200,3200) scale(1,-1)")
+                << svg::emptyElemEnd(false);
 
         // Red image border.
         svg::Polygon border(svg::Fill(svg::Color::White), svg::Stroke(5, svg::Color::Red));
-        border << svg::Point(pf->field_x1, pf->field_y1)
-                << svg::Point(dimensions.width, pf->field_y1)
-                << svg::Point(dimensions.width, dimensions.height)
-                << svg::Point(pf->field_x1, dimensions.height);
+        border << svg::Point(pf->field_x1, pf->field_y1) << svg::Point(dimensions.width, pf->field_y1)
+                << svg::Point(dimensions.width, dimensions.height) << svg::Point(pf->field_x1, dimensions.height);
         doc << border;
 
         // Display all zones
         for (zones_it = pf->zones.begin(); zones_it < pf->zones.end(); zones_it++) {
-            Zone* zone = *zones_it;
+            Zone *zone = *zones_it;
             if (zone->nodes_count > 0) {
                 svg::Polygon zone_poly(svg::Fill(svg::Color::Aqua), svg::Stroke(0, svg::Color::Aqua));
                 for (i = 0; i < zone->nodes_count; i++) {
-                    Node* node = zone->nodes[i];
+                    Node *node = zone->nodes[i];
                     zone_poly << svg::Point(node->x, node->y);
                 }
                 doc << zone_poly;
@@ -87,7 +89,7 @@ void IAbyPath::toSVG() {
 
         // Display all enabled edges
         for (edges_it = pf->edges.begin(); edges_it < pf->edges.end(); edges_it++) {
-            Edge* edge = *edges_it;
+            Edge *edge = *edges_it;
             if (edge->enabled) {
                 svg::Point p1(edge->node1->x, edge->node1->y);
                 svg::Point p2(edge->node2->x, edge->node2->y);
@@ -128,7 +130,8 @@ void IAbyPath::toSVG() {
     }
 }
 
-void IAbyPath::ia_start() {
+void IAbyPath::ia_start()
+{
     ia_checkZones();
     if (_actions_count <= 0) {
         printf("%s (line %d) : Error : no actions defined\n", __FUNCTION__, __LINE__);
@@ -150,16 +153,20 @@ void IAbyPath::ia_start() {
                 }
                 z->completed = done;
                 if (!done) {
-                    if (robot_ != NULL) printf("%s state after actions : %s : (%f,%f) %f FAILED\n", __FUNCTION__, z->name,
-                            robot_->asserv()->pos_getX_mm(), robot_->asserv()->pos_getY_mm(), robot_->asserv()->pos_getThetaInDegree());
+                    if (robot_ != NULL)
+                        printf("%s state after actions : %s : (%f,%f) %f FAILED\n", __FUNCTION__, z->name,
+                                robot_->asserv()->pos_getX_mm(), robot_->asserv()->pos_getY_mm(),
+                                robot_->asserv()->pos_getThetaInDegree());
                     else {
                         logger().error() << "robot_ is NULL !" << logs::end;
                         exit(-1);
                     }
 
                 }
-                if (robot_ != NULL) printf("%s state after actions : %s : (%f,%f) %f\n", __FUNCTION__, z->name, robot_->asserv()->pos_getX_mm(),
-                        robot_->asserv()->pos_getY_mm(), robot_->asserv()->pos_getThetaInDegree());
+                if (robot_ != NULL)
+                    printf("%s state after actions : %s : (%f,%f) %f\n", __FUNCTION__, z->name,
+                            robot_->asserv()->pos_getX_mm(), robot_->asserv()->pos_getY_mm(),
+                            robot_->asserv()->pos_getThetaInDegree());
                 else {
                     logger().error() << "robot_ is NULL !" << logs::end;
                     exit(-1);
@@ -171,12 +178,14 @@ void IAbyPath::ia_start() {
     }
 }
 
-void IAbyPath::ia_clear() {
+void IAbyPath::ia_clear()
+{
     _zones_count = 0;
     //_zones_path_count = 0;
     _actions_count = 0;
 }
-void IAbyPath::ia_addAction(const char* name, RobotAction action) {
+void IAbyPath::ia_addAction(const char *name, RobotAction action)
+{
     ACTIONS *a = (ACTIONS*) calloc(1, sizeof(ACTIONS));
     strcpy(a->name, name);
     a->action = action;
@@ -184,7 +193,9 @@ void IAbyPath::ia_addAction(const char* name, RobotAction action) {
     _actions[_actions_count] = a;
     _actions_count++;
 }
-void IAbyPath::ia_createZone(const char* name, float minX, float minY, float width, float height, float startX, float startY, float startAngleDeg) {
+void IAbyPath::ia_createZone(const char *name, float minX, float minY, float width, float height, float startX,
+        float startY, float startAngleDeg)
+{
     ZONE *z = (ZONE*) calloc(1, sizeof(ZONE));
 
     z->minX = minX;
@@ -198,8 +209,7 @@ void IAbyPath::ia_createZone(const char* name, float minX, float minY, float wid
         z->startX = robot_->asserv()->getRelativeXMin(z->startX);
         z->minX = robot_->asserv()->getRelativeXMin(z->minX, z->width);
         z->startAngle = robot_->asserv()->getRelativeAngle(z->startAngle);
-    }
-    else {
+    } else {
         logger().error() << "robot_ is NULL !" << logs::end;
         exit(-1);
     }
@@ -207,33 +217,20 @@ void IAbyPath::ia_createZone(const char* name, float minX, float minY, float wid
     _zones[_zones_count] = z;
     _zones_count++;
 
-    robot_->svgw().writeZone(z->name, z->minX, z->minY, z->width, z->height, z->startX, z->startY, z->startAngle * M_PI / 180.0);
+    robot_->svgw().writeZone(z->name, z->minX, z->minY, z->width, z->height, z->startX, z->startY,
+            z->startAngle * M_PI / 180.0);
     //log
     ia_printZone(z);
 }
 
-void IAbyPath::ia_printZone(ZONE *z) {
+void IAbyPath::ia_printZone(ZONE *z)
+{
     //printf("ZONE: %s (%f,%f) w:%f h:%f start:%f,%f %f degrees\n", z->name, z->minX, z->minY, z->width, z->height, z->startX, z->startY, z->startAngle);
-    logger().debug() << "ZONE: "
-            << z->name
-            << "("
-            << z->minX
-            << ","
-            << z->minY
-            << ")"
-            << " w:"
-            << z->width
-            << " h:"
-            << z->height
-            << " start: "
-            << z->startX
-            << ","
-            << z->startY
-            << ","
-            << z->startAngle
-            << logs::end;
+    logger().debug() << "ZONE: " << z->name << "(" << z->minX << "," << z->minY << ")" << " w:" << z->width << " h:"
+            << z->height << " start: " << z->startX << "," << z->startY << "," << z->startAngle << logs::end;
 }
-void IAbyPath::ia_checkZones() {
+void IAbyPath::ia_checkZones()
+{
     if (_zones_count <= 0) {
         printf("%s (line %d) : Error : no zones defined\n", __FUNCTION__,
         __LINE__);
@@ -255,7 +252,8 @@ void IAbyPath::ia_checkZones() {
     }
 }
 
-ZONE* IAbyPath::ia_getZone(const char* zoneName) {
+ZONE* IAbyPath::ia_getZone(const char *zoneName)
+{
     int i = 0;
     for (i = 0; i < _zones_count; i++) {
         ZONE *z = _zones[i];
@@ -265,7 +263,8 @@ ZONE* IAbyPath::ia_getZone(const char* zoneName) {
     }
     return NULL;
 }
-ZONE* IAbyPath::ia_getZoneAt(float x, float y) {
+ZONE* IAbyPath::ia_getZoneAt(float x, float y)
+{
     printf("ia_getZoneAt : (%f,%f) \n", x, y);
     int i = 0;
     for (i = 0; i < _zones_count; i++) {
@@ -277,7 +276,8 @@ ZONE* IAbyPath::ia_getZoneAt(float x, float y) {
     return NULL;
 }
 
-ZONE* IAbyPath::ia_getNearestZoneFrom(float x, float y) {
+ZONE* IAbyPath::ia_getNearestZoneFrom(float x, float y)
+{
     ZONE *result = ia_getZoneAt(x, y);
     if (result != NULL) {
         printf("ia_getNearestZoneFrom is current zone : %s : (%f,%f) \n", result->name, robot_->asserv()->pos_getX_mm(),
@@ -308,9 +308,10 @@ ZONE* IAbyPath::ia_getNearestZoneFrom(float x, float y) {
 }
 
 //A renommer retrievezone
-void IAbyPath::goToZone(const char *zoneName, RobotPosition *zone_p) {
+void IAbyPath::goToZone(const char *zoneName, RobotPosition *zone_p)
+{
 
-    ZONE* z = ia_getZone(zoneName);
+    ZONE *z = ia_getZone(zoneName);
 
     printf("%s (line %d) : goToZone %s\n", __FUNCTION__, __LINE__, zoneName);
 
@@ -325,26 +326,22 @@ void IAbyPath::goToZone(const char *zoneName, RobotPosition *zone_p) {
 
 }
 
-void IAbyPath::playgroundFindPath(FoundPath * & path, Point& start, Point& end) {
+void IAbyPath::playgroundFindPath(FoundPath *&path, Point &start, Point &end)
+{
     p_->find_path(path, start, end);
 }
 
 TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection) //TODO utiliser la fonction goto xy de l'asserv
 {
     TRAJ_STATE ts = TRAJ_OK;
-    logger().debug() << "position p = x "
-            << robot_->asserv()->pos_getX_mm()
-            << " y "
-            << robot_->asserv()->pos_getY_mm()
-            << " a "
-            << robot_->asserv()->pos_getThetaInDegree()
-            << logs::end;
+    logger().debug() << "position p = x " << robot_->asserv()->pos_getX_mm() << " y " << robot_->asserv()->pos_getY_mm()
+            << " a " << robot_->asserv()->pos_getThetaInDegree() << logs::end;
 
     //mise a jour de la position de l'adversaire
     //enable(robot_->, 0);
 
     Point endPoint = { x : robot_->asserv()->getRelativeX(xMM), y : yMM };
-    FoundPath * found_path = NULL;
+    FoundPath *found_path = NULL;
 
     Point startPoint = { x : robot_->asserv()->pos_getX_mm(), y : robot_->asserv()->pos_getY_mm() };
     playgroundFindPath(found_path, startPoint, endPoint);
@@ -360,7 +357,7 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_d
         int count = 0;
         for (nodes_it = found_path->path.begin(); nodes_it < found_path->path.end(); nodes_it++) {
 
-            Node* node = *nodes_it;
+            Node *node = *nodes_it;
             ts = TRAJ_OK;
             path_polyline << node->x << "," << -node->y << " ";
 
@@ -377,8 +374,7 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_d
                     //ts = robot_->asserv()->gotoChain(robot_->asserv()->getRelativeX(node->x), node->y);
                     ts = robot_->asserv()->gotoXY(robot_->asserv()->getRelativeX(node->x), node->y);
 
-                }
-                else {
+                } else {
                     //ts = robot_->asserv()->gotoChain(robot_->asserv()->getRelativeX(node->x), node->y);
                     ts = robot_->asserv()->gotoXY(robot_->asserv()->getRelativeX(node->x), node->y);
 
@@ -398,8 +394,7 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_d
 
         robot_->svgw().pathPolyline(path_polyline.str());
 
-    }
-    else {
+    } else {
         logger().error() << "ERROR - PATH NULL !!!" << logs::end;
     }
     delete found_path;
@@ -407,7 +402,8 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_d
     return ts;
 }
 
-TRAJ_STATE IAbyPath::doMoveForwardAndFaceTo(float xMM, float yMM, float f_x, float f_y) {
+TRAJ_STATE IAbyPath::doMoveForwardAndFaceTo(float xMM, float yMM, float f_x, float f_y)
+{
     TRAJ_STATE ts = TRAJ_OK;
     ts = doMoveForwardTo(xMM, yMM);
     if (ts != TRAJ_FINISHED) {
@@ -424,7 +420,8 @@ TRAJ_STATE IAbyPath::doMoveForwardAndFaceTo(float xMM, float yMM, float f_x, flo
 }
 
 //TODO deprecated
-TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree) {
+TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
+{
     TRAJ_STATE ts = TRAJ_OK;
     ts = doMoveForwardTo(xMM, yMM);
     if (ts != TRAJ_FINISHED) {
@@ -446,11 +443,9 @@ TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaI
 //
 //}
 
-TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us, int nb_near_obstacle,
-        int nb_collision, bool byPathfinding, int reculOnObstacleMm, int reculOnCollisionMm)
+TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us,
+        int nb_near_obstacle, int nb_collision, bool byPathfinding, int reculOnObstacleMm, int reculOnCollisionMm)
 {
-//    int reculOnCollisionMm = 30;
-//    int reculOnObstacleMm = 0;
     TRAJ_STATE ts = TRAJ_OK;
     int f = 0;
     int c = 0;
@@ -459,8 +454,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
         if (byPathfinding) {
             //Avance par PathFinding
             ts = doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
-        }
-        else {
+        } else {
             //Avance avec l'asserv en direct
             ts = robot_->asserv()->doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
         }
@@ -472,7 +466,8 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
         if (ts == TRAJ_NEAR_OBSTACLE) {
             robot_->logger().info() << " ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
             f++;
-            if (f < 2) robot_->asserv()->resetEmergencyOnTraj("whileMoveForwardTo TRAJ_NEAR_OBSTACLE"); //pour autoriser le level de detection 1 puis 2
+            if (f < 2)
+                robot_->asserv()->resetEmergencyOnTraj("whileMoveForwardTo TRAJ_NEAR_OBSTACLE"); //pour autoriser le level de detection 1 puis 2
             if (reculOnObstacleMm > 0) {
                 TRAJ_STATE tr = robot_->asserv()->doLineAbs(-reculOnObstacleMm);
                 if (tr != TRAJ_OK) {
@@ -506,35 +501,29 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
             break;
 
         }
-        //temps d'attente avant de recommencer
-        utils::sleep_for_micros(wait_tempo_us);
-        robot_->resetDisplayTS();
-        logger().info() << "AGAIN GOTO+ x=" << xMM << " y=" << yMM << logs::end;
+        if (ts == TRAJ_COLLISION || ts == TRAJ_NEAR_OBSTACLE) {
+            //temps d'attente avant de recommencer
+            utils::sleep_for_micros(wait_tempo_us);
 
+            logger().info() << "WAITms=" << wait_tempo_us / 1000.0 << " AGAIN GOTO+ x=" << xMM << " y=" << yMM
+                    << logs::end;
+        }
+        robot_->resetDisplayTS();
     }
 
     robot_->displayTS(ts);
-    logger().info() << "time= "
-            << robot_->chrono().getElapsedTimeInMilliSec()
-            << "ms "
-            << " x="
-            << robot_->asserv()->pos_getX_mm()
-            << " y="
-            << robot_->asserv()->pos_getY_mm()
-            << " a="
-            << robot_->asserv()->pos_getThetaInDegree()
-            << logs::end;
+    logger().info() << "time= " << robot_->chrono().getElapsedTimeInMilliSec() << "ms " << " x="
+            << robot_->asserv()->pos_getX_mm() << " y=" << robot_->asserv()->pos_getY_mm() << " a="
+            << robot_->asserv()->pos_getThetaInDegree() << logs::end;
 
     robot_->svgPrintPosition();
 
     return ts;
 }
 
-TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us, int nb_near_obstacle,
-        int nb_collision, bool byPathfinding, int reculOnObstacleMm, int reculOnCollisionMm)
+TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us,
+        int nb_near_obstacle, int nb_collision, bool byPathfinding, int reculOnObstacleMm, int reculOnCollisionMm)
 {
-//    int reculOnCollisionMm = 30;
-//    int reculOnObstacleMm = 0;
 
     TRAJ_STATE ts = TRAJ_OK;
     int f = 0;
@@ -543,8 +532,7 @@ TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignor
     while (ts != TRAJ_FINISHED) {
         if (byPathfinding) {
             ts = doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
-        }
-        else {
+        } else {
             ts = robot_->asserv()->doMoveBackwardTo(xMM, yMM, rotate_ignored_detection);
         }
         if (ts != TRAJ_FINISHED) {
@@ -555,7 +543,8 @@ TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignor
             if (ts == TRAJ_NEAR_OBSTACLE) {
                 robot_->logger().info() << " ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
                 f++;
-                if (f < 2) robot_->asserv()->resetEmergencyOnTraj(); //pour autoriser le level de detection
+                if (f < 2)
+                    robot_->asserv()->resetEmergencyOnTraj(); //pour autoriser le level de detection
                 if (reculOnObstacleMm > 0) {
                     TRAJ_STATE tr = robot_->asserv()->doLineAbs(reculOnObstacleMm);
                     if (tr != TRAJ_OK) {
@@ -589,30 +578,30 @@ TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignor
                 break;
 
             }
-            utils::sleep_for_micros(wait_tempo_us);
+
+            if (ts == TRAJ_COLLISION || ts == TRAJ_NEAR_OBSTACLE) {
+                //temps d'attente avant de recommencer
+                utils::sleep_for_micros(wait_tempo_us);
+
+                logger().info() << "WAITms=" << wait_tempo_us / 1000.0 << " AGAIN BAKWARD+ x=" << xMM << " y=" << yMM
+                        << logs::end;
+            }
             robot_->resetDisplayTS();
-            logger().info() << "AGAIN GOTO BAKWARD x=" << xMM << " y=" << yMM << logs::end;
         }
     }
 
     robot_->displayTS(ts);
-    logger().info() << "time= "
-            << robot_->chrono().getElapsedTimeInMilliSec()
-            << "ms "
-            << " x="
-            << robot_->asserv()->pos_getX_mm()
-            << " y="
-            << robot_->asserv()->pos_getY_mm()
-            << " a="
-            << robot_->asserv()->pos_getThetaInDegree()
-            << logs::end;
+    logger().info() << "time= " << robot_->chrono().getElapsedTimeInMilliSec() << "ms " << " x="
+            << robot_->asserv()->pos_getX_mm() << " y=" << robot_->asserv()->pos_getY_mm() << " a="
+            << robot_->asserv()->pos_getThetaInDegree() << logs::end;
 
     robot_->svgPrintPosition();
 
     return ts;
 }
 
-TRAJ_STATE IAbyPath::whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tempo_us, int nb_collision) {
+TRAJ_STATE IAbyPath::whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tempo_us, int nb_collision)
+{
     robot_->svgPrintPosition(1);
     //robot_->logger().info() << " ===== whileMoveRotateTo" << logs::end;
 
@@ -652,26 +641,21 @@ TRAJ_STATE IAbyPath::whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tem
 
     }
 
-    logger().info() << "time= "
-            << robot_->chrono().getElapsedTimeInMilliSec()
-            << "ms "
-            << " x="
-            << robot_->asserv()->pos_getX_mm()
-            << " y="
-            << robot_->asserv()->pos_getY_mm()
-            << " a="
-            << robot_->asserv()->pos_getThetaInDegree()
-            << logs::end;
+    logger().info() << "time= " << robot_->chrono().getElapsedTimeInMilliSec() << "ms " << " x="
+            << robot_->asserv()->pos_getX_mm() << " y=" << robot_->asserv()->pos_getY_mm() << " a="
+            << robot_->asserv()->pos_getThetaInDegree() << logs::end;
 
     robot_->svgPrintPosition();
     return ts;
 }
 
-TRAJ_STATE IAbyPath::whileMoveForwardAndRotateTo(float xMM, float yMM, float absoluteThetaInDegree, bool rotate_ignored_detection, int wait_tempo_us,
-        int nb_near_obstacle, int nb_collision, bool byPathfinding, int reculMm)
+TRAJ_STATE IAbyPath::whileMoveForwardAndRotateTo(float xMM, float yMM, float absoluteThetaInDegree,
+        bool rotate_ignored_detection, int wait_tempo_us, int nb_near_obstacle, int nb_collision, bool byPathfinding,
+        int reculMm)
 {
     TRAJ_STATE ts = TRAJ_OK;
-    ts = whileMoveForwardTo(xMM, yMM, rotate_ignored_detection, wait_tempo_us, nb_near_obstacle, nb_collision, byPathfinding, reculMm, reculMm);
+    ts = whileMoveForwardTo(xMM, yMM, rotate_ignored_detection, wait_tempo_us, nb_near_obstacle, nb_collision,
+            byPathfinding, reculMm, reculMm);
     if (ts != TRAJ_FINISHED) {
         return ts;
     }
@@ -680,11 +664,13 @@ TRAJ_STATE IAbyPath::whileMoveForwardAndRotateTo(float xMM, float yMM, float abs
     return TRAJ_FINISHED;
 }
 
-TRAJ_STATE IAbyPath::whileMoveBackwardAndRotateTo(float xMM, float yMM, float absoluteThetaInDegree, bool rotate_ignored_detection, int wait_tempo_us,
-        int nb_near_obstacle, int nb_collision, bool byPathfinding, int reculMm)
+TRAJ_STATE IAbyPath::whileMoveBackwardAndRotateTo(float xMM, float yMM, float absoluteThetaInDegree,
+        bool rotate_ignored_detection, int wait_tempo_us, int nb_near_obstacle, int nb_collision, bool byPathfinding,
+        int reculMm)
 {
     TRAJ_STATE ts = TRAJ_OK;
-    ts = whileMoveBackwardTo(xMM, yMM, rotate_ignored_detection, wait_tempo_us, nb_near_obstacle, nb_collision, byPathfinding, reculMm, reculMm);
+    ts = whileMoveBackwardTo(xMM, yMM, rotate_ignored_detection, wait_tempo_us, nb_near_obstacle, nb_collision,
+            byPathfinding, reculMm, reculMm);
     if (ts != TRAJ_FINISHED) {
         return ts;
     }

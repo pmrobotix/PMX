@@ -34,7 +34,7 @@ protected:
 //     void onTimerEnd(utils::Chronometer chrono);
 
 private:
-
+     bool loop_finished_;
      unsigned long long last_;
 
     /*!

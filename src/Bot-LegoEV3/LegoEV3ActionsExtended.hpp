@@ -156,9 +156,10 @@ public:
          */
         funny_action_init();
         fork_front_right_init(0);
-        fork_front_left_init(1500);
+        fork_front_left_init(0);
+        sleep(1);
         arm_left_init(0);
-        arm_right_init(1500);
+        arm_right_init(0);
     }
     //keep_millisec = -1 : wait moving until position
     //keep_millisec > 0 : time ms to wait then release
@@ -169,21 +170,27 @@ public:
     {
 
         arm_left_deploy(0);
-        arm_right_deploy(1000);
-
+        arm_right_deploy(0);
+        sleep(1);
         fork_front_right_deploy(0);
         fork_front_left_deploy(0);
 
         servos().deploy(SERVO_7_fUNNY_BACK, 2015, 0);
-        servos().deploy(SERVO_8_fUNNY_FRONT, 2400, 2000);
+        servos().deploy(SERVO_8_fUNNY_FRONT, 540, 0);
 
     }
 
     void funny_action_init()
     {
         servos().deploy(SERVO_7_fUNNY_BACK, 935, 0);
-        servos().deploy(SERVO_8_fUNNY_FRONT, 1360, 1000);
+        servos().deploy(SERVO_8_fUNNY_FRONT, 1500, 0);
     }
+
+    void fork_open_init_parallele()
+    {
+        servos().move_2_servos(SERVO_3_FORK_R, 1380, 0, SERVO_13_FORK_L, 1500, 0, 4000, 0, 0);
+    }
+
     //FORK
     void fork_open()
     {

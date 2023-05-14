@@ -40,6 +40,7 @@ void O_ServoStepTest::run(int argc, char** argv) {
 
 
     //ServoObjectsSystem servoObjects = robot.actions().servos(); // Segmentation fault (core dumped) CORE DUMP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//abort();
 
     logger().info() << "N°" << this->position() << " - Executing - " << this->desc() << logs::end;
 

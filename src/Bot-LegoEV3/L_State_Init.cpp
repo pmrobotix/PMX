@@ -32,10 +32,9 @@ L_State_Init::execute(Robot&)
     bool b = robot.actions().sensors().is_connected();
     bool s = robot.actions().servos().is_connected();
 
-    if (!b || !s)
-    {
+    if (!b || !s) {
 
-        while(1){
+        while (1) {
             robot.actions().lcd().clear();
             robot.actions().lcd().display_content_string("SERVO/BEACON NOT CONNECTED", 3, 3);
             robot.actions().ledBar().set(0, LED_RED);
@@ -80,7 +79,6 @@ L_State_Init::execute(Robot&)
         robot.actions().lcd().clear();
         robot.actions().ledBar().resetAll();
         robot.actions().lcd().display_content_string("COLOR ?", 3, 3);
-
 
         //logger().info() << "CHOISIR COULEUR + IA..." << logs::end;
         b = BUTTON_NONE;
@@ -257,66 +255,39 @@ L_State_Init::execute(Robot&)
             //sleep
             std::this_thread::sleep_for(std::chrono::microseconds(1000));
 
-            //logger().info() << "ADC=" << robot.actions().sensors().getADC() << logs::end;
-
-            //on bouge le bras si le dialogue avec la balise et les servos.//TODO avec autre chose que l'ADC!!!
-            //Est ce possible de debrnacher rebrancher a ce moment là ?
-
+            //si connected and alive
             bool c = robot.actions().sensors().is_connected();
-
-            //bool alive = robot.actions().sensors().is_alive();
-
             if (c) {
                 sw++;
-                if (robot.getMyColor() == PMXGREEN) {
+//                if (robot.getMyColor() == PMXGREEN) {
                     if (sw % 2) {
-
-                        robot.actions().fork_front_right_init(0);
-                    } else {
                         robot.actions().fork_front_right_deploy_half(0);
-                    }
-                } else {
-                    if (sw % 2) {
                         robot.actions().fork_front_left_init(0);
+
                     } else {
+                        robot.actions().fork_front_right_init(0);
                         robot.actions().fork_front_left_deploy_half(0);
                     }
-                }
-
+//                } else {
+//                    if (sw % 2) {
+//                        robot.actions().fork_front_left_init(0);
+//                    } else {
+//                        robot.actions().fork_front_left_deploy_half(0);
+//                    }
+//                }
             }
-
-            /*
-             if (robot.actions().sensors().getADC() > 500 && robot.actions().sensors().getADC() < 520) {
-
-             sw++;
-             if (robot.getMyColor() == PMXGREEN) {
-             if (sw % 2) {
-
-             robot.actions().arm_right_deploy(0);
-             }
-             else {
-             robot.actions().arm_right_init(0);
-             }
-             }
-             else {
-             if (sw % 2) {
-             robot.actions().arm_left_deploy(0);
-             }
-             else {
-             robot.actions().arm_left_init(0);
-             }
-             }
-             }*/
-
         }
 
-        robot.actions().sensors().stopTimerSensors();
+        //robot.actions().sensors().stopTimerSensors();
+
+        robot.actions().fork_front_left_init(0);
+        robot.actions().fork_front_right_init(0);
 
         //tirette
         if (robot.getMyColor() == PMXGREEN)
-            robot.actions().ledBar().startTimerAlternate(100000, 100000, 0x81, 0x3C, LED_YELLOW, false);
+            robot.actions().ledBar().startTimerAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
         else
-            robot.actions().ledBar().startTimerAlternate(100000, 100000, 0x81, 0x3C, LED_RED, false);
+            robot.actions().ledBar().startTimerAlternate(100000, 100000, 0x81, 0x3C, LED_AMBER, false);
 
         robot.waitForInit(true);
 
@@ -335,10 +306,7 @@ L_State_Init::execute(Robot&)
         robot.actions().lcd().display_content_string(robot.configVRR(), 4, 2);
         robot.actions().lcd().display_content_string(robot.strategy(), 5, 2);
 
-//        logger().info() << logs::end;
-//        logger().info() << "VERIFICATION TIRETTE...(ne pas oublier de l'enlever!)" << logs::end;
-//        sleep(1);
-//        logger().error() << "AVANT TIRETTE !!!" << logs::end;
+
         bool bb = false;
         robot.actions().lcd().display_content_string("WAIT TIRETTE...", 6);
 
@@ -353,13 +321,13 @@ L_State_Init::execute(Robot&)
             //TODO ajouter le test de servo si bouton up pendant l'attente tirette
             //robot.actions().init_servos();
 
-            bb = robot.actions().buttonBar().pressed(BUTTON_DOWN_KEY);
-            if (bb) {
-                robot.actions().ledBar().stop(true);
-                robot.asserv().freeMotion();
-                robot.actions().lcd().clear();
-                goto begin;
-            }
+//            bb = robot.actions().buttonBar().pressed(BUTTON_DOWN_KEY);
+//            if (bb) {
+//                robot.actions().ledBar().stop(true);
+//                robot.asserv().freeMotion();
+//                robot.actions().lcd().clear();
+//                goto begin;
+//            }
         }
     } else {
 

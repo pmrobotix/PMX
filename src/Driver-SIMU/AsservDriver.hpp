@@ -9,7 +9,7 @@
 
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/Utils/Chronometer.hpp"
-#include "../Common/Utils/ITimerPosixListener.hpp"
+#include "../Common/Action/ITimerPosixListener.hpp"
 #include "../Log/LoggerFactory.hpp"
 
 using namespace std;

@@ -16,7 +16,8 @@ class Chronometer;
  * \brief Cette interface représente une action executée par un timer lorsqu'il
  * atteint son seuil d'execution.
  */
-class ITimerListener {
+class ITimerListener
+{
 public:
 
     /*!
@@ -32,31 +33,48 @@ public:
     /*!
      * \brief Getter sur les infos permettant d'identifier le timer.
      */
-    virtual std::string name() {
+    virtual std::string name()
+    {
         return name_;
     }
 
-    inline int timeSpan() {
+    inline int timeSpan()
+    {
         return timeSpan_ms_;
     }
 
     //last execution time
-    inline int getLastTime() {
+    inline int getLastTime()
+    {
         return lasttime_;
     }
 
-    inline void setLastTime(long l) {
+    inline void setLastTime(long l)
+    {
         lasttime_ = l;
     }
+
+    inline bool requestToStop()
+    {
+        return requestToStop_;
+    }
+
+    inline void remove()
+        {
+
+        }
+
 
     /*!
      * \brief Destructeur de la classe.
      */
-    virtual inline ~ ITimerListener() {
+    virtual inline ~ ITimerListener()
+    {
     }
 
 protected:
-    bool hasToStop_;
+
+    bool requestToStop_;
 
     long timeSpan_ms_; //for Timer tasks
 
@@ -64,15 +82,22 @@ protected:
 
     std::string name_;
 
+    void init(std::string label, uint time_us)
+    {
+        name_ = label;
+        timeSpan_ms_ = time_us / 1000.0;
+    }
+
     /*!
      * \brief Constructeur de la classe.
      */
-    ITimerListener() {
+    ITimerListener()
+    {
 
         timeSpan_ms_ = 0;
         lasttime_ = 0;
         name_ = "iTimerListener_default";
-        hasToStop_ = 0;
+        requestToStop_ = false;
     }
 };
 

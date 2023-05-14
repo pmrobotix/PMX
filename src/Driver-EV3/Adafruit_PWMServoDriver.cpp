@@ -256,7 +256,15 @@ uint8_t Adafruit_PWMServoDriver::readPrescale(void) {
  * reference:
  * https://thecavepearlproject.org/2017/11/03/configuring-i2c-sensors-with-arduino/
  */
+//uint8_t Adafruit_PWMServoDriver::getPWM(uint8_t num) {
+//  _i2c->requestFrom((int)_i2caddr, PCA9685_LED0_ON_L + 4 * num, (int)4);
+//  return _i2c->read();
+//}
+
 uint16_t Adafruit_PWMServoDriver::getPWM(uint8_t num, bool on) {
+//    printf("Adafruit_PWMServoDriver::getPWM NOT IMPLEMENTED\n");
+//    return -1;
+
 //  uint16_t _value;
 //  // on == true means we want to read ON PWM value; true = 1,
 //  // so invert to point to PCA9685_LED0_OFF_L
@@ -271,9 +279,13 @@ uint16_t Adafruit_PWMServoDriver::getPWM(uint8_t num, bool on) {
 //  return (_value);
 
     uint16_t _value;
+    double _value_d;
+    //uint8_t _value;
     // on == true means we want to read ON PWM value; true = 1,
     // so invert to point to PCA9685_LED0_OFF_L
-    uint8_t _register_addr = PCA9685_LED0_ON_L + 2 * (int) !on + 4 * num;
+    uint8_t _register_addr = PCA9685_LED0_ON_L + (2 * (int) !on) + (4 * num);
+    //uint8_t _register_addr = PCA9685_LED0_OFF_L + 4 * num;
+
 //      _i2c->beginTransmission(_i2caddr);      // set sensor target
 //      _i2c->write(_register_addr);            // set memory pointer
 //      _i2c->endTransmission();
@@ -282,14 +294,23 @@ uint16_t Adafruit_PWMServoDriver::getPWM(uint8_t num, bool on) {
 //      uint8_t _registerDataHi = _i2c->read(); // get high byte
 
     uint8_t readArray[2] = { 0, 0 };
-    int err = i2c_.readReg(_register_addr, readArray, 2);
+
+
+   int err = i2c_.readReg(_register_addr, readArray, 2);
     if (err < 0) {
         printf("Adafruit_PWMServoDriver::getPWM readReg ERROR\n");
-
+        return -1;
     }
 
     _value = (((int) readArray[1]) << 8) | readArray[0]; // combine two bytes
-    return (_value);
+
+
+    _value_d = round (_value * 4.88);
+    //printf("Adafruit_PWMServoDriver::getPWM _value=%d _value_d=%f\n", _value, _value_d);
+    return (_value_d);
+
+
+
 }
 
 /*!
@@ -319,6 +340,7 @@ void Adafruit_PWMServoDriver::setPWM(uint8_t num, uint16_t on, uint16_t off) {
         printf("\nError Adafruit_PWMServoDriver::setPWM writeReg");
         //exit(0);
     }
+
 
 //  _i2c->beginTransmission(_i2caddr);
 //  _i2c->write(PCA9685_LED0_ON_L + 4 * num);
@@ -430,7 +452,7 @@ void Adafruit_PWMServoDriver::fastWriteMicroseconds(uint8_t num, uint16_t micros
     //freq = 50Hz
 
     double pulse = (double) microseconds;
-    pulse /= 4.88;
+    pulse = round(pulse / 4.88);
     setPWM(num, 0, (uint16_t) pulse);
 }
 

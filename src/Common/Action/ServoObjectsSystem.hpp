@@ -7,10 +7,21 @@
 #include "../../Log/LoggerFactory.hpp"
 #include "../Action.Driver/AServoDriver.hpp"
 #include "../Utils/Chronometer.hpp"
-#include "../Utils/ITimerPosixListener.hpp"
+#include "ITimerPosixListener.hpp"
+#include "ITimerListener.hpp"
 #include "AActionsElement.hpp"
 
+/*!
+ * \brief Enumération des libellés des actions.
+ */
+enum ServoTimerName {
+    MOVE_1_SERVO,
+    MOVE_2_SERVOS
+};
+
+
 class ServoObjectsSystem: public AActionsElement {
+
 private:
 
     /*!
@@ -28,6 +39,8 @@ private:
      */
     std::string botId_;
 
+protected:
+
 public:
 
     /*!
@@ -40,6 +53,11 @@ public:
      */
     ~ServoObjectsSystem();
 
+    AServoDriver * servodriver()
+    {
+        return servodriver_;
+    }
+
     bool is_connected();
     /*!
      * \brief setup 1 servo with type, min, mid, max, inv values.
@@ -49,11 +67,11 @@ public:
     /*!
      * \brief move 1 servo.
      */
-    void move_1_servo(int servo1, int pos1, int torque1, int time_eta_ms, bool keep_torque);
+    void move_1_servo(int servo1, int pos1, int torque1, int time_eta_ms, bool keep_torque, int escape_torque);
     /*!
      * \brief move 2 servos.
      */
-    void move_2_servos(int servo1, int pos1, int torque1, int servo2, int pos2, int torque2, int time_eta_ms, bool keep_torque);
+    void move_2_servos(int servo1, int pos1, int torque1, int servo2, int pos2, int torque2, int time_eta_ms, int keep_torque, int escape_torque);
 
     //void deployByTimerTask(int servo, int pos, int keep_millisec = -1);
     void deploy(int servo, int pos, int keep_millisec = -1);
@@ -75,7 +93,7 @@ public:
      * \brief fonction avec vitesse reglable
      * pos : AX12 : 0 - 512 - 1023
      */
-    int setPos(int servo, int pos, int milli0to90);
+    int setPos(int servo, int pos, int milli0to90 = 0);
 
     /*!
      * \brief get the pulsewidth
@@ -87,18 +105,18 @@ public:
     std::string id() {
         return botId_;
     }
-
 };
 
 /*!
  * \brief Cette action permet de definir les timers concernant les servomotors.
  *
  */
-class ServoObjectsTimer: public ITimerPosixListener {
+class ServoObjectsTimer: public ITimerListener //public ITimerPosixListener//
+{
 private:
 
     /*!
-     * \brief Retourne le \ref Logger associé à la classe \ref LedBarTimer.
+     * \brief Retourne le \ref Logger associé à la classe \ref ServoObjectsTimer.
      */
     static const logs::Logger & logger() {
         static const logs::Logger & instance = logs::LoggerFactory::logger("ServoObjectsTimer");
@@ -110,6 +128,10 @@ private:
      */
     ServoObjectsSystem & servoObjectsSystem_;
 
+    int servo_;
+    int goal_pos_;
+    int velocity_;
+
 public:
 
     /*!
@@ -117,7 +139,7 @@ public:
      * \param sensors
      *        Reference vers l'objet associée.
      */
-    ServoObjectsTimer(ServoObjectsSystem & sOsS, std::string name, uint timeSpan_us);
+    ServoObjectsTimer(ServoObjectsSystem & sOsS, int number_servos, uint timeSpan_us, int servo1, int pos1, int velocity);
 
     /*!
      * \brief Destructeur de la classe.
