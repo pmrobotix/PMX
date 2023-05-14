@@ -80,7 +80,7 @@ void L_ServoObjectTest::run(int argc, char **argv)
         robot.actions().start();
         robot.actions().fork_open_init_parallele();
 
-        utils::sleep_for_micros(6000000);
+        //utils::sleep_for_micros(000000);
 
         //robot.actions().servo().stop(true); //TODO a stop pour les servos
 

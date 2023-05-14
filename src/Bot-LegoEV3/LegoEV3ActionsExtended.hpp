@@ -188,7 +188,8 @@ public:
 
     void fork_open_init_parallele()
     {
-        servos().move_2_servos(SERVO_3_FORK_R, 1380, 0, SERVO_13_FORK_L, 1500, 0, 4000, 0, 0);
+        fork_front_right_deploy_half(0);
+        servos().move_2_servos(true, 4000, SERVO_3_FORK_R, 1380, 0, SERVO_13_FORK_L, 1500, 0, 0, 0);
     }
 
     //FORK

@@ -10,7 +10,7 @@ ServoObjectsSystem::ServoObjectsSystem(std::string botId, Actions &actions) :
         AActionsElement(actions), botId_(botId)
 {
     servodriver_ = AServoDriver::create();
-
+    move_finished_ = false;
 }
 
 ServoObjectsSystem::~ServoObjectsSystem()
@@ -211,8 +211,8 @@ void ServoObjectsSystem::detect()
 //    }
 }
 
-ServoObjectsTimer::ServoObjectsTimer(ServoObjectsSystem & sOsS, int number_servos, uint timeSpan_us, int servo1, int pos1, int velocity) :
-        servoObjectsSystem_(sOsS), servo_(servo1), goal_pos_(pos1), velocity_(velocity)
+ServoObjectsTimer::ServoObjectsTimer(ServoObjectsSystem & sOsS, int number_servos, uint timeSpan_us, int eta_ms, int servo1, int cur_pos1, int goal_pos1, int velocity) :
+        servoObjectsSystem_(sOsS), name_(number_servos), eta_ms_(eta_ms), servo_(servo1), cur_pos_(cur_pos1), goal_pos_(goal_pos1), velocity_(velocity)
 {
     std::string name = std::to_string(number_servos);
     //init du timer POSIX associé ITimerPosixListener ou ITimerListener
@@ -233,9 +233,10 @@ void ServoObjectsSystem::move_1_servo(int servo1, int pos1, int torque1, int tim
 
 // lego pos: percentage velocity:ms0to90°
 //keep_torque_ms
-void ServoObjectsSystem::move_2_servos(int servo1, int pos1, int torque1, int servo2, int pos2, int torque2,
-        int time_eta_ms, int keep_torque_extratimems, int escape_torque)
+void ServoObjectsSystem::move_2_servos(bool waitornot, int time_eta_ms, int servo1, int pos1, int torque1, int servo2, int pos2, int torque2, int keep_torque_extratimems, int escape_torque)
 {
+    move_finished_ = false;
+
     logger().debug() << "move_2_servos create start"  << logs::end;
     hold(servo1);
     hold(servo2);
@@ -255,84 +256,66 @@ void ServoObjectsSystem::move_2_servos(int servo1, int pos1, int torque1, int se
 
 
     logger().debug() << "move_2_servos create timer"  << logs::end;
-    this->actions().addTimer(new ServoObjectsTimer(*this, 2, 6000, servo1, pos1, velocity_ms_0to90_1));
+    this->actions().addTimer(new ServoObjectsTimer(*this, 1, 10000, time_eta_ms, servo1, cur_pos1, pos1 , velocity_ms_0to90_1));
 
     //wait or not wait ?
-
-
-    /*
-    servodriver_->setPulsePos(servo1, pos1, velocity0to90_1);
-    servodriver_->setPulsePos(servo2, pos2, velocity0to90_2);
-
-    if (keep_torque_extratimems > 0) {
-        utils::sleep_for_micros(keep_torque_extratimems * 1000);
-        release (servo1);
-        release (servo2);
-    } else if (keep_torque_extratimems <= -1) {
-
-        int r1 = 1;
-        int r2 = 1;
-        while (r1 >= 1 || r2 >= 1) {
-
-            r1 = servodriver_->getMoving(servo1);
-            r2 = servodriver_->getMoving(servo2);
-
-            utils::sleep_for_micros(2000);
+    if (waitornot)
+    {
+        logger().debug() << "wait for end of servo move..."  << logs::end;
+        while (!move_finished_)
+        {
+            utils::sleep_for_micros(10000);
         }
     }
-    //todo esc_torque
-    //int torque = getTorque(servo);
-    logger().info() << "servo1=" << servo1 << " pos1= " << cur_pos1 << logs::end;
-    */
+
 }
 
 void ServoObjectsTimer::onTimer(utils::Chronometer chrono)
 {
-
-    //servoObjectsSystem_.servodriver()->setPulsePos(servo_, 1500);
-    //logger().error() << "onTimer start chrono_ms=" << chrono.getElapsedTimeInMilliSec() << logs::end;
-
-    if (chrono.getElapsedTimeInMilliSec() >= 4000)
-    {
-        requestToStop_ = true;
-
-        return;
-    }
-
-    /*
-    int diff_pos = order_pos_microsec_ - current_pos_;
-        //calcul du temps de déplacement souhaité pour diff
-    int timing_of_move_ms = rate_ms_per_1000 * std::abs(diff_pos) / 1000.0;
-
+    //logger().debug() << "onTimer start chrono_ms=" << chrono.getElapsedTimeInMilliSec() << logs::end;
+    servoObjectsSystem_.move_finished(false);
     long t = chrono.getElapsedTimeInMilliSec();
-            //std::cout << "init t= "<< t << std::endl;
-            long tf = t;
-            while (t <= timing_of_move_ms) {
-                t = chrono.getElapsedTimeInMilliSec();
-                if ((t - tf) > 10) {
-                    //calcul de la position pour t
-                    int cur_pos = t * 1000.0 / rate_ms_per_1000;
-                    //std::cout << " t= " << std::dec << t << " tf= " << std::dec << tf << " cur_pos=" << std::dec << cur_pos << std::endl;
-                    int newpos = 1500;
-                    if (diff_pos > 0) {
-                        newpos = current_pos_ + cur_pos;
-                    }
-                    else {
-                        newpos = current_pos_ - cur_pos;
-                    }
+    int new_cur_pos_index = 0 ;
+    int pos2apply = 0;
+    if (t <= eta_ms_)
+    {
+        switch (name_) {
+        case 1:
 
-                    setpwm(servo, newpos);
-                    servo_current_usec_[servo] = newpos;
-                    tf = t;
-                }
-                else std::this_thread::sleep_for(std::chrono::milliseconds(2));
+            //calcul de la position pour t qui varie de 0 à eta_ms
+            new_cur_pos_index = t * 1000.0 / velocity_;
+
+            if (cur_pos_ <= goal_pos_) {
+                pos2apply = cur_pos_ + new_cur_pos_index;
+            } else {
+                pos2apply = cur_pos_ - new_cur_pos_index;
             }
-            */
+            logger().debug() << "t_ms= " << t
+                    << " cur_pos_= " << cur_pos_
+                    << " goal_pos_= " << goal_pos_
+                    << " velocity_= " << velocity_
+                    << " new_cur_pos= " << new_cur_pos_index
+                    << " pos2apply= " << pos2apply
+                    << " eta_ms_= " << eta_ms_
+                    << logs::end;
+
+            servoObjectsSystem_.servodriver()->setPulsePos(servo_, pos2apply);
+            break;
+
+        default:
+            break;
+        }
+
+    }else
+    {
+        logger().debug() << "requestToStop_ = true; t=" << chrono.getElapsedTimeInMilliSec() << logs::end;
+        requestToStop_ = true;
+    }
 }
 
 void ServoObjectsTimer::onTimerEnd(utils::Chronometer chrono)
 {
-
+    servoObjectsSystem_.move_finished(true);
 }
 
 std::string ServoObjectsTimer::info()

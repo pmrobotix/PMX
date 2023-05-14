@@ -14,30 +14,33 @@
 /*!
  * \brief Enumération des libellés des actions.
  */
-enum ServoTimerName {
-    MOVE_1_SERVO,
-    MOVE_2_SERVOS
+enum ServoTimerName
+{
+    MOVE_1_SERVO, MOVE_2_SERVOS
 };
 
-
-class ServoObjectsSystem: public AActionsElement {
+class ServoObjectsSystem: public AActionsElement
+{
 
 private:
 
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref ServoObjectsSystem.
      */
-    static inline const logs::Logger & logger() {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("ServoObjectsSystem");
+    static inline const logs::Logger& logger()
+    {
+        static const logs::Logger &instance = logs::LoggerFactory::logger("ServoObjectsSystem");
         return instance;
     }
 
-    AServoDriver* servodriver_;
+    AServoDriver *servodriver_;
 
     /*!
      * \brief ID du robot.
      */
     std::string botId_;
+
+    bool move_finished_;
 
 protected:
 
@@ -46,14 +49,14 @@ public:
     /*!
      * \brief Constructor.
      */
-    ServoObjectsSystem(std::string botId, Actions & actions);
+    ServoObjectsSystem(std::string botId, Actions &actions);
 
     /*!
      * \brief Destructor.
      */
     ~ServoObjectsSystem();
 
-    AServoDriver * servodriver()
+    AServoDriver* servodriver()
     {
         return servodriver_;
     }
@@ -62,7 +65,8 @@ public:
     /*!
      * \brief setup 1 servo with type, min, mid, max, inv values.
      */
-    bool setup(int servo, AServoDriver::ServoType type, int valueMinPulse, int valueMidPulse, int valueMaxPulse, bool inversed = false);
+    bool setup(int servo, AServoDriver::ServoType type, int valueMinPulse, int valueMidPulse, int valueMaxPulse,
+            bool inversed = false);
 
     /*!
      * \brief move 1 servo.
@@ -71,7 +75,8 @@ public:
     /*!
      * \brief move 2 servos.
      */
-    void move_2_servos(int servo1, int pos1, int torque1, int servo2, int pos2, int torque2, int time_eta_ms, int keep_torque, int escape_torque);
+    void move_2_servos(bool waitornot, int time_eta_ms, int servo1, int pos1, int torque1, int servo2, int pos2,
+            int torque2, int keep_torque, int escape_torque);
 
     //void deployByTimerTask(int servo, int pos, int keep_millisec = -1);
     void deploy(int servo, int pos, int keep_millisec = -1);
@@ -102,8 +107,19 @@ public:
     void detectAll();
     void detect();
 
-    std::string id() {
+    std::string id()
+    {
         return botId_;
+    }
+
+    bool move_finished()
+    {
+        return move_finished_;
+    }
+
+    void move_finished(bool finished)
+    {
+        move_finished_ = finished;
     }
 };
 
@@ -118,17 +134,21 @@ private:
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref ServoObjectsTimer.
      */
-    static const logs::Logger & logger() {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("ServoObjectsTimer");
+    static const logs::Logger& logger()
+    {
+        static const logs::Logger &instance = logs::LoggerFactory::logger("ServoObjectsTimer");
         return instance;
     }
 
     /*!
      * \brief Référence vers le ledbar.
      */
-    ServoObjectsSystem & servoObjectsSystem_;
+    ServoObjectsSystem &servoObjectsSystem_;
 
+    int name_;
+    int eta_ms_;
     int servo_;
+    int cur_pos_;
     int goal_pos_;
     int velocity_;
 
@@ -139,12 +159,14 @@ public:
      * \param sensors
      *        Reference vers l'objet associée.
      */
-    ServoObjectsTimer(ServoObjectsSystem & sOsS, int number_servos, uint timeSpan_us, int servo1, int pos1, int velocity);
+    ServoObjectsTimer(ServoObjectsSystem &sOsS, int number_servos, uint timeSpan_us, int eta_ms, int servo1,
+            int cur_pos1, int goal_pos1, int velocity);
 
     /*!
      * \brief Destructeur de la classe.
      */
-    virtual inline ~ServoObjectsTimer() {
+    virtual inline ~ServoObjectsTimer()
+    {
     }
 
     /*!
