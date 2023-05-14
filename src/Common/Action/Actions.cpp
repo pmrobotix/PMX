@@ -4,23 +4,36 @@
 
 #include "../../Log/Logger.hpp"
 
-Actions::Actions() {
+Actions::Actions()
+{
 }
 
-void Actions::start() {
+void Actions::start()
+{
     actionManagerTimer_.start("ActionManagerTimer", 2); //TODO si superieur à 1, ca bloque le programme sur OPOSUL
 }
 
-void Actions::clearAll() {
+bool Actions::is_started()
+{
+    if (actionManagerTimer_.state() == utils::STARTED)
+        return true;
+    else
+        return false;
+}
+
+void Actions::clearAll()
+{
     actionManagerTimer_.clearActions();
     actionManagerTimer_.clearTimers();
 }
 
-void Actions::cancel() {
+void Actions::cancel()
+{
     actionManagerTimer_.cancel();
 }
 
-void Actions::waitAndStopManagers() {
+void Actions::waitAndStopManagers()
+{
     if (actionManagerTimer_.state() == utils::STARTED)
         //Attente de a fin de tous les timers
         actionManagerTimer_.stop();

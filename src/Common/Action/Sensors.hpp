@@ -9,6 +9,7 @@
 #include "../Utils/PointerList.hpp"
 #include "AActionsElement.hpp"
 #include "../Action/ITimerPosixListener.hpp"
+#include "../Action/ITimerListener.hpp"
 
 class ASensorsDriver;
 class Robot;
@@ -139,7 +140,7 @@ public:
  * \brief Le timer associé aux sensors
  *
  */
-class SensorsTimer: public ITimerPosixListener
+class SensorsTimer: public ITimerPosixListener //ITimerListener//
 {
 private:
 

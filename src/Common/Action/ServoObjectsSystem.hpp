@@ -11,6 +11,7 @@
 #include "ITimerListener.hpp"
 #include "AActionsElement.hpp"
 
+#define TIMER_SERVO_PERIOD_US 50000
 /*!
  * \brief Enumération des libellés des actions.
  */
@@ -23,7 +24,6 @@ class ServoObjectsSystem: public AActionsElement
 {
 
 private:
-
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref ServoObjectsSystem.
      */
@@ -41,6 +41,8 @@ private:
     std::string botId_;
 
     bool move_finished_;
+
+    //long move_starttime_ms_; //heure du start du move
 
 protected:
 
@@ -71,7 +73,7 @@ public:
     /*!
      * \brief move 1 servo.
      */
-    void move_1_servo(int servo1, int pos1, int torque1, int time_eta_ms, bool keep_torque, int escape_torque);
+    void move_1_servo(bool waitornot, int time_eta_ms, int servo1, int pos1, int torque1, int keep_torque_extratimems, int escape_torque);
     /*!
      * \brief move 2 servos.
      */
@@ -127,7 +129,7 @@ public:
  * \brief Cette action permet de definir les timers concernant les servomotors.
  *
  */
-class ServoObjectsTimer: public ITimerListener //public ITimerPosixListener//
+class ServoObjectsTimer: public ITimerPosixListener//public ITimerListener //
 {
 private:
 
@@ -147,10 +149,20 @@ private:
 
     int name_;
     int eta_ms_;
-    int servo_;
-    int cur_pos_;
-    int goal_pos_;
-    int velocity_;
+    //servo1
+    int servo1_;
+    int cur_pos1_;
+    int goal_pos1_;
+    int velocity1_;
+
+    //servo2
+    int servo2_;
+    int cur_pos2_;
+    int goal_pos2_;
+    int velocity2_;
+
+    long move_starttime_ms_; //heure du start du move
+    bool first_exe_;
 
 public:
 
@@ -161,6 +173,10 @@ public:
      */
     ServoObjectsTimer(ServoObjectsSystem &sOsS, int number_servos, uint timeSpan_us, int eta_ms, int servo1,
             int cur_pos1, int goal_pos1, int velocity);
+
+    ServoObjectsTimer(ServoObjectsSystem &sOsS, int number_servos, uint timeSpan_us, int eta_ms, int servo1,
+            int cur_pos1, int goal_pos1, int velocity1,int servo2,
+            int cur_pos2, int goal_pos2, int velocity2);
 
     /*!
      * \brief Destructeur de la classe.

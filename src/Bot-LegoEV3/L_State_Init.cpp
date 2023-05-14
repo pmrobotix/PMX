@@ -201,7 +201,7 @@ L_State_Init::execute(Robot&)
 
                 robot.actions().init_servos();
 
-                std::this_thread::sleep_for(std::chrono::microseconds(2000000));
+                std::this_thread::sleep_for(std::chrono::microseconds(1000000));
                 //usleep(2000000);
 
             }
@@ -218,7 +218,7 @@ L_State_Init::execute(Robot&)
 //                //on quitte le programme!!
 //                exit(0);
 //            }
-            std::this_thread::sleep_for(std::chrono::microseconds(50000));
+            std::this_thread::sleep_for(std::chrono::microseconds(100000));
             //usleep(100000);
         }
 
@@ -253,21 +253,21 @@ L_State_Init::execute(Robot&)
             }
 
             //sleep
-            std::this_thread::sleep_for(std::chrono::microseconds(1000));
+            std::this_thread::sleep_for(std::chrono::microseconds(100000));
 
             //si connected and alive
             bool c = robot.actions().sensors().is_connected();
             if (c) {
                 sw++;
 //                if (robot.getMyColor() == PMXGREEN) {
-                    if (sw % 2) {
-                        robot.actions().fork_front_right_deploy_half(0);
-                        robot.actions().fork_front_left_init(0);
+                if (sw % 2) {
+                    robot.actions().fork_front_right_deploy_half(0);
+                    robot.actions().fork_front_left_init(0);
 
-                    } else {
-                        robot.actions().fork_front_right_init(0);
-                        robot.actions().fork_front_left_deploy_half(0);
-                    }
+                } else {
+                    robot.actions().fork_front_right_init(0);
+                    robot.actions().fork_front_left_deploy_half(0);
+                }
 //                } else {
 //                    if (sw % 2) {
 //                        robot.actions().fork_front_left_init(0);
@@ -306,7 +306,6 @@ L_State_Init::execute(Robot&)
         robot.actions().lcd().display_content_string(robot.configVRR(), 4, 2);
         robot.actions().lcd().display_content_string(robot.strategy(), 5, 2);
 
-
         bool bb = false;
         robot.actions().lcd().display_content_string("WAIT TIRETTE...", 6);
 
@@ -328,6 +327,9 @@ L_State_Init::execute(Robot&)
 //                robot.actions().lcd().clear();
 //                goto begin;
 //            }
+
+            //sleep
+            std::this_thread::sleep_for(std::chrono::microseconds(20000));
         }
     } else {
 

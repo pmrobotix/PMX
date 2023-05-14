@@ -192,7 +192,7 @@ public:
             ptimers_tobestarted_.push_back(timer);
             mtimer_.unlock();
 
-            //give the signal
+            //give the signal to unblock the actiontimermanager
             unblock("addTimerPosix");
 
         } else {

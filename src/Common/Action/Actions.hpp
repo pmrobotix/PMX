@@ -53,25 +53,38 @@ public:
      */
     inline void addAction(IAction *action)
     {
+        if (!this->is_started()) {
+            logger().error() << "ACTIONTIMER NOT STARTED !!" << logs::end;
+        }
         actionManagerTimer_.addAction(action);
     }
 
-    inline void addTimer(ITimerListener * timer) {
+    inline void addTimer(ITimerListener *timer)
+    {
+        if (!this->is_started()) {
+            logger().error() << "ACTIONTIMER NOT STARTED !!" << logs::end;
+        }
         actionManagerTimer_.addTimer(timer);
     }
 
     inline void addTimer(ITimerPosixListener *timer)
     {
+        if (!this->is_started()) {
+            logger().error() << "ACTIONTIMER NOT STARTED !!" << logs::end;
+        }
         actionManagerTimer_.addTimer(timer);
     }
 
-
-
+    inline void stopTimer(std::string name)
+        {
+            actionManagerTimer_.stopTimer(name);
+        }
 
     inline void stopPTimer(std::string name)
     {
         actionManagerTimer_.stopPTimer(name);
     }
+
 
     inline bool findPTimer(std::string name)
     {
@@ -84,6 +97,8 @@ public:
      * Cette méthode lance le thread gérant le ActionManager.
      */
     void start();
+
+    bool is_started();
 
     /*!
      * \brief supprime toutes les actions et les timers.

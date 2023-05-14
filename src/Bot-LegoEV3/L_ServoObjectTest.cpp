@@ -53,45 +53,56 @@ void L_ServoObjectTest::run(int argc, char **argv)
     }
 
     if (action == "I") {
-        robot.actions().init_servos();
+        robot.actions().init_servos(1000);
     }
 
     if (action == "AL") {
-        robot.actions().arm_left_deploy(1500);
+        robot.actions().arm_left_deploy(1000);
     }
 
     if (action == "AR") {
-        robot.actions().arm_right_deploy(1500);
+        robot.actions().arm_right_deploy(1000);
     }
 
-    if (action == "FRH") {
-        robot.actions().fork_front_right_deploy_half(1500);
+    if (action == "FKRHALF") {
+        robot.actions().fork_front_right_deploy_half(1000);
     }
 
-    if (action == "FRF") {
-        robot.actions().fork_front_right_deploy(1500);
+
+    if (action == "FKRH") {
+        logger().info() << "FK R HIGH.. " << logs::end;
+        robot.actions().fork_front_right_deploy(1000);
     }
-    if (action == "FRI") {
-        robot.actions().fork_front_right_init(1500);
+    if (action == "FKRI") {
+        logger().info() << "FK R INIT.. " << logs::end;
+        robot.actions().fork_front_right_init(1000);
     }
 
-    if (action == "FKI") {
-        logger().info() << "FKI.. " << logs::end;
+    if (action == "FKTEST") {
+        logger().info() << "FKTEST.. " << logs::end;
         robot.actions().start();
-        robot.actions().fork_open_init_parallele();
+        robot.actions().fork_test_parallele();
 
         //utils::sleep_for_micros(000000);
 
         //robot.actions().servo().stop(true); //TODO a stop pour les servos
 
     }
+    if (action == "FKISLOW") {
+        logger().info() << "FK INIT SLOW.. " << logs::end;
+        robot.actions().fork_front_right_deploy(0);
+        robot.actions().fork_front_left_deploy(0);
+        robot.actions().start();
+        robot.actions().fork_init_slow(true);
+        sleep(1);
+    }
 
     //FUNNY
-    if (action == "FA") {
-        robot.actions().funny_action();
+    if (action == "FUNA") {
+        robot.actions().funny_action_full(1000);
     }
-    if (action == "FI") {
-        robot.actions().funny_action_init();
+    if (action == "FUNI") {
+        robot.actions().funny_action_init(1000);
     }
 
     robot.actions().stopExtra();

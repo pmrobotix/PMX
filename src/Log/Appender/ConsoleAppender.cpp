@@ -27,5 +27,6 @@ void logs::ConsoleAppender::flush() {
 }
 
 void logs::ConsoleAppender::writeMessage(const logs::Logger &logger, const logs::Level &level, const std::string &message) {
-    logs::MemoryAppender::writeMessage(logger, level, message);
+    if (!(level == logs::Level::TELEM)) //on ne prend pas en compte la telemetrie
+        logs::MemoryAppender::writeMessage(logger, level, message);
 }

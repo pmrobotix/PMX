@@ -44,7 +44,7 @@ void ActionManagerTimer::execute()
             this->yield();
             utils::Thread::sleep_for_micros(1);
         }
-
+/*
         //on traite les timers par boucle
         //___________________________________________________________________
         mtimer_.lock();
@@ -74,10 +74,11 @@ void ActionManagerTimer::execute()
             if (found) {
                 timers_.erase(save); //on supprime dans la liste un à la fois, apres l'execution du onTimerEnd
             }
-            utils::Thread::sleep_for_micros(1); //permet de ne pas avoir 100% du processeur
+            utils::Thread::sleep_for_micros(100); //permet de ne pas avoir 100% du processeur
         }
         mtimer_.unlock();
         //____________________________________________________________________
+*/
 
         //on laisse le temps de faire autre chose si besoin
         this->yield();
@@ -105,7 +106,7 @@ void ActionManagerTimer::execute()
         mtimer_.unlock();
 
         this->yield();
-
+/*
         mtimer_.lock();
         //on parcours la liste de timer POSIX à supprimer
         sizePT = ptimers_.size();
@@ -127,11 +128,11 @@ void ActionManagerTimer::execute()
             }
             if (found)
                 ptimers_.erase(save); //on supprime dans la liste un à la fois, apres l'execution du onTimerEnd
-            utils::Thread::sleep_for_micros(1); //permet de ne pas avoir 100% du processeur
+            utils::Thread::sleep_for_micros(100); //permet de ne pas avoir 100% du processeur
         }
         mtimer_.unlock();
 
-        this->yield();
+        this->yield();*/
 
         //on traite les actions
         maction_.lock();
@@ -230,7 +231,6 @@ bool ActionManagerTimer::findPTimer(std::string timerNameToFind)
         if (ptimer->name() == timerNameToFind) {
             save = i;
             found = true;
-
         }
         i++;
     }

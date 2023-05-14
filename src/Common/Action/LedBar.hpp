@@ -8,6 +8,7 @@
 #include "../../Log/LoggerFactory.hpp"
 #include "../Action.Driver/ALedDriver.hpp"
 #include "../Utils/Chronometer.hpp"
+#include "../Action/ITimerListener.hpp"
 #include "../Action/ITimerPosixListener.hpp"
 #include "AActionsElement.hpp"
 #include "IAction.hpp"
@@ -167,47 +168,6 @@ public:
         return running_;
     }
 
-//    void position(ushort value) {
-//        this->position_ = value;
-//    }
-//    ushort position() const {
-//        return position_;
-//    }
-//
-//    void color(LedColor value) {
-//        this->color_ = value;
-//    }
-//    LedColor color() const {
-//        return color_;
-//    }
-//
-//    void hexValue(uint value) {
-//        this->hex_ = value;
-//    }
-//    uint hexValue() const {
-//        return hex_;
-//    }
-//
-//    void hexValueNext(uint value) {
-//        this->hexNext_ = value;
-//    }
-//    uint hexValueNext() const {
-//        return hexNext_;
-//    }
-//
-//    void timeus(uint value) {
-//        this->timeus_ = value;
-//    }
-//    uint timeus() const {
-//        return timeus_;
-//    }
-//
-//    void nb(uint value) {
-//        this->nb_ = value;
-//    }
-//    uint nb() const {
-//        return nb_;
-//    }
 
     int nbLed() const {
         return nbLed_;
@@ -344,7 +304,8 @@ public:
  * \brief Cette action permet de definir les timers concernant la barre de leds.
  *
  */
-class LedBarTimer: public ITimerPosixListener {
+class LedBarTimer: public ITimerPosixListener //ITimerListener
+{
 private:
 
     /*!

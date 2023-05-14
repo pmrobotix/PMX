@@ -182,6 +182,9 @@ public:
             mfct_.unlock();
 
             //std::cout << "alarmFunction 2b, name:" << ptrTimerPosix->name() << " started=" << ptrTimerPosix->started_ << std::endl;
+
+
+
             ptrTimerPosix->remove(ptrTimerPosix->timerID);
             //std::cout << "alarmFunction 3b, name:" << ptrTimerPosix->name() << " started=" << ptrTimerPosix->started_ << std::endl;
 

@@ -25,12 +25,12 @@ void logs::LoggerFactory::initialize()
 
     //order=ERROR>TELEM>WARN>INFO>DEBUG
     //net =TELEMETRY+CONSOLE
-    add("net", new TelemetryAppender("OPOS6UL", "pmx-vm"));
-    add(logs::Level::ERROR, "", "net"); //TELEMETRY + CONSOLE
+    //add("net", new TelemetryAppender("OPOS6UL", "pmx-vm"));
+    add(logs::Level::ERROR, "", "console"); //net = TELEMETRY + CONSOLE
 
     //INFO
     add(logs::Level::INFO, "Robot", "console");
-    add(logs::Level::INFO, "OPOS6UL_RobotExtended", "net");
+    add(logs::Level::INFO, "OPOS6UL_RobotExtended", "console");
     add(logs::Level::INFO, "OPOS6UL_AsservExtended", "console");
     add(logs::Level::INFO, "OPOS6UL_ActionsExtended", "console");
 
@@ -41,7 +41,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "Sensors", "console");
     add(logs::Level::INFO, "ServoObjectsSystem", "console");
     add(logs::Level::INFO, "ActionManagerTimer", "console");
-    add(logs::Level::INFO, "LedBar", "net");
+    add(logs::Level::INFO, "LedBar", "console");
 
     //SVG
     add(logs::Level::INFO, "Svg4OPOS6UL_Robot", "svg");
@@ -65,7 +65,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "O_TiretteTest", "console");
     add(logs::Level::INFO, "O_Asserv_CalageTest", "console");
     add(logs::Level::INFO, "O_Asserv_SquareTest", "console");
-    add(logs::Level::INFO, "O_LedBarTest", "net");
+    add(logs::Level::INFO, "O_LedBarTest", "console");
     add(logs::Level::INFO, "O_AsservEsialTest", "console");
     add(logs::Level::INFO, "O_AsservLineRotateTest", "console");
     add(logs::Level::INFO, "O_AsservTest", "console");

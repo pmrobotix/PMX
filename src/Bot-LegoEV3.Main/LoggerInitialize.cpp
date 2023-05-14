@@ -25,7 +25,7 @@ void logs::LoggerFactory::initialize()
     //order=ERROR>TELEM>WARN>INFO>DEBUG
     //net =TELEMETRY+CONSOLE
     add("net", new TelemetryAppender("LegoEV3", "pmx-vm"));
-    add(logs::Level::ERROR, "", "net"); //TELEMETRY + CONSOLE
+    add(logs::Level::ERROR, "", "console"); //TELEMETRY + CONSOLE
 
     add(logs::Level::INFO, "Robot", "console");
     add(logs::Level::INFO, "LegoEV3RobotExtended", "console");
@@ -39,10 +39,10 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "SensorsTimer", "console");
     add(logs::Level::INFO, "Chronometer", "console");
     add(logs::Level::INFO, "IAbyPath", "console");
-    add(logs::Level::INFO, "LedBar", "net");
+    add(logs::Level::INFO, "LedBar", "console");
     add(logs::Level::INFO, "ActionManagerTimer", "console");
-    add(logs::Level::DEBUG, "ServoObjectsSystem", "console");
-    add(logs::Level::DEBUG, "ServoObjectsTimer", "console");
+    add(logs::Level::INFO, "ServoObjectsSystem", "console");
+    add(logs::Level::INFO, "ServoObjectsTimer", "console");
 
     //STATE
     add(logs::Level::INFO, "L_State_Init", "console");
@@ -85,7 +85,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "L_Asserv_CalageTest", "console");
 
     //DRIVERS SIMU
-    add(logs::Level::INFO, "LedDriver.SIMU", "net");
+    add(logs::Level::INFO, "LedDriver.SIMU", "console");
     add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
     add(logs::Level::INFO, "SoundDriver.SIMU", "console");
     add(logs::Level::INFO, "SwitchDriver.SIMU", "console");
@@ -101,7 +101,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "BeaconSensors.EV3", "console");
     add(logs::Level::INFO, "CCAx12Adc.EV3", "console");
     add(logs::Level::INFO, "CCAx12Teensy.EV3", "console");
-    add(logs::Level::INFO, "LedDriver.EV3", "net");
+    add(logs::Level::INFO, "LedDriver.EV3", "console");
     add(logs::Level::INFO, "LegoIRSensor.EV3", "console");
     add(logs::Level::INFO, "LegoAngleSensor.EV3", "console");
     add(logs::Level::INFO, "LegoMotor.EV3", "console");

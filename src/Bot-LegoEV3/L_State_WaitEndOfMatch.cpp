@@ -31,11 +31,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     uint c = 0;
     bool stop = false;
 
-    //int carre_2_2022_done = 0;
-    int carre_2022_todo = 0;
-    int nb_carre = 0;
-
-    while (robot.chrono().getElapsedTimeInSec() <= 95 || stop == true) {
+    while (robot.chrono().getElapsedTimeInSec() <= 98 || stop == true) {
 
         //ARU
         if (robot.actions().tirette().pressed()) {
@@ -60,8 +56,12 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     this->logger().debug() << "execute end100s...stop... " << robot.chrono().getElapsedTimeInSec() << logs::end;
     robot.asserv().stopMotors();
 
+    //pas de funny action si ARU
     if (!stop) {
-        robot.actions().funny_action();
+        robot.svgPrintPosition();
+        robot.asserv().doLineAbs(-50);
+        robot.svgPrintPosition();
+        robot.actions().funny_action_full();
         robot.points += 5;
     }
     robot.end90s(true); //indique que l'action est effectuée au prog princ

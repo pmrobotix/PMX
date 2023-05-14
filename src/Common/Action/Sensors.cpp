@@ -39,7 +39,6 @@ SensorsTimer::SensorsTimer(Sensors &sensors, int timeSpan_ms, std::string name) 
         sensors_(sensors)
 {
     name_ = name;
-    timeSpan_us_ = timeSpan_ms * 1000;
 
     lastdetect_front_nb_ = 0;
     lastdetect_back_nb_ = 0;
@@ -52,7 +51,7 @@ SensorsTimer::SensorsTimer(Sensors &sensors, int timeSpan_ms, std::string name) 
     nb_sensor_level2 = 0;
 
     //initialise le timer avec le nom et la periode.
-    this->init(name_, timeSpan_us_);
+    this->init(name_, timeSpan_ms * 1000);
 }
 
 void Sensors::addThresholdFront(int left, int center, int right) {
@@ -499,11 +498,11 @@ int Sensors::back(bool display) {
 void Sensors::addTimerSensors(int timeSpan_ms) {
     //On supprime s'il existe déjà
 
-    if (this->actions().findPTimer("Sensors"))
-    {
-        logger().debug() << "PT Sensors already exists! stop then restart it!" << logs::end;
-        this->actions().stopPTimer("Sensors");
-    }
+//    if (this->actions().findPTimer("Sensors"))
+//    {
+//        logger().debug() << "PT Sensors already exists! stop then restart it!" << logs::end;
+//        this->actions().stopPTimer("Sensors");
+//    }
 
     logger().debug() << "startSensors" << logs::end;
     this->actions().addTimer(new SensorsTimer(*this, timeSpan_ms, "Sensors"));
@@ -511,7 +510,8 @@ void Sensors::addTimerSensors(int timeSpan_ms) {
 
 void Sensors::stopTimerSensors() {
     logger().debug() << "stopSensors" << logs::end;
-    this->actions().stopPTimer("Sensors");
+    //this->actions().stopPTimer("Sensors");
+    this->actions().stopTimer("Sensors");
 }
 
 void SensorsTimer::onTimer(utils::Chronometer chrono) {

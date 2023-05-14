@@ -140,7 +140,7 @@ void ServoObjectsSystem::deploy(int servo, int pos, int keep_millisec)
         }
     }
     //int torque = getTorque(servo);
-    logger().info() << "servo=" << servo << " pos= " << pos << logs::end;
+    logger().debug() << "servo=" << servo << " pos= " << pos << logs::end;
 }
 
 void ServoObjectsSystem::setTorque(int servo, int torque)
@@ -211,13 +211,36 @@ void ServoObjectsSystem::detect()
 //    }
 }
 
-ServoObjectsTimer::ServoObjectsTimer(ServoObjectsSystem & sOsS, int number_servos, uint timeSpan_us, int eta_ms, int servo1, int cur_pos1, int goal_pos1, int velocity) :
-        servoObjectsSystem_(sOsS), name_(number_servos), eta_ms_(eta_ms), servo_(servo1), cur_pos_(cur_pos1), goal_pos_(goal_pos1), velocity_(velocity)
+ServoObjectsTimer::ServoObjectsTimer(ServoObjectsSystem &sOsS, int number_servos, uint timeSpan_us, int eta_ms,
+        int servo1, int cur_pos1, int goal_pos1, int velocity1) :
+        servoObjectsSystem_(sOsS), name_(number_servos), eta_ms_(eta_ms), servo1_(servo1), cur_pos1_(cur_pos1), goal_pos1_(
+                goal_pos1), velocity1_(velocity1)
 {
     std::string name = std::to_string(number_servos);
     //init du timer POSIX associé ITimerPosixListener ou ITimerListener
     this->init(name, timeSpan_us);
 
+    first_exe_ = true;
+    move_starttime_ms_ = 0;
+
+    servo2_ = 0;
+    cur_pos2_ = 0;
+    goal_pos2_ = 0;
+    velocity2_ = 0;
+}
+
+ServoObjectsTimer::ServoObjectsTimer(ServoObjectsSystem &sOsS, int number_servos, uint timeSpan_us, int eta_ms,
+        int servo1, int cur_pos1, int goal_pos1, int velocity1, int servo2, int cur_pos2, int goal_pos2, int velocity2) :
+        servoObjectsSystem_(sOsS), name_(number_servos), eta_ms_(eta_ms), servo1_(servo1), cur_pos1_(cur_pos1), goal_pos1_(
+                goal_pos1), velocity1_(velocity1), servo2_(servo2), cur_pos2_(cur_pos2), goal_pos2_(goal_pos2), velocity2_(
+                velocity2)
+{
+    std::string name = std::to_string(number_servos);
+    //init du timer POSIX associé ITimerPosixListener ou ITimerListener
+    this->init(name, timeSpan_us);
+
+    first_exe_ = true;
+    move_starttime_ms_ = 0;
 }
 
 //void ServoObjectsSystem::deployByTimerTask(int servo, int percent, int keep_millisec)
@@ -225,19 +248,48 @@ ServoObjectsTimer::ServoObjectsTimer(ServoObjectsSystem & sOsS, int number_servo
 // //add the timer to move and wait until arrive at position.
 //
 //}
-void ServoObjectsSystem::move_1_servo(int servo1, int pos1, int torque1, int time_eta_ms, bool keep_torque,
-        int escape_torque)
+void ServoObjectsSystem::move_1_servo(bool waitornot, int time_eta_ms, int servo1, int pos1, int torque1,
+        int keep_torque_extratimems, int escape_torque)
 {
+    move_finished_ = false;
 
+    logger().debug() << "move_1_servo create start" << logs::end;
+    hold(servo1);
+    //mouvement a faire en time_eta_ms
+    //conversion velocity pour 0to90° //correspond à 1000pulses_pwm environ sur un servo std
+    //           time_eta_ms            diff en pulses_pwm
+    int cur_pos1 = servodriver_->getPulsePos(servo1);
+
+    logger().debug() << "cur_pos1=" << cur_pos1 << logs::end;
+    int diff1 = std::abs(pos1 - cur_pos1);
+
+    int velocity_ms_0to90_1 = time_eta_ms * 1000.0 / diff1;
+
+    logger().debug() << "move_1_servo create timer" << logs::end;
+    this->actions().addTimer(
+            new ServoObjectsTimer(*this, 1, TIMER_SERVO_PERIOD_US, time_eta_ms, servo1, cur_pos1, pos1,
+                    velocity_ms_0to90_1));
+
+    //wait or not wait ?
+    if (waitornot) {
+        logger().debug() << "wait for end of servo move...NO ESCAPE" << logs::end;
+        while (!move_finished_) {
+            utils::sleep_for_micros(50000);
+        }
+    }
 }
 
 // lego pos: percentage velocity:ms0to90°
 //keep_torque_ms
-void ServoObjectsSystem::move_2_servos(bool waitornot, int time_eta_ms, int servo1, int pos1, int torque1, int servo2, int pos2, int torque2, int keep_torque_extratimems, int escape_torque)
+void ServoObjectsSystem::move_2_servos(bool waitornot, int time_eta_ms, int servo1, int pos1, int torque1, int servo2,
+        int pos2, int torque2, int keep_torque_extratimems, int escape_torque)
 {
+    //WARNING SI actionmanager is not started
+
+
     move_finished_ = false;
 
-    logger().debug() << "move_2_servos create start"  << logs::end;
+    logger().debug() << "move_2_servos create start" << logs::end;
     hold(servo1);
     hold(servo2);
     //mouvement a faire en time_eta_ms
@@ -246,75 +298,97 @@ void ServoObjectsSystem::move_2_servos(bool waitornot, int time_eta_ms, int serv
     int cur_pos1 = servodriver_->getPulsePos(servo1);
     int cur_pos2 = servodriver_->getPulsePos(servo2);
 
-    logger().debug() << "cur_pos1=" << cur_pos1 << " cur_pos2=" << cur_pos2  << logs::end;
+    logger().debug() << "cur_pos1=" << cur_pos1 << " cur_pos2=" << cur_pos2 << logs::end;
     int diff1 = std::abs(pos1 - cur_pos1);
     int diff2 = std::abs(pos2 - cur_pos2);
     int velocity_ms_0to90_1 = time_eta_ms * 1000.0 / diff1;
     int velocity_ms_0to90_2 = time_eta_ms * 1000.0 / diff2;
 
-    logger().debug() << "velocity_ms_0to90_1=" << velocity_ms_0to90_1 << " velocity_ms_0to90_2=" << velocity_ms_0to90_2  << logs::end;
+    logger().debug() << "velocity_ms_0to90_1=" << velocity_ms_0to90_1 << " velocity_ms_0to90_2=" << velocity_ms_0to90_2
+            << logs::end;
 
-
-    logger().debug() << "move_2_servos create timer"  << logs::end;
-    this->actions().addTimer(new ServoObjectsTimer(*this, 1, 10000, time_eta_ms, servo1, cur_pos1, pos1 , velocity_ms_0to90_1));
+    logger().debug() << "move_2_servos create timer" << logs::end;
+    this->actions().addTimer(
+            new ServoObjectsTimer(*this, 2, TIMER_SERVO_PERIOD_US, time_eta_ms, servo1, cur_pos1, pos1,
+                    velocity_ms_0to90_1, servo2, cur_pos2, pos2, velocity_ms_0to90_2));
 
     //wait or not wait ?
-    if (waitornot)
-    {
-        logger().debug() << "wait for end of servo move..."  << logs::end;
-        while (!move_finished_)
-        {
-            utils::sleep_for_micros(10000);
+    if (waitornot) {
+        logger().debug() << "wait for end of servo move...NO ESCAPE" << logs::end;
+        while (!move_finished_) {
+            utils::sleep_for_micros(50000);
         }
     }
-
 }
 
 void ServoObjectsTimer::onTimer(utils::Chronometer chrono)
 {
     //logger().debug() << "onTimer start chrono_ms=" << chrono.getElapsedTimeInMilliSec() << logs::end;
+    if (first_exe_) {
+        move_starttime_ms_ = chrono.getElapsedTimeInMilliSec(); //depuis le début du programme
+        first_exe_ = false;
+    }
+    long tms = chrono.getElapsedTimeInMilliSec() - move_starttime_ms_;
     servoObjectsSystem_.move_finished(false);
-    long t = chrono.getElapsedTimeInMilliSec();
-    int new_cur_pos_index = 0 ;
-    int pos2apply = 0;
-    if (t <= eta_ms_)
-    {
-        switch (name_) {
-        case 1:
 
+    int new_cur_pos_index1 = 0;
+    int pos2apply1 = 0;
+
+    int new_cur_pos_index2 = 0;
+    int pos2apply2 = 0;
+
+    if (name_ >= 1) {
+        if (tms < eta_ms_) {
             //calcul de la position pour t qui varie de 0 à eta_ms
-            new_cur_pos_index = t * 1000.0 / velocity_;
-
-            if (cur_pos_ <= goal_pos_) {
-                pos2apply = cur_pos_ + new_cur_pos_index;
+            new_cur_pos_index1 = tms * 1000.0 / velocity1_;
+            if (cur_pos1_ <= goal_pos1_) {
+                pos2apply1 = cur_pos1_ + new_cur_pos_index1;
             } else {
-                pos2apply = cur_pos_ - new_cur_pos_index;
+                pos2apply1 = cur_pos1_ - new_cur_pos_index1;
             }
-            logger().debug() << "t_ms= " << t
-                    << " cur_pos_= " << cur_pos_
-                    << " goal_pos_= " << goal_pos_
-                    << " velocity_= " << velocity_
-                    << " new_cur_pos= " << new_cur_pos_index
-                    << " pos2apply= " << pos2apply
-                    << " eta_ms_= " << eta_ms_
-                    << logs::end;
-
-            servoObjectsSystem_.servodriver()->setPulsePos(servo_, pos2apply);
-            break;
-
-        default:
-            break;
+        } else {
+            pos2apply1 = goal_pos1_;
         }
 
-    }else
-    {
+        logger().debug() << "t_ms= " << tms << " cur_pos_= " << cur_pos1_ << " goal_pos_= " << goal_pos1_
+                << " velocity_= " << velocity1_ << " new_cur_pos= " << new_cur_pos_index1 << " pos2apply= "
+                << pos2apply1 << " eta_ms_= " << eta_ms_ << logs::end;
+
+        servoObjectsSystem_.servodriver()->setPulsePos(servo1_, pos2apply1, 0);
+    }
+
+    if (name_ >= 2) {
+
+        if (tms < eta_ms_) {
+            //calcul de la position pour t qui varie de 0 à eta_ms
+            new_cur_pos_index2 = tms * 1000.0 / velocity2_;
+            if (cur_pos2_ <= goal_pos2_) {
+                pos2apply2 = cur_pos2_ + new_cur_pos_index2;
+            } else {
+                pos2apply2 = cur_pos2_ - new_cur_pos_index2;
+            }
+        } else {
+            pos2apply2 = goal_pos2_;
+        }
+
+        logger().debug() << "t_ms= " << tms << " cur_pos_= " << cur_pos2_ << " goal_pos_= " << goal_pos2_
+                << " velocity2_= " << velocity2_ << " new_cur_pos2= " << new_cur_pos_index2 << " pos2apply2= "
+                << pos2apply2 << " eta_ms_= " << eta_ms_ << logs::end;
+
+        servoObjectsSystem_.servodriver()->setPulsePos(servo2_, pos2apply2, 0);
+
+    }
+    if (tms >= eta_ms_) {
+
         logger().debug() << "requestToStop_ = true; t=" << chrono.getElapsedTimeInMilliSec() << logs::end;
         requestToStop_ = true;
+        first_exe_ = true;
     }
 }
 
 void ServoObjectsTimer::onTimerEnd(utils::Chronometer chrono)
 {
+    logger().debug() << "onTimerEnd move_finished t=" << chrono.getElapsedTimeInMilliSec() << logs::end;
     servoObjectsSystem_.move_finished(true);
 }
 

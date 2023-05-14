@@ -60,9 +60,10 @@ bool L_push_cake_A2()
     robot.svgPrintPosition();
 
     //on ferme les fork pour prendre les cakes
-    robot.actions().fork_front_right_deploy(0);
-    robot.actions().fork_front_left_deploy(0);
-    //sleep?
+    //robot.actions().fork_front_right_deploy(0);
+    //robot.actions().fork_front_left_deploy(0);
+    robot.actions().fork_open_take_slow(true);
+
 
     robot.asserv().setLowSpeedForward(false);
 
@@ -78,14 +79,16 @@ bool L_push_cake_A2()
     robot.svgPrintPosition();
 
     //on retire les fork doucement
-    robot.actions().fork_front_right_init_slow(0);
-    robot.actions().fork_front_left_init_slow(2000);
+    //robot.actions().fork_front_right_init_slow(0);
+    //robot.actions().fork_front_left_init_slow(2000);
+    robot.actions().fork_init_slow(true);
 
     //on recule
     robot.asserv().doLineAbs(-100);
     robot.points += 12;
     //on ferme les pinces
-    robot.actions().init_servos();
+    //robot.actions().init_servos();
+    robot.actions().ranger_pinces();
 
     robot.svgPrintPosition();
     return true; //return true si ok sinon false si interruption
@@ -126,8 +129,9 @@ bool L_push_cake_D5()
     robot.svgPrintPosition();
 
     //on ferme les fork pour prendre les cakes
-    robot.actions().fork_front_right_deploy(0);
-    robot.actions().fork_front_left_deploy(2000);
+    //robot.actions().fork_front_right_deploy(0);
+    //robot.actions().fork_front_left_deploy(0);
+    robot.actions().fork_open_take_slow(true);
 
     robot.asserv().setLowSpeedForward(false);
 
@@ -149,8 +153,9 @@ bool L_push_cake_D5()
     robot.svgPrintPosition();
 
     //on retire les fork doucement
-    robot.actions().fork_front_right_init_slow(0);
-    robot.actions().fork_front_left_init_slow(2000);
+//    robot.actions().fork_front_right_init_slow(0);
+//    robot.actions().fork_front_left_init_slow(2000);
+    robot.actions().fork_init_slow(true);
 
     //on recule
     robot.asserv().doLineAbs(-150);

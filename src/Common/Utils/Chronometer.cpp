@@ -79,7 +79,7 @@ int utils::Chronometer::waitTimer(int delay_us, bool debug) {
     }
     else {
         //logger().error() << "!!! OVERFLOW overTime=" << t << " ; " << timerPeriod_us_ << "!!!" << logs::end;
-        logger().error() << "!OVERFLOW" << logs::end;
+        logger().error() << "OVERFLOW " << name_ << " "<< (t-delay_us) / 1000<< logs::end;
     }
 
 // fin
