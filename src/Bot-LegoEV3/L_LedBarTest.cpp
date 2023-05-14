@@ -51,17 +51,17 @@ void L_LedBarTest::run(int argc, char** argv)
     robot.actions().ledBar().startSet(0, LED_ORANGE);
 
     logger().info() << "startTimerAlternate..." << logs::end;
-    robot.actions().ledBar().startTimerAlternate(10, 2000, 0x03, 0x01, LED_GREEN, true);
+    robot.actions().ledBar().startTimerAlternate(10, 20000, 0x03, 0x01, LED_GREEN, true);
 
     logger().info() << "startTimerK2mil 1..." << logs::end;
-    robot.actions().ledBar().startTimerK2mil(50, 3000, LED_RED, true);
+    robot.actions().ledBar().startTimerK2mil(50, 30000, LED_RED, true);
 
     logger().info() << "startTimerK2mil 2..." << logs::end;
-    robot.actions().ledBar().startTimerK2mil(20, 6000, LED_GREEN, false);
+    robot.actions().ledBar().startTimerK2mil(20, 60000, LED_GREEN, false);
     utils::sleep_for_micros(1000000);
 
     logger().info() << "startTimerBlinkPin 3..." << logs::end;
-    robot.actions().ledBar().startTimerBlinkPin(15, 8000, 0, LED_RED, false);
+    robot.actions().ledBar().startTimerBlinkPin(15, 80000, 0, LED_RED, false);
     utils::sleep_for_micros(1000000);
 
     logger().info() << "stopAndWait..." << logs::end;

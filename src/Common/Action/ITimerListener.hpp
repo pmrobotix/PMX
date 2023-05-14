@@ -59,11 +59,6 @@ public:
         return requestToStop_;
     }
 
-    inline void remove()
-        {
-
-        }
-
 
     /*!
      * \brief Destructeur de la classe.

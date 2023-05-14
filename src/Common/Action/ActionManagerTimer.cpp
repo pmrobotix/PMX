@@ -178,7 +178,6 @@ void ActionManagerTimer::stopTimer(std::string timerNameToDelete)
             save = i;
             found = true;
             timer->onTimerEnd(chronoTimer_);
-            timer->remove();
         }
         i++;
     }
@@ -231,8 +230,7 @@ bool ActionManagerTimer::findPTimer(std::string timerNameToFind)
         if (ptimer->name() == timerNameToFind) {
             save = i;
             found = true;
-//            ptimer->onTimerEnd(chronoTimer_);
-//            ptimer->remove();
+
         }
         i++;
     }
@@ -268,8 +266,6 @@ void ActionManagerTimer::stopAllPTimers()
         } else {
             //appel de la fonction de fin
             timer->onTimerEnd(chronoTimer_);
-            //suppression du timer en cours d'execution
-            timer->remove();
             //suppression de la liste
             timers_.pop_front();
         }
