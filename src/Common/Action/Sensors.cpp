@@ -182,7 +182,6 @@ float Sensors::multipleRightSide(int nb) {
 
 //    for (int ii = 0; ii < nb; ii++) {
 //        logger().info() << "rtrie= " << data[ii] << logs::end;
-//        //usleep(50000);
 //    }
 
     moy = (data[3] + data[4] + data[5] + data[6]) / 4;
@@ -205,7 +204,7 @@ float Sensors::multipleLeftSide(int nb) {
 
     for (int ii = 0; ii < nb; ii++) {
         logger().info() << "ltrie= " << data[ii] << logs::end;
-        //usleep(50000);
+
     }
 
     moy = (data[3] + data[4] + data[5] + data[6]) / 4;
@@ -510,8 +509,8 @@ void Sensors::addTimerSensors(int timeSpan_ms) {
 
 void Sensors::stopTimerSensors() {
     logger().debug() << "stopSensors" << logs::end;
-    //this->actions().stopPTimer("Sensors");
-    this->actions().stopTimer("Sensors");
+    this->actions().stopPTimer("Sensors");
+    //this->actions().stopTimer("Sensors");
 }
 
 void SensorsTimer::onTimer(utils::Chronometer chrono) {

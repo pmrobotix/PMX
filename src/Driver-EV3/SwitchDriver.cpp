@@ -96,7 +96,7 @@ SwitchDriver::~SwitchDriver() {
 //}
 
 int SwitchDriver::tirettePressed() {
-    usleep(250000);
+
     if (touch_.connected()) {
         if (touch_.value() == 1) //in case of MUX : 257
                 {

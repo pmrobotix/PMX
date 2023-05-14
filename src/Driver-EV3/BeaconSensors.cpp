@@ -44,7 +44,7 @@ bool BeaconSensors::connect()
 //        regs.d1_mm = buf[0] | (buf[1] << 8);
 //        logger().error() << " d1:" << regs.d1_mm << logs::end;
 //        }
-//        usleep(200000);
+//        utils::sleep_for_micros(20000);
 //    }
 
     return connected_BeaconSensors_;

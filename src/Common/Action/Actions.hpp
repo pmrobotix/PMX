@@ -54,7 +54,7 @@ public:
     inline void addAction(IAction *action)
     {
         if (!this->is_started()) {
-            logger().error() << "ACTIONTIMER NOT STARTED !!" << logs::end;
+            logger().error() << "addAction ACTIONTIMER NOT STARTED !!" << logs::end;
         }
         actionManagerTimer_.addAction(action);
     }
@@ -62,7 +62,7 @@ public:
     inline void addTimer(ITimerListener *timer)
     {
         if (!this->is_started()) {
-            logger().error() << "ACTIONTIMER NOT STARTED !!" << logs::end;
+            logger().error() << "addTimer ITimerListener ACTIONTIMER NOT STARTED !!" << logs::end;
         }
         actionManagerTimer_.addTimer(timer);
     }
@@ -70,21 +70,20 @@ public:
     inline void addTimer(ITimerPosixListener *timer)
     {
         if (!this->is_started()) {
-            logger().error() << "ACTIONTIMER NOT STARTED !!" << logs::end;
+            logger().error() << "addTimerITimerPosixListener ACTIONTIMER NOT STARTED !!" << logs::end;
         }
         actionManagerTimer_.addTimer(timer);
     }
 
     inline void stopTimer(std::string name)
-        {
-            actionManagerTimer_.stopTimer(name);
-        }
+    {
+        actionManagerTimer_.stopTimer(name);
+    }
 
     inline void stopPTimer(std::string name)
     {
         actionManagerTimer_.stopPTimer(name);
     }
-
 
     inline bool findPTimer(std::string name)
     {

@@ -25,21 +25,21 @@ void L_LedBarTest::run(int argc, char** argv)
 
     robot.actions().ledBar().setOff(0);
     robot.actions().ledBar().setOff(1);
-    //usleep(500000);
+
     robot.actions().ledBar().setOn(0);
     robot.actions().ledBar().setOn(1);
-    //usleep(500000);
+
     robot.actions().ledBar().setOff(0);
     robot.actions().ledBar().setOff(1);
-    //usleep(500000);
+
     robot.actions().ledBar().set(0, LED_RED);
-    //usleep(1000000);
+
     robot.actions().ledBar().set(0, LED_ORANGE);
-    //usleep(1000000);
+
     robot.actions().ledBar().set(0, LED_GREEN);
-    //usleep(1000000);
+
     robot.actions().ledBar().setOff(0);
-    //usleep(1000000);
+
 
     robot.actions().ledBar().blink(5, 200000, LED_ORANGE);
 
@@ -51,11 +51,18 @@ void L_LedBarTest::run(int argc, char** argv)
     robot.actions().ledBar().startSet(0, LED_ORANGE);
 
     logger().info() << "startTimerAlternate..." << logs::end;
-    robot.actions().ledBar().startTimerAlternate(10, 20000, 0x03, 0x01, LED_GREEN, true);
+    robot.actions().ledBar().startTimerAlternate(100, 20000, 0x03, 0x01, LED_GREEN, false);
+    logger().info() << "startTimerAlternate  finished" << logs::end;
+    utils::sleep_for_micros(500000);
+    robot.actions().ledBar().stop(true);
+
 
     logger().info() << "startTimerK2mil 1..." << logs::end;
-    robot.actions().ledBar().startTimerK2mil(50, 30000, LED_RED, true);
+    robot.actions().ledBar().startTimerK2mil(10, 300000, LED_RED, true);
+    logger().info() << "startTimerK2mil  finished" << logs::end;
 
+    utils::sleep_for_micros(2000000);
+/*
     logger().info() << "startTimerK2mil 2..." << logs::end;
     robot.actions().ledBar().startTimerK2mil(20, 60000, LED_GREEN, false);
     utils::sleep_for_micros(1000000);
@@ -63,7 +70,7 @@ void L_LedBarTest::run(int argc, char** argv)
     logger().info() << "startTimerBlinkPin 3..." << logs::end;
     robot.actions().ledBar().startTimerBlinkPin(15, 80000, 0, LED_RED, false);
     utils::sleep_for_micros(1000000);
-
+*/
     logger().info() << "stopAndWait..." << logs::end;
     robot.actions().ledBar().stop(true);
 

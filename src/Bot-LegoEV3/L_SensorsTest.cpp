@@ -38,7 +38,7 @@ void L_SensorsTest::run(int argc, char** argv) {
      front = robot.actions().sensors().front(true);
      back = robot.actions().sensors().back(true);
 
-     usleep(400000);
+     utils::sleep_for_micros(4000000);
      logger().info() << " front=" << front << " back=" << back << logs::end;
      }
      */
@@ -77,7 +77,7 @@ void L_SensorsTest::run(int argc, char** argv) {
         //470=>246
         //int adc = robot.actions().sensors().getADC();
 
-        usleep(1000000);
+        utils::sleep_for_micros(1000000);
         logger().info() << " front=" << front << " back=" << back << logs::end;
     }
 

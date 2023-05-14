@@ -243,6 +243,12 @@ ServoObjectsTimer::ServoObjectsTimer(ServoObjectsSystem &sOsS, int number_servos
     move_starttime_ms_ = 0;
 }
 
+void ServoObjectsSystem::stopTimers()
+{
+    this->actions().stopPTimer("1");
+    this->actions().stopPTimer("2");
+}
+
 //void ServoObjectsSystem::deployByTimerTask(int servo, int percent, int keep_millisec)
 //{
 // //add the timer to move and wait until arrive at position.

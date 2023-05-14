@@ -329,7 +329,7 @@ L_State_Init::execute(Robot&)
 //            }
 
             //sleep
-            std::this_thread::sleep_for(std::chrono::microseconds(20000));
+            std::this_thread::sleep_for(std::chrono::microseconds(30000));
         }
     } else {
 

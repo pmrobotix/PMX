@@ -11,6 +11,12 @@ Actions::Actions()
 void Actions::start()
 {
     actionManagerTimer_.start("ActionManagerTimer", 2); //TODO si superieur à 1, ca bloque le programme sur OPOSUL
+
+    while (!is_started())
+    {
+        utils::sleep_for_micros(10000);
+        //printf(" wait actionManagerTimer_.start \n");
+    }
 }
 
 bool Actions::is_started()
@@ -38,4 +44,3 @@ void Actions::waitAndStopManagers()
         //Attente de a fin de tous les timers
         actionManagerTimer_.stop();
 }
-

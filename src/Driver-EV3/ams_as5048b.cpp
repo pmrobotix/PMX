@@ -18,13 +18,11 @@
 
 #include "ams_as5048b.hpp"
 
-#include <sys/types.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <cmath>
-#include <cstdio>
-#include <iostream>
 
-#include "../Log/Logger.hpp"
+#include "../Thread/Thread.hpp"
 
 //extern BaseSequentialStream *outputStream;
 
@@ -91,7 +89,8 @@ bool AMS_AS5048B::connect(void) {
         connected_ = false;
         return connected_;
     }
-    usleep(10000);
+    //usleep(10000);
+    utils::sleep_for_micros(10000);
     reset();
     return connected_;
 }

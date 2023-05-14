@@ -70,6 +70,9 @@ public:
     bool setup(int servo, AServoDriver::ServoType type, int valueMinPulse, int valueMidPulse, int valueMaxPulse,
             bool inversed = false);
 
+
+    void stopTimers();
+
     /*!
      * \brief move 1 servo.
      */

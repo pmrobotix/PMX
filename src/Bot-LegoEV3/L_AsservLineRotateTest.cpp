@@ -221,7 +221,8 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
         }
         d += d;
     }
-    sleep(3);
+    utils::sleep_for_micros(3000000);
+
     robot.asserv().getEncodersCounts(&right, &left);
 
     logger().info() << "End time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; left= " << left

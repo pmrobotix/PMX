@@ -195,7 +195,7 @@ void LedBar::waiting(bool wait, uint timeout_ms) {
         while (this->running_) {
             //logger().error() << "echap=" << echap<< logs::end;
             echap++;
-            utils::sleep_for_micros(1000);
+            utils::sleep_for_micros(10000);
             if (echap > timeout_ms)
             {
                 logger().error() << " waiting a timer indefinitely !!! so break it. " << logs::end;
@@ -244,8 +244,7 @@ bool LedBarAction::execute() {
 
 
 LedBarTimer::LedBarTimer(LedBar & ledbar, LedBarTimerName name, uint timeSpan_us, uint nb, LedColor color, uint hexValue, uint hexValueNext) :
-        ledBar_(ledbar), timerAction_(name), timeus_(timeSpan_us), nb_(nb), color_(color), hex_(hexValue), hexNext_(hexValueNext)
-, tmp_nb_current_(0), tmp_pos_current_(0), tmp_pos_inc_(true)
+        ledBar_(ledbar), timerAction_(name), timeus_(timeSpan_us), nb_(nb), color_(color), hex_(hexValue), hexNext_(hexValueNext), tmp_nb_current_(0), tmp_pos_current_(0), tmp_pos_inc_(true)
 {
     name_ = std::to_string(name);
     //init du timer
@@ -254,6 +253,8 @@ LedBarTimer::LedBarTimer(LedBar & ledbar, LedBarTimerName name, uint timeSpan_us
 
 
 void LedBarTimer::onTimer(utils::Chronometer chrono) {
+    //logger().error() << "onTimer timerAction_=" << timerAction_ << " " << ledBar_.hasToStop() << logs::end;
+
 
     if (ledBar_.hasToStop()) {
 
@@ -315,6 +316,7 @@ void LedBarTimer::onTimer(utils::Chronometer chrono) {
             logger().error() << "Bad execute command !!" << logs::end;
             break;
     }
+    //logger().error() << "nb_=" << nb_ << " tmp_nb_current_=" << tmp_nb_current_<< logs::end;
     if (nb_ != 0) {
         if (tmp_nb_current_ > nb_) {
             ledBar_.stop(false);
@@ -329,8 +331,9 @@ void LedBarTimer::onTimer(utils::Chronometer chrono) {
     }
 }
 void LedBarTimer::onTimerEnd(utils::Chronometer chrono) {
-    logger().debug() << "onTimerEnd...executing..." << logs::end;
+    logger().error() << "onTimerEnd...executing..." << logs::end;
     ledBar_.resetAll();
+
 }
 
 std::string LedBarTimer::info() {

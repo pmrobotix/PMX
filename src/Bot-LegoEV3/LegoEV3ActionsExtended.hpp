@@ -124,10 +124,12 @@ public:
 
     void stopExtra()
     {
+
         sensors_.stopTimerSensors();
         ledbar_.resetAll();
         ledbar_.stop();
         soundbar_.stop();
+        servos_.stopTimers();
         releaseAll();
     }
 
@@ -189,14 +191,14 @@ public:
     void fork_test_parallele(bool wait = true)
     {
         fork_close_init();
-        sleep(1);
+        utils::sleep_for_micros(1000000);
         fork_front_right_deploy_half(0);
         fork_front_left_deploy_half(0);
-        sleep(2);
+        utils::sleep_for_micros(2000000);
         servos().move_2_servos(wait, 300, SERVO_3_FORK_R, 1380, 0, SERVO_13_FORK_L, 1450, 0, 0, 0);
-        sleep(2);
+        utils::sleep_for_micros(2000000);
         fork_close_init();
-        sleep(1);
+        utils::sleep_for_micros(1000000);
     }
 
     void fork_init_slow(bool wait = true)

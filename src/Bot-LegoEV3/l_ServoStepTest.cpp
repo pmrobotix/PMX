@@ -118,7 +118,7 @@ void L_ServoStepTest::run(int argc, char** argv) {
                     step = 1;
             }
             logger().info() << "-" << step << " pos=" << pos << logs::end;
-            //usleep(200000);
+
         }
 
         if (touch == BUTTON_RIGHT_KEY) {
@@ -132,7 +132,7 @@ void L_ServoStepTest::run(int argc, char** argv) {
             robot.actions().servos().hold(num);
 
             logger().info() << "SERVO " << num << " pos=" << pos << logs::end;
-            //usleep(200000);
+
         }
 
         if (touch == BUTTON_LEFT_KEY) {
@@ -145,10 +145,10 @@ void L_ServoStepTest::run(int argc, char** argv) {
             robot.actions().servos().hold(num);
 
             logger().info() << "SERVO " << num << " pos=" << pos << logs::end;
-            //usleep(200000);
+
         }
 
-        usleep(100000);
+        utils::sleep_for_micros(50000);
     }
 
     robot.actions().releaseAll();
