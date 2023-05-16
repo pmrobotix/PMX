@@ -49,7 +49,7 @@ void LegoEV3IAExtended::initPlayground()
     p_->add_rectangle_lower_left(0, 3000 - 125, 2000, 3000, 0); //haut
 
     //zone bleu adv A3
-    p_->add_rectangle_lower_left(0, 800, 558, 650, 0);
+    p_->add_rectangle_lower_left(area_A3, 0, 800, 558, 650, 0);
     //zone bleu adv D4
     p_->add_rectangle_lower_left(1445, 1550, 558, 650, 0);
 

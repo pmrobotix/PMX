@@ -26,6 +26,7 @@ public:
     PlaygroundObjectID area_B4;
     PlaygroundObjectID area_C4;
     PlaygroundObjectID area_B3;
+    PlaygroundObjectID area_A3;
 /*
     PlaygroundObjectID area_start_violet;
     PlaygroundObjectID area_start_yellow;

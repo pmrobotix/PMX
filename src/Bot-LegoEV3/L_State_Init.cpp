@@ -229,6 +229,8 @@ L_State_Init::execute(Robot&)
 
         int sw = 0;
         //robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
+        robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+        robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
         robot.actions().sensors().addTimerSensors(200);
         int nb_tirette = 0;
         b = BUTTON_NONE;
