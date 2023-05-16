@@ -26,8 +26,8 @@ public:
 
     bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc = "");
 
-    void setLowSpeedForward(bool enable, int);
-    void setLowSpeedBackward(bool enable, int);
+//    void setLowSpeedForward(bool enable, int);
+//    void setLowSpeedBackward(bool enable, int);
 
 //TODO move to actions
     void update_adv();

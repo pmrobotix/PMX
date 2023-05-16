@@ -676,7 +676,7 @@ void AsservEsialR::motion_ActivateManager(bool enable)
         run_ = false;
     }
 }
-void AsservEsialR::motion_setLowSpeedForward(bool enable, int percent) //TODO percent ne sert à rien dans le cas enable =false ???
+void AsservEsialR::motion_setLowSpeedForward(bool enable, int percent)
 {
     consignC_->setLowSpeedForward(enable, percent);
 }

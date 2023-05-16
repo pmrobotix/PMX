@@ -44,7 +44,7 @@ public:
 
     }
 
-
+    bool is_connected();
 
     void hold(int servo);
 

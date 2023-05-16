@@ -15,6 +15,10 @@ OPOS6UL_AsservExtended::OPOS6UL_AsservExtended(std::string botId, OPOS6UL_RobotE
     useAsservType_ = ASSERV_EXT;
     robot_extended_ = robot;
 
+
+    //set the value setLowSpeedForward for asserv
+    setLowSpeedvalue(45);
+
     //TODO essayer de surcharger les asservdriver pour avoir accès que log SVG
     //TODO asservdriver_ = AAsservDriver::create(botId, robot->svgw());
 }
@@ -96,21 +100,22 @@ bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int latera
         return false; //si en dehors de la table
 }*/
 
-void OPOS6UL_AsservExtended::setLowSpeedForward(bool enable, int percent)
-{
-    if (percent < 0) percent = 1;
-    if (percent > 100) percent = 100;
+//void OPOS6UL_AsservExtended::setLowSpeedForward(bool enable, int percent)
+//{
+//    if (percent < 0) percent = 1;
+//    if (percent > 100) percent = 100;
+//
+//    logger().debug() << "OPOS6UL_AsservExtended::setLowSpeedForward = " << enable << logs::end;
+//    //Asserv::setLowSpeedForward(enable, 45);
+//    asservdriver_->motion_setLowSpeedForward(enable, percent);
+//}
+//void OPOS6UL_AsservExtended::setLowSpeedBackward(bool enable, int)
+//{
+//    logger().debug() << "OPOS6UL_AsservExtended::setLowSpeedBackward =" << enable << logs::end;
+//    //Asserv::setLowSpeedBackward(enable, 45);
+//    asservdriver_->motion_setLowSpeedBackward(enable, 55);
+//}
 
-    logger().debug() << "OPOS6UL_AsservExtended::setLowSpeedForward = " << enable << logs::end;
-    //Asserv::setLowSpeedForward(enable, 45);
-    asservdriver_->motion_setLowSpeedForward(enable, percent);
-}
-void OPOS6UL_AsservExtended::setLowSpeedBackward(bool enable, int)
-{
-    logger().debug() << "OPOS6UL_AsservExtended::setLowSpeedBackward =" << enable << logs::end;
-    //Asserv::setLowSpeedBackward(enable, 45);
-    asservdriver_->motion_setLowSpeedBackward(enable, 55);
-}
 
 //TODO a deplacer dans les actions avec l'update des sensors
 void OPOS6UL_AsservExtended::update_adv()

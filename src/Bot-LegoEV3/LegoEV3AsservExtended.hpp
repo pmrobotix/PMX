@@ -32,8 +32,8 @@ public:
 
     bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc = "");
 
-    void setLowSpeedForward(bool enable, int percent=30);
-    void setLowSpeedBackward(bool enable, int percent =30);
+//    void setLowSpeedForward(bool enable, int percent=30);
+//    void setLowSpeedBackward(bool enable, int percent =30);
 };
 
 #endif

@@ -39,7 +39,13 @@ ServoDriver::ServoDriver()
      }*/
 }
 
-//DEPRECATED
+bool ServoDriver::is_connected()
+{
+ //TODO ServoDriver::is_connected
+
+}
+
+//DEPRECATED pour OPOS6UL? uniquement pour servo STD ?
 void ServoDriver::setType(int servo, ServoType type) {
 //    if (!testIf(servo, 0, MAXPORTNUM)) return;
 //    servo_type_[constrain(servo, 0, NB_SERVO_DYN - 1)] = type;

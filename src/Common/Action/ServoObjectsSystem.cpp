@@ -280,7 +280,7 @@ void ServoObjectsSystem::move_1_servo(bool waitornot, int time_eta_ms, int servo
     if (waitornot) {
         logger().debug() << "wait for end of servo move...NO ESCAPE" << logs::end;
         while (!move_finished_) {
-            utils::sleep_for_micros(50000);
+            utils::sleep_for_micros(TIMER_SERVO_PERIOD_US);
         }
     }
 }
@@ -322,7 +322,7 @@ void ServoObjectsSystem::move_2_servos(bool waitornot, int time_eta_ms, int serv
     if (waitornot) {
         logger().debug() << "wait for end of servo move...NO ESCAPE" << logs::end;
         while (!move_finished_) {
-            utils::sleep_for_micros(50000);
+            utils::sleep_for_micros(TIMER_SERVO_PERIOD_US);
         }
     }
 }

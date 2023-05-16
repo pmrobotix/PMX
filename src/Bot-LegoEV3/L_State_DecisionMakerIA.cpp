@@ -64,7 +64,6 @@ bool L_push_cake_A2()
     //robot.actions().fork_front_left_deploy(0);
     robot.actions().fork_open_take_slow(true);
 
-
     robot.asserv().setLowSpeedForward(false);
 
     //on depose directement
@@ -228,7 +227,6 @@ void L_State_DecisionMakerIA::IASetupActivitiesZoneTableTest()
 
     robot.tabletest = true;
 
-
     int decalagetabletest = 390;
 //definition des zones (en zone VERT uniquement, c'est dupliqué automatiquement)
     robot.ia().iAbyPath().ia_createZone("zone_end", 0, 1650, 450, 450, 600, 1300, 0);
@@ -281,10 +279,14 @@ void L_State_DecisionMakerIA::execute()
     logger().info() << "L_State_DecisionMakerIA executing..." << logs::end;
 
 //On ajoute le timer de detection
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
     //robot.actions().sensors().addTimerSensors(200);
+    if (!robot.actions().findPTimer("Sensors")) {
+        logger().error() << " !! PT Sensors doesn't exist! " << logs::end;
+    }else
+        logger().info() << "PT Sensors already exists! " << logs::end;
 
     //robot.points += 4; //POINT - depose statuette + vitrine
 

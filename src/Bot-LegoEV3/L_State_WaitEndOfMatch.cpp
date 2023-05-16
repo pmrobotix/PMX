@@ -31,7 +31,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     uint c = 0;
     bool stop = false;
 
-    while (robot.chrono().getElapsedTimeInSec() <= 5 || stop == true) {
+    while (robot.chrono().getElapsedTimeInSec() <= 97 || stop == true) {
 
         //ARU
         if (robot.actions().tirette().pressed()) {
@@ -53,11 +53,19 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
         c++;
     }
 
-    //on recule pour la funny action
-    robot.svgPrintPosition();
-    robot.asserv().doLineAbs(-50);
-    robot.svgPrintPosition();
+    //pas de funny action si ARU
+    if (!stop) {
 
+        //on recule pour la funny action
+        robot.svgPrintPosition();
+        robot.asserv().doLineAbs(-50);
+        robot.asserv().stopMotors();
+        robot.svgPrintPosition();
+
+        robot.actions().funny_action_full();
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        robot.points += 5;
+    }
 
     this->logger().debug() << "execute end100s...stop... " << robot.chrono().getElapsedTimeInSec() << logs::end;
     robot.asserv().stopMotors();
@@ -71,14 +79,6 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     }
     robot.asserv().stopMotors();
     robot.actions().clearAll();
-
-    //pas de funny action si ARU
-    if (!stop) {
-
-        robot.actions().funny_action_full();
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-        robot.points += 5;
-    }
 
 //init robot for end
     robot.freeMotion(); //stop the robot

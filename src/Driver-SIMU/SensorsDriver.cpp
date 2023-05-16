@@ -39,9 +39,9 @@ void SensorsDriver::displayNumber(int number)
 
 ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv() {
     ASensorsDriver::bot_positions bot_pos;
-//    RobotPos pos = {1000, 1000 , 0, 200, 1};
-//    //simu des positions adverses
-//    bot_pos = {pos, pos};
+    RobotPos pos = {1000, 1000 , 0, 200, 1};
+    //simu des positions adverses
+    bot_pos = {pos, pos};
 
     return bot_pos;
 }

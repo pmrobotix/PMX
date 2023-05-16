@@ -21,20 +21,20 @@ LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot)
     up &= servos().setup(SERVO_15_ARM_L, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
 
 
-
-
     sensors_.addConfigFront(false, true, false);
     sensors_.addConfigBack(false, true, false);
 
-    sensors_.addThresholdFront(50+360, 650, 50+360);
-    sensors_.addThresholdFrontVeryClosed(50+120, 450, 50+120);
+    sensors_.addThresholdDiameterOpponent_mm(350); //deprecated
 
-    sensors_.addThresholdBack(50+300, 650, 50+300);
-    sensors_.addThresholdBackVeryClosed(50+120, 450, 50+120);
+    //from center of the robot for the beacon jusqu'centre du robot adv
+   //= rayon de notre robot + espace + rayon robot adverse
+    sensors_.addThresholdFront(50+360, 180+300+180, 50+360);
+    sensors_.addThresholdFrontVeryClosed(50+120, 180+70+180 , 50+120);
+
+    sensors_.addThresholdBack(50+300, 180+200+180, 50+300);
+    sensors_.addThresholdBackVeryClosed(50+120, 180+50+180, 50+120);
 
 
-
-
-
+    //sensors_.toSVG();
 
 }

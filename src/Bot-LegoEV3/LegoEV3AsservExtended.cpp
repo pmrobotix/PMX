@@ -15,11 +15,19 @@ LegoEV3AsservExtended::LegoEV3AsservExtended(std::string botId, LegoEV3RobotExte
 {
     botId_ = botId;
     useAsservType_ = ASSERV_INT_ESIALR;
+
+
+    //set the value setLowSpeedForward for asserv
+    setLowSpeedvalue(25);
 }
 
 
 void LegoEV3AsservExtended::startMotionTimerAndOdo(bool assistedHandlingEnabled)
 {
+
+
+
+
     //Real EV3 for ESIAL internal asserv config
     if (useAsservType_ == ASSERV_INT_ESIALR) {
 
@@ -90,6 +98,7 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo(bool assistedHandlingEnabled)
     }
 
 }
+//TODO fonction pour les capteurs de proximité ...a rendre generique pour tous les robots
 //dist_detect_mm : distance detecté de l'objet
 //lateral_pos_sensor_mm : position du capteur : gauche -1 ; droite +1
 bool LegoEV3AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc)
@@ -167,14 +176,14 @@ bool LegoEV3AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int lateral
         return false; //si en dehors de la table*/
 }
 
-void LegoEV3AsservExtended::setLowSpeedForward(bool enable, int percent)
-{
-    //logger().error() << "LegoEV3AsservExtended::setLowSpeedForward 40!" << logs::end;
-    pAsservEsialR_->motion_setLowSpeedForward(enable, percent);
-
-}
-void LegoEV3AsservExtended::setLowSpeedBackward(bool enable, int percent)
-{
-    //logger().error() << "LegoEV3AsservExtended::setLowSpeedBackward 40!" << logs::end;
-    pAsservEsialR_->motion_setLowSpeedBackward(enable, percent);
-}
+//void LegoEV3AsservExtended::setLowSpeedForward(bool enable, int percent)
+//{
+//    //logger().error() << "LegoEV3AsservExtended::setLowSpeedForward 40!" << logs::end;
+//    pAsservEsialR_->motion_setLowSpeedForward(enable, percent);
+//
+//}
+//void LegoEV3AsservExtended::setLowSpeedBackward(bool enable, int percent)
+//{
+//    //logger().error() << "LegoEV3AsservExtended::setLowSpeedBackward 40!" << logs::end;
+//    pAsservEsialR_->motion_setLowSpeedBackward(enable, percent);
+//}

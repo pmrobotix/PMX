@@ -331,7 +331,7 @@ void LedBarTimer::onTimer(utils::Chronometer chrono) {
     }
 }
 void LedBarTimer::onTimerEnd(utils::Chronometer chrono) {
-    logger().error() << "onTimerEnd...executing..." << logs::end;
+    logger().debug() << "onTimerEnd...executing..." << logs::end;
     ledBar_.resetAll();
 
 }

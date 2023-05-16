@@ -28,7 +28,8 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
     svg_ = p_svg_;
 
     p_asserv_ = new OPOS6UL_AsservExtended(id_, this);
-    asserv_default_ = p_asserv_;
+    //asserv_default_ = p_asserv_;
+    setAsserv(p_asserv_);
 
     p_actions_ = new OPOS6UL_ActionsExtended(id_, this);
     actions_default_ = p_actions_;

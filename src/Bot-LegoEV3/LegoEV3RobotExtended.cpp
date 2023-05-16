@@ -21,8 +21,9 @@ LegoEV3RobotExtended::LegoEV3RobotExtended() {
     p_svg_ = new LegoEV3SvgWriterExtended(id_); // TODO simplify
     svg_ = p_svg_;
 
-    p_asserv_ = new LegoEV3AsservExtended(id_, this); // TODO simplify and use directly asserv_default_
-    asserv_default_ = p_asserv_;
+    p_asserv_ = new LegoEV3AsservExtended(id_, this);
+    //asserv_default_ = p_asserv_;
+    setAsserv(p_asserv_);
 
     //on ecrase les versions par default avec la version extended
     p_actions_ = new LegoEV3ActionsExtended(id_, this); // TODO simplify and use directly actions_default_
@@ -98,6 +99,6 @@ void LegoEV3RobotExtended::resetDisplayObstacle() {
 }
 
 void LegoEV3RobotExtended::displayObstacle(int level) {
-    if (level == 1) actions().ledBar().set(0, LED_YELLOW);
-    if (level == 2) actions().ledBar().set(0, LED_RED);
+    if (level == 3) actions().ledBar().set(0, LED_YELLOW);
+    if (level == 4) actions().ledBar().set(0, LED_RED);
 }

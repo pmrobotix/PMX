@@ -39,6 +39,8 @@ Asserv::Asserv(std::string botId, Robot *robot)
     //table verticale
     x_ground_table_ = 2000;
 
+    lowSpeedvalue_ = 30; //a configurer par chaque extension robot
+
 }
 Asserv::~Asserv()
 {
@@ -141,26 +143,22 @@ void Asserv::stopMotionTimerAndOdo()
 
 void Asserv::setLowSpeedForward(bool enable, int percent)
 {
-    logger().error() << "Asserv::setLowSpeedForward Surcharge à faire par config Robot!!!!!!!! percent " << percent
-            << logs::end;
     if (useAsservType_ == ASSERV_INT_INSA) {
         logger().error() << "TODO setLowSpeed ASSERV_INT_INSA NOT EXIST !!!" << logs::end;
-
     } else if (useAsservType_ == ASSERV_INT_ESIALR) {
         pAsservEsialR_->motion_setLowSpeedForward(enable, percent);
-    } else if (useAsservType_ == 0)
+
+    } else if (useAsservType_ == ASSERV_EXT)
         asservdriver_->motion_setLowSpeedForward(enable, percent);
 }
 
 void Asserv::setLowSpeedBackward(bool enable, int percent)
 {
-    logger().error() << "Asserv::setLowSpeedBackward Surcharge à faire par config Robot!!!!!!!! percent " << percent
-            << logs::end;
     if (useAsservType_ == ASSERV_INT_INSA) {
         logger().error() << "TODO setLowSpeed ASSERV_INT_INSA NOT EXIST!!!" << logs::end;
     } else if (useAsservType_ == ASSERV_INT_ESIALR) {
         pAsservEsialR_->motion_setLowSpeedBackward(enable, percent);
-    } else if (useAsservType_ == 0)
+    } else if (useAsservType_ == ASSERV_EXT)
         asservdriver_->motion_setLowSpeedBackward(enable, percent);
 }
 void Asserv::disablePID() //deprecated and ActivateQuanramp to be defined
@@ -170,7 +168,7 @@ void Asserv::disablePID() //deprecated and ActivateQuanramp to be defined
         freeMotion();
     } else if (useAsservType_ == ASSERV_INT_ESIALR) {
         pAsservEsialR_->motion_ActivateQuadRamp(false);
-    } else if (useAsservType_ == 0) {
+    } else if (useAsservType_ == ASSERV_EXT) {
         freeMotion();
     }
 }
@@ -265,7 +263,7 @@ float Asserv::pos_getThetaInDegree()
     return (pos_getTheta() * 180.0f) / M_PI;
 }
 
-//doit etre surcharger par robot
+//doit etre surcharger par robot , pour les detecteur de proxymité
 bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc)
 {
 
@@ -274,8 +272,7 @@ bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm,
 
 }
 
-//doit etre surcharger par robot
-bool Asserv::filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm, float theta_deg)
+bool Asserv::filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm, float theta_deg, int *x_botpos, int *y_botpos)
 {
     //table verticale
     int table_x = 2000;
@@ -283,80 +280,83 @@ bool Asserv::filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm, float theta_de
     RobotPosition p = pos_getPosition();
 
     //coordonnées de l'objet detecté sur la table
-    int x_botpos = p.x + (d_mm * cos(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
-    int y_botpos = p.y + (d_mm * sin(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
+    *x_botpos = p.x + (d_mm * cos(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
+    *y_botpos = p.y + (d_mm * sin(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
 
-    //on filtre si c'est en dehors de la table verticale!
-    if ((x_botpos > 100 && x_botpos < table_x - 100) && (y_botpos > 100 && y_botpos < table_y - 100)) {
-        logger().error() << "INSIDE filtre_IsInsideTableXY x_botpos=" << x_botpos << " y_botpos=" << y_botpos << "pos: "
-                << p.x << " " << p.y << " p_rad:" << p.theta << " balise: " << d_mm << " " << x_mm << " " << y_mm
-                << " theta_deg:" << theta_deg << logs::end;
+    //on filtre si c'est en dehors de la table verticale! avec 10cm de marge
+    if ((*x_botpos > 100 && *x_botpos < table_x - 100) && (*y_botpos > 100 && *y_botpos < table_y - 100)) {
+        logger().debug() << "INSIDE filtre_IsInsideTableXY x_botpos=" << *x_botpos << " y_botpos=" << *y_botpos
+                << "pos: " << p.x << " " << p.y << " p_rad:" << p.theta << " balise: " << d_mm << " " << x_mm << " "
+                << y_mm << " theta_deg:" << theta_deg << logs::end;
         return true;
     } else
         return false;
 
 }
+/*
+ //TODO doit etre surcharger par robot
+ bool Asserv::filtre_IsInFront(int threshold_mm, int dist_mm, int x_mm, int y_mm, float theta_deg)
+ {
 
-//TODO doit etre surcharger par robot
-bool Asserv::filtre_IsInFront(int threshold_mm, int dist_mm, int x_mm, int y_mm, float theta_deg)
-{
+ logger().debug() << "filtre_IsInFront dist_mm=" << dist_mm << " x_mm=" << x_mm << " y_mm=" << y_mm << " theta_deg="
+ << theta_deg << logs::end;
+ //    float x = 0.0;
+ //    float y = 0.0;
+ //    bool result = false;
+ //    RobotPosition p = pos_getPosition();
+ //    x = p.x + ((x_mm) * cos(p.theta - M_PI_2)) + (y_mm * cos(p.theta));
+ //    y = p.y + ((x_mm) * sin(p.theta - M_PI_2)) + (y_mm * sin(p.theta));
+ if (y_mm > 0) {
+ //on garde une marge supérieure à la config des sensors qui sera plus petite
+ if (dist_mm < threshold_mm) {
 
-    logger().debug() << "filtre_IsInFront dist_mm=" << dist_mm << " x_mm=" << x_mm << " y_mm=" << y_mm << " theta_deg="
-            << theta_deg << logs::end;
-//    float x = 0.0;
-//    float y = 0.0;
-//    bool result = false;
-//    RobotPosition p = pos_getPosition();
-//    x = p.x + ((x_mm) * cos(p.theta - M_PI_2)) + (y_mm * cos(p.theta));
-//    y = p.y + ((x_mm) * sin(p.theta - M_PI_2)) + (y_mm * sin(p.theta));
-    if (y_mm > 0) {
-        //on garde une marge supérieure à la config des sensors qui sera plus petite
-        if (dist_mm < threshold_mm) {
+ //TODO à mettre en parametre suivant le robot lego/oposul et la grosseur de l'adv
+ if ((x_mm < 310) && (x_mm > -310)) {
+ //on exclu y a cote du robot.... TODO faire un cercle ??
+ if ((y_mm > 150) || (y_mm < -150)) {
+ return true;
+ } else
+ return false;
+ } else
+ return false;
+ } else
+ return false;
+ } else
+ return false;
+ }
+ */
+/*
+ //todo filtre_IsInBack
+ bool Asserv::filtre_IsInBack(int threshold_mm, int dist_mm, int x_mm, int y_mm, float theta_deg)
+ {
+ logger().debug() << "filtre_IsInBack dist_mm=" << dist_mm << " x_mm=" << x_mm << " y_mm=" << y_mm << " theta_deg="
+ << theta_deg << logs::end;
+ //logger().debug() << "Asserv::filtre_IsInFront Surcharge à faire par config Robot!!!!!!!!" << logs::end;
+ //    float x = 0.0;
+ //    float y = 0.0;
+ //    bool result = false;
+ //    RobotPosition p = pos_getPosition();
+ //    x = p.x + ((x_mm) * cos(p.theta - M_PI_2)) + (y_mm * cos(p.theta));
+ //    y = p.y + ((x_mm) * sin(p.theta - M_PI_2)) + (y_mm * sin(p.theta));
+ if (y_mm < 0) {
+ // dist tjs positive
+ if (dist_mm < threshold_mm) {
 
-            //TODO à mettre en parametre suivant le robot lego/oposul et la grosseur de l'adv
-            if ((x_mm < 310) && (x_mm > -310)) {
-                //on exclu y a cote du robot.... TODO faire un cercle ??
-                if ((y_mm > 150) || (y_mm < -150)) {
-                    return true;
-                } else
-                    return false;
-            } else
-                return false;
-        } else
-            return false;
-    } else
-        return false;
-}
-//todo filtre_IsInBack
-bool Asserv::filtre_IsInBack(int threshold_mm, int dist_mm, int x_mm, int y_mm, float theta_deg)
-{
-    logger().debug() << "filtre_IsInBack dist_mm=" << dist_mm << " x_mm=" << x_mm << " y_mm=" << y_mm << " theta_deg="
-            << theta_deg << logs::end;
-    //logger().debug() << "Asserv::filtre_IsInFront Surcharge à faire par config Robot!!!!!!!!" << logs::end;
-//    float x = 0.0;
-//    float y = 0.0;
-//    bool result = false;
-//    RobotPosition p = pos_getPosition();
-//    x = p.x + ((x_mm) * cos(p.theta - M_PI_2)) + (y_mm * cos(p.theta));
-//    y = p.y + ((x_mm) * sin(p.theta - M_PI_2)) + (y_mm * sin(p.theta));
-    if (y_mm < 0) {
-        // dist tjs positive
-        if (dist_mm < threshold_mm) {
-
-            //TODO à mettre en parametre suivant le robot lego/oposul et la grosseur de l'adv
-            if ((x_mm < 300) && (x_mm > -300)) {
-                //on exclu yTODO faire un cercle ??
-                if ((y_mm > 150) || (y_mm < -150)) {
-                    return true;
-                } else
-                    return false;
-            } else
-                return false;
-        } else
-            return false;
-    } else
-        return false;
-}
+ //TODO à mettre en parametre suivant le robot lego/oposul et la grosseur de l'adv
+ if ((x_mm < 300) && (x_mm > -300)) {
+ //on exclu yTODO faire un cercle ??
+ if ((y_mm > 150) || (y_mm < -150)) {
+ return true;
+ } else
+ return false;
+ } else
+ return false;
+ } else
+ return false;
+ } else
+ return false;
+ }
+ */
 void Asserv::setEmergencyStop()
 {
     if (useAsservType_ == ASSERV_INT_INSA) {
@@ -383,9 +383,19 @@ void Asserv::update_adv()
     logger().info() << "update_adv tob surcharged = " << logs::end;
 }
 
+int Asserv::getLowSpeedvalue()
+{
+    return lowSpeedvalue_;
+}
+
+void Asserv::setLowSpeedvalue(int value)
+{
+    lowSpeedvalue_ = value;
+}
+
 void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, float y_adv_detect_mm)
 {
-    logger().debug() << "warnFrontCollisionOnTraj forceRotation_ = " << temp_forceRotation_ << logs::end;
+    //logger().error() << "warnFrontCollisionOnTraj frontlevel = " << frontlevel << logs::end;
     if (temp_forceRotation_) {
         //logger().error() << "forceRotation_ = " << forceRotation_ << logs::end;
         return;
@@ -393,79 +403,81 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
     if (temp_ignoreFrontCollision_)
         return;
 
+    if (frontlevel >= 3) {
+        //stopMotors();
+        setLowSpeedForward(true, getLowSpeedvalue());
+    }
+
+    if (frontlevel >= 4) {
     if (useAsservType_ == ASSERV_INT_INSA)
         pAsservInsa_->path_CollisionOnTrajectory();
     else if (useAsservType_ == ASSERV_EXT)
         asservdriver_->path_CollisionOnTrajectory();
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_->path_CollisionOnTrajectory();
-
-    if (frontlevel >= 2) {
-        if (useAsservType_ == ASSERV_INT_INSA) {
-
-        } else if (useAsservType_ == ASSERV_EXT) {
-//            resetEmergencyOnTraj();
-//doLineAbs(-50);
-//resetEmergencyOnTraj();
-        } else if (useAsservType_ == ASSERV_INT_ESIALR) {
-
-        }
     }
 
-//conversion de la position du le terrain et determination du centre du robot adverse
-    float dist_centre_robot_mm = 200.0;
-    float x_adv = 0.0;
-    float y_adv = 0.0;
-    if (x_adv_detect_mm >= 1.0 || y_adv_detect_mm > 1.0) {
+    /*
+     //conversion de la position du le terrain et determination du centre du robot adverse
+     float dist_centre_robot_mm = 200.0;
+     float x_adv = 0.0;
+     float y_adv = 0.0;
+     if (x_adv_detect_mm >= 1.0 || y_adv_detect_mm > 1.0) {
 
-        RobotPosition p_current = pos_getPosition();
-        x_adv = p_current.x + ((x_adv_detect_mm + dist_centre_robot_mm) * cos(p_current.theta))
-                - (y_adv_detect_mm * sin(p_current.theta));
-        y_adv = p_current.y + ((x_adv_detect_mm + dist_centre_robot_mm) * sin(p_current.theta))
-                + (y_adv_detect_mm * cos(p_current.theta));
-        adv_pos_centre_ = { x_adv, y_adv, 0.0, 0 };
+     RobotPosition p_current = pos_getPosition();
+     x_adv = p_current.x + ((x_adv_detect_mm + dist_centre_robot_mm) * cos(p_current.theta))
+     - (y_adv_detect_mm * sin(p_current.theta));
+     y_adv = p_current.y + ((x_adv_detect_mm + dist_centre_robot_mm) * sin(p_current.theta))
+     + (y_adv_detect_mm * cos(p_current.theta));
+     adv_pos_centre_ = { x_adv, y_adv, 0.0, 0 };
 
-    } else {
-        adv_pos_centre_ = { -100.0, -100.0, 0.0, 0 };
-    }
-    logger().debug() << "warnFrontCollisionOnTraj x_adv = " << x_adv << " y_adv = " << y_adv
-            << "         x_adv_detect_mm = " << x_adv_detect_mm << " y_adv_detect_mm = " << y_adv_detect_mm
-            << logs::end;
+     } else {
+     adv_pos_centre_ = { -100.0, -100.0, 0.0, 0 };
+     }
+     logger().debug() << "warnFrontCollisionOnTraj x_adv = " << x_adv << " y_adv = " << y_adv
+     << "         x_adv_detect_mm = " << x_adv_detect_mm << " y_adv_detect_mm = " << y_adv_detect_mm
+     << logs::end;*/
 }
 
-void Asserv::warnBackCollisionOnTraj(float x_adv_detect_mm, float y_adv_detect_mm) //x positif devant le robot, y positif le coté gauche
+void Asserv::warnBackCollisionOnTraj(int backlevel, float x_adv_detect_mm, float y_adv_detect_mm) //x positif devant le robot, y positif le coté gauche
 {
     if (temp_forceRotation_)
         return;
     if (temp_ignoreRearCollision_)
         return;
 
-    if (useAsservType_ == ASSERV_INT_INSA)
-        pAsservInsa_->path_CollisionRearOnTrajectory();
-    else if (useAsservType_ == ASSERV_EXT)
-        asservdriver_->path_CollisionRearOnTrajectory();
-    else if (useAsservType_ == ASSERV_INT_ESIALR)
-        pAsservEsialR_->path_CollisionRearOnTrajectory();
+    if (backlevel >= 1) {
 
-//conversion de la position du le terrain et determination du centre du robot adverse
-    float dist_centre_robot_mm = 350.0;
-    float x_adv = 0.0;
-    float y_adv = 0.0;
-
-    if (x_adv_detect_mm >= 1.0 || y_adv_detect_mm > 1.0) {
-        RobotPosition p_current = pos_getPosition();
-        x_adv = p_current.x + ((x_adv_detect_mm + dist_centre_robot_mm) * cos(p_current.theta))
-                - (y_adv_detect_mm * sin(p_current.theta));
-        y_adv = p_current.y + ((x_adv_detect_mm + dist_centre_robot_mm) * sin(p_current.theta))
-                + (y_adv_detect_mm * cos(p_current.theta));
-        adv_pos_centre_ = { x_adv, y_adv, 0.0, 0 };
-
-    } else {
-        adv_pos_centre_ = { -100.0, -100.0, 0.0, 0 };
+        setLowSpeedBackward(true, getLowSpeedvalue());
     }
-    logger().info() << "warnBackCollisionOnTraj x_adv = " << x_adv << " y_adv = " << y_adv
-            << "         x_adv_detect_mm = " << x_adv_detect_mm << " y_adv_detect_mm = " << y_adv_detect_mm
-            << logs::end;
+    if (backlevel >= 1) {
+        if (useAsservType_ == ASSERV_INT_INSA)
+            pAsservInsa_->path_CollisionRearOnTrajectory();
+        else if (useAsservType_ == ASSERV_EXT)
+            asservdriver_->path_CollisionRearOnTrajectory();
+        else if (useAsservType_ == ASSERV_INT_ESIALR)
+            pAsservEsialR_->path_CollisionRearOnTrajectory();
+    }
+    /*
+     //conversion de la position du le terrain et determination du centre du robot adverse
+     float dist_centre_robot_mm = 350.0;
+     float x_adv = 0.0;
+     float y_adv = 0.0;
+
+     if (x_adv_detect_mm >= 1.0 || y_adv_detect_mm > 1.0) {
+     RobotPosition p_current = pos_getPosition();
+     x_adv = p_current.x + ((x_adv_detect_mm + dist_centre_robot_mm) * cos(p_current.theta))
+     - (y_adv_detect_mm * sin(p_current.theta));
+     y_adv = p_current.y + ((x_adv_detect_mm + dist_centre_robot_mm) * sin(p_current.theta))
+     + (y_adv_detect_mm * cos(p_current.theta));
+     adv_pos_centre_ = { x_adv, y_adv, 0.0, 0 };
+
+     } else {
+     adv_pos_centre_ = { -100.0, -100.0, 0.0, 0 };
+     }
+     logger().debug() << "warnBackCollisionOnTraj x_adv = " << x_adv << " y_adv = " << y_adv
+     << "         x_adv_detect_mm = " << x_adv_detect_mm << " y_adv_detect_mm = " << y_adv_detect_mm
+     << logs::end;*/
 }
 
 TRAJ_STATE Asserv::gotoChain(float xMM, float yMM)

@@ -32,9 +32,9 @@ public:
      * \brief Retourne le \ref Logger associé à la classe \ref Robot.
      * public car utilisé dans Main.
      */
-    static inline const logs::Logger & logger()
+    static inline const logs::Logger& logger()
     {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("Robot");
+        static const logs::Logger &instance = logs::LoggerFactory::logger("Robot");
         return instance;
     }
 
@@ -43,11 +43,11 @@ public:
      * public car utilisé dans Main.
      */
 
-    inline const logs::Logger & telemetry()
+    inline const logs::Logger& telemetry()
     {
         std::ostringstream s;
         s << "RobotTelemetry4" << id_;
-        const logs::Logger & telem_ = logs::LoggerFactory::logger(s.str());
+        const logs::Logger &telem_ = logs::LoggerFactory::logger(s.str());
         return telem_;
     }
 
@@ -74,8 +74,6 @@ protected:
     //id of the robot
     std::string id_;
 
-
-
     //DATA
     bool empty_ = true;
     int useExternalEncoder_ = 1;
@@ -86,13 +84,12 @@ protected:
     std::string configVRR_ = "VRR"; //defaut config VRR
 
     //Action => RobotElement
-    Actions * actions_default_;
+    Actions *actions_default_;
 
+    SvgWriter *svg_;
+private:
     //Asserv => asservissement
-    Asserv * asserv_default_;
-
-    SvgWriter * svg_;
-
+    Asserv *asserv_default_;
 
 public:
 #ifdef SIMU
@@ -184,20 +181,25 @@ public:
         return id_;
     }
 
-    inline Asserv * asserv()
+    inline Asserv* asserv()
     {
         if (asserv_default_ == NULL)
             printf("ERROR asserv() NULL ! \n");
         return asserv_default_;
     }
 
+    inline void setAsserv(Asserv *asserv)
+    {
+        asserv_default_ = asserv;
+    }
+
     inline SvgWriter& svgw()
     {
-        SvgWriter & r_svg = *svg_;
+        SvgWriter &r_svg = *svg_;
         return r_svg;
     }
 
-    void svgPrintPosition(int color=0);
+    void svgPrintPosition(int color = 0);
 
     void svgPrintEndOfFile();
 
@@ -205,13 +207,13 @@ public:
 
     inline ConsoleManager& getConsoleManager()
     {
-        ConsoleManager& r_cmanager = cmanager_;
+        ConsoleManager &r_cmanager = cmanager_;
         return r_cmanager;
     }
 
     inline Arguments& getArgs()
     {
-        Arguments& r_cargs = cArgs_;
+        Arguments &r_cargs = cArgs_;
         return r_cargs;
     }
 
@@ -219,7 +221,7 @@ public:
      * \brief Cette methode retourne l'objet de manipulation du chronometer.
      * \return Le chronometer.
      */
-    utils::Chronometer & chrono()
+    utils::Chronometer& chrono()
     {
         return chrono_;
     }
@@ -245,12 +247,12 @@ public:
     /*!
      * \brief Parse console parameters (console for tests or main program)..
      */
-    void parseConsoleArgs(int argc, char** argv, bool stopWithErrors = true);
+    void parseConsoleArgs(int argc, char **argv, bool stopWithErrors = true);
 
     /*!
      * \brief Start the robot (console for tests or main program)..
      */
-    virtual void begin(int argc, char** argv);
+    virtual void begin(int argc, char **argv);
 
     virtual void stopMotionTimerAndActionManager();
 

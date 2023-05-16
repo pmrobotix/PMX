@@ -1,15 +1,15 @@
 #ifndef SENSORS_HPP_
 #define SENSORS_HPP_
 
+#include <sstream>
 #include <string>
 
 #include "../../Log/LoggerFactory.hpp"
 #include "../Action.Driver/ASensorsDriver.hpp"
+#include "../Robot.hpp"
 #include "../Utils/Chronometer.hpp"
-#include "../Utils/PointerList.hpp"
 #include "AActionsElement.hpp"
-#include "../Action/ITimerPosixListener.hpp"
-#include "../Action/ITimerListener.hpp"
+#include "ITimerPosixListener.hpp"
 
 class ASensorsDriver;
 class Robot;
@@ -27,15 +27,26 @@ private:
         return instance;
     }
 
-    static inline const logs::Logger& loggersvg()
-    {
-        static const logs::Logger &instance = logs::LoggerFactory::logger("SvgSensors");
-        return instance;
-    }
+//    inline const logs::Logger& loggerSvg()
+//    {
+//        std::ostringstream s;
+//        s << "Sensors4" << robot_->getID();
+//        const logs::Logger &svg_ = logs::LoggerFactory::logger(s.str());
+//        return svg_;
+//    }
+
+//    static inline const logs::Logger& loggerSvg()
+//    {
+//        static const logs::Logger &instance = logs::LoggerFactory::logger("SvgSensors");
+//        return instance;
+//    }
 
     Robot *robot_;
 
     ASensorsDriver *sensorsdriver_;
+
+    int diameterOpponent_mm_;
+    bool remove_outside_table_;
 
     int frontLeftThreshold_;
     int frontCenterThreshold_;
@@ -69,6 +80,16 @@ private:
     bool ignoreBackCenter_;
     bool ignoreBackRight_;
 
+    bool adv_is_detected_front_right_;
+    bool adv_is_detected_back_right_;
+    bool adv_is_detected_front_left_;
+    bool adv_is_detected_back_left_;
+
+    //2023
+    bool is_cake_there_in_D2_;
+    bool is_cake_there_in_D5_;
+    bool is_cake_there_in_A5_;
+
 public:
 
     //distance de ce qu'il y a devant le robot
@@ -86,6 +107,8 @@ public:
      */
     ~Sensors();
 
+    void toSVG();
+
     Robot* robot()
     {
         return robot_;
@@ -100,6 +123,7 @@ public:
     float MultipleRightSide(int nb);
     float MultipleLeftSide(int nb);
 
+    //capteur de distance
     int rightSide();
     int leftSide();
     float multipleRightSide(int nb);
@@ -114,9 +138,19 @@ public:
     int front(bool display = false); //retourne le niveau de detection
     int back(bool display = false);
 
+    //detection adversaire
+    int right(bool display = false);
+    int left(bool display = false);
+
     //activation des capteurs
     void addConfigFront(bool left, bool center, bool right);
     void addConfigBack(bool left, bool center, bool right);
+
+    void remove_outside_table(bool enable);
+    int filtre_levelInFront(int threshold_mm, int threshold_veryclosed_mm, int dist_mm, int x_mm, int y_mm, float theta_deg);
+    int filtre_levelInBack(int threshold_mm, int threshold_veryclosed_mm, int dist_mm, int x_mm, int y_mm, float theta_deg);
+
+    void addThresholdDiameterOpponent_mm (int diam);
 
     //configuration à partir du centre du robot
     void addThresholdFront(int left, int center, int right);
@@ -170,6 +204,7 @@ private:
     int nb_sensor_back_a_zero;
 
     int nb_sensor_level2;
+    int nb_sensor_b_level2;
 
 public:
 

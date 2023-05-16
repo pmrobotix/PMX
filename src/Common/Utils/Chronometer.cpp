@@ -74,7 +74,7 @@ int utils::Chronometer::waitTimer(int delay_us, bool debug) {
 //                << workTime << " " << timerPeriod_us_ << "!!" << logs::end;
 
     //if (workTime < timerPeriod_us_) {
-    if (t > 0) {
+    if (t >= 0) {
         std::this_thread::sleep_for(std::chrono::microseconds(t-delay_us));
     }
     else {

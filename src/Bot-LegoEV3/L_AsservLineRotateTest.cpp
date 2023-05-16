@@ -133,8 +133,8 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
 
 //    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
 //    robot.actions().sensors().setIgnoreBackNearObstacle(false, false, false);
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
-    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, false, true);
 
     robot.asserv().setLowSpeedForward(true, s);
     robot.asserv().setLowSpeedBackward(true, s);
@@ -148,7 +148,7 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
             if (d >= 0) {
                 while (ts != TRAJ_FINISHED) {
                     ts = robot.ia().iAbyPath().whileMoveForwardTo(robot.asserv().pos_getX_mm(),
-                            robot.asserv().pos_getY_mm() + d, false, 1000000, 4, 4, false);
+                            robot.asserv().pos_getY_mm() + d, false, 2000000, 4, 4, false);
                     if (ts == TRAJ_NEAR_OBSTACLE) {
                         logger().info() << "===== TRAJ_NEAR_OBSTACLE CONFIRMED" << logs::end;
                         robot.asserv().resetEmergencyOnTraj();
@@ -163,7 +163,7 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
             } else if (d < 0) {
                 while (ts != TRAJ_FINISHED) {
                     ts = robot.ia().iAbyPath().whileMoveBackwardTo(robot.asserv().pos_getX_mm(),
-                            robot.asserv().pos_getY_mm() + d, false, 1000000, 4, 4, false);
+                            robot.asserv().pos_getY_mm() + d, false, 2000000, 4, 4, false);
                     if (ts == TRAJ_NEAR_OBSTACLE) {
                         logger().info() << "===== TRAJ_NEAR_OBSTACLE CONFIRMED" << logs::end;
                         robot.asserv().resetEmergencyOnTraj();

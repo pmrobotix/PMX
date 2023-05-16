@@ -460,7 +460,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
         }
 
         robot_->logger().debug() << "byPathfinding=" << byPathfinding << "  TS = " << ts << logs::end;
-        robot_->svgPrintPosition(1);
+        robot_->svgPrintPosition();
         robot_->displayTS(ts);
 
         if (ts == TRAJ_NEAR_OBSTACLE) {
@@ -516,7 +516,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
             << robot_->asserv()->pos_getX_mm() << " y=" << robot_->asserv()->pos_getY_mm() << " a="
             << robot_->asserv()->pos_getThetaInDegree() << logs::end;
 
-    robot_->svgPrintPosition();
+    //robot_->svgPrintPosition();
 
     return ts;
 }
@@ -524,7 +524,6 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
 TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us,
         int nb_near_obstacle, int nb_collision, bool byPathfinding, int reculOnObstacleMm, int reculOnCollisionMm)
 {
-
     TRAJ_STATE ts = TRAJ_OK;
     int f = 0;
     int c = 0;
@@ -537,7 +536,7 @@ TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignor
         }
         if (ts != TRAJ_FINISHED) {
             robot_->logger().debug() << " TS = " << ts << logs::end;
-            robot_->svgPrintPosition(1);
+            robot_->svgPrintPosition();
             robot_->displayTS(ts);
 
             if (ts == TRAJ_NEAR_OBSTACLE) {
@@ -595,14 +594,14 @@ TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignor
             << robot_->asserv()->pos_getX_mm() << " y=" << robot_->asserv()->pos_getY_mm() << " a="
             << robot_->asserv()->pos_getThetaInDegree() << logs::end;
 
-    robot_->svgPrintPosition();
+    //robot_->svgPrintPosition();
 
     return ts;
 }
 
 TRAJ_STATE IAbyPath::whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tempo_us, int nb_collision)
 {
-    robot_->svgPrintPosition(1);
+    //robot_->svgPrintPosition(1);
     //robot_->logger().info() << " ===== whileMoveRotateTo" << logs::end;
 
     TRAJ_STATE ts = TRAJ_OK;
@@ -645,7 +644,7 @@ TRAJ_STATE IAbyPath::whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tem
             << robot_->asserv()->pos_getX_mm() << " y=" << robot_->asserv()->pos_getY_mm() << " a="
             << robot_->asserv()->pos_getThetaInDegree() << logs::end;
 
-    robot_->svgPrintPosition();
+    //robot_->svgPrintPosition(1);
     return ts;
 }
 
