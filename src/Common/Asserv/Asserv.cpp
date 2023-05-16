@@ -409,12 +409,12 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
     }
 
     if (frontlevel >= 4) {
-    if (useAsservType_ == ASSERV_INT_INSA)
-        pAsservInsa_->path_CollisionOnTrajectory();
-    else if (useAsservType_ == ASSERV_EXT)
-        asservdriver_->path_CollisionOnTrajectory();
-    else if (useAsservType_ == ASSERV_INT_ESIALR)
-        pAsservEsialR_->path_CollisionOnTrajectory();
+        if (useAsservType_ == ASSERV_INT_INSA)
+            pAsservInsa_->path_CollisionOnTrajectory();
+        else if (useAsservType_ == ASSERV_EXT)
+            asservdriver_->path_CollisionOnTrajectory();
+        else if (useAsservType_ == ASSERV_INT_ESIALR)
+            pAsservEsialR_->path_CollisionOnTrajectory();
     }
 
     /*
@@ -446,11 +446,11 @@ void Asserv::warnBackCollisionOnTraj(int backlevel, float x_adv_detect_mm, float
     if (temp_ignoreRearCollision_)
         return;
 
-    if (backlevel >= 1) {
-
+    if (backlevel >= 3) {
         setLowSpeedBackward(true, getLowSpeedvalue());
     }
-    if (backlevel >= 1) {
+
+    if (backlevel >= 4) {
         if (useAsservType_ == ASSERV_INT_INSA)
             pAsservInsa_->path_CollisionRearOnTrajectory();
         else if (useAsservType_ == ASSERV_EXT)

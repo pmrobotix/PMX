@@ -131,10 +131,8 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
     robot.actions().sensors().addTimerSensors(200);    //detection adverse toutes les 200ms
     robot.chrono().start();
 
-//    robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
-//    robot.actions().sensors().setIgnoreBackNearObstacle(false, false, false);
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
-    robot.actions().sensors().setIgnoreBackNearObstacle(true, false, true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
     robot.asserv().setLowSpeedForward(true, s);
     robot.asserv().setLowSpeedBackward(true, s);
@@ -145,7 +143,10 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
         ts = TRAJ_OK;
         if (d != 0) {
             logger().info() << "go...d=" << d << "mm" << logs::end;
+
             if (d >= 0) {
+                robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+                robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
                 while (ts != TRAJ_FINISHED) {
                     ts = robot.ia().iAbyPath().whileMoveForwardTo(robot.asserv().pos_getX_mm(),
                             robot.asserv().pos_getY_mm() + d, false, 2000000, 4, 4, false);
@@ -161,6 +162,8 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
                     break;
                 }
             } else if (d < 0) {
+                robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+                robot.actions().sensors().setIgnoreBackNearObstacle(true, false, true);
                 while (ts != TRAJ_FINISHED) {
                     ts = robot.ia().iAbyPath().whileMoveBackwardTo(robot.asserv().pos_getX_mm(),
                             robot.asserv().pos_getY_mm() + d, false, 2000000, 4, 4, false);
@@ -181,6 +184,8 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
         if (!(x == 0 && y == 0)) {
             ts = TRAJ_OK;
             logger().info() << "go Forward... x=" << x << ", y=" << y << logs::end;
+            robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+            robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
             while (ts != TRAJ_FINISHED) {
                 ts = TRAJ_OK;
                 ts = robot.ia().iAbyPath().whileMoveForwardTo(x, y, false, 2000000, 3, 3);

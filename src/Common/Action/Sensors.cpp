@@ -379,26 +379,25 @@ int Sensors::filtre_levelInBack(int threshold_mm, int threshold_veryclosed_mm, i
 
     //si  le robot adverse est derriere
     if (y_mm < 0) {
-        if ((ydist_adv <= threshold_mm) && (ydist_adv > threshold_veryclosed_mm)) {
-            return 1;
-        }
-
         //on garde une bande de 10cm pour dire que c'est 2 et non 3 ou 4
         // return 3 si c'est à droite en positif
         if ((ydist_adv <= threshold_veryclosed_mm - 10) && (xdist_adv >= threshold_veryclosed_mm - 150)
                 && (xdist_adv <= threshold_mm)) {
-            return 3;
+            return 1;
         }
         // return 4 si c'est à gauche en positif
         if ((ydist_adv <= threshold_veryclosed_mm - 10) && (xdist_adv <= (-threshold_veryclosed_mm + 150))
                 && (xdist_adv >= -threshold_mm)) {
-            return 4;
+            return 2;
+        }
+        if ((ydist_adv <= threshold_mm) && (ydist_adv > threshold_veryclosed_mm)) {
+            return 3;
         }
 
         //on renvoi 2 si c'est inf à closed threshold et si ce n'est pas sur les côtés
         if ((ydist_adv <= threshold_veryclosed_mm) && (xdist_adv >= -threshold_veryclosed_mm)
                 && (xdist_adv <= threshold_veryclosed_mm)) {
-            return 2;
+            return 4;
         }
     }
     return 0;
@@ -458,7 +457,7 @@ int Sensors::front(bool display)
             }
         }
     }
-    if (enableFrontCenter_) {
+    if (getAvailableFrontCenter()) {
         // detection avec la balise
         vpos = Sensors::getPositionsAdv();
         int level_filtered = false;
@@ -472,7 +471,7 @@ int Sensors::front(bool display)
             //filtre sur la table avec transformation de repere
             inside_table = this->robot()->asserv()->filtre_IsInsideTableXY(botpos.d, botpos.x, botpos.y,
                     botpos.theta_deg, &x_pos_adv_table, &y_pos_adv_table);
-            if (1) {        //if (!remove_outside_table_) {
+            if (!remove_outside_table_) {
                 inside_table = true;
             }
 
@@ -631,7 +630,9 @@ int Sensors::back(bool display)
             }
         }
     }
-    if (enableBackCenter_) {
+    if (getAvailableBackCenter()) {
+//        logger().error() << enableBackCenter_ << " enableBackCenter_  " << ignoreBackCenter_ << " ignoreBackCenter_"
+//                << logs::end;
 
         //trouver la distance de detection
         vpos = Sensors::getPositionsAdv();
@@ -639,14 +640,15 @@ int Sensors::back(bool display)
         bool inside_table = true;
         int x_pos_adv_table = -1;
         int y_pos_adv_table = -1;
+        int nb = 0;
 
         for (auto botpos : vpos) {
-
+            nb++;
             //filtre sur la table avec transformation de repere
             inside_table = this->robot()->asserv()->filtre_IsInsideTableXY(botpos.d, botpos.x, botpos.y,
                     botpos.theta_deg, &x_pos_adv_table, &y_pos_adv_table);
-            //if (!remove_outside_table_) {
-            if (1) {
+            if (!remove_outside_table_) {
+                //if (1) {
                 inside_table = true;
             }
 
@@ -655,39 +657,43 @@ int Sensors::back(bool display)
 
                 //filtre is_in_front devant ou coté
                 //0  0  0
-                //1  1  1
-                //4G 2  3D // level 2 backCenterVeryClosedThreshold_
-                //1  1  1  // level 1 backCenterThreshold_
+                //3  3  3  // level 1 frontCenterThreshold_
+                //2G 4  1D // level 2 frontCenterVeryClosedThreshold_
+                //3  3  3
                 //0  0  0
 
                 level_filtered = this->filtre_levelInBack(backCenterThreshold_, backCenterVeryClosedThreshold_,
                         botpos.d, botpos.x, botpos.y, botpos.theta_deg);
 
                 if (level_filtered == 1) {
+                    // DROITE
+                    if (display)
+                        logger().info() << level_filtered << " DROITE backCenter xy= " << botpos.x << " " << botpos.y
+                                << logs::end;
                     level = 1;
-                    logger().debug() << level_filtered << " backCenter xy= " << botpos.x << " " << botpos.y
-                            << logs::end;
+                    adv_is_detected_back_right_ = true;
+                } else if (level_filtered == 2) {
+                    // GAUCHE
+                    if (display)
+                        logger().info() << level_filtered << " GAUCHE backCenter xy= " << botpos.x << " " << botpos.y
+                                << logs::end;
+                    level = 2;
+                    adv_is_detected_back_left_ = true;
+                } else if (level_filtered == 3) {
+                    level = 3;
+                    if (display)
+                        logger().info() << level_filtered << " backCenter xy= " << botpos.x << " " << botpos.y
+                                << logs::end;
                     if (x_pos_adv_table != -1 && y_pos_adv_table != -1)
                         this->robot()->svgw().writePosition_AdvPos(x_pos_adv_table, y_pos_adv_table, 1);
 
-                } else if (level_filtered == 2) { //seuil de level 2
-                    level = 2;
+                } else if (level_filtered == 4) { //seuil de level 2
+                    level = 4;
                     if (x_pos_adv_table != -1 && y_pos_adv_table != -1)
                         this->robot()->svgw().writePosition_AdvPos(x_pos_adv_table, y_pos_adv_table, 2);
-                    logger().debug() << level_filtered << " backCenter xy= " << botpos.x << " " << botpos.y
-                            << logs::end;
-                } else if (level_filtered == 3) {
-                    // DROITE
-                    logger().debug() << level_filtered << " DROITE backCenter xy= " << botpos.x << " " << botpos.y
-                            << logs::end;
-                    level = 0;
-                    adv_is_detected_back_right_ = true;
-                } else if (level_filtered == 4) {
-                    // GAUCHE
-                    logger().debug() << level_filtered << " GAUCHE backCenter xy= " << botpos.x << " " << botpos.y
-                            << logs::end;
-                    level = 0;
-                    adv_is_detected_back_left_ = true;
+                    if (display)
+                        logger().info() << level_filtered << " backCenter xy= " << botpos.x << " " << botpos.y
+                                << logs::end;
                 } else {
                     adv_is_detected_back_right_ = false;
                     adv_is_detected_back_left_ = false;
@@ -697,30 +703,12 @@ int Sensors::back(bool display)
                         << logs::end;
             }
 
-            /*
-             if (botpos.d < backCenterThreshold_) //seuil de distance
-             {
-             //test si devant le robot/filtre devant le robot ou pas.
-             is_in_back |= this->robot()->asserv()->filtre_IsInBack(backCenterThreshold_, botpos.d, botpos.x,
-             botpos.y, botpos.theta_deg);
-
-             if (is_in_back) {
-             //TODO filtre dans la table ou non
-
-             level = 1;
-             logger().info() << "1 backCenter= " << botpos.d << " is_in_back=" << is_in_back << logs::end;
-             if (botpos.d < backCenterVeryClosedThreshold_) { //seuil de level 2
-             level = 2;
-             logger().info() << "2 backCenter= " << botpos.d << " is_in_back=" << is_in_back << logs::end;
-
-             }
-             }
-
-             }*/
-            if (botpos.nbDetectedBots == 1)
-                break;
+//            if (botpos.nbDetectedBots == 1)
+//                break;
         }
-
+        //TODO : a reinitialiser apres 1sec
+        //                        adv_is_detected_back_right_ = false;
+        //                        adv_is_detected_back_left_ = false;
     }
     if (enableBackRight_) {
         bool bR_filter = this->robot()->asserv()->filtre_IsInsideTable(-bR, 1, "bR");
@@ -820,107 +808,111 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
         logger().error() << ">> SYNC BAD DATA! NO UPDATE" << logs::end;
         return;
     }
+    if (sensors_.getAvailableFrontCenter()) {
+        int frontLevel = sensors_.front(false);
 
-    int frontLevel = sensors_.front(false);
-
-    if (frontLevel <=2) {
-        nb_sensor_front_a_zero++;
-    } else {
-        nb_sensor_front_a_zero = 0;
-    }
-    if (frontLevel >= 4) {
-        nb_sensor_level2++;
-    } else {
-        nb_sensor_level2 = 0;
-    }
-
-    if (frontLevel == 3) {
-
-        //si on vient de descendre du level 2
-        if (lastfrontl2_temp_ == true) {
-            //logger().error() << "front : si on vient de descendre du level 2" << logs::end;
-            //lastdetect_front_nb_ = 1;
-            lastfrontl2_temp_ = false;
-            sensors_.robot()->asserv()->resetEmergencyOnTraj("front descendre du level 2");
-            sensors_.robot()->resetDisplayObstacle();
+        if (frontLevel <= 2) {
+            nb_sensor_front_a_zero++;
+        } else {
+            nb_sensor_front_a_zero = 0;
+        }
+        if (frontLevel >= 4) {
+            nb_sensor_level2++;
+        } else {
+            nb_sensor_level2 = 0;
         }
 
-        //send collision to asserv
-        //if (lastdetect_front_nb_ == 0) {
+        if (frontLevel == 3) {
 
-        sensors_.robot()->asserv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
-        //sensors_.robot()->asserv()->setLowSpeedForward(true, 25);
-        //}
-        //lastdetect_front_nb_++;
-    }
+            //si on vient de descendre du level 2
+            if (lastfrontl2_temp_ == true) {
+                //logger().error() << "front : si on vient de descendre du level 2" << logs::end;
+                //lastdetect_front_nb_ = 1;
+                lastfrontl2_temp_ = false;
+                sensors_.robot()->asserv()->resetEmergencyOnTraj("front descendre du level 2");
+                sensors_.robot()->resetDisplayObstacle();
+            }
+
+            //send collision to asserv
+            //if (lastdetect_front_nb_ == 0) {
+
+            sensors_.robot()->asserv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
+            //sensors_.robot()->asserv()->setLowSpeedForward(true, 25);
+            //}
+            //lastdetect_front_nb_++;
+        }
 
 //cas nearest
-    //if (lastdetect_front_nb_ > 0) {
-    if (nb_sensor_level2 >= 2) {
+        //if (lastdetect_front_nb_ > 0) {
+        if (nb_sensor_level2 >= 2) {
 
-        sensors_.robot()->asserv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
-        //sensors_.robot()->asserv()->setLowSpeedForward(true, 25);
+            sensors_.robot()->asserv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
+            //sensors_.robot()->asserv()->setLowSpeedForward(true, 25);
 
-        lastfrontl2_temp_ = true;
+            lastfrontl2_temp_ = true;
+        }
+        if (nb_sensor_front_a_zero >= 2) {
+            lastdetect_front_nb_ = 0;
+            sensors_.robot()->asserv()->setLowSpeedForward(false);
+            sensors_.robot()->asserv()->resetEmergencyOnTraj("SensorsTimer front=0");
+            sensors_.robot()->resetDisplayObstacle();
+        }
+        //}
+        sensors_.robot()->displayObstacle(frontLevel); //TODO a separer en displayObstacleFront et displayObstacleBack
+
     }
-    if (nb_sensor_front_a_zero >= 2) {
-        lastdetect_front_nb_ = 0;
-        sensors_.robot()->asserv()->setLowSpeedForward(false);
-        sensors_.robot()->asserv()->resetEmergencyOnTraj("SensorsTimer front=0");
-        sensors_.robot()->resetDisplayObstacle();
-    }
-    //}
-    sensors_.robot()->displayObstacle(frontLevel); //TODO a separer en displayObstacleFront et displayObstacleBack
-/*
 //ARRIERE/////////////////////////////////////////////////////////////////
-    int backLevel = sensors_.back(false);
-    if (backLevel == 0) {
-        nb_sensor_back_a_zero++;
-    } else {
-        nb_sensor_back_a_zero = 0;
-    }
-    if (backLevel >= 2) {
-        nb_sensor_b_level2++;
-    } else {
-        nb_sensor_b_level2 = 0;
-    }
+    if (sensors_.getAvailableBackCenter()) {
+        if (sensors_.getAvailableFrontCenter()) {
+            logger().error()
+                    << "getAvailableBackCenter & getAvailableFrontCenter ACTIVATED SAME TIME !!!!!!!!!!!!!!!!!!!!!!!!!!!"
+                    << logs::end;
+            //TODO regler le pb si activation des 2
 
-    if (backLevel == 1) {
-        //si on vient de descendre du level 2
-        if (lastbackl2_temp_ == true) {
-
-            lastbackl2_temp_ = false;
-            sensors_.robot()->asserv()->resetEmergencyOnTraj("back descendre du level 2");
-            //sensors_.robot()->resetDisplayObstacle();
+        }
+        int backLevel = sensors_.back(false);
+        if (backLevel <= 2) {
+            nb_sensor_back_a_zero++;
+        } else {
+            nb_sensor_back_a_zero = 0;
+        }
+        if (backLevel >= 4) {
+            nb_sensor_b_level2++;
+        } else {
+            nb_sensor_b_level2 = 0;
         }
 
-        sensors_.robot()->asserv()->warnBackCollisionOnTraj(backLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
+        if (backLevel == 3) {
+            //si on vient de descendre du level 2
+            if (lastbackl2_temp_ == true) {
 
+                lastbackl2_temp_ = false;
+                sensors_.robot()->asserv()->resetEmergencyOnTraj("back descendre du level 2");
+                //sensors_.robot()->resetDisplayObstacle();
+            }
+
+            sensors_.robot()->asserv()->warnBackCollisionOnTraj(backLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
+
+        }
+
+        if (nb_sensor_b_level2 >= 2) {
+
+            sensors_.robot()->asserv()->warnBackCollisionOnTraj(backLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
+
+            lastbackl2_temp_ = true;
+        }
+        if (nb_sensor_back_a_zero >= 2) {
+            lastdetect_back_nb_ = 0;
+            sensors_.robot()->asserv()->setLowSpeedBackward(false);
+            sensors_.robot()->asserv()->resetEmergencyOnTraj("SensorsTimer back=0");
+            //sensors_.robot()->resetDisplayObstacle();
+        }
     }
 
-    if (nb_sensor_b_level2 >= 2) {
-
-        sensors_.robot()->asserv()->warnBackCollisionOnTraj(backLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
-
-        lastbackl2_temp_ = true;
-    }
-    if (nb_sensor_back_a_zero >= 3) {
-        lastdetect_back_nb_ = 0;
-        sensors_.robot()->asserv()->setLowSpeedBackward(false);
-        sensors_.robot()->asserv()->resetEmergencyOnTraj("SensorsTimer back=0");
-        //sensors_.robot()->resetDisplayObstacle();
-    }
-
-    //logger().debug() << "onTimer() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec()
-// << " us lastdetect_front_nb_ =" << lastdetect_front_nb_ << " front=" << frontLevel << " back=" << backLevel
-    //   << logs::end;
-*/
 }
 
 void SensorsTimer::onTimerEnd(utils::Chronometer chrono)
 {
-//    logger().debug() << "onTimerEnd() " << this->info() << "=" << chrono.getElapsedTimeInMicroSec() << " us"
-//            << logs::end;
 
 }
 

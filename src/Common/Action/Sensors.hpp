@@ -64,6 +64,16 @@ private:
     int backCenterVeryClosedThreshold_;
     int backRightVeryClosedThreshold_;
 
+    bool adv_is_detected_front_right_;
+    bool adv_is_detected_back_right_;
+    bool adv_is_detected_front_left_;
+    bool adv_is_detected_back_left_;
+
+    //2023
+    bool is_cake_there_in_D2_;
+    bool is_cake_there_in_D5_;
+    bool is_cake_there_in_A5_;
+
     bool enableFrontLeft_;
     bool enableFrontCenter_;
     bool enableFrontRight_;
@@ -79,17 +89,6 @@ private:
     bool ignoreBackLeft_;
     bool ignoreBackCenter_;
     bool ignoreBackRight_;
-
-    bool adv_is_detected_front_right_;
-    bool adv_is_detected_back_right_;
-    bool adv_is_detected_front_left_;
-    bool adv_is_detected_back_left_;
-
-    //2023
-    bool is_cake_there_in_D2_;
-    bool is_cake_there_in_D5_;
-    bool is_cake_there_in_A5_;
-
 public:
 
     //distance de ce qu'il y a devant le robot
@@ -120,6 +119,16 @@ public:
 
     void display(int n);
 
+    inline bool getAvailableFrontCenter()
+    {
+        return (enableFrontCenter_ & !ignoreFrontCenter_);
+    }
+
+    inline bool getAvailableBackCenter()
+    {
+        return (enableBackCenter_ & !ignoreBackCenter_);
+    }
+
     float MultipleRightSide(int nb);
     float MultipleLeftSide(int nb);
 
@@ -147,10 +156,12 @@ public:
     void addConfigBack(bool left, bool center, bool right);
 
     void remove_outside_table(bool enable);
-    int filtre_levelInFront(int threshold_mm, int threshold_veryclosed_mm, int dist_mm, int x_mm, int y_mm, float theta_deg);
-    int filtre_levelInBack(int threshold_mm, int threshold_veryclosed_mm, int dist_mm, int x_mm, int y_mm, float theta_deg);
+    int filtre_levelInFront(int threshold_mm, int threshold_veryclosed_mm, int dist_mm, int x_mm, int y_mm,
+            float theta_deg);
+    int filtre_levelInBack(int threshold_mm, int threshold_veryclosed_mm, int dist_mm, int x_mm, int y_mm,
+            float theta_deg);
 
-    void addThresholdDiameterOpponent_mm (int diam);
+    void addThresholdDiameterOpponent_mm(int diam);
 
     //configuration à partir du centre du robot
     void addThresholdFront(int left, int center, int right);
