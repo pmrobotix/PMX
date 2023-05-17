@@ -17,7 +17,7 @@ OPOS6UL_AsservExtended::OPOS6UL_AsservExtended(std::string botId, OPOS6UL_RobotE
 
 
     //set the value setLowSpeedForward for asserv
-    setLowSpeedvalue(45);
+    setLowSpeedvalue(20);
 
     //TODO essayer de surcharger les asservdriver pour avoir accès que log SVG
     //TODO asservdriver_ = AAsservDriver::create(botId, robot->svgw());

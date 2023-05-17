@@ -369,7 +369,7 @@ void Asserv::setEmergencyStop()
 
 void Asserv::resetEmergencyOnTraj(std::string message)
 {
-    logger().debug() << "resetEmergencyOnTraj message = " << message << logs::end;
+    logger().error() << "resetEmergencyOnTraj message = " << message << logs::end;
     if (useAsservType_ == ASSERV_INT_INSA) {
         //pAsservInsa_->path_ResetEmergencyStop();
     } else if (useAsservType_ == ASSERV_EXT)
@@ -404,7 +404,6 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
         return;
 
     if (frontlevel >= 3) {
-        //stopMotors();
         setLowSpeedForward(true, getLowSpeedvalue());
     }
 

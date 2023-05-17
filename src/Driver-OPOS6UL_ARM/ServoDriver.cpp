@@ -41,7 +41,7 @@ ServoDriver::ServoDriver()
 
 bool ServoDriver::is_connected()
 {
- //TODO ServoDriver::is_connected
+    return connected_;
 
 }
 

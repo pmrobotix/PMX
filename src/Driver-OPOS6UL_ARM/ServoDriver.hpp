@@ -25,7 +25,7 @@ private:
 
     bool testIf(long value, long valeurMin, long valeurMax);
 
-    int connected_;
+    bool connected_;
     //ServoType servo_type_[NB_SERVO_DYN];
 
 protected:

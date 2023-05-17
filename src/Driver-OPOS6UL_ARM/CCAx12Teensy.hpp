@@ -89,7 +89,7 @@ private:
     bool connected_;
     utils::Mutex mutex_;
 
-    int i2cHandle_;
+    //int i2cHandle_;
     short int i2c_aAddr_;
 
     /*!

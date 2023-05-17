@@ -28,7 +28,7 @@ bool ServoObjectsSystem::setup(int servo, AServoDriver::ServoType type, int valu
 {
 
     if (!servodriver_->is_connected()) {
-        logger().error() << "SERVO NOT CONNECTED !" << logs::end;
+        logger().error() << "SERVO NOT CONNECTED ! servo=" << servo << logs::end;
         return false;
     }
 

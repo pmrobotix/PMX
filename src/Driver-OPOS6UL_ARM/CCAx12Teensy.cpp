@@ -23,7 +23,6 @@ CCAx12Teensy::CCAx12Teensy() : //TODO Une SEULE CARTE est possible a mettre en p
         i2c_CCAx12Teensy_(1), connected_(false)
 {
     i2c_aAddr_ = 0;
-    i2cHandle_ = 0;
 }
 
 bool CCAx12Teensy::connect(short int i2c_aAddr) {

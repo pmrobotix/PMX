@@ -467,11 +467,11 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
             robot_->logger().info() << " ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
             f++;
             if (f < 2)
-                robot_->asserv()->resetEmergencyOnTraj("whileMoveForwardTo TRAJ_NEAR_OBSTACLE"); //pour autoriser le level de detection 1 puis 2
+                robot_->asserv()->resetEmergencyOnTraj("IAbyPath whileMoveForwardTo TRAJ_NEAR_OBSTACLE"); //pour autoriser le level de detection 1 puis 2
             if (reculOnObstacleMm > 0) {
                 TRAJ_STATE tr = robot_->asserv()->doLineAbs(-reculOnObstacleMm);
                 if (tr != TRAJ_OK) {
-                    robot_->asserv()->resetEmergencyOnTraj("doLineAbs(-reculOnObstacleMm); TRAJ_NEAR_OBSTACLE"); //pour autoriser le level de detection 1 puis 2
+                    robot_->asserv()->resetEmergencyOnTraj(" IAbyPathdoLineAbs(-reculOnObstacleMm); TRAJ_NEAR_OBSTACLE"); //pour autoriser le level de detection 1 puis 2
                 }
             }
             if (f >= nb_near_obstacle) {
@@ -481,12 +481,12 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
         if (ts == TRAJ_COLLISION) {
             robot_->logger().info() << "===== COLLISION essai n°" << c << logs::end;
             c++;
-            robot_->asserv()->resetEmergencyOnTraj("whileMoveForwardTo TRAJ_COLLISION");
+            robot_->asserv()->resetEmergencyOnTraj("IAbyPath whileMoveForwardTo TRAJ_COLLISION");
             if (reculOnCollisionMm > 0) {
                 //robot_->logger().info() << "IAbyPath::whileMoveForwardTo RECUL de mm=" << reculOnCollisionMm << logs::end;
                 TRAJ_STATE tr = robot_->asserv()->doLineAbs(-reculOnCollisionMm);
                 if (tr != TRAJ_OK) {
-                    robot_->asserv()->resetEmergencyOnTraj("doLineAbs(-reculOnCollisionMm); TRAJ_COLLISION"); //pour autoriser le level de detection 1 puis 2
+                    robot_->asserv()->resetEmergencyOnTraj("IAbyPath doLineAbs(-reculOnCollisionMm); TRAJ_COLLISION"); //pour autoriser le level de detection 1 puis 2
                 }
             }
             if (c >= nb_collision) {

@@ -36,6 +36,9 @@ bool O_launch_balls_1() {
     }
     robot.svgPrintPosition();
 
+
+
+
     return true; //return true si ok sinon false si interruption
 }
 
@@ -83,11 +86,11 @@ bool O_end_of_match() {
     RobotPosition zone;
 
     robot.ia().iAbyPath().goToZone("zone_end", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 2000000, 3, 3, false, 0);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 2000000, 50, 50, false, 0);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "O_end_of_match : zone_end  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
-        return false;
+
     }
     robot.svgPrintPosition();
 
@@ -159,7 +162,8 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone() {
 
     robot.ia().iAbyPath().ia_createZone("zone_launch1", 0, 0, 450, 200, 1000, 600, -90);
 
-    robot.ia().iAbyPath().ia_createZone("zone_end", 0, 1650, 450, 450, 500, 1650, 0);
+    //robot.ia().iAbyPath().ia_createZone("zone_end", 0, 1650, 450, 450, 500, 1650, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_end", 0, 1650, 450, 450, 1550, 900, 0);
     robot.ia().iAbyPath().ia_createZone("zone_ball_D3", 1800, 1350, 200, 300, 1800, 1500, 0);
 
     robot.ia().iAbyPath().ia_createZone("zone_ball_BC1", 900, 0, 200, 300, 750, 160, 0);
