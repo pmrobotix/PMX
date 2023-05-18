@@ -40,6 +40,7 @@ L_State_Init::execute(Robot&)
             robot.actions().ledBar().set(0, LED_RED);
             robot.actions().ledBar().set(1, LED_RED);
             std::this_thread::sleep_for(std::chrono::seconds(1));
+            std::this_thread::yield();
         }
         exit(0);
     }
@@ -219,6 +220,7 @@ L_State_Init::execute(Robot&)
 //                exit(0);
 //            }
             std::this_thread::sleep_for(std::chrono::microseconds(100000));
+            std::this_thread::yield();
             //usleep(100000);
         }
 
@@ -256,6 +258,7 @@ L_State_Init::execute(Robot&)
 
             //sleep
             std::this_thread::sleep_for(std::chrono::microseconds(100000));
+            std::this_thread::yield();
 
             //si connected and alive
             bool c = robot.actions().sensors().is_connected();
@@ -278,6 +281,7 @@ L_State_Init::execute(Robot&)
 //                    }
 //                }
             }
+
         }
 
         //robot.actions().sensors().stopTimerSensors();
@@ -332,6 +336,7 @@ L_State_Init::execute(Robot&)
 
             //sleep
             std::this_thread::sleep_for(std::chrono::microseconds(30000));
+            std::this_thread::yield();
         }
     } else {
 

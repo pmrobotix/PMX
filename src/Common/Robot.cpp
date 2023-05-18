@@ -114,6 +114,7 @@ void Robot::parseConsoleArgs(int argc, char** argv, bool stopWithErrors) {
 
     if (!cArgs_.parse(argc, argv, stopWithErrors)) {
         logger().debug() << "Error parsing DEFAULT" << logs::end;
+        sleep(1);
         exit(-1);
     }
 }
@@ -136,6 +137,7 @@ void Robot::begin(int argc, char** argv) {
         frequete = msgget(CLEF_REQUETES, 0700 | IPC_CREAT);
         if (frequete == -1) {
             perror("msgget");
+            sleep(1);
             exit(0);
         }
         while (1) {
@@ -187,6 +189,7 @@ void Robot::begin(int argc, char** argv) {
                 perror("msgsnd");
                 exit(0);
             }
+            std::this_thread::yield();
         }
     }
 #endif
@@ -212,10 +215,12 @@ void Robot::begin(int argc, char** argv) {
                         //printf("Back key!\n");
                         cout << "Exit !\n" << endl;
                         //cout << default_console << endl;
+                        sleep(1);
                         exit(0);
                         break;
                 }
                 utils::sleep_for_micros(1000);
+                std::this_thread::yield();
             } while (cInput != 10);
             //---------------fin Pour debug
         }
@@ -278,6 +283,7 @@ void Robot::begin(int argc, char** argv) {
         select = cmanager_.displayMenuFirstArgu();
         if (select == "-") {
             logger().error() << "displayMenuFirstArgu bad return " << logs::end;
+            sleep(1);
             exit(-1);
         }
         cArgs_["type"] = select;

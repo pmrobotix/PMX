@@ -41,7 +41,7 @@ LcdShieldDriver::LcdShieldDriver()
 
 LcdShieldDriver::~LcdShieldDriver()
 {
-    prog_exit();
+    prog_exit(); //est-ce necessaire ?
 }
 
 bool LcdShieldDriver::is_connected()

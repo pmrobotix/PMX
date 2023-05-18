@@ -67,6 +67,7 @@ long MovingBase::moveDWaitTrajectory()
         }
 
         utils::sleep_for_micros(10000);
+        std::this_thread::yield();
     }
 
     //TODO use external encoders if needed
@@ -93,6 +94,7 @@ void MovingBase::moveForward(int mm, int power) //TODO Backward?
         logger().debug() << "rest=" << rest << logs::end;
         moveD(tick, rest, power);
         rest = moveDWaitTrajectory();
+        std::this_thread::yield();
     }
 
 }
@@ -118,6 +120,7 @@ void MovingBase::turn(float degree, int power)
             arrived = 1;
         }
         utils::sleep_for_micros(500);
+        std::this_thread::yield();
     }
 
     l = encoders_.getLeftEncoder();

@@ -171,7 +171,7 @@ int utils::set_realtime_priority(int p, std::string name, ThreadId thread) {
             // Print the error
             std::cout << "THREAD " << thread << " " << name << " ERROR prio" << std::strerror (errno)<< std::endl;
             //std::cout << "Unsuccessful in setting thread realtime prio" << std::endl;
-//while(1){}
+
             return -2;
         }
         // Now verify the change in thread priority
@@ -180,14 +180,14 @@ int utils::set_realtime_priority(int p, std::string name, ThreadId thread) {
         if (ret != 0) {
             std::cout << "THREAD " << thread << " " << name << " ERROR get parameters" << std::endl;
             //std::cout << "Couldn't retrieve real-time scheduling paramers" << std::endl;
-//while(1){}
+
             return -3;
         }
 
         // Check the correct policy was applied
         if (policy != SCHED_FIFO) {
             std::cout << "Scheduling is NOT SCHED_FIFO!" << std::endl;
-//while(1){}
+
         }
         else {
             //std::cout << "SCHED_FIFO OK" << std::endl;
@@ -195,7 +195,7 @@ int utils::set_realtime_priority(int p, std::string name, ThreadId thread) {
 
         // Print thread scheduling priority
         //std::cout << "Thread priority is " << params.sched_priority << std::endl;
- //while(1){}
+
         return params.sched_priority;
     }
     else return -1;

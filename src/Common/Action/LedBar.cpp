@@ -196,6 +196,7 @@ void LedBar::waiting(bool wait, uint timeout_ms) {
             //logger().error() << "echap=" << echap<< logs::end;
             echap++;
             utils::sleep_for_micros(10000);
+            std::this_thread::yield();
             if (echap > timeout_ms)
             {
                 logger().error() << " waiting a timer indefinitely !!! so break it. " << logs::end;

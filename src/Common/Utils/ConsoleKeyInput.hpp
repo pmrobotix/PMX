@@ -92,6 +92,7 @@ public:
 			char i = '0';
 			i = i + x;
 			ss = i + ss;      //append new character at the front of the string!
+			std::this_thread::yield();
 		}
 		return ss;
 	}

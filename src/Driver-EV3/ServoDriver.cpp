@@ -246,6 +246,7 @@ void ServoDriver::setPulsePosWithRate(int servo, int pos_microsec, int millisec0
                 tf = t;
             }
             else std::this_thread::sleep_for(std::chrono::milliseconds(2));
+            std::this_thread::yield();
         }
     }
 

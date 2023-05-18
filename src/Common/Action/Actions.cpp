@@ -16,6 +16,7 @@ void Actions::start()
     {
         utils::sleep_for_micros(10000);
         //printf(" wait actionManagerTimer_.start \n");
+        std::this_thread::yield();
     }
 }
 

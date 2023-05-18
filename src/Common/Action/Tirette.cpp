@@ -50,14 +50,17 @@ void Tirette::monitor(int nb)
     while (n <= nb) {
         while (!pressed()) {
             utils::sleep_for_micros(10000);
+            std::this_thread::yield();
         }
         logger().info() << "pressed" << logs::end;
 
         while (pressed()) {
             utils::sleep_for_micros(10000);
+            std::this_thread::yield();
         }
         logger().info() << "unpressed" << logs::end;
         n++;
+        std::this_thread::yield();
     }
 }
 
@@ -65,6 +68,7 @@ bool Tirette::waitPressed()
 {
     while (!pressed()) {
         utils::sleep_for_micros(100000);
+        std::this_thread::yield();
     }
     return true;
 }
@@ -73,6 +77,7 @@ bool Tirette::waitUnpressed()
 {
     while (pressed()) {
         utils::sleep_for_micros(100000);
+        std::this_thread::yield();
     }
     return true;
 }

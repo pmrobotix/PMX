@@ -83,9 +83,6 @@ private:
         return instance;
     }
 
-    //PATCH
-    bool temp_ignore_emergency_stop;
-
 public:
     AsservEsialR(Robot * robot);
     ~AsservEsialR() {

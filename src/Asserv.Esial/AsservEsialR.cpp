@@ -337,6 +337,7 @@ void AsservEsialR::execute()
         } else {
             utils::Thread::sleep_for_micros(20000);
         }
+        std::this_thread::yield();
     }
 }
 
@@ -542,11 +543,13 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
 //                << std::setw(10) << " s=" << p_.asservStatus << " timeout=" << timeout<< logs::end;
 
         utils::sleep_for_micros(10000);
+
         timeout++;
         if (timeout > 10) {
-            logger().debug() << "_______________________waitEndOfTraj() => break" << logs::end;
+            logger().error() << "_______________________waitEndOfTraj() => break" << logs::end;
             break;
         }
+        std::this_thread::yield();
     }
 
     timeout = 0;
@@ -558,6 +561,7 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
         if (timeout > 10 && p_.asservStatus != 1) {
             break;
         }
+        std::this_thread::yield();
     }
 
 //    logger().debug() << "END waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000
@@ -582,18 +586,12 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
 
 TRAJ_STATE AsservEsialR::motion_DoLine(float dist_mm)
 {
-    temp_ignore_emergency_stop = false;
     commandM_->addStraightLine(dist_mm);
-
     return waitEndOfTraj();
 }
 TRAJ_STATE AsservEsialR::motion_DoFace(float x_mm, float y_mm)
 {
-    //PATCH
-    temp_ignore_emergency_stop = true;
     commandM_->addGoToAngle(x_mm, y_mm);
-
-
     return waitEndOfTraj();
 }
 TRAJ_STATE AsservEsialR::motion_DoFaceReverse(float x_mm, float y_mm)
@@ -634,7 +632,7 @@ TRAJ_STATE AsservEsialR::motion_Goto(float x_mm, float y_mm)
     float dx = x_mm - p_.x;
     float dy = y_mm - p_.y;
     unlock();
-    temp_ignore_emergency_stop = false;
+
     float dist = sqrt(dx * dx + dy * dy);
     return motion_DoLine(dist);
 }

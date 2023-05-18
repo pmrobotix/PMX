@@ -93,6 +93,7 @@ void ServoObjectsSystem::deployWithVelocity(int servo, int pos, int keep_millise
 
             //logger().info() << "wait "<< r << logs::end;
             utils::sleep_for_micros(2000);
+            std::this_thread::yield();
         }
     }
     //int torque = getTorque(servo);
@@ -137,6 +138,7 @@ void ServoObjectsSystem::deploy(int servo, int pos, int keep_millisec)
 
             //logger().info() << "wait "<< r << logs::end;
             utils::sleep_for_micros(2000);
+            std::this_thread::yield();
         }
     }
     //int torque = getTorque(servo);
@@ -281,6 +283,7 @@ void ServoObjectsSystem::move_1_servo(bool waitornot, int time_eta_ms, int servo
         logger().debug() << "wait for end of servo move...NO ESCAPE" << logs::end;
         while (!move_finished_) {
             utils::sleep_for_micros(TIMER_SERVO_PERIOD_US);
+            std::this_thread::yield();
         }
     }
 }
@@ -323,6 +326,7 @@ void ServoObjectsSystem::move_2_servos(bool waitornot, int time_eta_ms, int serv
         logger().debug() << "wait for end of servo move...NO ESCAPE" << logs::end;
         while (!move_finished_) {
             utils::sleep_for_micros(TIMER_SERVO_PERIOD_US);
+            std::this_thread::yield();
         }
     }
 }

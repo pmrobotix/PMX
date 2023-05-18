@@ -135,6 +135,7 @@ void IAbyPath::ia_start()
     ia_checkZones();
     if (_actions_count <= 0) {
         printf("%s (line %d) : Error : no actions defined\n", __FUNCTION__, __LINE__);
+        sleep(1);
         exit(2);
     }
     bool allDone = false;
@@ -159,6 +160,7 @@ void IAbyPath::ia_start()
                                 robot_->asserv()->pos_getThetaInDegree());
                     else {
                         logger().error() << "robot_ is NULL !" << logs::end;
+                        sleep(1);
                         exit(-1);
                     }
 
@@ -169,12 +171,13 @@ void IAbyPath::ia_start()
                             robot_->asserv()->pos_getThetaInDegree());
                 else {
                     logger().error() << "robot_ is NULL !" << logs::end;
+                    sleep(1);
                     exit(-1);
                 }
             }
 
         }
-
+        std::this_thread::yield();
     }
 }
 
@@ -211,6 +214,7 @@ void IAbyPath::ia_createZone(const char *name, float minX, float minY, float wid
         z->startAngle = robot_->asserv()->getRelativeAngle(z->startAngle);
     } else {
         logger().error() << "robot_ is NULL !" << logs::end;
+        sleep(1);
         exit(-1);
     }
     strcpy(z->name, name);
@@ -234,6 +238,7 @@ void IAbyPath::ia_checkZones()
     if (_zones_count <= 0) {
         printf("%s (line %d) : Error : no zones defined\n", __FUNCTION__,
         __LINE__);
+        sleep(1);
         exit(2);
     }
 
@@ -516,6 +521,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
                     << logs::end;
         }
         robot_->resetDisplayTS();
+        std::this_thread::yield();
     }
 
     robot_->displayTS(ts);
@@ -594,6 +600,7 @@ TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignor
             }
             robot_->resetDisplayTS();
         }
+        std::this_thread::yield();
     }
 
     robot_->displayTS(ts);
@@ -615,7 +622,9 @@ TRAJ_STATE IAbyPath::whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tem
     int f = 0;
     int c = 0;
 
-    while ((ts = robot_->asserv()->doAbsoluteRotateTo(AbsoluteThetaInDegree)) != TRAJ_FINISHED) {
+    while (ts != TRAJ_FINISHED) {
+
+        ts = robot_->asserv()->doAbsoluteRotateTo(AbsoluteThetaInDegree);
 
         robot_->logger().info() << " TS = " << ts << logs::end;
         robot_->svgPrintPosition(1);
@@ -644,7 +653,7 @@ TRAJ_STATE IAbyPath::whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tem
         }
         robot_->resetDisplayTS();
         logger().debug() << "AGAIN ROTATE AbsoluteThetaInDegree=" << AbsoluteThetaInDegree << logs::end;
-
+        std::this_thread::yield();
     }
 
     logger().info() << "time= " << robot_->chrono().getElapsedTimeInMilliSec() << "ms " << " x="

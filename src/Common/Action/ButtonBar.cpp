@@ -28,6 +28,7 @@ bool ButtonBar::waitPressed(ButtonTouch button)
 {
     while (!pressed(button)) {
         utils::sleep_for_micros(500);
+        std::this_thread::yield();
     }
     return true;
 }
@@ -38,6 +39,7 @@ ButtonTouch ButtonBar::waitOneOfAllPressed() //TODO create same with actionmanag
 
     while (bt == BUTTON_NONE) {
         bt = checkOneOfAllPressed();
+        std::this_thread::yield();
     }
     return bt;
 }
