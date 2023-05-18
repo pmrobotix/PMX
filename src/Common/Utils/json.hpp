@@ -31,6 +31,7 @@
 #include <string> // string, stoi, to_string
 #include <utility> // declval, forward, move, pair, swap
 #include <vector> // vector
+#include <thread>
 
 // #include <nlohmann/adl_serializer.hpp>
 //     __ _____ _____ _____
@@ -8136,6 +8137,7 @@ class lexer : public lexer_base<BasicJsonType>
                 }
             }
         }
+        std::this_thread::yield();
     }
 
     /*!
@@ -8162,6 +8164,7 @@ class lexer : public lexer_base<BasicJsonType>
                         default:
                             break;
                     }
+                    std::this_thread::yield();
                 }
             }
 
@@ -9279,6 +9282,7 @@ class binary_reader
                 return true;
             }
             *out++ = static_cast<typename string_t::value_type>(current);
+            std::this_thread::yield();
         }
     }
 

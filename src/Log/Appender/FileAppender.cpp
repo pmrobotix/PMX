@@ -3,10 +3,10 @@
  * \brief Implémentation de la classe FileAppender.
  */
 
-#include "../Appender/FileAppender.hpp"
+#include "FileAppender.hpp"
 
-#include <unistd.h>
 #include <list>
+#include <thread>
 
 logs::FileAppender::~FileAppender()
 {
@@ -52,6 +52,7 @@ void logs::FileAppender::flush()
         std::string message = this->messages_.front();
         ofs_ << message << std::endl;
         this->messages_.pop_front();
+        std::this_thread::yield();
     }
     unlockMessages();
     ofs_.flush();

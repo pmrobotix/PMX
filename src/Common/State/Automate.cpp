@@ -33,5 +33,6 @@ void Automate::run(Robot& robot, IAutomateState* first)
                 logger().debug() << "2.Current state : name=" << state->name() << " done." << logs::end;
             }
         }
+        std::this_thread::yield();
     }
 }

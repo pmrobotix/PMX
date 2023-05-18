@@ -21,6 +21,7 @@ logs::LoggerFactory::LoggerFactory() :
 
     if (rootLogger() == NULL) {
         printf("ERROR Exception logs::LoggerFactory::LoggerFactory() NO default rootLogger() \n Exit!\n");
+        sleep(1);
         exit(1);
     }
 }
@@ -105,6 +106,7 @@ void logs::LoggerFactory::add(const Level & level, const std::string & loggerNam
     Appender * appender = this->appender(appenderName);
     if (appender == NULL) {
         printf("ERROR Exception logs::LoggerFactory::add() %s, %s\nExit!\n", loggerName.c_str(), appenderName.c_str());
+        sleep(1);
         exit(1);
     } else {
         Logger *log = new Logger(level, loggerName, *appender);
@@ -128,7 +130,7 @@ void logs::LoggerFactory::execute()
 
             //std::cout << it->first << " ::flushtime = " << t1-t0<< std::endl;
 
-            this->yield();
+            //this->yield();
         }
 
         utils::Thread::sleep_for_millis(300); //usleep necessaire pour laisser le temps au reste

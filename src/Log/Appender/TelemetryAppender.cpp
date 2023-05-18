@@ -65,12 +65,14 @@ void logs::TelemetryAppender::flush() {
 
         sendto(t_fd, buf, 1024, 0, (struct sockaddr*) &addr_, sizeof(addr_));
         this->messagesjson_.pop_front();
+        std::this_thread::yield();
     }
 
     while (this->messages_.size() > 0) {
         std::string message = this->messages_.front();
         std::cout << message << std::endl; //AFFICHAGE CONSOLE
         this->messages_.pop_front();
+        std::this_thread::yield();
     }
 
     unlockMessages();
@@ -120,6 +122,7 @@ void logs::TelemetryAppender::writeMessageWithJsonTime(std::string id, const log
         {
             std::cout << e.what(); // information from length_error printed
             std::cout << "!!!!!!!ERROR msg is" << message << std::endl;
+            sleep(1);
             exit(0);
         }
     }

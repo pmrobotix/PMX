@@ -58,6 +58,7 @@ void IAbyZone::ia_createZone(const char* name, float minX, float minY, float wid
         z->startAngle = robot_->asserv()->getRelativeAngle(z->startAngle);
     } else {
         logger().error() << "robot_ is NULL !" << logs::end;
+        std::this_thread::sleep_for(std::chrono::seconds(1));
         exit(-1);
     }
     strcpy(z->name, name);
@@ -79,6 +80,7 @@ void IAbyZone::ia_checkZones()
     if (_zones_count <= 0) {
         printf("%s (line %d) : Error : no zones defined\n", __FUNCTION__,
         __LINE__);
+        std::this_thread::sleep_for(std::chrono::seconds(1));
         exit(2);
     }
 
@@ -88,11 +90,13 @@ void IAbyZone::ia_checkZones()
         if (z->width <= 0) {
             printf("%s (line %d) : Error : negative width for zone %s\n", __FUNCTION__,
             __LINE__, z->name);
+            std::this_thread::sleep_for(std::chrono::seconds(1));
             exit(2);
         }
         if (z->height <= 0) {
             printf("%s (line %d) : Error : negative height for zone %s\n", __FUNCTION__,
             __LINE__, z->name);
+            std::this_thread::sleep_for(std::chrono::seconds(1));
             exit(2);
         }
         // Check existing zone path
@@ -103,6 +107,7 @@ void IAbyZone::ia_checkZones()
                 if (p == NULL) {
                     printf("%s (line %d) : Error : no path from %s and %s\n", __FUNCTION__,
                     __LINE__, z->name, z2->name);
+                    std::this_thread::sleep_for(std::chrono::seconds(1));
                     exit(2);
                 }
             }
@@ -121,6 +126,7 @@ void IAbyZone::ia_setPath(const char* zone1Name, const char* zone2Name, float x,
         zp->x = robot_->asserv()->getRelativeX(zp->x);
     } else {
         logger().error() << "robot_ is NULL !" << logs::end;
+        std::this_thread::sleep_for(std::chrono::seconds(1));
         exit(-1);
     }
 
@@ -152,6 +158,7 @@ void IAbyZone::ia_start()
     ia_checkZones();
     if (_actions_count <= 0) {
         printf("%s (line %d) : Error : no actions defined\n", __FUNCTION__, __LINE__);
+        std::this_thread::sleep_for(std::chrono::seconds(1));
         exit(2);
     }
     bool allDone = false;
@@ -176,6 +183,7 @@ void IAbyZone::ia_start()
                                 robot_->asserv()->pos_getThetaInDegree());
                     else {
                         logger().error() << "robot_ is NULL !" << logs::end;
+                        std::this_thread::sleep_for(std::chrono::seconds(1));
                         exit(-1);
                     }
 
@@ -186,12 +194,13 @@ void IAbyZone::ia_start()
                             robot_->asserv()->pos_getThetaInDegree());
                 else {
                     logger().error() << "robot_ is NULL !" << logs::end;
+                    std::this_thread::sleep_for(std::chrono::seconds(1));
                     exit(-1);
                 }
             }
 
         }
-
+        std::this_thread::yield();
     }
 }
 
@@ -259,6 +268,7 @@ void IAbyZone::goToZone(const char *zoneName, RobotPosition *path_p, RobotPositi
 
     if (z == NULL) {
         printf("ERROR: %s %d : unable to get zone %s\n", __FUNCTION__, __LINE__, zoneName);
+        std::this_thread::sleep_for(std::chrono::seconds(1));
         exit(-1);
     }
 
@@ -266,6 +276,7 @@ void IAbyZone::goToZone(const char *zoneName, RobotPosition *path_p, RobotPositi
             robot_->asserv()->pos_getY_mm());
     if (zCurrent == NULL) {
         printf("ERROR: cc_goToZone ia_getNearestZoneFrom return NULL !!");
+        std::this_thread::sleep_for(std::chrono::seconds(1));
         exit(-1);
     }
 

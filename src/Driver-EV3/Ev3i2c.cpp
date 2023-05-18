@@ -38,6 +38,7 @@ Ev3i2c::Ev3i2c(uint i2c_bus_num, bool skipPEC) {
     else {
         //bad busnumber
         std::cout << "Ev3i2c BAD I2C BUS !!!!" << std::endl;
+        sleep(1);
         exit(0);
     }
     filename[12] = 0; //Add the null character onto the end of the array to make it a string

@@ -57,6 +57,7 @@ this->signalEvent.sigev_signo = SIGALRM;
 // Install the Timer
         if (timer_create(CLOCK_REALTIME, &this->signalEvent, &this->timerID) != 0) { // timer id koennte mit private probleme geben
             perror("Could not create the timer");
+            sleep(1);
             exit(1);
         }
 

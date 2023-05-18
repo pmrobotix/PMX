@@ -46,6 +46,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
         }
 
         std::this_thread::sleep_for(std::chrono::microseconds(50000));
+        std::this_thread::yield();
         if (c % 20 == 0) {
             robot.displayPoints();
             this->logger().info() << "chrono " << robot.chrono().getElapsedTimeInSec() << logs::end;
@@ -124,6 +125,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
                 break;
             }
             std::this_thread::sleep_for(std::chrono::microseconds(20000));
+            std::this_thread::yield();
         }
     } else {
 
@@ -149,7 +151,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
                 break;
             }
             std::this_thread::sleep_for(std::chrono::microseconds(20000));
-
+            std::this_thread::yield();
         }
     }
 

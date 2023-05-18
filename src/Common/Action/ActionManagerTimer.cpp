@@ -24,9 +24,9 @@ void ActionManagerTimer::execute()
     int sizeT = 0;
     int sizePT = 0;
     int sizeA = 0;
-    long tps = 0;
-    long starttime = 0;
-    bool found = false;
+//    long tps = 0;
+//    long starttime = 0;
+//    bool found = false;
 
     chronoTimer_.start();
 
@@ -42,8 +42,11 @@ void ActionManagerTimer::execute()
             sem_wait(&AMT);
         } else {
             this->yield();
+            std::this_thread::yield();
             utils::Thread::sleep_for_micros(1);
         }
+
+
 /*
         //on traite les timers par boucle
         //___________________________________________________________________
@@ -82,6 +85,7 @@ void ActionManagerTimer::execute()
 
         //on laisse le temps de faire autre chose si besoin
         this->yield();
+        std::this_thread::yield();
 
         mtimer_.lock();
         sizePT = ptimers_tobestarted_.size();
@@ -101,11 +105,14 @@ void ActionManagerTimer::execute()
                 ptimers_.push_back(ptimer);
                 ptimers_tobestarted_.pop_front();
                 sizePT = ptimers_tobestarted_.size();
+
+                std::this_thread::yield();
             }
         }
         mtimer_.unlock();
 
         this->yield();
+        std::this_thread::yield();
 /*
         mtimer_.lock();
         //on parcours la liste de timer POSIX à supprimer
@@ -155,9 +162,12 @@ void ActionManagerTimer::execute()
                     if (persistaction == true) {
                         actions_.push_back(action);
                         utils::Thread::sleep_for_micros(100);        //permet de ne pas avoir 100% du processeur
+                        std::this_thread::yield();
                     }
                 }
                 sizeA = actions_.size(); //Maj
+
+                std::this_thread::yield();
             }
         }
         maction_.unlock();
@@ -179,6 +189,7 @@ void ActionManagerTimer::stopTimer(std::string timerNameToDelete)
             save = i;
             found = true;
             timer->onTimerEnd(chronoTimer_);
+            std::this_thread::yield();
         }
         i++;
     }
@@ -207,6 +218,7 @@ void ActionManagerTimer::stopPTimer(std::string ptimerNameToDelete)
             ptimer->remove();
         }
         i++;
+        std::this_thread::yield();
     }
     if (found)
         ptimers_.erase(save); //TODO attention difference entre remove et erase ???
@@ -233,6 +245,7 @@ bool ActionManagerTimer::findPTimer(std::string timerNameToFind)
             found = true;
         }
         i++;
+        std::this_thread::yield();
     }
 
     mtimer_.unlock();
@@ -256,6 +269,7 @@ void ActionManagerTimer::stopAllPTimers()
             //suppression de la liste
             ptimers_.pop_front();
         }
+        std::this_thread::yield();
     }
     ptimers_.clear();
 
@@ -296,6 +310,7 @@ void ActionManagerTimer::pause(bool value)
         ITimerPosixListener *ptimer = *i;
         ptimer->setPause(value);
         i++;
+        std::this_thread::yield();
     }
     mtimer_.unlock();
     sem_getvalue(&AMT, &val);
@@ -314,6 +329,7 @@ void ActionManagerTimer::debugActions()
         IAction *action = *i;
         temp << " - " << action->info();
         i++;
+        std::this_thread::yield();
     }
     maction_.unlock();
     logger().debug() << temp.str() << logs::end;
@@ -331,6 +347,7 @@ void ActionManagerTimer::debugPTimers()
             ITimerPosixListener *ptimer = *i;
             temp << " - " << ptimer->name();
             i++;
+            std::this_thread::yield();
         }
     }
     mtimer_.unlock();
@@ -345,6 +362,7 @@ void ActionManagerTimer::debugPTimers()
             ITimerPosixListener *ptimer = *ii;
             temp2 << " - " << ptimer->name();
             ii++;
+            std::this_thread::yield();
         }
     }
     mtimer_.unlock();

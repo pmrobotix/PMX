@@ -135,6 +135,7 @@ void ConsoleManager::displayMenuFunctionalTestsAndRun(int argc, char** argv)
         }
 
         utils::sleep_for_micros(5000);
+        std::this_thread::yield();
     } while (cInput != 10);
 
     cout << default_console << flush;
@@ -193,6 +194,7 @@ string ConsoleManager::displayMenuFirstArgu()
             break;
         }
         utils::sleep_for_micros(1000);
+        std::this_thread::yield();
     } while (cInput != 10);
     cout << default_console << endl;
     ConsoleKeyInput::clearScreen();

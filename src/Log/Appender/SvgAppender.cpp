@@ -6,6 +6,7 @@
 #include "SvgAppender.hpp"
 
 #include <list>
+#include <thread>
 
 logs::SvgAppender::SvgAppender(const std::string & filename) :
         ofs_(filename.c_str())
@@ -32,6 +33,7 @@ void logs::SvgAppender::flush()
         std::string message = this->messages_.front();
         ofs_ << message << std::endl;
         this->messages_.pop_front();
+        std::this_thread::yield();
     }
     unlockMessages();
     ofs_.flush();

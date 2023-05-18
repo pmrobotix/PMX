@@ -69,7 +69,7 @@ public:
             if (timer_create(CLOCK_REALTIME, &this->signalEvent, &this->timerID) != 0) { // timer id koennte mit private probleme geben
                 std::cout << "ERROR ITimerPosixListener Could not create the timer name:" << this->name() << std::endl;
                 perror("Could not create the timer");
-
+                sleep(1);
                 exit(1);
             }
             //std::cout << "install new signal handler, name:" << this->name() << std::endl;
@@ -77,6 +77,7 @@ public:
                 std::cout << "ERROR ITimerPosixListener Could not install new signal handler, id:" << this->timerID
                         << " name:" << this->name() << std::endl;
                 perror("Could not install new signal handler");
+                sleep(1);
                 exit(1);
             }
             //std::cout << "Set the timer and therefore it starts, name:" << this->name() << std::endl;
@@ -87,6 +88,7 @@ public:
                 std::cout << "ERROR ITimerPosixListener Could not start timer, id:" << this->timerID << " name:"
                         << this->name() << std::endl;
                 perror("Could not start timer!");
+                sleep(1);
                 exit(1);
             }
 

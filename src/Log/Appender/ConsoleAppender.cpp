@@ -7,6 +7,9 @@
 
 #include <iostream>
 #include <list>
+#include <thread>
+
+#include "../Level.hpp"
 
 
 logs::ConsoleAppender::~ConsoleAppender() {
@@ -22,6 +25,7 @@ void logs::ConsoleAppender::flush() {
         std::cout << message << std::endl;
 
         this->messages_.pop_front();
+        std::this_thread::yield();
     }
     unlockMessages();
 }

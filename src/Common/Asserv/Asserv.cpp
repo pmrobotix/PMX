@@ -1072,6 +1072,7 @@ TRAJ_STATE Asserv::doCalage2(int distmm, int percent)
         TRAJ_STATE ts = TRAJ_OK;
         while (ts == TRAJ_OK) {
             ts = pAsservEsialR_->motion_DoDirectLine(distmm); //sans asservissement L/R
+            std::this_thread::yield();
         }
 
         pAsservEsialR_->motion_ResetReguAngle();

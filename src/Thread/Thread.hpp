@@ -142,7 +142,7 @@ public:
      * Will not return until the internal thread has exited.
      */
     void waitForEnd() {
-
+        std::this_thread::yield();
         pthread_join(threadId_, NULL);
     }
 
