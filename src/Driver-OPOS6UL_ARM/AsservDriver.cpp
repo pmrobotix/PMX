@@ -417,7 +417,7 @@ void AsservDriver::path_CollisionOnTrajectory()
     if (!asservCardStarted_)
         logger().info() << "path_CollisionOnTrajectory() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
     else {
-        logger().error() << "path_CollisionOnTrajectory() HALT " << asservCardStarted_ << logs::end;
+        logger().error() << " path_CollisionOnTrajectory() HALT " << asservCardStarted_ << logs::end;
 
         //serialPort_.Write("h");
         nucleo_writeSerial('h');

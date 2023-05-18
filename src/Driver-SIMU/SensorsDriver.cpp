@@ -10,13 +10,14 @@
 
 using namespace std;
 
-ASensorsDriver * ASensorsDriver::create(std::string)
+ASensorsDriver * ASensorsDriver::create(std::string, Robot * robot)
 {
-    return new SensorsDriver();
+    return new SensorsDriver(robot);
 }
 
-SensorsDriver::SensorsDriver()
+SensorsDriver::SensorsDriver(Robot * robot)
 {
+    robot_ = robot;
 }
 
 SensorsDriver::~SensorsDriver()
@@ -39,9 +40,14 @@ void SensorsDriver::displayNumber(int number)
 
 ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv() {
     ASensorsDriver::bot_positions bot_pos;
-    RobotPos pos = {1000, 1000 , 0, 200, 1};
+
+    //coord table à transformer en coordonnées robot: 200,700 => position robot robot_
+
+
+
+    RobotPos pos = {1000, 1000 , 0, 200, 1}; //TODO Fantome a virer
     //simu des positions adverses
-    bot_pos = {pos, pos};
+    bot_pos = {pos};
 
     return bot_pos;
 }

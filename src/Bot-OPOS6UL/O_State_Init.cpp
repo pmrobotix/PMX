@@ -373,7 +373,7 @@ void O_State_Init::setPos() {
     TRAJ_STATE ts = TRAJ_OK;
     robot.asserv().setLowSpeedForward(true, 25); //35 battery et 50 secteur
     ts = robot.asserv().doLineAbs(100);
-    robot.asserv().setLowSpeedForward(true, 60);
+    robot.asserv().setLowSpeedForward(true, 30);
     //robot.asserv().setLowSpeedForward(true, 100);
 
     ts = robot.asserv().doMoveForwardAndRotateTo(300,1800,-45);

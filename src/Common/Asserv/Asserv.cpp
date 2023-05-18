@@ -404,6 +404,9 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
         return;
 
     if (frontlevel >= 3) {
+
+        logger().error() << "LEVEL 3 setLowSpeedForward = getLowSpeedvalue()=" << getLowSpeedvalue() << logs::end;
+
         setLowSpeedForward(true, getLowSpeedvalue());
     }
 
@@ -498,6 +501,7 @@ TRAJ_STATE Asserv::gotoXY(float xMM, float yMM)
 {
     float x_match = getRelativeX(xMM);
     temp_ignoreRearCollision_ = true;
+    temp_forceRotation_ = true;
     TRAJ_STATE ts;
     if (useAsservType_ == ASSERV_EXT)
         ts = asservdriver_->motion_Goto(x_match, yMM);
@@ -507,6 +511,7 @@ TRAJ_STATE Asserv::gotoXY(float xMM, float yMM)
     else
         ts = TRAJ_ERROR;
     temp_ignoreRearCollision_ = false;
+    temp_forceRotation_ = false;
     return ts;
 }
 

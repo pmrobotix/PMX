@@ -500,9 +500,16 @@ void AsservEsialR::path_InterruptTrajectory()
 }
 void AsservEsialR::path_CollisionOnTrajectory()
 {
-    //printf("path_CollisionOnTrajectory() sent !!!!!\n");
-    commandM_->setEmergencyStop();
-    pathStatus_ = TRAJ_NEAR_OBSTACLE;
+    if (!temp_ignore_emergency_stop)
+    {
+        //printf("path_CollisionOnTrajectory() sent !!!!!\n");
+        commandM_->setEmergencyStop();
+        pathStatus_ = TRAJ_NEAR_OBSTACLE;
+    }else
+    {
+        logger().error() << "!!!!!!! temp_ignore_emergency_stop="<< temp_ignore_emergency_stop << logs::end;
+
+    }
 }
 void AsservEsialR::path_CollisionRearOnTrajectory()
 {
@@ -556,10 +563,12 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
 //            << std::setw(10) << std::fixed << std::setprecision(3) << " deg=" << p_.theta * 180 / M_PI << std::setw(10)
 //            << " s=" << p_.asservStatus << logs::end;
 
+
     //blocage!!
     if (p_.asservStatus == 3) {
         return TRAJ_COLLISION;
     } else if (p_.asservStatus == 0) {
+
         return TRAJ_FINISHED;
     } else if (p_.asservStatus == 2) {
         logger().debug() << "_______________________waitEndOfTraj() EMERGENCY STOP OCCURRED  pathStatus_= "
@@ -569,15 +578,20 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
         return TRAJ_ERROR;
 }
 
+
 TRAJ_STATE AsservEsialR::motion_DoLine(float dist_mm)
 {
+    temp_ignore_emergency_stop = false;
     commandM_->addStraightLine(dist_mm);
 
     return waitEndOfTraj();
 }
 TRAJ_STATE AsservEsialR::motion_DoFace(float x_mm, float y_mm)
 {
+    //PATCH
+    temp_ignore_emergency_stop = true;
     commandM_->addGoToAngle(x_mm, y_mm);
+
 
     return waitEndOfTraj();
 }
@@ -619,7 +633,7 @@ TRAJ_STATE AsservEsialR::motion_Goto(float x_mm, float y_mm)
     float dx = x_mm - p_.x;
     float dy = y_mm - p_.y;
     unlock();
-
+    temp_ignore_emergency_stop = false;
     float dist = sqrt(dx * dx + dy * dy);
     return motion_DoLine(dist);
 }

@@ -16,7 +16,7 @@ Sensors::Sensors(Actions &actions, Robot *robot) :
         AActionsElement(actions), robot_(robot)
 
 {
-    sensorsdriver_ = ASensorsDriver::create(robot->getID());
+    sensorsdriver_ = ASensorsDriver::create(robot->getID(), robot_);
 
     remove_outside_table_ = true;
 
@@ -86,6 +86,7 @@ SensorsTimer::SensorsTimer(Sensors &sensors, int timeSpan_ms, std::string name) 
 
 //    lastdetect_front_nb_ = 0;
 //    lastdetect_back_nb_ = 0;
+    lastdetect_front_level_ = 0;
 
     lastfrontl2_temp_ = false;
     lastbackl2_temp_ = false;
@@ -457,6 +458,8 @@ int Sensors::front(bool display)
             }
         }
     }
+
+
     if (getAvailableFrontCenter()) {
         // detection avec la balise
         vpos = Sensors::getPositionsAdv();
@@ -467,6 +470,10 @@ int Sensors::front(bool display)
         int nb = 0;
 
         for (auto botpos : vpos) {
+
+
+//            logger().error() << nb << " bots=" << botpos.nbDetectedBots << " x y="<< botpos.x << " " << botpos.y                                    << logs::end;
+
             nb++;
             //filtre sur la table avec transformation de repere
             inside_table = this->robot()->asserv()->filtre_IsInsideTableXY(botpos.d, botpos.x, botpos.y,
@@ -829,23 +836,25 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
         }
 
         //si 4 puis 0,1,2,3 ; resetEmergency
-        if (lastdetect_front_level_ == 4 && nb_sensor_front_a_zero >=4 ) { //frontLevel <= 3
+        if (lastdetect_front_level_ == 4 && nb_sensor_front_a_zero >= 4) { //frontLevel <= 3
             sensors_.robot()->asserv()->resetEmergencyOnTraj("SensorsTimer front=0");
             sensors_.robot()->resetDisplayObstacle();
         }
 
-        //si 3 puis 0,1,2 ; vitesse normale
-        if (lastdetect_front_level_ == 3 && frontLevel <= 2) {
+        //si 3 puis 0,1,2 ; vitesse normale => si 3 ou 4 puis 0,1,2 ; vitesse normale
+        if (lastdetect_front_level_ >= 3 && frontLevel <= 2) {
             sensors_.robot()->asserv()->setLowSpeedForward(false);
         }
 
-//        if (frontLevel >= 4) {
-//            nb_sensor_level2++;
-//        } else {
-//            nb_sensor_level2 = 0;
-//        }
-
         /*
+         //ancien code
+         *
+         //        if (frontLevel >= 4) {
+         //            nb_sensor_level2++;
+         //        } else {
+         //            nb_sensor_level2 = 0;
+         //        }
+
 
 
          //si on vient de descendre du level 2 ou si on vient du level 3 ?
@@ -902,43 +911,45 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
             //TODO regler le pb si activation des 2
 
         }
-        int backLevel = sensors_.back(false);
-        if (backLevel <= 2) {
-            nb_sensor_back_a_zero++;
-        } else {
-            nb_sensor_back_a_zero = 0;
-        }
-        if (backLevel >= 4) {
-            nb_sensor_b_level2++;
-        } else {
-            nb_sensor_b_level2 = 0;
-        }
+        /*
 
-        if (backLevel == 3) {
-            //si on vient de descendre du level 2
-            if (lastbackl2_temp_ == true) {
+         int backLevel = sensors_.back(false);
+         if (backLevel <= 2) {
+         nb_sensor_back_a_zero++;
+         } else {
+         nb_sensor_back_a_zero = 0;
+         }
+         if (backLevel >= 4) {
+         nb_sensor_b_level2++;
+         } else {
+         nb_sensor_b_level2 = 0;
+         }
 
-                lastbackl2_temp_ = false;
-                sensors_.robot()->asserv()->resetEmergencyOnTraj("back descendre du level 2");
-                //sensors_.robot()->resetDisplayObstacle();
-            }
+         if (backLevel == 3) {
+         //si on vient de descendre du level 2
+         if (lastbackl2_temp_ == true) {
 
-            sensors_.robot()->asserv()->warnBackCollisionOnTraj(backLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
+         lastbackl2_temp_ = false;
+         sensors_.robot()->asserv()->resetEmergencyOnTraj("back descendre du level 2");
+         //sensors_.robot()->resetDisplayObstacle();
+         }
 
-        }
+         sensors_.robot()->asserv()->warnBackCollisionOnTraj(backLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
 
-        if (nb_sensor_b_level2 >= 2) {
+         }
 
-            sensors_.robot()->asserv()->warnBackCollisionOnTraj(backLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
+         if (nb_sensor_b_level2 >= 2) {
 
-            lastbackl2_temp_ = true;
-        }
-        if (nb_sensor_back_a_zero >= 2) {
-            //lastdetect_back_nb_ = 0;
-            sensors_.robot()->asserv()->setLowSpeedBackward(false);
-            sensors_.robot()->asserv()->resetEmergencyOnTraj("SensorsTimer back=0");
-            //sensors_.robot()->resetDisplayObstacle();
-        }
+         sensors_.robot()->asserv()->warnBackCollisionOnTraj(backLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
+
+         lastbackl2_temp_ = true;
+         }
+         if (nb_sensor_back_a_zero >= 2) {
+         //lastdetect_back_nb_ = 0;
+         sensors_.robot()->asserv()->setLowSpeedBackward(false);
+         sensors_.robot()->asserv()->resetEmergencyOnTraj("SensorsTimer back=0");
+         //sensors_.robot()->resetDisplayObstacle();
+         }*/
     }
 
 }

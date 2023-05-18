@@ -37,8 +37,6 @@ bool O_launch_balls_1() {
     robot.svgPrintPosition();
 
 
-
-
     return true; //return true si ok sinon false si interruption
 }
 

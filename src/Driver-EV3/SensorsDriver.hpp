@@ -40,7 +40,7 @@ public:
     /*!
      * \brief Constructor.
      */
-    SensorsDriver();
+    SensorsDriver(Robot * robot);
 
     /*!
      * \brief Destructor.

@@ -40,6 +40,7 @@ void O_AsservLineRotateTest::configureConsoleArgs(int argc, char **argv) //surch
     cOpt.addArgument("coorda", "coord teta mm", "0.0");
     robot.getArgs().addOption(cOpt);
 
+
     //reparse arguments
     robot.parseConsoleArgs(argc, argv);
 }
@@ -115,7 +116,7 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
     //vitesse reduite
-    robot.asserv().setLowSpeedForward(true, 60);
+    robot.asserv().setLowSpeedForward(true, 30);
 
     //Definition du path
     bool byPathfinding = false;

@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-#include "../Utils/PointerList.hpp"
+class Robot;
 
 class RobotPos
 {
@@ -39,7 +39,7 @@ public:
     /*!
      * \brief ASensorsDriver instance creation.
      */
-    static ASensorsDriver* create(std::string botName);
+    static ASensorsDriver* create(std::string botName, Robot * robot);
 
     virtual bool is_connected() = 0;
     /*!

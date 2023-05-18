@@ -37,6 +37,29 @@ bool L_push_cake_A2()
     }
     robot.svgPrintPosition();
 
+
+
+
+
+    int level = 0;
+    //robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+    level = robot.actions().sensors().front(false);
+    robot.logger().error() << "L_push_cake_A2 :  level=" << level << logs::end;
+
+    std::this_thread::sleep_for(std::chrono::microseconds(300000));
+
+    if (level>=3)
+    {
+
+        robot.logger().error() << "L_push_cake_A2 : on kill la tache level=" << level << logs::end;
+        return true;
+    }
+
+
+
+
+
+
     /*
      //on avance
      ts = robot.ia().iAbyPath().whileMoveForwardTo(450, 675, true, 1000000, 5, 5, false);
@@ -105,7 +128,7 @@ bool L_push_cake_black_B3()
     RobotPosition zone;
 
     robot.ia().iAbyPath().goToZone("zone_cake_black_B3", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 30, 30, true);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 30, 30, true, 50);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error()
                 << "L_push_cake_black_B3 : zone_cake_black_B3 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
@@ -233,8 +256,17 @@ bool L_push_cake_D5()
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
 
-    robot.ia().iAbyPath().goToZone("zone_cake_D5", &zone); //PATCH 50 !!!!!!!!
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y+50, zone.theta, true, 1000000, 30, 30, true);
+    robot.ia().iAbyPath().goToZone("zone_cake_D5", &zone);
+
+    //PATCH 50 en vert!!!!!!!!
+    int y_patch = 0;
+    if (robot.getMyColor() == PMXGREEN)
+    {
+        y_patch = zone.y+50;
+    }
+
+
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 30, 30, true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_push_cake_D5 : zone_cake_D5 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
@@ -421,9 +453,9 @@ void L_State_DecisionMakerIA::execute()
 
     //robot.actions().sensors().addTimerSensors(200); //NORMALEMENT DEJA FAIT DANS L'INIT
     if (!robot.actions().findPTimer("Sensors")) {
-        logger().error() << " !! PT Sensors doesn't exist! " << logs::end;
+        logger().error() << " WARNINGGGGGGGGGG !! PT Sensors doesn't exist! " << logs::end;
     } else
-        logger().info() << "PT Sensors already exists! " << logs::end;
+        logger().info() << "GOOD - PT Sensors already exists! " << logs::end;
 
     //robot.points += 4; //POINT - depose statuette + vitrine
 

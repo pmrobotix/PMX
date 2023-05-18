@@ -358,6 +358,8 @@ L_State_Init::execute(Robot&)
         robot.waitForInit(true);
         std::this_thread::sleep_for(std::chrono::microseconds(500000));
         //usleep(500000); //simulation attente tirette pour avoir les logs sequentiels
+
+        robot.actions().sensors().addTimerSensors(200);
     }
     robot.actions().lcd().clear();
 

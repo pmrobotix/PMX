@@ -19,12 +19,14 @@ private:
         return instance;
     }
 
+    Robot * robot_;
+
 public:
 
     /*!
      * \brief Constructor.
      */
-    SensorsDriver();
+    SensorsDriver(Robot * robot);
 
     /*!
      * \brief Destructor.
