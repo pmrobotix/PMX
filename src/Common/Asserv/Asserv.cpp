@@ -274,12 +274,14 @@ bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm,
 
 bool Asserv::filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm, float theta_deg, int *x_botpos, int *y_botpos)
 {
+    return true; //PATCH
+
     //table verticale
     int table_x = 2000;
     int table_y = 3000;
     RobotPosition p = pos_getPosition();
 
-    //coordonnées de l'objet detecté sur la table
+    //coordonnées de l'objet detecté sur la table// M_P/2
     *x_botpos = p.x + (d_mm * cos(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
     *y_botpos = p.y + (d_mm * sin(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
 
@@ -603,11 +605,13 @@ TRAJ_STATE Asserv::doRelativeRotateBy(float thetaInDegreeRelative) //prend autom
         return doRotateAbs(-thetaInDegreeRelative); //bleu
     } else
         return doRotateAbs(thetaInDegreeRelative); //jaune
-
 }
+
 
 TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
 {
+    temp_forceRotation_ = true; //attention on ne prend pas en compte l'adversaire
+
     float x_match = getRelativeX(xMM);
     logger().debug() << "doFaceTo xMM=" << xMM << " yMM=" << yMM << logs::end;
 
@@ -624,8 +628,10 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
     else
         ts = TRAJ_ERROR;
 
+    temp_forceRotation_ = false;
     return ts;
 }
+
 
 //relative motion (depends on current position of the robot, thinking in the first color of match)
 TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_ignored)

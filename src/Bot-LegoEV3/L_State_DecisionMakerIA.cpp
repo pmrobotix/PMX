@@ -126,9 +126,10 @@ bool L_push_cake_black_B3()
 
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
+    robot.asserv().setLowSpeedForward(true, 60);
 
     robot.ia().iAbyPath().goToZone("zone_cake_black_B3", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 30, 30, true, 50);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 30, 30, true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error()
                 << "L_push_cake_black_B3 : zone_cake_black_B3 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
@@ -144,6 +145,8 @@ bool L_push_cake_black_B3()
     robot.actions().arm_right_deploy(0);
     robot.actions().arm_left_deploy(0);
 
+    robot.asserv().setLowSpeedForward(true, 50);
+    //on pousse
     ts = robot.ia().iAbyPath().whileMoveForwardTo(800, 1850, true, 1000000, 30, 30, false);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_push_cake_black_B3 : 800, 1850 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
@@ -153,6 +156,17 @@ bool L_push_cake_black_B3()
     }
     robot.svgPrintPosition();
 
+    //on abaisse le gauche en vert
+    if (robot.getMyColor() == PMXGREEN)
+    {
+        robot.actions().fork_front_left_deploy(1000);
+    }else
+    {
+        robot.actions().fork_front_right_deploy(1000);
+    }
+
+
+    robot.asserv().setLowSpeedForward(true, 50);
     //on pousse
     //800,1350 800, 1850
     ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(700, 2750, 90, true, 1000000, 30, 30, false);
@@ -160,8 +174,21 @@ bool L_push_cake_black_B3()
         robot.logger().error() << "L_push_cake_black_B3 : 700, 2750, 90 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
         robot.asserv().resetEmergencyOnTraj();
-
     }
+
+    //on abaisse le droite en vert
+        if (robot.getMyColor() == PMXGREEN)
+        {
+            robot.actions().fork_front_right_deploy(0);
+        }else
+        {
+            robot.actions().fork_front_left_deploy(0);
+        }
+        std::this_thread::sleep_for(std::chrono::seconds(2));
+
+
+    //on releve les fork
+    robot.actions().fork_init_slow(true);
 
     //on recule
     robot.asserv().doLineAbs(-100);
@@ -210,7 +237,7 @@ bool L_push_cake_A5()
     //robot.actions().fork_front_left_deploy(0);
     robot.actions().fork_open_take_slow(true);
 
-    robot.asserv().setLowSpeedForward(false);
+    robot.asserv().setLowSpeedForward(true, 60);
 
     //on depose directement
     ts = robot.ia().iAbyPath().whileMoveForwardTo(250, zone.y - 375, true, 1000000, 30, 30, false);
@@ -262,11 +289,12 @@ bool L_push_cake_D5()
     int y_patch = 0;
     if (robot.getMyColor() == PMXGREEN)
     {
-        y_patch = zone.y+50;
+        y_patch = 50;
     }
 
+    robot.asserv().setLowSpeedForward(true, 50);
 
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 30, 30, true);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y + y_patch, zone.theta, true, 1000000, 30, 30, true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_push_cake_D5 : zone_cake_D5 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
@@ -294,6 +322,7 @@ bool L_push_cake_D5()
     robot.actions().fork_open_take_slow(true);
 
     robot.asserv().setLowSpeedForward(false);
+    robot.asserv().setLowSpeedForward(true, 50);
 
     //on depose directement
     ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x + 250, zone.y + 375, true, 1000000, 30, 30, false);
@@ -333,6 +362,8 @@ bool L_push_cake_D5()
 
 bool L_end_of_match()
 {
+
+
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 //    if (!robot.force_end_of_match) {
 //        if (robot.chrono().getElapsedTimeInSec() < 48)
@@ -343,6 +374,7 @@ bool L_end_of_match()
 //    }
     robot.logger().info() << "start L_end_of_match" << logs::end;
 
+    robot.asserv().setLowSpeedForward(true, 50);
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
     robot.ia().iAbyPath().goToZone("zone_end", &zone);

@@ -331,7 +331,7 @@ void IAbyPath::playgroundFindPath(FoundPath *&path, Point &start, Point &end)
     p_->find_path(path, start, end);
 }
 
-TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection) //TODO utiliser la fonction goto xy de l'asserv
+TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection)
 {
     TRAJ_STATE ts = TRAJ_OK;
     logger().debug() << "position p = x " << robot_->asserv()->pos_getX_mm() << " y " << robot_->asserv()->pos_getY_mm()
@@ -370,15 +370,21 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_d
 
                 //TODO SIMU A coder par l'asserv driver
 
-                if (nodes_it < found_path->path.end() - 1) {
+                //if (nodes_it < found_path->path.end() - 1) {
                     //ts = robot_->asserv()->gotoChain(robot_->asserv()->getRelativeX(node->x), node->y);
+
+                    if(rotate_ignored_detection)
+                    {
+                        //on tourne pour se degager si robot adverse devant
+                        ts = robot_->asserv()->doFaceTo(robot_->asserv()->getRelativeX(node->x), node->y);
+                    }
                     ts = robot_->asserv()->gotoXY(robot_->asserv()->getRelativeX(node->x), node->y);
 
-                } else {
-                    //ts = robot_->asserv()->gotoChain(robot_->asserv()->getRelativeX(node->x), node->y);
-                    ts = robot_->asserv()->gotoXY(robot_->asserv()->getRelativeX(node->x), node->y);
-
-                }
+//                } else {
+//                    //ts = robot_->asserv()->gotoChain(robot_->asserv()->getRelativeX(node->x), node->y);
+//                    ts = robot_->asserv()->gotoXY(robot_->asserv()->getRelativeX(node->x), node->y);
+//
+//                }
 
 //                logger().debug() << "222 p = x " << robot_->asserv()->pos_getX_mm() << " y "
 //                        << robot_->asserv()->pos_getY_mm() << " a " << robot_->asserv()->pos_getThetaInDegree()
@@ -453,6 +459,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
     while (ts != TRAJ_FINISHED) {
         if (byPathfinding) {
             //Avance par PathFinding
+            //attention a la rotation si adversaire devant, pour cela on fait une rotation simple car le got ne sait pas eviter l'adversaire
             ts = doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
         } else {
             //Avance avec l'asserv en direct

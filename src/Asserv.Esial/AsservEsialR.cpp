@@ -500,16 +500,17 @@ void AsservEsialR::path_InterruptTrajectory()
 }
 void AsservEsialR::path_CollisionOnTrajectory()
 {
-    if (!temp_ignore_emergency_stop)
-    {
+//    patch asserv2023
+//    if (!temp_ignore_emergency_stop)
+//    {
         //printf("path_CollisionOnTrajectory() sent !!!!!\n");
         commandM_->setEmergencyStop();
         pathStatus_ = TRAJ_NEAR_OBSTACLE;
-    }else
-    {
-        logger().error() << "!!!!!!! temp_ignore_emergency_stop="<< temp_ignore_emergency_stop << logs::end;
-
-    }
+//    }else
+//    {
+//        logger().error() << "!!!!!!! temp_ignore_emergency_stop="<< temp_ignore_emergency_stop << logs::end;
+//
+//    }
 }
 void AsservEsialR::path_CollisionRearOnTrajectory()
 {

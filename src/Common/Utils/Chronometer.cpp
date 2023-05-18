@@ -12,7 +12,8 @@
 #include "../../Thread/Thread.hpp"
 
 utils::Chronometer::Chronometer(std::string name) :
-        stopped_(1), timerPeriod_us_(0), name_(name), periodNb_(0), endSetTime_us(0), timerStartTime_us_(0), lastTime_(0)
+        stopped_(1), timerPeriod_us_(0), name_(name), periodNb_(0), endSetTime_us(0), timerStartTime_us_(0), lastTime_(
+                0)
 {
     startCount_.tv_sec = 0;
     startCount_.tv_usec = 0;
@@ -24,19 +25,22 @@ utils::Chronometer::Chronometer(std::string name) :
     endSet_.tv_usec = 0;
 }
 
-void utils::Chronometer::start() {
+void utils::Chronometer::start()
+{
     stopped_ = 0; // reset stop flag
     gettimeofday(&startCount_, NULL);
     lastTime_ = getElapsedTimeInMicroSec();
 
 }
 
-void utils::Chronometer::stop() {
+void utils::Chronometer::stop()
+{
     stopped_ = 1; // set chronometer stopped_ flag
     gettimeofday(&endCount_, NULL);
 }
 
-unsigned long long utils::Chronometer::getElapsedTimeInMicroSec() {
+unsigned long long utils::Chronometer::getElapsedTimeInMicroSec()
+{
     if (!stopped_) {
         gettimeofday(&endCount_, NULL);
     }
@@ -45,44 +49,48 @@ unsigned long long utils::Chronometer::getElapsedTimeInMicroSec() {
     return seconds * 1000000 + (endCount_.tv_usec - startCount_.tv_usec);
 }
 
-float utils::Chronometer::getElapsedTimeInMilliSec() {
+float utils::Chronometer::getElapsedTimeInMilliSec()
+{
     return this->getElapsedTimeInMicroSec() * 0.001;
 }
 
-float utils::Chronometer::getElapsedTimeInSec() {
+float utils::Chronometer::getElapsedTimeInSec()
+{
     return this->getElapsedTimeInMicroSec() * 0.000001;
 }
 
-float utils::Chronometer::getElapsedTime() {
+float utils::Chronometer::getElapsedTime()
+{
     return this->getElapsedTimeInSec();
 }
 
-timeval utils::Chronometer::getTime() {
+timeval utils::Chronometer::getTime()
+{
     timeval result;
     gettimeofday(&result, NULL);
     return result;
 }
 
-int utils::Chronometer::waitTimer(int delay_us, bool debug) {
+int utils::Chronometer::waitTimer(int delay_us, bool debug)
+{
     periodNb_++;
     unsigned long long endTaskTime = getElapsedTimeInMicroSec();
     //int workTime = endTaskTime - lastTime_;
-    int t = timerPeriod_us_ - (int)(endTaskTime - lastTime_);
+    int t = (timerPeriod_us_ - (int) (endTaskTime - lastTime_)) - delay_us;
     //printf("endTaskTime=%lld , lastime=%lld , workTime=%lld, period_us=%lld\n", endTaskTime, lastTime_, workTime, timerPeriod_us_);
 //    if (debug)
 //        logger().info() << "waitTimer() name=" << name_ << " endTaskTime=" << endTaskTime << " (diff)workTime="
 //                << workTime << " " << timerPeriod_us_ << "!!" << logs::end;
 
     //if (workTime < timerPeriod_us_) {
-    if (t >= 0) {
-        std::this_thread::sleep_for(std::chrono::microseconds(t-delay_us));
-    }
-    else {
+    if ((t) > 0) {
+        std::this_thread::sleep_for(std::chrono::microseconds(t));
+    } else {
         //logger().error() << "!!! OVERFLOW overTime=" << t << " ; " << timerPeriod_us_ << "!!!" << logs::end;
-        logger().error() << "OVERFLOW " << name_ << " "<< (t-delay_us) / 1000<< logs::end;
+        if ((t) > 2)
+            logger().error() << "OVERFLOW " << name_ << " " << (t) / 1000 << logs::end;
     }
 
-// fin
     lastTime_ = getElapsedTimeInMicroSec();
 
     return periodNb_;
@@ -130,7 +138,8 @@ int utils::Chronometer::waitTimer(int delay_us, bool debug) {
  return periodNb_;
  }*/
 
-void utils::Chronometer::setTimer(unsigned int usec) {
+void utils::Chronometer::setTimer(unsigned int usec)
+{
     timerPeriod_us_ = usec;
     this->start();
     timerStartTime_us_ = 0;
