@@ -26,7 +26,7 @@ L_State_Init::execute(Robot&)
     robot.actions().start();
 
     //BEGIN
-    begin:
+    //begin:
 
     //verif de connection des cartes
     bool b = robot.actions().sensors().is_connected();
@@ -40,7 +40,7 @@ L_State_Init::execute(Robot&)
             robot.actions().ledBar().set(0, LED_RED);
             robot.actions().ledBar().set(1, LED_RED);
             std::this_thread::sleep_for(std::chrono::seconds(1));
-            std::this_thread::yield();
+            
         }
         exit(0);
     }
@@ -233,11 +233,11 @@ L_State_Init::execute(Robot&)
         //robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
         robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
         robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-        robot.actions().sensors().addTimerSensors(200);
+        //robot.actions().sensors().addTimerSensors(200);
         int nb_tirette = 0;
         b = BUTTON_NONE;
         while (nb_tirette < 3) {
-            int tirette = robot.actions().tirette().pressed();
+            int tirette = robot.actions().tirette().pressed(); //250ms
             if (tirette == 1)
                 nb_tirette++;
             else
@@ -258,7 +258,7 @@ L_State_Init::execute(Robot&)
 
             //sleep
             std::this_thread::sleep_for(std::chrono::microseconds(100000));
-            std::this_thread::yield();
+            //std::this_thread::yield();
 
             //si connected and alive
             bool c = robot.actions().sensors().is_connected();
@@ -291,9 +291,9 @@ L_State_Init::execute(Robot&)
 
         //tirette
         if (robot.getMyColor() == PMXGREEN)
-            robot.actions().ledBar().startTimerAlternate(100000, 100000, 0x81, 0x3C, LED_GREEN, false);
+            robot.actions().ledBar().startTimerAlternate(500000, 500000, 0x81, 0x3C, LED_GREEN, false);
         else
-            robot.actions().ledBar().startTimerAlternate(100000, 100000, 0x81, 0x3C, LED_AMBER, false);
+            robot.actions().ledBar().startTimerAlternate(500000, 500000, 0x81, 0x3C, LED_AMBER, false);
 
         robot.waitForInit(true);
 
@@ -335,8 +335,8 @@ L_State_Init::execute(Robot&)
 //            }
 
             //sleep
-            std::this_thread::sleep_for(std::chrono::microseconds(30000));
-            std::this_thread::yield();
+            std::this_thread::sleep_for(std::chrono::microseconds(50000));
+            //std::this_thread::yield();
         }
     } else {
 
@@ -364,13 +364,15 @@ L_State_Init::execute(Robot&)
         std::this_thread::sleep_for(std::chrono::microseconds(500000));
         //usleep(500000); //simulation attente tirette pour avoir les logs sequentiels
 
-        robot.actions().sensors().addTimerSensors(200);
+        //robot.actions().sensors().addTimerSensors(200);
     }
     robot.actions().lcd().clear();
 
     robot.actions().ledBar().stop(true);
 
     robot.actions().ledBar().resetAll();
+
+    robot.actions().sensors().addTimerSensors(200);
 
     logger().debug() << "WaitEndOfMatch launched" << logs::end;
     return this->getState("WaitEndOfMatch"); //return NULL; to finish all state

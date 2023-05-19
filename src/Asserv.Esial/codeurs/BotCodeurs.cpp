@@ -31,7 +31,7 @@ void BotCodeurs::getCounts(int32_t* deltaCountG, int32_t* deltaCountD) {
 //    lastCountG = tempG;
 
     //technique avec le delta des tickets par rapport à l'apppel precedent
-    robot_->asserv()->getDeltaEncodersCounts(deltaCountD, deltaCountG);
+    robot_->passerv()->getDeltaEncodersCounts(deltaCountD, deltaCountG);
 
     // On ajuste le sens des codeurs en cas de problème de cablage
     if (Config::swapCodeurs) { //inversion des deux codeurs

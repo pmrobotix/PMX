@@ -85,11 +85,14 @@ protected:
 
     //Action => RobotElement
     Actions *actions_default_;
-
-    SvgWriter *svg_;
 private:
+
+
+
     //Asserv => asservissement
     Asserv *asserv_default_;
+
+    SvgWriter *svg_;
 
 public:
 #ifdef SIMU
@@ -181,11 +184,29 @@ public:
         return id_;
     }
 
-    inline Asserv* asserv()
+    inline Asserv* passerv()
     {
         if (asserv_default_ == NULL)
             printf("ERROR asserv() NULL ! \n");
         return asserv_default_;
+    }
+    inline Asserv& asserv()
+    {
+        Asserv &r_asserv = *asserv_default_;
+        return r_asserv;
+
+    }
+    inline SvgWriter& svgw()
+    {
+        SvgWriter &r_svg = *svg_;
+        return r_svg;
+    }
+
+    inline Actions& actions()
+    {
+        Actions &r_actions = *actions_default_;
+        return r_actions;
+
     }
 
     inline void setAsserv(Asserv *asserv)
@@ -193,10 +214,13 @@ public:
         asserv_default_ = asserv;
     }
 
-    inline SvgWriter& svgw()
+    inline void setSVG(SvgWriter *svg)
     {
-        SvgWriter &r_svg = *svg_;
-        return r_svg;
+        svg_ = svg;
+    }
+    inline void setActions(Actions *action)
+    {
+        actions_default_ = action;
     }
 
     void svgPrintPosition(int color = 0);

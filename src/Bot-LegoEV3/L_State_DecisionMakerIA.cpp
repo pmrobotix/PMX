@@ -210,12 +210,12 @@ bool L_push_cake_A5()
     RobotPosition zone;
 
     robot.ia().iAbyPath().goToZone("zone_cake_A5", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 30, 30, true);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 4, 4, true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_push_cake_A5 : zone_cake_A5 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
         robot.asserv().resetEmergencyOnTraj();
-        return false;
+        return true;
         //force end of match
 //        robot.force_end_of_match = true;
 //        return true;
@@ -294,15 +294,15 @@ bool L_push_cake_D5()
 
     robot.asserv().setLowSpeedForward(true, 50);
 
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y + y_patch, zone.theta, true, 1000000, 30, 30, true);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y + y_patch, zone.theta, true, 1000000, 10, 10, true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_push_cake_D5 : zone_cake_D5 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
         robot.asserv().resetEmergencyOnTraj();
 
         //force end of match
-//        robot.force_end_of_match = true;
-//        return true;
+        robot.force_end_of_match = true;
+        return true;
 
     }
     robot.svgPrintPosition();

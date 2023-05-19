@@ -436,7 +436,7 @@ int Sensors::front(bool display)
 
     if (enableFrontLeft_) //existance
     {
-        bool fL_filter = this->robot()->asserv()->filtre_IsInsideTable(fL, -1, "fL"); //negatif = capteur placé à gauche
+        bool fL_filter = this->robot()->passerv()->filtre_IsInsideTable(fL, -1, "fL"); //negatif = capteur placé à gauche
         //logger().info() << " fL_filter= " << fL_filter << logs::end;
         if (fL_filter) {
             {
@@ -476,7 +476,7 @@ int Sensors::front(bool display)
 
             nb++;
             //filtre sur la table avec transformation de repere
-            inside_table = this->robot()->asserv()->filtre_IsInsideTableXY(botpos.d, botpos.x, botpos.y,
+            inside_table = this->robot()->passerv()->filtre_IsInsideTableXY(botpos.d, botpos.x, botpos.y,
                     botpos.theta_deg, &x_pos_adv_table, &y_pos_adv_table);
             if (!remove_outside_table_) {
                 inside_table = true;
@@ -545,7 +545,7 @@ int Sensors::front(bool display)
 
     }
     if (enableFrontRight_) {
-        bool fR_filter = this->robot()->asserv()->filtre_IsInsideTable(fR, 1, "fR");
+        bool fR_filter = this->robot()->passerv()->filtre_IsInsideTable(fR, 1, "fR");
         if (fR_filter) {
             if ((!ignoreFrontRight_ && (fR < frontRightThreshold_))) {
                 if (display)
@@ -619,7 +619,7 @@ int Sensors::back(bool display)
     ASensorsDriver::bot_positions vpos;
 
     if (enableBackLeft_) {
-        bool bL_filter = this->robot()->asserv()->filtre_IsInsideTable(-bL, -1, "bL");
+        bool bL_filter = this->robot()->passerv()->filtre_IsInsideTable(-bL, -1, "bL");
         if (bL_filter) { //negatif = capteur placé à gauche
             if ((!ignoreBackLeft_ && (bL < backLeftThreshold_))) {
                 if (display)
@@ -652,7 +652,7 @@ int Sensors::back(bool display)
         for (auto botpos : vpos) {
             nb++;
             //filtre sur la table avec transformation de repere
-            inside_table = this->robot()->asserv()->filtre_IsInsideTableXY(botpos.d, botpos.x, botpos.y,
+            inside_table = this->robot()->passerv()->filtre_IsInsideTableXY(botpos.d, botpos.x, botpos.y,
                     botpos.theta_deg, &x_pos_adv_table, &y_pos_adv_table);
             if (!remove_outside_table_) {
                 //if (1) {
@@ -718,7 +718,7 @@ int Sensors::back(bool display)
         //                        adv_is_detected_back_left_ = false;
     }
     if (enableBackRight_) {
-        bool bR_filter = this->robot()->asserv()->filtre_IsInsideTable(-bR, 1, "bR");
+        bool bR_filter = this->robot()->passerv()->filtre_IsInsideTable(-bR, 1, "bR");
         if (bR_filter) {
             if ((!ignoreBackRight_ && (bR < backRightThreshold_))) {
                 if (display)
@@ -827,23 +827,23 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
 
         //si 0,1,2 puis 3 ; baisse de vitesse  no (warn and resetEmergency)
         if (lastdetect_front_level_ <= 2 && frontLevel == 3) {
-            sensors_.robot()->asserv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
+            sensors_.robot()->passerv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
         }
 
         //si 0,1,2,3,4 puis 4 ; arret du robot warn
         if (lastdetect_front_level_ <= 4 && frontLevel == 4) {
-            sensors_.robot()->asserv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
+            sensors_.robot()->passerv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
         }
 
         //si 4 puis 0,1,2,3 ; resetEmergency
         if (lastdetect_front_level_ == 4 && nb_sensor_front_a_zero >= 4) { //frontLevel <= 3
-            sensors_.robot()->asserv()->resetEmergencyOnTraj("SensorsTimer front=0");
+            sensors_.robot()->passerv()->resetEmergencyOnTraj("SensorsTimer front=0");
             sensors_.robot()->resetDisplayObstacle();
         }
 
         //si 3 puis 0,1,2 ; vitesse normale => si 3 ou 4 puis 0,1,2 ; vitesse normale
         if (lastdetect_front_level_ >= 3 && frontLevel <= 2) {
-            sensors_.robot()->asserv()->setLowSpeedForward(false);
+            sensors_.robot()->passerv()->setLowSpeedForward(false);
         }
 
         /*

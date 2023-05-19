@@ -58,8 +58,8 @@ Robot::~Robot() {
 void Robot::svgPrintPosition(int color) {
 
     if (asserv_default_ != NULL) {
-        this->svgw().writePosition_Bot(this->asserv()->pos_getX_mm(), this->asserv()->pos_getY_mm(),
-                this->asserv()->pos_getTheta(), color);
+        this->svgw().writePosition_Bot(this->passerv()->pos_getX_mm(), this->passerv()->pos_getY_mm(),
+                this->passerv()->pos_getTheta(), color);
     }
     else logger().error() << "asserv_default is NULL !" << logs::end;
 }
@@ -304,8 +304,8 @@ void Robot::begin(int argc, char** argv) {
 
 void Robot::stopMotionTimerAndActionManager() {
 
-    if (asserv() != NULL) {
-        this->asserv()->stopMotionTimerAndOdo();
+    if (passerv() != NULL) {
+        this->passerv()->stopMotionTimerAndOdo();
     }
     else logger().error() << "asserv_default is NULL ! " << logs::end;
 
@@ -318,8 +318,8 @@ void Robot::stopMotionTimerAndActionManager() {
 }
 
 void Robot::freeMotion() {
-    this->asserv()->freeMotion();
-    this->asserv()->stopMotors();
+    this->passerv()->freeMotion();
+    this->passerv()->stopMotors();
 }
 
 void Robot::resetDisplayTS() {

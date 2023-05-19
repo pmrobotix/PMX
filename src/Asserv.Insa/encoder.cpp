@@ -36,7 +36,7 @@ void AsservInsa::encoder_Init()
 {
     if (robot_ != NULL) {
 
-        robot_->asserv()->resetEncoders();
+        robot_->passerv()->resetEncoders();
 
         lastRight_ = 0;
         lastLeft_ = 0;
@@ -57,7 +57,7 @@ void AsservInsa::encoder_ReadSensor(int32 *dLeft, int32 *dRight, int32 *dAlpha, 
     if (robot_ != NULL) {
         //read encoder
         if (useExternalEncoders_) {
-            robot_->asserv()->getEncodersCounts(right, left);
+            robot_->passerv()->getEncodersCounts(right, left);
             //*left = robot_->asserv()->base()->extEncoders().getLeftEncoder();
             //*left = base_->extEncoders().getLeftEncoder();
         } else {

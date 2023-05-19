@@ -156,8 +156,8 @@ void IAbyPath::ia_start()
                 if (!done) {
                     if (robot_ != NULL)
                         printf("%s state after actions : %s : (%f,%f) %f FAILED\n", __FUNCTION__, z->name,
-                                robot_->asserv()->pos_getX_mm(), robot_->asserv()->pos_getY_mm(),
-                                robot_->asserv()->pos_getThetaInDegree());
+                                robot_->passerv()->pos_getX_mm(), robot_->passerv()->pos_getY_mm(),
+                                robot_->passerv()->pos_getThetaInDegree());
                     else {
                         logger().error() << "robot_ is NULL !" << logs::end;
                         sleep(1);
@@ -167,8 +167,8 @@ void IAbyPath::ia_start()
                 }
                 if (robot_ != NULL)
                     printf("%s state after actions : %s : (%f,%f) %f\n", __FUNCTION__, z->name,
-                            robot_->asserv()->pos_getX_mm(), robot_->asserv()->pos_getY_mm(),
-                            robot_->asserv()->pos_getThetaInDegree());
+                            robot_->passerv()->pos_getX_mm(), robot_->passerv()->pos_getY_mm(),
+                            robot_->passerv()->pos_getThetaInDegree());
                 else {
                     logger().error() << "robot_ is NULL !" << logs::end;
                     sleep(1);
@@ -209,9 +209,9 @@ void IAbyPath::ia_createZone(const char *name, float minX, float minY, float wid
     z->startY = startY;
     z->startAngle = startAngleDeg;
     if (robot_ != NULL) {
-        z->startX = robot_->asserv()->getRelativeXMin(z->startX);
-        z->minX = robot_->asserv()->getRelativeXMin(z->minX, z->width);
-        z->startAngle = robot_->asserv()->getRelativeAngle(z->startAngle);
+        z->startX = robot_->passerv()->getRelativeXMin(z->startX);
+        z->minX = robot_->passerv()->getRelativeXMin(z->minX, z->width);
+        z->startAngle = robot_->passerv()->getRelativeAngle(z->startAngle);
     } else {
         logger().error() << "robot_ is NULL !" << logs::end;
         sleep(1);
@@ -287,8 +287,8 @@ ZONE* IAbyPath::ia_getNearestZoneFrom(float x, float y)
 {
     ZONE *result = ia_getZoneAt(x, y);
     if (result != NULL) {
-        printf("ia_getNearestZoneFrom is current zone : %s : (%f,%f) \n", result->name, robot_->asserv()->pos_getX_mm(),
-                robot_->asserv()->pos_getY_mm());
+        printf("ia_getNearestZoneFrom is current zone : %s : (%f,%f) \n", result->name, robot_->passerv()->pos_getX_mm(),
+                robot_->passerv()->pos_getY_mm());
         return result;
     }
 
@@ -328,9 +328,9 @@ void IAbyPath::goToZone(const char *zoneName, RobotPosition *zone_p)
         exit(-1);
     }
 
-    zone_p->x = robot_->asserv()->getRelativeX(z->startX);
+    zone_p->x = robot_->passerv()->getRelativeX(z->startX);
     zone_p->y = z->startY;
-    zone_p->theta = robot_->asserv()->getRelativeAngle(z->startAngle);
+    zone_p->theta = robot_->passerv()->getRelativeAngle(z->startAngle);
 
 }
 
@@ -342,16 +342,16 @@ void IAbyPath::playgroundFindPath(FoundPath *&path, Point &start, Point &end)
 TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection)
 {
     TRAJ_STATE ts = TRAJ_OK;
-    logger().debug() << "position p = x " << robot_->asserv()->pos_getX_mm() << " y " << robot_->asserv()->pos_getY_mm()
-            << " a " << robot_->asserv()->pos_getThetaInDegree() << logs::end;
+    logger().debug() << "position p = x " << robot_->passerv()->pos_getX_mm() << " y " << robot_->passerv()->pos_getY_mm()
+            << " a " << robot_->passerv()->pos_getThetaInDegree() << logs::end;
 
     //mise a jour de la position de l'adversaire
     //enable(robot_->, 0);
 
-    Point endPoint = { x : robot_->asserv()->getRelativeX(xMM), y : yMM };
+    Point endPoint = { x : robot_->passerv()->getRelativeX(xMM), y : yMM };
     FoundPath *found_path = NULL;
 
-    Point startPoint = { x : robot_->asserv()->pos_getX_mm(), y : robot_->asserv()->pos_getY_mm() };
+    Point startPoint = { x : robot_->passerv()->pos_getX_mm(), y : robot_->passerv()->pos_getY_mm() };
     playgroundFindPath(found_path, startPoint, endPoint);
 
     std::ostringstream path_polyline;
@@ -384,9 +384,9 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_d
                     if(rotate_ignored_detection)
                     {
                         //on tourne pour se degager si robot adverse devant
-                        ts = robot_->asserv()->doFaceTo(robot_->asserv()->getRelativeX(node->x), node->y);
+                        ts = robot_->passerv()->doFaceTo(robot_->passerv()->getRelativeX(node->x), node->y);
                     }
-                    ts = robot_->asserv()->gotoXY(robot_->asserv()->getRelativeX(node->x), node->y);
+                    ts = robot_->passerv()->gotoXY(robot_->passerv()->getRelativeX(node->x), node->y);
 
 //                } else {
 //                    //ts = robot_->asserv()->gotoChain(robot_->asserv()->getRelativeX(node->x), node->y);
@@ -424,7 +424,7 @@ TRAJ_STATE IAbyPath::doMoveForwardAndFaceTo(float xMM, float yMM, float f_x, flo
         return ts;
     }
 
-    ts = robot_->asserv()->doFaceTo(f_x, f_y);
+    ts = robot_->passerv()->doFaceTo(f_x, f_y);
     robot_->svgPrintPosition();
     if (ts != TRAJ_FINISHED) {
         return ts;
@@ -442,7 +442,7 @@ TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaI
         return ts;
     }
 
-    ts = robot_->asserv()->doAbsoluteRotateTo(thetaInDegree);
+    ts = robot_->passerv()->doAbsoluteRotateTo(thetaInDegree);
     robot_->svgPrintPosition();
     if (ts != TRAJ_FINISHED) {
         return ts;
@@ -471,7 +471,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
             ts = doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
         } else {
             //Avance avec l'asserv en direct
-            ts = robot_->asserv()->doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
+            ts = robot_->passerv()->doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
         }
 
         robot_->logger().debug() << "byPathfinding=" << byPathfinding << "  TS = " << ts << logs::end;
@@ -482,11 +482,11 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
             robot_->logger().info() << " ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
             f++;
             if (f < 2)
-                robot_->asserv()->resetEmergencyOnTraj("IAbyPath whileMoveForwardTo TRAJ_NEAR_OBSTACLE"); //pour autoriser le level de detection 1 puis 2
+                robot_->passerv()->resetEmergencyOnTraj("IAbyPath whileMoveForwardTo TRAJ_NEAR_OBSTACLE"); //pour autoriser le level de detection 1 puis 2
             if (reculOnObstacleMm > 0) {
-                TRAJ_STATE tr = robot_->asserv()->doLineAbs(-reculOnObstacleMm);
+                TRAJ_STATE tr = robot_->passerv()->doLineAbs(-reculOnObstacleMm);
                 if (tr != TRAJ_OK) {
-                    robot_->asserv()->resetEmergencyOnTraj(" IAbyPathdoLineAbs(-reculOnObstacleMm); TRAJ_NEAR_OBSTACLE"); //pour autoriser le level de detection 1 puis 2
+                    robot_->passerv()->resetEmergencyOnTraj(" IAbyPathdoLineAbs(-reculOnObstacleMm); TRAJ_NEAR_OBSTACLE"); //pour autoriser le level de detection 1 puis 2
                 }
             }
             if (f >= nb_near_obstacle) {
@@ -496,12 +496,12 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
         if (ts == TRAJ_COLLISION) {
             robot_->logger().info() << "===== COLLISION essai n°" << c << logs::end;
             c++;
-            robot_->asserv()->resetEmergencyOnTraj("IAbyPath whileMoveForwardTo TRAJ_COLLISION");
+            robot_->passerv()->resetEmergencyOnTraj("IAbyPath whileMoveForwardTo TRAJ_COLLISION");
             if (reculOnCollisionMm > 0) {
                 //robot_->logger().info() << "IAbyPath::whileMoveForwardTo RECUL de mm=" << reculOnCollisionMm << logs::end;
-                TRAJ_STATE tr = robot_->asserv()->doLineAbs(-reculOnCollisionMm);
+                TRAJ_STATE tr = robot_->passerv()->doLineAbs(-reculOnCollisionMm);
                 if (tr != TRAJ_OK) {
-                    robot_->asserv()->resetEmergencyOnTraj("IAbyPath doLineAbs(-reculOnCollisionMm); TRAJ_COLLISION"); //pour autoriser le level de detection 1 puis 2
+                    robot_->passerv()->resetEmergencyOnTraj("IAbyPath doLineAbs(-reculOnCollisionMm); TRAJ_COLLISION"); //pour autoriser le level de detection 1 puis 2
                 }
             }
             if (c >= nb_collision) {
@@ -511,7 +511,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
         if (ts == TRAJ_IMPOSSIBLE) {
             robot_->logger().info() << "===== TRAJ IMPOSSIBLE " << logs::end;
 
-            robot_->asserv()->resetEmergencyOnTraj("whileMoveForwardTo TRAJ_IMPOSSIBLE");
+            robot_->passerv()->resetEmergencyOnTraj("whileMoveForwardTo TRAJ_IMPOSSIBLE");
 
             break;
 
@@ -529,8 +529,8 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
 
     robot_->displayTS(ts);
     logger().info() << "time= " << robot_->chrono().getElapsedTimeInMilliSec() << "ms " << " x="
-            << robot_->asserv()->pos_getX_mm() << " y=" << robot_->asserv()->pos_getY_mm() << " a="
-            << robot_->asserv()->pos_getThetaInDegree() << logs::end;
+            << robot_->passerv()->pos_getX_mm() << " y=" << robot_->passerv()->pos_getY_mm() << " a="
+            << robot_->passerv()->pos_getThetaInDegree() << logs::end;
 
     //robot_->svgPrintPosition();
 
@@ -548,7 +548,7 @@ TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignor
         if (byPathfinding) {
             ts = doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
         } else {
-            ts = robot_->asserv()->doMoveBackwardTo(xMM, yMM, rotate_ignored_detection);
+            ts = robot_->passerv()->doMoveBackwardTo(xMM, yMM, rotate_ignored_detection);
         }
         if (ts != TRAJ_FINISHED) {
             robot_->logger().debug() << " TS = " << ts << logs::end;
@@ -559,11 +559,11 @@ TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignor
                 robot_->logger().info() << " ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
                 f++;
                 if (f < 2)
-                    robot_->asserv()->resetEmergencyOnTraj(); //pour autoriser le level de detection
+                    robot_->passerv()->resetEmergencyOnTraj(); //pour autoriser le level de detection
                 if (reculOnObstacleMm > 0) {
-                    TRAJ_STATE tr = robot_->asserv()->doLineAbs(reculOnObstacleMm);
+                    TRAJ_STATE tr = robot_->passerv()->doLineAbs(reculOnObstacleMm);
                     if (tr != TRAJ_OK) {
-                        robot_->asserv()->resetEmergencyOnTraj("doLineAbs(reculOnObstacleMm); TRAJ_NEAR_OBSTACLE"); //pour autoriser le level de detection 1 puis 2
+                        robot_->passerv()->resetEmergencyOnTraj("doLineAbs(reculOnObstacleMm); TRAJ_NEAR_OBSTACLE"); //pour autoriser le level de detection 1 puis 2
                     }
                 }
                 if (f >= nb_near_obstacle) {
@@ -573,12 +573,12 @@ TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignor
             if (ts == TRAJ_COLLISION) {
                 robot_->logger().info() << "===== COLLISION essai n°" << c << logs::end;
                 c++;
-                robot_->asserv()->resetEmergencyOnTraj();
+                robot_->passerv()->resetEmergencyOnTraj();
                 if (reculOnCollisionMm > 0) {
                     //robot_->logger().info() << "IAbyPath::whileMoveForwardTo RECUL de mm=" << reculOnCollisionMm << logs::end;
-                    TRAJ_STATE tr = robot_->asserv()->doLineAbs(reculOnCollisionMm);
+                    TRAJ_STATE tr = robot_->passerv()->doLineAbs(reculOnCollisionMm);
                     if (tr != TRAJ_OK) {
-                        robot_->asserv()->resetEmergencyOnTraj("doLineAbs(reculOnCollisionMm); TRAJ_COLLISION"); //pour autoriser le level de detection 1 puis 2
+                        robot_->passerv()->resetEmergencyOnTraj("doLineAbs(reculOnCollisionMm); TRAJ_COLLISION"); //pour autoriser le level de detection 1 puis 2
                     }
                 }
                 if (c >= nb_collision) {
@@ -588,7 +588,7 @@ TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignor
             if (ts == TRAJ_IMPOSSIBLE) {
                 robot_->logger().info() << "===== TRAJ IMPOSSIBLE " << logs::end;
 
-                robot_->asserv()->resetEmergencyOnTraj();
+                robot_->passerv()->resetEmergencyOnTraj();
 
                 break;
 
@@ -608,8 +608,8 @@ TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignor
 
     robot_->displayTS(ts);
     logger().info() << "time= " << robot_->chrono().getElapsedTimeInMilliSec() << "ms " << " x="
-            << robot_->asserv()->pos_getX_mm() << " y=" << robot_->asserv()->pos_getY_mm() << " a="
-            << robot_->asserv()->pos_getThetaInDegree() << logs::end;
+            << robot_->passerv()->pos_getX_mm() << " y=" << robot_->passerv()->pos_getY_mm() << " a="
+            << robot_->passerv()->pos_getThetaInDegree() << logs::end;
 
     //robot_->svgPrintPosition();
 
@@ -627,7 +627,7 @@ TRAJ_STATE IAbyPath::whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tem
 
     while (ts != TRAJ_FINISHED) {
 
-        ts = robot_->asserv()->doAbsoluteRotateTo(AbsoluteThetaInDegree);
+        ts = robot_->passerv()->doAbsoluteRotateTo(AbsoluteThetaInDegree);
 
         robot_->logger().info() << " TS = " << ts << logs::end;
         robot_->svgPrintPosition(1);
@@ -638,7 +638,7 @@ TRAJ_STATE IAbyPath::whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tem
 
             utils::sleep_for_micros(wait_tempo_us);
             f++;
-            robot_->asserv()->resetEmergencyOnTraj();
+            robot_->passerv()->resetEmergencyOnTraj();
 
             break;
 
@@ -648,7 +648,7 @@ TRAJ_STATE IAbyPath::whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tem
 
             utils::sleep_for_micros(wait_tempo_us);
             c++;
-            robot_->asserv()->resetEmergencyOnTraj();
+            robot_->passerv()->resetEmergencyOnTraj();
             if (c > nb_collision) {
 
                 break;
@@ -660,8 +660,8 @@ TRAJ_STATE IAbyPath::whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tem
     }
 
     logger().info() << "time= " << robot_->chrono().getElapsedTimeInMilliSec() << "ms " << " x="
-            << robot_->asserv()->pos_getX_mm() << " y=" << robot_->asserv()->pos_getY_mm() << " a="
-            << robot_->asserv()->pos_getThetaInDegree() << logs::end;
+            << robot_->passerv()->pos_getX_mm() << " y=" << robot_->passerv()->pos_getY_mm() << " a="
+            << robot_->passerv()->pos_getThetaInDegree() << logs::end;
 
     //robot_->svgPrintPosition(1);
     return ts;

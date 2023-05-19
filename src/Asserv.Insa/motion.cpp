@@ -701,8 +701,8 @@ void AsservInsa::setPWM(int16 pwmLeft, int16 pwmRight)
 //	oldPwmRight = pwmRight;
 
     if (robot_ != NULL) {
-        robot_->asserv()->runMotorLeft(pwmLeft, 0);
-        robot_->asserv()->runMotorRight(pwmRight, 0);
+        robot_->passerv()->runMotorLeft(pwmLeft, 0);
+        robot_->passerv()->runMotorRight(pwmRight, 0);
 
     } else {
         logger().error() << "setPWM : Base is NULL !" << logs::end;

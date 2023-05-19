@@ -18,24 +18,28 @@ LegoEV3RobotExtended::LegoEV3RobotExtended() {
     myColor_ = PMXNOCOLOR;
     cArgs_.setDescription("(c) PM-ROBOTIX LegoEV3Robot");
 
-    p_svg_ = new LegoEV3SvgWriterExtended(id_); // TODO simplify
-    svg_ = p_svg_;
+    LegoEV3SvgWriterExtended *p_svg = new LegoEV3SvgWriterExtended(id_);
+    //svg_ = p_svg_;
+    setSVG(p_svg);
 
-    p_asserv_ = new LegoEV3AsservExtended(id_, this);
+
+    LegoEV3AsservExtended * p_asserv = new LegoEV3AsservExtended(id_, this);
     //asserv_default_ = p_asserv_;
-    setAsserv(p_asserv_);
+    setAsserv(p_asserv);
 
     //on ecrase les versions par default avec la version extended
-    p_actions_ = new LegoEV3ActionsExtended(id_, this); // TODO simplify and use directly actions_default_
+    p_actions_ = new LegoEV3ActionsExtended(id_, this);
     actions_default_ = p_actions_;
+    //setActions(p_actions);
 
     p_ia_ = new LegoEV3IAExtended(id_, this); //TODO create an IA on the default robot
 
     decisionMaker_ = NULL;
 
-    svg_->beginHeader();
+    p_svg->beginHeader();
 
     force_end_of_match = false;
+
 }
 
 LegoEV3RobotExtended::~LegoEV3RobotExtended()
