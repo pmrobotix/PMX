@@ -30,7 +30,7 @@ LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot)
    //= rayon de notre robot + espace + rayon robot adverse
 //    sensors_.addThresholdFront(50+360, 180+350+180, 50+360);
 //    sensors_.addThresholdFrontVeryClosed(50+120, 180+70+180 , 50+120);
-    sensors_.addThresholdFront(50+360, 180+400+180, 50+360);
+    sensors_.addThresholdFront(50+360, 180+450+180, 50+360);
         sensors_.addThresholdFrontVeryClosed(50+120, 180+140+180 , 50+120);
 
     sensors_.addThresholdBack(50+300, 180+350+180, 50+300);

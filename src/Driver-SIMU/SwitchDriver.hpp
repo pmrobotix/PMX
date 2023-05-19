@@ -37,7 +37,7 @@ public:
 	int backLeftPressed();
 	int backRightPressed();
 
-	int pressed(unsigned char pin);
+	//int pressed(unsigned char pin);
 
 	void setGPIO(int gpio, bool activate);
 

@@ -149,7 +149,7 @@ public:
     virtual void setPositionAndColor(float x_mm, float y_mm, float theta_degrees, bool matchColor); //matchColor = 0 =>en bas à gauche du log svg
     virtual void setPositionReal(float x_mm, float y_mm, float thetaInRad);
 
-    virtual bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc = "");
+    virtual bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc = ""); //TODO acorriger
     //virtual bool filtre_IsInFront(int threshold_mm, int dist_mm, int x_mm, int y_mm, float theta);
     //virtual bool filtre_IsInBack(int threshold_mm, int dist_mm, int x_mm, int y_mm, float theta);
 

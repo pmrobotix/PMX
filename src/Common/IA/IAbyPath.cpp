@@ -383,8 +383,10 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_d
 
                     if(rotate_ignored_detection)
                     {
+                        logger().info() << " ======> PATH doFaceTo rotate_ignored_detection=false ! " << node->x << "," << node->y << logs::end;
                         //on tourne pour se degager si robot adverse devant
                         ts = robot_->passerv()->doFaceTo(robot_->passerv()->getRelativeX(node->x), node->y);
+                        //rotate_ignored_detection = false;
                     }
                     ts = robot_->passerv()->gotoXY(robot_->passerv()->getRelativeX(node->x), node->y);
 
@@ -474,15 +476,17 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
             ts = robot_->passerv()->doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
         }
 
-        robot_->logger().debug() << "byPathfinding=" << byPathfinding << "  TS = " << ts << logs::end;
+//        robot_->logger().error() << "byPathfinding=" << byPathfinding << "  TS = " << ts
+//                << " reculOnCollisionMm=" << reculOnCollisionMm
+//                << " reculOnObstacleMm=" << reculOnObstacleMm << logs::end;
         robot_->svgPrintPosition();
         robot_->displayTS(ts);
 
         if (ts == TRAJ_NEAR_OBSTACLE) {
             robot_->logger().info() << " ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
             f++;
-            if (f < 2)
-                robot_->passerv()->resetEmergencyOnTraj("IAbyPath whileMoveForwardTo TRAJ_NEAR_OBSTACLE"); //pour autoriser le level de detection 1 puis 2
+            if (f < nb_near_obstacle)
+                robot_->passerv()->resetEmergencyOnTraj("IAbyPath whileMoveForwardTo TRAJ_NEAR_OBSTACLE"); //pour autoriser le level de detection 3 puis 4
             if (reculOnObstacleMm > 0) {
                 TRAJ_STATE tr = robot_->passerv()->doLineAbs(-reculOnObstacleMm);
                 if (tr != TRAJ_OK) {
@@ -501,7 +505,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
                 //robot_->logger().info() << "IAbyPath::whileMoveForwardTo RECUL de mm=" << reculOnCollisionMm << logs::end;
                 TRAJ_STATE tr = robot_->passerv()->doLineAbs(-reculOnCollisionMm);
                 if (tr != TRAJ_OK) {
-                    robot_->passerv()->resetEmergencyOnTraj("IAbyPath doLineAbs(-reculOnCollisionMm); TRAJ_COLLISION"); //pour autoriser le level de detection 1 puis 2
+                    robot_->passerv()->resetEmergencyOnTraj("IAbyPath doLineAbs(-reculOnCollisionMm); TRAJ_COLLISION");
                 }
             }
             if (c >= nb_collision) {
@@ -546,6 +550,7 @@ TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignor
 
     while (ts != TRAJ_FINISHED) {
         if (byPathfinding) {
+            //TODO AJOUTER faceTo avec non detection
             ts = doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
         } else {
             ts = robot_->passerv()->doMoveBackwardTo(xMM, yMM, rotate_ignored_detection);

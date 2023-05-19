@@ -31,10 +31,11 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     uint c = 0;
     bool stop = false;
 
-    while (robot.chrono().getElapsedTimeInSec() <= 96 || stop == true) {
+    while (robot.chrono().getElapsedTimeInSec() <= 98 || stop == true) {
 
-        //ARU
-        if (robot.actions().tirette().pressed()) {
+        //ARU (attention 250ms!)
+        if (robot.actions().tirette().pressed())
+        {
             //printf("===== ARU pressed !!!!!!\n");
             logger().error() << "ARU pressed !!!!!!" << logs::end;
             //stop all robot
@@ -45,9 +46,10 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
             break;
         }
 
-        std::this_thread::sleep_for(std::chrono::microseconds(50000));
-        std::this_thread::yield();
-        if (c % 20 == 0) {
+
+        //std::this_thread::sleep_for(std::chrono::microseconds(50000));
+        //std::this_thread::yield();
+        if (c % 4 == 0) {
             robot.displayPoints();
             this->logger().info() << "chrono " << robot.chrono().getElapsedTimeInSec() << logs::end;
         }
@@ -61,6 +63,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
         //on recule pour la funny action
         robot.svgPrintPosition();
         robot.asserv().doLineAbs(-50);
+        std::this_thread::sleep_for(std::chrono::microseconds(200000));
         robot.asserv().stopMotors();
         robot.svgPrintPosition();
 
@@ -68,7 +71,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
         robot.actions().funny_action_full();
         std::this_thread::sleep_for(std::chrono::seconds(1));
         robot.points += 5;
-        std::this_thread::sleep_for(std::chrono::seconds(1));
+        //std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 
     this->logger().debug() << "execute end100s...stop... " << robot.chrono().getElapsedTimeInSec() << logs::end;
@@ -83,10 +86,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     }
     robot.asserv().stopMotors();
     robot.actions().clearAll();
-
-//init robot for end
     robot.freeMotion(); //stop the robot
-
     robot.stopExtraActions(); //stop sensors timer, stop specific actions, can take time for servos...
     robot.svgPrintEndOfFile();
 

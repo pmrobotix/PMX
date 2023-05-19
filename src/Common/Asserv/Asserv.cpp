@@ -263,6 +263,7 @@ float Asserv::pos_getThetaInDegree()
     return (pos_getTheta() * 180.0f) / M_PI;
 }
 
+//TODO a corriger
 //doit etre surcharger par robot , pour les detecteur de proxymité
 bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc)
 {
@@ -371,7 +372,8 @@ void Asserv::setEmergencyStop()
 
 void Asserv::resetEmergencyOnTraj(std::string message)
 {
-    logger().error() << "resetEmergencyOnTraj message = " << message << logs::end;
+    logger().error() << "=====   resetEmergencyOnTraj message = " << message << logs::end;
+
     if (useAsservType_ == ASSERV_INT_INSA) {
         //pAsservInsa_->path_ResetEmergencyStop();
     } else if (useAsservType_ == ASSERV_EXT)
@@ -398,6 +400,7 @@ void Asserv::setLowSpeedvalue(int value)
 void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, float y_adv_detect_mm)
 {
     //logger().error() << "warnFrontCollisionOnTraj frontlevel = " << frontlevel << logs::end;
+    logger().error() << "temp_forceRotation_ = " << temp_forceRotation_ << " temp_ignoreFrontCollision_=" << temp_ignoreFrontCollision_<< logs::end;
     if (temp_forceRotation_) {
         //logger().error() << "forceRotation_ = " << forceRotation_ << logs::end;
         return;
@@ -405,21 +408,22 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
     if (temp_ignoreFrontCollision_)
         return;
 
-    if (frontlevel >= 3) {
+//    if (frontlevel >= 3) {
+//
+//        logger().error() << "LEVEL 3 setLowSpeedForward = getLowSpeedvalue()=" << getLowSpeedvalue() << logs::end;
+//
+//        setLowSpeedForward(true, getLowSpeedvalue());
+//    }
 
-        logger().error() << "LEVEL 3 setLowSpeedForward = getLowSpeedvalue()=" << getLowSpeedvalue() << logs::end;
-
-        setLowSpeedForward(true, getLowSpeedvalue());
-    }
-
-    if (frontlevel >= 4) {
+    //3 ou 4
+    //.if (frontlevel >= 3) {
         if (useAsservType_ == ASSERV_INT_INSA)
             pAsservInsa_->path_CollisionOnTrajectory();
         else if (useAsservType_ == ASSERV_EXT)
             asservdriver_->path_CollisionOnTrajectory();
         else if (useAsservType_ == ASSERV_INT_ESIALR)
             pAsservEsialR_->path_CollisionOnTrajectory();
-    }
+    //}
 
     /*
      //conversion de la position du le terrain et determination du centre du robot adverse
@@ -503,7 +507,7 @@ TRAJ_STATE Asserv::gotoXY(float xMM, float yMM)
 {
     float x_match = getRelativeX(xMM);
     temp_ignoreRearCollision_ = true;
-    temp_forceRotation_ = true;
+    //temp_forceRotation_ = true; //uniquement sur le doface
     TRAJ_STATE ts;
     if (useAsservType_ == ASSERV_EXT)
         ts = asservdriver_->motion_Goto(x_match, yMM);
@@ -513,7 +517,7 @@ TRAJ_STATE Asserv::gotoXY(float xMM, float yMM)
     else
         ts = TRAJ_ERROR;
     temp_ignoreRearCollision_ = false;
-    temp_forceRotation_ = false;
+    //temp_forceRotation_ = false;
     return ts;
 }
 
@@ -578,8 +582,9 @@ TRAJ_STATE Asserv::doLineAbs(float dist_mm) // if distance <0, move backward
     return ts;
 }
 
-TRAJ_STATE Asserv::doRotateAbs(float degreesRelative)
+TRAJ_STATE Asserv::doRotateAbs(float degreesRelative) //TODO temp_forceRotation_ a ajouter
 {
+    //logger().error() << "11============ doRotateAbs temp_forceRotation_=true"  << logs::end;
     temp_forceRotation_ = true;
 
     TRAJ_STATE ts;
@@ -595,7 +600,7 @@ TRAJ_STATE Asserv::doRotateAbs(float degreesRelative)
         ts = TRAJ_ERROR;
 
     temp_forceRotation_ = false;
-
+    //logger().error() << "22============ doRotateAbs temp_forceRotation_=true"  << logs::end;
     return ts;
 }
 
@@ -608,8 +613,10 @@ TRAJ_STATE Asserv::doRelativeRotateBy(float thetaInDegreeRelative) //prend autom
 }
 
 
-TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
+TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM) ////TODO temp_forceRotation_ a ajouter
 {
+
+//    logger().error() << "1.============ doFaceTo temp_forceRotation_ = true;"  << logs::end;
     temp_forceRotation_ = true; //attention on ne prend pas en compte l'adversaire
 
     float x_match = getRelativeX(xMM);
@@ -629,6 +636,7 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
         ts = TRAJ_ERROR;
 
     temp_forceRotation_ = false;
+//    logger().error() << "2.============ doFaceTo temp_forceRotation_ = true;"  << logs::end;
     return ts;
 }
 

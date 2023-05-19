@@ -538,7 +538,7 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
     int timeout = 0;
     //attente du running status
     while (p_.asservStatus != 1) {
-//        logger().info() << " 111 waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000
+//        logger().error() << " 111 waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000
 //                << std::setw(10) << std::fixed << std::setprecision(3) << " deg=" << p_.theta * 180 / M_PI
 //                << std::setw(10) << " s=" << p_.asservStatus << " timeout=" << timeout<< logs::end;
 
@@ -546,7 +546,7 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
 
         timeout++;
         if (timeout > 10) {
-            logger().error() << "_______________________waitEndOfTraj() => break" << logs::end;
+            logger().debug() << "_______________________waitEndOfTraj() => break" << logs::end;
             break;
         }
         std::this_thread::yield();
@@ -555,7 +555,7 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
     timeout = 0;
     //attente de l'interruption ou fin de trajectoire
     while (p_.asservStatus == 1) {
-        //logger().info() << "222 waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p_.theta * 180 / M_PI << std::setw(10) << " s=" << p_.asservStatus << logs::end;
+//        logger().error() << "222 waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000 << std::setw(10) << std::fixed << std::setprecision(3) << " deg="<< p_.theta * 180 / M_PI << std::setw(10) << " s=" << p_.asservStatus << logs::end;
         utils::sleep_for_micros(1000);
         timeout++;
         if (timeout > 10 && p_.asservStatus != 1) {
@@ -564,7 +564,9 @@ TRAJ_STATE AsservEsialR::waitEndOfTraj()
         std::this_thread::yield();
     }
 
-//    logger().debug() << "END waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000
+
+
+//    logger().error() << "******************** END waitEndOfTraj()  xmm=" << p_.x * 1000 << std::setw(10) << " ymm=" << p_.y * 1000
 //            << std::setw(10) << std::fixed << std::setprecision(3) << " deg=" << p_.theta * 180 / M_PI << std::setw(10)
 //            << " s=" << p_.asservStatus << logs::end;
 
@@ -592,6 +594,10 @@ TRAJ_STATE AsservEsialR::motion_DoLine(float dist_mm)
 TRAJ_STATE AsservEsialR::motion_DoFace(float x_mm, float y_mm)
 {
     commandM_->addGoToAngle(x_mm, y_mm);
+
+    logger().debug() << "_______________________waitEndOfTraj() EMERGENCY STOP OCCURRED  pathStatus_= "
+                    << pathStatus_ << logs::end;
+
     return waitEndOfTraj();
 }
 TRAJ_STATE AsservEsialR::motion_DoFaceReverse(float x_mm, float y_mm)

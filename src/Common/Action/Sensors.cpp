@@ -88,6 +88,8 @@ SensorsTimer::SensorsTimer(Sensors &sensors, int timeSpan_ms, std::string name) 
 //    lastdetect_back_nb_ = 0;
     lastdetect_front_level_ = 0;
 
+    nb_ensurefront4 = 0;
+
     lastfrontl2_temp_ = false;
     lastbackl2_temp_ = false;
 
@@ -459,7 +461,6 @@ int Sensors::front(bool display)
         }
     }
 
-
     if (getAvailableFrontCenter()) {
         // detection avec la balise
         vpos = Sensors::getPositionsAdv();
@@ -470,7 +471,6 @@ int Sensors::front(bool display)
         int nb = 0;
 
         for (auto botpos : vpos) {
-
 
 //            logger().error() << nb << " bots=" << botpos.nbDetectedBots << " x y="<< botpos.x << " " << botpos.y                                    << logs::end;
 
@@ -825,25 +825,49 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
             nb_sensor_front_a_zero = 0;
         }
 
+        if (frontLevel ==4)
+        {
+            nb_ensurefront4 ++;
+        }else
+        {
+            nb_ensurefront4 = 0;
+        }
+
         //si 0,1,2 puis 3 ; baisse de vitesse  no (warn and resetEmergency)
         if (lastdetect_front_level_ <= 2 && frontLevel == 3) {
             sensors_.robot()->passerv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
         }
 
         //si 0,1,2,3,4 puis 4 ; arret du robot warn
-        if (lastdetect_front_level_ <= 4 && frontLevel == 4) {
+        if (lastdetect_front_level_ <= 4 && nb_ensurefront4 >= 3) {//=frontLevel ==4
+//            logger().error() << ">>  frontLevel=" << frontLevel
+//                    <<  "lastdetect_front_level_=" << lastdetect_front_level_
+//
+//                    << " nb_ensurefront4=" << nb_ensurefront4
+//                    << logs::end;
             sensors_.robot()->passerv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
         }
 
-        //si 4 puis 0,1,2,3 ; resetEmergency
-        if (lastdetect_front_level_ == 4 && nb_sensor_front_a_zero >= 4) { //frontLevel <= 3
+        //si 3 ou 4 puis 0,1,2,3 ; resetEmergency
+        if (lastdetect_front_level_ >= 4 && nb_sensor_front_a_zero >= 4) { //=frontLevel <= 3
             sensors_.robot()->passerv()->resetEmergencyOnTraj("SensorsTimer front=0");
             sensors_.robot()->resetDisplayObstacle();
         }
 
+        //si 0,1,2,3,4 puis 3 ; low speed
+        if (frontLevel >= 3 ) {
+            sensors_.robot()->passerv()->setLowSpeedForward(true, sensors_.robot()->passerv()->getLowSpeedvalue());
+        }
+
+//        if (lastdetect_front_level_ >= 3 && nb_sensor_front_a_zero >= 4) {
+//            //stop du robot et attente en remontant à l'ia
+//        }
+
         //si 3 puis 0,1,2 ; vitesse normale => si 3 ou 4 puis 0,1,2 ; vitesse normale
         if (lastdetect_front_level_ >= 3 && frontLevel <= 2) {
             sensors_.robot()->passerv()->setLowSpeedForward(false);
+            sensors_.robot()->passerv()->resetEmergencyOnTraj("SensorsTimer front=0");
+            sensors_.robot()->resetDisplayObstacle();
         }
 
         /*
@@ -906,7 +930,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
     if (sensors_.getAvailableBackCenter()) {
         if (sensors_.getAvailableFrontCenter()) {
             logger().error()
-                    << "getAvailableBackCenter & getAvailableFrontCenter ACTIVATED SAME TIME !!!!!!!!!!!!!!!!!!!!!!!!!!!"
+                    << "Back & Front ACTIVATED IN SAME TIME !!!!!!!!=>BUG"
                     << logs::end;
             //TODO regler le pb si activation des 2
 

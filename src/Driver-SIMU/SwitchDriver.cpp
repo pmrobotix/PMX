@@ -28,6 +28,7 @@ bool SwitchDriver::is_connected()
 
 int SwitchDriver::tirettePressed()
 {
+    std::this_thread::sleep_for(std::chrono::microseconds(250000));
     return 0;
 }
 int SwitchDriver::backLeftPressed()
@@ -39,10 +40,10 @@ int SwitchDriver::backRightPressed()
     return 0;
 }
 
-int SwitchDriver::pressed(unsigned char pin)
-{
-    return 0;
-}
+//int SwitchDriver::pressed(unsigned char pin)
+//{
+//    return 0;
+//}
 
 void SwitchDriver::setGPIO(int gpio, bool activate)
 {

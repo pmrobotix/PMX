@@ -216,6 +216,8 @@ private:
     int nb_sensor_front_a_zero;
     int nb_sensor_back_a_zero;
 
+    int nb_ensurefront4;
+
     int nb_sensor_level2;
     int nb_sensor_b_level2;
 

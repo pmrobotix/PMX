@@ -15,7 +15,8 @@
 
 using namespace std;
 
-void L_SensorsTest::run(int argc, char** argv) {
+void L_SensorsTest::run(int argc, char **argv)
+{
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
@@ -23,10 +24,8 @@ void L_SensorsTest::run(int argc, char** argv) {
     robot.asserv().startMotionTimerAndOdo(false); //assistedHandling is enabled with "true" !
     robot.asserv().setPositionAndColor(400.0, 200.0, 90.0, (robot.getMyColor() != PMXGREEN)); //pour mettre une position dans la table
     RobotPosition p = robot.asserv().pos_getPosition();
-    logger().info() << "p= " << p.x  << " " << p.y  << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus << logs::end;
-
-
-
+    logger().info() << "p= " << p.x << " " << p.y << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus
+            << logs::end;
 
     int front = 0, back = 0;
     ASensorsDriver::bot_positions vadv;
@@ -43,13 +42,16 @@ void L_SensorsTest::run(int argc, char** argv) {
      }
      */
 
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+
     //detection adverse
     robot.actions().start();
     robot.actions().sensors().addTimerSensors(200);
 
     bool alive = robot.actions().sensors().is_connected();
     if (!alive)
-    logger().error() << "!!!!!!!! NON alive =" << alive << logs::end;
+        logger().error() << "!!!!!!!! NON alive =" << alive << logs::end;
     else
         logger().info() << "alive =" << alive << logs::end;
 
@@ -64,8 +66,9 @@ void L_SensorsTest::run(int argc, char** argv) {
         vadv = robot.actions().sensors().getPositionsAdv();
 
         for (ASensorsDriver::bot_positions::size_type i = 0; i < vadv.size(); i++) {
-            logger().info() << " vadv nb=" << vadv.size() << " detected=" << vadv[i].nbDetectedBots << " x=" << vadv[i].x << " y=" << vadv[i].y
-                    << " a_deg=" << vadv[i].theta_deg << " d=" << vadv[i].d << logs::end;
+            logger().info() << " vadv nb=" << vadv.size() << " detected=" << vadv[i].nbDetectedBots << " x="
+                    << vadv[i].x << " y=" << vadv[i].y << " a_deg=" << vadv[i].theta_deg << " d=" << vadv[i].d
+                    << logs::end;
         }
 
         front = robot.actions().sensors().front(true);
