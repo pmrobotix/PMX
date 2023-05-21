@@ -42,12 +42,15 @@ bool L_push_cake_A2()
     level = robot.actions().sensors().front(false);
     robot.logger().error() << "L_push_cake_A2 :  level=" << level << logs::end;
 
-    std::this_thread::sleep_for(std::chrono::microseconds(300000));
+    if (level >= 4) {
 
-    if (level >= 3) {
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        level = robot.actions().sensors().front(false);
+        if (level >= 4) {
+            robot.logger().error() << "L_push_cake_A2 : on kill la tache level=" << level << logs::end;
+            return true;
+        }
 
-        robot.logger().error() << "L_push_cake_A2 : on kill la tache level=" << level << logs::end;
-        return true;
     }
 
     /*
@@ -125,6 +128,7 @@ bool L_push_cake_black_B3()
                 << "L_push_cake_black_B3 : zone_cake_black_B3 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
         robot.asserv().resetEmergencyOnTraj();
+
         //return false;
 
     }
@@ -144,6 +148,11 @@ bool L_push_cake_black_B3()
 
     }
     robot.svgPrintPosition();
+
+    //decision
+    if (robot.B3_is_taken && robot.B4_is_taken) {
+        return true; //on passe la tache
+    }
 
     //on abaisse le gauche en vert
     if (robot.getMyColor() == PMXGREEN) {
@@ -175,19 +184,30 @@ bool L_push_cake_black_B3()
 
     //on recule
     robot.asserv().doLineAbs(-100);
-    robot.points += 6;
 
-    //on ferme les pinces
-    robot.actions().ranger_pinces();
+    if (!robot.B3_is_taken) {
+        robot.logger().error() << "robot.B3_is_taken=" << robot.B3_is_taken << logs::end;
+        robot.points += 3;
+    }
+    if (!robot.B4_is_taken) {
+        robot.points += 3;
 
-    robot.svgPrintPosition();
-    return true; //return true si ok sinon false si interruption
+        //on ferme les pinces
+        robot.actions().ranger_pinces();
+
+        robot.svgPrintPosition();
+        return true; //return true si ok sinon false si interruption
+    }
 }
 
 bool L_push_cake_A5()
 {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     robot.logger().info() << "start L_push_cake_A5" << logs::end;
+
+    if (robot.A5_is_taken) {
+        return true;
+    }
 
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
@@ -215,19 +235,24 @@ bool L_push_cake_A5()
     robot.actions().arm_left_deploy(0);
 
     ///on avance doucement
-    robot.asserv().setLowSpeedForward(true, 30);
-    robot.asserv().doLineAbs(200);
+    robot.asserv().setLowSpeedForward(true, 40);
+    robot.asserv().doLineAbs(380); //on attend un calage
     robot.svgPrintPosition();
+
+
 
     //on ferme les fork pour prendre les cakes
     //robot.actions().fork_front_right_deploy(0);
     //robot.actions().fork_front_left_deploy(0);
     robot.actions().fork_open_take_slow(true);
 
+    robot.asserv().doLineAbs(-80);
+            robot.svgPrintPosition();
+
     robot.asserv().setLowSpeedForward(false);
 
     //on depose directement
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(250, zone.y - 375 - 100, true, 1000000, 30, 30, false);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(250, zone.y - 375 - 100, true, 1000000, 10, 3, false);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error()
                 << "L_push_cake_A5 : move closed to the 2 cakes ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
@@ -256,7 +281,7 @@ bool L_push_cake_A5()
     robot.actions().init_servos();
 
     robot.svgPrintPosition();
-    return true; //return true si ok sinon false si interruption
+    return true;        //return true si ok sinon false si interruption
 }
 
 bool L_push_cake_D5()
@@ -283,9 +308,13 @@ bool L_push_cake_D5()
 //        y_patch = 50;
 //    }
 
+    if (robot.D5_is_taken) {
+        return true;
+    }
+
     //robot.asserv().setLowSpeedForward(true, 40);
 
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y + y_patch, zone.theta, true, 1000000, 10, 10,
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y + y_patch, zone.theta, true, 1000000, 5, 2,
             true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_push_cake_D5 : zone_cake_D5 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
@@ -293,6 +322,9 @@ bool L_push_cake_D5()
         robot.asserv().resetEmergencyOnTraj();
         //robot.asserv().setLowSpeedForward(true, 40);
 
+        if (robot.D5_is_taken) {
+            return true;
+        }
         //force end of match
         robot.force_end_of_match = true;
         return true;
@@ -305,20 +337,25 @@ bool L_push_cake_D5()
     robot.actions().arm_left_deploy(0);
 
     ///on avance doucement
-    robot.asserv().setLowSpeedForward(true, 30);
-    robot.asserv().doLineAbs(180);
+    robot.asserv().setLowSpeedForward(true, 40);
+    robot.asserv().doLineAbs(360);        //calcage
     robot.svgPrintPosition();
+
+
 
     //on ferme les fork pour prendre les cakes
     //robot.actions().fork_front_right_deploy(0);
     //robot.actions().fork_front_left_deploy(0);
     robot.actions().fork_open_take_slow(true);
 
+    robot.asserv().doLineAbs(-80);
+       robot.svgPrintPosition();
+
 //    robot.asserv().setLowSpeedForward(false);
 //    robot.asserv().setLowSpeedForward(true, 40);
 
     //on depose directement
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x + 250, zone.y + 375, true, 1000000, 30, 30, false);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x + 250, zone.y + 375, true, 1000000, 10, 2, false);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error()
                 << "L_push_cake_D5 : move closed to the 2 cakes ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
@@ -332,6 +369,8 @@ bool L_push_cake_D5()
 
     }
     robot.svgPrintPosition();
+
+
 
     //on retire les fork doucement
 //    robot.actions().fork_front_right_init_slow(0);
@@ -350,7 +389,7 @@ bool L_push_cake_D5()
     robot.actions().init_servos();
 
     robot.svgPrintPosition();
-    return true; //return true si ok sinon false si interruption
+    return true;        //return true si ok sinon false si interruption
 }
 
 bool L_end_of_match()
@@ -371,10 +410,12 @@ bool L_end_of_match()
 
     //robot.asserv().setLowSpeedForward(true, 40);
 
+    //TODO gérer le gros robot
+
     TRAJ_STATE ts = TRAJ_OK;
     RobotPosition zone;
     robot.ia().iAbyPath().goToZone("zone_end", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 2000000, 55, 55, true, 0);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 1000000, 55, 55, true, 0);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_end_of_match : zone_end ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
@@ -424,16 +465,16 @@ void L_State_DecisionMakerIA::IASetupActivitiesZoneTableTest()
     int decalagetabletest = 390;
 //definition des zones (en zone VERT uniquement, c'est dupliqué automatiquement)
     robot.ia().iAbyPath().ia_createZone("zone_end", 1550, 900, 450, 450, 1050, 1000, 0);
-       robot.ia().iAbyPath().ia_createZone("zone_cake_A2", 0, 450, 450, 450, 500, 675, -180);
-       robot.ia().iAbyPath().ia_createZone("zone_cake_D5", 1600, 2100, 450, 450, 1500, 2325, 0);
-       robot.ia().iAbyPath().ia_createZone("zone_cake_A5", 0, 2100, 450, 450, 500, 2325, -180);
-       robot.ia().iAbyPath().ia_createZone("zone_cake_black_B3", 600, 1000, 200, 200, 570, 950, 60);
+    robot.ia().iAbyPath().ia_createZone("zone_cake_A2", 0, 450, 450, 450, 500, 675, -180);
+    robot.ia().iAbyPath().ia_createZone("zone_cake_D5", 1600, 2100, 450, 450, 1500, 2325, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_cake_A5", 0, 2100, 450, 450, 500, 2325, -180);
+    robot.ia().iAbyPath().ia_createZone("zone_cake_black_B3", 600, 1000, 200, 200, 570, 950, 60);
 
 //       robot.ia().iAbyPath().ia_addAction("push_cake_A2", &L_push_cake_A2);
 //       robot.ia().iAbyPath().ia_addAction("push_cake_black_B3", &L_push_cake_black_B3);
 //       robot.ia().iAbyPath().ia_addAction("push_cake_A5", &L_push_cake_A5);
 //       robot.ia().iAbyPath().ia_addAction("push_cake_D5", &L_push_cake_D5);
-       robot.ia().iAbyPath().ia_addAction("end_of_match", &L_end_of_match);
+    robot.ia().iAbyPath().ia_addAction("end_of_match", &L_end_of_match);
 
     logger().debug() << " END IASetup TableTest !!!!!!!!!!!!!!!!!!!!!" << logs::end;
 }

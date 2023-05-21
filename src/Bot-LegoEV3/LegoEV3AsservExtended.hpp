@@ -20,6 +20,8 @@ private:
         return instance;
     }
 
+    LegoEV3RobotExtended * pRobotExt_;
+
 public:
     LegoEV3AsservExtended(std::string botId, LegoEV3RobotExtended * robot);
 
@@ -27,10 +29,20 @@ public:
     {
     }
 
+    inline LegoEV3RobotExtended * getRobot()
+    {
+        return pRobotExt_;
+    }
+
     //surcharged function
     void startMotionTimerAndOdo(bool assistedHandlingEnabled);
 
+    bool filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm, float theta_deg, int *x_botpos, int *y_botpos);
+
+
     bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc = "");
+
+
 
 //    void setLowSpeedForward(bool enable, int percent=30);
 //    void setLowSpeedBackward(bool enable, int percent =30);

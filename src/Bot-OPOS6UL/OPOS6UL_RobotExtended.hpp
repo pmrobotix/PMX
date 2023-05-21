@@ -1,6 +1,7 @@
 #ifndef OPOS6UL_ROBOTEXTENDED_HPP_
 #define OPOS6UL_ROBOTEXTENDED_HPP_
 
+#include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/Robot.hpp"
 #include "../Log/LoggerFactory.hpp"
 
@@ -15,15 +16,15 @@ class OPOS6UL_RobotExtended: public Robot
 {
 public:
 
-    static OPOS6UL_RobotExtended & instance()
+    static OPOS6UL_RobotExtended& instance()
     {
         static OPOS6UL_RobotExtended instance;
         return instance;
     }
 
-    static inline const logs::Logger & logger()
+    static inline const logs::Logger& logger()
     {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("OPOS6UL_RobotExtended");
+        static const logs::Logger &instance = logs::LoggerFactory::logger("OPOS6UL_RobotExtended");
         return instance;
     }
 
@@ -31,24 +32,30 @@ public:
 
     inline OPOS6UL_ActionsExtended& actions()
     {
-        OPOS6UL_ActionsExtended& r_actions = *p_actions_;
+        OPOS6UL_ActionsExtended &r_actions = *p_actions_;
         return r_actions;
     }
 
-    inline OPOS6UL_AsservExtended& asserv()
-    {
-        OPOS6UL_AsservExtended& r_asserv = *p_asserv_;
-        return r_asserv;
-    }
+//    inline OPOS6UL_ActionsExtended& actions()
+//    {
+//        OPOS6UL_ActionsExtended& r_actions = *p_actions_;
+//        return r_actions;
+//    }
+//
+//    inline OPOS6UL_AsservExtended& asserv()
+//    {
+//        OPOS6UL_AsservExtended& r_asserv = *p_asserv_;
+//        return r_asserv;
+//    }
 
     inline OPOS6UL_IAExtended& ia()
     {
-        OPOS6UL_IAExtended& r_ia = *p_ia_;
+        OPOS6UL_IAExtended &r_ia = *p_ia_;
         return r_ia;
     }
 
     //begin the state and the decisionmaker
-    void begin(int argc, char** argv);
+    void begin(int argc, char **argv);
 
     void displayPoints();
     void stopExtraActions();
@@ -58,20 +65,20 @@ public:
     void resetDisplayObstacle();
     void displayObstacle(int level);
 
-    O_State_DecisionMakerIA* decisionMaker_;
+    O_State_DecisionMakerIA *decisionMaker_;
 
-    //data 2022
-
+    //data 2023
+    bool force_end_of_match;
 
 private:
 
-    OPOS6UL_ActionsExtended* p_actions_;
+    OPOS6UL_ActionsExtended *p_actions_;
 
-    OPOS6UL_AsservExtended * p_asserv_;
+    //OPOS6UL_AsservExtended *p_asserv_;
 
-    OPOS6UL_IAExtended * p_ia_;
+    OPOS6UL_IAExtended *p_ia_;
 
-    OPOS6UL_SvgWriterExtended * p_svg_;
+    //OPOS6UL_SvgWriterExtended *p_svg_;
 
     OPOS6UL_RobotExtended();
 };

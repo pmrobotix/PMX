@@ -4,7 +4,6 @@
 
 #include "../Common/Action/LcdShield.hpp"
 #include "../Common/Action/LedBar.hpp"
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
 #include "../Thread/Thread.hpp"
@@ -15,7 +14,6 @@
 #include "OPOS6UL_AsservExtended.hpp"
 #include "OPOS6UL_IAExtended.hpp"
 #include "OPOS6UL_SvgWriterExtended.hpp"
-#include "../Common/Utils/json.hpp"
 
 OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
 {
@@ -24,12 +22,12 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
     cArgs_.setDescription("(c) PM-ROBOTIX OPOS6UL_Robot");
 
     //on ecrase les versions par default avec la version extended
-    p_svg_ = new OPOS6UL_SvgWriterExtended(id_);
-    svg_ = p_svg_;
+    OPOS6UL_SvgWriterExtended *p_svg = new OPOS6UL_SvgWriterExtended(id_);
+    setSVG(p_svg);
 
-    p_asserv_ = new OPOS6UL_AsservExtended(id_, this);
+    OPOS6UL_AsservExtended * p_asserv = new OPOS6UL_AsservExtended(id_, this);
     //asserv_default_ = p_asserv_;
-    setAsserv(p_asserv_);
+    setAsserv(p_asserv);
 
     p_actions_ = new OPOS6UL_ActionsExtended(id_, this);
     actions_default_ = p_actions_;
@@ -39,9 +37,10 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
     decisionMaker_ = NULL;
 
     //init SVG log file
-    svg_->beginHeader();
+    p_svg->beginHeader();
 
     points = 0;
+    force_end_of_match = false;
 
 }
 

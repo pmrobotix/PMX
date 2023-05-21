@@ -79,7 +79,7 @@ int ServoDriver::getPulsePos(int servo)
 
 int ServoDriver::ping(int servo)
 {
-    return -1;
+    return 1;
 }
 
 void ServoDriver::setMinPulse(int servo, int pulse)

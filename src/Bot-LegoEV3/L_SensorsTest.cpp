@@ -1,16 +1,19 @@
 #include "L_SensorsTest.hpp"
 
-#include <unistd.h>
-#include <string>
 #include <cmath>
+#include <string>
+#include <vector>
 
 #include "../Common/Action/Sensors.hpp"
+#include "../Common/Action.Driver/ASensorsDriver.hpp"
+#include "../Common/Asserv/Asserv.hpp"
 #include "../Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
+#include "../Log/SvgWriter.hpp"
+#include "../Thread/Thread.hpp"
 #include "LegoEV3ActionsExtended.hpp"
-#include "LegoEV3AsservExtended.hpp"
 #include "LegoEV3RobotExtended.hpp"
 
 using namespace std;
@@ -26,6 +29,7 @@ void L_SensorsTest::run(int argc, char **argv)
     RobotPosition p = robot.asserv().pos_getPosition();
     logger().info() << "p= " << p.x << " " << p.y << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus
             << logs::end;
+    robot.svgPrintPosition();
 
     int front = 0, back = 0;
     ASensorsDriver::bot_positions vadv;
@@ -69,16 +73,14 @@ void L_SensorsTest::run(int argc, char **argv)
             logger().info() << " vadv nb=" << vadv.size() << " detected=" << vadv[i].nbDetectedBots << " x="
                     << vadv[i].x << " y=" << vadv[i].y << " a_deg=" << vadv[i].theta_deg << " d=" << vadv[i].d
                     << logs::end;
+
+            robot.svgw().writePosition_AdvPos(vadv[i].x, vadv[i].y, 4); //4= BLUE
         }
 
         front = robot.actions().sensors().front(true);
         back = robot.actions().sensors().back(true);
 
-        //default=>510
-        //4,7k =>462
-        //1k=>340
-        //470=>246
-        //int adc = robot.actions().sensors().getADC();
+
 
         utils::sleep_for_micros(1000000);
         logger().info() << " front=" << front << " back=" << back << logs::end;

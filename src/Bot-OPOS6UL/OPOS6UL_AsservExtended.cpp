@@ -24,6 +24,48 @@ OPOS6UL_AsservExtended::OPOS6UL_AsservExtended(std::string botId, OPOS6UL_RobotE
 }
 
 
+bool OPOS6UL_AsservExtended::filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm, float theta_deg, int *x_botpos,
+        int *y_botpos)
+{
+    //return true; //PATCH
+
+    //table verticale
+    int table_x = 2000;
+    int table_y = 3000;
+    RobotPosition p = pos_getPosition();
+
+    //coordonnées de l'objet detecté sur la table// M_P/2
+//    *x_botpos = p.x + (d_mm * cos(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
+//    *y_botpos = p.y + (d_mm * sin(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
+    float a = (p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f));
+    std::fmod(a, 2 * M_PI);
+    if (a < -M_PI)
+        a += M_PI;
+    if (a > M_PI)
+        a -= M_PI;
+
+    //ADV coord
+    *x_botpos = p.x + (d_mm * cos(a));
+    *y_botpos = p.y + (d_mm * sin(a));
+
+//    logger().error() << "DEBUG --xy_botpos= " << *x_botpos << " " << *y_botpos
+//                    << "pos: " << p.x << " " << p.y << " p_rad:" << p.theta << " --balise: " << d_mm << " " << x_mm << " "
+//                    << y_mm << " t_deg:" << theta_deg << logs::end;
+
+
+
+    //on filtre si c'est en dehors de la table verticale! avec 10cm de marge
+    if ((*x_botpos > 100 && *x_botpos < table_x - 100) && (*y_botpos > 100 && *y_botpos < table_y - 100)) {
+        logger().debug() << "INSIDE filtre_IsInsideTableXY xy_botpos=" << *x_botpos << " " << *y_botpos << "pos: "
+                << p.x << " " << p.y << " p_rad:" << p.theta << " balise: " << d_mm << " " << x_mm << " " << y_mm
+                << " t_deg:" << theta_deg << logs::end;
+        return true;
+    } else
+        return false;
+
+}
+
+//TODO deprecated fonction pour les capteurs de proximité ...a rendre generique pour tous les robots
 bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc)
 {
 

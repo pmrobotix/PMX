@@ -40,7 +40,7 @@ long ServoUsingMotorDriver::getInternalEncoder() {
 }
 
 void ServoUsingMotorDriver::stopMotor() {
-    MD25::instance().speed1_set(0);
+    //MD25::instance().speed1_set(0);
     MD25::instance().speed2_set(0);
 }
 

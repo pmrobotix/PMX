@@ -484,6 +484,9 @@ int Sensors::front(bool display)
 
             if (inside_table) {
 
+
+                //this->actions().C3_is_taken = false;
+
                 //filtre des 4 positions de gateaux 2023
 
                 //filtre is_in_front devant ou coté
@@ -835,7 +838,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
 
         //si 0,1,2 puis 3 ; baisse de vitesse  no (warn and resetEmergency)
         if (lastdetect_front_level_ <= 2 && frontLevel == 3) {
-            sensors_.robot()->passerv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
+            //sensors_.robot()->passerv()->warnFrontCollisionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
         }
 
         //si 0,1,2,3,4 puis 4 ; arret du robot warn

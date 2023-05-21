@@ -99,7 +99,7 @@ public:
 
     void setLowSpeedvalue(int value);
 
-    bool filtre_IsInsideTableXY(int d, int x, int y, float a, int *x_botpos, int *y_botpos);
+    virtual bool filtre_IsInsideTableXY(int d, int x, int y, float a, int *x_botpos, int *y_botpos) = 0;
 
     /*!
      * \brief return objet movingBase. DEPRECATED

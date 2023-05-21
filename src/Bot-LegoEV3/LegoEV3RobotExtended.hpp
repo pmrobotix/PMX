@@ -39,6 +39,7 @@ public:
         return r_actions;
     }
 
+
 //    inline LegoEV3ActionsExtended& actions()
 //    {
 //        LegoEV3ActionsExtended& r_actions = *p_actions_;
@@ -61,12 +62,13 @@ public:
         return r_ia;
     }
 
-    //DATA custom
-    //bool trophy_taken;
-    //bool alea_done;
-    //int square_pattern;
+    //DATA custom 2023
 
     bool force_end_of_match;
+    bool B3_is_taken;
+    bool B4_is_taken;
+    bool A5_is_taken;
+    bool D5_is_taken;
 
     void begin(int argc, char **argv);
 

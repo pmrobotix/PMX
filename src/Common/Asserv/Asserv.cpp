@@ -272,10 +272,10 @@ bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm,
     return false;
 
 }
-
+/*
 bool Asserv::filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm, float theta_deg, int *x_botpos, int *y_botpos)
 {
-    return true; //PATCH
+    //return true; //PATCH
 
     //table verticale
     int table_x = 2000;
@@ -283,19 +283,28 @@ bool Asserv::filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm, float theta_de
     RobotPosition p = pos_getPosition();
 
     //coordonnées de l'objet detecté sur la table// M_P/2
-    *x_botpos = p.x + (d_mm * cos(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
-    *y_botpos = p.y + (d_mm * sin(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
+//    *x_botpos = p.x + (d_mm * cos(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
+//    *y_botpos = p.y + (d_mm * sin(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
+    float a = ((theta_deg * M_PI / 180.0f) - p.theta);
+    std::fmod(a, 2 * M_PI);
+    if (a < -M_PI)
+        a += M_PI;
+    if (a > M_PI)
+        a -= M_PI;
+
+    *x_botpos = p.x + (d_mm * cos(a));
+    *y_botpos = p.y + (d_mm * sin(a));
 
     //on filtre si c'est en dehors de la table verticale! avec 10cm de marge
     if ((*x_botpos > 100 && *x_botpos < table_x - 100) && (*y_botpos > 100 && *y_botpos < table_y - 100)) {
-        logger().debug() << "INSIDE filtre_IsInsideTableXY x_botpos=" << *x_botpos << " y_botpos=" << *y_botpos
+        logger().debug() << "INSIDE filtre_IsInsideTableXY xy_botpos=" << *x_botpos << " " << *y_botpos
                 << "pos: " << p.x << " " << p.y << " p_rad:" << p.theta << " balise: " << d_mm << " " << x_mm << " "
-                << y_mm << " theta_deg:" << theta_deg << logs::end;
+                << y_mm << " t_deg:" << theta_deg << logs::end;
         return true;
     } else
         return false;
 
-}
+}*/
 /*
  //TODO doit etre surcharger par robot
  bool Asserv::filtre_IsInFront(int threshold_mm, int dist_mm, int x_mm, int y_mm, float theta_deg)
@@ -400,7 +409,8 @@ void Asserv::setLowSpeedvalue(int value)
 void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, float y_adv_detect_mm)
 {
     //logger().error() << "warnFrontCollisionOnTraj frontlevel = " << frontlevel << logs::end;
-    logger().error() << "temp_forceRotation_ = " << temp_forceRotation_ << " temp_ignoreFrontCollision_=" << temp_ignoreFrontCollision_<< logs::end;
+    logger().error() << "temp_forceRotation_ = " << temp_forceRotation_ << " temp_ignoreFrontCollision_="
+            << temp_ignoreFrontCollision_ << logs::end;
     if (temp_forceRotation_) {
         //logger().error() << "forceRotation_ = " << forceRotation_ << logs::end;
         return;
@@ -417,12 +427,12 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
 
     //3 ou 4
     //.if (frontlevel >= 3) {
-        if (useAsservType_ == ASSERV_INT_INSA)
-            pAsservInsa_->path_CollisionOnTrajectory();
-        else if (useAsservType_ == ASSERV_EXT)
-            asservdriver_->path_CollisionOnTrajectory();
-        else if (useAsservType_ == ASSERV_INT_ESIALR)
-            pAsservEsialR_->path_CollisionOnTrajectory();
+    if (useAsservType_ == ASSERV_INT_INSA)
+        pAsservInsa_->path_CollisionOnTrajectory();
+    else if (useAsservType_ == ASSERV_EXT)
+        asservdriver_->path_CollisionOnTrajectory();
+    else if (useAsservType_ == ASSERV_INT_ESIALR)
+        pAsservEsialR_->path_CollisionOnTrajectory();
     //}
 
     /*
@@ -612,7 +622,6 @@ TRAJ_STATE Asserv::doRelativeRotateBy(float thetaInDegreeRelative) //prend autom
         return doRotateAbs(thetaInDegreeRelative); //jaune
 }
 
-
 TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM) ////TODO temp_forceRotation_ a ajouter
 {
 
@@ -639,7 +648,6 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM) ////TODO temp_forceRotation_ a
 //    logger().error() << "2.============ doFaceTo temp_forceRotation_ = true;"  << logs::end;
     return ts;
 }
-
 
 //relative motion (depends on current position of the robot, thinking in the first color of match)
 TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_ignored)

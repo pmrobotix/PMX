@@ -138,12 +138,13 @@ void O_ServoObjectsTest::run(int argc, char **argv)
     //lancer
     if (action == "L") {
         robot.actions().lancer_les_balles(vitesse); //90 pour 76cm //127 pour 160cm
-        usleep(1000000);
+        usleep(1500000);
 
         robot.actions().aspiration_lacher_les_balles();
         usleep(8000000);
         robot.actions().stopper_lanceur_de_balles();
         robot.actions().aspiration_closed_init(-1);
+        robot.actions().stopper_lanceur_de_balles();
 
     }
 
@@ -152,7 +153,7 @@ void O_ServoObjectsTest::run(int argc, char **argv)
         robot.actions().lancer_les_balles(30);
 
         robot.actions().aspiration_lacher_les_balles();
-        usleep(10000000);
+        usleep(7000000);
         robot.actions().aspiration_closed_init(-1);
         robot.actions().stopper_lanceur_de_balles();
     }

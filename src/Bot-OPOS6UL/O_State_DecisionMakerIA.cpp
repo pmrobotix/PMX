@@ -36,6 +36,18 @@ bool O_launch_balls_1() {
     }
     robot.svgPrintPosition();
 
+    robot.asserv().doFaceTo(1550, 1000);
+
+    robot.actions().lancer_les_balles(88); //90 pour 76cm //127 pour 160cm
+            usleep(1000000);
+
+            robot.actions().aspiration_lacher_les_balles();
+            usleep(3000000);
+            robot.actions().stopper_lanceur_de_balles();
+            robot.actions().aspiration_closed_init(-1);
+
+    utils::sleep_for_secs(5);
+    robot.actions().stopper_lanceur_de_balles();
 
     return true; //return true si ok sinon false si interruption
 }
@@ -158,7 +170,7 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone() {
     logger().debug() << "color = " << robot.getMyColor() << logs::end;
 
 
-    robot.ia().iAbyPath().ia_createZone("zone_launch1", 0, 0, 450, 200, 1000, 600, -90);
+    robot.ia().iAbyPath().ia_createZone("zone_launch1", 0, 0, 450, 200, 1000, 500, -135);
 
     //robot.ia().iAbyPath().ia_createZone("zone_end", 0, 1650, 450, 450, 500, 1650, 0);
     robot.ia().iAbyPath().ia_createZone("zone_end", 0, 1650, 450, 450, 1550, 900, 0);
@@ -187,6 +199,23 @@ void O_State_DecisionMakerIA::IASetupActivitiesZoneTableTest() {
     logger().error() << "IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!!" << logs::end;
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     logger().debug() << "color = " << robot.getMyColor() << logs::end;
+
+
+
+    robot.ia().iAbyPath().ia_createZone("zone_launch1", 0, 0, 450, 200, 1000, 500, -135);
+
+
+    robot.ia().iAbyPath().ia_createZone("zone_end", 0, 1650, 450, 450, 1050, 900, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_ball_D3", 1800, 1350, 200, 300, 1800, 1500, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_ball_BC1", 900, 0, 200, 300, 750, 160, 0);
+
+
+    robot.ia().iAbyPath().ia_addAction("launch_balls_1", &O_launch_balls_1);
+    //robot.ia().iAbyPath().ia_addAction("take_ball_D3", &O_take_ball_BC1);
+    //robot.ia().iAbyPath().ia_addAction("take_ball_D3", &O_take_ball_D3);
+    //robot.ia().iAbyPath().ia_addAction("end_of_match", &O_end_of_match);
+
+
 
     //robot.ia().iAbyPath().ia_createZone("zone_start", 0, 1000, 400, 600, 250, 1450, 0);
     //robot.ia().iAbyPath().ia_createZone("zone_end", 800, 500, 400, 400, 1100, 800, -90);
@@ -272,7 +301,7 @@ void O_State_DecisionMakerIA::execute() {
      }*/
 
     //On ajoute le timer de detection
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
     robot.actions().sensors().addTimerSensors(200);
 

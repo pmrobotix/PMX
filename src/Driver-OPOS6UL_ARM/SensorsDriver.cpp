@@ -9,7 +9,7 @@
 
 using namespace std;
 
-ASensorsDriver * ASensorsDriver::create(std::string) {
+ASensorsDriver * ASensorsDriver::create(std::string, Robot * robot) {
     return new SensorsDriver();
 }
 
