@@ -19,6 +19,7 @@ private:
         static const logs::Logger & instance = logs::LoggerFactory::logger("OPOS6UL_AsservExtended");
         return instance;
     }
+
     OPOS6UL_RobotExtended * robot_extended_;
 
 public:
@@ -27,6 +28,8 @@ public:
     ~OPOS6UL_AsservExtended()
     {
     }
+
+    void startMotionTimerAndOdo(bool assistedHandlingEnabled);
 
     bool filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm, float theta_deg, int *x_botpos,
             int *y_botpos);

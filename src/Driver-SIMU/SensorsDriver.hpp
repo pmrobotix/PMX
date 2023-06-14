@@ -4,6 +4,8 @@
 #include "../Common/Action.Driver/ASensorsDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 
+#define square(a)  (a)*(a)
+
 using namespace std;
 
 class SensorsDriver: public ASensorsDriver

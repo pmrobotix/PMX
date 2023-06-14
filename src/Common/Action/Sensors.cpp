@@ -298,17 +298,18 @@ int Sensors::leftSide()
 
 //filtre is_in_front devant ou coté
 //0  0  0
-//1  1  1  // level 1 frontCenterThreshold_
-//4G 2  3D // level 2 frontCenterVeryClosedThreshold_
-//1  1  1
-//0  0  0
-
-//filtre is_in_front devant ou coté
-//0  0  0
 //3  3  3  // level 1 frontCenterThreshold_
 //2G 4  1D // level 2 frontCenterVeryClosedThreshold_
 //3  3  3
 //0  0  0
+
+//NiceTOhave
+//99    9/99  99       // 1 jusqu'à 9 vecteur robot adv nous rentre dedans, vitesse reduite
+//3/30  1     2/20     // level 1 frontCenterThreshold_
+//97G   0     98D      // level 0 frontCenterVeryClosedThreshold_ => 0 arret complet
+//3/30  1     2/20     // 2 ou 3 si vecteur entrant, 20 ou 30 si le robot adv s'en va;
+//99    9/99  99       //possibilité de créer new level si on veut avec plus de threshold
+
 int Sensors::filtre_levelInFront(int threshold_mm, int threshold_veryclosed_mm, int dist_mm, int x_mm, int y_mm,
         float theta_deg)
 {
@@ -320,7 +321,7 @@ int Sensors::filtre_levelInFront(int threshold_mm, int threshold_veryclosed_mm, 
     int xdist_adv = x_mm; //coordx à partir du centre du robot jusque le bord du robot adv
     int ydist_adv = y_mm; //coordy à partir du centre du robot jusque le bord du robot adv
 
-    //patch balise
+    //patch balise!!!!!!!!!!!!!!!!
     if (xdist_adv > 0)
         xdist_adv += 50;
     if (xdist_adv < 0)
