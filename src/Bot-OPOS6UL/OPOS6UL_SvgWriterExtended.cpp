@@ -169,7 +169,7 @@ void OPOS6UL_SvgWriterExtended::writePosition_Bot(float x, float y, float angle_
 void OPOS6UL_SvgWriterExtended::writePosition_BotPos(float x, float y, float angle_rad)
 {
     if (!done_) {
-        printf("\ndone_=%d\n", done_);
+        //printf("\ndone_=%d\n", done_);
         double delta_y = 0.0;
         double delta_x = 0.0;
 

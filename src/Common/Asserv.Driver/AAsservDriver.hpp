@@ -37,10 +37,10 @@ typedef struct RobotPosition {
     //3 blocked/halted
     int asservStatus;
 
-    int queueSize;
-    int l_motor_speed;
-    int r_motor_speed;
-    MOVEMENT_DIRECTION direction;
+    int queueSize; //deprecated ?
+    int l_motor_speed; //deprecated ?
+    int r_motor_speed; //deprecated ?
+    MOVEMENT_DIRECTION direction; //deprecated ?
     unsigned int debug_nb;
 
 } RobotPosition;

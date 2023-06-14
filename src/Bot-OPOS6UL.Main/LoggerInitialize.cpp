@@ -50,8 +50,6 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "AsservDriver.OPO.SVG", "svg");
     add(logs::Level::INFO, "AsservDriver.SIMU.SVG", "svg");
 
-    //File
-    //add(logs::Level::DEBUG, "logFileAsservInsa", "file");
 
     //State
     add(logs::Level::INFO, "O_State_Init", "console");

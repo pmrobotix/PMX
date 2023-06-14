@@ -3,7 +3,13 @@
 #include "SensorsDriver.hpp"
 
 #include <unistd.h>
+#include <initializer_list>
 #include <string>
+#include <vector>
+
+#include "../Common/Asserv/Asserv.hpp"
+#include "../Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../Common/Robot.hpp"
 
 //#include "../Bot-OPOS6UL/OPOS6UL_AsservExtended.hpp"
 //#include "../Bot-OPOS6UL/OPOS6UL_RobotExtended.hpp"
@@ -42,10 +48,19 @@ ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv() {
     ASensorsDriver::bot_positions bot_pos;
 
     //coord table à transformer en coordonnées robot: 200,700 => position robot robot_
+    int x = 1000.0;
+    int y = 1000.0;
+
+    RobotPosition p = robot_->asserv().pos_getPosition();
+
+    int d = std::sqrt(square(p.y-y) + square(p.x-x));
+
+    RobotPos pos = {x, y , 0, d, 1}; //TODO Fantome a virer
 
 
 
-    RobotPos pos = {1000, 1000 , 0, 200, 1}; //TODO Fantome a virer
+
+
     //simu des positions adverses
     bot_pos = {pos};
 

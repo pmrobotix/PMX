@@ -44,7 +44,7 @@ AsservDriver::AsservDriver(std::string botid) :
     else if (botid == "OPOS6UL_Robot") {
         //printf("--- AsservDriver - botid == OPOS6UL_Robot\n");
         //CONFIGURATION OPOS6UL_Robot SIMULATEUR CONSOLE  --------------------------------------------
-        simuTicksPerMeter_ = 1470.0; //nb ticks for 1000mm
+        simuTicksPerMeter_ = 130566.0f; //nb ticks for 1000mm
         simuMaxSpeed_ = 1.0; //m/s
         simuMaxPower_ = 127.0;
         //CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------

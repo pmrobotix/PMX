@@ -1,20 +1,21 @@
 #include "OPOS6UL_AsservExtended.hpp"
 
 #include <cmath>
-#include <string>
+#include <cstdio>
 
+#include "../Asserv.Esial/AsservEsialR.hpp"
+#include "../Asserv.Esial/config/config.h"
 #include "../Log/Logger.hpp"
+
 #include "OPOS6UL_IAExtended.hpp"
 #include "OPOS6UL_RobotExtended.hpp"
 
 OPOS6UL_AsservExtended::OPOS6UL_AsservExtended(std::string botId, OPOS6UL_RobotExtended * robot) :
         Asserv(botId, robot) //on appelle le constructeur pere
 {
-    //useInternalAsserv_ = false; //configuration pour utiliser une carte d'asserv externe (ici la MBED)
     botId_ = botId;
-    useAsservType_ = ASSERV_EXT;
+    useAsservType_ = ASSERV_EXT; //ASSERV_INT_ESIALR; // !!!!!!!!!!!!!!!!!!!!
     robot_extended_ = robot;
-
 
     //set the value setLowSpeedForward for asserv
     setLowSpeedvalue(10);
@@ -107,9 +108,49 @@ bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int latera
         return true; //si ok
     } else
         return false; //si en dehors de la table*/
-
-
 }
+
+//TODO séparer config du lancement de l'asserv
+void OPOS6UL_AsservExtended::startMotionTimerAndOdo(bool assistedHandlingEnabled)
+{
+    // internal asserv config
+    if (useAsservType_ == ASSERV_INT_ESIALR) {
+
+        std::string filename = "config_";
+        filename.append(botId_);
+        filename.append(".txt");
+        logger().debug() << filename.c_str() << logs::end;
+        Config::loadFile(filename.c_str());
+        logger().debug() << "Version configuration : " << Config::configVersion << logs::end;
+        logger().debug() << Config::dumpConfig() << logs::end;
+
+        float periodSec = Config::asservPeriod;
+
+        //on active le thread de check de position et les drivers //TODO a faire dans esialR et non dans asservdriver
+        //asservdriver_->motion_ActivateManager(true);
+
+        //start asserv thread et timer
+        pAsservEsialR_->startAsserv(1.0f / periodSec); //f=20 Hz => every 50ms
+
+        pAsservEsialR_->motion_ActivateManager(true); //init and start
+        if (assistedHandlingEnabled) {
+            pAsservEsialR_->motion_AssistedHandling();
+        } else {
+            pAsservEsialR_->motion_FreeMotion();
+        }
+
+    } else if (useAsservType_ == ASSERV_EXT) {
+
+        asservdriver_->motion_ActivateManager(true); //on active la carte d'asserv externe et le thread de position
+        if (assistedHandlingEnabled)
+            asservdriver_->motion_AssistedHandling();
+        else
+            asservdriver_->motion_FreeMotion();
+    }
+}
+
+
+
 /* old version 2021
 bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc)
 {
@@ -162,7 +203,7 @@ bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int latera
 //TODO a deplacer dans les actions avec l'update des sensors
 void OPOS6UL_AsservExtended::update_adv()
 {
-
+     //TODO a deplacer en IA ?
     robot_extended_->ia().move_adv(pos_getAdvPosition().x, pos_getAdvPosition().y);
 
 }

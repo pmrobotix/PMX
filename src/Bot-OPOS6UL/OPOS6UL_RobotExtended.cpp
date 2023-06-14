@@ -40,8 +40,8 @@ OPOS6UL_RobotExtended::OPOS6UL_RobotExtended()
     p_svg->beginHeader();
 
     points = 0;
+    //2023
     force_end_of_match = false;
-
 }
 
 OPOS6UL_RobotExtended::~OPOS6UL_RobotExtended()

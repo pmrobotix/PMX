@@ -198,6 +198,8 @@ bool L_push_cake_black_B3()
         robot.svgPrintPosition();
         return true; //return true si ok sinon false si interruption
     }
+
+    //TODO return ?
 }
 
 bool L_push_cake_A5()

@@ -4,23 +4,16 @@
 #include <cstdlib>
 #include <unistd.h>
 #include "../../Asserv.Esial/AsservEsialR.hpp"
-#include "../../Asserv.Insa/AsservInsa.hpp"
 #include "../../Log/Logger.hpp"
 
 Asserv::Asserv(std::string botId, Robot *robot)
 {
-    //pMovingBase_ = new MovingBase(botId); //TODO deprecated
     asservdriver_ = AAsservDriver::create(botId);
     probot_ = robot;
 
-    useAsservType_ = ASSERV_INT_ESIALR; //default
+    useAsservType_ = ASSERV_INT_ESIALR; //default internal asserv
 
     //init des objets
-    if (useAsservType_ == ASSERV_INT_INSA)
-        pAsservInsa_ = new AsservInsa(robot);
-    else
-        pAsservInsa_ = NULL;
-
     if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_ = new AsservEsialR(robot); //TODO necessaire pour svg, botcodeur, et motors, essayer de donner uniquement l'asserv avec ce qu'il faut... a reflechir
     else
@@ -45,15 +38,8 @@ Asserv::Asserv(std::string botId, Robot *robot)
 Asserv::~Asserv()
 {
     delete asservdriver_;
-    //delete pMovingBase_;
-    delete pAsservInsa_;
     delete pAsservEsialR_;
 }
-
-//DEPRECATED
-//MovingBase* Asserv::base() {
-//    return pMovingBase_;
-//}
 
 void Asserv::resetEncoders()
 {
@@ -89,12 +75,7 @@ void Asserv::stopMotors()
 
 void Asserv::endWhatTodo()
 {
-    if (useAsservType_ == ASSERV_INT_INSA) {
-
-        //TO BE surcharged because of the specific config file per robot
-        logger().error() << "TODO endWhatTodo  ASSERV_INT_INSA  TO BE surcharged !!!" << logs::end;
-
-    } else if (useAsservType_ == ASSERV_INT_ESIALR) {
+    if (useAsservType_ == ASSERV_INT_ESIALR) {
 
         pAsservEsialR_->endWhatTodo();
     } else if (useAsservType_ == ASSERV_EXT) {
@@ -105,10 +86,7 @@ void Asserv::endWhatTodo()
 
 void Asserv::startMotionTimerAndOdo(bool assistedHandlingEnabled)
 {
-    if (useAsservType_ == ASSERV_INT_INSA) {
-        //TO BE surcharged because of the specific config file per robot
-        logger().error() << "TODO startMotionTimerAndOdo  ASSERV_INT_INSA  TO BE surcharged !!!" << logs::end;
-    } else if (useAsservType_ == ASSERV_INT_ESIALR) {
+    if (useAsservType_ == ASSERV_INT_ESIALR) {
 
         //TO BE surcharged because of the specific config file per robot
         logger().error() << "TODO startMotionTimerAndOdo  ASSERV_INT_ESIALR  TO BE surcharged !!!" << logs::end;
@@ -130,10 +108,8 @@ void Asserv::startMotionTimerAndOdo(bool assistedHandlingEnabled)
 void Asserv::stopMotionTimerAndOdo()
 {
 
-    if (useAsservType_ == ASSERV_INT_INSA) {
-        pAsservInsa_->motion_StopTimer();
-    } else if (useAsservType_ == ASSERV_EXT) {
-        //asservdriver_->path_InterruptTrajectory(); //TODO path_InterruptTrajectory() utile ? car caresh en coredump sur le lego en SIMU
+    if (useAsservType_ == ASSERV_EXT) {
+        //asservdriver_->path_InterruptTrajectory(); //TODO path_InterruptTrajectory() utile ? car crash en coredump sur le lego en SIMU
         asservdriver_->motion_ActivateManager(false); //cancel the thread
     } else if (useAsservType_ == ASSERV_INT_ESIALR) {
         //pAsservEsialR_->path_InterruptTrajectory();//TODO path_InterruptTrajectory() utile ?
@@ -143,9 +119,7 @@ void Asserv::stopMotionTimerAndOdo()
 
 void Asserv::setLowSpeedForward(bool enable, int percent)
 {
-    if (useAsservType_ == ASSERV_INT_INSA) {
-        logger().error() << "TODO setLowSpeed ASSERV_INT_INSA NOT EXIST !!!" << logs::end;
-    } else if (useAsservType_ == ASSERV_INT_ESIALR) {
+    if (useAsservType_ == ASSERV_INT_ESIALR) {
         pAsservEsialR_->motion_setLowSpeedForward(enable, percent);
 
     } else if (useAsservType_ == ASSERV_EXT)
@@ -154,9 +128,7 @@ void Asserv::setLowSpeedForward(bool enable, int percent)
 
 void Asserv::setLowSpeedBackward(bool enable, int percent)
 {
-    if (useAsservType_ == ASSERV_INT_INSA) {
-        logger().error() << "TODO setLowSpeed ASSERV_INT_INSA NOT EXIST!!!" << logs::end;
-    } else if (useAsservType_ == ASSERV_INT_ESIALR) {
+    if (useAsservType_ == ASSERV_INT_ESIALR) {
         pAsservEsialR_->motion_setLowSpeedBackward(enable, percent);
     } else if (useAsservType_ == ASSERV_EXT)
         asservdriver_->motion_setLowSpeedBackward(enable, percent);
@@ -164,9 +136,7 @@ void Asserv::setLowSpeedBackward(bool enable, int percent)
 void Asserv::disablePID() //deprecated and ActivateQuanramp to be defined
 {
 
-    if (useAsservType_ == ASSERV_INT_INSA) {
-        freeMotion();
-    } else if (useAsservType_ == ASSERV_INT_ESIALR) {
+    if (useAsservType_ == ASSERV_INT_ESIALR) {
         pAsservEsialR_->motion_ActivateQuadRamp(false);
     } else if (useAsservType_ == ASSERV_EXT) {
         freeMotion();
@@ -175,9 +145,7 @@ void Asserv::disablePID() //deprecated and ActivateQuanramp to be defined
 
 void Asserv::freeMotion()
 {
-    if (useAsservType_ == ASSERV_INT_INSA)
-        pAsservInsa_->motion_FreeMotion();
-    else if (useAsservType_ == ASSERV_EXT)
+    if (useAsservType_ == ASSERV_EXT)
         asservdriver_->motion_FreeMotion();
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_->motion_FreeMotion();
@@ -185,9 +153,7 @@ void Asserv::freeMotion()
 
 void Asserv::assistedHandling()
 {
-    if (useAsservType_ == ASSERV_INT_INSA)
-        pAsservInsa_->motion_AssistedHandling();
-    else if (useAsservType_ == ASSERV_EXT)
+    if (useAsservType_ == ASSERV_EXT)
         asservdriver_->motion_AssistedHandling();
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_->motion_AssistedHandling();
@@ -205,9 +171,7 @@ void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees_, 
     logger().debug() << "matchcolor [YELLOW=0 BLUE=1]=" << matchColor << " thetaInDegrees=" << thetaInDegrees_
             << " getRelativeAngle=" << thetaInDegrees << " x_mm=" << x_mm << " y_mm=" << y_mm << logs::end;
 
-    if (useAsservType_ == ASSERV_INT_INSA)
-        pAsservInsa_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInDegrees * M_PI / 180.0);
-    else if (useAsservType_ == ASSERV_EXT)
+    if (useAsservType_ == ASSERV_EXT)
         asservdriver_->odo_SetPosition(x_mm, y_mm, thetaInDegrees * M_PI / 180.0);
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_->odo_SetPosition(x_mm, y_mm, thetaInDegrees * M_PI / 180.0);
@@ -215,9 +179,7 @@ void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees_, 
 
 void Asserv::setPositionReal(float x_mm, float y_mm, float thetaInRad)
 {
-    if (useAsservType_ == ASSERV_INT_INSA)
-        pAsservInsa_->odo_SetPosition(x_mm / 1000.0, y_mm / 1000.0, thetaInRad);
-    else if (useAsservType_ == ASSERV_EXT)
+    if (useAsservType_ == ASSERV_EXT)
         asservdriver_->odo_SetPosition(x_mm, y_mm, thetaInRad);
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_->odo_SetPosition(x_mm, y_mm, thetaInRad);
@@ -232,9 +194,7 @@ RobotPosition Asserv::pos_getPosition()
 {
     RobotPosition p;
 
-    if (useAsservType_ == ASSERV_INT_INSA)
-        p = pAsservInsa_->odo_GetPosition();
-    else if (useAsservType_ == ASSERV_EXT)
+    if (useAsservType_ == ASSERV_EXT)
         p = asservdriver_->odo_GetPosition();
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         p = pAsservEsialR_->odo_GetPosition();
@@ -371,9 +331,7 @@ bool Asserv::filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm, float theta_de
  */
 void Asserv::setEmergencyStop()
 {
-    if (useAsservType_ == ASSERV_INT_INSA) {
-        //pAsservInsa_->path_ResetEmergencyStop();
-    } else if (useAsservType_ == ASSERV_EXT)
+    if (useAsservType_ == ASSERV_EXT)
         asservdriver_->path_InterruptTrajectory();
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_->path_InterruptTrajectory();
@@ -383,9 +341,7 @@ void Asserv::resetEmergencyOnTraj(std::string message)
 {
     logger().error() << "=====   resetEmergencyOnTraj message = " << message << logs::end;
 
-    if (useAsservType_ == ASSERV_INT_INSA) {
-        //pAsservInsa_->path_ResetEmergencyStop();
-    } else if (useAsservType_ == ASSERV_EXT)
+    if (useAsservType_ == ASSERV_EXT)
         asservdriver_->path_ResetEmergencyStop();
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_->path_ResetEmergencyStop();
@@ -418,18 +374,10 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
     if (temp_ignoreFrontCollision_)
         return;
 
-//    if (frontlevel >= 3) {
-//
-//        logger().error() << "LEVEL 3 setLowSpeedForward = getLowSpeedvalue()=" << getLowSpeedvalue() << logs::end;
-//
-//        setLowSpeedForward(true, getLowSpeedvalue());
-//    }
 
     //3 ou 4
     //.if (frontlevel >= 3) {
-    if (useAsservType_ == ASSERV_INT_INSA)
-        pAsservInsa_->path_CollisionOnTrajectory();
-    else if (useAsservType_ == ASSERV_EXT)
+    if (useAsservType_ == ASSERV_EXT)
         asservdriver_->path_CollisionOnTrajectory();
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         pAsservEsialR_->path_CollisionOnTrajectory();
@@ -469,9 +417,7 @@ void Asserv::warnBackCollisionOnTraj(int backlevel, float x_adv_detect_mm, float
     }
 
     if (backlevel >= 4) {
-        if (useAsservType_ == ASSERV_INT_INSA)
-            pAsservInsa_->path_CollisionRearOnTrajectory();
-        else if (useAsservType_ == ASSERV_EXT)
+        if (useAsservType_ == ASSERV_EXT)
             asservdriver_->path_CollisionRearOnTrajectory();
         else if (useAsservType_ == ASSERV_INT_ESIALR)
             pAsservEsialR_->path_CollisionRearOnTrajectory();
@@ -517,7 +463,7 @@ TRAJ_STATE Asserv::gotoXY(float xMM, float yMM)
 {
     float x_match = getRelativeX(xMM);
     temp_ignoreRearCollision_ = true;
-    //temp_forceRotation_ = true; //uniquement sur le doface
+
     TRAJ_STATE ts;
     if (useAsservType_ == ASSERV_EXT)
         ts = asservdriver_->motion_Goto(x_match, yMM);
@@ -527,7 +473,7 @@ TRAJ_STATE Asserv::gotoXY(float xMM, float yMM)
     else
         ts = TRAJ_ERROR;
     temp_ignoreRearCollision_ = false;
-    //temp_forceRotation_ = false;
+
     return ts;
 }
 
@@ -574,9 +520,7 @@ TRAJ_STATE Asserv::doLineAbs(float dist_mm) // if distance <0, move backward
 
     TRAJ_STATE ts;
 
-    if (useAsservType_ == ASSERV_INT_INSA)
-        ts = pAsservInsa_->motion_DoLine(dist_mm / 1000.0f);
-    else if (useAsservType_ == ASSERV_EXT)
+    if (useAsservType_ == ASSERV_EXT)
         ts = asservdriver_->motion_DoLine(dist_mm);
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         ts = pAsservEsialR_->motion_DoLine(dist_mm);
@@ -592,7 +536,7 @@ TRAJ_STATE Asserv::doLineAbs(float dist_mm) // if distance <0, move backward
     return ts;
 }
 
-TRAJ_STATE Asserv::doRotateAbs(float degreesRelative) //TODO temp_forceRotation_ a ajouter
+TRAJ_STATE Asserv::doRotateAbs(float degreesRelative)
 {
     //logger().error() << "11============ doRotateAbs temp_forceRotation_=true"  << logs::end;
     temp_forceRotation_ = true;
@@ -600,9 +544,7 @@ TRAJ_STATE Asserv::doRotateAbs(float degreesRelative) //TODO temp_forceRotation_
     TRAJ_STATE ts;
     float radians = (degreesRelative * M_PI) / 180.0f;
 
-    if (useAsservType_ == ASSERV_INT_INSA)
-        ts = pAsservInsa_->motion_DoRotate(radians);
-    else if (useAsservType_ == ASSERV_EXT)
+    if (useAsservType_ == ASSERV_EXT)
         ts = asservdriver_->motion_DoRotate(radians);
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         ts = pAsservEsialR_->motion_DoRotate(radians);
@@ -614,7 +556,8 @@ TRAJ_STATE Asserv::doRotateAbs(float degreesRelative) //TODO temp_forceRotation_
     return ts;
 }
 
-TRAJ_STATE Asserv::doRelativeRotateBy(float thetaInDegreeRelative) //prend automatiquement un angle dans un sens ou dans l'autre suivant la couleur de match
+//prend automatiquement un angle dans un sens ou dans l'autre suivant la couleur de match
+TRAJ_STATE Asserv::doRelativeRotateBy(float thetaInDegreeRelative)
 {
     if (matchColorPosition_ != 0) {
         return doRotateAbs(-thetaInDegreeRelative); //bleu
@@ -633,11 +576,7 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM) ////TODO temp_forceRotation_ a
 
     TRAJ_STATE ts;
 
-    if (useAsservType_ == ASSERV_INT_INSA) {
-        //TODO
-        ts = TRAJ_ERROR;
-        logger().error() << "TODO doFaceTo ASSERV_INT_INSA !!!" << logs::end;
-    } else if (useAsservType_ == ASSERV_EXT)
+    if (useAsservType_ == ASSERV_EXT)
         ts = asservdriver_->motion_DoFace(x_match, yMM);
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         ts = pAsservEsialR_->motion_DoFace(x_match, yMM);

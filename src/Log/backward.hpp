@@ -46,7 +46,7 @@
 
 // You can define one of the following (or leave it to the auto-detection):
 //
-// #define BACKWARD_SYSTEM_LINUX
+ #define BACKWARD_SYSTEM_LINUX
 //        - specialization for linux
 //
 // #define BACKWARD_SYSTEM_DARWIN
@@ -117,7 +117,7 @@
 //  - backtrace is part of the (e)glib library.
 //
 // The default is:
-// #define BACKWARD_HAS_UNWIND == 1
+ #define BACKWARD_HAS_UNWIND 1
 //
 // Note that only one of the define should be set to 1 at a time.
 //
@@ -136,7 +136,7 @@
 // On linux, backward can extract detailed information about a stack trace
 // using one of the following libraries:
 //
- #define BACKWARD_HAS_DW 0
+// #define BACKWARD_HAS_DW 1
 //  - libdw gives you the most juicy details out of your stack traces:
 //    - object filename
 //    - function name
@@ -267,25 +267,25 @@
 // On Darwin, backtrace can back-trace or "walk" the stack using the following
 // libraries:
 //
- #define BACKWARD_HAS_UNWIND 1
+// #define BACKWARD_HAS_UNWIND 1
 //  - unwind comes from libgcc, but I saw an equivalent inside clang itself.
 //  - with unwind, the stacktrace is as accurate as it can possibly be, since
 //  this is used by the C++ runtime in gcc/clang for stack unwinding on
 //  exception.
 //  - normally libgcc is already linked to your program by default.
 //
-#define BACKWARD_HAS_LIBUNWIND 1
+// #define BACKWARD_HAS_LIBUNWIND 1
 //  - libunwind comes from clang, which implements an API compatible version.
 //  - libunwind provides, in some cases, a more accurate stacktrace as it knows
 //  to decode signal handler frames and lets us edit the context registers when
 //  unwinding, allowing stack traces over bad function references.
 //
- #define BACKWARD_HAS_BACKTRACE == 1
+// #define BACKWARD_HAS_BACKTRACE == 1
 //  - backtrace is available by default, though it does not produce as much
 //  information as another library might.
 //
 // The default is:
-// #define BACKWARD_HAS_UNWIND == 1
+// #define BACKWARD_HAS_UNWIND 1
 //
 // Note that only one of the define should be set to 1 at a time.
 //
@@ -310,7 +310,7 @@
 //    - function name
 //
 // The default is:
-// #define BACKWARD_HAS_BACKTRACE_SYMBOL == 1
+ #define BACKWARD_HAS_BACKTRACE_SYMBOL 1
 //
 #if BACKWARD_HAS_BACKTRACE_SYMBOL == 1
 #else

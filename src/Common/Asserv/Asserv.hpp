@@ -7,13 +7,9 @@
 #include "../../Log/LoggerFactory.hpp"
 #include "../Asserv.Driver/AAsservDriver.hpp"
 
-//class MovingBase;
-
 class AsservEsialR;
 
 class Robot;
-
-class AsservInsa;
 
 class AAsservDriver;
 
@@ -39,11 +35,11 @@ protected:
     //MovingBase *pMovingBase_;
     /*!
      * \brief type d'asservissement utilisé
-     * \0=Asserdriver 1=ESIAL internal 2=INSA internal
+     * \0=Asserdriver 1=ESIAL internal 2=INSA internal (deprecated)
      */
     //int useAsservType_;
     enum AsservType {
-        ASSERV_EXT, ASSERV_INT_ESIALR, ASSERV_INT_INSA
+        ASSERV_EXT, ASSERV_INT_ESIALR
     };
 
     AsservType useAsservType_;
@@ -51,12 +47,6 @@ protected:
     std::string botId_;
 
     AAsservDriver *asservdriver_;
-
-    /*!
-     * \brief asservissement interne INSA.
-     * NULL si non defini
-     */
-    AsservInsa *pAsservInsa_;
 
     /*!
      * \brief asservissement interne ESIAL.
@@ -100,12 +90,6 @@ public:
     void setLowSpeedvalue(int value);
 
     virtual bool filtre_IsInsideTableXY(int d, int x, int y, float a, int *x_botpos, int *y_botpos) = 0;
-
-    /*!
-     * \brief return objet movingBase. DEPRECATED
-     * \return movingBase_.
-     */
-    //MovingBase* base();    //TODO DEPRECATED
 
     //FONCTIONS DE BASE de l'ASSERV
     /*!
@@ -201,6 +185,8 @@ public:
     TRAJ_STATE doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
     TRAJ_STATE doMoveForwardTo(float xMM, float yMM, bool rotate_ignored = false, float adjustment = 0);
 
+
+
     //http://nains-games.com/2014/12/intersection-de-deux-cercles.html
     std::tuple<int, float, float> eq_2CirclesCrossed_getXY(float x1, float y1, float d1, float x2, float y2, float d2, float robot_size_l_mm);
     std::tuple<int, float, float> eq_2nd_deg_getXY(float a, float b, float A, float B, float C, float robot_size_l_mm);
@@ -218,9 +204,12 @@ public:
     int adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, RobotPosition p, float delta_j_mm, float delta_k_mm, float mesure_mm,
             float robot_size_l_mm);
 
-    //attentionLa couleur de match doit deja etre effectué !
+    //attention la couleur de match doit deja etre effectué !
     bool calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm, float y_depart_mm);
     bool calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm, float y_depart_mm);
+
+
+
 
     void setMatchColorPosition(bool c) {
         matchColorPosition_ = c;
