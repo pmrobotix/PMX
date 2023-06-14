@@ -14,11 +14,9 @@ OPOS6UL_AsservExtended::OPOS6UL_AsservExtended(std::string botId, OPOS6UL_RobotE
         Asserv(botId, robot) //on appelle le constructeur pere
 {
     botId_ = botId;
-<<<<<<< HEAD
+
     useAsservType_ = ASSERV_EXT; //ASSERV_INT_ESIALR; // !!!!!!!!!!!!!!!!!!!!
-=======
-    useAsservType_ = ASSERV_INT_ESIALR; // !!!!!!!!!!!!!!!!!!!! ASSERV_EXT; //
->>>>>>> refs/remotes/origin/en-cours-2023
+
     robot_extended_ = robot;
 
     //set the value setLowSpeedForward for asserv
