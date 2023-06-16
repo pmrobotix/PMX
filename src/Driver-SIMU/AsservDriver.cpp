@@ -46,11 +46,11 @@ AsservDriver::AsservDriver(std::string botid) :
         //CONFIGURATION OPOS6UL_Robot SIMULATEUR CONSOLE  --------------------------------------------
         simuTicksPerMeter_ = 130566.0f; //nb ticks for 1000mm
         simuMaxSpeed_ = 1.0; //m/s
-        simuMaxPower_ = 127.0;
+        simuMaxPower_ = 100.0; //127.0;
         //CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------
     }
     else {
-        logger().error() << "NO BOT ID!!  botid_=" << botid_ << logs::end;
+        logger().error() << "NO BOT ID!! => EXIT botid_=" << botid_ << logs::end;
         exit(-1);
     }
 
@@ -204,8 +204,10 @@ float AsservDriver::convertPowerToSpeed(int power) {
 //		if (power < 15 && power > -15) //simule que le robot n'avance pas à tres faible puissance
 //			return 0.0;
     }
-    else {
-        logger().error() << "NO BOT ID!!  botid_=" << botid_ << logs::end;
+    else if (botid_ == "OPOS6UL_Robot") {
+            }
+    else{
+        logger().error() << "NO BOT ID!! => EXIT botid_=" << botid_ << logs::end;
         exit(-1);
     }
 

@@ -41,37 +41,14 @@ Asserv::~Asserv()
     delete pAsservEsialR_;
 }
 
-void Asserv::resetEncoders()
-{
-    asservdriver_->resetEncoders();
-}
-void Asserv::getDeltaEncodersCounts(int *deltaCountR, int *deltaCountL)
-{
-    //Pas de difference de type ici, dans tous les cas, on appelle les drivers
-    asservdriver_->getDeltaCountsExternal(deltaCountR, deltaCountL);
-}
-void Asserv::getEncodersCounts(int *countR, int *countL)
-{
-    //Pas de difference de type ici, dans tous les cas, on appelle les drivers
-    asservdriver_->getCountsExternal(countR, countL);
-}
-void Asserv::runMotorLeft(int power, int timems)
-{
-    //Pas de type ici, dans tous les cas, on appelle les drivers
-    asservdriver_->setMotorLeftPower(power, timems);
-}
-void Asserv::runMotorRight(int power, int timems)
-{
-    //Pas de type ici, dans tous les cas, on appelle les drivers
-    asservdriver_->setMotorRightPower(power, timems);
-}
 
-void Asserv::stopMotors()
-{
-    //Pas de type ici, dans tous les cas, on appelle les drivers
-    asservdriver_->stopMotorLeft();
-    asservdriver_->stopMotorRight();
-}
+
+
+
+
+
+
+
 
 void Asserv::endWhatTodo()
 {
@@ -1109,4 +1086,41 @@ TRAJ_STATE Asserv::doCalage(int distmm, int percent)
         return ts;
     } else
         return TRAJ_ERROR;
+}
+
+
+
+
+//FONCTION ASSERV DE BASE
+
+void Asserv::resetEncoders()
+{
+    asservdriver_->resetEncoders();
+}
+void Asserv::getDeltaEncodersCounts(int *deltaCountR, int *deltaCountL)
+{
+    //Pas de difference de type ici, dans tous les cas, on appelle les drivers
+    asservdriver_->getDeltaCountsExternal(deltaCountR, deltaCountL);
+}
+void Asserv::getEncodersCounts(int *countR, int *countL)
+{
+    //Pas de difference de type ici, dans tous les cas, on appelle les drivers
+    asservdriver_->getCountsExternal(countR, countL);
+}
+void Asserv::runMotorLeft(int power, int timems)
+{
+    //Pas de type ici, dans tous les cas, on appelle les drivers
+    asservdriver_->setMotorLeftPower(power, timems);
+}
+void Asserv::runMotorRight(int power, int timems)
+{
+    //Pas de type ici, dans tous les cas, on appelle les drivers
+    asservdriver_->setMotorRightPower(power, timems);
+}
+
+void Asserv::stopMotors()
+{
+    //Pas de type ici, dans tous les cas, on appelle les drivers
+    asservdriver_->stopMotorLeft();
+    asservdriver_->stopMotorRight();
 }

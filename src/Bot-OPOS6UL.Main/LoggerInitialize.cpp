@@ -76,7 +76,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "O_ServoStepTest", "console");
 
     //DRIVERS SIMU
-    add(logs::Level::INFO, "LedDriver.SIMU", "console");
+    add(logs::Level::DEBUG, "LedDriver.SIMU", "console");
     add(logs::Level::INFO, "ButtonDriver.SIMU", "console");
     add(logs::Level::INFO, "SoundDriver.SIMU", "console");
     add(logs::Level::INFO, "SwitchDriver.SIMU", "console");

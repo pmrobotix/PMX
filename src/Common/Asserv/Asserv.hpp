@@ -30,10 +30,6 @@ private:
 protected:
 
     /*!
-     * \brief motorisation = motors + encoders // TODO A configurer dans Extended avec les parametres appropriés de chaque robot
-     */
-    //MovingBase *pMovingBase_;
-    /*!
      * \brief type d'asservissement utilisé
      * \0=Asserdriver 1=ESIAL internal 2=INSA internal (deprecated)
      */
@@ -85,11 +81,7 @@ public:
     virtual ~Asserv();
 
 
-    int getLowSpeedvalue();
 
-    void setLowSpeedvalue(int value);
-
-    virtual bool filtre_IsInsideTableXY(int d, int x, int y, float a, int *x_botpos, int *y_botpos) = 0;
 
     //FONCTIONS DE BASE de l'ASSERV
     /*!
@@ -122,6 +114,18 @@ public:
      * \brief stop Motors.
      */
     void stopMotors();
+
+
+
+    //FONCTIONS SUPLLEMENTAIRES de l'ASSERV
+
+
+    int getLowSpeedvalue();
+
+    void setLowSpeedvalue(int value);
+
+    virtual bool filtre_IsInsideTableXY(int d, int x, int y, float a, int *x_botpos, int *y_botpos) = 0;
+
 
     virtual void endWhatTodo();
 

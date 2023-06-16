@@ -9,7 +9,6 @@ class O_State_DecisionMakerIA;
 class OPOS6UL_ActionsExtended;
 class OPOS6UL_AsservExtended;
 class OPOS6UL_IAExtended;
-
 class OPOS6UL_SvgWriterExtended;
 
 class OPOS6UL_RobotExtended: public Robot
@@ -61,6 +60,7 @@ public:
     void stopExtraActions();
 
     void resetDisplayTS();
+    ////display des statuts de trajectoire
     void displayTS(TRAJ_STATE ts);
     void resetDisplayObstacle();
     void displayObstacle(int level);

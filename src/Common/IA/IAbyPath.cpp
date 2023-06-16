@@ -52,7 +52,7 @@ void IAbyPath::enable(PlaygroundObjectID id, bool enable)
 void IAbyPath::toSVG()
 {
     if (p_ == NULL) {
-        logger().error() << "!! Playground is NULL !! " << logs::end;
+        logger().error() << __FUNCTION__ << " (line " << __LINE__ << ") : Playground is NULL !! !" << logs::end;
     } else {
         PathFinder *pf = p_->get_path_finder();
         std::vector<Zone*>::iterator zones_it;
@@ -134,7 +134,9 @@ void IAbyPath::ia_start()
 {
     ia_checkZones();
     if (_actions_count <= 0) {
-        printf("%s (line %d) : Error : no actions defined\n", __FUNCTION__, __LINE__);
+
+        //printf("%s (line %d) : Error : no actions defined\n", __FUNCTION__, __LINE__);
+        logger().error() << __FUNCTION__ << " (line " << __LINE__ << ") : no actions defined !" << logs::end;
         sleep(1);
         exit(2);
     }
@@ -155,22 +157,28 @@ void IAbyPath::ia_start()
                 z->completed = done;
                 if (!done) {
                     if (robot_ != NULL)
-                        printf("%s state after actions : %s : (%f,%f) %f FAILED\n", __FUNCTION__, z->name,
-                                robot_->passerv()->pos_getX_mm(), robot_->passerv()->pos_getY_mm(),
-                                robot_->passerv()->pos_getThetaInDegree());
+//                        printf("%s state after actions : %s : (%f,%f) %f FAILED\n", __FUNCTION__, z->name,
+//                                robot_->passerv()->pos_getX_mm(), robot_->passerv()->pos_getY_mm(),
+//                                robot_->passerv()->pos_getThetaInDegree());
+
+                    logger().error() << __FUNCTION__ <<  " state after actions : "<< z->name << " : (" << robot_->passerv()->pos_getX_mm() << "," << robot_->passerv()->pos_getY_mm() << ", "<< robot_->passerv()->pos_getThetaInDegree() << ") FAILED"
+                            << logs::end;
                     else {
-                        logger().error() << "robot_ is NULL !" << logs::end;
+                        logger().error() << __FUNCTION__ << " (line " << __LINE__ << ") : robot_ is NULL !" << logs::end;
                         sleep(1);
                         exit(-1);
                     }
 
                 }
                 if (robot_ != NULL)
-                    printf("%s state after actions : %s : (%f,%f) %f\n", __FUNCTION__, z->name,
-                            robot_->passerv()->pos_getX_mm(), robot_->passerv()->pos_getY_mm(),
-                            robot_->passerv()->pos_getThetaInDegree());
+//                    printf("%s state after actions : %s : (%f,%f) %f\n", __FUNCTION__, z->name,
+//                            robot_->passerv()->pos_getX_mm(), robot_->passerv()->pos_getY_mm(),
+//                            robot_->passerv()->pos_getThetaInDegree());
+                logger().info() << __FUNCTION__ << " state after actions : " << z->name << " : (" << robot_->passerv()->pos_getX_mm() << ", " << robot_->passerv()->pos_getY_mm() << ", "<<
+                        robot_->passerv()->pos_getThetaInDegree() << ")"
+                        << logs::end;
                 else {
-                    logger().error() << "robot_ is NULL !" << logs::end;
+                    logger().error() << __FUNCTION__ << " (line " << __LINE__ << ") : robot_ is NULL !" << logs::end;
                     sleep(1);
                     exit(-1);
                 }
@@ -213,7 +221,7 @@ void IAbyPath::ia_createZone(const char *name, float minX, float minY, float wid
         z->minX = robot_->passerv()->getRelativeXMin(z->minX, z->width);
         z->startAngle = robot_->passerv()->getRelativeAngle(z->startAngle);
     } else {
-        logger().error() << "robot_ is NULL !" << logs::end;
+        logger().error() << __FUNCTION__ << " (line " << __LINE__ << ") : robot_ is NULL !" << logs::end;
         sleep(1);
         exit(-1);
     }
@@ -272,7 +280,9 @@ ZONE* IAbyPath::ia_getZone(const char *zoneName)
 }
 ZONE* IAbyPath::ia_getZoneAt(float x, float y)
 {
-    printf("ia_getZoneAt : (%f,%f) \n", x, y);
+    logger().info() << __FUNCTION__ << " (line " << __LINE__ << ") : " << x<< ","<< y
+                << logs::end;
+    //printf("ia_getZoneAt : (%f,%f) \n", x, y);
     int i = 0;
     for (i = 0; i < _zones_count; i++) {
         ZONE *z = _zones[i];
@@ -287,8 +297,8 @@ ZONE* IAbyPath::ia_getNearestZoneFrom(float x, float y)
 {
     ZONE *result = ia_getZoneAt(x, y);
     if (result != NULL) {
-        printf("ia_getNearestZoneFrom is current zone : %s : (%f,%f) \n", result->name, robot_->passerv()->pos_getX_mm(),
-                robot_->passerv()->pos_getY_mm());
+//        printf("ia_getNearestZoneFrom is current zone : %s : (%f,%f) \n", result->name, robot_->passerv()->pos_getX_mm(),
+//                robot_->passerv()->pos_getY_mm());
         return result;
     }
 
@@ -310,7 +320,7 @@ ZONE* IAbyPath::ia_getNearestZoneFrom(float x, float y)
         }
 //printf("ia_getNearestZoneFrom for %f; %s (%f,%f) ? (%f,%f)\n", d, z->name, x, y, x1, y1);
     }
-    printf("end ia_getNearestZoneFrom\n");
+    //printf("end ia_getNearestZoneFrom\n");
     return result;
 }
 
@@ -320,10 +330,14 @@ void IAbyPath::goToZone(const char *zoneName, RobotPosition *zone_p)
 
     ZONE *z = ia_getZone(zoneName);
 
-    printf("%s (line %d) : goToZone %s\n", __FUNCTION__, __LINE__, zoneName);
+    //printf("%s (line %d) : goToZone %s\n", __FUNCTION__, __LINE__, zoneName);
 
+    logger().info() << __FUNCTION__ << " (line " << __LINE__ << ") : to " << zoneName
+            << logs::end;
     if (z == NULL) {
-        printf("ERROR: %s %d : unable to get zone %s\n", __FUNCTION__, __LINE__, zoneName);
+        //printf("ERROR: %s %d : unable to get zone %s\n", __FUNCTION__, __LINE__, zoneName);
+        logger().error() << __FUNCTION__ << " (line " << __LINE__ << ") : unable to get zone " << zoneName
+                    << logs::end;
         sleep(1);
         exit(-1);
     }
@@ -411,7 +425,7 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_d
         robot_->svgw().pathPolyline(path_polyline.str());
 
     } else {
-        logger().error() << "ERROR - PATH NULL !!!" << logs::end;
+        logger().error() << __FUNCTION__ << " (line " << __LINE__ << ") : robot_ is NULL !" << logs::end;
     }
     delete found_path;
 

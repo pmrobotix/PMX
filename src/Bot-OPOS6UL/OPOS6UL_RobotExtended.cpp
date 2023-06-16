@@ -94,7 +94,7 @@ void OPOS6UL_RobotExtended::resetDisplayTS()
 {
     actions().ledBar().resetAll();
 }
-
+//display des statuts de trajectoire
 void OPOS6UL_RobotExtended::displayTS(TRAJ_STATE ts)
 {
     svgPrintPosition(2);

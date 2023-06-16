@@ -178,9 +178,12 @@ void IAbyZone::ia_start()
                 z->completed = done;
                 if (!done) {
                     if (robot_ != NULL)
-                        printf("%s state after actions : %s : (%f,%f) %f FAILED\n", __FUNCTION__, z->name,
-                                robot_->passerv()->pos_getX_mm(), robot_->passerv()->pos_getY_mm(),
-                                robot_->passerv()->pos_getThetaInDegree());
+//                        printf("%s state after actions : %s : (%f,%f) %f FAILED\n", __FUNCTION__, z->name,
+//                                robot_->passerv()->pos_getX_mm(), robot_->passerv()->pos_getY_mm(),
+//                                robot_->passerv()->pos_getThetaInDegree());
+
+                    logger().error() << __FUNCTION__ <<  " state after actions : "<< z->name << " : (" << robot_->passerv()->pos_getX_mm() << "," << robot_->passerv()->pos_getY_mm() << ", "<< robot_->passerv()->pos_getThetaInDegree() << ") FAILED"
+                                                << logs::end;
                     else {
                         logger().error() << "robot_ is NULL !" << logs::end;
                         std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -189,9 +192,13 @@ void IAbyZone::ia_start()
 
                 }
                 if (robot_ != NULL)
-                    printf("%s state after actions : %s : (%f,%f) %f\n", __FUNCTION__, z->name,
-                            robot_->passerv()->pos_getX_mm(), robot_->passerv()->pos_getY_mm(),
-                            robot_->passerv()->pos_getThetaInDegree());
+//                    printf("%s state after actions : %s : (%f,%f) %f\n", __FUNCTION__, z->name,
+//                            robot_->passerv()->pos_getX_mm(), robot_->passerv()->pos_getY_mm(),
+//                            robot_->passerv()->pos_getThetaInDegree());
+
+                logger().info() << __FUNCTION__ << " state after actions : " << z->name << " : (" << robot_->passerv()->pos_getX_mm() << ", " << robot_->passerv()->pos_getY_mm() << ", "<<
+                                        robot_->passerv()->pos_getThetaInDegree() << ")"
+                                        << logs::end;
                 else {
                     logger().error() << "robot_ is NULL !" << logs::end;
                     std::this_thread::sleep_for(std::chrono::seconds(1));
