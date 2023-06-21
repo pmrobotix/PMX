@@ -57,71 +57,49 @@ void LegoEV3AsservExtended::startMotionTimerAndOdo(bool assistedHandlingEnabled)
             asservdriver_->motion_FreeMotion();
     }
 }
-
-bool LegoEV3AsservExtended::filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm, float theta_deg, int *x_botpos,
-        int *y_botpos)
+bool LegoEV3AsservExtended::filtre_IsInsideTableXY(int x_botpos, int y_botpos)
 {
-    //return true; //PATCH
-
     //table verticale
     int table_x = 2000;
     int table_y = 3000;
-    RobotPosition p = pos_getPosition();
 
-    //coordonnées de l'objet detecté sur la table// M_P/2
-//    *x_botpos = p.x + (d_mm * cos(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
-//    *y_botpos = p.y + (d_mm * sin(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
-    float a = (p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f));
-    std::fmod(a, 2 * M_PI);
-    if (a < -M_PI)
-        a += M_PI;
-    if (a > M_PI)
-        a -= M_PI;
-
-    //ADV coord
-    *x_botpos = p.x + (d_mm * cos(a));
-    *y_botpos = p.y + (d_mm * sin(a));
-
-//    logger().error() << "DEBUG --xy_botpos= " << *x_botpos << " " << *y_botpos
-//                    << "pos: " << p.x << " " << p.y << " p_rad:" << p.theta << " --balise: " << d_mm << " " << x_mm << " "
-//                    << y_mm << " t_deg:" << theta_deg << logs::end;
-
+    //filtre de prise des elements de jeux par l'adversaire
     if (getRobot()->getMyColor() == PMXGREEN) {
-        if (*x_botpos > 650 && *x_botpos < 850 && *y_botpos < 1250 && *y_botpos > 1000) {
+        if (x_botpos > 650 && x_botpos < 850 && y_botpos < 1250 && y_botpos > 1000) {
 
             getRobot()->B3_is_taken = true;
         }
 
-        if (*x_botpos > 650 && *x_botpos < 850 && *y_botpos < 2000 && *y_botpos > 1775) {
+        if (x_botpos > 650 && x_botpos < 850 && y_botpos < 2000 && y_botpos > 1775) {
 
             getRobot()->B4_is_taken = true;
         }
 
-        if (*x_botpos > 0 && *x_botpos < 650 && *y_botpos < 2800 && *y_botpos > 2100) {
+        if (x_botpos > 0 && x_botpos < 650 && y_botpos < 2800 && y_botpos > 2100) {
 
             getRobot()->A5_is_taken = true;
         }
 
-        if (*x_botpos > 2000 - 650 && *x_botpos < 2000 && *y_botpos < 2800 && *y_botpos > 2100) {
+        if (x_botpos > 2000 - 650 && x_botpos < 2000 && y_botpos < 2800 && y_botpos > 2100) {
 
             getRobot()->D5_is_taken = true;
         }
     } else {
-        if (*x_botpos > (2000 - 850) && *x_botpos < (2000 - 650) && *y_botpos < 1250 && *y_botpos > 1000) {
+        if (x_botpos > (2000 - 850) && x_botpos < (2000 - 650) && y_botpos < 1250 && y_botpos > 1000) {
 
             getRobot()->B3_is_taken = true;
         }
 
-        if (*x_botpos > (2000 - 850) && *x_botpos < (2000 - 650) && *y_botpos < 2000 && *y_botpos > 1775) {
+        if (x_botpos > (2000 - 850) && x_botpos < (2000 - 650) && y_botpos < 2000 && y_botpos > 1775) {
 
             getRobot()->B4_is_taken = true;
         }
 
-        if (*x_botpos > (2000 - 650) && *x_botpos < 2000 && *y_botpos < 2800 && *y_botpos > 2100) {
+        if (x_botpos > (2000 - 650) && x_botpos < 2000 && y_botpos < 2800 && y_botpos > 2100) {
 
             getRobot()->A5_is_taken = true;
         }
-        if (*x_botpos > 0 && *x_botpos < 650 && *y_botpos < 2800 && *y_botpos > 2100) {
+        if (x_botpos > 0 && x_botpos < 650 && y_botpos < 2800 && y_botpos > 2100) {
 
             getRobot()->D5_is_taken = true;
         }
@@ -130,16 +108,99 @@ bool LegoEV3AsservExtended::filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm,
     //getRobot()->B4_is_taken = true;
 
     //on filtre si c'est en dehors de la table verticale! avec 10cm de marge
-    if ((*x_botpos > 100 && *x_botpos < table_x - 100) && (*y_botpos > 100 && *y_botpos < table_y - 100)) {
-        logger().debug() << "INSIDE filtre_IsInsideTableXY xy_botpos=" << *x_botpos << " " << *y_botpos << "pos: "
-                << p.x << " " << p.y << " p_rad:" << p.theta << " balise: " << d_mm << " " << x_mm << " " << y_mm
-                << " t_deg:" << theta_deg << logs::end;
+    if ((x_botpos > 100 && x_botpos < table_x - 100) && (y_botpos > 100 && y_botpos < table_y - 100)) {
+        logger().debug() << "INSIDE filtre_IsInsideTableXY xy_botpos=" << x_botpos << " " << y_botpos << logs::end;
         return true;
     } else
         return false;
 
 }
+/*
+ bool LegoEV3AsservExtended::filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm, float theta_deg, int *x_botpos,
+ int *y_botpos)
+ {
+ //return true; //PATCH
 
+ //table verticale
+ int table_x = 2000;
+ int table_y = 3000;
+ RobotPosition p = pos_getPosition();
+
+ //coordonnées de l'objet detecté sur la table// M_P/2
+ //    *x_botpos = p.x + (d_mm * cos(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
+ //    *y_botpos = p.y + (d_mm * sin(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
+ //float a = (p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f));
+ float a = (p.theta + (theta_deg * M_PI / 180.0f));
+
+ std::fmod(a, 2 * M_PI);
+ if (a < -M_PI)
+ a += M_PI;
+ if (a > M_PI)
+ a -= M_PI;
+
+ //ADV coord repere table
+ *x_botpos = p.x + (d_mm * cos(a));
+ *y_botpos = p.y + (d_mm * sin(a));
+
+ logger().error() << __FUNCTION__ << "DEBUG --xy_botpos= " << *x_botpos << " " << *y_botpos
+ << " pos: " << p.x << " " << p.y << " p_rad:" << p.theta << " --balise: " << d_mm << " " << x_mm << " "
+ << y_mm << " t_deg:" << theta_deg << logs::end;
+
+ //filtre de prise des elements de jeux par l'adversaire
+ if (getRobot()->getMyColor() == PMXGREEN) {
+ if (*x_botpos > 650 && *x_botpos < 850 && *y_botpos < 1250 && *y_botpos > 1000) {
+
+ getRobot()->B3_is_taken = true;
+ }
+
+ if (*x_botpos > 650 && *x_botpos < 850 && *y_botpos < 2000 && *y_botpos > 1775) {
+
+ getRobot()->B4_is_taken = true;
+ }
+
+ if (*x_botpos > 0 && *x_botpos < 650 && *y_botpos < 2800 && *y_botpos > 2100) {
+
+ getRobot()->A5_is_taken = true;
+ }
+
+ if (*x_botpos > 2000 - 650 && *x_botpos < 2000 && *y_botpos < 2800 && *y_botpos > 2100) {
+
+ getRobot()->D5_is_taken = true;
+ }
+ } else {
+ if (*x_botpos > (2000 - 850) && *x_botpos < (2000 - 650) && *y_botpos < 1250 && *y_botpos > 1000) {
+
+ getRobot()->B3_is_taken = true;
+ }
+
+ if (*x_botpos > (2000 - 850) && *x_botpos < (2000 - 650) && *y_botpos < 2000 && *y_botpos > 1775) {
+
+ getRobot()->B4_is_taken = true;
+ }
+
+ if (*x_botpos > (2000 - 650) && *x_botpos < 2000 && *y_botpos < 2800 && *y_botpos > 2100) {
+
+ getRobot()->A5_is_taken = true;
+ }
+ if (*x_botpos > 0 && *x_botpos < 650 && *y_botpos < 2800 && *y_botpos > 2100) {
+
+ getRobot()->D5_is_taken = true;
+ }
+
+ }
+ //getRobot()->B4_is_taken = true;
+
+ //on filtre si c'est en dehors de la table verticale! avec 10cm de marge
+ if ((*x_botpos > 100 && *x_botpos < table_x - 100) && (*y_botpos > 100 && *y_botpos < table_y - 100)) {
+ logger().debug() << "INSIDE filtre_IsInsideTableXY xy_botpos=" << *x_botpos << " " << *y_botpos << "pos: "
+ << p.x << " " << p.y << " p_rad:" << p.theta << " balise: " << d_mm << " " << x_mm << " " << y_mm
+ << " t_deg:" << theta_deg << logs::end;
+ return true;
+ } else
+ return false;
+
+ }
+ */
 //TODO fonction pour les capteurs de proximité ...a rendre generique pour tous les robots
 //dist_detect_mm : distance detecté de l'objet
 //lateral_pos_sensor_mm : position du capteur : gauche -1 ; droite +1

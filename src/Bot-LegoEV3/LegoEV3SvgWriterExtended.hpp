@@ -18,7 +18,7 @@ public:
     {
     }
 
-    void writePosition_AdvPos(float x_mm, float y_mm, int color = 0);
+    void writePosition_AdvPos(float x_adv_mm, float y_adv_mm, float x_pos_mm, float y_pos_mm, int color = 0);
 
     void writePosition_Bot(float x_mm, float y_mm, float a_rad, int color = 0);
 

@@ -37,7 +37,7 @@ public:
     //surcharged function
     void startMotionTimerAndOdo(bool assistedHandlingEnabled);
 
-    bool filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm, float theta_deg, int *x_botpos, int *y_botpos);
+    bool filtre_IsInsideTableXY(int x_botpos_reperetable, int y_botpos_reperetable);
 
 
     bool filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm, std::string desc = "");

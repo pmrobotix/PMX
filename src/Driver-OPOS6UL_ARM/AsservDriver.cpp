@@ -655,28 +655,6 @@ TRAJ_STATE AsservDriver::motion_GotoReverseChain(float x_mm, float y_mm)
     }
 }
 
-TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_mm)
-{
-
-    if (!asservCardStarted_) {
-        logger().debug() << "motion_DoDirectLine() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
-        return TRAJ_ERROR;
-    } else {
-        /*
-         unsigned char d[4];
-         float2bytes_t mm;
-         mm.f = (dist_meters * 1000.0);
-         d[0] = mm.b[0];
-         d[1] = mm.b[1];
-         d[2] = mm.b[2];
-         d[3] = mm.b[3];
-         logger().debug() << "motion_DoDirectLine() DISTmm=" << mm.f << " meters=" << dist_meters << logs::end;
-         mbed_writeI2c('V', 4, d);
-         */
-        return nucleo_waitEndOfTraj();
-    }
-}
-
 void AsservDriver::motion_setLowSpeedBackward(bool enable, int percent)
 {
 //serialPort_.Write("S" + to_string(percent) + "\n");
@@ -690,22 +668,6 @@ void AsservDriver::motion_setLowSpeedForward(bool enable, int percent)
 
 }
 
-void AsservDriver::motion_ActivateReguDist(bool enable)
-{
-
-}
-void AsservDriver::motion_ActivateReguAngle(bool enable)
-{
-
-}
-void AsservDriver::motion_ResetReguDist()
-{
-
-}
-void AsservDriver::motion_ResetReguAngle()
-{
-
-}
 
 void AsservDriver::motion_FreeMotion(void)
 {
@@ -778,4 +740,53 @@ int AsservDriver::nucleo_writeSerialSTR(string str)
     }
     return errorCount_;
 }
+
+
+
+
+//Functions deprecated
+TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_mm)
+{
+    logger().error() << "motion_DoDirectLine() NOT IMPLEMENTED " << asservCardStarted_ << logs::end;
+    return TRAJ_ERROR;
+    if (!asservCardStarted_) {
+        logger().debug() << "motion_DoDirectLine() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
+        return TRAJ_ERROR;
+    } else {
+        /*
+         unsigned char d[4];
+         float2bytes_t mm;
+         mm.f = (dist_meters * 1000.0);
+         d[0] = mm.b[0];
+         d[1] = mm.b[1];
+         d[2] = mm.b[2];
+         d[3] = mm.b[3];
+         logger().debug() << "motion_DoDirectLine() DISTmm=" << mm.f << " meters=" << dist_meters << logs::end;
+         mbed_writeI2c('V', 4, d);
+         */
+        return nucleo_waitEndOfTraj();
+    }
+}
+
+//Functions deprecated
+void AsservDriver::motion_ActivateReguDist(bool enable)
+{
+    logger().error() << "motion_ActivateReguDist() NOT IMPLEMENTED " << asservCardStarted_ << logs::end;
+}
+//Functions deprecated
+void AsservDriver::motion_ActivateReguAngle(bool enable)
+{
+    logger().error() << "motion_ActivateReguAngle() NOT IMPLEMENTED " << asservCardStarted_ << logs::end;
+}
+//Functions deprecated
+void AsservDriver::motion_ResetReguDist()
+{
+
+}
+//Functions deprecated
+void AsservDriver::motion_ResetReguAngle()
+{
+
+}
+
 

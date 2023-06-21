@@ -10,18 +10,19 @@ class RobotPos
 {
 public:
     int nbDetectedBots; //nb de position de robot detectée (dupliqué dans chaque)
-    int x; //millimetres
-    int y; //millimetres
-    float theta_deg; //degre // angle de déplacement par rapport à l'avant derniere position
-    int d; //dist en mm à partir du robot
+    int x; // position x de l'ADV en millimetres
+    int y; // position y de l'ADV en millimetres
+    float theta_deg; //degre // angle de l'ADV par rapport à l'avant du robot (devant axe x = 0 degré, gauche (axe y) = >0deg, droite (axe y) = <0deg)
+    int d; //dist en mm à partir du centre du robot jusquau centre du robot ADV
 
-    RobotPos(int x_, int y_, float a_, int d_, int nb)
+    RobotPos(int nb, int x_, int y_, float a_, int d_)
     {
+        nbDetectedBots = nb;
         x = x_;
         y = y_;
         theta_deg = a_;
         d = d_;
-        nbDetectedBots = nb;
+
     }
     //void show() { std::cout<<x<<std::endl; }
 };
@@ -68,7 +69,7 @@ public:
 
     virtual void displayNumber(int number) = 0;
 
-    virtual int getAnalogPinData() = 0;
+    //virtual int getAnalogPinData() = 0; //deprecated
 
     /*!
      * \brief Destructor.

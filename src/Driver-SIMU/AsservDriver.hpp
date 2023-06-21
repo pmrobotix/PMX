@@ -21,9 +21,9 @@ public:
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref AsservDriver(SIMU).
      */
-    static inline const logs::Logger & logger()
+    static inline const logs::Logger& logger()
     {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.SIMU");
+        static const logs::Logger &instance = logs::LoggerFactory::logger("AsservDriver.SIMU");
         return instance;
     }
 
@@ -31,15 +31,15 @@ private:
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref AsservDriverMemory(SIMU).
      */
-    static inline const logs::Logger & loggerM()
+    static inline const logs::Logger& loggerM()
     {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriverMemory.SIMU");
+        static const logs::Logger &instance = logs::LoggerFactory::logger("AsservDriverMemory.SIMU");
         return instance;
     }
 
-    static inline const logs::Logger & loggerSvg()
+    static inline const logs::Logger& loggerSvg()
     {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("AsservDriver.SIMU.SVG");
+        static const logs::Logger &instance = logs::LoggerFactory::logger("AsservDriver.SIMU.SVG");
         return instance;
     }
 
@@ -89,12 +89,13 @@ protected:
     float convertPowerToSpeed(int power);
     float convertMmToTicks(float meters);
 
-
-
 public:
 
+    //fontions en public pour l'accessibilité aux threads de simu de calcul de position
     void computeCounterL();
     void computeCounterR();
+
+    bool emergencyStop_;
 
     float leftSpeed_; //real speed in m/s
     float rightSpeed_;
@@ -105,6 +106,9 @@ public:
 //    void onTimer(utils::Chronometer chrono);
 //    void onTimerEnd(utils::Chronometer chrono);
 
+    //functions Asserv direct et minimum en cas d'asserv interne
+
+    //functions Asserv interne
     void endWhatTodo();
 
     void setMotorLeftPosition(int power, long ticks);
@@ -113,9 +117,9 @@ public:
     void setMotorRightPower(int power, int time);
     long getLeftExternalEncoder();
     long getRightExternalEncoder();
-    void getCountsExternal(int32_t* countR, int32_t* countL); //ticks cumulés
-    void getDeltaCountsExternal(int32_t* deltaR, int32_t* deltaL);
-    void getCountsInternal(int32_t* countR, int32_t* countL); //ticks cumulés
+    void getCountsExternal(int32_t *countR, int32_t *countL); //ticks cumulés
+    void getDeltaCountsExternal(int32_t *deltaR, int32_t *deltaL);
+    void getCountsInternal(int32_t *countR, int32_t *countL); //ticks cumulés
     long getLeftInternalEncoder(); //ticks cumulés
     long getRightInternalEncoder(); //ticks cumulés
     void resetEncoders();
@@ -126,11 +130,10 @@ public:
     int getMotorLeftCurrent();
     int getMotorRightCurrent();
 
-
     //fonctions asservissements externe par defaut
     void odo_SetPosition(float x_mm, float y_mm, float angle_rad);
     RobotPosition odo_GetPosition();
-    int path_GetLastCommandStatus();
+    int path_GetLastCommandStatus(); //deprecated
     void path_InterruptTrajectory();
     void path_CollisionOnTrajectory();
     void path_CollisionRearOnTrajectory();
@@ -154,6 +157,7 @@ public:
     void motion_setLowSpeedForward(bool enable, int percent);
     void motion_setLowSpeedBackward(bool enable, int percent);
 
+    //Functions deprecated
     void motion_ActivateReguDist(bool enable);
     void motion_ActivateReguAngle(bool enable);
     void motion_ResetReguDist();
@@ -183,7 +187,7 @@ public:
 class AsservDriverWrapper
 {
 public:
-    AsservDriverWrapper(AsservDriver * asserv)
+    AsservDriverWrapper(AsservDriver *asserv)
     {
         asserv_ = asserv;
     }
@@ -191,19 +195,20 @@ public:
     {
     }
 
-    AsservDriver * asserv_;
+    AsservDriver *asserv_;
 
     void member1left(const char *arg1, int time_ms)
     {
         float lastspeed = asserv_->leftSpeed_;
 
-        if (time_ms > 0) //stop using thread
-                {
+        if (time_ms > 0) {
             utils::Chronometer chrono_member1left("chrono_member1left");
             chrono_member1left.start();
             while (chrono_member1left.getElapsedTimeInMilliSec() < (double) time_ms) {
                 asserv_->computeCounterL();
                 //usleep(500);
+                if (asserv_->emergencyStop_)
+                    break;
             }
             asserv_->stopMotorLeft();
         } else {
@@ -211,6 +216,8 @@ public:
             {
                 asserv_->computeCounterL();
                 //usleep(500);
+                if (asserv_->emergencyStop_)
+                    break;
             }
         }
     }
@@ -218,13 +225,14 @@ public:
     {
         float lastspeed = asserv_->rightSpeed_;
 
-        if (time_ms > 0) //stop using thread
-                {
+        if (time_ms > 0) {
             utils::Chronometer chrono_member2right("chrono_member2right");
             chrono_member2right.start();
             while (chrono_member2right.getElapsedTimeInMilliSec() < (double) time_ms) {
                 asserv_->computeCounterR();
                 //usleep(500);
+                if (asserv_->emergencyStop_)
+                    break;
             }
             asserv_->stopMotorRight();
         } else {
@@ -232,6 +240,8 @@ public:
             {
                 asserv_->computeCounterR();
                 //usleep(500);
+                if (asserv_->emergencyStop_)
+                    break;
             }
         }
     }
@@ -296,25 +306,33 @@ public:
     std::thread memberLeftThread(const char *arg1, int timems)
     {
         return std::thread([=]
-        {   this->member1left(arg1, timems);});
+        {
+            this->member1left(arg1, timems);
+        });
     }
 
     std::thread memberRightThread(const char *arg1, int timems)
     {
         return std::thread([=]
-        {   this->member2right(arg1, timems);});
+        {
+            this->member2right(arg1, timems);
+        });
     }
 
     std::thread positionLeftThread(const char *arg1, int internal_ticks)
     {
         return std::thread([=]
-        {   this->positionLeft(arg1, internal_ticks);});
+        {
+            this->positionLeft(arg1, internal_ticks);
+        });
     }
 
     std::thread positionRightThread(const char *arg1, int internal_ticks)
     {
         return std::thread([=]
-        {   this->positionRight(arg1, internal_ticks);});
+        {
+            this->positionRight(arg1, internal_ticks);
+        });
     }
 
 };

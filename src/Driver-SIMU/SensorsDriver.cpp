@@ -16,12 +16,12 @@
 
 using namespace std;
 
-ASensorsDriver * ASensorsDriver::create(std::string, Robot * robot)
+ASensorsDriver* ASensorsDriver::create(std::string, Robot *robot)
 {
     return new SensorsDriver(robot);
 }
 
-SensorsDriver::SensorsDriver(Robot * robot)
+SensorsDriver::SensorsDriver(Robot *robot)
 {
     robot_ = robot;
 }
@@ -35,38 +35,48 @@ bool SensorsDriver::is_connected()
     return true;
 }
 
-int SensorsDriver::getAnalogPinData()
-{
-
-}
 void SensorsDriver::displayNumber(int number)
 {
 
 }
 
-ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv() {
+ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv()
+{
     ASensorsDriver::bot_positions bot_pos;
 
     //coord table à transformer en coordonnées robot: 200,700 => position robot robot_
-    int x = 1000.0;
-    int y = 1000.0;
+    int x_table = 1000.0;
+    int y_table = 1500.0;
 
     RobotPosition p = robot_->asserv().pos_getPosition();
 
-    int d = std::sqrt(square(p.y-y) + square(p.x-x));
+    int d = std::sqrt(square(y_table-p.y) + square(x_table - p.x));
 
-    RobotPos pos = {x, y , 0, d, 1}; //TODO Fantome a virer
+    float x_rep_robot = 0;
+    float y_rep_robot = 0;
 
+    float alpha_rad = std::asin((y_table - p.y) / d) - p.theta;
 
+    std::fmod(alpha_rad, 2 * M_PI);
+    if (alpha_rad < -M_PI)
+        alpha_rad += M_PI;
+    if (alpha_rad > M_PI)
+        alpha_rad -= M_PI;
 
+    float alpha_deg = (alpha_rad * 180.0 / M_PI);
 
+    x_rep_robot = -d * std::sin(alpha_rad);
+    y_rep_robot = d * std::cos(alpha_rad);
+
+    RobotPos pos = { 1, (int) x_rep_robot, (int) y_rep_robot, alpha_deg, d };
 
     //simu des positions adverses
-    bot_pos = {pos};
+    bot_pos = { pos };
 
     return bot_pos;
 }
-int SensorsDriver::sync() {
+int SensorsDriver::sync()
+{
     usleep(100000); //temps de mise a jour des données //TODO temps à mesurer avec la balise ??
     return 0;
 }
@@ -92,16 +102,16 @@ int SensorsDriver::frontCenter()
 int SensorsDriver::frontRight()
 {
     //TODO temp mettre un ifdef pour simulation gros robot et petit robot
-	/*
-    OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+    /*
+     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
-    if (robot.asserv().pos_getX_mm() > 800)
-    {
-        robot.svgPrintPosition(3);
-        return 300;
-    }
-    else*/
-        return 999;
+     if (robot.asserv().pos_getX_mm() > 800)
+     {
+     robot.svgPrintPosition(3);
+     return 300;
+     }
+     else*/
+    return 999;
 }
 
 int SensorsDriver::backLeft()

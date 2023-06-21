@@ -7,6 +7,7 @@
 #include "../Common/Action/Sensors.hpp"
 #include "../Common/Action.Driver/ASensorsDriver.hpp"
 #include "../Common/Robot.hpp"
+#include "../Common/Asserv/Asserv.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Common/Utils/PointerList.hpp"
 #include "../Log/Logger.hpp"
@@ -51,15 +52,20 @@ void O_SensorsTest::run(int argc, char** argv) {
     }
 */
     //il faut mettre une position pour le filtre table
-    //robot.asserv().setPositionAndColor(800, 200, 0,(robot.getMyColor() != PMXGREEN));
+    robot.asserv().startMotionTimerAndOdo(true);
+    robot.asserv().setPositionAndColor(700.0, 1300.0, 0.0,(robot.getMyColor() != PMXGREEN));
 
     robot.actions().sensors().setIgnoreAllFrontNearObstacle(false);
-    robot.actions().sensors().setIgnoreAllBackNearObstacle(false);
+    robot.actions().sensors().setIgnoreAllBackNearObstacle(true);
 
     robot.actions().start();
     robot.actions().sensors().addTimerSensors(200);
+    robot.chrono().start();
 
     while (chrono.getElapsedTimeInSec() < 200) {
+
+        robot.svgPrintPosition();
+
         vadv = robot.actions().sensors().getPositionsAdv();
 
         for (ASensorsDriver::bot_positions::size_type i = 0; i < vadv.size(); i++) {

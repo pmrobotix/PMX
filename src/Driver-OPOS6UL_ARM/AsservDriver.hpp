@@ -149,6 +149,8 @@ public:
     void motion_setLowSpeedForward(bool enable, int percent); //TODO remove enable
     void motion_setLowSpeedBackward(bool enable, int percent); //TODO remove enable
 
+
+    //Functions deprecated
     void motion_ActivateReguDist(bool enable);
     void motion_ActivateReguAngle(bool enable);
     void motion_ResetReguDist();

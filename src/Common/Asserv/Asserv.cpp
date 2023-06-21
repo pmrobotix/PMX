@@ -47,7 +47,31 @@ Asserv::~Asserv()
 
 
 
+RobotPosition Asserv::convertPositionToRepereTable(int d_mm, int x_mm, int y_mm, float theta_deg, int *x_botpos,
+                int *y_botpos)
+{
+    RobotPosition p = pos_getPosition();
+    //coordonnées de l'objet detecté sur la table// M_P/2
+//    *x_botpos = p.x + (d_mm * cos(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
+//    *y_botpos = p.y + (d_mm * sin(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
+    float a = (p.theta + (theta_deg * M_PI / 180.0f));
+    std::fmod(a, 2 * M_PI);
+    if (a < -M_PI)
+        a += M_PI;
+    if (a > M_PI)
+        a -= M_PI;
 
+    //ADV coord
+    *x_botpos = p.x + (d_mm * cos(a));
+    *y_botpos = p.y + (d_mm * sin(a));
+
+//    logger().error() << "DEBUG --xy_botpos= " << *x_botpos << " " << *y_botpos
+//                    << "pos: " << p.x << " " << p.y << " p_rad:" << p.theta << " --balise: " << d_mm << " " << x_mm << " "
+//                    << y_mm << " t_deg:" << theta_deg << logs::end;
+
+
+    return p;
+}
 
 
 void Asserv::endWhatTodo()

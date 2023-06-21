@@ -37,7 +37,6 @@ public:
 
     bool is_connected();
 
-    int getAnalogPinData();
     void displayNumber(int number);
 
     /*!

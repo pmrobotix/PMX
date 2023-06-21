@@ -104,11 +104,11 @@ public:
     /*!
      * \brief Fonctions permettant d'utiliser un asservissement externe.
      */
-
+    virtual void motion_ActivateManager(bool enablethread) = 0; //true to create thread and false to kill thread
     virtual void odo_SetPosition(float x_mm, float y_mm, float angle_rad) = 0;
     virtual RobotPosition odo_GetPosition() = 0; //pos in metre/radian
 
-    virtual int path_GetLastCommandStatus() = 0;
+    virtual int path_GetLastCommandStatus() = 0; //Deprecated
     virtual void path_InterruptTrajectory() = 0;
     virtual void path_CollisionOnTrajectory()= 0;
     virtual void path_CollisionRearOnTrajectory()= 0;
@@ -127,15 +127,18 @@ public:
     virtual void motion_FreeMotion(void) = 0;
     virtual void motion_DisablePID(void) = 0;		//! Stop motion control and disable PID
     virtual void motion_AssistedHandling(void) = 0;		//! Assisted movement mode =) (activate PID)
-    virtual void motion_ActivateManager(bool enablethread) = 0; //true to create thread and false to kill thread
+
     virtual void motion_setLowSpeedForward(bool enable, int percent = 0)=0;
     virtual void motion_setLowSpeedBackward(bool enable, int percent = 0)=0;
 
+
+    //Functions deprecated
     virtual void motion_ActivateReguDist(bool enable) = 0;
     virtual void motion_ActivateReguAngle(bool enable) = 0;
     virtual void motion_ResetReguDist() = 0;
     virtual void motion_ResetReguAngle() = 0;
     virtual TRAJ_STATE motion_DoDirectLine(float dist_mm) = 0; //uniquement en consigne sans le command manager
+
 };
 
 #endif

@@ -83,8 +83,8 @@ LegoEV3SvgWriterExtended::LegoEV3SvgWriterExtended(std::string botId) :
             << "<circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"none\" stroke=\"slategray\" stroke-width=\"0.5\" stroke-dasharray=\"4,8\"/>"
             << "<circle cx=\"140\" cy=\"140\" r=\"10\" fill=\"none\" stroke=\"slategray\" />" << "</symbol>";
     symbol << "<symbol id=\"botadv-legoev3-RED\">"
-                << "<circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"none\" stroke=\"slategray\" stroke-width=\"0.5\" stroke-dasharray=\"4,8\"/>"
-                << "<circle cx=\"140\" cy=\"140\" r=\"10\" fill=\"none\" stroke=\"slategray\" />" << "</symbol>";
+            << "<circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"none\" stroke=\"slategray\" stroke-width=\"0.5\" stroke-dasharray=\"4,8\"/>"
+            << "<circle cx=\"140\" cy=\"140\" r=\"10\" fill=\"none\" stroke=\"slategray\" />" << "</symbol>";
 
 //<circle cx="140" cy="140" r="140" fill="none" stroke="slategray" stroke-width="0.5" stroke-dasharray="4,8"/>
 //<circle cx="140" cy="140" r="4" fill="none" stroke="slategray" />
@@ -155,32 +155,48 @@ void LegoEV3SvgWriterExtended::writePosition_Bot(float x, float y, float angle_r
     }
 }
 
-void LegoEV3SvgWriterExtended::writePosition_AdvPos(float x, float y, int color)
+void LegoEV3SvgWriterExtended::writePosition_AdvPos(float x, float y, float x_pos_mm, float y_pos_mm, int color)
 {
-    if (!done_) {
-        this->lock();
 
-        if (color == 0) {
-            *fLogBuffer << "<use x=\"" << x - 140 << "\" y=\"" << -y - 140
-                    << "\" xlink:href=\"#bot-legoev3\" />" << logs::flush;
-        } else if (color == 1) {
-            *fLogBuffer << "<use x=\"" << x - 140 << "\" y=\"" << -y - 140
-                    << "\" xlink:href=\"#bot-legoev3-ORANGE\"  />" << logs::flush;
-        } else if (color == 2) {
-            *fLogBuffer << "<use x=\"" << x - 140 << "\" y=\"" << -y - 140
-                    << "\" xlink:href=\"#bot-legoev3-RED\" />" << logs::flush;
-        } else if (color == 3) {
-            *fLogBuffer << "<use x=\"" << x - 140 << "\" y=\"" << -y - 140
-                    << "\" xlink:href=\"#bot-legoev3-GREEN\"  />" << logs::flush;
-        } else if (color == 4) {
-            *fLogBuffer << "<use x=\"" << x - 140 << "\" y=\"" << -y - 140
-                    << "\" xlink:href=\"#bot-legoev3-BLUE\" />" << logs::flush;
-        } else if (color == 5) {
-            *fLogBuffer << "<use x=\"" << x - 140 << "\" y=\"" << -y - 140
-                    << "\" xlink:href=\"#bot-legoev3-BLACK\" />" << logs::flush;
-        }
-        this->unlock();
-    }
+    if (!done_) {
+           int r_adv = 400 /2; //TODO rendre parametrable
+           this->lock();
+
+           if (color == 0) {
+               *fLogBuffer //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL\" />"
+                       << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\""<< r_adv <<"\" fill=\"none\" stroke=\"slategray\" />"
+                       << "<line x1=\"" << x_pos_mm << "\" y1=\"" << -y_pos_mm << "\" x2=\"" << x << "\" y2=\"" << -y
+                       << "\" stroke=\"slategray\" stroke-width=\"1\"/>" << logs::flush;
+           } else if (color == 1) {
+               *fLogBuffer //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL-ORANGE\"  />"
+                       << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\""<< r_adv+6 <<"\" fill=\"none\" stroke=\"orange\" />"
+                       << "<line x1=\"" << x_pos_mm << "\" y1=\"" << -y_pos_mm << "\" x2=\"" << x << "\" y2=\"" << -y
+                       << "\" stroke=\"ORANGE\" stroke-width=\"1\"/>" << logs::flush;
+           } else if (color == 2) {
+               *fLogBuffer //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL-RED\" />"
+                       << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\""<< r_adv+10 <<"\" fill=\"none\" stroke=\"red\" />"
+                       << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\""<< 150 <<"\" fill=\"none\" stroke=\"red\" />"
+                       << "<line x1=\"" << x_pos_mm << "\" y1=\"" << -y_pos_mm << "\" x2=\"" << x << "\" y2=\"" << -y
+                       << "\" stroke=\"RED\" stroke-width=\"1\"/>" << logs::flush;
+           } else if (color == 3) {
+               *fLogBuffer //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL-GREEN\"  />"
+                       << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\""<< r_adv+4 <<"\" fill=\"none\" stroke=\"green\" />"
+                       << "<line x1=\"" << x_pos_mm << "\" y1=\"" << -y_pos_mm << "\" x2=\"" << x << "\" y2=\"" << -y
+                       << "\" stroke=\"GREEN\" stroke-width=\"1\"/>" << logs::flush;
+           } else if (color == 4) {
+               *fLogBuffer //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL-BLUE\" />"
+                       << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\""<< r_adv+2 <<"\" fill=\"none\" stroke=\"blue\" />"
+                       << "<line x1=\"" << x_pos_mm << "\" y1=\"" << -y_pos_mm << "\" x2=\"" << x << "\" y2=\"" << -y
+                       << "\" stroke=\"BLUE\" stroke-width=\"1\"/>" << logs::flush;
+           } else if (color == 5) {
+               *fLogBuffer //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL-BLACK\" />"
+                       << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\""<< r_adv+8 <<"\" fill=\"none\" stroke=\"black\" />"
+                       << "<line x1=\"" << x_pos_mm << "\" y1=\"" << -y_pos_mm << "\" x2=\"" << x << "\" y2=\"" << -y
+                       << "\" stroke=\"BLACK\" stroke-width=\"1\"/>" << logs::flush;
+           }
+           this->unlock();
+       }
+
 }
 
 void LegoEV3SvgWriterExtended::writeZone(const char *name, float minX, float minY, float width, float height,

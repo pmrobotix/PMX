@@ -124,7 +124,9 @@ public:
 
     void setLowSpeedvalue(int value);
 
-    virtual bool filtre_IsInsideTableXY(int d, int x, int y, float a, int *x_botpos, int *y_botpos) = 0;
+    RobotPosition convertPositionToRepereTable(int d_mm, int x_mm, int y_mm, float theta_deg, int *x_botpos,
+                int *y_botpos);
+    virtual bool filtre_IsInsideTableXY(int x_botpos, int y_botpos) = 0;
 
 
     virtual void endWhatTodo();

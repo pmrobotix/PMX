@@ -301,7 +301,7 @@ void O_State_DecisionMakerIA::execute() {
      }*/
 
     //On ajoute le timer de detection
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
     robot.actions().sensors().addTimerSensors(200);
 

@@ -74,7 +74,7 @@ void L_SensorsTest::run(int argc, char **argv)
                     << vadv[i].x << " y=" << vadv[i].y << " a_deg=" << vadv[i].theta_deg << " d=" << vadv[i].d
                     << logs::end;
 
-            robot.svgw().writePosition_AdvPos(vadv[i].x, vadv[i].y, 4); //4= BLUE
+            robot.svgw().writePosition_AdvPos(vadv[i].x, vadv[i].y, vadv[i].x, vadv[i].y, 4); //4= BLUE
         }
 
         front = robot.actions().sensors().front(true);

@@ -7,7 +7,8 @@
 
 using namespace std;
 
-AAsservDriver * AAsservDriver::create(std::string botid) {
+AAsservDriver* AAsservDriver::create(std::string botid)
+{
     static AsservDriver *instance = new AsservDriver(botid);
     return instance;
 }
@@ -23,6 +24,8 @@ AsservDriver::AsservDriver(std::string botid) :
     inverseMoteurG_ = 1.0;
     inverseMoteurD_ = 1.0;
 
+    emergencyStop_ = false;
+
     if (botid == "APF9328Robot") {
         //printf("--- AsservDriver - botid == APF9328Robot\n");
         //CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------
@@ -31,8 +34,7 @@ AsservDriver::AsservDriver(std::string botid) :
         simuMaxPower_ = 127.0;
         //CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------
 
-    }
-    else if (botid == "LegoEV3Robot") {
+    } else if (botid == "LegoEV3Robot") {
         //printf("--- AsservDriver - botid == LegoEV3Robot\n");
         //CONFIGURATION EV3 SIMULATEUR CONSOLE --------------------------------------------
         simuTicksPerMeter_ = 130566.0f; //nb ticks for 1000mm
@@ -40,16 +42,14 @@ AsservDriver::AsservDriver(std::string botid) :
         simuMaxPower_ = 100.0;
         //CONFIGURATION EV3 SIMULATEUR CONSOLE --------------------------------------------
 
-    }
-    else if (botid == "OPOS6UL_Robot") {
+    } else if (botid == "OPOS6UL_Robot") {
         //printf("--- AsservDriver - botid == OPOS6UL_Robot\n");
         //CONFIGURATION OPOS6UL_Robot SIMULATEUR CONSOLE  --------------------------------------------
         simuTicksPerMeter_ = 130566.0f; //nb ticks for 1000mm
-        simuMaxSpeed_ = 1.0; //m/s
+        simuMaxSpeed_ = 0.5; //m/s
         simuMaxPower_ = 100.0; //127.0;
         //CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------
-    }
-    else {
+    } else {
         logger().error() << "NO BOT ID!! => EXIT botid_=" << botid_ << logs::end;
         exit(-1);
     }
@@ -86,8 +86,7 @@ AsservDriver::AsservDriver(std::string botid) :
         asservSimuStarted_ = true;
         this->start("AsservDriver::AsservDriver()" + botid_, 3);
         chrono_.start();
-    }
-    else {
+    } else {
         //stop the thread
         endWhatTodo();
         asservSimuStarted_ = false;
@@ -95,16 +94,20 @@ AsservDriver::AsservDriver(std::string botid) :
     }
 }
 
-AsservDriver::~AsservDriver() {
+AsservDriver::~AsservDriver()
+{
     //endWhatTodo();
     asservSimuStarted_ = false;
-    if (twLeft_.joinable()) twLeft_.join();
-    if (twRight_.joinable()) twRight_.join();
+    if (twLeft_.joinable())
+        twLeft_.join();
+    if (twRight_.joinable())
+        twRight_.join();
 
     this->cancel();
 }
 
-void AsservDriver::execute() {
+void AsservDriver::execute()
+{
 
     int periodTime_us = 10000;
     utils::Chronometer chrono("AsservDriver::execute().SIMU");
@@ -122,26 +125,14 @@ void AsservDriver::execute() {
             //TODO avoir accès au robot pour afficher du SVG
             //robot_->svgw().writePosition_BotPos(p.x, p.y, p.theta);
 
-            //si different du precedent
-            if(!(p.x == pp.x && p.y == pp.y))
-            {
-                loggerSvg().info() << "<circle cx=\""
-                    << p.x
-                    << "\" cy=\""
-                    << -p.y
-                    << "\" r=\"1\" fill=\"blue\" />"
-                    << "<line x1=\""
-                    << p.x
-                    << "\" y1=\""
-                    << -p.y
-                    << "\" x2=\""
-                    << p.x + cos(p.theta) * 25
-                    << "\" y2=\""
-                    << -p.y - sin(p.theta) * 25
-                    << "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
-                    << logs::end;
+            //si different du precedentx
+            if (!(p.x == pp.x && p.y == pp.y)) {
+                loggerSvg().info() << "<circle cx=\"" << p.x << "\" cy=\"" << -p.y << "\" r=\"1\" fill=\"blue\" />"
+                        << "<line x1=\"" << p.x << "\" y1=\"" << -p.y << "\" x2=\"" << p.x + cos(p.theta) * 25
+                        << "\" y2=\"" << -p.y - sin(p.theta) * 25 << "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
+                        << logs::end;
             }
-            pp=p;
+            pp = p;
         }
         chrono.waitTimer();
     }
@@ -182,31 +173,32 @@ void AsservDriver::execute() {
 //
 //}
 
-void AsservDriver::endWhatTodo() {
+void AsservDriver::endWhatTodo()
+{
     motion_FreeMotion();
-    if (!this->isFinished()) this->cancel();
+    if (!this->isFinished())
+        this->cancel();
     chrono_.stop();
 }
 
-float AsservDriver::convertMmToTicks(float mm) {
+float AsservDriver::convertMmToTicks(float mm)
+{
 
     float ticks = (float) std::rint((mm * simuTicksPerMeter_) / 1000.0f);
-logger().debug() << " mm=" << mm << " ticks=" << ticks << " simuTicksPerMeter_=" << simuTicksPerMeter_ << logs::end;
+    logger().debug() << " mm=" << mm << " ticks=" << ticks << " simuTicksPerMeter_=" << simuTicksPerMeter_ << logs::end;
     return ticks;
 }
 
-float AsservDriver::convertPowerToSpeed(int power) {
+float AsservDriver::convertPowerToSpeed(int power)
+{
     if (botid_ == "APF9328Robot") {
 //		if (power < 7 && power > -7) //simule que le robot n'avance pas à tres faible puissance
 //			return 0.0;
-    }
-    else if (botid_ == "LegoEV3Robot") {
+    } else if (botid_ == "LegoEV3Robot") {
 //		if (power < 15 && power > -15) //simule que le robot n'avance pas à tres faible puissance
 //			return 0.0;
-    }
-    else if (botid_ == "OPOS6UL_Robot") {
-            }
-    else{
+    } else if (botid_ == "OPOS6UL_Robot") {
+    } else {
         logger().error() << "NO BOT ID!! => EXIT botid_=" << botid_ << logs::end;
         exit(-1);
     }
@@ -222,10 +214,12 @@ float AsservDriver::convertPowerToSpeed(int power) {
     return speed;
 }
 
-void AsservDriver::computeCounterL() {
+void AsservDriver::computeCounterL()
+{
     // MAJ real speed
     leftSpeed_ = (leftSpeed_ + wantedLeftSpeed_) / 2.0f;
-    if (std::abs(leftSpeed_ - wantedLeftSpeed_) < 0.0001f) leftSpeed_ = wantedLeftSpeed_;
+    if (std::abs(leftSpeed_ - wantedLeftSpeed_) < 0.0001f)
+        leftSpeed_ = wantedLeftSpeed_;
     //or perfect virtual motor
     //leftSpeed_ = wantedLeftSpeed_;
 
@@ -273,10 +267,12 @@ void AsservDriver::computeCounterL() {
 
 }
 
-void AsservDriver::computeCounterR() {
+void AsservDriver::computeCounterR()
+{
     // MAJ real speed
     rightSpeed_ = (rightSpeed_ + wantedRightSpeed_) / 2.0f;
-    if (std::abs(rightSpeed_ - wantedRightSpeed_) < 0.0001f) rightSpeed_ = wantedRightSpeed_;
+    if (std::abs(rightSpeed_ - wantedRightSpeed_) < 0.0001f)
+        rightSpeed_ = wantedRightSpeed_;
     //or perfect virtual motor
     //rightSpeed_ = wantedRightSpeed_;
 
@@ -320,12 +316,20 @@ void AsservDriver::computeCounterR() {
 
 }
 
-void AsservDriver::setMotorLeftPosition(int power, long ticksToDo) {
-    if (twLeft_.joinable()) twLeft_.join();
+void AsservDriver::setMotorLeftPosition(int power, long ticksToDo)
+{
+
+    if (emergencyStop_)
+        return;
+
+    if (twLeft_.joinable())
+        twLeft_.join();
 
     int sens = 0;
-    if (power < 0) sens = -1;
-    else if (power > 0) sens = 1;
+    if (power < 0)
+        sens = -1;
+    else if (power > 0)
+        sens = 1;
 
     computeCounterL();
     mutexL_.lock();
@@ -345,12 +349,19 @@ void AsservDriver::setMotorLeftPosition(int power, long ticksToDo) {
     twLeft_ = w_->positionLeftThread("setMotorLeftPosition", (int) leftCounter_ + (ticksToDo * sens));
 }
 
-void AsservDriver::setMotorRightPosition(int power, long ticksToDo) {
-    if (twRight_.joinable()) twRight_.join();
+void AsservDriver::setMotorRightPosition(int power, long ticksToDo)
+{
+    if (emergencyStop_)
+        return;
+
+    if (twRight_.joinable())
+        twRight_.join();
 
     int sens = 0;
-    if (power < 0) sens = -1;
-    else if (power > 0) sens = 1;
+    if (power < 0)
+        sens = -1;
+    else if (power > 0)
+        sens = 1;
 
     computeCounterR();
     mutexR_.lock();
@@ -372,6 +383,8 @@ void AsservDriver::setMotorRightPosition(int power, long ticksToDo) {
 
 void AsservDriver::setMotorLeftPower(int power, int time_ms) //in ticks per sec
 {
+    if (emergencyStop_)
+        return;
     //computeCounterL();
     mutexL_.lock();
     wantedLeftSpeed_ = inverseMoteurG_ * convertPowerToSpeed(power);
@@ -380,12 +393,16 @@ void AsservDriver::setMotorLeftPower(int power, int time_ms) //in ticks per sec
     //logger().debug() << "setMotorLeftPower power=" << power << " leftSpeed_=" << leftSpeed_ << logs::end;
 
     if (time_ms > 0) {
-        if (twLeft_.joinable()) twLeft_.join();
+        if (twLeft_.joinable())
+            twLeft_.join();
         AsservDriverWrapper *w_ = new AsservDriverWrapper(this);
         twLeft_ = w_->memberLeftThread("setMotorLeftPower", time_ms);
     }
 }
-void AsservDriver::setMotorRightPower(int power, int time_ms) {
+void AsservDriver::setMotorRightPower(int power, int time_ms)
+{
+    if (emergencyStop_)
+        return;
     //logger().info() << "!!!! setMotorRightPower rightMeters_=" << rightMeters_ << logs::end;
     //computeCounterR();
     mutexR_.lock();
@@ -395,14 +412,16 @@ void AsservDriver::setMotorRightPower(int power, int time_ms) {
     //logger().debug() << "setMotorRightPower power=" << power << " rightSpeed_=" << rightSpeed_ << logs::end;
 
     if (time_ms > 0) {
-        if (twRight_.joinable()) twRight_.join();
+        if (twRight_.joinable())
+            twRight_.join();
         AsservDriverWrapper *w_ = new AsservDriverWrapper(this);
         twRight_ = w_->memberRightThread("setMotorRightPower", time_ms);
     }
 }
 
 //recupere les ticks codeurs cumulés
-void AsservDriver::getCountsExternal(int32_t* countR, int32_t* countL) {
+void AsservDriver::getCountsExternal(int32_t *countR, int32_t *countL)
+{
 
     computeCounterL();
     computeCounterR();
@@ -412,7 +431,8 @@ void AsservDriver::getCountsExternal(int32_t* countR, int32_t* countL) {
 }
 
 //recupere les ticks codeurs depuis le derniers appels
-void AsservDriver::getDeltaCountsExternal(int32_t* deltaR, int32_t* deltaL) {
+void AsservDriver::getDeltaCountsExternal(int32_t *deltaR, int32_t *deltaL)
+{
 
     computeCounterL();
     computeCounterR();
@@ -421,35 +441,41 @@ void AsservDriver::getDeltaCountsExternal(int32_t* deltaR, int32_t* deltaL) {
     *deltaL = (int) currentLeftCounter_;
 }
 
-//recupere les ticks codeur cummulés
-void AsservDriver::getCountsInternal(int32_t* countR, int32_t* countL) {
+//recupere les ticks codeur accummulés
+void AsservDriver::getCountsInternal(int32_t *countR, int32_t *countL)
+{
     //TODO getCountsInternal
     logger().error() << "TODO getCountsInternal !!!!!" << logs::end;
 }
 
-//recupere les ticks codeur cummulés
-long AsservDriver::getLeftExternalEncoder() {
+//recupere les ticks codeur accummulés
+long AsservDriver::getLeftExternalEncoder()
+{
     computeCounterL();
 //    logger().debug() << "getLeftExternalEncoder=" << leftCounter_ << logs::end;
     return (long) leftCounter_; //ticks
 }
-long AsservDriver::getRightExternalEncoder() {
+long AsservDriver::getRightExternalEncoder()
+{
     computeCounterR();
 //    logger().debug() << "getRightExternalEncoder=" << rightCounter_ << logs::end;
     return (long) rightCounter_; //ticks
 }
 
 //+/- 2,147,483,648
-long AsservDriver::getLeftInternalEncoder() {
+long AsservDriver::getLeftInternalEncoder()
+{
     return (long) getLeftExternalEncoder();
 }
 
 //+/- 2,147,483,648
-long AsservDriver::getRightInternalEncoder() {
+long AsservDriver::getRightInternalEncoder()
+{
     return (long) getRightExternalEncoder();
 }
 
-void AsservDriver::resetEncoders() {
+void AsservDriver::resetEncoders()
+{
     mutexL_.lock();
     leftCounter_ = 0.0;
     leftMm_ = 0.0;
@@ -464,16 +490,19 @@ void AsservDriver::resetEncoders() {
     mutexR_.unlock();
     computeCounterR();
 }
-void AsservDriver::resetInternalEncoders() {
+void AsservDriver::resetInternalEncoders()
+{
     //TODO
     logger().error() << "TODO resetInternalEncoders !!!!!" << logs::end;
 }
-void AsservDriver::resetExternalEncoders() {
+void AsservDriver::resetExternalEncoders()
+{
     //TODO
     logger().error() << "TODO resetExternalEncoders !!!!!" << logs::end;
 }
 
-void AsservDriver::stopMotorLeft() {
+void AsservDriver::stopMotorLeft()
+{
     //computeCounterL();
     mutexL_.lock();
     currentLeftCounter_ = 0.0;
@@ -483,7 +512,8 @@ void AsservDriver::stopMotorLeft() {
     logger().debug() << "stopMotorLeft !!!!!" << logs::end;
 }
 
-void AsservDriver::stopMotorRight() {
+void AsservDriver::stopMotorRight()
+{
     //computeCounterR();
     mutexR_.lock();
     currentRightCounter_ = 0.0;
@@ -493,47 +523,66 @@ void AsservDriver::stopMotorRight() {
     logger().debug() << "stopMotorRight !!!!!" << logs::end;
 }
 
-int AsservDriver::getMotorLeftCurrent() {
+int AsservDriver::getMotorLeftCurrent()
+{
     logger().error() << "TODO getMotorLeftCurrent !!!!!" << logs::end;
     return 0;
 
 }
-int AsservDriver::getMotorRightCurrent() {
+int AsservDriver::getMotorRightCurrent()
+{
     logger().error() << "TODO getMotorRightCurrent !!!!!" << logs::end;
     return 0;
 }
 
-void AsservDriver::odo_SetPosition(float x_mm, float y_mm, float angle_rad) {
+void AsservDriver::odo_SetPosition(float x_mm, float y_mm, float angle_rad)
+{
     m_pos.lock();
     p_.x = x_mm;
     p_.y = y_mm;
     p_.theta = angle_rad;
     m_pos.unlock();
 }
-RobotPosition AsservDriver::odo_GetPosition() {
+RobotPosition AsservDriver::odo_GetPosition()
+{
     return p_;
 }
-int AsservDriver::path_GetLastCommandStatus() {
+int AsservDriver::path_GetLastCommandStatus()
+{
     return -1;
 }
-void AsservDriver::path_InterruptTrajectory() {
-    logger().debug() << "TODO path_InterruptTrajectory !!!!!" << logs::end;
+void AsservDriver::path_InterruptTrajectory()
+{
+    logger().error() << "TODO path_InterruptTrajectory !!!!!" << logs::end;
 }
-void AsservDriver::path_CollisionOnTrajectory() {
-    logger().debug() << "TODO path_CollisionOnTrajectory !!!!!" << logs::end;
+void AsservDriver::path_CollisionOnTrajectory()
+{
+    emergencyStop_ = true;
+    stopMotorLeft();
+    stopMotorRight();
+
 }
-void AsservDriver::path_CollisionRearOnTrajectory() {
-    logger().debug() << "TODO path_CollisionRearOnTrajectory !!!!!" << logs::end;
+void AsservDriver::path_CollisionRearOnTrajectory()
+{
+    emergencyStop_ = true;
+    stopMotorLeft();
+    stopMotorRight();
+
 }
-void AsservDriver::path_CancelTrajectory() {
-    logger().debug() << "TODO path_CancelTrajectory !!!!!" << logs::end;
+void AsservDriver::path_CancelTrajectory()
+{
+    logger().error() << "TODO path_CancelTrajectory !!!!!" << logs::end;
 }
-void AsservDriver::path_ResetEmergencyStop() {
-    logger().debug() << "TODO path_ResetEmergencyStop !!!!!" << logs::end;
+void AsservDriver::path_ResetEmergencyStop()
+{
+    logger().error() << "TODO path_ResetEmergencyStop !!!!!" << logs::end;
+    emergencyStop_ = false;
 }
 
-TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm) {
-
+TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
+{
+    if (emergencyStop_)
+        return TRAJ_INTERRUPTED;
     m_pos.lock();
     float x_init = p_.x;
     float y_init = p_.y;
@@ -553,27 +602,31 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm) {
 
     // On ajuste l'angle à parcourir pour ne pas faire plus d'un demi-tour
     // Exemple, tourner de 340 degrés est plus chiant que de tourner de -20 degrés
-    if (deltaTheta > M_PI) {
-        deltaTheta -= 2.0 * M_PI;
-    }
-    else if (deltaTheta < -M_PI) {
-        deltaTheta += 2.0 * M_PI;
-    }
-    logger().debug() << "t_init="
-            << (t_init * 180.0f) / M_PI
-            << " deltaTheta deg="
-            << (deltaTheta * 180.0f) / M_PI
-            << " thetaCible="
-            << (thetaCible * 180.0f) / M_PI
-            << logs::end;
+//    if (deltaTheta > M_PI) {
+//        deltaTheta -= 2.0 * M_PI;
+//    }
+//    else if (deltaTheta < -M_PI) {
+//        deltaTheta += 2.0 * M_PI;
+//    }
+
+    std::fmod(deltaTheta, 2 * M_PI);
+    if (deltaTheta < -M_PI)
+        deltaTheta += M_PI;
+    if (deltaTheta > M_PI)
+        deltaTheta -= M_PI;
+
+    logger().debug() << "t_init=" << (t_init * 180.0f) / M_PI << " deltaTheta deg=" << (deltaTheta * 180.0f) / M_PI
+            << " thetaCible=" << (thetaCible * 180.0f) / M_PI << logs::end;
 
     motion_DoRotate(deltaTheta);
 
     return TRAJ_FINISHED;
 }
 
-TRAJ_STATE AsservDriver::motion_DoFaceReverse(float x_mm, float y_mm) {
-
+TRAJ_STATE AsservDriver::motion_DoFaceReverse(float x_mm, float y_mm)
+{
+    if (emergencyStop_)
+        return TRAJ_INTERRUPTED;
     m_pos.lock();
     float x_init = p_.x;
     float y_init = p_.y;
@@ -593,27 +646,31 @@ TRAJ_STATE AsservDriver::motion_DoFaceReverse(float x_mm, float y_mm) {
 
     // On ajuste l'angle à parcourir pour ne pas faire plus d'un demi-tour
     // Exemple, tourner de 340 degrés est plus chiant que de tourner de -20 degrés
-    if (deltaTheta > M_PI) {
-        deltaTheta -= 2.0 * M_PI;
-    }
-    else if (deltaTheta < -M_PI) {
-        deltaTheta += 2.0 * M_PI;
-    }
-    logger().debug() << "t_init="
-            << (t_init * 180.0f) / M_PI
-            << " deltaTheta deg="
-            << (deltaTheta * 180.0f) / M_PI
-            << " thetaCible="
-            << (thetaCible * 180.0f) / M_PI
-            << logs::end;
+//    if (deltaTheta > M_PI) {
+//        deltaTheta -= 2.0 * M_PI;
+//    }
+//    else if (deltaTheta < -M_PI) {
+//        deltaTheta += 2.0 * M_PI;
+//    }
+
+    std::fmod(deltaTheta, 2 * M_PI);
+    if (deltaTheta < -M_PI)
+        deltaTheta += M_PI;
+    if (deltaTheta > M_PI)
+        deltaTheta -= M_PI;
+
+    logger().debug() << "t_init=" << (t_init * 180.0f) / M_PI << " deltaTheta deg=" << (deltaTheta * 180.0f) / M_PI
+            << " thetaCible=" << (thetaCible * 180.0f) / M_PI << logs::end;
 
     motion_DoRotate(deltaTheta);
 
     return TRAJ_FINISHED;
 }
 
-TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) {
-
+TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
+{
+    if (emergencyStop_)
+        return TRAJ_INTERRUPTED;
 //calcul du point d'arrivé
     m_pos.lock();
     float x_init = p_.x;
@@ -623,14 +680,17 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) {
 
     //cas du reverse
     float inv = 1.0;
-    if (dist_mm < 0) inv = -inv;
+    if (dist_mm < 0)
+        inv = -inv;
 
 //le delta
     float deltaXmm = cos(t_init) * dist_mm;
-    if (abs(deltaXmm) < 0.0001) deltaXmm = 0;
+    if (abs(deltaXmm) < 0.0001)
+        deltaXmm = 0;
 
     float deltaYmm = sin(t_init) * dist_mm;
-    if (abs(deltaYmm) < 0.0001) deltaYmm = 0;
+    if (abs(deltaYmm) < 0.0001)
+        deltaYmm = 0;
 
 //Ax+b
     float a = 0, b = 0;
@@ -640,18 +700,8 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) {
         b = y_init - (a * x_init);
     }
 
-    logger().debug() << "dist_mm="
-            << dist_mm
-            << "deltaXmm="
-            << deltaXmm
-            << " deltaYmm="
-            << deltaYmm
-            << " a="
-            << a
-            << " b="
-            << b
-            << "  !!!!!"
-            << logs::end;
+    logger().debug() << "dist_mm=" << dist_mm << "deltaXmm=" << deltaXmm << " deltaYmm=" << deltaYmm << " a=" << a
+            << " b=" << b << "  !!!!!" << logs::end;
 
 //While à une certaine vitesse
 //set des valeurs
@@ -665,14 +715,17 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) {
     logger().debug() << "tps=" << tps_sec << " increment_mm=" << increment_mm << "  !!!!!" << logs::end;
 
     for (int nb = 0; nb < nb_increment; nb++) {
+        if (emergencyStop_)
+            return TRAJ_INTERRUPTED;
 
         m_pos.lock();
         if (deltaXmm == 0) //cas droite verticale
                 {
-            if (deltaYmm > 0) p_.y += increment_mm;
-            else if (deltaYmm < 0) p_.y -= increment_mm;
-        }
-        else {
+            if (deltaYmm > 0)
+                p_.y += increment_mm;
+            else if (deltaYmm < 0)
+                p_.y -= increment_mm;
+        } else {
             float x_increment_m = cos(t_init) * increment_mm;
             p_.x += inv * x_increment_m;
             p_.y = ((a * p_.x) + b);
@@ -685,8 +738,7 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) {
     if (deltaXmm == 0) //cas droite verticale
             {
         p_.y = y_init + deltaYmm;
-    }
-    else {
+    } else {
         p_.x = x_init + deltaXmm;
         p_.y = y_init + deltaYmm;
     }
@@ -696,33 +748,50 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) {
     return TRAJ_FINISHED;
 }
 
-TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians) {
+TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
+{
+    if (emergencyStop_)
+        return TRAJ_INTERRUPTED;
     int increment_time_us = 5000;
 
     m_pos.lock();
     float temp = p_.theta + angle_radians;
 
-    if (temp >= M_PI) {
-        temp -= 2.0 * M_PI;
-    }
-    else if (temp < -M_PI) {
-        temp += 2.0 * M_PI;
-    }
+//    if (temp >= M_PI) {
+//        temp -= 2.0 * M_PI;
+//    }
+//    else if (temp < -M_PI) {
+//        temp += 2.0 * M_PI;
+//    }
+
+    std::fmod(temp, 2 * M_PI);
+    if (temp < -M_PI)
+        temp += M_PI;
+    if (temp > M_PI)
+        temp -= M_PI;
 
     p_.theta = temp;
     m_pos.unlock();
+
+    if (emergencyStop_)
+        return TRAJ_INTERRUPTED;
 
     usleep(increment_time_us * 7);
     return TRAJ_FINISHED;
 }
 
-TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius) {
+TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)
+{
+    if (emergencyStop_)
+        return TRAJ_INTERRUPTED;
     logger().error() << "TODO motion_DoArcRotate !!!!!" << logs::end;
     return TRAJ_ERROR;
 }
 
-TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm) {
-
+TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm)
+{
+    if (emergencyStop_)
+        return TRAJ_INTERRUPTED;
     motion_DoFace(x_mm, y_mm);
 
     m_pos.lock();
@@ -734,8 +803,10 @@ TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm) {
     return motion_DoLine(dist);
 }
 
-TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm) {
-
+TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm)
+{
+    if (emergencyStop_)
+        return TRAJ_INTERRUPTED;
     motion_DoFaceReverse(x_mm, y_mm);
 
     m_pos.lock();
@@ -747,52 +818,69 @@ TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm) {
 
 }
 
-TRAJ_STATE AsservDriver::motion_GotoChain(float x_mm, float y_mm) {
-
+TRAJ_STATE AsservDriver::motion_GotoChain(float x_mm, float y_mm)
+{
+    if (emergencyStop_)
+        return TRAJ_INTERRUPTED;
     return motion_Goto(x_mm, y_mm);
 }
 
-TRAJ_STATE AsservDriver::motion_GotoReverseChain(float x_mm, float y_mm) {
-
+TRAJ_STATE AsservDriver::motion_GotoReverseChain(float x_mm, float y_mm)
+{
+    if (emergencyStop_)
+        return TRAJ_INTERRUPTED;
     return motion_GotoReverse(x_mm, y_mm);
 }
 
-void AsservDriver::motion_FreeMotion() {
+void AsservDriver::motion_FreeMotion()
+{
     stopMotorLeft();
     stopMotorRight();
 }
-void AsservDriver::motion_DisablePID() { //DEPRECATED
+void AsservDriver::motion_DisablePID()
+{ //DEPRECATED
     motion_FreeMotion();
 }
-void AsservDriver::motion_AssistedHandling() {
+void AsservDriver::motion_AssistedHandling()
+{
     stopMotorLeft();
     stopMotorRight();
 }
-void AsservDriver::motion_ActivateManager(bool enable) {
-
+void AsservDriver::motion_ActivateManager(bool enable)
+{
+    //automatiquement activé.
 }
 
-void AsservDriver::motion_setLowSpeedForward(bool enable, int percent) {
+void AsservDriver::motion_setLowSpeedForward(bool enable, int percent)
+{
+    // TODO motion_setLowSpeedForward
     logger().debug() << "TODO motion_setLowSpeedForward !!!!!" << logs::end;
 }
-void AsservDriver::motion_setLowSpeedBackward(bool enable, int percent) {
+void AsservDriver::motion_setLowSpeedBackward(bool enable, int percent)
+{
+    // TODO motion_setLowSpeedBackward
     logger().debug() << "TODO motion_setLowSpeedBackward !!!!!" << logs::end;
 }
 
-void AsservDriver::motion_ActivateReguDist(bool enable) {
-    logger().debug() << "TODO motion_ActivateReguDist !!!!!" << logs::end;
+//functions deprecated
+void AsservDriver::motion_ActivateReguDist(bool enable)
+{
+    logger().error() << "motion_ActivateReguDist NOT IMPLEMENTED !!!!!" << logs::end;
 }
-void AsservDriver::motion_ActivateReguAngle(bool enable) {
-    logger().debug() << "TODO motion_ActivateReguAngle !!!!!" << logs::end;
+void AsservDriver::motion_ActivateReguAngle(bool enable)
+{
+    logger().error() << "motion_ActivateReguAngle NOT IMPLEMENTED !!!!!" << logs::end;
 }
-void AsservDriver::motion_ResetReguDist() {
-    logger().debug() << "TODO motion_ResetReguDist !!!!!" << logs::end;
+void AsservDriver::motion_ResetReguDist()
+{
+    logger().error() << "motion_ResetReguDist NOT IMPLEMENTED  !!!!!" << logs::end;
 }
-void AsservDriver::motion_ResetReguAngle() {
-    logger().debug() << "TODO motion_ResetReguAngle !!!!!" << logs::end;
+void AsservDriver::motion_ResetReguAngle()
+{
+    logger().error() << "motion_ResetReguAngle NOT IMPLEMENTED  !!!!!" << logs::end;
 }
-TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_mm) {
-    //TODO
-    logger().debug() << "TODO motion_DoDirectLine !!!!!" << logs::end;
+TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_mm)
+{
+    logger().error() << "motion_DoDirectLine NOT IMPLEMENTED  !!!!!" << logs::end;
     return TRAJ_ERROR;
 }

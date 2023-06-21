@@ -37,8 +37,7 @@ void logs::LoggerFactory::initialize()
     //COMMON
     add(logs::Level::INFO, "Asserv", "console");
     add(logs::Level::INFO, "IAbyPath", "console");
-    add(logs::Level::INFO, "SensorsTimer", "console");
-    add(logs::Level::INFO, "Sensors", "console");
+    add(logs::Level::DEBUG, "Sensors", "console");
     add(logs::Level::INFO, "ServoObjectsSystem", "console");
     add(logs::Level::INFO, "ActionManagerTimer", "console");
     add(logs::Level::INFO, "LedBar", "console");
