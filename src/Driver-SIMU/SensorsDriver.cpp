@@ -40,22 +40,36 @@ void SensorsDriver::displayNumber(int number)
 
 }
 
-ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv()
+RobotPos SensorsDriver::transformPosTableToPosRobot(int nb, int x_table, int y_table)
 {
-    ASensorsDriver::bot_positions bot_pos;
 
     //coord table à transformer en coordonnées robot: 200,700 => position robot robot_
-    int x_table = 1000.0;
-    int y_table = 1500.0;
 
     RobotPosition p = robot_->asserv().pos_getPosition();
 
-    int d = std::sqrt(square(y_table-p.y) + square(x_table - p.x));
+    float d = std::sqrt(square(y_table-p.y) + square(x_table - p.x));
 
     float x_rep_robot = 0;
     float y_rep_robot = 0;
 
-    float alpha_rad = std::asin((y_table - p.y) / d) - p.theta;
+    float b_rad = std::asin((y_table - p.y) / d);
+    //pb quadrant car on ne connait pas les angles
+    if (x_table <= p.x) {
+        if (y_table <= p.y)
+            b_rad = -M_PI - b_rad;
+        else
+            b_rad = M_PI - b_rad;
+//    } else {
+//        if (y_table <= p.y)
+//        {
+//            //b_rad = b_rad;
+//        }
+//        else
+//        {
+//            //b_rad = -b_rad;
+//        }
+    }
+    float alpha_rad = b_rad - p.theta;
 
     std::fmod(alpha_rad, 2 * M_PI);
     if (alpha_rad < -M_PI)
@@ -63,15 +77,58 @@ ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv()
     if (alpha_rad > M_PI)
         alpha_rad -= M_PI;
 
+    //angle entre l'axe devant le robot et le segment entre les milieu des 2 robots
     float alpha_deg = (alpha_rad * 180.0 / M_PI);
 
     x_rep_robot = -d * std::sin(alpha_rad);
     y_rep_robot = d * std::cos(alpha_rad);
 
-    RobotPos pos = { 1, (int) x_rep_robot, (int) y_rep_robot, alpha_deg, d };
+    logger().info() << __FUNCTION__ << " x_rep_robot=" << x_rep_robot << " y_rep_robot=" << y_rep_robot
+            << " a_deg_rep_robot=" << alpha_deg << logs::end;
 
+    RobotPos pos = { nb, (int) x_rep_robot, (int) y_rep_robot, alpha_deg, (int)d };
+
+    return pos;
+}
+
+ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv()
+{
+    ASensorsDriver::bot_positions bot_pos;
+
+    //coord table à transformer en coordonnées robot: 200,700 => position robot robot_
+//    int x_table = 1000.0;
+//    int y_table = 1500.0;
+
+    int nb = 2;
+    RobotPos pos1 = transformPosTableToPosRobot(nb, 1000, 1200);
+    //RobotPos pos2 = transformPosTableToPosRobot(nb, 1300, 300);
+    /*
+
+     RobotPosition p = robot_->asserv().pos_getPosition();
+
+     int d = std::sqrt(square(y_table-p.y) + square(x_table - p.x));
+
+     float x_rep_robot = 0;
+     float y_rep_robot = 0;
+
+     float alpha_rad = std::asin((y_table - p.y) / d) - p.theta;
+
+     std::fmod(alpha_rad, 2 * M_PI);
+     if (alpha_rad < -M_PI)
+     alpha_rad += M_PI;
+     if (alpha_rad > M_PI)
+     alpha_rad -= M_PI;
+
+     float alpha_deg = (alpha_rad * 180.0 / M_PI);
+
+     x_rep_robot = -d * std::sin(alpha_rad);
+     y_rep_robot = d * std::cos(alpha_rad);
+
+     RobotPos pos = { 1, (int) x_rep_robot, (int) y_rep_robot, alpha_deg, d };
+     */
     //simu des positions adverses
-    bot_pos = { pos };
+    bot_pos = { pos1 };
+    //bot_pos = { pos1, pos2 };
 
     return bot_pos;
 }

@@ -304,24 +304,24 @@ int Sensors::leftSide()
 //0  0  0
 
 //NiceTOhave
-//99    9/99  99       // 1 jusqu'à 9 vecteur robot adv nous rentre dedans, vitesse reduite
-//3/30  1     2/20     // level 1 frontCenterThreshold_
-//97G   0     98D      // level 0 frontCenterVeryClosedThreshold_ => 0 arret complet
-//3/30  1     2/20     // 2 ou 3 si vecteur entrant, 20 ou 30 si le robot adv s'en va;
-//99    9/99  99       //possibilité de créer new level si on veut avec plus de threshold
+//99       9/99    99       // 1 jusqu'à 9 vecteur robot adv nous rentre dedans, vitesse reduite
+//3/30     1       2/20     // level 1 frontCenterThreshold_
+//97/-97G  0       98/-98D      // level 0 frontCenterVeryClosedThreshold_ => 0 arret complet
+//-3/-30   -1      -2/-20     // 2 ou 3 si vecteur entrant, 20 ou 30 si le robot adv s'en va;
+//-99      -9/-99  -99       //possibilité de créer new level si on veut avec plus de threshold
 
 //les coordonnées x_adv_mm, y_adv_mm sont sur le repère robot
-int Sensors::filtre_levelInFront(int threshold_mm, int threshold_veryclosed_mm, int dist_adv_mm, int x_adv_mm,
-        int y_adv_mm, float theta_deg)
+int Sensors::filtre_levelInFront(int threshold_LR_mm, int threshold_Front_mm, int threshold_veryclosed_front_mm,
+        int dist_adv_mm, int x_adv_mm, int y_adv_mm, float theta_adv_deg)
 {
 
-    logger().debug() << __FUNCTION__ << " threshold_mm=" << threshold_mm << " threshold_veryclosed_mm="
-            << threshold_veryclosed_mm << " dist_mm=" << dist_adv_mm << " x_mm=" << x_adv_mm << " y_mm=" << y_adv_mm
-            << " theta_deg=" << theta_deg << logs::end;
+    logger().debug() << __FUNCTION__ << " threshold_Front_mm=" << threshold_Front_mm
+            << " threshold_veryclosed_front_mm=" << threshold_veryclosed_front_mm << " dist_mm=" << dist_adv_mm
+            << " x_mm=" << x_adv_mm << " y_mm=" << y_adv_mm << " theta_adv_deg=" << theta_adv_deg << logs::end;
 
     //on renvoi 1 si c'est entre les 2 threshold
-    int xdist_adv = x_adv_mm; //coordx (devant la balise) à partir du centre du robot jusque le bord du robot adv
-    int ydist_adv = y_adv_mm; //coordy (droite et gauche) à partir du centre du robot jusque le bord du robot adv
+    int xdist_adv = x_adv_mm; //coordx (droite et gauche) à partir du centre du robot jusque le bord du robot adv
+    int ydist_adv = y_adv_mm; //coordy (devant la balise!) à partir du centre du robot jusque le bord du robot adv
 
     //patch balise!!!!!!!!!!!!!!!!
     if (xdist_adv > 0)
@@ -338,23 +338,24 @@ int Sensors::filtre_levelInFront(int threshold_mm, int threshold_veryclosed_mm, 
 
         //on garde une bande de 10cm pour dire que c'est 2 et non 3 ou 4
         // return 1 si c'est à droite en positif
-        if ((ydist_adv <= threshold_veryclosed_mm - 100) && (xdist_adv >= threshold_veryclosed_mm - 150)
-                && (xdist_adv <= threshold_mm)) {
+        if ((ydist_adv <= threshold_veryclosed_front_mm - 100) && (xdist_adv >= threshold_veryclosed_front_mm - 150)
+                && (xdist_adv <= threshold_Front_mm)) {
             return 1;
         }
         // return 2 si c'est à gauche en positif
-        if ((ydist_adv <= threshold_veryclosed_mm - 100) && (xdist_adv <= (-threshold_veryclosed_mm + 150))
-                && (xdist_adv >= -threshold_mm)) {
-            return 2;
-        }
+        if ((ydist_adv <= threshold_veryclosed_front_mm - 100) && (xdist_adv <= (-threshold_veryclosed_front_mm + 150))
+                        && (xdist_adv >= -threshold_Front_mm)) {
+                    return 2;
+                }
 
-        if ((ydist_adv <= threshold_mm) && (ydist_adv > threshold_veryclosed_mm)) {
+        if ((ydist_adv <= threshold_Front_mm) && (ydist_adv > threshold_veryclosed_front_mm)) {
             return 3;
         }
 
         //on renvoi 4 si c'est inf à closed threshold et si ce n'est pas sur les côtés
-        if ((ydist_adv <= threshold_veryclosed_mm) && (xdist_adv >= -threshold_veryclosed_mm)
-                && (xdist_adv <= threshold_veryclosed_mm)) {
+        if ((ydist_adv <= threshold_veryclosed_front_mm) && (xdist_adv >= -threshold_veryclosed_front_mm)
+                && (xdist_adv <= threshold_veryclosed_front_mm)) {
+
             return 4;
         }
     }
@@ -491,19 +492,20 @@ int Sensors::front(bool display)
             }
 
             if (inside_table) {
+                //affichage gris
+                this->robot()->svgw().writePosition_AdvPos(x_pos_adv_table, y_pos_adv_table, pos_robot_instantane.x, pos_robot_instantane.y, 0);
 
-                //this->actions().C3_is_taken = false;
 
-                //filtre des 4 positions de gateaux 2023
+
 
                 //filtre is_in_front devant ou coté
                 //0  0  0
                 //3  3  3  // level 1 frontCenterThreshold_
                 //2G 4  1D // level 2 frontCenterVeryClosedThreshold_
-                //3  3  3
+                //-3  -3  -3
                 //0  0  0
 
-                level_filtered = this->filtre_levelInFront(frontCenterThreshold_, frontCenterVeryClosedThreshold_,
+                level_filtered = this->filtre_levelInFront(140, frontCenterThreshold_, frontCenterVeryClosedThreshold_,
                         botpos.d, botpos.x, botpos.y, botpos.theta_deg);
                 logger().error() << __FUNCTION__ << " " << nb << " bots=" << botpos.nbDetectedBots
                         << " level_filtered= " << level_filtered << logs::end;
@@ -529,14 +531,14 @@ int Sensors::front(bool display)
                         logger().info() << level_filtered << " frontCenter xy= " << botpos.x << " " << botpos.y
                                 << logs::end;
                     if (x_pos_adv_table != -1 && y_pos_adv_table != -1)
-                        this->robot()->svgw().writePosition_AdvPos(x_pos_adv_table, y_pos_adv_table, pos_robot_instantane.x, pos_robot_instantane.y,
-                                1);
+                        this->robot()->svgw().writePosition_AdvPos(x_pos_adv_table, y_pos_adv_table,
+                                pos_robot_instantane.x, pos_robot_instantane.y, 1);
 
                 } else if (level_filtered == 4) { //seuil de level 4 ARRET
                     level = 4;
                     if (x_pos_adv_table != -1 && y_pos_adv_table != -1)
-                        this->robot()->svgw().writePosition_AdvPos(x_pos_adv_table, y_pos_adv_table, pos_robot_instantane.x, pos_robot_instantane.y,
-                                2);
+                        this->robot()->svgw().writePosition_AdvPos(x_pos_adv_table, y_pos_adv_table,
+                                pos_robot_instantane.x, pos_robot_instantane.y, 2);
                     if (display)
                         logger().info() << level_filtered << " frontCenter xy= " << botpos.x << " " << botpos.y
                                 << logs::end;
@@ -669,11 +671,12 @@ int Sensors::back(bool display)
             //filtre sur la table avec transformation de repere
             inside_table = this->robot()->passerv()->filtre_IsInsideTableXY(x_pos_adv_table, y_pos_adv_table);
             if (!remove_outside_table_) {
-                //if (1) {
+
                 inside_table = true;
             }
 
             if (inside_table) {
+
                 //filtre des 4 positions de gateaux 2023
 
                 //filtre is_in_front devant ou coté
@@ -942,7 +945,8 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
     }
 
 //ARRIERE/////////////////////////////////////////////////////////////////
-    if (sensors_.getAvailableBackCenter()) {
+    if (false) {
+        //if (sensors_.getAvailableBackCenter()) {
         if (sensors_.getAvailableFrontCenter()) {
             logger().error() << "Back & Front ACTIVATED IN SAME TIME !!!!!!!!=>BUG" << logs::end;
             //TODO regler le pb si activation des 2

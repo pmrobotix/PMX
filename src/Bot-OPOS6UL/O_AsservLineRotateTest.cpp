@@ -196,7 +196,7 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
             robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
             while (ts != TRAJ_FINISHED) {
                 ts = TRAJ_OK;
-                ts = robot.ia().iAbyPath().whileMoveForwardTo(x, y, false, 2000000, 3, 3, byPathfinding);
+                ts = robot.ia().iAbyPath().whileMoveForwardTo(x, y, false, 5000000, 3, 3, byPathfinding);
 
                 if (ts == TRAJ_NEAR_OBSTACLE) {
                     logger().error() << "===== TRAJ_NEAR_OBSTACLE FINAL" << logs::end;

@@ -582,7 +582,7 @@ void AsservDriver::path_ResetEmergencyStop()
 TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
 {
     if (emergencyStop_)
-        return TRAJ_INTERRUPTED;
+        return TRAJ_NEAR_OBSTACLE;
     m_pos.lock();
     float x_init = p_.x;
     float y_init = p_.y;
@@ -626,7 +626,7 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
 TRAJ_STATE AsservDriver::motion_DoFaceReverse(float x_mm, float y_mm)
 {
     if (emergencyStop_)
-        return TRAJ_INTERRUPTED;
+        return TRAJ_NEAR_OBSTACLE;
     m_pos.lock();
     float x_init = p_.x;
     float y_init = p_.y;
@@ -670,7 +670,7 @@ TRAJ_STATE AsservDriver::motion_DoFaceReverse(float x_mm, float y_mm)
 TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
 {
     if (emergencyStop_)
-        return TRAJ_INTERRUPTED;
+        return TRAJ_NEAR_OBSTACLE;
 //calcul du point d'arrivé
     m_pos.lock();
     float x_init = p_.x;
@@ -694,8 +694,8 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
 
 //Ax+b
     float a = 0, b = 0;
-    if (deltaXmm != 0) //cas droite verticale
-            {
+    //cas droite verticale
+    if (deltaXmm != 0) {
         a = deltaYmm / deltaXmm;
         b = y_init - (a * x_init);
     }
@@ -715,8 +715,9 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
     logger().debug() << "tps=" << tps_sec << " increment_mm=" << increment_mm << "  !!!!!" << logs::end;
 
     for (int nb = 0; nb < nb_increment; nb++) {
+
         if (emergencyStop_)
-            return TRAJ_INTERRUPTED;
+            return TRAJ_NEAR_OBSTACLE;
 
         m_pos.lock();
         if (deltaXmm == 0) //cas droite verticale
@@ -743,6 +744,8 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
         p_.y = y_init + deltaYmm;
     }
     m_pos.unlock();
+    if (emergencyStop_)
+                return TRAJ_NEAR_OBSTACLE;
     usleep(increment_time_us * 5);
 
     return TRAJ_FINISHED;
@@ -751,7 +754,7 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
 TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
 {
     if (emergencyStop_)
-        return TRAJ_INTERRUPTED;
+        return TRAJ_NEAR_OBSTACLE;
     int increment_time_us = 5000;
 
     m_pos.lock();
@@ -774,7 +777,7 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
     m_pos.unlock();
 
     if (emergencyStop_)
-        return TRAJ_INTERRUPTED;
+        return TRAJ_NEAR_OBSTACLE;
 
     usleep(increment_time_us * 7);
     return TRAJ_FINISHED;
@@ -783,7 +786,7 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
 TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)
 {
     if (emergencyStop_)
-        return TRAJ_INTERRUPTED;
+        return TRAJ_NEAR_OBSTACLE;
     logger().error() << "TODO motion_DoArcRotate !!!!!" << logs::end;
     return TRAJ_ERROR;
 }
@@ -791,7 +794,7 @@ TRAJ_STATE AsservDriver::motion_DoArcRotate(float angle_radians, float radius)
 TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm)
 {
     if (emergencyStop_)
-        return TRAJ_INTERRUPTED;
+        return TRAJ_NEAR_OBSTACLE;
     motion_DoFace(x_mm, y_mm);
 
     m_pos.lock();
@@ -806,7 +809,7 @@ TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm)
 TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm)
 {
     if (emergencyStop_)
-        return TRAJ_INTERRUPTED;
+        return TRAJ_NEAR_OBSTACLE;
     motion_DoFaceReverse(x_mm, y_mm);
 
     m_pos.lock();
@@ -821,14 +824,14 @@ TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm)
 TRAJ_STATE AsservDriver::motion_GotoChain(float x_mm, float y_mm)
 {
     if (emergencyStop_)
-        return TRAJ_INTERRUPTED;
+        return TRAJ_NEAR_OBSTACLE;
     return motion_Goto(x_mm, y_mm);
 }
 
 TRAJ_STATE AsservDriver::motion_GotoReverseChain(float x_mm, float y_mm)
 {
     if (emergencyStop_)
-        return TRAJ_INTERRUPTED;
+        return TRAJ_NEAR_OBSTACLE;
     return motion_GotoReverse(x_mm, y_mm);
 }
 

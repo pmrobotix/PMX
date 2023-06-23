@@ -13,8 +13,8 @@ enum TRAJ_STATE {
     TRAJ_NEAR_OBSTACLE,		//trajectory interrupted because of a near collision (sensors)
     TRAJ_IMPOSSIBLE,                    //trajectory cancelled by remote user or not found
     TRAJ_INTERRUPTED,		//trajectory interrupted by software
-    TRAJ_NEAR_OBSTACLE_REAR,
-    TRAJ_COLLISION_REAR
+    TRAJ_NEAR_OBSTACLE_REAR, //deprecated ?
+    TRAJ_COLLISION_REAR //deprecated ?
 };
 
 enum MOVEMENT_DIRECTION {

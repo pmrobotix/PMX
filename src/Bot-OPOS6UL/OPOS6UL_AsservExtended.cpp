@@ -15,7 +15,7 @@ OPOS6UL_AsservExtended::OPOS6UL_AsservExtended(std::string botId, OPOS6UL_RobotE
 {
     botId_ = botId;
 
-    useAsservType_ = ASSERV_EXT; //ASSERV_INT_ESIALR; //ASSERV_EXT; //ASSERV_INT_ESIALR; // !!!!!!!!!!!!!!!!!!!!
+    useAsservType_ = ASSERV_EXT; //ASSERV_INT_ESIALR; //ASSERV_EXT; //ASSERV_INT_ESIALR; //ASSERV_EXT; //ASSERV_INT_ESIALR; // !!!!!!!!!!!!!!!!!!!!
 
     robot_extended_ = robot;
 

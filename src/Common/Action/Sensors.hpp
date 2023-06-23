@@ -157,8 +157,8 @@ public:
     void addConfigBack(bool left, bool center, bool right);
 
     void remove_outside_table(bool enable);
-    int filtre_levelInFront(int threshold_mm, int threshold_veryclosed_mm, int dist_mm, int x_mm, int y_mm,
-            float theta_deg);
+    int filtre_levelInFront(int threshold_LR_mm, int threshold_Front_mm, int threshold_veryclosed_front_mm,
+            int dist_adv_mm, int x_adv_mm, int y_adv_mm, float theta_adv_deg);
     int filtre_levelInBack(int threshold_mm, int threshold_veryclosed_mm, int dist_mm, int x_mm, int y_mm,
             float theta_deg);
 

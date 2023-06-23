@@ -46,6 +46,9 @@ public:
     int sync(); //synchronise les données avec la balise
     ASensorsDriver::bot_positions getvPositionsAdv(); //retourne les dernieres positions connues
 
+    RobotPos transformPosTableToPosRobot(int nb, int x_table, int y_table);
+
+
     int rightSide();
     int leftSide();
 
