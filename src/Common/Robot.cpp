@@ -44,6 +44,8 @@ Robot::Robot() :
     skipSetup_ = 0;
     end90s_ = 0;
 
+    skipEndOfMatch = false;
+
     configureDefaultConsoleArgs();
 
 }

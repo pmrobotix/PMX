@@ -68,16 +68,16 @@ int SensorsDriver::sync() {
 
     if (vadv_.empty()) {
         if (regs_.nbDetectedBots >= 1) {
-            vadv_.push_back(RobotPos((int) regs_.nbDetectedBots, regs_.x1_mm, regs_.y1_mm, regs_.a1_deg, regs_.d1_mm));
+            vadv_.push_back(RobotPos((int) regs_.nbDetectedBots, regs_.x1_mm * 1.0, regs_.y1_mm* 1.0, regs_.a1_deg, regs_.d1_mm* 1.0));
         }
         if (regs_.nbDetectedBots >= 2) {
-            vadv_.push_back(RobotPos((int) regs_.nbDetectedBots, regs_.x2_mm, regs_.y2_mm, regs_.a2_deg, regs_.d2_mm));
+            vadv_.push_back(RobotPos((int) regs_.nbDetectedBots, regs_.x2_mm* 1.0, regs_.y2_mm* 1.0, regs_.a2_deg, regs_.d2_mm* 1.0));
         }
         if (regs_.nbDetectedBots >= 3) {
-            vadv_.push_back(RobotPos((int) regs_.nbDetectedBots, regs_.x3_mm, regs_.y3_mm, regs_.a3_deg, regs_.d3_mm));
+            vadv_.push_back(RobotPos((int) regs_.nbDetectedBots, regs_.x3_mm* 1.0, regs_.y3_mm* 1.0, regs_.a3_deg, regs_.d3_mm* 1.0));
         }
         if (regs_.nbDetectedBots >= 4) {
-            vadv_.push_back(RobotPos((int) regs_.nbDetectedBots, regs_.x4_mm, regs_.y4_mm, regs_.a4_deg, regs_.d4_mm));
+            vadv_.push_back(RobotPos((int) regs_.nbDetectedBots, regs_.x4_mm* 1.0, regs_.y4_mm* 1.0, regs_.a4_deg, regs_.d4_mm* 1.0));
         }
     }
 

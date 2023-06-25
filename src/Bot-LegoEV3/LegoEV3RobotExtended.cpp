@@ -44,6 +44,8 @@ LegoEV3RobotExtended::LegoEV3RobotExtended()
     B4_is_taken = false;
     A5_is_taken = false;
     D5_is_taken = false;
+
+
 }
 
 LegoEV3RobotExtended::~LegoEV3RobotExtended()

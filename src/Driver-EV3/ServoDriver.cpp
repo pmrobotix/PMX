@@ -208,7 +208,7 @@ void ServoDriver::setPulsePosWithRate(int servo, int pos_microsec, int millisec0
     else {
         int diff_pos = order_pos_microsec_ - current_pos_;
         //calcul du temps de déplacement souhaité pour diff
-        int timing_of_move_ms = rate_ms_per_1000 * std::abs(diff_pos) / 1000.0;
+        float timing_of_move_ms = rate_ms_per_1000 * std::abs(diff_pos) / 1000.0;
 
 //        std::cout << "order_pos_microsec_= "
 //                << order_pos_microsec_
@@ -227,26 +227,26 @@ void ServoDriver::setPulsePosWithRate(int servo, int pos_microsec, int millisec0
         long t = chrono.getElapsedTimeInMilliSec();
         //std::cout << "init t= "<< t << std::endl;
         long tf = t;
-        while (t <= timing_of_move_ms) {
+        while (t <= (int)timing_of_move_ms) {
             t = chrono.getElapsedTimeInMilliSec();
             if ((t - tf) > 10) {
                 //calcul de la position pour t
-                int cur_pos = t * 1000.0 / rate_ms_per_1000;
+                float cur_pos = t * 1000.0 / rate_ms_per_1000;
                 //std::cout << " t= " << std::dec << t << " tf= " << std::dec << tf << " cur_pos=" << std::dec << cur_pos << std::endl;
                 int newpos = 1500;
                 if (diff_pos > 0) {
-                    newpos = current_pos_ + cur_pos;
+                    newpos = current_pos_ + (int)cur_pos;
                 }
                 else {
-                    newpos = current_pos_ - cur_pos;
+                    newpos = current_pos_ - (int)cur_pos;
                 }
 
                 setpwm(servo, newpos);
                 servo_current_usec_[servo] = newpos;
                 tf = t;
             }
-            else std::this_thread::sleep_for(std::chrono::milliseconds(2));
-            std::this_thread::yield();
+            else std::this_thread::sleep_for(std::chrono::milliseconds(4));
+            //std::this_thread::yield();
         }
     }
 

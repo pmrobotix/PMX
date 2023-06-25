@@ -93,7 +93,7 @@ SwitchDriver::~SwitchDriver()
 int SwitchDriver::tirettePressed()
 {
     //Sleep obligatoire sur le bouton LEGO, si le temps est très court (1ms),pd de thread qui crashe
-    std::this_thread::sleep_for(std::chrono::microseconds(250000));
+    std::this_thread::sleep_for(std::chrono::microseconds(300000)); // 250000
 
     if (touch_.connected()) {
         if (touch_.value() == 1) //in case of MUX : 257

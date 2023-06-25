@@ -38,7 +38,7 @@ void L_AsservLineRotateTest::configureConsoleArgs(int argc, char **argv) //surch
     Arguments::Option cOpt('+', "Coordinates x,y,a");
     cOpt.addArgument("coordx", "coord x mm", "324");
     cOpt.addArgument("coordy", "coord y mm", "126.0");
-    cOpt.addArgument("coorda", "coord teta mm", "90.0");
+    cOpt.addArgument("coorda", "coord teta deg", "90.0"); //TODO ATTENTION ERROR SI (OPOSUL uniquement different de ZERO !!!
     robot.getArgs().addOption(cOpt);
 
     robot.getArgs().addArgument("back", "back:0,1", "0");

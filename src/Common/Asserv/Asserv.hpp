@@ -16,13 +16,15 @@ class AAsservDriver;
 /*!
  * Asservissement of the robot.It contains default elements.
  */
-class Asserv {
+class Asserv
+{
 private:
 
     /*!
      * \brief Return \ref Logger linked to \ref Asserv.
      */
-    static inline const logs::Logger& logger() {
+    static inline const logs::Logger& logger()
+    {
         static const logs::Logger &instance = logs::LoggerFactory::logger("Asserv");
         return instance;
     }
@@ -34,7 +36,8 @@ protected:
      * \0=Asserdriver 1=ESIAL internal 2=INSA internal (deprecated)
      */
     //int useAsservType_;
-    enum AsservType {
+    enum AsservType
+    {
         ASSERV_EXT, ASSERV_INT_ESIALR
     };
 
@@ -80,9 +83,6 @@ public:
      */
     virtual ~Asserv();
 
-
-
-
     //FONCTIONS DE BASE de l'ASSERV
     /*!
      * \brief reset Encoders.
@@ -91,11 +91,11 @@ public:
     /*!
      * \brief get accumulated ticks of encoders
      */
-    void getEncodersCounts(int * countR, int * countL);
+    void getEncodersCounts(int *countR, int *countL);
     /*!
      * \brief get delta ticks of encoders since last call.
      */
-    void getDeltaEncodersCounts(int * deltaCountR, int * deltaCountL);
+    void getDeltaEncodersCounts(int *deltaCountR, int *deltaCountL);
     /*!
      * \brief run Left Motor.
      * timems < 0 => use duty_cycle, run forever
@@ -115,19 +115,15 @@ public:
      */
     void stopMotors();
 
-
-
     //FONCTIONS SUPLLEMENTAIRES de l'ASSERV
-
 
     int getLowSpeedvalue();
 
     void setLowSpeedvalue(int value);
 
-    RobotPosition convertPositionToRepereTable(int d_mm, int x_mm, int y_mm, float theta_deg, int *x_botpos,
-                int *y_botpos);
+    RobotPosition convertPositionToRepereTable(float d_mm, float x_mm, float y_mm, float theta_deg, float *x_botpos,
+            float *y_botpos);
     virtual bool filtre_IsInsideTableXY(int x_botpos, int y_botpos) = 0;
-
 
     virtual void endWhatTodo();
 
@@ -191,10 +187,9 @@ public:
     TRAJ_STATE doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
     TRAJ_STATE doMoveForwardTo(float xMM, float yMM, bool rotate_ignored = false, float adjustment = 0);
 
-
-
     //http://nains-games.com/2014/12/intersection-de-deux-cercles.html
-    std::tuple<int, float, float> eq_2CirclesCrossed_getXY(float x1, float y1, float d1, float x2, float y2, float d2, float robot_size_l_mm);
+    std::tuple<int, float, float> eq_2CirclesCrossed_getXY(float x1, float y1, float d1, float x2, float y2, float d2,
+            float robot_size_l_mm);
     std::tuple<int, float, float> eq_2nd_deg_getXY(float a, float b, float A, float B, float C, float robot_size_l_mm);
     float eq_2nd_deg_getDelta(float A, float B, float C);
 
@@ -207,22 +202,23 @@ public:
      * mesure_mm
      * robot_size_l_mm largeur du robot à partir du centre
      */
-    int adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, RobotPosition p, float delta_j_mm, float delta_k_mm, float mesure_mm,
-            float robot_size_l_mm);
+    int adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, RobotPosition p, float delta_j_mm,
+            float delta_k_mm, float mesure_mm, float robot_size_l_mm);
 
     //attention la couleur de match doit deja etre effectué !
-    bool calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm, float y_depart_mm);
-    bool calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm, float y_depart_mm);
+    bool calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm,
+            float y_depart_mm);
+    bool calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b_bordure_mm, float x_depart_mm,
+            float y_depart_mm);
 
-
-
-
-    void setMatchColorPosition(bool c) {
+    void setMatchColorPosition(bool c)
+    {
         matchColorPosition_ = c;
     }
 
     //transformation suivant la couleur de match
-    inline float getRelativeX(float x_mm, float width = 0.0) {
+    inline float getRelativeX(float x_mm, float width = 0.0)
+    {
         //printf("matchcolor:%d", matchColorPosition_);
         //logger().error() << "color==" << matchColorPosition_ << " width=" << width<< logs::end;
         if (matchColorPosition_ != 0) {
@@ -231,7 +227,8 @@ public:
         return x_mm + width;
     }
 
-    inline float getRelativeXMin(float x_mm, float width = 0.0) {
+    inline float getRelativeXMin(float x_mm, float width = 0.0)
+    {
         //printf("matchcolor:%d", matchColorPosition_);
         //logger().error() << "color==" << matchColorPosition_ << " width=" << width<< logs::end;
         if (matchColorPosition_ != 0) {
@@ -241,9 +238,16 @@ public:
     }
 
     //transformation suivant la couleur de match
-    inline float getRelativeAngle(float degrees) {
+    inline float getRelativeAngle(float degrees)
+    {
         if (matchColorPosition_ != 0) {
             float limit = (180 - degrees);
+
+//            std::fmod(limit, 360);
+//            if (limit < -180)
+//                limit += 180;
+//            if (limit > 180)
+//                limit -= 180;
             if (limit >= 360) limit -= 360;
             return limit;
         }
@@ -251,16 +255,23 @@ public:
     }
 
     //TODO a tester
-    inline float limitAngle(float degrees) {
+    inline float limitAngle(float limit)
+    {
         // On ajuste l'angle à parcourir pour ne pas faire plus d'un demi-tour
         // Exemple, tourner de 340 degrés est plus chiant que de tourner de -20 degrés
-        if (degrees >= 180) {
-            degrees -= 2.0 * 180;
-        }
-        else if (degrees < -180) {
-            degrees += 2.0 * 180;
-        }
-        return degrees;
+
+        std::fmod(limit, 360);
+        if (limit < -180)
+            limit += 180;
+        if (limit > 180)
+            limit -= 180;
+//        if (degrees >= 180) {
+//            degrees -= 2.0 * 180;
+//        }
+//        else if (degrees < -180) {
+//            degrees += 2.0 * 180;
+//        }
+        return limit;
     }
 
 };

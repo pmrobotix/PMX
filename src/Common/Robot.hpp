@@ -55,6 +55,8 @@ public:
 
     bool tabletest;
 
+    bool skipEndOfMatch;
+
 protected:
 
     utils::Chronometer chrono_;
@@ -82,6 +84,7 @@ protected:
     bool waitForInit_ = false;
     std::string strategy_ = "all"; //defaut strategy
     std::string configVRR_ = "VRR"; //defaut config VRR
+
 
     //Action => RobotElement
     Actions *actions_default_;

@@ -28,7 +28,7 @@ bool O_launch_balls_1() {
     RobotPosition zone;
 
     robot.ia().iAbyPath().goToZone("zone_launch1", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 2000000, 3, 3, true, 40);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 2000000, 1, 1, true, 40);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "O_launch_balls_1 : zone_launch1  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();

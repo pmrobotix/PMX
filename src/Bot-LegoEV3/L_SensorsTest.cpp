@@ -25,7 +25,7 @@ void L_SensorsTest::run(int argc, char **argv)
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     robot.setMyColor(PMXGREEN);
     robot.asserv().startMotionTimerAndOdo(false); //assistedHandling is enabled with "true" !
-    robot.asserv().setPositionAndColor(400.0, 200.0, 90.0, (robot.getMyColor() != PMXGREEN)); //pour mettre une position dans la table
+    robot.asserv().setPositionAndColor(1000.0, 800.0, 90.0, (robot.getMyColor() != PMXGREEN)); //pour mettre une position dans la table
     RobotPosition p = robot.asserv().pos_getPosition();
     logger().info() << "p= " << p.x << " " << p.y << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus
             << logs::end;
@@ -65,16 +65,25 @@ void L_SensorsTest::run(int argc, char **argv)
 //    robot.actions().arm_right_deploy();
 //    robot.actions().arm_left_deploy(1000);
 
-    while (chrono.getElapsedTimeInSec() < 200) {
+    while (chrono.getElapsedTimeInSec() < 60) {
 
+        //Positions de l'adv sur le repere robot
         vadv = robot.actions().sensors().getPositionsAdv();
+
+        p = robot.asserv().pos_getPosition();
 
         for (ASensorsDriver::bot_positions::size_type i = 0; i < vadv.size(); i++) {
             logger().info() << " vadv nb=" << vadv.size() << " detected=" << vadv[i].nbDetectedBots << " x="
                     << vadv[i].x << " y=" << vadv[i].y << " a_deg=" << vadv[i].theta_deg << " d=" << vadv[i].d
                     << logs::end;
 
-            robot.svgw().writePosition_AdvPos(vadv[i].x, vadv[i].y, vadv[i].x, vadv[i].y, 4); //4= BLUE
+            float x_pos_adv_table = 0;
+            float y_pos_adv_table = 0;
+
+            //transcritption du repere robot vers repere table
+            robot.passerv()->convertPositionToRepereTable(vadv[i].d,
+                    vadv[i].x, vadv[i].y, vadv[i].theta_deg, &x_pos_adv_table, &y_pos_adv_table);
+            robot.svgw().writePosition_AdvPos(x_pos_adv_table, y_pos_adv_table, p.x, p.y, 4); //4= BLUE
         }
 
         front = robot.actions().sensors().front(true);
@@ -85,6 +94,8 @@ void L_SensorsTest::run(int argc, char **argv)
         utils::sleep_for_micros(1000000);
         logger().info() << " front=" << front << " back=" << back << logs::end;
     }
+
+
 
     logger().info() << "Happy End." << logs::end;
 }

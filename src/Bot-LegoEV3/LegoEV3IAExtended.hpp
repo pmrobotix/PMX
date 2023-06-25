@@ -19,12 +19,17 @@ private:
 
     SymmetricalPlayground *p_;
 
+    //Robot * robot_;
+
 public:
 
     //Configuration per robot and strategy
-
+    PlaygroundObjectID area_D3;
+    PlaygroundObjectID area_A4;
     PlaygroundObjectID area_B4;
+    PlaygroundObjectID area_C3;
     PlaygroundObjectID area_C4;
+    PlaygroundObjectID area_D4;
     PlaygroundObjectID area_B3;
     PlaygroundObjectID area_A3;
 /*

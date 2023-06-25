@@ -341,10 +341,10 @@ void ServoObjectsTimer::onTimer(utils::Chronometer chrono)
     long tms = chrono.getElapsedTimeInMilliSec() - move_starttime_ms_;
     servoObjectsSystem_.move_finished(false);
 
-    int new_cur_pos_index1 = 0;
+    float new_cur_pos_index1 = 0;
     int pos2apply1 = 0;
 
-    int new_cur_pos_index2 = 0;
+    float new_cur_pos_index2 = 0;
     int pos2apply2 = 0;
 
     if (name_ >= 1) {
@@ -352,16 +352,16 @@ void ServoObjectsTimer::onTimer(utils::Chronometer chrono)
             //calcul de la position pour t qui varie de 0 à eta_ms
             new_cur_pos_index1 = tms * 1000.0 / velocity1_;
             if (cur_pos1_ <= goal_pos1_) {
-                pos2apply1 = cur_pos1_ + new_cur_pos_index1;
+                pos2apply1 = cur_pos1_ + (int)new_cur_pos_index1;
             } else {
-                pos2apply1 = cur_pos1_ - new_cur_pos_index1;
+                pos2apply1 = cur_pos1_ - (int)new_cur_pos_index1;
             }
         } else {
             pos2apply1 = goal_pos1_;
         }
 
         logger().debug() << "t_ms= " << tms << " cur_pos_= " << cur_pos1_ << " goal_pos_= " << goal_pos1_
-                << " velocity_= " << velocity1_ << " new_cur_pos= " << new_cur_pos_index1 << " pos2apply= "
+                << " velocity_= " << velocity1_ << " new_cur_pos= " << (int)new_cur_pos_index1 << " pos2apply= "
                 << pos2apply1 << " eta_ms_= " << eta_ms_ << logs::end;
 
         servoObjectsSystem_.servodriver()->setPulsePos(servo1_, pos2apply1, 0);
@@ -373,16 +373,16 @@ void ServoObjectsTimer::onTimer(utils::Chronometer chrono)
             //calcul de la position pour t qui varie de 0 à eta_ms
             new_cur_pos_index2 = tms * 1000.0 / velocity2_;
             if (cur_pos2_ <= goal_pos2_) {
-                pos2apply2 = cur_pos2_ + new_cur_pos_index2;
+                pos2apply2 = cur_pos2_ + (int)new_cur_pos_index2;
             } else {
-                pos2apply2 = cur_pos2_ - new_cur_pos_index2;
+                pos2apply2 = cur_pos2_ - (int)new_cur_pos_index2;
             }
         } else {
             pos2apply2 = goal_pos2_;
         }
 
         logger().debug() << "t_ms= " << tms << " cur_pos_= " << cur_pos2_ << " goal_pos_= " << goal_pos2_
-                << " velocity2_= " << velocity2_ << " new_cur_pos2= " << new_cur_pos_index2 << " pos2apply2= "
+                << " velocity2_= " << velocity2_ << " new_cur_pos2= " << (int)new_cur_pos_index2 << " pos2apply2= "
                 << pos2apply2 << " eta_ms_= " << eta_ms_ << logs::end;
 
         servoObjectsSystem_.servodriver()->setPulsePos(servo2_, pos2apply2, 0);

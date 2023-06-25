@@ -575,7 +575,6 @@ void AsservDriver::path_CancelTrajectory()
 }
 void AsservDriver::path_ResetEmergencyStop()
 {
-    logger().error() << "TODO path_ResetEmergencyStop !!!!!" << logs::end;
     emergencyStop_ = false;
 }
 
@@ -602,19 +601,19 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
 
     // On ajuste l'angle à parcourir pour ne pas faire plus d'un demi-tour
     // Exemple, tourner de 340 degrés est plus chiant que de tourner de -20 degrés
-//    if (deltaTheta > M_PI) {
-//        deltaTheta -= 2.0 * M_PI;
-//    }
-//    else if (deltaTheta < -M_PI) {
-//        deltaTheta += 2.0 * M_PI;
-//    }
-
+    if (deltaTheta > M_PI) {
+        deltaTheta -= 2.0 * M_PI;
+    }
+    else if (deltaTheta < -M_PI) {
+        deltaTheta += 2.0 * M_PI;
+    }
+/*
     std::fmod(deltaTheta, 2 * M_PI);
     if (deltaTheta < -M_PI)
         deltaTheta += M_PI;
     if (deltaTheta > M_PI)
         deltaTheta -= M_PI;
-
+*/
     logger().debug() << "t_init=" << (t_init * 180.0f) / M_PI << " deltaTheta deg=" << (deltaTheta * 180.0f) / M_PI
             << " thetaCible=" << (thetaCible * 180.0f) / M_PI << logs::end;
 
@@ -732,7 +731,8 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
             p_.y = ((a * p_.x) + b);
         }
         m_pos.unlock();
-        usleep(increment_time_us);
+        //usleep(increment_time_us);
+        utils::sleep_for_micros(increment_time_us);
     }
 
     m_pos.lock();
@@ -746,8 +746,8 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
     m_pos.unlock();
     if (emergencyStop_)
                 return TRAJ_NEAR_OBSTACLE;
-    usleep(increment_time_us * 5);
-
+    //usleep(increment_time_us * 5);
+    utils::sleep_for_micros(increment_time_us * 5);
     return TRAJ_FINISHED;
 }
 
@@ -779,7 +779,9 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
     if (emergencyStop_)
         return TRAJ_NEAR_OBSTACLE;
 
-    usleep(increment_time_us * 7);
+    //usleep(increment_time_us * 7);
+    utils::sleep_for_micros(increment_time_us * 7);
+
     return TRAJ_FINISHED;
 }
 

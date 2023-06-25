@@ -87,6 +87,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     robot.asserv().stopMotors();
     robot.actions().clearAll();
     robot.freeMotion(); //stop the robot
+    robot.actions().sensors().stopTimerSensors();
     robot.stopExtraActions(); //stop sensors timer, stop specific actions, can take time for servos...
     robot.svgPrintEndOfFile();
 

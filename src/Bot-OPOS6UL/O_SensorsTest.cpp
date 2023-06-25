@@ -25,7 +25,7 @@ void O_SensorsTest::run(int argc, char** argv) {
     //robot.asserv().startMotionTimerAndOdo(false); //assistedHandling is enabled with "true" !
     utils::Chronometer chrono("O_SensorsTest");
     chrono.start();
-    int front, back, left, right, mright, mleft;
+    int front = 0, back = 0, left=0, right=0;
     ASensorsDriver::bot_positions vadv;
 
 /*
@@ -51,18 +51,29 @@ void O_SensorsTest::run(int argc, char** argv) {
         //usleep(100000);
     }
 */
-    //il faut mettre une position pour le filtre table
-    robot.asserv().startMotionTimerAndOdo(true);
-    robot.asserv().setPositionAndColor(700.0, 1300.0, 0.0,(robot.getMyColor() != PMXGREEN));
 
-    robot.actions().sensors().setIgnoreAllFrontNearObstacle(false);
-    robot.actions().sensors().setIgnoreAllBackNearObstacle(true);
+
+    //il faut mettre une position pour le filtre table
+    robot.asserv().startMotionTimerAndOdo(false);
+    robot.asserv().setPositionAndColor(1000.0, 600.0, 90.0,(robot.getMyColor() != PMXGREEN));
+    robot.svgPrintPosition();
+
+        RobotPosition p = robot.asserv().pos_getPosition();
+        logger().info() << "p= " << p.x  << " " << p.y << " mm " << p.theta * 180.0f / M_PI << "° "
+                << p.asservStatus << logs::end;
+
+//    robot.actions().sensors().setIgnoreAllFrontNearObstacle(false);
+//    robot.actions().sensors().setIgnoreAllBackNearObstacle(true);
+
+
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
     robot.actions().start();
     robot.actions().sensors().addTimerSensors(200);
     robot.chrono().start();
 
-    while (chrono.getElapsedTimeInSec() < 200) {
+    while (chrono.getElapsedTimeInSec() < 60) {
 
         robot.svgPrintPosition();
 
@@ -85,7 +96,7 @@ void O_SensorsTest::run(int argc, char** argv) {
         }
 
         front = robot.actions().sensors().front(1);
-        front = robot.actions().sensors().back(1);
+        back = robot.actions().sensors().back(1);
         logger().info() << " f=" << front << " b=" << back << logs::end;
 
         utils::sleep_for_micros(200000);

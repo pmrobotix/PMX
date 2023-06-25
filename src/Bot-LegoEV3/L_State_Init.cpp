@@ -381,7 +381,6 @@ L_State_Init::execute(Robot&)
 void L_State_Init::setPos()
 {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
-
     //largeur robot 247mm (sans les petites roues noires +5mm)
 
     logger().debug() << "setPos() executing" << logs::end;

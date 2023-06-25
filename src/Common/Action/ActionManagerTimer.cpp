@@ -221,7 +221,7 @@ void ActionManagerTimer::stopPTimer(std::string ptimerNameToDelete)
         std::this_thread::yield();
     }
     if (found)
-        ptimers_.erase(save); //TODO attention difference entre remove et erase ???
+        ptimers_.erase(save); //TODO atte;,ntion difference entre remove et erase ???
     else
         logger().debug() << "PTimer [" << ptimerNameToDelete << "] not found or already deleted." << logs::end;
 

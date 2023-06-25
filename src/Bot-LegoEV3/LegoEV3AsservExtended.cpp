@@ -67,30 +67,34 @@ bool LegoEV3AsservExtended::filtre_IsInsideTableXY(int x_botpos, int y_botpos)
     if (getRobot()->getMyColor() == PMXGREEN) {
         if (x_botpos > 650 && x_botpos < 850 && y_botpos < 1250 && y_botpos > 1000) {
 
+
+//TODO afficher en SVG et faire un ensure sur plusieurs fois
+
+
             getRobot()->B3_is_taken = true;
         }
 
-        if (x_botpos > 650 && x_botpos < 850 && y_botpos < 2000 && y_botpos > 1775) {
+        if (x_botpos > 500 && x_botpos < 850 && y_botpos < 2000 && y_botpos > 1775) {
 
             getRobot()->B4_is_taken = true;
         }
 
-        if (x_botpos > 0 && x_botpos < 650 && y_botpos < 2800 && y_botpos > 2100) {
+        if (x_botpos > 0 && x_botpos < 500 && y_botpos < 2800 && y_botpos > 2100) {
 
             getRobot()->A5_is_taken = true;
         }
 
-        if (x_botpos > 2000 - 650 && x_botpos < 2000 && y_botpos < 2800 && y_botpos > 2100) {
+        if (x_botpos > 2000 - 500 && x_botpos < 2000 && y_botpos < 2800 && y_botpos > 2100) {
 
             getRobot()->D5_is_taken = true;
         }
     } else {
-        if (x_botpos > (2000 - 850) && x_botpos < (2000 - 650) && y_botpos < 1250 && y_botpos > 1000) {
+        if (x_botpos > (2000 - 850) && x_botpos < (2000 - 500) && y_botpos < 1250 && y_botpos > 1000) {
 
             getRobot()->B3_is_taken = true;
         }
 
-        if (x_botpos > (2000 - 850) && x_botpos < (2000 - 650) && y_botpos < 2000 && y_botpos > 1775) {
+        if (x_botpos > (2000 - 850) && x_botpos < (2000 - 500) && y_botpos < 2000 && y_botpos > 1775) {
 
             getRobot()->B4_is_taken = true;
         }

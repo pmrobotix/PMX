@@ -482,7 +482,7 @@ RobotPosition AsservEsialR::odo_GetPosition()
 //                << odo_->getY()
 //                << logs::end;
     } else
-        logger().error() << "odo_GetPosition odo_ is NULL!!!!!!!!!!!" << logs::end;
+        logger().debug() << "odo_GetPosition odo_ is NULL!!!!!!!!!!!" << logs::end;
     return p_;
 }
 
