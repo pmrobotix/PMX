@@ -1,7 +1,7 @@
 #ifndef OPOS6UL_SERVODRIVER_HPP_
 #define OPOS6UL_SERVODRIVER_HPP_
 
-#include "../Common/Action.Driver/AServoDriver.hpp"
+#include "../Common/Interface.Driver/AServoDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 
 using namespace std;

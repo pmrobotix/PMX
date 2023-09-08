@@ -3,7 +3,7 @@
 
 #include <sys/types.h>
 
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../Common/Interface.Driver/AAsservDriver.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "../Thread/Thread.hpp"
@@ -65,7 +65,7 @@ private:
     CommandManagerA *commandM_;
 
     TRAJ_STATE pathStatus_;
-    RobotPosition p_; //position du robot via cet asservissement
+    ROBOTPOSITION p_; //position du robot via cet asservissement
 
     /*!
      * \brief Retourne le \ref Logger associé à la classe \ref AsservEsialR.
@@ -100,7 +100,7 @@ public:
 
     //fonctions asservissements externe par defaut
     void odo_SetPosition(float x_mm, float y_mm, float angle_rad);
-    RobotPosition odo_GetPosition();
+    ROBOTPOSITION odo_GetPosition();
 
     int path_GetLastCommandStatus();
     void path_InterruptTrajectory();

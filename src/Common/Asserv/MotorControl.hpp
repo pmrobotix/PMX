@@ -9,55 +9,54 @@
 
 class AAsservDriver;
 
-
 class MotorControl
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref MotorControl.
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger("MotorControl");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref MotorControl.
+     */
+    static inline const logs::Logger& logger()
+    {
+        static const logs::Logger &instance = logs::LoggerFactory::logger("MotorControl");
+        return instance;
+    }
 
-	AAsservDriver* asservdriver;
+    AAsservDriver *asservdriver_;
 
 public:
 
-	/*!
-	 * \brief Constructor.
-	 */
-	MotorControl(std::string botid);//Asserv & asserv
+    /*!
+     * \brief Constructor.
+     */
+    MotorControl(std::string botid, AAsservDriver* a); //Asserv & asserv
 
-	/*!
-	 * \brief Destructor.
-	 */
-	~MotorControl();
+    /*!
+     * \brief Destructor.
+     */
+    ~MotorControl();
 
-	/*!
-	 * \brief runMotorLeft
-	 * if regulation enabled  => power in ticks per second -860 / +860 (depends on drivers)
-	 * if regulation disabled => power in percentage -100 / +100
-	 */
-	void runMotorLeft(int power, int timems);
-	/*!
-	 * \brief runMotorRight
-	 * if regulation enabled  => power in ticks per second -860 / +860 (depends on drivers)
-	 * if regulation disabled => power in percentage -100 / +100
-	 */
-	void runMotorRight(int power, int timems);
+    /*!
+     * \brief runMotorLeft
+     * if regulation enabled  => power in ticks per second -860 / +860 (depends on drivers)
+     * if regulation disabled => power in percentage -100 / +100
+     */
+    void runMotorLeft(int power, int timems);
+    /*!
+     * \brief runMotorRight
+     * if regulation enabled  => power in ticks per second -860 / +860 (depends on drivers)
+     * if regulation disabled => power in percentage -100 / +100
+     */
+    void runMotorRight(int power, int timems);
 
-	/*!
-	 * \brief stop both motors.
-	 */
-	void stopMotors();
+    /*!
+     * \brief stop both motors.
+     */
+    void stopMotors();
 
-	//number of ticks to achieve using power.
-	void setMotorLeftPosition(int power, long ticks);
-	void setMotorRightPosition(int power, long ticks);
+    //number of ticks to achieve using power.
+    void setMotorLeftPosition(int power, long ticks);
+    void setMotorRightPosition(int power, long ticks);
 
 };
 

@@ -1,7 +1,7 @@
 #ifndef EV3_BUTTONDRIVER_HPP_
 #define EV3_BUTTONDRIVER_HPP_
 
-#include "../Common/Action.Driver/AButtonDriver.hpp"
+#include "../Common/Interface.Driver/AButtonDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 
 class ButtonDriver: public AButtonDriver

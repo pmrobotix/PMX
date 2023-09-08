@@ -18,7 +18,7 @@ private:
         return instance;
     }
 
-    AAsservDriver* asservdriver;
+    AAsservDriver* asservdriver_;
 
     bool isExternalEncoders_;
 
@@ -27,7 +27,7 @@ public:
     /*!
      * \brief Constructor.
      */
-    EncoderControl(std::string botid, bool isExternalEncoders);
+    EncoderControl(std::string botid, bool isExternalEncoders, AAsservDriver* a);
 
     /*!
      * \brief Destructor.

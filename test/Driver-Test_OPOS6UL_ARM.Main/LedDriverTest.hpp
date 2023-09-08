@@ -6,7 +6,7 @@
 #ifndef OPOS6UL_LEDDRIVERTEST_HPP
 #define OPOS6UL_LEDDRIVERTEST_HPP
 
-#include "../../src/Common/Action.Driver/ALedDriver.hpp"
+#include "../../src/Common/Interface.Driver/ALedDriver.hpp"
 
 #include "../../src/Log/LoggerFactory.hpp"
 #include "../Suite/UnitTest.hpp"

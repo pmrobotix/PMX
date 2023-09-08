@@ -2,6 +2,13 @@
 
 #include "AsservDriver.hpp"
 
+#include <stddef.h>
+#include <cmath>
+#include <string>
+
+#include "../Log/Logger.hpp"
+
+/*
 #include <stdio.h>
 #include <unistd.h>
 #include <cstring>
@@ -14,11 +21,11 @@
 #include "../Log/Logger.hpp"
 #include "serialib.hpp"
 //#include <include/CppLinuxSerial/SerialPort.hpp>
-
+*/
 //using namespace mn::CppLinuxSerial;
 using namespace std;
 
-AAsservDriver* AAsservDriver::create(string)
+AAsservDriver* AAsservDriver::create(string, ARobotPositionShared*)
 {
     static AsservDriver *instance = new AsservDriver();
     return instance;
@@ -27,7 +34,7 @@ AAsservDriver* AAsservDriver::create(string)
 AsservDriver::AsservDriver() :
         // //OPOS6UL_UART5=>1 ; OPOS6UL_UART4=>0
         //serialPort_(SERIAL_ADDRESS, BaudRate::B_115200),
-        connected_(true), asservCardStarted_(true), pathStatus_(TRAJ_OK), p_( { 0.0, 0.0, 0.0, -1 })
+        connected_(true), asservCardStarted_(true), pathStatus_(TRAJ_OK), p_( { 0.0, 0.0, 0.0, -1, 0})
 {
     pp_ = p_;
     errorCount_ = 0;
@@ -196,9 +203,9 @@ void AsservDriver::parseAsservPosition(string str)
         p_.y = (float) y; //mm
         p_.theta = a_rad;
         p_.asservStatus = CommandStatus;
-        p_.queueSize = PendingCommandCount;
-        p_.l_motor_speed = lSpeed;
-        p_.r_motor_speed = rSpeed;
+//        p_.queueSize = PendingCommandCount;
+//        p_.l_motor_speed = lSpeed;
+//        p_.r_motor_speed = rSpeed;
         p_.debug_nb = debg;
 
         m_pos.unlock();
@@ -388,7 +395,7 @@ void AsservDriver::odo_SetPosition(float x_mm, float y_mm, float angle_rad)
 
     usleep(100000);
 }
-RobotPosition AsservDriver::odo_GetPosition()
+ROBOTPOSITION AsservDriver::odo_GetPosition()
 {
     return p_;
 }
@@ -476,7 +483,7 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) //v4 +d
 
         m_pos.lock();
         p_.asservStatus = 1;
-        p_.direction = dist_mm > 0 ? MOVEMENT_DIRECTION::FORWARD : MOVEMENT_DIRECTION::BACKWARD;
+        //p_.direction = dist_mm > 0 ? MOVEMENT_DIRECTION::FORWARD : MOVEMENT_DIRECTION::BACKWARD;
         m_pos.unlock();
 
         m_statusCountDown.lock();
@@ -497,7 +504,8 @@ TRAJ_STATE AsservDriver::nucleo_waitEndOfTraj()
 {
 
     //on attend la fin de la queue et statut different de running
-    while (!(p_.queueSize == 0 && p_.asservStatus != 1)) {
+    //while (!(p_.queueSize == 0 && p_.asservStatus != 1)) {
+    while (!(p_.asservStatus != 1)) {
         //logger().error() << "nucleo_waitEndOfTraj statusCountDown_= " << statusCountDown_ << "  p_.asservStatus= " << p_.asservStatus << " p_.queueSize=" << p_.queueSize << logs::end;
         utils::Thread::sleep_for_millis(5);
     }
@@ -529,7 +537,7 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
     } else {
         m_pos.lock();
         p_.asservStatus = 1;
-        p_.direction = MOVEMENT_DIRECTION::TURN;
+        //p_.direction = MOVEMENT_DIRECTION::TURN;
         m_pos.unlock();
         m_statusCountDown.lock();
         statusCountDown_ = 2;
@@ -552,14 +560,14 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
     } else {
         m_pos.lock();
         p_.asservStatus = 1;
-        p_.direction = MOVEMENT_DIRECTION::TURN;
+        //p_.direction = MOVEMENT_DIRECTION::TURN;
         m_pos.unlock();
         m_statusCountDown.lock();
         statusCountDown_ = 2;
         m_statusCountDown.unlock();
 
         //serialPort_.Write("t" + to_string(AAsservDriver::degToRad(angle_radians)) + "\n");
-        nucleo_writeSerialSTR("t" + to_string(AAsservDriver::radToDeg(angle_radians)) + "\n");
+        nucleo_writeSerialSTR("t" + to_string(radToDeg(angle_radians)) + "\n");
         return nucleo_waitEndOfTraj();
     }
 }
@@ -578,7 +586,7 @@ TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm)
     } else {
         m_pos.lock();
         p_.asservStatus = 1; //running
-        p_.direction = MOVEMENT_DIRECTION::FORWARD;
+        //p_.direction = MOVEMENT_DIRECTION::FORWARD;
         m_pos.unlock();
         m_statusCountDown.lock();
         statusCountDown_ = 2;
@@ -599,7 +607,7 @@ TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm)
     } else {
         m_pos.lock();
         p_.asservStatus = 1; //running
-        p_.direction = MOVEMENT_DIRECTION::BACKWARD;
+        //p_.direction = MOVEMENT_DIRECTION::BACKWARD;
         m_pos.unlock();
         m_statusCountDown.lock();
         statusCountDown_ = 2;
@@ -621,7 +629,7 @@ TRAJ_STATE AsservDriver::motion_GotoChain(float x_mm, float y_mm)
     } else {
         m_pos.lock();
         p_.asservStatus = 1; //running
-        p_.direction = MOVEMENT_DIRECTION::FORWARD;
+        //p_.direction = MOVEMENT_DIRECTION::FORWARD;
         m_pos.unlock();
         m_statusCountDown.lock();
         statusCountDown_ = 2;
@@ -643,7 +651,7 @@ TRAJ_STATE AsservDriver::motion_GotoReverseChain(float x_mm, float y_mm)
     } else {
         m_pos.lock();
         p_.asservStatus = 1; //running
-        p_.direction = MOVEMENT_DIRECTION::BACKWARD;
+        //p_.direction = MOVEMENT_DIRECTION::BACKWARD;
         m_pos.unlock();
         m_statusCountDown.lock();
         statusCountDown_ = 2;

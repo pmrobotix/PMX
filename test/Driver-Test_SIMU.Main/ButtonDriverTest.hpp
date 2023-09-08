@@ -6,7 +6,7 @@
 #ifndef TEST_BUTTONDRIVERTEST_HPP
 #define TEST_BUTTONDRIVERTEST_HPP
 
-#include "../../src/Common/Action.Driver/AButtonDriver.hpp"
+#include "../../src/Common/Interface.Driver/AButtonDriver.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
 #include "../Suite/UnitTest.hpp"
 

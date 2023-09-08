@@ -1,7 +1,7 @@
 #ifndef EV3_SERVODRIVERMINDSTORM_HPP_
 #define EV3_SERVODRIVERMINDSTORM_HPP_
 
-#include "../Common/Action.Driver/AServoDriver.hpp"
+#include "../Common/Interface.Driver/AServoDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "ServoMotorExtend.hpp"
 

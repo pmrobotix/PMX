@@ -83,7 +83,7 @@ void O_Asserv_SquareTest::run(int argc, char** argv) {
         robot.asserv().doMoveForwardTo(x, y);
 
         robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
-        RobotPosition p = robot.asserv().pos_getPosition();
+        ROBOTPOSITION p = robot.asserv().pos_getPosition();
         logger().info() << "time= "
                 << robot.chrono().getElapsedTimeInMilliSec()
                 << "ms ; left= "

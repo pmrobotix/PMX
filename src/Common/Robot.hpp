@@ -6,7 +6,7 @@
 
 #include "../Log/LoggerFactory.hpp"
 #include "Arguments.hpp"
-#include "Asserv.Driver/AAsservDriver.hpp"
+#include "Interface.Driver/AAsservDriver.hpp"
 #include "ConsoleManager.hpp"
 #include "State/Automate.hpp"
 #include "Utils/Chronometer.hpp"
@@ -88,6 +88,8 @@ protected:
 
     //Action => RobotElement
     Actions *actions_default_;
+
+    ARobotPositionShared * sharedPosition_;
 private:
 
 
@@ -96,6 +98,8 @@ private:
     Asserv *asserv_default_;
 
     SvgWriter *svg_;
+
+
 
 public:
 #ifdef SIMU
@@ -185,6 +189,11 @@ public:
     std::string getID()
     {
         return id_;
+    }
+
+    ARobotPositionShared* sharedPosition()
+    {
+        return sharedPosition_;
     }
 
     inline Asserv* passerv()

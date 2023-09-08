@@ -7,9 +7,9 @@
 #include <string>
 #include <thread>
 
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../Common/Interface.Driver/AAsservDriver.hpp"
+#include "../Common/Interface.Driver/ARobotPositionShared.hpp"
 #include "../Common/Utils/Chronometer.hpp"
-#include "../Common/Action/ITimerPosixListener.hpp"
 #include "../Log/LoggerFactory.hpp"
 
 using namespace std;
@@ -53,6 +53,8 @@ private:
     float simuMaxSpeed_;
     float simuMaxPower_;
 
+    float simuCurrentSpeed_;
+
     utils::Chronometer chrono_;
 
     float tLeft_ms_;
@@ -81,10 +83,12 @@ private:
     float inverseMoteurG_;
     float inverseMoteurD_;
 
+    ARobotPositionShared *robotPositionShared_;
+
 protected:
 
     virtual void execute();
-    RobotPosition p_; //position SIMU du robot
+    ROBOTPOSITION p_; //position SIMU du robot
 
     float convertPowerToSpeed(int power);
     float convertMmToTicks(float meters);
@@ -132,7 +136,7 @@ public:
 
     //fonctions asservissements externe par defaut
     void odo_SetPosition(float x_mm, float y_mm, float angle_rad);
-    RobotPosition odo_GetPosition();
+    ROBOTPOSITION odo_GetPosition();
     int path_GetLastCommandStatus(); //deprecated
     void path_InterruptTrajectory();
     void path_CollisionOnTrajectory();
@@ -167,12 +171,12 @@ public:
     /*!
      * \brief Constructor.
      */
-    AsservDriver(std::string botid);
+    AsservDriver(std::string botid, ARobotPositionShared *aRobotPositionShared);
 
     /*!
      * \brief Destructor.
      */
-    ~AsservDriver();
+    virtual ~AsservDriver();
 
 };
 

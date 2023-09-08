@@ -1,7 +1,7 @@
 #ifndef OPOS6UL_ROBOTEXTENDED_HPP_
 #define OPOS6UL_ROBOTEXTENDED_HPP_
 
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
+//#include "../Common/Interface.Driver/AAsservDriver.hpp"
 #include "../Common/Robot.hpp"
 #include "../Log/LoggerFactory.hpp"
 

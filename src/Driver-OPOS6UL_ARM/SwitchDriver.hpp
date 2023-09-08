@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "../Common/Action.Driver/ASwitchDriver.hpp"
+#include "../Common/Interface.Driver/ASwitchDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 
 using namespace std;

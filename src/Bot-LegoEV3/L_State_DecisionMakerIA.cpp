@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 #include "../Common/Action/LedBar.hpp"
-#include "../Common/Action.Driver/ALedDriver.hpp"
+#include "../Common/Interface.Driver/ALedDriver.hpp"
 #include "../Common/IA/IAbyPath.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
@@ -25,7 +25,7 @@ bool L_push_cake_A2()
     robot.logger().info() << "start L_push_cake_A2" << logs::end;
 
     TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition zone;
+    ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_cake_A2", &zone);
     ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 10, 10, true);
@@ -122,7 +122,7 @@ bool L_push_cake_D2()
     robot.skipEndOfMatch = true;
 
     TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition zone;
+    ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_cake_D2", &zone);
     ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 10, 10, true);
@@ -232,7 +232,7 @@ bool L_push_cake_black_B3()
     }
 
     TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition zone;
+    ROBOTPOSITION zone;
     //robot.asserv().setLowSpeedForward(true, 60);
 
     robot.ia().iAbyPath().goToZone("zone_cake_black_B3", &zone);
@@ -328,7 +328,7 @@ bool L_push_cake_A5()
     }
 
     TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition zone;
+    ROBOTPOSITION zone;
 
     robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
@@ -415,7 +415,7 @@ bool L_push_cake_D5()
     //robot.asserv().setLowSpeedForward(true, 40);
 
     TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition zone;
+    ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_cake_D5", &zone);
 
@@ -524,7 +524,7 @@ bool L_push_cake_D5()
         }
         //sans pathfinding
         TRAJ_STATE ts = TRAJ_OK;
-        RobotPosition zone;
+        ROBOTPOSITION zone;
         robot.ia().iAbyPath().goToZone("zone_end", &zone);
         ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 1000000, 55, 55, false, 0);
         if (ts != TRAJ_FINISHED) {
@@ -581,7 +581,7 @@ bool L_end_of_match()
     //TODO gérer le gros robot
 
     TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition zone;
+    ROBOTPOSITION zone;
     robot.ia().iAbyPath().goToZone("zone_end", &zone);
     ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 1000000, 55, 55, true, 0);
     if (ts != TRAJ_FINISHED) {
@@ -627,7 +627,7 @@ bool L_end_of_matchA4()
     //TODO gérer le gros robot
 
     TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition zone;
+    ROBOTPOSITION zone;
     robot.ia().iAbyPath().goToZone("zone_endA4", &zone);
     ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 1000000, 55, 55, true, 0);
     if (ts != TRAJ_FINISHED) {

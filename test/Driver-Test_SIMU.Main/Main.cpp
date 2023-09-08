@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "../Suite/UnitTestSuite.hpp"
+#include "SensorDriverTest.hpp"
 #include "AsservDriverTest.hpp"
 #include "ButtonDriverTest.hpp"
 #include "LedDriverTest.hpp"
@@ -17,9 +18,8 @@ int main()
 
     //suite.addTest(new test::LedDriverTest());
     //suite.addTest(new test::ButtonDriverTest());
-    suite.addTest(new test::AsservDriverTest());
+    //suite.addTest(new test::AsservDriverTest());
+    suite.addTest(new test::SensorDriverTest());
 
-    suite.run();
-
-    return 0;
+    suite.run();    return 0;
 }

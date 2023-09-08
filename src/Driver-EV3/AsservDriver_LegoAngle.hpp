@@ -1,7 +1,7 @@
 #ifndef EV3_ASSERVDRIVER_lEGOANGLE_HPP_
 #define EV3_ASSERVDRIVER_lEGOANGLE_HPP_
 
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../Common/Interface.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "LegoAngleSensor.hpp"
 #include "LegoMotor.hpp"
@@ -79,7 +79,7 @@ public:
 
     //fonctions asservissements externe par defaut
     void odo_SetPosition(float x_m, float y_m, float angle_rad);
-    RobotPosition odo_GetPosition();
+    ROBOTPOSITION odo_GetPosition();
     int path_GetLastCommandStatus();
     void path_InterruptTrajectory();
     void path_CollisionOnTrajectory();

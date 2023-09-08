@@ -1,6 +1,6 @@
 #include "ServoUsingMotor.hpp"
 
-#include "../Action.Driver/AServoUsingMotorDriver.hpp"
+#include "../Interface.Driver/AServoUsingMotorDriver.hpp"
 
 
 using namespace std;

@@ -1,7 +1,7 @@
 #ifndef OPOS6UL_SERVOUSINGMOTORDRIVER_HPP_
 #define OPOS6UL_SERVOUSINGMOTORDRIVER_HPP_
 
-#include "../Common/Action.Driver/AServoUsingMotorDriver.hpp"
+#include "../Common/Interface.Driver/AServoUsingMotorDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 
 using namespace std;

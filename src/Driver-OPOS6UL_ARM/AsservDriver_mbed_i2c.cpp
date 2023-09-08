@@ -59,7 +59,7 @@ AAsservDriver * AAsservDriver::create(std::string)
 
 AsservDriver_mbed_i2c::AsservDriver_mbed_i2c() :
         mbedI2c_(0) //OPOS6UL_UART5=>1 ; OPOS6UL_UART4=>0
-                , connected_(false), asservMbedStarted_(false), pathStatus_(TRAJ_OK), p_( { 0.0, 0.0, 0.0, -1 })
+                , connected_(false), asservMbedStarted_(false), pathStatus_(TRAJ_OK), p_( { 0.0, 0.0, 0.0, -1, 0 })
 {
     errorCount_ = 0;
     if (mbedI2c_.setSlaveAddr(MBED_ADDRESS) < 0) //0xAA>>1 = 0x55
@@ -200,7 +200,7 @@ void AsservDriver_mbed_i2c::odo_SetPosition(float x_m, float y_m, float angle_ra
         odo_GetPosition();
     }
 }
-RobotPosition AsservDriver_mbed_i2c::odo_GetPosition() //en metre
+ROBOTPOSITION AsservDriver_mbed_i2c::odo_GetPosition() //en metre
 {
     m_pos.lock();
     p_ = mbed_GetPosition();
@@ -208,9 +208,9 @@ RobotPosition AsservDriver_mbed_i2c::odo_GetPosition() //en metre
     return p_;
 }
 
-RobotPosition AsservDriver_mbed_i2c::mbed_GetPosition() //en metre
+ROBOTPOSITION AsservDriver_mbed_i2c::mbed_GetPosition() //en metre
 {
-    RobotPosition p;
+    ROBOTPOSITION p;
     p.x = -1;
     p.y = -1;
     p.theta = -1;
@@ -254,7 +254,7 @@ RobotPosition AsservDriver_mbed_i2c::mbed_GetPosition() //en metre
         logger().debug() << "mbed_GetPosition p13 " << x_mm.f << " " << y_mm.f << " " << rad.f << " " << status
                 << logs::end;
 
-        RobotPosition p; //in m
+        ROBOTPOSITION p; //in m
         p.x = x_mm.f / 1000.0;
         p.y = y_mm.f / 1000.0;
         p.theta = rad.f;

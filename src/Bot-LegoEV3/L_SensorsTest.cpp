@@ -5,9 +5,9 @@
 #include <vector>
 
 #include "../Common/Action/Sensors.hpp"
-#include "../Common/Action.Driver/ASensorsDriver.hpp"
+#include "../Common/Interface.Driver/ASensorsDriver.hpp"
 #include "../Common/Asserv/Asserv.hpp"
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../Common/Interface.Driver/AAsservDriver.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
@@ -26,7 +26,7 @@ void L_SensorsTest::run(int argc, char **argv)
     robot.setMyColor(PMXGREEN);
     robot.asserv().startMotionTimerAndOdo(false); //assistedHandling is enabled with "true" !
     robot.asserv().setPositionAndColor(1000.0, 800.0, 90.0, (robot.getMyColor() != PMXGREEN)); //pour mettre une position dans la table
-    RobotPosition p = robot.asserv().pos_getPosition();
+    ROBOTPOSITION p = robot.asserv().pos_getPosition();
     logger().info() << "p= " << p.x << " " << p.y << " mm " << p.theta * 180.0f / M_PI << "° " << p.asservStatus
             << logs::end;
     robot.svgPrintPosition();
@@ -81,15 +81,13 @@ void L_SensorsTest::run(int argc, char **argv)
             float y_pos_adv_table = 0;
 
             //transcritption du repere robot vers repere table
-            robot.passerv()->convertPositionToRepereTable(vadv[i].d,
+            robot.sharedPosition()->convertPositionBeaconToRepereTable(vadv[i].d,
                     vadv[i].x, vadv[i].y, vadv[i].theta_deg, &x_pos_adv_table, &y_pos_adv_table);
             robot.svgw().writePosition_AdvPos(x_pos_adv_table, y_pos_adv_table, p.x, p.y, 4); //4= BLUE
         }
 
         front = robot.actions().sensors().front(true);
         back = robot.actions().sensors().back(true);
-
-
 
         utils::sleep_for_micros(1000000);
         logger().info() << " front=" << front << " back=" << back << logs::end;

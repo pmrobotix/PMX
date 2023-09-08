@@ -9,6 +9,7 @@
 #define COMMON_IA_IABYZONE_HPP_
 
 #include "../../Log/LoggerFactory.hpp"
+#include "../Interface.Driver/ARobotPositionShared.hpp"
 #include "IACommon.hpp"
 
 class Robot;
@@ -67,7 +68,7 @@ public:
     void ia_printZone(ZONE *z);
     void ia_checkZones();
 
-    void goToZone(const char *zoneName, RobotPosition *path_p, RobotPosition *zone_p);
+    void goToZone(const char *zoneName, ROBOTPOSITION *path_p, ROBOTPOSITION *zone_p);
 
 };
 #endif /* COMMON_IA_IABYZONE_HPP_ */

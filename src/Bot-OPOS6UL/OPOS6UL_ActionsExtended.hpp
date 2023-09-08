@@ -11,7 +11,7 @@
 #include "../Common/Action/Sensors.hpp"
 #include "../Common/Action/ServoObjectsSystem.hpp"
 #include "../Common/Action/Tirette.hpp"
-#include "../Common/Action.Driver/AServoDriver.hpp"
+#include "../Common/Interface.Driver/AServoDriver.hpp"
 #include "../Common/Action/ServoUsingMotor.hpp"
 
 class OPOS6UL_ActionsExtended: public Actions

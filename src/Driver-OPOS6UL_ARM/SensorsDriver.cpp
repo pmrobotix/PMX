@@ -2,18 +2,20 @@
 
 #include "SensorsDriver.hpp"
 
-#include <list>
 #include <string>
+#include <vector>
 
 #include "../Log/Logger.hpp"
 
+class ARobotPositionShared;
+
 using namespace std;
 
-ASensorsDriver * ASensorsDriver::create(std::string, Robot * robot) {
-    return new SensorsDriver();
+ASensorsDriver * ASensorsDriver::create(std::string, ARobotPositionShared * robotpos) {
+    return new SensorsDriver(robotpos);
 }
 
-SensorsDriver::SensorsDriver() :
+SensorsDriver::SensorsDriver(ARobotPositionShared * robotpos) :
         beaconSensors_(0, ADDRESS_BeaconSensors), connected_gp2y0e02b_(false) //, gp2_1_(0, ADDRESS_gp2y0e02b), gp2_2_(1, ADDRESS_gp2y0e02b)
 {
 

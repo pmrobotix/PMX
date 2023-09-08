@@ -1,11 +1,13 @@
 #include "MovingBase.hpp"
 
-#include <math.h>
-#include <unistd.h>
-#include <cstdlib>
-#include <string>
+#include <stdlib.h>
+#include <cmath>
+#include <thread>
 
 #include "../../Log/Logger.hpp"
+#include "../../Thread/Thread.hpp"
+#include "../Interface.Driver/AAsservDriver.hpp"
+#include "../Interface.Driver/ARobotPositionShared.hpp"
 
 using namespace std;
 
@@ -13,12 +15,16 @@ using namespace std;
  * \brief Constructor.
  */
 MovingBase::MovingBase(std::string botId) :
-        entraxe_mm(223), diam_mm(40), distTicks_(0), encoders_(botId, false), extEncoders_(botId, true), motors_(botId)
+        entraxe_mm(223), diam_mm(40), distTicks_(0), extEncoders_(botId, true, asservdriver_), encoders_(botId, false, asservdriver_), motors_(botId, asservdriver_)
 
 //TODO Fichier de configuration pour distinction entre robot dans le simulateur + remonter info sur extended + ajouter info encoder
 //ou en parametre dela creation dans les extended
 {
     collisionDetected_ = false;
+
+    aRobotPositionShared_ = ARobotPositionShared::create();
+    asservdriver_ = AAsservDriver::create(botId, aRobotPositionShared_);
+
 }
 
 void MovingBase::moveDTime(int power, int timems)

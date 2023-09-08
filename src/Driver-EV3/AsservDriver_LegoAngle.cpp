@@ -279,10 +279,11 @@ int AsservDriver_LegoAngle::getMotorRightCurrent()
 void AsservDriver_LegoAngle::odo_SetPosition(float x_m, float y_m, float angle_rad)
 {
 }
-RobotPosition AsservDriver_LegoAngle::odo_GetPosition()
+ROBOTPOSITION AsservDriver_LegoAngle::odo_GetPosition()
 {
 
-    return {0,0,0,0};
+    ROBOTPOSITION p = {0.0, 0.0, 0.0 ,0 , 0};
+        return p;
 }
 int AsservDriver_LegoAngle::path_GetLastCommandStatus()
 {

@@ -8,7 +8,7 @@
 #include <string>
 
 #include "../Common/Action/ButtonBar.hpp"
-#include "../Common/Action.Driver/AButtonDriver.hpp"
+#include "../Common/Interface.Driver/AButtonDriver.hpp"
 #include "../Log/Logger.hpp"
 #include "OPOS6UL_ActionsExtended.hpp"
 #include "OPOS6UL_RobotExtended.hpp"

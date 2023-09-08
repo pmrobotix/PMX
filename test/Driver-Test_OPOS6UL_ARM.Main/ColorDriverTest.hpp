@@ -7,7 +7,7 @@
 #define OPOS6UL_COLORDRIVERTEST_HPP
 
 
-#include "../../src/Common/Action.Driver/AColorDriver.hpp"
+#include "../../src/Common/Interface.Driver/AColorDriver.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
 #include "../Suite/UnitTest.hpp"
 

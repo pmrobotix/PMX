@@ -1,7 +1,7 @@
 #ifndef OPOS6UL_BUTTONDRIVER_HPP_
 #define OPOS6UL_BUTTONDRIVER_HPP_
 
-#include "../Common/Action.Driver/AButtonDriver.hpp"
+#include "../Common/Interface.Driver/AButtonDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "Adafruit_RGBLCDShield.hpp"
 

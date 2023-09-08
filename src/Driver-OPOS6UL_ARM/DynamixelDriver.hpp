@@ -8,7 +8,7 @@
 #ifndef DRIVER_OPOS6UL_ARM_DYNAMIXELDRIVER_HPP_
 #define DRIVER_OPOS6UL_ARM_DYNAMIXELDRIVER_HPP_
 
-#include "../Common/Action.Driver/AServoDriver.hpp"
+#include "../Common/Interface.Driver/AServoDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "CCAx12Adc.hpp"
 

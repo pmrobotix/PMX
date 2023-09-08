@@ -6,7 +6,7 @@
 
 #include "../Common/Action/Sensors.hpp"
 #include "../Common/Arguments.hpp"
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../Common/Interface.Driver/AAsservDriver.hpp"
 #include "../Common/Robot.hpp"
 #include "../Log/Logger.hpp"
 #include "OPOS6UL_ActionsExtended.hpp"
@@ -50,7 +50,7 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
         robot.setMyColor(PMXGREEN);
         robot.asserv().startMotionTimerAndOdo(true);
         robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXGREEN));
-        RobotPosition p = robot.asserv().pos_getPosition();
+        ROBOTPOSITION p = robot.asserv().pos_getPosition();
         logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
                 << p.asservStatus << logs::end;
         robot.svgPrintPosition();
@@ -79,14 +79,14 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
         float delta_j_mm = 100;
         float delta_k_mm = 0;
         float robot_size_l_mm = 150; //largeur du robot à partir du centre
-        RobotPosition p = robot.asserv().pos_getPosition();
+        ROBOTPOSITION p = robot.asserv().pos_getPosition();
         logger().info() << "POS before : x=" << p.x * 1000.0 << " y=" << p.y * 1000.0 << " a=" << p.theta << " degrees="
                 << p.theta * 180 / M_PI << logs::end;
 
         int succeed = robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm,
                 mesure_mm, robot_size_l_mm);
         sleep(1);
-        RobotPosition pnew = robot.asserv().pos_getPosition();
+        ROBOTPOSITION pnew = robot.asserv().pos_getPosition();
         logger().info() << "succeed=" << succeed << " POS after : x=" << pnew.x * 1000.0 << " y=" << pnew.y * 1000.0
                 << " a=" << pnew.theta << " degrees=" << pnew.theta * 180 / M_PI << logs::end;
     } else
@@ -109,14 +109,14 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
         float delta_j_mm = 100;
         float delta_k_mm = 0;
         float robot_size_l_mm = 150;
-        RobotPosition p = robot.asserv().pos_getPosition();
+        ROBOTPOSITION p = robot.asserv().pos_getPosition();
         logger().info() << "POS before : x=" << p.x * 1000.0 << " y=" << p.y * 1000.0 << " a=" << p.theta << " degrees="
                 << p.theta * 180 / M_PI << logs::end;
 
         int succeed = robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm,
                 mesure_mm, robot_size_l_mm);
         sleep(1);
-        RobotPosition pnew = robot.asserv().pos_getPosition();
+        ROBOTPOSITION pnew = robot.asserv().pos_getPosition();
         logger().info() << "succeed=" << succeed << " POS after : x=" << pnew.x * 1000.0 << " y=" << pnew.y * 1000.0
                 << " a=" << pnew.theta << " degrees=" << pnew.theta * 180 / M_PI << logs::end;
     } else
@@ -130,7 +130,7 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
         //robot.asserv().doMoveForwardTo(1680, 255); // avec un angle supplémentaire ou pas.
         robot.asserv().doMoveForwardAndRotateTo(1780, 280, 0); // avec un angle supplémentaire ou pas.
 
-        RobotPosition p = robot.asserv().pos_getPosition();
+        ROBOTPOSITION p = robot.asserv().pos_getPosition();
         logger().info() << "POS before : x=" << p.x * 1000.0 << " y=" << p.y * 1000.0 << " a=" << p.theta << " degrees="
                 << p.theta * 180 / M_PI << logs::end;
 
@@ -146,7 +146,7 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
         int succeed = robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm,
                 mesure_mm, robot_size_l_mm);
 
-        RobotPosition pnew = robot.asserv().pos_getPosition();
+        ROBOTPOSITION pnew = robot.asserv().pos_getPosition();
 
         logger().info() << "succeed=" << succeed << " POS after : x=" << pnew.x * 1000.0 << " y=" << pnew.y * 1000.0
                 << " a=" << pnew.theta << " degrees=" << pnew.theta * 180 / M_PI << logs::end;
@@ -161,7 +161,7 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
         //robot.asserv().doMoveForwardTo(1680, 255); // avec un angle supplémentaire ou pas.
         robot.asserv().doMoveForwardAndRotateTo(1780, 280, 0); // avec un angle supplémentaire ou pas.
 
-        RobotPosition p = robot.asserv().pos_getPosition();
+        ROBOTPOSITION p = robot.asserv().pos_getPosition();
         logger().info() << "POS before : x=" << p.x * 1000.0 << " y=" << p.y * 1000.0 << " a=" << p.theta << " degrees="
                 << p.theta * 180 / M_PI << logs::end;
 
@@ -177,7 +177,7 @@ void O_Asserv_CalageTest::run(int argc, char **argv)
         int succeed = robot.asserv().adjustRealPosition(pos_x_start_mm, pos_y_start_mm, p, delta_j_mm, delta_k_mm,
                 mesure_mm, robot_size_l_mm);
 
-        RobotPosition pnew = robot.asserv().pos_getPosition();
+        ROBOTPOSITION pnew = robot.asserv().pos_getPosition();
 
         logger().info() << "succeed=" << succeed << " POS after : x=" << pnew.x * 1000.0 << " y=" << pnew.y * 1000.0
                 << " a=" << pnew.theta << " degrees=" << pnew.theta * 180 / M_PI << logs::end;

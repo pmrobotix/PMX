@@ -3,7 +3,7 @@
 
 #include <cstdint>
 
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../Common/Interface.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "LegoMotor.hpp"
 #include "MagEncoders.hpp"
@@ -89,7 +89,7 @@ public:
 
     //fonctions asservissements externe par defaut
     void odo_SetPosition(float x_mm, float y_mm, float angle_rad);
-    RobotPosition odo_GetPosition();
+    ROBOTPOSITION odo_GetPosition();
     int path_GetLastCommandStatus();
     void path_InterruptTrajectory();
     void path_CollisionOnTrajectory();

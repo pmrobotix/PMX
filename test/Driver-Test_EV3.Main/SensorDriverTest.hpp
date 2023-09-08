@@ -6,7 +6,8 @@
 #ifndef EV3TEST_SENSORDRIVERTEST_HPP
 #define EV3TEST_SENSORDRIVERTEST_HPP
 
-#include "../../src/Common/Action.Driver/ASensorsDriver.hpp"
+#include "../../src/Common/Interface.Driver/ARobotPositionShared.hpp"
+#include "../../src/Common/Interface.Driver/ASensorsDriver.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
 #include "../Suite/UnitTest.hpp"
 
@@ -29,6 +30,7 @@ private:
     }
 
     ASensorsDriver* sensordriver_;
+    ARobotPositionShared * aRobotPositionShared_;
 
 public:
 
@@ -38,7 +40,9 @@ public:
     SensorDriverTest() :
             UnitTest("SensorsDriverTest")
     {
-        sensordriver_ = ASensorsDriver::create("Bot_SensorDriverTest");
+
+        aRobotPositionShared_ = ARobotPositionShared::create();
+        sensordriver_ = ASensorsDriver::create("Bot_SensorDriverTest", aRobotPositionShared_);
     }
 
     /*!

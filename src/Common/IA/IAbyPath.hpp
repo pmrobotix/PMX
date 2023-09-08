@@ -13,7 +13,7 @@
 #include <string>
 
 #include "../../Log/LoggerFactory.hpp"
-#include "../Asserv.Driver/AAsservDriver.hpp"
+#include "../Interface.Driver/AAsservDriver.hpp"
 #include "../Robot.hpp"
 #include "IACommon.hpp"
 
@@ -80,7 +80,7 @@ public:
     void ia_printZone(ZONE *z);
     void ia_checkZones();
 
-    void goToZone(const char *zoneName, RobotPosition *zone_p);
+    void goToZone(const char *zoneName, ROBOTPOSITION *zone_p);
 
     void playgroundFindPath(FoundPath * & path, Point& start, Point& end);
     void enable(PlaygroundObjectID id, bool enable);

@@ -9,7 +9,7 @@
 #include <string>
 
 #include "../Common/Action/Sensors.hpp"
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../Common/Interface.Driver/AAsservDriver.hpp"
 #include "../Common/IA/IAbyPath.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
@@ -28,7 +28,7 @@ bool O_IAbyPathTest_action1()
     robot.logger().info() << "start action1." << logs::end;
 
     TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition zone;
+    ROBOTPOSITION zone;
 
 //    robot.asserv().ignoreFrontCollision(false);
 //    robot.asserv().ignoreRearCollision(true);
@@ -52,7 +52,7 @@ bool O_IAByPathTest_action2()
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     robot.logger().info() << "start action2." << logs::end;
     TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition zone;
+    ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_2", &zone); //recuperation de la zone
 

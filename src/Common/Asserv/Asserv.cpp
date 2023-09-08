@@ -1,14 +1,18 @@
 #include "Asserv.hpp"
 
-#include <cmath>
-#include <cstdlib>
-#include <unistd.h>
+#include <stdlib.h>
+#include <thread>
+
 #include "../../Asserv.Esial/AsservEsialR.hpp"
 #include "../../Log/Logger.hpp"
+#include "../../Thread/Thread.hpp"
+#include "../Robot.hpp"
 
-Asserv::Asserv(std::string botId, Robot *robot)
+Asserv::Asserv(std::string botId, Robot *robot) //TODO utiliser uniquement robot, puis robot->getID() dans le create en dessous
 {
-    asservdriver_ = AAsservDriver::create(botId);
+
+    //aRobotPositionShared_ = ARobotPositionShared::create();
+    asservdriver_ = AAsservDriver::create(botId, robot->sharedPosition());
     probot_ = robot;
 
     useAsservType_ = ASSERV_INT_ESIALR; //default internal asserv
@@ -27,12 +31,13 @@ Asserv::Asserv(std::string botId, Robot *robot)
 
     adv_pos_centre_ = { -100.0, -100.0, 0, 0 };
 
+    //Configuration TABLE
     //table horizontale
     //x_ground_table_ = 3000;
     //table verticale
     x_ground_table_ = 2000;
 
-    lowSpeedvalue_ = 30; //a configurer par chaque extension robot
+    lowSpeedvalue_ = 30; //valeur par defaut qui est surchargée par chaque extension robot
 
 }
 Asserv::~Asserv()
@@ -40,11 +45,12 @@ Asserv::~Asserv()
     delete asservdriver_;
     delete pAsservEsialR_;
 }
-
-RobotPosition Asserv::convertPositionToRepereTable(float d_mm, float x_mm, float y_mm, float theta_deg, float *x_botpos,
+/*
+//TODO utiliser convertPositionBeaconToRepereTable dans ARobotPositionShared ?
+ROBOTPOSITION Asserv::convertPositionToRepereTable(float d_mm, float x_mm, float y_mm, float theta_deg, float *x_botpos,
                 float *y_botpos)
 {
-    RobotPosition p = pos_getPosition();
+    ROBOTPOSITION p = pos_getPosition();
     //coordonnées de l'objet detecté sur la table// M_P/2
 //    *x_botpos = p.x + (d_mm * cos(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
 //    *y_botpos = p.y + (d_mm * sin(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
@@ -68,7 +74,7 @@ RobotPosition Asserv::convertPositionToRepereTable(float d_mm, float x_mm, float
 
     return p;
 }
-
+*/
 
 void Asserv::endWhatTodo()
 {
@@ -181,14 +187,14 @@ void Asserv::setPositionReal(float x_mm, float y_mm, float thetaInRad)
         pAsservEsialR_->odo_SetPosition(x_mm, y_mm, thetaInRad);
 }
 
-RobotPosition Asserv::pos_getAdvPosition()
+ROBOTPOSITION Asserv::pos_getAdvPosition()
 {
     return adv_pos_centre_;
 }
 
-RobotPosition Asserv::pos_getPosition()
+ROBOTPOSITION Asserv::pos_getPosition()
 {
-    RobotPosition p;
+    ROBOTPOSITION p;
 
     if (useAsservType_ == ASSERV_EXT)
         p = asservdriver_->odo_GetPosition();
@@ -198,18 +204,18 @@ RobotPosition Asserv::pos_getPosition()
 }
 float Asserv::pos_getX_mm()
 {
-    RobotPosition p = pos_getPosition();
+    ROBOTPOSITION p = pos_getPosition();
     return p.x;
 }
 float Asserv::pos_getY_mm()
 {
-    RobotPosition p = pos_getPosition();
+    ROBOTPOSITION p = pos_getPosition();
     return p.y;
 }
 // angle in radian
 float Asserv::pos_getTheta()
 {
-    RobotPosition p = pos_getPosition();
+    ROBOTPOSITION p = pos_getPosition();
     return p.theta;
 }
 
@@ -785,7 +791,7 @@ std::tuple<int, float, float> Asserv::eq_2nd_deg_getXY(float a, float b, float A
 
 }
 
-int Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, RobotPosition p, float delta_jx_mm,
+int Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, ROBOTPOSITION p, float delta_jx_mm,
         float delta_ky_mm, float mesure_mm, float robot_size_l_mm)
 {
 
@@ -866,7 +872,7 @@ bool Asserv::calculateDriftRightSideAndSetPos(float d2_theo_bordure_mm, float d2
     if (abs(d2b_bordure_mm - d2_theo_bordure_mm) >= 5) {
 
 //Partie théorique basé sur la position d'arrivée (que croit le robot)
-        RobotPosition p = pos_getPosition();
+        ROBOTPOSITION p = pos_getPosition();
         //tan teta = d1/l
         float dx = (p.x) - x_depart_mm;
         float dy = (p.y) - y_depart_mm;
@@ -926,7 +932,7 @@ bool Asserv::calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b
     if (abs(d2b_bordure_mm - d2_theo_bordure_mm) >= 5) {
 
 //Partie théorique basé sur la position d'arrivée (que croit le robot)
-        RobotPosition p = pos_getPosition();
+        ROBOTPOSITION p = pos_getPosition();
         //tan teta = d1/l
         //float dx = (p.x * 1000.0) - getRelativeX(x_depart_mm);
         float dx = (p.x) - x_depart_mm;

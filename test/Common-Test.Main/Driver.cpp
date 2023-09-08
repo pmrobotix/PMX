@@ -1,64 +1,68 @@
 #include <string>
 
-#include "../../src/Common/Action.Driver/AButtonDriver.hpp"
-#include "../../src/Common/Action.Driver/ALcdShieldDriver.hpp"
-#include "../../src/Common/Action.Driver/ALedDriver.hpp"
-#include "../../src/Common/Action.Driver/ASensorsDriver.hpp"
-#include "../../src/Common/Action.Driver/AServoDriver.hpp"
-#include "../../src/Common/Action.Driver/AServoUsingMotorDriver.hpp"
-#include "../../src/Common/Action.Driver/ASoundDriver.hpp"
-#include "../../src/Common/Action.Driver/ASwitchDriver.hpp"
-#include "../../src/Common/Asserv.Driver/AAsservDriver.hpp"
-#include "../../src/Common/Action.Driver/AColorDriver.hpp"
+#include "../../src/Common/Interface.Driver/AAsservDriver.hpp"
+#include "../../src/Common/Interface.Driver/AButtonDriver.hpp"
+#include "../../src/Common/Interface.Driver/AColorDriver.hpp"
+#include "../../src/Common/Interface.Driver/ALcdShieldDriver.hpp"
+#include "../../src/Common/Interface.Driver/ALedDriver.hpp"
+#include "../../src/Common/Interface.Driver/ARobotPositionShared.hpp"
+#include "../../src/Common/Interface.Driver/ASensorsDriver.hpp"
+#include "../../src/Common/Interface.Driver/AServoDriver.hpp"
+#include "../../src/Common/Interface.Driver/AServoUsingMotorDriver.hpp"
+#include "../../src/Common/Interface.Driver/ASoundDriver.hpp"
+#include "../../src/Common/Interface.Driver/ASwitchDriver.hpp"
 
-AColorDriver * AColorDriver::create(std::string botid)
+ARobotPositionShared* ARobotPositionShared::create()
 {
-	return 0;
+    return 0;
 }
 
-AAsservDriver * AAsservDriver::create(std::string botid)
+AColorDriver* AColorDriver::create(std::string botid)
 {
-	return 0;
+    return 0;
 }
 
-ALedDriver * ALedDriver::create(std::string, int nb)
+AAsservDriver* AAsservDriver::create(std::string botid, ARobotPositionShared *aRobotPositionShared)
 {
-	return 0;
+    return 0;
 }
 
-
-AButtonDriver * AButtonDriver::create()
+ALedDriver* ALedDriver::create(std::string, int nb)
 {
-	return 0;
+    return 0;
 }
 
-ALcdShieldDriver * ALcdShieldDriver::create(std::string botId)
+AButtonDriver* AButtonDriver::create()
 {
-	return 0;
+    return 0;
 }
 
-ASensorsDriver * ASensorsDriver::create(std::string)
+ALcdShieldDriver* ALcdShieldDriver::create(std::string botId)
 {
-	return 0;
+    return 0;
 }
 
-
-AServoDriver * AServoDriver::create()
+ASensorsDriver* ASensorsDriver::create(std::string, ARobotPositionShared*)
 {
-	return 0;
+    return 0;
 }
 
-AServoUsingMotorDriver * AServoUsingMotorDriver::create()
+AServoDriver* AServoDriver::create()
 {
-	return 0;
+    return 0;
 }
 
-ASoundDriver * ASoundDriver::create()
+AServoUsingMotorDriver* AServoUsingMotorDriver::create()
 {
-	return 0;
+    return 0;
 }
 
-ASwitchDriver * ASwitchDriver::create(std::string)
+ASoundDriver* ASoundDriver::create()
 {
-	return 0;
+    return 0;
+}
+
+ASwitchDriver* ASwitchDriver::create(std::string)
+{
+    return 0;
 }

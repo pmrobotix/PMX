@@ -5,8 +5,9 @@
 
 #ifndef TEST_ASSERVDRIVERTEST_HPP
 #define TEST_ASSERVDRIVERTEST_HPP
+#include "../../src/Common/Interface.Driver/ARobotPositionShared.hpp"
+#include "../../src/Common/Interface.Driver/AAsservDriver.hpp"
 
-#include "../../src/Common/Asserv.Driver/AAsservDriver.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
 #include "../Suite/UnitTest.hpp"
 
@@ -28,19 +29,14 @@ private:
         return instance;
     }
 
-public:
-
+    ARobotPositionShared * aRobotPositionShared_;
     AAsservDriver *asservdriver;
+public:
 
     /*!
      * \brief Constructeur de la classe.
      */
-    AsservDriverTest() :
-            UnitTest("AsservDriverTest")
-    {
-        //test LegoEV3Robot ID
-        asservdriver = AAsservDriver::create("LegoEV3Robot");
-    }
+    AsservDriverTest() ;
 
     /*!
      * \brief Destructeur de la classe.

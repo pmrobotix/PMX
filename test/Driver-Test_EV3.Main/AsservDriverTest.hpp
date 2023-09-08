@@ -6,7 +6,7 @@
 #ifndef EV3TEST_ASSERVDRIVERTEST_HPP
 #define EV3TEST_ASSERVDRIVERTEST_HPP
 
-#include "../../src/Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../../src/Common/Interface.Driver/AAsservDriver.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
 #include "../Suite/UnitTest.hpp"
 
@@ -30,6 +30,8 @@ private:
         return instance;
     }
 
+    ARobotPositionShared * aRobotPositionShared_;
+
     AAsservDriver* asservdriver_;
 
 public:
@@ -40,7 +42,8 @@ public:
     AsservDriverTest() :
             UnitTest("AsservDriverTest")
     {
-        asservdriver_ = AAsservDriver::create("AsservDriverTest");
+        aRobotPositionShared_ = ARobotPositionShared::create();
+        asservdriver_ = AAsservDriver::create("AsservDriverTest", aRobotPositionShared_);
     }
 
     /*!

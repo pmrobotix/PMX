@@ -6,7 +6,7 @@
 #ifndef EV3TEST_LCDDRIVERTEST_HPP
 #define EV3TEST_LCDDRIVERTEST_HPP
 
-#include "../../src/Common/Action.Driver/ALcdShieldDriver.hpp"
+#include "../../src/Common/Interface.Driver/ALcdShieldDriver.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
 #include "../Suite/UnitTest.hpp"
 

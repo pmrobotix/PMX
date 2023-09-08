@@ -7,7 +7,7 @@
 
 #include <string>
 
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../Common/Interface.Driver/AAsservDriver.hpp"
 #include "../Common/IA/IAbyZone.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
@@ -23,7 +23,7 @@ bool action1()
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     robot.logger().info() << "start action1." << logs::end;
     TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition path, zone;
+    ROBOTPOSITION path, zone;
 
     robot.ia().iAbyZone().goToZone("zone1", &path, &zone);
     ts = robot.asserv().doMoveForwardTo(path.x, path.y);
@@ -46,7 +46,7 @@ bool action2()
     robot.logger().info() << "start action2." << logs::end;
 
     TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition path, zone;
+    ROBOTPOSITION path, zone;
 
     robot.ia().iAbyZone().goToZone("zone2", &path, &zone);
     ts = robot.asserv().doMoveForwardTo(path.x, path.y);
@@ -69,7 +69,7 @@ bool action3()
     robot.logger().info() << "start action3." << logs::end;
 
     TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition path, zone;
+    ROBOTPOSITION path, zone;
 
     robot.ia().iAbyZone().goToZone("zone3", &path, &zone);
     ts = robot.asserv().doMoveForwardTo(path.x, path.y);

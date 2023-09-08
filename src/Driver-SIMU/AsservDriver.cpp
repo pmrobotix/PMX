@@ -7,16 +7,17 @@
 
 using namespace std;
 
-AAsservDriver* AAsservDriver::create(std::string botid)
+AAsservDriver* AAsservDriver::create(std::string botid, ARobotPositionShared *aRobotPositionShared)
 {
-    static AsservDriver *instance = new AsservDriver(botid);
+    static AsservDriver *instance = new AsservDriver(botid, aRobotPositionShared);
     return instance;
 }
 
-AsservDriver::AsservDriver(std::string botid) :
+AsservDriver::AsservDriver(std::string botid, ARobotPositionShared *aRobotPositionShared) :
         chrono_("AsservDriver.SIMU")
 {
     botid_ = botid;
+    robotPositionShared_ = aRobotPositionShared;
 
     //config des moteurs et codeurs en SIMU
     inverseCodeurG_ = 1.0; //1.0 or -1.0
@@ -46,13 +47,15 @@ AsservDriver::AsservDriver(std::string botid) :
         //printf("--- AsservDriver - botid == OPOS6UL_Robot\n");
         //CONFIGURATION OPOS6UL_Robot SIMULATEUR CONSOLE  --------------------------------------------
         simuTicksPerMeter_ = 130566.0f; //nb ticks for 1000mm
-        simuMaxSpeed_ = 0.5; //m/s
+        simuMaxSpeed_ = 0.3; //m/s
         simuMaxPower_ = 100.0; //127.0;
         //CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------
     } else {
         logger().error() << "NO BOT ID!! => EXIT botid_=" << botid_ << logs::end;
         exit(-1);
     }
+
+    simuCurrentSpeed_ = simuMaxSpeed_;
 
     //reset position
     p_.x = 0.0;
@@ -109,16 +112,24 @@ AsservDriver::~AsservDriver()
 void AsservDriver::execute()
 {
 
-    int periodTime_us = 10000;
+    int periodTime_us = 15000; //15MS FOR THE LEGO ROBOT, 2ms for opos6ul
     utils::Chronometer chrono("AsservDriver::execute().SIMU");
     chrono.setTimer(periodTime_us);
-    RobotPosition p;
-    RobotPosition pp; //position oprécédente
+    ROBOTPOSITION p;
+    ROBOTPOSITION pp; //position précédente
+
+    m_pos.lock();
+    p = odo_GetPosition();
+    robotPositionShared_->setRobotPosition(p);
+    m_pos.unlock();
+    pp = p;
+
     while (1) {
 
         if (asservSimuStarted_) {
             m_pos.lock();
             p = odo_GetPosition();
+            robotPositionShared_->setRobotPosition(p);
             m_pos.unlock();
             //logger().info() << "execute() p.x=" << p.x << " p.y=" << p.y << " chrono=" << chrono.getElapsedTimeInMicroSec() << logs::end;
 
@@ -203,7 +214,7 @@ float AsservDriver::convertPowerToSpeed(int power)
         exit(-1);
     }
 
-    float speed = ((float) power * simuMaxSpeed_) / simuMaxPower_; //vitesse max = 250mm/s pour 860 de power
+    float speed = ((float) power * simuMaxPower_) / simuMaxPower_; //vitesse max = 250mm/s pour 860 de power
 
 //	logger().error() << " power=" << power
 //			<< " speed=" << speed
@@ -543,7 +554,7 @@ void AsservDriver::odo_SetPosition(float x_mm, float y_mm, float angle_rad)
     p_.theta = angle_rad;
     m_pos.unlock();
 }
-RobotPosition AsservDriver::odo_GetPosition()
+ROBOTPOSITION AsservDriver::odo_GetPosition()
 {
     return p_;
 }
@@ -603,17 +614,16 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
     // Exemple, tourner de 340 degrés est plus chiant que de tourner de -20 degrés
     if (deltaTheta > M_PI) {
         deltaTheta -= 2.0 * M_PI;
-    }
-    else if (deltaTheta < -M_PI) {
+    } else if (deltaTheta < -M_PI) {
         deltaTheta += 2.0 * M_PI;
     }
-/*
-    std::fmod(deltaTheta, 2 * M_PI);
-    if (deltaTheta < -M_PI)
-        deltaTheta += M_PI;
-    if (deltaTheta > M_PI)
-        deltaTheta -= M_PI;
-*/
+    /*
+     std::fmod(deltaTheta, 2 * M_PI);
+     if (deltaTheta < -M_PI)
+     deltaTheta += M_PI;
+     if (deltaTheta > M_PI)
+     deltaTheta -= M_PI;
+     */
     logger().debug() << "t_init=" << (t_init * 180.0f) / M_PI << " deltaTheta deg=" << (deltaTheta * 180.0f) / M_PI
             << " thetaCible=" << (thetaCible * 180.0f) / M_PI << logs::end;
 
@@ -702,13 +712,9 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
     logger().debug() << "dist_mm=" << dist_mm << "deltaXmm=" << deltaXmm << " deltaYmm=" << deltaYmm << " a=" << a
             << " b=" << b << "  !!!!!" << logs::end;
 
-//While à une certaine vitesse
-//set des valeurs
-//TODO break si path_collision
-    float speedm_s = 0.3; //m/s
     int increment_time_us = 5000; //us
-    float tps_sec = abs(dist_mm / speedm_s * 1000.0f);
-    float increment_mm = ((increment_time_us / 1000.0) * speedm_s);
+    float tps_sec = abs(dist_mm / simuCurrentSpeed_ * 1000.0f);
+    float increment_mm = ((increment_time_us / 1000.0) * simuCurrentSpeed_);
     int nb_increment = abs(dist_mm) / increment_mm;
 
     logger().debug() << "tps=" << tps_sec << " increment_mm=" << increment_mm << "  !!!!!" << logs::end;
@@ -719,8 +725,8 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
             return TRAJ_NEAR_OBSTACLE;
 
         m_pos.lock();
-        if (deltaXmm == 0) //cas droite verticale
-                {
+        //cas droite verticale
+        if (deltaXmm == 0) {
             if (deltaYmm > 0)
                 p_.y += increment_mm;
             else if (deltaYmm < 0)
@@ -731,13 +737,17 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
             p_.y = ((a * p_.x) + b);
         }
         m_pos.unlock();
+
+        //TODO break si path_collision
+//        if (emergencyStop_)
+//            break;
         //usleep(increment_time_us);
         utils::sleep_for_micros(increment_time_us);
     }
 
     m_pos.lock();
-    if (deltaXmm == 0) //cas droite verticale
-            {
+    //cas droite verticale
+    if (deltaXmm == 0) {
         p_.y = y_init + deltaYmm;
     } else {
         p_.x = x_init + deltaXmm;
@@ -745,7 +755,7 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
     }
     m_pos.unlock();
     if (emergencyStop_)
-                return TRAJ_NEAR_OBSTACLE;
+        return TRAJ_NEAR_OBSTACLE;
     //usleep(increment_time_us * 5);
     utils::sleep_for_micros(increment_time_us * 5);
     return TRAJ_FINISHED;
@@ -858,13 +868,20 @@ void AsservDriver::motion_ActivateManager(bool enable)
 
 void AsservDriver::motion_setLowSpeedForward(bool enable, int percent)
 {
-    // TODO motion_setLowSpeedForward
-    logger().debug() << "TODO motion_setLowSpeedForward !!!!!" << logs::end;
+    logger().debug() << " motion_setLowSpeedForward !!!!!" << logs::end;
+    if (enable)
+        simuCurrentSpeed_ = simuMaxSpeed_ * percent / 100.0;
+    else
+        simuCurrentSpeed_ = simuMaxSpeed_;
 }
 void AsservDriver::motion_setLowSpeedBackward(bool enable, int percent)
 {
-    // TODO motion_setLowSpeedBackward
-    logger().debug() << "TODO motion_setLowSpeedBackward !!!!!" << logs::end;
+
+    logger().debug() << " motion_setLowSpeedBackward !!!!!" << logs::end;
+    if (enable)
+        simuCurrentSpeed_ = -simuMaxSpeed_ * percent / 100.0;
+    else
+        simuCurrentSpeed_ = -simuMaxSpeed_;
 }
 
 //functions deprecated

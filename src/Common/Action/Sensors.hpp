@@ -5,7 +5,7 @@
 #include <string>
 
 #include "../../Log/LoggerFactory.hpp"
-#include "../Action.Driver/ASensorsDriver.hpp"
+#include "../Interface.Driver/ASensorsDriver.hpp"
 #include "../Robot.hpp"
 #include "../Utils/Chronometer.hpp"
 #include "AActionsElement.hpp"
@@ -42,10 +42,9 @@ private:
 //    }
 
     Robot *robot_;
-
     ASensorsDriver *sensorsdriver_;
 
-    int diameterOpponent_mm_;
+//    int diameterOpponent_mm_;
     bool remove_outside_table_;
 
     int frontLeftThreshold_;
@@ -163,7 +162,7 @@ public:
     int filtre_levelInBack(int threshold_mm, int threshold_veryclosed_mm, int dist_mm, int x_mm, int y_mm,
             float theta_deg);
 
-    void addThresholdDiameterOpponent_mm(int diam);
+//    void addThresholdDiameterOpponent_mm(int diam);
 
     //configuration à partir du centre du robot
     void addThresholdFront(int left, int center, int right);

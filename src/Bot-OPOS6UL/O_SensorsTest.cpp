@@ -5,7 +5,7 @@
 #include <thread>
 
 #include "../Common/Action/Sensors.hpp"
-#include "../Common/Action.Driver/ASensorsDriver.hpp"
+#include "../Common/Interface.Driver/ASensorsDriver.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Asserv/Asserv.hpp"
 #include "../Common/Utils/Chronometer.hpp"
@@ -58,7 +58,7 @@ void O_SensorsTest::run(int argc, char** argv) {
     robot.asserv().setPositionAndColor(1000.0, 600.0, 90.0,(robot.getMyColor() != PMXGREEN));
     robot.svgPrintPosition();
 
-        RobotPosition p = robot.asserv().pos_getPosition();
+    ROBOTPOSITION p = robot.asserv().pos_getPosition();
         logger().info() << "p= " << p.x  << " " << p.y << " mm " << p.theta * 180.0f / M_PI << "° "
                 << p.asservStatus << logs::end;
 

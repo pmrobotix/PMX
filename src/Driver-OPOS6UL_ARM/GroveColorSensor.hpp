@@ -9,7 +9,7 @@
 
 #include <as_devices/cpp/as_i2c.hpp>
 
-#include "../Common/Action.Driver/AColorDriver.hpp"
+#include "../Common/Interface.Driver/AColorDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 
 #define	GROVE_COLOR_DEFAULT_ADDRESS    0x39 // Address of the grove Color Sensor 0x39

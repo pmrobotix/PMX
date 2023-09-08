@@ -8,7 +8,7 @@
 
 
 
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../Common/Interface.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "../Thread/Thread.hpp"
 //#include <include/CppLinuxSerial/SerialPort.hpp>
@@ -87,11 +87,11 @@ private:
 
     void tokenize(std::string const &str, const char delim, std::vector<std::string> &out);
 
-    RobotPosition pp_; //position precedente
+    ROBOTPOSITION pp_; //position precedente
 protected:
 
     virtual void execute();
-    RobotPosition p_;
+    ROBOTPOSITION p_;
 public:
 
     void endWhatTodo();
@@ -124,7 +124,7 @@ public:
 
     //fonctions asservissements externe par defaut
     void odo_SetPosition(float x_mm, float y_mm, float angle_rad);
-    RobotPosition odo_GetPosition();
+    ROBOTPOSITION odo_GetPosition();
     int path_GetLastCommandStatus();
     void path_InterruptTrajectory();
     void path_CollisionOnTrajectory();

@@ -6,7 +6,7 @@
 #ifndef EV3TEST_SOUNDDRIVERTEST_HPP
 #define EV3TEST_SOUNDDRIVERTEST_HPP
 
-#include "../../src/Common/Action.Driver/ASoundDriver.hpp"
+#include "../../src/Common/Interface.Driver/ASoundDriver.hpp"
 #include "../Suite/UnitTest.hpp"
 
 namespace test

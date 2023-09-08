@@ -28,7 +28,8 @@ AsservEsialR::AsservEsialR(Robot *robot) :
 {
     robot_ = robot; //Reference vers le robot
     loop_finished_ = false;
-    asservdriver = AAsservDriver::create(robot_->getID());
+    ARobotPositionShared *robotPositionShared = ARobotPositionShared::create();
+    asservdriver = AAsservDriver::create(robot_->getID(), robotPositionShared);
 
     periodNb_ = 0;
     loopDelayInMillisec_ = 0;
@@ -280,7 +281,7 @@ void AsservEsialR::execute()
     debug << "executing... every " << loopDelayInMillisec_ << logs::flush;
 
     chronoTimer_.setTimer(loopDelayInMillisec_ * 1000);
-    RobotPosition p;
+    ROBOTPOSITION p;
     unsigned long long current = 0;
     unsigned long long last = 0;
     long nb = 0;
@@ -459,7 +460,7 @@ void AsservEsialR::odo_SetPosition(float x_mm, float y_mm, float angle_rad)
         unlock();
     }
 }
-RobotPosition AsservEsialR::odo_GetPosition()
+ROBOTPOSITION AsservEsialR::odo_GetPosition()
 {
     if (odo_ != NULL) {
         lock();

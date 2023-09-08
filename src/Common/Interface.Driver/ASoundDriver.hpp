@@ -4,6 +4,30 @@
 #include <string>
 #include <vector>
 
+/*
+class ARobot
+{
+
+public:
+
+
+    static ARobot* create();
+
+
+
+    virtual ~ARobot()
+    {
+    }
+
+protected:
+
+
+    ARobot()
+    {
+    }
+
+};
+*/
 class ASoundDriver
 {
 

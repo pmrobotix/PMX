@@ -6,7 +6,7 @@
 
 #include "../Common/Action/Sensors.hpp"
 #include "../Common/Arguments.hpp"
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../Common/Interface.Driver/AAsservDriver.hpp"
 #include "../Common/IA/IAbyPath.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/State/Automate.hpp"
@@ -36,7 +36,7 @@ void L_AsservLineRotateTest::configureConsoleArgs(int argc, char **argv) //surch
     robot.getArgs().addArgument("nb", "nb of time", "1");
 
     Arguments::Option cOpt('+', "Coordinates x,y,a");
-    cOpt.addArgument("coordx", "coord x mm", "324");
+    cOpt.addArgument("coordx", "coord x mm", "324.0");
     cOpt.addArgument("coordy", "coord y mm", "126.0");
     cOpt.addArgument("coorda", "coord teta deg", "90.0"); //TODO ATTENTION ERROR SI (OPOSUL uniquement different de ZERO !!!
     robot.getArgs().addOption(cOpt);
@@ -84,21 +84,21 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
     Arguments args = robot.getArgs();
     if (args["s"] != "0") {
         s = atoi(args["s"].c_str());
-        logger().debug() << "Arg s set " << args["s"] << ", s = " << s << logs::end;
+        logger().info() << "Arg s set " << args["s"] << ", s = " << s << logs::end;
     }
     if (args["d"] != "0") {
         d = atof(args["d"].c_str());
-        logger().debug() << "Arg d set " << args["d"] << ", d = " << d << logs::end;
+        logger().info() << "Arg d set " << args["d"] << ", d = " << d << logs::end;
     }
 
     if (args["x"] != "0") {
         x = atof(args["x"].c_str());
-        logger().debug() << "Arg x set " << args["x"] << ", x = " << x << logs::end;
+        logger().info() << "Arg x set " << args["x"] << ", x = " << x << logs::end;
     }
 
     if (args["y"] != "0") {
         y = atof(args["y"].c_str());
-        logger().debug() << "Arg y set " << args["y"] << ", y = " << y << logs::end;
+        logger().info() << "Arg y set " << args["y"] << ", y = " << y << logs::end;
     }
 
     if (args["a"] != "0") {
@@ -108,7 +108,7 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
 
     if (args["nb"] != "0") {
         nb = atoi(args["nb"].c_str());
-        logger().debug() << "Arg nb set " << args["nb"] << ", nb = " << nb << logs::end;
+        logger().info() << "Arg nb set " << args["nb"] << ", nb = " << nb << logs::end;
     }
     coordx = atof(args['+']["coordx"].c_str());
     coordy = atof(args['+']["coordy"].c_str());
@@ -124,6 +124,7 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
     logger().info() << "COORD avec x=" << coordx << " y=" << coordy << " a=" << coorda_deg << logs::end;
 
     robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXGREEN));
+    utils::sleep_for_micros(30000);//pause pour bien prendre en compte la position ?
 
     robot.asserv().getEncodersCounts(&right, &left);
 

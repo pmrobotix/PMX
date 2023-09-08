@@ -10,6 +10,16 @@
 #include "../../src/Common/Utils/Chronometer.hpp"
 #include "../../src/Log/Logger.hpp"
 
+
+test::AsservDriverTest::AsservDriverTest() :
+            UnitTest("AsservDriverTest")
+    {
+
+        aRobotPositionShared_ = ARobotPositionShared::create();
+        //test LegoEV3Robot ID
+        asservdriver = AAsservDriver::create("LegoEV3Robot", aRobotPositionShared_);
+    }
+
 void test::AsservDriverTest::suite()
 {
     this->testSet();

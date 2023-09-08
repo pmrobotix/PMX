@@ -1,13 +1,14 @@
 #include "Sensors.hpp"
 
+#include <stdlib.h>
 #include <algorithm>
-#include <cmath>
 #include <vector>
 
 #include "../../Log/Logger.hpp"
 #include "../../Log/SvgWriter.hpp"
 #include "../../Thread/Thread.hpp"
 #include "../Asserv/Asserv.hpp"
+#include "../Interface.Driver/ARobotPositionShared.hpp"
 #include "Actions.hpp"
 
 using namespace std;
@@ -16,11 +17,12 @@ Sensors::Sensors(Actions &actions, Robot *robot) :
         AActionsElement(actions), robot_(robot)
 
 {
-    sensorsdriver_ = ASensorsDriver::create(robot->getID(), robot_);
+
+    sensorsdriver_ = ASensorsDriver::create(robot->getID(), robot->sharedPosition());
 
     remove_outside_table_ = true;
 
-    addThresholdDiameterOpponent_mm(300);
+//    addThresholdDiameterOpponent_mm(300);
     addThresholdFront(0, 0, 0);
     addThresholdFrontVeryClosed(0, 0, 0);
     addThresholdBack(0, 0, 0);
@@ -106,10 +108,10 @@ void Sensors::remove_outside_table(bool enable)
     remove_outside_table_ = enable;
 }
 
-void Sensors::addThresholdDiameterOpponent_mm(int diam)
-{
-    diameterOpponent_mm_ = diam;
-}
+//void Sensors::addThresholdDiameterOpponent_mm(int diam)
+//{
+//    diameterOpponent_mm_ = diam;
+//}
 
 void Sensors::addThresholdFront(int left, int center, int right)
 {
@@ -316,13 +318,14 @@ int Sensors::filtre_levelInFront(int threshold_LR_mm, int threshold_Front_mm, in
         float dist_adv_mm, float x_adv_mm, float y_adv_mm, float theta_adv_deg)
 {
 
-    logger().debug() << __FUNCTION__ << " threshold_LR_mm=" << threshold_LR_mm << " threshold_Front_mm=" << threshold_Front_mm
-            << " threshold_veryclosed_front_mm=" << threshold_veryclosed_front_mm << " dist_mm=" << dist_adv_mm
-            << " x_mm=" << x_adv_mm << " y_mm=" << y_adv_mm << " theta_adv_deg=" << theta_adv_deg << logs::end;
+    logger().debug() << __FUNCTION__ << " threshold_LR_mm=" << threshold_LR_mm << " threshold_Front_mm="
+            << threshold_Front_mm << " threshold_veryclosed_front_mm=" << threshold_veryclosed_front_mm << " dist_mm="
+            << dist_adv_mm << " x_mm=" << x_adv_mm << " y_mm=" << y_adv_mm << " theta_adv_deg=" << theta_adv_deg
+            << logs::end;
 
     //on renvoi 1 si c'est entre les 2 threshold
-    int xdist_adv = (int)x_adv_mm; //coordx (droite et gauche) à partir du centre du robot jusque le bord du robot adv
-    int ydist_adv = (int)y_adv_mm; //coordy (devant la balise!) à partir du centre du robot jusque le bord du robot adv
+    int xdist_adv = (int) x_adv_mm; //coordx (droite et gauche) à partir du centre du robot jusque le bord du robot adv
+    int ydist_adv = (int) y_adv_mm; //coordy (devant la balise!) à partir du centre du robot jusque le bord du robot adv
 
     //patch balise!!!!!!!!!!!!!!!!
     if (xdist_adv > 0)
@@ -338,24 +341,23 @@ int Sensors::filtre_levelInFront(int threshold_LR_mm, int threshold_Front_mm, in
     if (ydist_adv > 0) {
 
         // return 1 si c'est à droite en positif
-        if ((ydist_adv <= threshold_veryclosed_front_mm)
-                && (xdist_adv >= threshold_LR_mm) && (xdist_adv <= threshold_Front_mm)) {
+        if ((ydist_adv <= threshold_veryclosed_front_mm) && (xdist_adv >= threshold_LR_mm)
+                && (xdist_adv <= threshold_Front_mm)) {
             return 1;
         }
         // return 2 si c'est à gauche en positif
-        if ((ydist_adv <= threshold_veryclosed_front_mm)
-                && (xdist_adv <= (-threshold_LR_mm)) && (xdist_adv >= -threshold_Front_mm)) {
+        if ((ydist_adv <= threshold_veryclosed_front_mm) && (xdist_adv <= (-threshold_LR_mm))
+                && (xdist_adv >= -threshold_Front_mm)) {
             return 2;
         }
 
         if ((ydist_adv <= threshold_Front_mm) && (ydist_adv > threshold_veryclosed_front_mm)
-            && (xdist_adv >= -threshold_Front_mm) && (xdist_adv <= threshold_Front_mm)){
+                && (xdist_adv >= -threshold_Front_mm) && (xdist_adv <= threshold_Front_mm)) {
             return 3;
         }
 
         //on renvoi 4 si c'est inf à closed threshold et si ce n'est pas sur les côtés
-        if ((ydist_adv <= threshold_veryclosed_front_mm)
-                && (xdist_adv >= -threshold_LR_mm)
+        if ((ydist_adv <= threshold_veryclosed_front_mm) && (xdist_adv >= -threshold_LR_mm)
                 && (xdist_adv <= threshold_LR_mm)) {
 
             return 4;
@@ -484,21 +486,23 @@ int Sensors::front(bool display)
             logger().debug() << __FUNCTION__ << " " << nb << " bots=" << botpos.nbDetectedBots << " x,y,deg= "
                     << botpos.x << ", " << botpos.y << ", " << botpos.theta_deg << logs::end;
 
-            RobotPosition pos_robot_instantane = this->robot()->passerv()->convertPositionToRepereTable(botpos.d,
-                    botpos.x, botpos.y, botpos.theta_deg, &x_pos_adv_table, &y_pos_adv_table);
+//            ROBOTPOSITION pos_robot_instantane = this->robot()->passerv()->convertPositionToRepereTable(botpos.d,
+//                    botpos.x, botpos.y, botpos.theta_deg, &x_pos_adv_table, &y_pos_adv_table);
+
+            ROBOTPOSITION pos_robot_instantane = this->robot()->sharedPosition()->convertPositionBeaconToRepereTable(
+                    botpos.d, botpos.x, botpos.y, botpos.theta_deg, &x_pos_adv_table, &y_pos_adv_table);
 
             //filtre sur la table avec transformation de repere
-            inside_table = this->robot()->passerv()->filtre_IsInsideTableXY((int)x_pos_adv_table, (int)y_pos_adv_table);
+            inside_table = this->robot()->passerv()->filtre_IsInsideTableXY((int) x_pos_adv_table,
+                    (int) y_pos_adv_table);
             if (!remove_outside_table_) {
                 inside_table = true;
             }
 
             if (inside_table) {
                 //affichage gris
-                this->robot()->svgw().writePosition_AdvPos(x_pos_adv_table, y_pos_adv_table, pos_robot_instantane.x, pos_robot_instantane.y, 0);
-
-
-
+                this->robot()->svgw().writePosition_AdvPos(x_pos_adv_table, y_pos_adv_table, pos_robot_instantane.x,
+                        pos_robot_instantane.y, 0);
 
                 //filtre is_in_front devant ou coté
                 //0  0  0
@@ -508,12 +512,12 @@ int Sensors::front(bool display)
                 //0  0  0
 
                 //rayon robot + espace coté + rayon adv
-                int thresholdLR = 140+20+200;
+                int thresholdLR = 140 + 20 + 200;
 
-                level_filtered = this->filtre_levelInFront(thresholdLR, frontCenterThreshold_, frontCenterVeryClosedThreshold_,
-                        botpos.d, botpos.x, botpos.y, botpos.theta_deg);
-                logger().info() << __FUNCTION__ << " " << nb << " bots=" << botpos.nbDetectedBots
-                        << " level_filtered= " << level_filtered << logs::end;
+                level_filtered = this->filtre_levelInFront(thresholdLR, frontCenterThreshold_,
+                        frontCenterVeryClosedThreshold_, botpos.d, botpos.x, botpos.y, botpos.theta_deg);
+                logger().info() << __FUNCTION__ << " " << nb << " bots=" << botpos.nbDetectedBots << " level_filtered= "
+                        << level_filtered << logs::end;
 
                 if (level_filtered == 1) {
                     // DROITE

@@ -2,7 +2,7 @@
 
 #include "AsservDriver.hpp"
 
-#include <unistd.h>
+#include <cstdio>
 #include <string>
 
 #include "../Log/Logger.hpp"
@@ -12,7 +12,7 @@ using namespace std;
 using namespace ev3dev;
 using namespace std::chrono;
 
-AAsservDriver* AAsservDriver::create(std::string) {
+AAsservDriver* AAsservDriver::create(std::string, ARobotPositionShared *aRobotPositionShared) {
     static AsservDriver *instance = new AsservDriver();
     return instance;
 }
@@ -280,9 +280,10 @@ int AsservDriver::getMotorRightCurrent() {
 void AsservDriver::odo_SetPosition(float x_mm, float y_mm, float angle_rad) {
 }
 
-RobotPosition AsservDriver::odo_GetPosition() {
+ROBOTPOSITION AsservDriver::odo_GetPosition() {
 
-    return {0,0,0,0};
+    ROBOTPOSITION p = {0.0, 0.0, 0.0, 0, 0};
+    return p;
 }
 
 //DEPRECATED

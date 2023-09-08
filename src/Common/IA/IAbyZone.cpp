@@ -267,7 +267,7 @@ ZONE* IAbyZone::ia_getNearestZoneFrom(float x, float y)
     return result;
 }
 
-void IAbyZone::goToZone(const char *zoneName, RobotPosition *path_p, RobotPosition *zone_p)
+void IAbyZone::goToZone(const char *zoneName, ROBOTPOSITION *path_p, ROBOTPOSITION *zone_p)
 {
     ZONE* z = ia_getZone(zoneName);
 

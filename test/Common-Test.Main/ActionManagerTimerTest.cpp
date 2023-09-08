@@ -14,7 +14,7 @@
 #include "../../src/Common/Action/IAction.hpp"
 #include "../../src/Common/Action/ITimerListener.hpp"
 #include "../../src/Common/Utils/Chronometer.hpp"
-#include "../../src/Common/Utils/ITimerPosixListener.hpp"
+#include "../../src/Common/Action/ITimerPosixListener.hpp"
 #include "../../src/Log/Logger.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
 

@@ -47,7 +47,7 @@ Robot::Robot() :
     skipEndOfMatch = false;
 
     configureDefaultConsoleArgs();
-
+    sharedPosition_ = ARobotPositionShared::create();
 }
 
 Robot::~Robot() {

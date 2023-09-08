@@ -8,7 +8,7 @@
 
 #include <as_devices/cpp/as_i2c.hpp>
 
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../Common/Interface.Driver/AAsservDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "../Thread/Thread.hpp"
 
@@ -61,12 +61,12 @@ private:
     int mbed_readI2c(unsigned char, unsigned char, unsigned char* data);
     int mbed_writeI2c(unsigned char cmd, unsigned char nbBytes2Write, unsigned char* data);
 
-    RobotPosition mbed_GetPosition();
+    ROBOTPOSITION mbed_GetPosition();
     TRAJ_STATE mbed_waitEndOfTraj();
 protected:
 
     virtual void execute();
-    RobotPosition p_;
+    ROBOTPOSITION p_;
 public:
 
     //commandes directes concernant les moteurs
@@ -96,7 +96,7 @@ public:
 
     //fonctions asservissements externe par defaut
     void odo_SetPosition(float x_m, float y_m, float angle_rad);
-    RobotPosition odo_GetPosition();
+    ROBOTPOSITION odo_GetPosition();
     int path_GetLastCommandStatus();
     void path_InterruptTrajectory();
     void path_CollisionOnTrajectory();

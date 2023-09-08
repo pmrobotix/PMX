@@ -6,13 +6,12 @@
 #ifndef OPOS6UL_ASSERVDRIVERTEST_HPP
 #define OPOS6UL_ASSERVDRIVERTEST_HPP
 
-
-#include "../../src/Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../../src/Common/Interface.Driver/AAsservDriver.hpp"
+#include "../../src/Common/Interface.Driver/ARobotPositionShared.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
 #include "../Suite/UnitTest.hpp"
 
-namespace test
-{
+namespace test {
 
 /*!
  * \brief Teste la classe \ref AsservDriverTest.
@@ -21,39 +20,39 @@ class AsservDriverTest: public UnitTest
 {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref AsservDriverTest(OPO).
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger(
-				"AsservDriverTest.OPO");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref AsservDriverTest(OPO).
+     */
+    static inline const logs::Logger& logger()
+    {
+        static const logs::Logger &instance = logs::LoggerFactory::logger("AsservDriverTest.OPO");
+        return instance;
+    }
 
+    ARobotPositionShared * aRobotPositionShared_;
+    AAsservDriver *asservdriver;
 public:
 
-	AAsservDriver* asservdriver;
+    /*!
+     * \brief Constructeur de la classe.
+     */
+    AsservDriverTest() :
+            UnitTest("AsservDriverTest")
+    {
+        aRobotPositionShared_ = ARobotPositionShared::create();
+        asservdriver = AAsservDriver::create("AsservDriverTest", aRobotPositionShared_);
+    }
 
-	/*!
-	 * \brief Constructeur de la classe.
-	 */
-	AsservDriverTest() :
-			UnitTest("AsservDriverTest")
-	{
-		asservdriver = AAsservDriver::create("AsservDriverTest");
-	}
+    /*!
+     * \brief Destructeur de la classe.
+     */
+    virtual ~AsservDriverTest()
+    {
+    }
 
-	/*!
-	 * \brief Destructeur de la classe.
-	 */
-	virtual ~AsservDriverTest()
-	{
-	}
+    virtual void suite();
 
-	virtual void suite();
-
-	void firstTest();
+    void firstTest();
 
 };
 }

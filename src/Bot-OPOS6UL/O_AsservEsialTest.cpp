@@ -80,7 +80,7 @@ void O_AsservEsialTest::run(int argc, char** argv) {
         while (1) {
 
             robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
-            RobotPosition p = robot.asserv().pos_getPosition();
+            ROBOTPOSITION p = robot.asserv().pos_getPosition();
             logger().info() << "time= "
                     << robot.chrono().getElapsedTimeInMilliSec()
                     << "ms ; left= "
@@ -105,7 +105,7 @@ void O_AsservEsialTest::run(int argc, char** argv) {
         while (1) {
 
             robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
-            RobotPosition p = robot.asserv().pos_getPosition();
+            ROBOTPOSITION p = robot.asserv().pos_getPosition();
             logger().info() << nb
                     << " time= "
                     << robot.chrono().getElapsedTimeInMilliSec()
@@ -134,7 +134,7 @@ void O_AsservEsialTest::run(int argc, char** argv) {
             robot.asserv().runMotorRight(25, 0);
 
             robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
-            RobotPosition p = robot.asserv().pos_getPosition();
+            ROBOTPOSITION p = robot.asserv().pos_getPosition();
             logger().info() << "time= "
                     << robot.chrono().getElapsedTimeInMilliSec()
                     << "ms ; left= "

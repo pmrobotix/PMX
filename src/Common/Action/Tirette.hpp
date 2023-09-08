@@ -4,7 +4,7 @@
 #include "../../Log/LoggerFactory.hpp"
 #include "AActionsElement.hpp"
 
-#include "../Action.Driver/ASwitchDriver.hpp"
+#include "../Interface.Driver/ASwitchDriver.hpp"
 
 class Tirette: public AActionsElement
 {

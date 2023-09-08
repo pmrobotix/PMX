@@ -7,6 +7,7 @@
 #include "../../src/Log/Level.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
 #include "../Suite/UnitTestAppender.hpp"
+#include "../../src/Log/Appender/SvgAppender.hpp"
 
 void logs::LoggerFactory::initialize()
 {
@@ -16,6 +17,7 @@ void logs::LoggerFactory::initialize()
     this->add("console", new ConsoleAppender());
     this->add("unittestconsole", new UnitTestAppender());
     this->add("memory", new MemoryAppender());
+    this->add("svg", new SvgAppender("svgDriverSIMU.svg"));
 
     add(logs::Level::INFO, "", "unittestconsole");
 
@@ -23,5 +25,8 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::DEBUG, "AsservDriverTest.SIMU", "console");
     add(logs::Level::DEBUG, "LedDriverTest.SIMU", "console");
     add(logs::Level::DEBUG, "AsservDriverMemory.SIMU", "memory");
+
+    add(logs::Level::INFO, "Svg4SIMU", "svg");
+    add(logs::Level::INFO, "SensorsDriver.SIMU.SVG", "svg");
 
 }

@@ -1,7 +1,7 @@
 #ifndef EV3_SERVODRIVER_HPP_
 #define EV3_SERVODRIVER_HPP_
 
-#include "../Common/Action.Driver/AServoDriver.hpp"
+#include "../Common/Interface.Driver/AServoDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "Adafruit_PWMServoDriver.hpp"
 #include "CCAx12Adc.hpp"

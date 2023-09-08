@@ -1,19 +1,13 @@
 #include "O_State_DecisionMakerIA.hpp"
 
-#include <unistd.h>
-#include <vector>
-
-#include "../Common/Action/LedBar.hpp"
 #include "../Common/Action/Sensors.hpp"
-#include "../Common/Action.Driver/ALedDriver.hpp"
-#include "../Common/Action.Driver/ASensorsDriver.hpp"
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../Common/Asserv/Asserv.hpp"
 #include "../Common/IA/IAbyPath.hpp"
+#include "../Common/Interface.Driver/AAsservDriver.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
 #include "OPOS6UL_ActionsExtended.hpp"
-#include "OPOS6UL_AsservExtended.hpp"
 #include "OPOS6UL_IAExtended.hpp"
 #include "OPOS6UL_RobotExtended.hpp"
 
@@ -25,7 +19,7 @@ bool O_launch_balls_1() {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     robot.logger().info() << "start O_launch_balls_1." << logs::end;
     TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition zone;
+    ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_launch1", &zone);
     ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 2000000, 1, 1, true, 40);
@@ -57,7 +51,7 @@ bool O_take_ball_BC1() {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     robot.logger().info() << "start O_take_ball_BC1." << logs::end;
     TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition zone;
+    ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_ball_BC1", &zone);
     ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 2000000, 3, 3, true, 40);
@@ -75,7 +69,7 @@ bool O_take_ball_D3() {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     robot.logger().info() << "start O_take_ball_D3." << logs::end;
     TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition zone;
+    ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_ball_D3", &zone);
     ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 2000000, 3, 3, true, 40);
@@ -93,7 +87,7 @@ bool O_end_of_match() {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     robot.logger().info() << "start O_end_of_match." << logs::end;
     TRAJ_STATE ts = TRAJ_OK;
-    RobotPosition zone;
+    ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_end", &zone);
     ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 2000000, 50, 50, false, 0);

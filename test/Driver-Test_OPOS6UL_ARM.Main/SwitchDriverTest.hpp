@@ -7,7 +7,7 @@
 #define OPOS6UL_SWITCHDRIVERTEST_HPP
 
 
-#include "../../src/Common/Action.Driver/ASwitchDriver.hpp"
+#include "../../src/Common/Interface.Driver/ASwitchDriver.hpp"
 
 #include "../../src/Log/LoggerFactory.hpp"
 #include "../Suite/UnitTest.hpp"

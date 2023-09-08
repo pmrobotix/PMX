@@ -1,12 +1,12 @@
 #include "MotorControl.hpp"
 
-#include "../Asserv.Driver/AAsservDriver.hpp"
+#include "../Interface.Driver/AAsservDriver.hpp"
 
 using namespace std;
 
-MotorControl::MotorControl(std::string botid)
+MotorControl::MotorControl(std::string botid, AAsservDriver* asservdriver)
 {
-	asservdriver = AAsservDriver::create(botid);
+    asservdriver_ = asservdriver;
 }
 
 MotorControl::~MotorControl()
@@ -15,28 +15,28 @@ MotorControl::~MotorControl()
 
 void MotorControl::runMotorLeft(int power, int timems)
 {
-	asservdriver->setMotorLeftPower(power, timems);
+	asservdriver_->setMotorLeftPower(power, timems);
 }
 
 void MotorControl::runMotorRight(int power, int timems)
 {
-	asservdriver->setMotorRightPower(power, timems);
+	asservdriver_->setMotorRightPower(power, timems);
 }
 
 void MotorControl::stopMotors()
 {
-	asservdriver->stopMotorLeft();
-	asservdriver->stopMotorRight();
+	asservdriver_->stopMotorLeft();
+	asservdriver_->stopMotorRight();
 }
 
 void MotorControl::setMotorLeftPosition(int power, long ticks) //tick à parcourir
 {
-	asservdriver->setMotorLeftPosition(power, ticks); //tick à parcourir
+	asservdriver_->setMotorLeftPosition(power, ticks); //tick à parcourir
 }
 
 void MotorControl::setMotorRightPosition(int power, long ticks) //tick à parcourir
 {
-	asservdriver->setMotorRightPosition(power, ticks); //tick à parcourir
+	asservdriver_->setMotorRightPosition(power, ticks); //tick à parcourir
 }
 
 

@@ -1,17 +1,19 @@
 #ifndef COMMON_ASSERV_HPP_
 #define COMMON_ASSERV_HPP_
 
+#include <cmath>
 #include <string>
 #include <tuple>
 
 #include "../../Log/LoggerFactory.hpp"
-#include "../Asserv.Driver/AAsservDriver.hpp"
-
-class AsservEsialR;
-
-class Robot;
+#include "../Interface.Driver/AAsservDriver.hpp"
+#include "../Interface.Driver/ARobotPositionShared.hpp"
 
 class AAsservDriver;
+class AsservEsialR;
+class Robot;
+
+
 
 /*!
  * Asservissement of the robot.It contains default elements.
@@ -63,7 +65,7 @@ protected:
 
     Robot *probot_; //reference du parent
 
-    RobotPosition adv_pos_centre_;
+    ROBOTPOSITION adv_pos_centre_;
 
     //automatic conversion
     int x_ground_table_;
@@ -121,8 +123,8 @@ public:
 
     void setLowSpeedvalue(int value);
 
-    RobotPosition convertPositionToRepereTable(float d_mm, float x_mm, float y_mm, float theta_deg, float *x_botpos,
-            float *y_botpos);
+//    ROBOTPOSITION convertPositionToRepereTable(float d_mm, float x_mm, float y_mm, float theta_deg, float *x_botpos,
+//            float *y_botpos);
     virtual bool filtre_IsInsideTableXY(int x_botpos, int y_botpos) = 0;
 
     virtual void endWhatTodo();
@@ -154,8 +156,8 @@ public:
     void freeMotion();
     void assistedHandling();
 
-    RobotPosition pos_getAdvPosition();
-    RobotPosition pos_getPosition();
+    ROBOTPOSITION pos_getAdvPosition();
+    ROBOTPOSITION pos_getPosition();
     float pos_getX_mm();
     float pos_getY_mm();
     // angle in radian
@@ -202,7 +204,7 @@ public:
      * mesure_mm
      * robot_size_l_mm largeur du robot à partir du centre
      */
-    int adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, RobotPosition p, float delta_j_mm,
+    int adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, ROBOTPOSITION p, float delta_j_mm,
             float delta_k_mm, float mesure_mm, float robot_size_l_mm);
 
     //attention la couleur de match doit deja etre effectué !

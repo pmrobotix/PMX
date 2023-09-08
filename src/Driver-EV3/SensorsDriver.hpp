@@ -1,9 +1,11 @@
 #ifndef EV3_SENSORSDRIVER_HPP_
 #define EV3_SENSORSDRIVER_HPP_
 
-#include "../Common/Action.Driver/ASensorsDriver.hpp"
+#include "../Common/Interface.Driver/ASensorsDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "BeaconSensors.hpp"
+
+class ARobotPositionShared;
 
 #define ADDRESS_BeaconSensors   0x2D
 
@@ -35,12 +37,14 @@ private:
     utils::Mutex msync_;
     bot_positions vadv_;  //tableau des pos des adv
 
+    ARobotPositionShared *robotPositionShared_;
+
 public:
 
     /*!
      * \brief Constructor.
      */
-    SensorsDriver(Robot * robot);
+    SensorsDriver(ARobotPositionShared *robotPositionShared);
 
     /*!
      * \brief Destructor.

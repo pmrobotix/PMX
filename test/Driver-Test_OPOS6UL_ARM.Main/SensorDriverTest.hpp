@@ -7,7 +7,8 @@
 #define OPOS6UL_SENSORDRIVERTEST_HPP
 
 
-#include "../../src/Common/Action.Driver/ASensorsDriver.hpp"
+#include "../../src/Common/Interface.Driver/ARobotPositionShared.hpp"
+#include "../../src/Common/Interface.Driver/ASensorsDriver.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
 #include "../Suite/UnitTest.hpp"
 
@@ -34,6 +35,7 @@ private:
 public:
 
 	ASensorsDriver* sensordriver;
+	ARobotPositionShared * aRobotPositionShared_;
 
 	/*!
 	 * \brief Constructeur de la classe.
@@ -41,7 +43,8 @@ public:
 	SensorDriverTest() :
 			UnitTest("SensorDriverTest")
 	{
-		sensordriver = ASensorsDriver::create("SensorDriverTest");
+	    aRobotPositionShared_ = ARobotPositionShared::create();
+	    sensordriver = ASensorsDriver::create("SensorDriverTest", aRobotPositionShared_);
 	}
 
 	/*!

@@ -9,7 +9,7 @@
 #include "../Common/Arguments.hpp"
 #include "../Common/Asserv/EncoderControl.hpp"
 #include "../Common/Asserv/MovingBase.hpp"
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../Common/Interface.Driver/AAsservDriver.hpp"
 #include "../Common/IA/IAbyPath.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"

@@ -6,7 +6,7 @@
 #ifndef OPOS6UL_SERVODRIVERTEST_HPP
 #define OPOS6UL_SERVODRIVERTEST_HPP
 
-#include "../../src/Common/Action.Driver/AServoDriver.hpp"
+#include "../../src/Common/Interface.Driver/AServoDriver.hpp"
 #include "../../src/Log/LoggerFactory.hpp"
 #include "../Suite/UnitTest.hpp"
 

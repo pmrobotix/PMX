@@ -8,7 +8,7 @@
 #include "../Common/Arguments.hpp"
 #include "../Common/Asserv/EncoderControl.hpp"
 #include "../Common/Asserv/MovingBase.hpp"
-#include "../Common/Asserv.Driver/AAsservDriver.hpp"
+#include "../Common/Interface.Driver/AAsservDriver.hpp"
 #include "../Common/IA/IAbyPath.hpp"
 #include "../Common/Robot.hpp"
 #include "../Common/Utils/Chronometer.hpp"
@@ -112,7 +112,7 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
     robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXGREEN));
 
     robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
-    RobotPosition p = robot.asserv().pos_getPosition();
+    ROBOTPOSITION p = robot.asserv().pos_getPosition();
     logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
             << right << " x=" << p.x << " y=" << p.y << " deg=" << p.theta * 180.0 / M_PI << logs::end;
 

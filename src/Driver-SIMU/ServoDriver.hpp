@@ -1,7 +1,7 @@
 #ifndef SIMU_SERVODRIVER_HPP_
 #define SIMU_SERVODRIVER_HPP_
 
-#include "../Common/Action.Driver/AServoDriver.hpp"
+#include "../Common/Interface.Driver/AServoDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 
 using namespace std;

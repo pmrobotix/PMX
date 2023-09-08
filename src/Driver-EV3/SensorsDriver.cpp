@@ -9,14 +9,14 @@
 
 using namespace std;
 
-ASensorsDriver * ASensorsDriver::create(std::string botName, Robot * robot) {
-    return new SensorsDriver(robot);
+ASensorsDriver * ASensorsDriver::create(std::string botName, ARobotPositionShared *robotPos) {
+    return new SensorsDriver(robotPos);
 }
 
 //ev3-ports:inX:i2c80:mux1
 //ev3-ports:inX:i2c81:mux2
 //ev3-ports:inX:i2c82:mux3
-SensorsDriver::SensorsDriver(Robot * robot) :
+SensorsDriver::SensorsDriver(ARobotPositionShared *robotPos) :
         beaconSensors_(3, ADDRESS_BeaconSensors)
 //        IR_1_AV_D("ev3-ports:in4:i2c80:mux1"), IR_2_AV_G("ev3-ports:in3:i2c80:mux1"), IR_3_AR_D(
 //                "ev3-ports:in4:i2c81:mux2"), IR_4_AR_G("ev3-ports:in3:i2c82:mux3")
@@ -27,6 +27,8 @@ SensorsDriver::SensorsDriver(Robot * robot) :
 //    beacon_.ScanBus(); //NE FCT PAS ?
 
     beaconSensors_.display(0);
+
+    robotPositionShared_ = robotPos;
 }
 
 SensorsDriver::~SensorsDriver() {

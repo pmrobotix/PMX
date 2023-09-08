@@ -1,7 +1,7 @@
 #ifndef OPOS6UL_SENSORSDRIVER_HPP_
 #define OPOS6UL_SENSORSDRIVER_HPP_
 
-#include "../Common/Action.Driver/ASensorsDriver.hpp"
+#include "../Common/Interface.Driver/ASensorsDriver.hpp"
 #include "../Common/Utils/PointerList.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "BeaconSensors.hpp"
@@ -52,7 +52,7 @@ public:
     /*!
      * \brief Constructor.
      */
-    SensorsDriver();
+    SensorsDriver(ARobotPositionShared * robotpos);
 
     /*!
      * \brief Destructor.

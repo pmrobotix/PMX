@@ -4,9 +4,11 @@
 #include <string>
 #include <vector>
 
+class ARobotPositionShared;
+
 class Robot;
 
-class RobotPos
+class RobotPos //rename AdvPos
 {
 public:
     int nbDetectedBots; //nb de position de robot detectée (dupliqué dans chaque)
@@ -22,7 +24,6 @@ public:
         y = y_;
         theta_deg = a_;
         d = d_;
-
     }
     //void show() { std::cout<<x<<std::endl; }
 };
@@ -40,7 +41,7 @@ public:
     /*!
      * \brief ASensorsDriver instance creation.
      */
-    static ASensorsDriver* create(std::string botName, Robot * robot);
+    static ASensorsDriver* create(std::string botName, ARobotPositionShared *aRobotPositionShared);
 
     virtual bool is_connected() = 0;
     /*!

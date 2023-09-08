@@ -325,7 +325,7 @@ ZONE* IAbyPath::ia_getNearestZoneFrom(float x, float y)
 }
 
 //A renommer retrievezone
-void IAbyPath::goToZone(const char *zoneName, RobotPosition *zone_p)
+void IAbyPath::goToZone(const char *zoneName, ROBOTPOSITION *zone_p)
 {
 
     ZONE *z = ia_getZone(zoneName);

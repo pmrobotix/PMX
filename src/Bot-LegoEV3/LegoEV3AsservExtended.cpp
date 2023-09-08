@@ -218,7 +218,7 @@ bool LegoEV3AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int lateral
     float x = 0.0;
     float y = 0.0;
     bool result = false;
-    RobotPosition p = pos_getPosition();
+    ROBOTPOSITION p = pos_getPosition();
     x = p.x + ((lateral_pos_sensor_mm * dist_sensor_from_axis_robot_mm) * cos(p.theta - M_PI_2))
             + (distmm * cos(p.theta));
     y = p.y + ((lateral_pos_sensor_mm * dist_sensor_from_axis_robot_mm) * sin(p.theta - M_PI_2))

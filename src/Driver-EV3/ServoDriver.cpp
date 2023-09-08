@@ -6,7 +6,7 @@
 #include <iostream>
 #include <string>
 
-#include "../Common/Action.Driver/AServoDriver.hpp"
+#include "../Common/Interface.Driver/AServoDriver.hpp"
 #include "../Common/Utils/Chronometer.hpp"
 #include "../Log/Logger.hpp"
 #include "CCAx12Adc.hpp"

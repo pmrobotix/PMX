@@ -15,7 +15,7 @@ OPOS6UL_AsservExtended::OPOS6UL_AsservExtended(std::string botId, OPOS6UL_RobotE
 {
     botId_ = botId;
 
-    useAsservType_ = ASSERV_EXT; //ASSERV_INT_ESIALR; //ASSERV_EXT; //ASSERV_INT_ESIALR; //ASSERV_EXT; //ASSERV_INT_ESIALR; //ASSERV_EXT; //ASSERV_INT_ESIALR; // !!!!!!!!!!!!!!!!!!!!
+    useAsservType_ = ASSERV_INT_ESIALR; //ASSERV_EXT;
 
     robot_extended_ = robot;
 
@@ -103,7 +103,7 @@ bool OPOS6UL_AsservExtended::filtre_IsInsideTable(int dist_detect_mm, int latera
     float x = 0.0;
     float y = 0.0;
     bool result = false;
-    RobotPosition p = pos_getPosition();
+    ROBOTPOSITION p = pos_getPosition();
     x = p.x + ((lateral_pos_sensor_mm * 140.0) * cos(p.theta - M_PI_2)) + (distmm * cos(p.theta));
     y = p.y + ((lateral_pos_sensor_mm * 140.0) * sin(p.theta - M_PI_2)) + (distmm * sin(p.theta));
 
