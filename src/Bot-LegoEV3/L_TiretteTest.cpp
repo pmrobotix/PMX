@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void L_TiretteTest::run(int argc, char** argv)
+void L_TiretteTest::run(int argc, char **argv)
 {
     logger().info() << this->position() << " - Executing - " << this->desc() << logs::end;
 
@@ -17,8 +17,13 @@ void L_TiretteTest::run(int argc, char** argv)
 
     logger().info() << "TIRETTE status" << logs::end;
 
-    robot.actions().tirette().monitor(3);
-
+    //robot.actions().tirette().monitor(3);
+    int tirette = 0;
+    while (1) {
+        tirette = robot.actions().tirette().pressed(); //250ms
+        logger().info() << "tirette = " << tirette << logs::end;
+        utils::sleep_for_micros(10000);
+    }
     logger().info() << "Happy End." << logs::end;
 }
 

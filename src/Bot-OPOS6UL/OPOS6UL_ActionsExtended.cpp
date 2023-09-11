@@ -78,8 +78,8 @@ OPOS6UL_ActionsExtended::OPOS6UL_ActionsExtended(std::string botId, Robot *robot
     int rayon_adv = 160;
     //rayon robot + espace elements + rayon adv
     //threshold_LR_mm = 140+40+150
-    sensors_.addThresholdFront(450, 140 + 450 + rayon_adv, 450);
-    sensors_.addThresholdFrontVeryClosed(200, 140 + 150 + rayon_adv, 200);
+    sensors_.addThresholdFront(450, 140 + 240 + rayon_adv, 450);
+    sensors_.addThresholdFrontVeryClosed(200, 140 + 80 + rayon_adv, 200);
 
     sensors_.addThresholdBack(0, 140 + 350 + 140, 0);
     sensors_.addThresholdBackVeryClosed(0, 140 + 70 + 140, 0);

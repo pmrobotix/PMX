@@ -3,7 +3,7 @@
 
 #include <cmath>
 
-#include "../../Log/Logger.hpp"
+#include "../Utils/Chronometer.hpp"
 
 enum MOVEMENT_DIRECTION
 {
@@ -52,30 +52,38 @@ class ARobotPositionShared
 
 public:
 
+    utils::Chronometer chrono_;
+
     /*!
      * \brief instance creation.
      */
     static ARobotPositionShared* create();
 
-    virtual ROBOTPOSITION getRobotPosition() = 0;
+    virtual ROBOTPOSITION getRobotPosition(int debug=0) = 0;
 
     virtual void setRobotPosition(ROBOTPOSITION p) = 0;
 
     ROBOTPOSITION convertPositionBeaconToRepereTable(float d_mm, float x_mm, float y_mm, float theta_deg,
             float *x_botpos, float *y_botpos)
     {
-        ROBOTPOSITION p = getRobotPosition();
+        ROBOTPOSITION p = getRobotPosition(1);
 
         //coordonnées de l'objet detecté sur la table
         float a = (p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f));
-        std::fmod(a, 2 * M_PI);
+//        std::fmod(a, 2 * M_PI);
+//
+//        if (a < 0)
+//            a += 2 * M_PI;
+////            if (a < -M_PI)
+////                a += M_PI;
+////            if (a > M_PI)
+////                a -= M_PI;
 
-        if (a < 0)
-            a += 2 * M_PI;
-//            if (a < -M_PI)
-//                a += M_PI;
-//            if (a > M_PI)
-//                a -= M_PI;
+        a = std::fmod(a, 2.0 * M_PI);
+        if (a < -M_PI)
+            a += (2.0 * M_PI);
+        if (a > M_PI)
+            a -= (2.0 * M_PI);
 
         //ADV coord
         float fx_botpos = p.x + (d_mm * cos(a));
@@ -99,10 +107,12 @@ public:
 
 protected:
 
+
+
     /*!
      * \brief Constructor.
      */
-    ARobotPositionShared()
+    ARobotPositionShared() : chrono_("ARobotPositionShared")
     {
     }
 

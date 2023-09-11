@@ -35,7 +35,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "OPOS6UL_ActionsExtended", "console");
 
     //COMMON
-    add(logs::Level::INFO, "Asserv", "console");
+    add(logs::Level::DEBUG, "Asserv", "console");
     add(logs::Level::INFO, "IAbyPath", "console");
     add(logs::Level::INFO, "Sensors", "console");
     add(logs::Level::INFO, "ServoObjectsSystem", "console");

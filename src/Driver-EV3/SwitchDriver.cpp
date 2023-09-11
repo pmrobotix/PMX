@@ -2,10 +2,11 @@
 
 #include "SwitchDriver.hpp"
 
-#include <unistd.h>
+#include <mutex>
 #include <string>
 
 #include "../Log/Logger.hpp"
+#include "ev3dev.h"
 
 using namespace std;
 using namespace ev3dev;
@@ -61,27 +62,41 @@ SwitchDriver::SwitchDriver()
      logger().debug() << "VERIF driver lego-ev3-touch temp ==  " << temp << logs::end;
      }
      }*/
-    string input = "ev3-ports:in1";
-    touch_ = touch_sensor(input);
 
-    //cas NON MUX
-    //touch_ = touch_sensor(INPUT_AUTO);
+    /*
+     //string input = "ev3-ports:in1"; //before
+     string input = "ev3-ports:in4";
+     touch_ = touch_sensor(input);
 
-    if (touch_.connected()) {
-        logger().debug() << touch_.type_name() << " connected (device " << touch_.driver_name() << ", port "
-                << touch_.address() << ", mode " << touch_.mode() << ")" << logs::end;
+     //cas NON MUX
+     //touch_ = touch_sensor(INPUT_AUTO);
+
+     if (touch_.connected()) {
+     logger().debug() << touch_.type_name() << " connected (device " << touch_.driver_name() << ", port "
+     << touch_.address() << ", mode " << touch_.mode() << ")" << logs::end;
+     } else {
+     logger().error() << "INPUT_1 (Tirette) not Connected !!" << logs::end;
+     }
+
+     */
+
+    if (is_connected()) {
+
     } else {
-        logger().error() << "INPUT_1 (Tirette) not Connected !!" << logs::end;
+        logger().error() << "INPUT_4 (Tirette) not Connected !!" << logs::end;
     }
+
 }
 
 bool SwitchDriver::is_connected()
 {
-    return touch_.connected();
+    //return touch_.connected();
+    return legotouchposix_.connected();
 }
 
 SwitchDriver::~SwitchDriver()
 {
+
 }
 //
 //int SwitchDriver::tirettePressedFiltered()
@@ -92,21 +107,33 @@ SwitchDriver::~SwitchDriver()
 
 int SwitchDriver::tirettePressed()
 {
-    //Sleep obligatoire sur le bouton LEGO, si le temps est très court (1ms),pd de thread qui crashe
-    std::this_thread::sleep_for(std::chrono::microseconds(300000)); // 250000
+    //std::this_thread::sleep_for(std::chrono::microseconds(100000));
+    int v;
+    lock();
+    v = legotouchposix_.custom_get_value();
+    unlock();
+    return v;
 
-    if (touch_.connected()) {
-        if (touch_.value() == 1) //in case of MUX : 257
-                {
-            return 1;
-        } else if (touch_.value() == 0) { //in case of MUX : 256
-            return 0;
-        } else {
-            return -1;
-        }
-    } else {
-        return -2;
-    }
+    /*
+     //Sleep obligatoire sur le bouton LEGO, si le temps est très court (1ms),pd de thread qui crashe
+     //std::this_thread::sleep_for(std::chrono::microseconds(300000)); // 250000
+     std::this_thread::sleep_for(std::chrono::microseconds(300000));
+
+     return touch_.value();
+     //if (touch_.connected()) { //TEST 20230911 de retirer ce test pour alléger le touch
+     //    if (touch_.value() == 1) //in case of MUX : 257
+     //    {
+     //        return 1;
+     //    } else if (touch_.value() == 0) { //in case of MUX : 256
+     //        return 0;
+     //    } else {
+     //        return -1;
+     //    }
+     //    } else {
+     //        return -2;
+     //    }
+
+     */
 }
 
 int SwitchDriver::backLeftPressed()

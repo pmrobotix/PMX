@@ -28,7 +28,7 @@ bool L_push_cake_A2()
     ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_cake_A2", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 10, 10, true);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 10, 10, true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_push_cake_A2 : zone_cake_A2 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
@@ -125,7 +125,7 @@ bool L_push_cake_D2()
     ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_cake_D2", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 10, 10, true);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 10, 10, true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_push_cake_D2 : zone_cake_D2 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
@@ -236,7 +236,7 @@ bool L_push_cake_black_B3()
     //robot.asserv().setLowSpeedForward(true, 60);
 
     robot.ia().iAbyPath().goToZone("zone_cake_black_B3", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 10, 10, true);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 10, 10, true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error()
                 << "L_push_cake_black_B3 : zone_cake_black_B3 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
@@ -335,7 +335,7 @@ bool L_push_cake_A5()
     //robot.asserv().setLowSpeedForward(true, 50);
 
     robot.ia().iAbyPath().goToZone("zone_cake_A5", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 4, 4, true);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 4, 4, true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_push_cake_A5 : zone_cake_A5 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
@@ -431,7 +431,7 @@ bool L_push_cake_D5()
 
     //robot.asserv().setLowSpeedForward(true, 40);
 
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y + y_patch, zone.theta, true, 1000000, 5, 2,
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y + y_patch, radToDeg(zone.theta), true, 1000000, 5, 2,
             true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_push_cake_D5 : zone_cake_D5 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts

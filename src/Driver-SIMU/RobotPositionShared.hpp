@@ -20,6 +20,8 @@ private:
 
     ROBOTPOSITION p_;
 
+    unsigned long long t_set_us_;
+
 public:
 
     /*!
@@ -32,7 +34,7 @@ public:
      */
     ~RobotPositionShared();
 
-    ROBOTPOSITION getRobotPosition();
+    ROBOTPOSITION getRobotPosition(int debug=0);
 
     void setRobotPosition(ROBOTPOSITION p);
 

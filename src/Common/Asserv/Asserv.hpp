@@ -13,8 +13,6 @@ class AAsservDriver;
 class AsservEsialR;
 class Robot;
 
-
-
 /*!
  * Asservissement of the robot.It contains default elements.
  */
@@ -239,43 +237,69 @@ public:
         return x_mm;
     }
 
-    //transformation suivant la couleur de match
-    inline float getRelativeAngle(float degrees)
+    inline float getRelativeAngleRad(float rad)
     {
         if (matchColorPosition_ != 0) {
-            float limit = (180 - degrees);
+            float limit = (M_PI - rad);
 
-//            std::fmod(limit, 360);
-//            if (limit < -180)
-//                limit += 180;
-//            if (limit > 180)
-//                limit -= 180;
-            if (limit >= 360) limit -= 360;
+            limit = std::fmod(limit, 2.0 * M_PI);
+            if (limit < -M_PI)
+                limit += (2.0 * M_PI);
+            if (limit > M_PI)
+                limit -= (2.0 * M_PI);
+
             return limit;
         }
-        return degrees;
+        return rad;
     }
 
-    //TODO a tester
-    inline float limitAngle(float limit)
+    //transformation suivant la couleur de match
+//    inline float getRelativeAngle(float degrees)
+//    {
+//        if (matchColorPosition_ != 0) {
+//            float limit = (180.0 - degrees);
+//
+//            limit = std::fmod(limit, 360.0);
+//            if (limit < -180.0)
+//                limit += 360.0;
+//            if (limit > 180.0)
+//                limit -= 360.0;
+//
+//            return limit;
+//        }
+//        return degrees;
+//    }
+
+//    //TODO a tester
+//    inline float limitAngle(float limit)
+//    {
+//        // On ajuste l'angle à parcourir pour ne pas faire plus d'un demi-tour
+//        // Exemple, tourner de 340 degrés est plus chiant que de tourner de -20 degrés
+//
+//        limit = std::fmod(limit, 360);
+//        if (limit < -180)
+//            limit += 180;
+//        if (limit > 180)
+//            limit -= 180;
+////        if (degrees >= 180) {
+////            degrees -= 2.0 * 180;
+////        }
+////        else if (degrees < -180) {
+////            degrees += 2.0 * 180;
+////        }
+//        return limit;
+//    }
+
+
+    inline float degToRad(float deg)
     {
-        // On ajuste l'angle à parcourir pour ne pas faire plus d'un demi-tour
-        // Exemple, tourner de 340 degrés est plus chiant que de tourner de -20 degrés
-
-        std::fmod(limit, 360);
-        if (limit < -180)
-            limit += 180;
-        if (limit > 180)
-            limit -= 180;
-//        if (degrees >= 180) {
-//            degrees -= 2.0 * 180;
-//        }
-//        else if (degrees < -180) {
-//            degrees += 2.0 * 180;
-//        }
-        return limit;
+        return deg * M_PI / 180.0;
     }
 
+    inline float radToDeg(float rad)
+    {
+        return rad * 180.0 / M_PI;
+    }
 };
 
 #endif

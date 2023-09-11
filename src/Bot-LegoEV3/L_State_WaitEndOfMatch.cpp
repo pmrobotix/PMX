@@ -34,8 +34,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     while (robot.chrono().getElapsedTimeInSec() <= 98 || stop == true) {
 
         //ARU (attention 250ms!)
-        if (robot.actions().tirette().pressed())
-        {
+        if (robot.actions().tirette().pressed()) {
             //printf("===== ARU pressed !!!!!!\n");
             logger().error() << "ARU pressed !!!!!!" << logs::end;
             //stop all robot
@@ -46,9 +45,8 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
             break;
         }
 
-
-        //std::this_thread::sleep_for(std::chrono::microseconds(50000));
-        //std::this_thread::yield();
+        std::this_thread::sleep_for(std::chrono::microseconds(200000));
+        std::this_thread::yield();
         if (c % 4 == 0) {
             robot.displayPoints();
             this->logger().info() << "chrono " << robot.chrono().getElapsedTimeInSec() << logs::end;
@@ -59,10 +57,35 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     //pas de funny action si ARU
     if (!stop) {
 
+        robot.actions().fork_front_right_deploy_half(0);
+        robot.actions().fork_front_left_init(0);
+        robot.actions().fork_front_right_init(0);
+        robot.actions().fork_front_left_deploy_half(0);
+
+        robot.actions().fork_front_right_deploy_half(0);
+        robot.actions().fork_front_left_init(0);
+        robot.actions().fork_front_right_init(0);
+        robot.actions().fork_front_left_deploy_half(0);
+
+        robot.actions().fork_front_right_deploy_half(0);
+        robot.actions().fork_front_left_init(0);
+        robot.actions().fork_front_right_init(0);
+        robot.actions().fork_front_left_deploy_half(0);
+
+        robot.actions().fork_front_right_deploy_half(0);
+        robot.actions().fork_front_left_init(0);
+        robot.actions().fork_front_right_init(0);
+        robot.actions().fork_front_left_deploy_half(0);
+
+        robot.actions().fork_front_right_deploy_half(0);
+        robot.actions().fork_front_left_init(0);
+        robot.actions().fork_front_right_init(0);
+
+
         this->logger().info() << "on recule pour la funny " << robot.chrono().getElapsedTimeInSec() << logs::end;
         //on recule pour la funny action
         robot.svgPrintPosition();
-        robot.asserv().doLineAbs(-50);
+        robot.asserv().doLineAbs(-30);
         std::this_thread::sleep_for(std::chrono::microseconds(200000));
         robot.asserv().stopMotors();
         robot.svgPrintPosition();

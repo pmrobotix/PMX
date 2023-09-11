@@ -95,6 +95,7 @@ public:
     void stopAsserv();
     void resetAsserv();
     TRAJ_STATE waitEndOfTraj();
+    int getAsservStatus();
 
     void endWhatTodo();
 

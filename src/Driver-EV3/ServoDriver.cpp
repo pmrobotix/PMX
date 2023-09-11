@@ -337,7 +337,9 @@ void ServoDriver::setPulsePos(int servo, int pulsewidth_us, int millisec0To90) {
 
 void ServoDriver::setpwm(int servo, int pulsewidth_us) {
     if (servo_type_[servo] == AServoDriver::SERVO_STANDARD) {
+        lock();
         pwm_.fastWriteMicroseconds(servo, pulsewidth_us);
+        unlock();
     }
     else if (servo_type_[servo] == AServoDriver::SERVO_DYNAMIXEL) {
         //TODO dynamixel
@@ -348,7 +350,9 @@ void ServoDriver::setpwm(int servo, int pulsewidth_us) {
 void ServoDriver::release(int servo) {
     servo = constrain(servo, 0, NB_SERVO_STD - 1);
     if (servo_type_[servo] == AServoDriver::SERVO_STANDARD) {
+        lock();
         pwm_.fastWriteMicroseconds(servo, 0);
+        unlock();
     }
     else if (servo_type_[servo] == AServoDriver::SERVO_DYNAMIXEL) {
         //TODO
@@ -359,7 +363,9 @@ void ServoDriver::hold(int servo) // 0 à 7
 {
     servo = constrain(servo, 0, NB_SERVO_STD - 1);
     if (servo_type_[servo] == AServoDriver::SERVO_STANDARD) {
+        lock();
         pwm_.fastWriteMicroseconds(servo, servo_current_usec_[servo]);
+        unlock();
     }
     else if (servo_type_[servo] == AServoDriver::SERVO_DYNAMIXEL) {
         //TODO
@@ -409,7 +415,7 @@ int ServoDriver::getPulsePos(int servo) {
     }
     else if (servo_type_[servo] == SERVO_DYNAMIXEL) {
 
-        int r = CCAx12Adc::instance().readAXData(servo, P_PRESENT_POSITION);
+        int r = 0; //CCAx12Adc::instance().readAXData(servo, P_PRESENT_POSITION);
         return r;
     }
     else return -1;

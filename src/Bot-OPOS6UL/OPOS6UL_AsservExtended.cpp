@@ -15,7 +15,8 @@ OPOS6UL_AsservExtended::OPOS6UL_AsservExtended(std::string botId, OPOS6UL_RobotE
 {
     botId_ = botId;
 
-    useAsservType_ = ASSERV_INT_ESIALR; //ASSERV_EXT;
+    //useAsservType_ = ASSERV_INT_ESIALR; //ASSERV_EXT;
+    useAsservType_ = ASSERV_EXT;
 
     robot_extended_ = robot;
 
@@ -34,12 +35,12 @@ bool OPOS6UL_AsservExtended::filtre_IsInsideTableXY(int x_botpos, int y_botpos)
     int table_y = 3000;
 
     //on filtre si c'est en dehors de la table verticale! avec 10cm de marge
-    if ((x_botpos > 100 && x_botpos < table_x - 100) && (y_botpos > 100 && y_botpos < table_y - 100)) {
-
+    if ((x_botpos > 90 && x_botpos < table_x - 90) && (y_botpos > 90 && y_botpos < table_y - 90)) {
+        logger().debug() << "INSIDE filtre_IsInsideTableXY xy_botpos=" << x_botpos << " " << y_botpos << logs::end;
         return true;
-    }
+    } else
+        return false;
 
-    return false;
 }
 
 /*
@@ -55,11 +56,11 @@ bool OPOS6UL_AsservExtended::filtre_IsInsideTableXY(int x_botpos, int y_botpos)
  //    *x_botpos = p.x + (d_mm * cos(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
  //    *y_botpos = p.y + (d_mm * sin(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
  float a = (p.theta + (theta_deg * M_PI / 180.0f));
- std::fmod(a, 2 * M_PI);
+ a=std::fmod(a, 2 * M_PI);
  if (a < -M_PI)
- a += M_PI;
+ a += 2.0* M_PI;
  if (a > M_PI)
- a -= M_PI;
+ a -= 2.0* M_PI;
 
  //ADV coord
  *x_botpos = p.x + (d_mm * cos(a));
@@ -221,7 +222,6 @@ void OPOS6UL_AsservExtended::startMotionTimerAndOdo(bool assistedHandlingEnabled
 //    //Asserv::setLowSpeedBackward(enable, 45);
 //    asservdriver_->motion_setLowSpeedBackward(enable, 55);
 //}
-
 //TODO a deplacer dans les actions avec l'update des sensors
 void OPOS6UL_AsservExtended::update_adv()
 {

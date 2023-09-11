@@ -77,7 +77,6 @@ private:
 
 public:
 
-
     LegoEV3ActionsExtended(std::string botId, Robot *robot);
 
     ~LegoEV3ActionsExtended()
@@ -169,6 +168,22 @@ public:
     //keep_millisec > 0 : time ms to wait then release
     //keep_millisec = 0 : continue and hold
 
+    void danse()
+    {
+        int sw = 0;
+        while (sw > 10) {
+            sw++;
+            //                if (robot.getMyColor() == PMXGREEN) {
+            if (sw % 2) {
+                fork_front_right_deploy_half(0);
+                fork_front_left_init(0);
+
+            } else {
+                fork_front_right_init(0);
+                fork_front_left_deploy_half(0);
+            }
+        }
+    }
     //FUNNY
     void funny_action_full(int keep = 0)
     {
@@ -205,8 +220,7 @@ public:
 
     void fork_init_slow(bool wait = true)
     {
-        if (!this->is_started())
-        {
+        if (!this->is_started()) {
             logger().error() << "ACTION NOT STARTED !!" << logs::end;
         }
         servos().move_2_servos(wait, 2000, SERVO_3_FORK_R, 1380, 0, SERVO_13_FORK_L, 1450, 0, 0, 0);
@@ -280,7 +294,7 @@ public:
     //ARM LEFT
     void arm_left_init(int keep = 0)
     {
-        servos().deploy(SERVO_15_ARM_L, 2260, keep);//2205
+        servos().deploy(SERVO_15_ARM_L, 2260, keep);    //2205
     }
     void arm_left_deploy(int keep = 0)
     {

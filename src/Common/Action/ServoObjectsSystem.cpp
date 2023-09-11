@@ -1,5 +1,9 @@
 #include "ServoObjectsSystem.hpp"
 
+#include <sstream>
+#include <thread>
+
+#include "/usr/include/stdlib.h"
 #include "../../Log/Logger.hpp"
 #include "../../Thread/Thread.hpp"
 #include "Actions.hpp"
@@ -296,7 +300,7 @@ void ServoObjectsSystem::move_2_servos(bool waitornot, int time_eta_ms, int serv
     //WARNING SI actionmanager is not started
 
 
-    move_finished_ = false;
+    move_finished(false);
 
     logger().debug() << "move_2_servos create start" << logs::end;
     hold(servo1);
@@ -324,9 +328,9 @@ void ServoObjectsSystem::move_2_servos(bool waitornot, int time_eta_ms, int serv
     //wait or not wait ?
     if (waitornot) {
         logger().debug() << "wait for end of servo move...NO ESCAPE" << logs::end;
-        while (!move_finished_) {
-            utils::sleep_for_micros(TIMER_SERVO_PERIOD_US);
-            std::this_thread::yield();
+        while (!move_finished()) {
+            utils::sleep_for_micros(TIMER_SERVO_PERIOD_US * 2);
+            //std::this_thread::yield();
         }
     }
 }

@@ -50,6 +50,7 @@ bool SensorsDriver::is_alive()
 ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv() {
     return vadv_;
 }
+
 int SensorsDriver::sync() {
     //logger().debug() << "beaconSensors_.getData()"<< logs::end;
     msync_.lock();

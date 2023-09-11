@@ -33,6 +33,7 @@ AsservDriver::AsservDriver(std::string botid, ARobotPositionShared *aRobotPositi
         simuTicksPerMeter_ = 1470.0; //nb ticks for 1000mm
         simuMaxSpeed_ = 1.0; //m/s
         simuMaxPower_ = 127.0;
+        periodTime_us_ = 15000;
         //CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------
 
     } else if (botid == "LegoEV3Robot") {
@@ -41,14 +42,18 @@ AsservDriver::AsservDriver(std::string botid, ARobotPositionShared *aRobotPositi
         simuTicksPerMeter_ = 130566.0f; //nb ticks for 1000mm
         simuMaxSpeed_ = 0.5; //m/s
         simuMaxPower_ = 100.0;
+        periodTime_us_ = 20000;
+        asservSimuStarted_ = false;
         //CONFIGURATION EV3 SIMULATEUR CONSOLE --------------------------------------------
 
     } else if (botid == "OPOS6UL_Robot") {
         //printf("--- AsservDriver - botid == OPOS6UL_Robot\n");
         //CONFIGURATION OPOS6UL_Robot SIMULATEUR CONSOLE  --------------------------------------------
         simuTicksPerMeter_ = 130566.0f; //nb ticks for 1000mm
-        simuMaxSpeed_ = 0.3; //m/s
+        simuMaxSpeed_ = 0.5; //m/s
         simuMaxPower_ = 100.0; //127.0;
+        periodTime_us_ = 2000;
+        asservSimuStarted_ = true;
         //CONFIGURATION APF9328 SIMULATEUR CONSOLE  --------------------------------------------
     } else {
         logger().error() << "NO BOT ID!! => EXIT botid_=" << botid_ << logs::end;
@@ -84,17 +89,18 @@ AsservDriver::AsservDriver(std::string botid, ARobotPositionShared *aRobotPositi
 
     resetEncoders();
 
-    if (true) {
+    chrono_.start();
+    if (asservSimuStarted_) {
         //on demarre le check de positionnement...
-        asservSimuStarted_ = true;
+        //asservSimuStarted_ = true;
         this->start("AsservDriver::AsservDriver()" + botid_, 3);
-        chrono_.start();
-    } else {
-        //stop the thread
-        endWhatTodo();
-        asservSimuStarted_ = false;
-        this->cancel();
     }
+//    else {
+//        //stop the thread
+//        endWhatTodo();
+//        asservSimuStarted_ = false;
+//        this->cancel();
+//    }
 }
 
 AsservDriver::~AsservDriver()
@@ -112,9 +118,9 @@ AsservDriver::~AsservDriver()
 void AsservDriver::execute()
 {
 
-    int periodTime_us = 15000; //15MS FOR THE LEGO ROBOT, 2ms for opos6ul
+    //int periodTime_us = 15000; //15MS FOR THE LEGO ROBOT, 2ms for opos6ul
     utils::Chronometer chrono("AsservDriver::execute().SIMU");
-    chrono.setTimer(periodTime_us);
+    chrono.setTimer(periodTime_us_);
     ROBOTPOSITION p;
     ROBOTPOSITION pp; //position précédente
 
@@ -125,26 +131,26 @@ void AsservDriver::execute()
     pp = p;
 
     while (1) {
-
-        if (asservSimuStarted_) {
+//        if (asservSimuStarted_) {
             m_pos.lock();
             p = odo_GetPosition();
-            robotPositionShared_->setRobotPosition(p);
+            robotPositionShared_->setRobotPosition(p); //retourne 0 en position ????
             m_pos.unlock();
-            //logger().info() << "execute() p.x=" << p.x << " p.y=" << p.y << " chrono=" << chrono.getElapsedTimeInMicroSec() << logs::end;
+//logger().error() << "execute() p.x=" << p.x << " p.y=" << p.y << " chrono=" << chrono.getElapsedTimeInMicroSec() << logs::end;
 
             //TODO avoir accès au robot pour afficher du SVG
             //robot_->svgw().writePosition_BotPos(p.x, p.y, p.theta);
 
             //si different du precedentx
-            if (!(p.x == pp.x && p.y == pp.y)) {
+            if (!(p.x == pp.x && p.y == pp.y && p.theta == pp.theta)) {
+
                 loggerSvg().info() << "<circle cx=\"" << p.x << "\" cy=\"" << -p.y << "\" r=\"1\" fill=\"blue\" />"
                         << "<line x1=\"" << p.x << "\" y1=\"" << -p.y << "\" x2=\"" << p.x + cos(p.theta) * 25
                         << "\" y2=\"" << -p.y - sin(p.theta) * 25 << "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
                         << logs::end;
             }
             pp = p;
-        }
+//        }
         chrono.waitTimer();
     }
 }
@@ -214,7 +220,7 @@ float AsservDriver::convertPowerToSpeed(int power)
         exit(-1);
     }
 
-    float speed = ((float) power * simuMaxPower_) / simuMaxPower_; //vitesse max = 250mm/s pour 860 de power
+    float speed = ((float) power * simuCurrentSpeed_) / simuMaxPower_; //vitesse max = 250mm/s pour 860 de power
 
 //	logger().error() << " power=" << power
 //			<< " speed=" << speed
@@ -466,6 +472,7 @@ long AsservDriver::getLeftExternalEncoder()
 //    logger().debug() << "getLeftExternalEncoder=" << leftCounter_ << logs::end;
     return (long) leftCounter_; //ticks
 }
+//+/- 2,147,483,648
 long AsservDriver::getRightExternalEncoder()
 {
     computeCounterR();
@@ -473,7 +480,6 @@ long AsservDriver::getRightExternalEncoder()
     return (long) rightCounter_; //ticks
 }
 
-//+/- 2,147,483,648
 long AsservDriver::getLeftInternalEncoder()
 {
     return (long) getLeftExternalEncoder();
@@ -612,18 +618,18 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
 
     // On ajuste l'angle à parcourir pour ne pas faire plus d'un demi-tour
     // Exemple, tourner de 340 degrés est plus chiant que de tourner de -20 degrés
-    if (deltaTheta > M_PI) {
-        deltaTheta -= 2.0 * M_PI;
-    } else if (deltaTheta < -M_PI) {
-        deltaTheta += 2.0 * M_PI;
-    }
-    /*
-     std::fmod(deltaTheta, 2 * M_PI);
-     if (deltaTheta < -M_PI)
-     deltaTheta += M_PI;
-     if (deltaTheta > M_PI)
-     deltaTheta -= M_PI;
-     */
+//    if (deltaTheta > M_PI) {
+//        deltaTheta -= 2.0 * M_PI;
+//    } else if (deltaTheta < -M_PI) {
+//        deltaTheta += 2.0 * M_PI;
+//    }
+
+    deltaTheta = std::fmod(deltaTheta, 2.0 * M_PI);
+    if (deltaTheta < -M_PI)
+        deltaTheta += (2.0 * M_PI);
+    if (deltaTheta > M_PI)
+        deltaTheta -= (2.0 * M_PI);
+
     logger().debug() << "t_init=" << (t_init * 180.0f) / M_PI << " deltaTheta deg=" << (deltaTheta * 180.0f) / M_PI
             << " thetaCible=" << (thetaCible * 180.0f) / M_PI << logs::end;
 
@@ -662,11 +668,11 @@ TRAJ_STATE AsservDriver::motion_DoFaceReverse(float x_mm, float y_mm)
 //        deltaTheta += 2.0 * M_PI;
 //    }
 
-    std::fmod(deltaTheta, 2 * M_PI);
+    deltaTheta = std::fmod(deltaTheta, 2.0 * M_PI);
     if (deltaTheta < -M_PI)
-        deltaTheta += M_PI;
+        deltaTheta += (2.0 * M_PI);
     if (deltaTheta > M_PI)
-        deltaTheta -= M_PI;
+        deltaTheta -= (2.0 * M_PI);
 
     logger().debug() << "t_init=" << (t_init * 180.0f) / M_PI << " deltaTheta deg=" << (deltaTheta * 180.0f) / M_PI
             << " thetaCible=" << (thetaCible * 180.0f) / M_PI << logs::end;
@@ -712,12 +718,14 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
     logger().debug() << "dist_mm=" << dist_mm << "deltaXmm=" << deltaXmm << " deltaYmm=" << deltaYmm << " a=" << a
             << " b=" << b << "  !!!!!" << logs::end;
 
-    int increment_time_us = 5000; //us
-    float tps_sec = abs(dist_mm / simuCurrentSpeed_ * 1000.0f);
-    float increment_mm = ((increment_time_us / 1000.0) * simuCurrentSpeed_);
-    int nb_increment = abs(dist_mm) / increment_mm;
+    int increment_time_us = periodTime_us_ * 4; //us // on affiche que toutes les 4 periodes d'asserv
 
-    logger().debug() << "tps=" << tps_sec << " increment_mm=" << increment_mm << "  !!!!!" << logs::end;
+    float tps_sec = fabs(dist_mm / simuCurrentSpeed_ * 1000.0);
+    float increment_mm = fabs((increment_time_us / 1000.0) * simuCurrentSpeed_);
+    int nb_increment = (int) fabs(dist_mm / increment_mm);
+
+    logger().debug() << "tps(ms)=" << tps_sec * 1000.0 << " increment_mm=" << increment_mm << " nb_increment="
+            << nb_increment << "  !!!!!" << logs::end;
 
     for (int nb = 0; nb < nb_increment; nb++) {
 
@@ -738,10 +746,6 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
         }
         m_pos.unlock();
 
-        //TODO break si path_collision
-//        if (emergencyStop_)
-//            break;
-        //usleep(increment_time_us);
         utils::sleep_for_micros(increment_time_us);
     }
 
@@ -754,10 +758,11 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
         p_.y = y_init + deltaYmm;
     }
     m_pos.unlock();
+
     if (emergencyStop_)
         return TRAJ_NEAR_OBSTACLE;
-    //usleep(increment_time_us * 5);
-    utils::sleep_for_micros(increment_time_us * 5);
+
+    utils::sleep_for_micros(increment_time_us * 5); //fois 5 non necessaire ?
     return TRAJ_FINISHED;
 }
 
@@ -765,10 +770,34 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
 {
     if (emergencyStop_)
         return TRAJ_NEAR_OBSTACLE;
-    int increment_time_us = 5000;
+    //int increment_time_us = 5000;
+    int increment_time_us = periodTime_us_ * 4; //us
+
+    float theta_init = p_.theta;
+    int nb_increment = 20;
+    float temp_angle = angle_radians / nb_increment;
+    for (int nb = 0; nb < nb_increment; nb++) {
+
+        if (emergencyStop_)
+            return TRAJ_NEAR_OBSTACLE;
+
+        m_pos.lock();
+
+        float temp = p_.theta + temp_angle;
+
+        temp = std::fmod(temp, 2.0 * M_PI);
+        if (temp < -M_PI)
+            temp += (2.0 * M_PI);
+        if (temp > M_PI)
+            temp -= (2.0 * M_PI);
+
+        p_.theta = temp;
+        m_pos.unlock();
+        utils::sleep_for_micros(increment_time_us);
+    }
 
     m_pos.lock();
-    float temp = p_.theta + angle_radians;
+    float temp = theta_init + angle_radians;
 
 //    if (temp >= M_PI) {
 //        temp -= 2.0 * M_PI;
@@ -777,20 +806,21 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
 //        temp += 2.0 * M_PI;
 //    }
 
-    std::fmod(temp, 2 * M_PI);
+    temp = std::fmod(temp, 2.0 * M_PI);
     if (temp < -M_PI)
-        temp += M_PI;
+        temp += (2.0 * M_PI);
     if (temp > M_PI)
-        temp -= M_PI;
+        temp -= (2.0 * M_PI);
 
     p_.theta = temp;
     m_pos.unlock();
 
-    if (emergencyStop_)
+    if (emergencyStop_) {
+        logger().error() << " AsservDriver::motion_DoRotate emergencyStop_ !!!!!" << logs::end;
         return TRAJ_NEAR_OBSTACLE;
+    }
 
-    //usleep(increment_time_us * 7);
-    utils::sleep_for_micros(increment_time_us * 7);
+    utils::sleep_for_micros(increment_time_us * 7); //fois 7 non necessaire ?
 
     return TRAJ_FINISHED;
 }

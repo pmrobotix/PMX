@@ -18,6 +18,12 @@ LegoEV3AsservExtended::LegoEV3AsservExtended(std::string botId, LegoEV3RobotExte
 
     //set the value setLowSpeedForward for asserv
     setLowSpeedvalue(32);
+
+    B3_is_taken = 0;
+    B4_is_taken = 0;
+    A5_is_taken = 0;
+    D5_is_taken = 0;
+    taken_max = 3;
 }
 
 void LegoEV3AsservExtended::startMotionTimerAndOdo(bool assistedHandlingEnabled)
@@ -65,60 +71,67 @@ bool LegoEV3AsservExtended::filtre_IsInsideTableXY(int x_botpos, int y_botpos)
 
     //filtre de prise des elements de jeux par l'adversaire
     if (getRobot()->getMyColor() == PMXGREEN) {
-        if (x_botpos > 650 && x_botpos < 850 && y_botpos < 1250 && y_botpos > 1000) {
-
+        if (x_botpos > 600 && x_botpos < 850 && y_botpos < 1250 && y_botpos > 1000) {
 
 //TODO afficher en SVG et faire un ensure sur plusieurs fois
-
-
-            getRobot()->B3_is_taken = true;
+            B3_is_taken++;
+            if (B3_is_taken > taken_max)
+                getRobot()->B3_is_taken = true;
         }
 
         if (x_botpos > 500 && x_botpos < 850 && y_botpos < 2000 && y_botpos > 1775) {
-
-            getRobot()->B4_is_taken = true;
+            B4_is_taken++;
+            if (B4_is_taken > taken_max)
+                getRobot()->B4_is_taken = true;
         }
 
-        if (x_botpos > 0 && x_botpos < 500 && y_botpos < 2800 && y_botpos > 2100) {
-
-            getRobot()->A5_is_taken = true;
+        if (x_botpos > 0 && x_botpos < 400 && y_botpos < 2800 && y_botpos > 2100) {
+            A5_is_taken++;
+            if (A5_is_taken > taken_max)
+                getRobot()->A5_is_taken = true;
         }
 
-        if (x_botpos > 2000 - 500 && x_botpos < 2000 && y_botpos < 2800 && y_botpos > 2100) {
-
-            getRobot()->D5_is_taken = true;
+        if (x_botpos > 2000 - 400 && x_botpos < 2000 && y_botpos < 2800 && y_botpos > 2100) {
+            D5_is_taken++;
+            if (D5_is_taken > taken_max)
+                getRobot()->D5_is_taken = true;
         }
     } else {
-        if (x_botpos > (2000 - 850) && x_botpos < (2000 - 500) && y_botpos < 1250 && y_botpos > 1000) {
-
-            getRobot()->B3_is_taken = true;
+        if (x_botpos > (2000 - 850) && x_botpos < (2000 - 600) && y_botpos < 1250 && y_botpos > 1000) {
+            B3_is_taken++;
+            if (B3_is_taken > taken_max)
+                getRobot()->B3_is_taken = true;
         }
 
         if (x_botpos > (2000 - 850) && x_botpos < (2000 - 500) && y_botpos < 2000 && y_botpos > 1775) {
-
-            getRobot()->B4_is_taken = true;
+            B4_is_taken++;
+            if (B4_is_taken > taken_max)
+                getRobot()->B4_is_taken = true;
         }
 
-        if (x_botpos > (2000 - 650) && x_botpos < 2000 && y_botpos < 2800 && y_botpos > 2100) {
-
-            getRobot()->A5_is_taken = true;
+        if (x_botpos > (2000 - 450) && x_botpos < 2000 && y_botpos < 2800 && y_botpos > 2100) {
+            A5_is_taken++;
+            if (A5_is_taken > taken_max)
+                getRobot()->A5_is_taken = true;
         }
-        if (x_botpos > 0 && x_botpos < 650 && y_botpos < 2800 && y_botpos > 2100) {
-
-            getRobot()->D5_is_taken = true;
+        if (x_botpos > 0 && x_botpos < 400 && y_botpos < 2800 && y_botpos > 2100) {
+            D5_is_taken++;
+            if (D5_is_taken > taken_max)
+                getRobot()->D5_is_taken = true;
         }
 
     }
     //getRobot()->B4_is_taken = true;
 
     //on filtre si c'est en dehors de la table verticale! avec 10cm de marge
-    if ((x_botpos > 100 && x_botpos < table_x - 100) && (y_botpos > 100 && y_botpos < table_y - 100)) {
+    if ((x_botpos > 90 && x_botpos < table_x - 90) && (y_botpos > 90 && y_botpos < table_y - 90)) {
         logger().debug() << "INSIDE filtre_IsInsideTableXY xy_botpos=" << x_botpos << " " << y_botpos << logs::end;
         return true;
     } else
         return false;
 
 }
+
 /*
  bool LegoEV3AsservExtended::filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm, float theta_deg, int *x_botpos,
  int *y_botpos)
@@ -136,11 +149,11 @@ bool LegoEV3AsservExtended::filtre_IsInsideTableXY(int x_botpos, int y_botpos)
  //float a = (p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f));
  float a = (p.theta + (theta_deg * M_PI / 180.0f));
 
- std::fmod(a, 2 * M_PI);
+ a= std::fmod(a, 2 * M_PI);
  if (a < -M_PI)
- a += M_PI;
+ a += 2*M_PI;
  if (a > M_PI)
- a -= M_PI;
+ a -= 2*M_PI;
 
  //ADV coord repere table
  *x_botpos = p.x + (d_mm * cos(a));

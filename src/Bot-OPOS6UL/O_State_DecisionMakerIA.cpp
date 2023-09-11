@@ -22,7 +22,7 @@ bool O_launch_balls_1() {
     ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_launch1", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 2000000, 1, 1, true, 40);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 2000000, 1, 1, true, 40);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "O_launch_balls_1 : zone_launch1  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
@@ -54,7 +54,7 @@ bool O_take_ball_BC1() {
     ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_ball_BC1", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 2000000, 3, 3, true, 40);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 2000000, 3, 3, true, 40);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "O_take_ball_BC1 : zone_ball_BC1  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
@@ -72,7 +72,7 @@ bool O_take_ball_D3() {
     ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_ball_D3", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 2000000, 3, 3, true, 40);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 2000000, 3, 3, true, 40);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "O_take_ball_D3 : zone_ball_D3  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
@@ -109,7 +109,7 @@ bool O_take_distrib_partage() {
 
     robot.ia().iAbyPath().goToZone("zone_distrib_partage", &zone);
     int xx= zone.x;
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(xx, zone.y, zone.theta, true, 1000000, 3, 3, true, 0);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(xx, zone.y, radToDeg(zone.theta), true, 1000000, 3, 3, true, 0);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_take_trophy : zone_distrib_partage  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
@@ -129,7 +129,7 @@ bool O_take_distrib_partage() {
 
     //reculer et tourner
     //ts = robot.asserv().doLineAbs(-150);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(xx, zone.y, zone.theta, true, 1000000, 3, 3, true, 0);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(xx, zone.y, radToDeg(zone.theta), true, 1000000, 3, 3, true, 0);
 
     robot.logger().info() << "sleep_for_secs 40." << logs::end;
     utils::sleep_for_secs(40);
@@ -145,7 +145,7 @@ bool O_take_distrib() {
     RobotPosition zone;
 
     robot.ia().iAbyPath().goToZone("zone_distrib", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 3, 3, true, 0);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 3, 3, true, 0);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_take_trophy : zone_distrib  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
         robot.asserv().resetEmergencyOnTraj();
@@ -382,7 +382,7 @@ void O_State_DecisionMakerIA::execute() {
 
  robot.ia().iAbyPath().goToZone("zone_green_left", &zone);
 
- ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, false, 1000000, 5, 5, true);
+ ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), false, 1000000, 5, 5, true);
  if (ts != TRAJ_FINISHED) {
  robot.logger().info() << " zone_green_left  ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
  robot.asserv().resetEmergencyOnTraj();
@@ -625,7 +625,7 @@ void O_State_DecisionMakerIA::execute() {
 
  robot.ia().iAbyPath().goToZone("zone_petitport", &zone);
 
- ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, true, 1000000, 2, 2, true);
+ ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 2, 2, true);
  if (ts != TRAJ_FINISHED) {
  robot.logger().info() << " zone_green_left  ===== PB COLLISION FINALE - on retourne à la next strat ts=" << ts << logs::end;
  robot.asserv().resetEmergencyOnTraj();
@@ -699,7 +699,7 @@ void O_State_DecisionMakerIA::execute() {
  int dest_blue = zone.y;
  int zonex = zone.x;
 
- ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, false, 1000000, 0, 0, true);
+ ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), false, 1000000, 0, 0, true);
  if (ts != TRAJ_FINISHED) {
  robot.logger().error() << " zone_push_blue  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
  robot.asserv().resetEmergencyOnTraj();
@@ -737,7 +737,7 @@ void O_State_DecisionMakerIA::execute() {
  if (succeed > 0) {
  //if (change) {
  if (mesure_mm_moy > 260) {
- ts = robot.asserv().doMoveBackwardAndRotateTo(zonex, 260.0, zone.theta);
+ ts = robot.asserv().doMoveBackwardAndRotateTo(zonex, 260.0, radToDeg(zone.theta));
  if (ts != TRAJ_FINISHED) {
  robot.logger().error()
  << " go to doMoveBackwardAndRotateTo dest_blue  ===== PB COLLISION FINALE - Que fait-on? ts="
@@ -745,7 +745,7 @@ void O_State_DecisionMakerIA::execute() {
  robot.asserv().resetEmergencyOnTraj();
  }
  } else {
- ts = robot.asserv().doMoveForwardAndRotateTo(zonex, 260.0, zone.theta);
+ ts = robot.asserv().doMoveForwardAndRotateTo(zonex, 260.0, radToDeg(zone.theta));
  if (ts != TRAJ_FINISHED) {
  robot.logger().error()
  << " go to doMoveForwardAndRotateTo dest_blue  ===== PB COLLISION FINALE - Que fait-on? ts="
@@ -784,7 +784,7 @@ void O_State_DecisionMakerIA::execute() {
  //
  //     if (succeed > 0) {
  //     if (mesure_mm_moy > 260) {
- //     ts = robot.asserv().doMoveBackwardAndRotateTo(zonex, 245.0, zone.theta);
+ //     ts = robot.asserv().doMoveBackwardAndRotateTo(zonex, 245.0, radToDeg(zone.theta));
  //     if (ts != TRAJ_FINISHED) {
  //     robot.logger().error()
  //     << " go to doMoveBackwardAndRotateTo dest_blue - 30  ===== PB COLLISION FINALE - Que fait-on? ts="
@@ -792,7 +792,7 @@ void O_State_DecisionMakerIA::execute() {
  //     robot.asserv().resetEmergencyOnTraj();
  //     }
  //     } else {
- //     ts = robot.asserv().doMoveForwardAndRotateTo(zonex, 245.0, zone.theta);
+ //     ts = robot.asserv().doMoveForwardAndRotateTo(zonex, 245.0, radToDeg(zone.theta));
  //     if (ts != TRAJ_FINISHED) {
  //     robot.logger().error()
  //     << " go to doMoveForwardAndRotateTo dest_blue - 30  ===== PB COLLISION FINALE - Que fait-on? ts="
@@ -858,7 +858,7 @@ void O_State_DecisionMakerIA::execute() {
  robot.logger().info() << "on go au goldenium" << logs::end;
  robot.actions().sensors().setIgnoreFrontNearObstacle(false, false, false);
  robot.ia().iAbyPath().goToZone("zone_gold", &zone);
- ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, zone.theta, false, 1000000, 5, 5, true);
+ ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), false, 1000000, 5, 5, true);
  if (ts != TRAJ_FINISHED) {
  robot.logger().error() << " zone_gold  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts << logs::end;
  robot.asserv().resetEmergencyOnTraj();

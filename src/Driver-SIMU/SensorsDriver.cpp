@@ -2,14 +2,11 @@
 
 #include "SensorsDriver.hpp"
 
-#include <unistd.h>
 #include <cmath>
-#include <initializer_list>
-#include <string>
+#include <sstream>
 #include <vector>
 
-#include "../Common/Interface.Driver/ARobotPositionShared.hpp"
-#include "../Log/Logger.hpp"
+#include "../Log/Level.hpp"
 
 using namespace std;
 
@@ -20,9 +17,11 @@ ASensorsDriver* ASensorsDriver::create(std::string, ARobotPositionShared *aRobot
 
 SensorsDriver::SensorsDriver(ARobotPositionShared *aRobotPositionShared)
 {
+    pos_pour_calcul_ = { 0 };
+    pos_pour_calcul_prec_ = { 0 };
     robotPositionShared_ = aRobotPositionShared;
-    x_adv_ = 1200;
-    y_adv_ = 900;
+    x_adv_ = 1000;
+    y_adv_ = 1400;
 
 }
 
@@ -47,7 +46,8 @@ RobotPos SensorsDriver::transformPosTableToPosRobot(int nb, float x_table, float
             << logs::end;
 
     //coord table à transformer en coordonnées robot: 200,700 => position robot robot_
-    ROBOTPOSITION p = robotPositionShared_->getRobotPosition(); //robot_->asserv().pos_getPosition();
+    //ROBOTPOSITION p = robotPositionShared_->getRobotPosition(); //robot_->asserv().pos_getPosition();
+    ROBOTPOSITION p = pos_pour_calcul_;
 
     loggerSvg().info() << "<circle cx=\"" << p.x << "\" cy=\"" << -p.y << "\" r=\"3\" fill=\"blue\" />" << "<line x1=\""
             << p.x << "\" y1=\"" << -p.y << "\" x2=\"" << p.x + cos(p.theta) * 25 << "\" y2=\""
@@ -88,9 +88,11 @@ RobotPos SensorsDriver::transformPosTableToPosRobot(int nb, float x_table, float
 
     float alpha_rad = b_rad - p.theta + M_PI_2;
 
-    std::fmod(alpha_rad, 2 * M_PI);
-    if (alpha_rad < 0)
-        alpha_rad += 2 * M_PI;
+    alpha_rad = std::fmod(alpha_rad, 2.0 * M_PI);
+    if (alpha_rad < -M_PI)
+        alpha_rad += (2.0 * M_PI);
+    if (alpha_rad > M_PI)
+        alpha_rad -= (2.0 * M_PI);
 
     //angle entre l'axe devant le robot et le segment entre les milieu des 2 robots
     float alpha_deg = (alpha_rad * 180.0 / M_PI); //a_deg_rep_robot
@@ -111,37 +113,58 @@ RobotPos SensorsDriver::transformPosTableToPosRobot(int nb, float x_table, float
 
 ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv()
 {
-    ASensorsDriver::bot_positions bot_pos;
 
-    //coord table à transformer en coordonnées robot: 200,700 => position robot robot_
-//    int x_table = 1000.0;
-//    int y_table = 1500.0;
+    return vadv_;
 
-//    x_adv_ -=15;
-//    y_adv_ -=10;
-//    x_adv_ = 1300.0;
-//    y_adv_ = 1000.0;
-
-    int nb = 4;
-//    RobotPos pos1 = transformPosTableToPosRobot(nb, 700.0, 1800.0);
-//    RobotPos pos2 = transformPosTableToPosRobot(nb, 600.0, 1000.0);
-//    RobotPos pos3 = transformPosTableToPosRobot(nb, 1300.0, 300.0);
-//    RobotPos pos4 = transformPosTableToPosRobot(nb, 300.0, 400.0);
-
-    RobotPos pos1 = transformPosTableToPosRobot(nb, x_adv_, y_adv_);
-    RobotPos pos2 = transformPosTableToPosRobot(nb, 1000, 200);
-    RobotPos pos3 = transformPosTableToPosRobot(nb, 800, 2000);
-    RobotPos pos4 = transformPosTableToPosRobot(nb, 100, 1400);
-
-    //simu des positions adverses
-    //bot_pos = { pos1 };
-    //bot_pos = { pos1, pos2 };
-    bot_pos = { pos1, pos2, pos3, pos4 };
-    return bot_pos;
 }
 int SensorsDriver::sync()
 {
-    usleep(100000); //temps de mise a jour des données //TODO temps à mesurer avec la balise ??
+
+    //simulation de recuperation des données de la balise par la transaction i2c
+    //prise en compte de la position du robot à se moment pour les futures calculs, voir la version precedentes
+    //pos_pour_calcul_prec_ = pos_pour_calcul_;
+    pos_pour_calcul_ = robotPositionShared_->getRobotPosition(0);
+
+
+    //ASensorsDriver::bot_positions bot_pos;
+
+    //coord table à transformer en coordonnées robot: 200,700 => position robot robot_
+    //    int x_table = 1000.0;
+    //    int y_table = 1500.0;
+
+    //    x_adv_ -=15;
+    //    y_adv_ -=10;
+    //    x_adv_ = 1300.0;
+    //    y_adv_ = 1000.0;
+
+    int nb = 4;
+    //    RobotPos pos1 = transformPosTableToPosRobot(nb, 700.0, 1800.0);
+    //    RobotPos pos2 = transformPosTableToPosRobot(nb, 600.0, 1000.0);
+    //    RobotPos pos3 = transformPosTableToPosRobot(nb, 1300.0, 300.0);
+    //    RobotPos pos4 = transformPosTableToPosRobot(nb, 300.0, 400.0);
+
+    vadv_.clear();
+    if ((pos_pour_calcul_.x >= 0.1 || pos_pour_calcul_.y >= 0.1)) {
+
+        RobotPos pos1 = transformPosTableToPosRobot(nb, x_adv_, y_adv_);
+        RobotPos pos2 = transformPosTableToPosRobot(nb, 1000, 200);
+        RobotPos pos3 = transformPosTableToPosRobot(nb, 800, 2000);
+        RobotPos pos4 = transformPosTableToPosRobot(nb, 100, 1400);
+
+        vadv_.push_back(pos1);
+        vadv_.push_back(pos2);
+        vadv_.push_back(pos3);
+        vadv_.push_back(pos4);
+        //simu des positions adverses
+        //bot_pos = { };
+        //vadv_ = { pos1 };
+        //bot_pos = { pos1, pos2 };
+        //bot_pos = { pos1, pos2, pos3, pos4 };
+
+    }
+
+    //usleep(20000); //temps de mise a jour des données
+    //utils::Thread::sleep_for_micros(200000);
     return 0;
 }
 

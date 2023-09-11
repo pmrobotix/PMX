@@ -71,7 +71,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
     robot.actions().start();
     robot.actions().sensors().setIgnoreFrontNearObstacle(false, true, false);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-    robot.actions().sensors().addTimerSensors(100);
+    robot.actions().sensors().addTimerSensors(200);
 
     chrono.start();
     TRAJ_STATE ts = TRAJ_OK;

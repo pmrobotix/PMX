@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <sys/types.h>
 #include <cmath>
@@ -106,6 +105,8 @@ void CommandManagerA::perform()
             commandStatus = STATUS_RUNNING;
         }
 
+        //printf("\nCommandManagerA::perform() (!areRampsFinished) currCMD= %d\n", currCMD.type);
+
         if (currCMD.type == CMD_GO || currCMD.type == CMD_TURN) { // On avance ou on tourne sur place
 
             return; //Dans ce cas, on attend simplement d'etre arrive :)
@@ -146,7 +147,7 @@ void CommandManagerA::perform()
 
         // On a une consigne à exécuter !
         commandStatus = STATUS_RUNNING;
-
+        //printf("\nCommandManagerA::perform()   currCMD= %d\n", currCMD.type);
         if (currCMD.type == CMD_GO) {  // On avance ou on recule de la consigne
             cnsgCtrl->add_dist_consigne(currCMD.value);
         } else if (currCMD.type == CMD_TURN) {   // On tourne de la consigne
@@ -269,7 +270,7 @@ void CommandManagerA::computeGoToAngle()
     float deltaX = currCMD.value - odometrie->getX(); // Différence entre la cible et le robot selon X
     float deltaY = currCMD.secValue - odometrie->getY(); // Différence entre la cible et le robot selon Y
 
-    // Angle à parcourir
+            // Angle à parcourir
     float deltaTheta = computeDeltaTheta(deltaX, deltaY);
 
     //TODO a tester en conditions réelles et extrêmes de mauvaises utilisations
@@ -288,7 +289,7 @@ void CommandManagerA::computeGoToAngleReverse()
     float deltaX = currCMD.value - odometrie->getX(); // Différence entre la cible et le robot selon X
     float deltaY = currCMD.secValue - odometrie->getY(); // Différence entre la cible et le robot selon Y
 
-    // Angle à parcourir
+            // Angle à parcourir
     float deltaTheta = computeDeltaTheta(deltaX, deltaY);
 
     //TODO a tester en conditions réelles et extrêmes de mauvaises utilisations
@@ -381,6 +382,9 @@ void CommandManagerA::computeEnchainement()
 
 void CommandManagerA::setEmergencyStop()  //Gestion d'un éventuel arrêt d'urgence
 {
+
+    //printf("----setEmergencyStop getPendingCmdCount()=%d current:%d\n", getPendingCmdCount(),currCMD.type);
+
     cnsgCtrl->setQuadRamp_Angle(false); //Ajouter cho 2019
     cnsgCtrl->setQuadRamp_Dist(false);
 
@@ -390,20 +394,28 @@ void CommandManagerA::setEmergencyStop()  //Gestion d'un éventuel arrêt d'urge
     while (currCMD.type != CMD_NULL) {
         currCMD = liste->dequeue();
     }
+//    while (nextCMD.type != CMD_NULL) {
+//        nextCMD = liste->dequeue();
+//    }
     nextCMD.type = CMD_NULL;
 
     //printf("===== commandStatus = STATUS_HALTED!!!\n");
     commandStatus = STATUS_HALTED;
+
+    //debug
+    //printf("----setEmergencyStop getPendingCmdCount()=%d current:%d\n", getPendingCmdCount(),currCMD.type);
 }
 
 void CommandManagerA::resetEmergencyStop()
 {
-
+    //printf("----resetEmergencyStop START getPendingCmdCount()=%d current:%d\n", getPendingCmdCount(),currCMD.type);
     while (currCMD.type != CMD_NULL) {
         currCMD = liste->dequeue();
     }
+//    while (nextCMD.type != CMD_NULL) {
+//        nextCMD = liste->dequeue();
+//    }
     nextCMD.type = CMD_NULL;
-
 
     if (commandStatus == STATUS_HALTED || commandStatus == STATUS_BLOCKED) { //Ajouter cho 2019
         commandStatus = STATUS_IDLE;
@@ -411,6 +423,9 @@ void CommandManagerA::resetEmergencyStop()
     cnsgCtrl->setQuadRamp_Angle(true); //Ajouter cho 2019
     cnsgCtrl->setQuadRamp_Dist(true);
     cnsgCtrl->reset_blocked_ticks();
+
+    //debug
+    //printf("----resetEmergencyStop END getPendingCmdCount()=%d current:%d \n", getPendingCmdCount(),currCMD.type);
 
 }
 

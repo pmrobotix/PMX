@@ -11,7 +11,6 @@
 Asserv::Asserv(std::string botId, Robot *robot) //TODO utiliser uniquement robot, puis robot->getID() dans le create en dessous
 {
 
-    //aRobotPositionShared_ = ARobotPositionShared::create();
     asservdriver_ = AAsservDriver::create(botId, robot->sharedPosition());
     probot_ = robot;
 
@@ -46,35 +45,35 @@ Asserv::~Asserv()
     delete pAsservEsialR_;
 }
 /*
-//TODO utiliser convertPositionBeaconToRepereTable dans ARobotPositionShared ?
-ROBOTPOSITION Asserv::convertPositionToRepereTable(float d_mm, float x_mm, float y_mm, float theta_deg, float *x_botpos,
-                float *y_botpos)
-{
-    ROBOTPOSITION p = pos_getPosition();
-    //coordonnées de l'objet detecté sur la table// M_P/2
-//    *x_botpos = p.x + (d_mm * cos(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
-//    *y_botpos = p.y + (d_mm * sin(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
-    float a = (p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f));
-    std::fmod(a, 2 * M_PI);
-//    if (a < -M_PI)
-//        a += M_PI;
-//    if (a > M_PI)
-//        a -= M_PI;
+ //TODO utiliser convertPositionBeaconToRepereTable dans ARobotPositionShared ?
+ ROBOTPOSITION Asserv::convertPositionToRepereTable(float d_mm, float x_mm, float y_mm, float theta_deg, float *x_botpos,
+ float *y_botpos)
+ {
+ ROBOTPOSITION p = pos_getPosition();
+ //coordonnées de l'objet detecté sur la table// M_P/2
+ //    *x_botpos = p.x + (d_mm * cos(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
+ //    *y_botpos = p.y + (d_mm * sin(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
+ float a = (p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f));
+ std::fmod(a, 2 * M_PI);
+ //    if (a < -M_PI)
+ //        a += M_PI;
+ //    if (a > M_PI)
+ //        a -= M_PI;
 
-    //ADV coord
-    float fx_botpos= p.x + (d_mm * cos(a));
-    float fy_botpos = p.y + (d_mm * sin(a));
+ //ADV coord
+ float fx_botpos= p.x + (d_mm * cos(a));
+ float fy_botpos = p.y + (d_mm * sin(a));
 
-    *x_botpos  = fx_botpos;
-    *y_botpos = fy_botpos;
-    logger().debug() << "DEBUG --xy_botpos= " << *x_botpos << " " << *y_botpos
-                    << " pos: " << p.x << " " << p.y << " p_deg:" << p.theta  * 180.0f / M_PI<< " --balise: " << d_mm << " " << x_mm << " "
-                    << y_mm << " t_deg:" << theta_deg << logs::end;
+ *x_botpos  = fx_botpos;
+ *y_botpos = fy_botpos;
+ logger().debug() << "DEBUG --xy_botpos= " << *x_botpos << " " << *y_botpos
+ << " pos: " << p.x << " " << p.y << " p_deg:" << p.theta  * 180.0f / M_PI<< " --balise: " << d_mm << " " << x_mm << " "
+ << y_mm << " t_deg:" << theta_deg << logs::end;
 
 
-    return p;
-}
-*/
+ return p;
+ }
+ */
 
 void Asserv::endWhatTodo()
 {
@@ -168,15 +167,15 @@ void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees_, 
     setMatchColorPosition(matchColor);
 
     x_mm = getRelativeX(x_mm);
-    float thetaInDegrees = getRelativeAngle(thetaInDegrees_);
+    float thetaInRad = getRelativeAngleRad(degToRad(thetaInDegrees_));
 
     logger().debug() << "matchcolor [YELLOW=0 BLUE=1]=" << matchColor << " thetaInDegrees=" << thetaInDegrees_
-            << " getRelativeAngle=" << thetaInDegrees << " x_mm=" << x_mm << " y_mm=" << y_mm << logs::end;
+            << " getRelativeAngle=" << radToDeg(thetaInRad) << " x_mm=" << x_mm << " y_mm=" << y_mm << logs::end;
 
     if (useAsservType_ == ASSERV_EXT)
-        asservdriver_->odo_SetPosition(x_mm, y_mm, thetaInDegrees * M_PI / 180.0);
+        asservdriver_->odo_SetPosition(x_mm, y_mm, thetaInRad);
     else if (useAsservType_ == ASSERV_INT_ESIALR)
-        pAsservEsialR_->odo_SetPosition(x_mm, y_mm, thetaInDegrees * M_PI / 180.0);
+        pAsservEsialR_->odo_SetPosition(x_mm, y_mm, thetaInRad);
 }
 
 void Asserv::setPositionReal(float x_mm, float y_mm, float thetaInRad)
@@ -200,6 +199,9 @@ ROBOTPOSITION Asserv::pos_getPosition()
         p = asservdriver_->odo_GetPosition();
     else if (useAsservType_ == ASSERV_INT_ESIALR)
         p = pAsservEsialR_->odo_GetPosition();
+
+    //mise à jour de la position pour les sensors
+    //probot_->sharedPosition()->setRobotPosition(p);
     return p;
 }
 float Asserv::pos_getX_mm()
@@ -235,38 +237,38 @@ bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm,
 
 }
 /*
-bool Asserv::filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm, float theta_deg, int *x_botpos, int *y_botpos)
-{
-    //return true; //PATCH
+ bool Asserv::filtre_IsInsideTableXY(int d_mm, int x_mm, int y_mm, float theta_deg, int *x_botpos, int *y_botpos)
+ {
+ //return true; //PATCH
 
-    //table verticale
-    int table_x = 2000;
-    int table_y = 3000;
-    RobotPosition p = pos_getPosition();
+ //table verticale
+ int table_x = 2000;
+ int table_y = 3000;
+ RobotPosition p = pos_getPosition();
 
-    //coordonnées de l'objet detecté sur la table// M_P/2
-//    *x_botpos = p.x + (d_mm * cos(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
-//    *y_botpos = p.y + (d_mm * sin(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
-    float a = ((theta_deg * M_PI / 180.0f) - p.theta);
-    std::fmod(a, 2 * M_PI);
-    if (a < -M_PI)
-        a += M_PI;
-    if (a > M_PI)
-        a -= M_PI;
+ //coordonnées de l'objet detecté sur la table// M_P/2
+ //    *x_botpos = p.x + (d_mm * cos(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
+ //    *y_botpos = p.y + (d_mm * sin(p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f)));
+ float a = ((theta_deg * M_PI / 180.0f) - p.theta);
+ std::fmod(a, 2 * M_PI);
+ if (a < -M_PI)
+ a += M_PI;
+ if (a > M_PI)
+ a -= M_PI;
 
-    *x_botpos = p.x + (d_mm * cos(a));
-    *y_botpos = p.y + (d_mm * sin(a));
+ *x_botpos = p.x + (d_mm * cos(a));
+ *y_botpos = p.y + (d_mm * sin(a));
 
-    //on filtre si c'est en dehors de la table verticale! avec 10cm de marge
-    if ((*x_botpos > 100 && *x_botpos < table_x - 100) && (*y_botpos > 100 && *y_botpos < table_y - 100)) {
-        logger().debug() << "INSIDE filtre_IsInsideTableXY xy_botpos=" << *x_botpos << " " << *y_botpos
-                << "pos: " << p.x << " " << p.y << " p_rad:" << p.theta << " balise: " << d_mm << " " << x_mm << " "
-                << y_mm << " t_deg:" << theta_deg << logs::end;
-        return true;
-    } else
-        return false;
+ //on filtre si c'est en dehors de la table verticale! avec 10cm de marge
+ if ((*x_botpos > 100 && *x_botpos < table_x - 100) && (*y_botpos > 100 && *y_botpos < table_y - 100)) {
+ logger().debug() << "INSIDE filtre_IsInsideTableXY xy_botpos=" << *x_botpos << " " << *y_botpos
+ << "pos: " << p.x << " " << p.y << " p_rad:" << p.theta << " balise: " << d_mm << " " << x_mm << " "
+ << y_mm << " t_deg:" << theta_deg << logs::end;
+ return true;
+ } else
+ return false;
 
-}*/
+ }*/
 /*
  //TODO doit etre surcharger par robot
  bool Asserv::filtre_IsInFront(int threshold_mm, int dist_mm, int x_mm, int y_mm, float theta_deg)
@@ -341,7 +343,7 @@ void Asserv::setEmergencyStop()
 
 void Asserv::resetEmergencyOnTraj(std::string message)
 {
-    logger().error() << "=====   resetEmergencyOnTraj message = " << message << logs::end;
+    //logger().error() << "=====   resetEmergencyOnTraj message = " << message << logs::end;
 
     if (useAsservType_ == ASSERV_EXT)
         asservdriver_->path_ResetEmergencyStop();
@@ -370,12 +372,11 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
 //    logger().error() << "temp_forceRotation_ = " << temp_forceRotation_ << " temp_ignoreFrontCollision_="
 //            << temp_ignoreFrontCollision_ << logs::end;
     if (temp_forceRotation_) {
-        //logger().error() << "forceRotation_ = " << forceRotation_ << logs::end;
+        //logger().error() << "forceRotation_ = " << temp_forceRotation_ << logs::end;
         return;
     }
     if (temp_ignoreFrontCollision_)
         return;
-
 
     //3 ou 4
     //.if (frontlevel >= 3) {
@@ -464,7 +465,7 @@ TRAJ_STATE Asserv::gotoChain(float xMM, float yMM)
 TRAJ_STATE Asserv::gotoXY(float xMM, float yMM)
 {
     float x_match = getRelativeX(xMM);
-    temp_ignoreRearCollision_ = true;
+    //temp_ignoreRearCollision_ = true;
 
     TRAJ_STATE ts;
     if (useAsservType_ == ASSERV_EXT)
@@ -474,7 +475,7 @@ TRAJ_STATE Asserv::gotoXY(float xMM, float yMM)
 
     else
         ts = TRAJ_ERROR;
-    temp_ignoreRearCollision_ = false;
+    //temp_ignoreRearCollision_ = false;
 
     return ts;
 }
@@ -491,7 +492,7 @@ TRAJ_STATE Asserv::gotoReverse(float xMM, float yMM)
 
     else
         ts = TRAJ_ERROR;
-    temp_ignoreRearCollision_ = false;
+    temp_ignoreFrontCollision_ = false;
     return ts;
 }
 
@@ -507,7 +508,7 @@ TRAJ_STATE Asserv::gotoReverseChain(float xMM, float yMM)
 
     else
         ts = TRAJ_ERROR;
-    temp_ignoreRearCollision_ = false;
+    temp_ignoreFrontCollision_ = false;
     return ts;
 }
 
@@ -567,14 +568,14 @@ TRAJ_STATE Asserv::doRelativeRotateBy(float thetaInDegreeRelative)
         return doRotateAbs(thetaInDegreeRelative); //jaune
 }
 
-TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM) ////TODO temp_forceRotation_ a ajouter
+TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
 {
 
 //    logger().error() << "1.============ doFaceTo temp_forceRotation_ = true;"  << logs::end;
     temp_forceRotation_ = true; //attention on ne prend pas en compte l'adversaire
 
     float x_match = getRelativeX(xMM);
-    logger().debug() << "doFaceTo xMM=" << xMM << " yMM=" << yMM << logs::end;
+    //logger().error() << "doFaceTo xMM=" << xMM << " yMM=" << yMM << logs::end;
 
     TRAJ_STATE ts;
 
@@ -595,39 +596,41 @@ TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_i
 {
 //logger().debug() << "====2 doRotateTo thetaInDegree=" << thetaInDegree << "degrees " << logs::end;
 
-    float currentThetaInDegree = pos_getThetaInDegree();
-    float degrees = getRelativeAngle(thetaInDegreeAbsolute) - currentThetaInDegree;
+    //float currentThetaInDegree = pos_getThetaInDegree();
+    //float degrees = getRelativeAngle(thetaInDegreeAbsolute) - currentThetaInDegree;
+    //float degrees = radToDeg(getRelativeAngleRad(degToRad(thetaInDegreeAbsolute))) - currentThetaInDegree;
 
+    float rad = getRelativeAngleRad(degToRad(thetaInDegreeAbsolute)) - pos_getTheta();
 
-// force it to be the positive remainder, so that 0 <= angle < 360
-
-    degrees = (((int) (degrees * 1000.0f) + 360000) % 360000) / 1000.0f;
-
-//reduction sur une plage de [0 à 360]
-    if (degrees >= 360.0) {
-        degrees = ((int) (degrees * 1000.0f) % 360000) / 1000.0f;
-
-    }
-    if (degrees < -360.0) {
-        int d = (int) -(degrees * 1000.0f);
-        d = d % 360000;
-        degrees = -d / 1000.0f;
-    }
+//// force it to be the positive remainder, so that 0 <= angle < 360
+//
+//    degrees = (((int) (degrees * 1000.0f) + 360000) % 360000) / 1000.0f;
+//
+////reduction sur une plage de [0 à 360]
+//    if (degrees >= 360.0) {
+//        degrees = ((int) (degrees * 1000.0f) % 360000) / 1000.0f;
+//
+//    }
+//    if (degrees < -360.0) {
+//        int d = (int) -(degrees * 1000.0f);
+//        d = d % 360000;
+//        degrees = -d / 1000.0f;
+//    }
 
 // force into the minimum absolute value residue class, so that -180 < angle <= 180
-    if (degrees >= 180)
-        degrees -= 360;
+//    if (degrees >= 180)
+//        degrees -= 360;
+//float rad = degToRad(degrees);
 
+    rad = std::fmod(rad, 2.0 * M_PI);
+    if (rad < -M_PI)
+        rad += (2.0 * M_PI);
+    if (rad > M_PI)
+        rad -= (2.0 * M_PI);
 
-
-/*
-    std::fmod(degrees, 2 * 180.0);
-            if (degrees < -180.0)
-                degrees += 180.0;
-            if (degrees > 180.0)
-                degrees -= 180.0;
-                */
-    logger().debug() << "==== doRotateTo degrees=" << degrees << "degrees " << logs::end;
+    float degrees = radToDeg(rad);
+    logger().debug() << "==== doRotateTo degrees=" << degrees << " thetaInDegreeAbsolute=" << thetaInDegreeAbsolute
+            << logs::end;
     TRAJ_STATE ts = doRotateAbs(degrees);
 
     return ts;
@@ -645,20 +648,19 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored, fl
     }
     float aRadian = atan2(dy, dx);
 
-    std::fmod(aRadian, 2 * M_PI);
-        if (aRadian < -M_PI)
-            aRadian += M_PI;
-        if (aRadian > M_PI)
-            aRadian -= M_PI;
+    aRadian = std::fmod(aRadian, 2.0 * M_PI);
+    if (aRadian < -M_PI)
+        aRadian += (2.0 * M_PI);
+    if (aRadian > M_PI)
+        aRadian -= (2.0 * M_PI);
 
+    logger().debug() << "doMoveForwardTo doRotateTo degrees=" << (aRadian * 180.0f) / M_PI << " dx=" << dx << " dy="
+            << dy << "  (aRadian * 180.0f) / M_PI)= " << (aRadian * 180.0f) / M_PI << " get="
+            << radToDeg(getRelativeAngleRad(aRadian)) << " xMM=" << xMM << " yMM=" << yMM << " getX=" << pos_getX_mm()
+            << " getY=" << pos_getY_mm() << logs::end;
 
-
-    //logger().debug() << "doMoveForwardTo doRotateTo degrees=" << (aRadian * 180.0f) / M_PI << " dx=" << dx << " dy="
-//            << dy << "  (aRadian * 180.0f) / M_PI)= " << (aRadian * 180.0f) / M_PI << " get="
-//            << getRelativeAngle((aRadian * 180.0f) / M_PI) << " xMM=" << xMM << " yMM=" << yMM << " getX="
-//            << pos_getX_mm() << " getY=" << pos_getY_mm() << logs::end;
-
-    TRAJ_STATE ts = doAbsoluteRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI), rotate_ignored);
+    //TRAJ_STATE ts = doAbsoluteRotateTo(getRelativeAngle((aRadian * 180.0f) / M_PI), rotate_ignored);
+    TRAJ_STATE ts = doAbsoluteRotateTo(radToDeg(getRelativeAngleRad(aRadian)), rotate_ignored);
     if (ts != TRAJ_FINISHED) {
         if (!rotate_ignored)
             return ts;
@@ -668,8 +670,9 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored, fl
             //logger().debug() << " __on passe au doline !!!" << logs::end;
         }
     }
+
     float dist = sqrt(dx * dx + dy * dy);
-//logger().debug() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
+    logger().debug() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
     return doLineAbs(dist + adjustment_mm);
 
 }
@@ -684,13 +687,13 @@ TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM, bool rotate_ignored)
     }
     float aRadian = atan2(dy, dx);
 
-    std::fmod(aRadian, 2 * M_PI);
-            if (aRadian < -M_PI)
-                aRadian += M_PI;
-            if (aRadian > M_PI)
-                aRadian -= M_PI;
+    aRadian = std::fmod(aRadian, 2.0 * M_PI);
+    if (aRadian < -M_PI)
+        aRadian += (2.0 * M_PI);
+    if (aRadian > M_PI)
+        aRadian -= (2.0 * M_PI);
 
-    TRAJ_STATE ts = doAbsoluteRotateTo(getRelativeAngle(((M_PI + aRadian) * 180.0f) / M_PI));
+    TRAJ_STATE ts = doAbsoluteRotateTo(radToDeg(getRelativeAngleRad((M_PI + aRadian))));
     if (ts != TRAJ_FINISHED) {
         if (!rotate_ignored)
             return ts;
@@ -808,7 +811,7 @@ int Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, ROBOT
                     + (((p.y) - pos_y_start_mm) * ((p.y) - pos_y_start_mm)));
 
     float dist_x_when_mesuring_mm = std::abs(p.x - pos_x_start_mm_conv);
-    float position_rel_theta_when_mesuring_rad = getRelativeAngle(p.theta * 180.0 / M_PI) * M_PI / 180.0; //on cherche juste l'angle relatif qu'on soit en couleur A ou B
+    float position_rel_theta_when_mesuring_rad = getRelativeAngleRad(p.theta); //on cherche juste l'angle relatif qu'on soit en couleur A ou B
 
 //calcul de l'angle entre les 2 rayons de cercle = angle_rad
     float alphap_rad = acos((dist_x_when_mesuring_mm / dist_real_mm));
@@ -852,8 +855,7 @@ int Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, ROBOT
 //float new_teta = getRelativeAngle((position_rel_theta_when_mesuring_rad + (alphap_rad - new_alphap)) * 180.0 / M_PI) * M_PI / 180.0;
 
 //TODO essaie de correction de l'angle
-    float new_teta = getRelativeAngle((position_rel_theta_when_mesuring_rad - (alphap_rad - new_alphap)) * 180.0 / M_PI)
-            * M_PI / 180.0;
+    float new_teta = getRelativeAngleRad((position_rel_theta_when_mesuring_rad - (alphap_rad - new_alphap)));
 
     logger().debug() << "new pos : x=" << new_x_mm << " y=" << new_y_mm << " a=" << new_teta << " degrees="
             << new_teta * 180 / M_PI << logs::end;
@@ -975,7 +977,7 @@ bool Asserv::calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b
                 << " a_deg= " << new_teta * 180.0 / M_PI << logs::end;
         //regle de 3 pour modifier le x (decalage sur aire de depart qui influe sur le x)
 
-        setPositionAndColor(getRelativeX(new_x), new_y, getRelativeAngle(new_teta * 180.0 / M_PI), matchColorPosition_);
+        setPositionAndColor(getRelativeX(new_x), new_y, radToDeg(getRelativeAngleRad(new_teta)), matchColorPosition_);
 
         return true;
     } else
@@ -1137,9 +1139,6 @@ TRAJ_STATE Asserv::doCalage(int distmm, int percent)
     } else
         return TRAJ_ERROR;
 }
-
-
-
 
 //FONCTION ASSERV DE BASE
 

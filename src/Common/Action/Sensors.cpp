@@ -17,7 +17,6 @@ Sensors::Sensors(Actions &actions, Robot *robot) :
         AActionsElement(actions), robot_(robot)
 
 {
-
     sensorsdriver_ = ASensorsDriver::create(robot->getID(), robot->sharedPosition());
 
     remove_outside_table_ = true;
@@ -441,7 +440,7 @@ int Sensors::front(bool display)
 //    int tfR = 0;
     int tfMin = 9999;
 
-    logger().debug() << " L " << enableFrontLeft_ << " C " << enableFrontCenter_ << " R " << enableFrontRight_
+    logger().debug() << "enable L=" << enableFrontLeft_ << " C=" << enableFrontCenter_ << " R=" << enableFrontRight_
             << logs::end;
 
     int level = 0;
@@ -454,7 +453,7 @@ int Sensors::front(bool display)
             {
                 if ((!ignoreFrontLeft_ && (fL < frontLeftThreshold_))) {
                     if (display)
-                        logger().info() << "1 frontLeft= " << fL << logs::end;
+                        logger().debug() << "1 frontLeft= " << fL << logs::end;
 //                tfL = fL;
                     if (fL > 60)
                         if (tfMin > fL)
@@ -464,7 +463,7 @@ int Sensors::front(bool display)
                 }
                 if ((!ignoreFrontLeft_ && (fL < frontLeftVeryClosedThreshold_))) {
                     if (display)
-                        logger().info() << "2 frontLeft= " << fL << logs::end;
+                        logger().debug() << "2 frontLeft= " << fL << logs::end;
                     level = 4;
                 }
             }
@@ -489,6 +488,7 @@ int Sensors::front(bool display)
 //            ROBOTPOSITION pos_robot_instantane = this->robot()->passerv()->convertPositionToRepereTable(botpos.d,
 //                    botpos.x, botpos.y, botpos.theta_deg, &x_pos_adv_table, &y_pos_adv_table);
 
+            //Attention la position du robot doit etre setter avant pour le calcul
             ROBOTPOSITION pos_robot_instantane = this->robot()->sharedPosition()->convertPositionBeaconToRepereTable(
                     botpos.d, botpos.x, botpos.y, botpos.theta_deg, &x_pos_adv_table, &y_pos_adv_table);
 
@@ -516,20 +516,20 @@ int Sensors::front(bool display)
 
                 level_filtered = this->filtre_levelInFront(thresholdLR, frontCenterThreshold_,
                         frontCenterVeryClosedThreshold_, botpos.d, botpos.x, botpos.y, botpos.theta_deg);
-                logger().info() << __FUNCTION__ << " " << nb << " bots=" << botpos.nbDetectedBots << " level_filtered= "
+                logger().debug() << __FUNCTION__ << " " << nb << " nbbots=" << botpos.nbDetectedBots << " level_filtered= "
                         << level_filtered << logs::end;
 
                 if (level_filtered == 1) {
                     // DROITE
                     if (display)
-                        logger().info() << level_filtered << " DROITE frontCenter xy= " << botpos.x << " " << botpos.y
+                        logger().debug() << level_filtered << " DROITE frontCenter xy= " << botpos.x << " " << botpos.y
                                 << logs::end;
                     level = 1;
                     adv_is_detected_front_right_ = true;
                 } else if (level_filtered == 2) {
                     // GAUCHE
                     if (display)
-                        logger().info() << level_filtered << " GAUCHE frontCenter xy= " << botpos.x << " " << botpos.y
+                        logger().debug() << level_filtered << " GAUCHE frontCenter xy= " << botpos.x << " " << botpos.y
                                 << logs::end;
                     level = 2;
                     adv_is_detected_front_left_ = true;
@@ -537,7 +537,7 @@ int Sensors::front(bool display)
                 } else if (level_filtered == 3) {
                     level = 3;
                     if (display)
-                        logger().info() << level_filtered << " frontCenter xy= " << botpos.x << " " << botpos.y
+                        logger().debug() << level_filtered << " frontCenter xy= " << botpos.x << " " << botpos.y
                                 << logs::end;
                     if (x_pos_adv_table != -1 && y_pos_adv_table != -1)
                         this->robot()->svgw().writePosition_AdvPos(x_pos_adv_table, y_pos_adv_table,
@@ -549,7 +549,7 @@ int Sensors::front(bool display)
                         this->robot()->svgw().writePosition_AdvPos(x_pos_adv_table, y_pos_adv_table,
                                 pos_robot_instantane.x, pos_robot_instantane.y, 2);
                     if (display)
-                        logger().info() << level_filtered << " frontCenter xy= " << botpos.x << " " << botpos.y
+                        logger().debug() << level_filtered << " frontCenter xy= " << botpos.x << " " << botpos.y
                                 << logs::end;
                 }
             } else {
@@ -573,7 +573,7 @@ int Sensors::front(bool display)
         if (fR_filter) {
             if ((!ignoreFrontRight_ && (fR < frontRightThreshold_))) {
                 if (display)
-                    logger().info() << "1 frontRight= " << fR << logs::end;
+                    logger().debug() << "1 frontRight= " << fR << logs::end;
 //                tfR = fR;
                 if (fR > 60)
                     if (tfMin > fR)
@@ -582,7 +582,7 @@ int Sensors::front(bool display)
             }
             if ((!ignoreFrontRight_ && (fR < frontRightVeryClosedThreshold_))) {
                 if (display)
-                    logger().info() << "2 frontRight= " << fR << logs::end;
+                    logger().debug() << "2 frontRight= " << fR << logs::end;
                 level = 4;
             }
         }
@@ -835,17 +835,18 @@ void Sensors::stopTimerSensors()
 
 void SensorsTimer::onTimer(utils::Chronometer chrono)
 {
-//    logger().error() << ">> SensorsTimer::onTimer sensors_.getAvailableFrontCenter()="
-//            << sensors_.getAvailableFrontCenter() << logs::end;
+    logger().debug() << ">> SensorsTimer::onTimer sensors_.getAvailableFrontCenter()="
+            << sensors_.getAvailableFrontCenter() << logs::end;
 
-//get all data sync
+//get all data sync adn save the position of the robot and precedent position
+
     int err = sensors_.sync("beacon_sync");
     if (err < 0) {
         logger().error() << ">> SYNC BAD DATA! NO UPDATE" << logs::end;
         return;
     }
     if (sensors_.getAvailableFrontCenter()) {
-        int frontLevel = sensors_.front(false);
+        int frontLevel = sensors_.front(true);
         //printf("frontLevel=%d\n", frontLevel);
 
         if (frontLevel <= 3) {
@@ -866,7 +867,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
 //        }
 
         //si 0,1,2,3,4 puis 4 ; arret du robot warn
-        if (lastdetect_front_level_ <= 4 && nb_ensurefront4 >= 3) {            //=frontLevel ==4
+        if (lastdetect_front_level_ <= 4 && nb_ensurefront4 >= 2) {            //=frontLevel ==4
 //            logger().error() << ">>  frontLevel=" << frontLevel
 //                    <<  "lastdetect_front_level_=" << lastdetect_front_level_
 //

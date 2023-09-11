@@ -4,13 +4,12 @@
 #include "../Common/Interface.Driver/AServoDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "Adafruit_PWMServoDriver.hpp"
-#include "CCAx12Adc.hpp"
 
 #define NB_SERVO_STD 16
 
 using namespace std;
 
-class ServoDriver: public AServoDriver {
+class ServoDriver: public AServoDriver, utils::Mutex {
 private:
 
     /*!

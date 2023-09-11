@@ -30,14 +30,14 @@ int Tirette::pressed()
 {
     int temp = switchdriver_->tirettePressed();
     logger().debug() << "pressed = " << temp << logs::end;
-    if (temp == -1) {
-        logger().error() << "pressed1 = " << temp << logs::end;
-        temp = switchdriver_->tirettePressed();
-    }
-    if (temp == -1) {
-        logger().error() << "pressed2 = " << temp << logs::end;
-        temp = switchdriver_->tirettePressed();
-    }
+//    if (temp == -1) {
+//        logger().error() << "pressed1 = " << temp << logs::end;
+//        temp = switchdriver_->tirettePressed();
+//    }
+//    if (temp == -1) {
+//        logger().error() << "pressed2 = " << temp << logs::end;
+//        temp = switchdriver_->tirettePressed();
+//    }
 
     return temp;
 }

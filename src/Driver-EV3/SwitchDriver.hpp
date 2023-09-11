@@ -3,12 +3,14 @@
 
 #include "../Common/Interface.Driver/ASwitchDriver.hpp"
 #include "../Log/LoggerFactory.hpp"
-#include "ev3dev.h"
+#include "LegoTouch.hpp"
+
 
 using namespace std;
 using namespace ev3dev;
 
-class SwitchDriver: public ASwitchDriver {
+
+class SwitchDriver: public ASwitchDriver, utils::Mutex {
 private:
 
     /*!
@@ -19,7 +21,9 @@ private:
         return instance;
     }
 
-    touch_sensor touch_;
+    //touch_sensor touch_;
+
+    LegoTouch legotouchposix_;
 
 public:
 

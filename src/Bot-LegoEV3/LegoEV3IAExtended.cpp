@@ -44,10 +44,10 @@ void LegoEV3IAExtended::initPlayground()
     //    p_->add_rectangle(0, 1000, 140, 2000, 0); //left
     //    p_->add_rectangle(3000, 1000, 140, 2000, 0); //right
     //bordure terrain vertical
-    p_->add_rectangle_lower_left(0, 0, 125, 3000, 0); //cote gauche
-    p_->add_rectangle_lower_left(2000, 0, -125, 3000, 0); //cote droit
-    p_->add_rectangle_lower_left(0, 0, 2000, 125, 0); //bas
-    p_->add_rectangle_lower_left(0, 3000 - 125, 2000, 3000, 0); //haut
+    p_->add_rectangle_lower_left(0, 0, 124, 3000, 0); //cote gauche
+    p_->add_rectangle_lower_left(2000, 0, -124, 3000, 0); //cote droit
+    p_->add_rectangle_lower_left(0, 0, 2000, 124, 0); //bas
+    p_->add_rectangle_lower_left(0, 3000 - 124, 2000, 3000, 0); //haut
 
 
 //zone green

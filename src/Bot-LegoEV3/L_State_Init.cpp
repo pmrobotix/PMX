@@ -40,7 +40,7 @@ L_State_Init::execute(Robot&)
             robot.actions().ledBar().set(0, LED_RED);
             robot.actions().ledBar().set(1, LED_RED);
             std::this_thread::sleep_for(std::chrono::seconds(1));
-            
+
         }
         exit(0);
     }
@@ -86,6 +86,7 @@ L_State_Init::execute(Robot&)
         int mode = 1; //1,2,3
         int v = 1; //1,2,3 VRR, RVR, RRV
         int st = 1;
+        int sw = 0;
         while (b != BUTTON_ENTER_KEY || robot.getMyColor() == PMXNOCOLOR) {
 
             if (mode == 1) {
@@ -219,27 +220,49 @@ L_State_Init::execute(Robot&)
 //                //on quitte le programme!!
 //                exit(0);
 //            }
+
+            //si connected and alive
+            bool c = robot.actions().sensors().is_connected();
+            if (c) {
+                sw++;
+                //                if (robot.getMyColor() == PMXGREEN) {
+                if (sw % 20) {
+                    robot.actions().fork_front_right_deploy_half(0);
+                    robot.actions().fork_front_left_init(0);
+
+                } else {
+                    robot.actions().fork_front_right_init(0);
+                    robot.actions().fork_front_left_deploy_half(0);
+                }
+            }
+
             std::this_thread::sleep_for(std::chrono::microseconds(100000));
-            std::this_thread::yield();
+            //std::this_thread::yield();
             //usleep(100000);
         }
+
+        robot.actions().fork_front_left_init(0);
+        robot.actions().fork_front_right_init(0);
 
         setPos();
 
         logger().info() << "METTRE LA TIRETTE ! " << logs::end;
         robot.actions().lcd().display_content_string("METTRE LA TIRETTE", 4);
 
-        int sw = 0;
+        sw = 0;
         //robot.actions().ledBar().startK2mil(50000, 50000, LED_GREEN, false);
         robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
         robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
         //robot.actions().sensors().addTimerSensors(200);
         int nb_tirette = 0;
         b = BUTTON_NONE;
-        while (nb_tirette < 3) {
+        while (nb_tirette < 10) {
             int tirette = robot.actions().tirette().pressed(); //250ms
             if (tirette == 1)
+            {
                 nb_tirette++;
+                logger().info() << "TIRETTE = " << nb_tirette << logs::end;
+            }
             else
                 nb_tirette = 0;
 
@@ -257,7 +280,7 @@ L_State_Init::execute(Robot&)
             }
 
             //sleep
-            std::this_thread::sleep_for(std::chrono::microseconds(100000));
+            std::this_thread::sleep_for(std::chrono::microseconds(200000));
             //std::this_thread::yield();
 
             //si connected and alive
@@ -266,22 +289,19 @@ L_State_Init::execute(Robot&)
                 sw++;
 //                if (robot.getMyColor() == PMXGREEN) {
                 if (sw % 2) {
-                    robot.actions().fork_front_right_deploy_half(0);
-                    robot.actions().fork_front_left_init(0);
+//                    robot.actions().fork_front_right_deploy_half(0);
+//                    robot.actions().fork_front_left_init(0);
+                    robot.actions().arm_left_init(0);
+                    robot.actions().arm_right_deploy(0);
 
                 } else {
-                    robot.actions().fork_front_right_init(0);
-                    robot.actions().fork_front_left_deploy_half(0);
-                }
-//                } else {
-//                    if (sw % 2) {
-//                        robot.actions().fork_front_left_init(0);
-//                    } else {
-//                        robot.actions().fork_front_left_deploy_half(0);
-//                    }
-//                }
-            }
+//                    robot.actions().fork_front_right_init(0);
+//                    robot.actions().fork_front_left_deploy_half(0);
 
+                    robot.actions().arm_right_init(0);
+                    robot.actions().arm_left_deploy(0);
+                }
+            }
         }
 
         //robot.actions().sensors().stopTimerSensors();

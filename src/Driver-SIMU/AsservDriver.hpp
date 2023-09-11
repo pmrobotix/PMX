@@ -50,10 +50,12 @@ private:
     Mutex mutexR_;
 
     float simuTicksPerMeter_;
-    float simuMaxSpeed_;
-    float simuMaxPower_;
+    float simuMaxSpeed_; //en m/s
+    float simuMaxPower_; //entier dutycycle
 
-    float simuCurrentSpeed_;
+    int periodTime_us_;
+
+    float simuCurrentSpeed_; //en m/s
 
     utils::Chronometer chrono_;
 

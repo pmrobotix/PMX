@@ -3,7 +3,9 @@
 
 #include <string>
 
+#include "../Common/Interface.Driver/ARobotPositionShared.hpp"
 #include "../Common/Interface.Driver/ASensorsDriver.hpp"
+#include "../Log/Logger.hpp"
 #include "../Log/LoggerFactory.hpp"
 #include "../Log/SvgWriter.hpp"
 
@@ -32,7 +34,10 @@ private:
         return instance;
     }
 
+    bot_positions vadv_;  //tableau des pos des adv
 
+    ROBOTPOSITION pos_pour_calcul_;
+    ROBOTPOSITION pos_pour_calcul_prec_;
     ARobotPositionShared *robotPositionShared_;
 
     int x_adv_;

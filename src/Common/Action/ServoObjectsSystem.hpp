@@ -7,9 +7,8 @@
 #include "../../Log/LoggerFactory.hpp"
 #include "../Interface.Driver/AServoDriver.hpp"
 #include "../Utils/Chronometer.hpp"
-#include "ITimerPosixListener.hpp"
-#include "ITimerListener.hpp"
 #include "AActionsElement.hpp"
+#include "ITimerPosixListener.hpp"
 
 #define TIMER_SERVO_PERIOD_US 50000
 /*!
@@ -20,7 +19,7 @@ enum ServoTimerName
     MOVE_1_SERVO, MOVE_2_SERVOS
 };
 
-class ServoObjectsSystem: public AActionsElement
+class ServoObjectsSystem: public AActionsElement, utils::Mutex
 {
 
 private:
@@ -119,12 +118,18 @@ public:
 
     bool move_finished()
     {
-        return move_finished_;
+        bool b;
+        lock();
+        b = move_finished_;
+        unlock();
+        return b;
     }
 
     void move_finished(bool finished)
     {
+        lock();
         move_finished_ = finished;
+        unlock();
     }
 };
 

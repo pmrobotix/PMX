@@ -55,7 +55,7 @@ void IAbyZone::ia_createZone(const char* name, float minX, float minY, float wid
     if (robot_ != NULL) {
         z->startX = robot_->passerv()->getRelativeXMin(z->startX);
         z->minX = robot_->passerv()->getRelativeXMin(z->minX, z->width);
-        z->startAngle = robot_->passerv()->getRelativeAngle(z->startAngle);
+        z->startAngle = radToDeg(robot_->passerv()->getRelativeAngleRad(degToRad(z->startAngle)));
     } else {
         logger().error() << "robot_ is NULL !" << logs::end;
         std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -297,7 +297,7 @@ void IAbyZone::goToZone(const char *zoneName, ROBOTPOSITION *path_p, ROBOTPOSITI
     }
     zone_p->x = robot_->passerv()->getRelativeX(z->startX);
     zone_p->y = z->startY;
-    zone_p->theta = robot_->passerv()->getRelativeAngle(z->startAngle);
+    zone_p->theta = robot_->passerv()->getRelativeAngleRad(degToRad(z->startAngle));
 
     printf("----%s (line %d) : goToZone FROM %s TO %s using path (%f,%f)\n", __FUNCTION__, __LINE__, zCurrent->name,
             z->name, path->x, path->y);

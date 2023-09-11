@@ -161,10 +161,12 @@ void IAbyPath::ia_start()
 //                                robot_->passerv()->pos_getX_mm(), robot_->passerv()->pos_getY_mm(),
 //                                robot_->passerv()->pos_getThetaInDegree());
 
-                    logger().error() << __FUNCTION__ <<  " state after actions : "<< z->name << " : (" << robot_->passerv()->pos_getX_mm() << "," << robot_->passerv()->pos_getY_mm() << ", "<< robot_->passerv()->pos_getThetaInDegree() << ") FAILED"
-                            << logs::end;
+                        logger().error() << __FUNCTION__ << " state after actions : " << z->name << " : ("
+                                << robot_->passerv()->pos_getX_mm() << "," << robot_->passerv()->pos_getY_mm() << ", "
+                                << robot_->passerv()->pos_getThetaInDegree() << ") FAILED" << logs::end;
                     else {
-                        logger().error() << __FUNCTION__ << " (line " << __LINE__ << ") : robot_ is NULL !" << logs::end;
+                        logger().error() << __FUNCTION__ << " (line " << __LINE__ << ") : robot_ is NULL !"
+                                << logs::end;
                         sleep(1);
                         exit(-1);
                     }
@@ -174,9 +176,9 @@ void IAbyPath::ia_start()
 //                    printf("%s state after actions : %s : (%f,%f) %f\n", __FUNCTION__, z->name,
 //                            robot_->passerv()->pos_getX_mm(), robot_->passerv()->pos_getY_mm(),
 //                            robot_->passerv()->pos_getThetaInDegree());
-                logger().info() << __FUNCTION__ << " state after actions : " << z->name << " : (" << robot_->passerv()->pos_getX_mm() << ", " << robot_->passerv()->pos_getY_mm() << ", "<<
-                        robot_->passerv()->pos_getThetaInDegree() << ")"
-                        << logs::end;
+                    logger().info() << __FUNCTION__ << " state after actions : " << z->name << " : ("
+                            << robot_->passerv()->pos_getX_mm() << ", " << robot_->passerv()->pos_getY_mm() << ", "
+                            << robot_->passerv()->pos_getThetaInDegree() << ")" << logs::end;
                 else {
                     logger().error() << __FUNCTION__ << " (line " << __LINE__ << ") : robot_ is NULL !" << logs::end;
                     sleep(1);
@@ -219,7 +221,8 @@ void IAbyPath::ia_createZone(const char *name, float minX, float minY, float wid
     if (robot_ != NULL) {
         z->startX = robot_->passerv()->getRelativeXMin(z->startX);
         z->minX = robot_->passerv()->getRelativeXMin(z->minX, z->width);
-        z->startAngle = robot_->passerv()->getRelativeAngle(z->startAngle);
+        //z->startAngle = robot_->passerv()->getRelativeAngle(z->startAngle);
+        z->startAngle = radToDeg(robot_->passerv()->getRelativeAngleRad(degToRad(z->startAngle)));
     } else {
         logger().error() << __FUNCTION__ << " (line " << __LINE__ << ") : robot_ is NULL !" << logs::end;
         sleep(1);
@@ -280,8 +283,7 @@ ZONE* IAbyPath::ia_getZone(const char *zoneName)
 }
 ZONE* IAbyPath::ia_getZoneAt(float x, float y)
 {
-    logger().info() << __FUNCTION__ << " (line " << __LINE__ << ") : " << x<< ","<< y
-                << logs::end;
+    logger().info() << __FUNCTION__ << " (line " << __LINE__ << ") : " << x << "," << y << logs::end;
     //printf("ia_getZoneAt : (%f,%f) \n", x, y);
     int i = 0;
     for (i = 0; i < _zones_count; i++) {
@@ -332,19 +334,18 @@ void IAbyPath::goToZone(const char *zoneName, ROBOTPOSITION *zone_p)
 
     //printf("%s (line %d) : goToZone %s\n", __FUNCTION__, __LINE__, zoneName);
 
-    logger().info() << __FUNCTION__ << " (line " << __LINE__ << ") : to " << zoneName
-            << logs::end;
+    logger().info() << __FUNCTION__ << " (line " << __LINE__ << ") : to " << zoneName << logs::end;
     if (z == NULL) {
         //printf("ERROR: %s %d : unable to get zone %s\n", __FUNCTION__, __LINE__, zoneName);
-        logger().error() << __FUNCTION__ << " (line " << __LINE__ << ") : unable to get zone " << zoneName
-                    << logs::end;
+        logger().error() << __FUNCTION__ << " (line " << __LINE__ << ") : unable to get zone " << zoneName << logs::end;
         sleep(1);
         exit(-1);
     }
 
     zone_p->x = robot_->passerv()->getRelativeX(z->startX);
     zone_p->y = z->startY;
-    zone_p->theta = robot_->passerv()->getRelativeAngle(z->startAngle);
+    //zone_p->theta = robot_->passerv()->getRelativeAngle(z->startAngle);
+    zone_p->theta = robot_->passerv()->getRelativeAngleRad(degToRad(z->startAngle));
 
 }
 
@@ -352,12 +353,12 @@ void IAbyPath::playgroundFindPath(FoundPath *&path, Point &start, Point &end)
 {
     p_->find_path(path, start, end);
 }
-
+//TODO rename doPathForwardTo!
 TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection)
 {
     TRAJ_STATE ts = TRAJ_OK;
-    logger().debug() << "position p = x " << robot_->passerv()->pos_getX_mm() << " y " << robot_->passerv()->pos_getY_mm()
-            << " a " << robot_->passerv()->pos_getThetaInDegree() << logs::end;
+    logger().debug() << "position p = x " << robot_->passerv()->pos_getX_mm() << " y "
+            << robot_->passerv()->pos_getY_mm() << " a " << robot_->passerv()->pos_getThetaInDegree() << logs::end;
 
     //mise a jour de la position de l'adversaire
     //enable(robot_->, 0);
@@ -377,6 +378,7 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_d
             return TRAJ_IMPOSSIBLE;
         }
         int count = 0;
+
         for (nodes_it = found_path->path.begin(); nodes_it < found_path->path.end(); nodes_it++) {
 
             Node *node = *nodes_it;
@@ -393,17 +395,24 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_d
                 //TODO SIMU A coder par l'asserv driver
 
                 //if (nodes_it < found_path->path.end() - 1) {
-                    //ts = robot_->asserv()->gotoChain(robot_->asserv()->getRelativeX(node->x), node->y);
+                //ts = robot_->asserv()->gotoChain(robot_->asserv()->getRelativeX(node->x), node->y);
 
-                    if(rotate_ignored_detection)
-                    {
-                        logger().info() << " ======> PATH doFaceTo rotate_ignored_detection=false ! " << node->x << "," << node->y << logs::end;
-                        //on tourne pour se degager si robot adverse devant
-                        ts = robot_->passerv()->doFaceTo(robot_->passerv()->getRelativeX(node->x), node->y);
-                        //rotate_ignored_detection = false;
-                    }
-                    ts = robot_->passerv()->gotoXY(robot_->passerv()->getRelativeX(node->x), node->y);
+                if (rotate_ignored_detection) {
+//                    logger().info() << " ======> PATH doFaceTo rotate_ignored_detection=false ! " << node->x << ","
+//                            << node->y << logs::end;
+                    //on tourne pour se degager si robot adverse devant
+                    ts = robot_->passerv()->doFaceTo(robot_->passerv()->getRelativeX(node->x), node->y);
+                    //rotate_ignored_detection = false;
+                    robot_->svgPrintPosition();
+                }
 
+                ts = robot_->passerv()->gotoXY(robot_->passerv()->getRelativeX(node->x), node->y);
+//                logger().info() << " ======> PATH GOTO ts=" << ts << " nodex,y=" << node->x << "," << node->y
+//                        << logs::end;
+                robot_->svgPrintPosition();
+//                if (ts != TRAJ_FINISHED) {
+//                    break;
+//                }
 //                } else {
 //                    //ts = robot_->asserv()->gotoChain(robot_->asserv()->getRelativeX(node->x), node->y);
 //                    ts = robot_->asserv()->gotoXY(robot_->asserv()->getRelativeX(node->x), node->y);
@@ -413,7 +422,7 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_d
 //                logger().debug() << "222 p = x " << robot_->asserv()->pos_getX_mm() << " y "
 //                        << robot_->asserv()->pos_getY_mm() << " a " << robot_->asserv()->pos_getThetaInDegree()
 //                        << logs::end;
-                robot_->svgPrintPosition();
+
             }
             count++;
 
@@ -432,6 +441,7 @@ TRAJ_STATE IAbyPath::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_d
     return ts;
 }
 
+//TODO rename doPathForwardAndFaceTo
 TRAJ_STATE IAbyPath::doMoveForwardAndFaceTo(float xMM, float yMM, float f_x, float f_y)
 {
     TRAJ_STATE ts = TRAJ_OK;
@@ -449,7 +459,7 @@ TRAJ_STATE IAbyPath::doMoveForwardAndFaceTo(float xMM, float yMM, float f_x, flo
 
 }
 
-//TODO deprecated
+//TODO deprecated ? //TODO rename doPathForwardAndRotateTo
 TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
 {
     TRAJ_STATE ts = TRAJ_OK;
@@ -472,18 +482,22 @@ TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaI
 //{
 //
 //}
-
+//TODO rename whilePathForwardAndRotateTo
 TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us,
         int nb_near_obstacle, int nb_collision, bool byPathfinding, int reculOnObstacleMm, int reculOnCollisionMm)
 {
     TRAJ_STATE ts = TRAJ_OK;
     int f = 0;
     int c = 0;
-
+//    int nn = 0;
     while (ts != TRAJ_FINISHED) {
+//        nn++;
+//        logger().info() << "____________while ... doMoveForwardTo nn=" << nn << " byPathfinding=" << byPathfinding
+//                << logs::end;
         if (byPathfinding) {
             //Avance par PathFinding
-            //attention a la rotation si adversaire devant, pour cela on fait une rotation simple car le got ne sait pas eviter l'adversaire
+            //attention a la rotation si adversaire devant, pour cela on fait une rotation (faceTo simple car le gotoXY ne sait pas ignorer l'adversaire
+
             ts = doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
         } else {
             //Avance avec l'asserv en direct
@@ -504,7 +518,8 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
             if (reculOnObstacleMm > 0) {
                 TRAJ_STATE tr = robot_->passerv()->doLineAbs(-reculOnObstacleMm);
                 if (tr != TRAJ_OK) {
-                    robot_->passerv()->resetEmergencyOnTraj(" IAbyPathdoLineAbs(-reculOnObstacleMm); TRAJ_NEAR_OBSTACLE"); //pour autoriser le level de detection 1 puis 2
+                    robot_->passerv()->resetEmergencyOnTraj(
+                            " IAbyPathdoLineAbs(-reculOnObstacleMm); TRAJ_NEAR_OBSTACLE"); //pour autoriser le level de detection 1 puis 2
                 }
             }
             if (f >= nb_near_obstacle) {
@@ -542,7 +557,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
                     << logs::end;
         }
         robot_->resetDisplayTS();
-        std::this_thread::yield();
+        //std::this_thread::yield();
     }
 
     robot_->displayTS(ts);
@@ -554,7 +569,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
 
     return ts;
 }
-
+//TODO rename whilePathBackwardTo
 TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us,
         int nb_near_obstacle, int nb_collision, bool byPathfinding, int reculOnObstacleMm, int reculOnCollisionMm)
 {
@@ -564,8 +579,9 @@ TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignor
 
     while (ts != TRAJ_FINISHED) {
         if (byPathfinding) {
-            //TODO AJOUTER faceTo avec non detection
-            ts = doMoveForwardTo(xMM, yMM, rotate_ignored_detection);
+
+            //TODOdoMoveBackwardTo
+            //ts = doMoveBackwardTo(xMM, yMM, rotate_ignored_detection);
         } else {
             ts = robot_->passerv()->doMoveBackwardTo(xMM, yMM, rotate_ignored_detection);
         }

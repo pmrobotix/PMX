@@ -22,8 +22,8 @@ typedef struct
 	float height;
 	float startX;
 	float startY;
-	// in degrees
-	float startAngle;
+
+	float startAngle;// in degrees
 } ZONE;
 
 typedef struct
