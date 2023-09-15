@@ -203,7 +203,7 @@ L_State_Init::execute(Robot&)
 
                 robot.actions().init_servos();
 
-                std::this_thread::sleep_for(std::chrono::microseconds(1000000));
+                std::this_thread::sleep_for(std::chrono::microseconds(100000));
                 //usleep(2000000);
 
             }
@@ -220,6 +220,7 @@ L_State_Init::execute(Robot&)
 //                //on quitte le programme!!
 //                exit(0);
 //            }
+/*
 
             //si connected and alive
             bool c = robot.actions().sensors().is_connected();
@@ -235,7 +236,7 @@ L_State_Init::execute(Robot&)
                     robot.actions().fork_front_left_deploy_half(0);
                 }
             }
-
+*/
             std::this_thread::sleep_for(std::chrono::microseconds(100000));
             //std::this_thread::yield();
             //usleep(100000);

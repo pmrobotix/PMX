@@ -111,8 +111,8 @@ void ActionManagerTimer::execute()
         }
         mtimer_.unlock();
 
-        this->yield();
-        std::this_thread::yield();
+//        this->yield();
+//        std::this_thread::yield();
 /*
         mtimer_.lock();
         //on parcours la liste de timer POSIX à supprimer

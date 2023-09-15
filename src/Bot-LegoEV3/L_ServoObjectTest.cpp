@@ -56,6 +56,12 @@ void L_ServoObjectTest::run(int argc, char **argv)
         robot.actions().init_servos(1000);
     }
 
+    if (action == "L") {
+        robot.actions().launchAR_L();
+        robot.actions().launchAR_R();
+        utils::sleep_for_micros(200000);
+    }
+
     if (action == "AL") {
         robot.actions().arm_left_deploy(1000);
     }
@@ -67,7 +73,6 @@ void L_ServoObjectTest::run(int argc, char **argv)
     if (action == "FKRHALF") {
         robot.actions().fork_front_right_deploy_half(1000);
     }
-
 
     if (action == "FKRH") {
         logger().info() << "FK R HIGH.. " << logs::end;
@@ -106,7 +111,6 @@ void L_ServoObjectTest::run(int argc, char **argv)
     }
 
     robot.actions().stopExtra();
-
 
     logger().info() << robot.getID() << " " << this->name() << " Happy End" << " N° " << this->position() << logs::end;
 

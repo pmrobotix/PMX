@@ -47,7 +47,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
 
         std::this_thread::sleep_for(std::chrono::microseconds(200000));
         std::this_thread::yield();
-        if (c % 4 == 0) {
+        if (c % 5 == 0) {
             robot.displayPoints();
             this->logger().info() << "chrono " << robot.chrono().getElapsedTimeInSec() << logs::end;
         }
@@ -85,14 +85,14 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
         this->logger().info() << "on recule pour la funny " << robot.chrono().getElapsedTimeInSec() << logs::end;
         //on recule pour la funny action
         robot.svgPrintPosition();
-        robot.asserv().doLineAbs(-30);
-        std::this_thread::sleep_for(std::chrono::microseconds(200000));
+//        robot.asserv().doLineAbs(-30);
+//        std::this_thread::sleep_for(std::chrono::microseconds(200000));
         robot.asserv().stopMotors();
         robot.svgPrintPosition();
 
-        this->logger().info() << "funny ACTION" << robot.chrono().getElapsedTimeInSec() << logs::end;
+        this->logger().info() << "FUNNY ACTION !!!!!!!!!" << robot.chrono().getElapsedTimeInSec() << logs::end;
         robot.actions().funny_action_full();
-        std::this_thread::sleep_for(std::chrono::seconds(1));
+        std::this_thread::sleep_for(std::chrono::seconds(2));
         robot.points += 5;
         //std::this_thread::sleep_for(std::chrono::seconds(1));
     }

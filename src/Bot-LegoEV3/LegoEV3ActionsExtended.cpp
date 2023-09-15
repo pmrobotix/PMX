@@ -15,9 +15,11 @@ LegoEV3ActionsExtended::LegoEV3ActionsExtended(std::string botId, Robot * robot)
     bool up = false;
     up &= servos().setup(SERVO_1_ARM_R, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
     up &= servos().setup(SERVO_3_FORK_R, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+    up &= servos().setup(SERVO_4_LAUNCH_BACK_R, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
     up &= servos().setup(SERVO_7_fUNNY_BACK, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
     up &= servos().setup(SERVO_8_fUNNY_FRONT, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
-    up &= servos().setup(SERVO_13_FORK_L, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+    up &= servos().setup(SERVO_11_LAUNCH_BACK_L, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
+        up &= servos().setup(SERVO_13_FORK_L, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
     up &= servos().setup(SERVO_15_ARM_L, AServoDriver::ServoType::SERVO_STANDARD, 600, 1500, 2500, false);
 
 

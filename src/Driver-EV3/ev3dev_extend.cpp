@@ -94,21 +94,22 @@ std::string device_extend::get_attr_string_posix(int fd)
 
 int device_extend::get_attr_int_posix(int fd)
 {
-    lock();
+
     std::string s = get_attr_string_posix(fd);
     int data = std::stoi(s);//, nullptr, 0); //convert to int
-    unlock();
+
     return data;
 }
 
 int device_extend::open_posix_in(std::string pathfile)
 {
-    lock();
+
     const char *inFile = pathfile.c_str();
+    lock();
     int in = ::open(inFile, O_RDONLY, 0666);
     if (in < 0) {
-        std::cout << "open_posix_in :: Can't open output file: " << inFile << std::endl;
         unlock();
+        std::cout << "open_posix_in :: Can't open output file: " << inFile << std::endl;
         return -1;
     }
     unlock();
@@ -117,12 +118,14 @@ int device_extend::open_posix_in(std::string pathfile)
 
 int device_extend::open_posix_out(std::string pathfile)
 {
-    lock();
+
     const char *outFile = pathfile.c_str();
+    lock();
     int out = ::open(outFile, O_WRONLY, 0666);
     if (out < 0) {
-        std::cout << "open_posix_out :: Can't open output file: " << outFile << std::endl;
         unlock();
+        std::cout << "open_posix_out :: Can't open output file: " << outFile << std::endl;
+
         return -1;
     }
     unlock();

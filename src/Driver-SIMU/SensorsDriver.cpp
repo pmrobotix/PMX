@@ -146,15 +146,15 @@ int SensorsDriver::sync()
     vadv_.clear();
     if ((pos_pour_calcul_.x >= 0.1 || pos_pour_calcul_.y >= 0.1)) {
 
-        RobotPos pos1 = transformPosTableToPosRobot(nb, x_adv_, y_adv_);
-        RobotPos pos2 = transformPosTableToPosRobot(nb, 1000, 200);
-        RobotPos pos3 = transformPosTableToPosRobot(nb, 800, 2000);
-        RobotPos pos4 = transformPosTableToPosRobot(nb, 100, 1400);
-
-        vadv_.push_back(pos1);
-        vadv_.push_back(pos2);
-        vadv_.push_back(pos3);
-        vadv_.push_back(pos4);
+//        RobotPos pos1 = transformPosTableToPosRobot(nb, x_adv_, y_adv_);
+//        RobotPos pos2 = transformPosTableToPosRobot(nb, 1000, 200);
+//        RobotPos pos3 = transformPosTableToPosRobot(nb, 800, 2000);
+//        RobotPos pos4 = transformPosTableToPosRobot(nb, 100, 1400);
+//
+//        vadv_.push_back(pos1);
+//        vadv_.push_back(pos2);
+//        vadv_.push_back(pos3);
+//        vadv_.push_back(pos4);
         //simu des positions adverses
         //bot_pos = { };
         //vadv_ = { pos1 };

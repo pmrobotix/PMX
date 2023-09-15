@@ -27,8 +27,31 @@ bool L_push_cake_A2()
     TRAJ_STATE ts = TRAJ_OK;
     ROBOTPOSITION zone;
 
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+
+
+    //robot.asserv().setLowSpeedForward(true, 50);
+    robot.asserv().doLineAbs(100);
+    robot.svgPrintPosition();
+    robot.asserv().doFaceTo(380, 600);
+    robot.svgPrintPosition();
+
+
+    robot.actions().launchAR_L();
+    robot.actions().launchAR_R();
+
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+
+    //POINTS A AJOUTER ???
+    robot.points += 1;
+
+//    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+//    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+    ts = TRAJ_OK;
     robot.ia().iAbyPath().goToZone("zone_cake_A2", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 10, 10, true);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 10, 10,
+            true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_push_cake_A2 : zone_cake_A2 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
@@ -99,7 +122,7 @@ bool L_push_cake_A2()
 
     //on recule
     robot.asserv().doLineAbs(-150);
-    robot.points += 12;
+    robot.points += 9;
     //on ferme les pinces
     //robot.actions().init_servos();
     robot.actions().ranger_pinces();
@@ -125,7 +148,8 @@ bool L_push_cake_D2()
     ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_cake_D2", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 10, 10, true);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 10, 10,
+            true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_push_cake_D2 : zone_cake_D2 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
@@ -196,7 +220,7 @@ bool L_push_cake_D2()
 
     //on recule
     robot.asserv().doLineAbs(-150);
-    robot.points += 12;
+    robot.points += 6;
     //on ferme les pinces
     //robot.actions().init_servos();
     robot.actions().ranger_pinces();
@@ -235,8 +259,12 @@ bool L_push_cake_black_B3()
     ROBOTPOSITION zone;
     //robot.asserv().setLowSpeedForward(true, 60);
 
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+
     robot.ia().iAbyPath().goToZone("zone_cake_black_B3", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 10, 10, true);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 10, 10,
+            true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error()
                 << "L_push_cake_black_B3 : zone_cake_black_B3 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
@@ -335,7 +363,8 @@ bool L_push_cake_A5()
     //robot.asserv().setLowSpeedForward(true, 50);
 
     robot.ia().iAbyPath().goToZone("zone_cake_A5", &zone);
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 4, 4, true);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 4, 4,
+            true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_push_cake_A5 : zone_cake_A5 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
@@ -392,7 +421,7 @@ bool L_push_cake_A5()
     robot.asserv().doLineAbs(-150);
     robot.svgPrintPosition();
 
-    robot.points += 12;
+    robot.points += 9;
 
     //on ferme les pinces
     robot.actions().init_servos();
@@ -431,8 +460,8 @@ bool L_push_cake_D5()
 
     //robot.asserv().setLowSpeedForward(true, 40);
 
-    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y + y_patch, radToDeg(zone.theta), true, 1000000, 5, 2,
-            true);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y + y_patch, radToDeg(zone.theta), true,
+            1000000, 5, 2, true);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error() << "L_push_cake_D5 : zone_cake_D5 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
                 << logs::end;
@@ -495,12 +524,12 @@ bool L_push_cake_D5()
     robot.asserv().doLineAbs(-150);
     robot.svgPrintPosition();
 
-    robot.points += 12;
+    robot.points += 9;
     //desactiver la zone B4
     //robot.ia().iAbyPath().enable(robot.ia().area_B4, 0); //ca sert a qqch ?
 
     //on ferme les pinces
-        robot.actions().init_servos();
+    robot.actions().init_servos();
 
     if (robot.getMyColor() == PMXGREEN) {
         robot.asserv().doFaceTo(1700, 0);
@@ -653,7 +682,7 @@ void L_State_DecisionMakerIA::IASetupActivitiesZone()
 
 //definition des zones en zone VERT uniquement
     //robot.ia().iAbyPath().ia_createZone("zone_end", 0, 1650, 450, 450, 500, 2100, 0);
-    robot.ia().iAbyPath().ia_createZone("zone_end", 1550, 900, 450, 450, 1650, 1350, 0);
+    robot.ia().iAbyPath().ia_createZone("zone_end", 1550, 900, 450, 450, 1650, 1200, 0);
     robot.ia().iAbyPath().ia_createZone("zone_cake_A2", 0, 450, 450, 450, 500, 675, -180);
     robot.ia().iAbyPath().ia_createZone("zone_cake_D5", 1600, 2100, 450, 450, 1500, 2325, 0);
     robot.ia().iAbyPath().ia_createZone("zone_cake_A5", 0, 2100, 450, 450, 500, 2325, -180);

@@ -24,14 +24,14 @@ enum ServoLabel
     SERVO_1_ARM_R = 1,
     SERVO_2 = 2,
     SERVO_3_FORK_R = 3,
-    SERVO_4 = 4,
+    SERVO_4_LAUNCH_BACK_R = 4,
     SERVO_5 = 5,
     SERVO_6 = 6,
     SERVO_7_fUNNY_BACK = 7,
     SERVO_8_fUNNY_FRONT = 8,
     SERVO_9 = 9,
     SERVO_10 = 10,
-    SERVO_11 = 11,
+    SERVO_11_LAUNCH_BACK_L = 11,
     SERVO_12 = 12,
     SERVO_13_FORK_L = 13,
     SERVO_14 = 14,
@@ -157,6 +157,7 @@ public:
          //logger().info() << "foo "<< foo << " : " << r << logs::end;
          }
          */
+        init_launch();
         funny_action_init(0);
         fork_front_right_init(0);
         fork_front_left_init(0);
@@ -167,6 +168,24 @@ public:
     //keep_millisec = -1 : wait moving until position
     //keep_millisec > 0 : time ms to wait then release
     //keep_millisec = 0 : continue and hold
+
+    void init_launch()
+    {
+        servos().deploy(SERVO_4_LAUNCH_BACK_R, 1300, 0);
+        servos().deploy(SERVO_11_LAUNCH_BACK_L, 1400, 0);
+    }
+
+    void launchAR_R()
+    {
+        servos().deploy(SERVO_4_LAUNCH_BACK_R, 1700, 0);
+        //servos().release(SERVO_4_LAUNCH_BACK_R);
+    }
+
+    void launchAR_L()
+    {
+        servos().deploy(SERVO_11_LAUNCH_BACK_L, 1000, 0);
+        //servos().release(SERVO_11_LAUNCH_BACK_L);
+    }
 
     void danse()
     {
@@ -194,8 +213,8 @@ public:
         fork_front_right_deploy(0);
         fork_front_left_deploy(0);
 
-        servos().deploy(SERVO_7_fUNNY_BACK, 2015, 0);
-        servos().deploy(SERVO_8_fUNNY_FRONT, 540, keep);
+        servos().deploy(SERVO_7_fUNNY_BACK, 2050, 0);
+        servos().deploy(SERVO_8_fUNNY_FRONT, 800, keep);//540
 
     }
 
