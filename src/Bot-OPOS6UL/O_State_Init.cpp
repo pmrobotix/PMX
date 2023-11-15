@@ -342,9 +342,9 @@ void O_State_Init::setPos()
 
     robot.asserv().startMotionTimerAndOdo(true);
     if (robot.strategy() == "tabletest")
-        robot.asserv().setPositionAndColor(130, 1000 + 130, 0.0, (robot.getMyColor() != PMXGREEN));
+        robot.asserv().setPositionAndColor(130, 900 + 130, 0.0, (robot.getMyColor() != PMXGREEN));
     else
-        robot.asserv().setPositionAndColor(130, 1650 + 130, 0.0, (robot.getMyColor() != PMXGREEN));
+        robot.asserv().setPositionAndColor(130, 900 + 130, 0.0, (robot.getMyColor() != PMXGREEN));
     logger().info() << "O_State_Init::setPos() svgPrintPosition x=" << robot.asserv().pos_getX_mm() << " y="
             << robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
     robot.svgPrintPosition();
@@ -364,8 +364,9 @@ void O_State_Init::setPos()
     robot.asserv().setLowSpeedForward(true, 50);
     //robot.asserv().setLowSpeedForward(true, 100);
 
-    if (robot.strategy() != "tabletest")
-        ts = robot.asserv().doMoveForwardAndRotateTo(300, 1800, -45);
+    //if (robot.strategy() != "tabletest")
+    ts = robot.asserv().doMoveForwardTo(300, 1100);
+    ts = robot.asserv().doFaceTo(850, 850);
     robot.actions().ax12_init();
 
     /*
@@ -380,9 +381,30 @@ void O_State_Init::setPos()
     robot.actions().lcd2x16().println("SET POSITION : OK");
 
     /*
-     robot.actions().ax12_bras_droit_fanion(0);
-     robot.actions().ax12_bras_gauche_fanion(-1);
+     robot.actions().ax12_bras_droit(0);
+     robot.actions().ax12_bras_gauche(-1);
      robot.actions().ax12_bras_droit_init(0);
-     robot.actions().ax12_bras_gauche_init(-1);
-     */
+     robot.actions().ax12_bras_gauche_init(-1);*/
+    robot.actions().ax12_bras_droit(0);
+    robot.actions().ax12_bras_gauche(-1);
+    robot.actions().ax12_bras_droit_init(0);
+    robot.actions().ax12_bras_gauche_init(-1);
+    //utils::sleep_for_secs(3);
+    robot.actions().ax12_bras_droit(0);
+    robot.actions().ax12_bras_gauche(-1);
+    robot.actions().ax12_bras_droit_init(0);
+    robot.actions().ax12_bras_gauche_init(-1);
+    //utils::sleep_for_secs(2);
+    /*
+
+    robot.actions().ax12_bras_droit(0);
+    robot.actions().ax12_bras_gauche(-1);
+    robot.actions().ax12_bras_droit_init(0);
+    robot.actions().ax12_bras_gauche_init(-1);
+    //utils::sleep_for_secs(1);
+    robot.actions().ax12_bras_droit(0);
+    robot.actions().ax12_bras_gauche(-1);
+    robot.actions().ax12_bras_droit_init(0);
+    robot.actions().ax12_bras_gauche_init(-1);
+    */
 }

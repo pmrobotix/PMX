@@ -122,7 +122,7 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 
     //detection adverse
     robot.actions().start();
-    robot.actions().sensors().addTimerSensors(200);
+    //robot.actions().sensors().addTimerSensors(200);
     robot.chrono().start();
 
     robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
@@ -145,8 +145,8 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
             float x_dest = robot.asserv().pos_getX_mm() + cos(robot.asserv().pos_getTheta()) * d;
             float y_dest = robot.asserv().pos_getY_mm() + sin(robot.asserv().pos_getTheta()) * d;
             //if (d >= 0) {
-                robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
-                robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+//                robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+//                robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
                 while (ts != TRAJ_FINISHED) {
                     ts = robot.ia().iAbyPath().whileMoveForwardTo(x_dest, y_dest, false, 2000000, 10, 10, false);
                     if (ts == TRAJ_NEAR_OBSTACLE) {

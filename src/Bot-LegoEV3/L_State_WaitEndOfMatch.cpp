@@ -31,7 +31,7 @@ IAutomateState* L_State_WaitEndOfMatch::execute(Robot&)
     uint c = 0;
     bool stop = false;
 
-    while (robot.chrono().getElapsedTimeInSec() <= 98 || stop == true) {
+    while (robot.chrono().getElapsedTimeInSec() <= 70 || stop == true) {
 
         //ARU (attention 250ms!)
         if (robot.actions().tirette().pressed()) {

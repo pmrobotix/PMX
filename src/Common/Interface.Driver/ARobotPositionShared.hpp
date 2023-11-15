@@ -66,7 +66,7 @@ public:
     ROBOTPOSITION convertPositionBeaconToRepereTable(float d_mm, float x_mm, float y_mm, float theta_deg,
             float *x_botpos, float *y_botpos)
     {
-        ROBOTPOSITION p = getRobotPosition(1);
+        ROBOTPOSITION p = getRobotPosition(0);
 
         //coordonnées de l'objet detecté sur la table
         float a = (p.theta - M_PI_2 + (theta_deg * M_PI / 180.0f));

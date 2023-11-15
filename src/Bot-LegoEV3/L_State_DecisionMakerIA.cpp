@@ -29,20 +29,18 @@ bool L_push_cake_A2()
 
     robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-
-
+/*
     //robot.asserv().setLowSpeedForward(true, 50);
     robot.asserv().doLineAbs(100);
     robot.svgPrintPosition();
     robot.asserv().doFaceTo(380, 600);
     robot.svgPrintPosition();
 
-
     robot.actions().launchAR_L();
     robot.actions().launchAR_R();
 
     std::this_thread::sleep_for(std::chrono::seconds(1));
-
+*/
     //POINTS A AJOUTER ???
     robot.points += 1;
 
@@ -137,9 +135,9 @@ bool L_push_cake_D2()
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     robot.logger().info() << "start L_push_cake_D2" << logs::end;
 
-    if (!robot.A5_is_taken) {
-        return true;
-    }
+//    if (!robot.A5_is_taken) {
+//        return true;
+//    }
 
     //en cas de D2 on supprime la fin normale endofmatch
     robot.skipEndOfMatch = true;
@@ -203,7 +201,7 @@ bool L_push_cake_D2()
     robot.asserv().setLowSpeedForward(false);
 
     //on depose directement
-    ts = robot.ia().iAbyPath().whileMoveForwardTo(2000 - 250, 900, true, 1000000, 10, 10, false);
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(2000 - 250, 820, true, 1000000, 10, 10, false);
     if (ts != TRAJ_FINISHED) {
         robot.logger().error()
                 << "L_push_cake_D2 : move closed to the 2 cakes ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
@@ -219,10 +217,116 @@ bool L_push_cake_D2()
     robot.actions().fork_init_slow(true);
 
     //on recule
-    robot.asserv().doLineAbs(-150);
+    robot.asserv().doLineAbs(-180);
     robot.points += 6;
     //on ferme les pinces
     //robot.actions().init_servos();
+    robot.actions().ranger_pinces();
+
+    robot.svgPrintPosition();
+    return true; //return true si ok sinon false si interruption
+}
+
+bool L_push_cake_black_B3C3()
+{
+    LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+    robot.logger().info() << "start L_push_cake_black_B3C3" << logs::end;
+
+    if (robot.getMyColor() == PMXGREEN) {
+        robot.ia().iAbyPath().enable(robot.ia().area_B3, 0);
+//        robot.ia().iAbyPath().enable(robot.ia().area_B4, 0);
+//
+//        robot.ia().iAbyPath().enable(robot.ia().area_C3, 0);
+//        robot.ia().iAbyPath().enable(robot.ia().area_C4, 0);
+
+        robot.ia().iAbyPath().enable(robot.ia().area_A3, 0);
+        robot.ia().iAbyPath().enable(robot.ia().area_D3, 0);
+        robot.ia().iAbyPath().enable(robot.ia().area_A4, 0);
+    } else {
+//        robot.ia().iAbyPath().enable(robot.ia().area_C3, 0);
+//        robot.ia().iAbyPath().enable(robot.ia().area_C4, 0);
+//
+//        robot.ia().iAbyPath().enable(robot.ia().area_B3, 0);
+//        robot.ia().iAbyPath().enable(robot.ia().area_B4, 0);
+        robot.ia().iAbyPath().enable(robot.ia().area_D3, 0);
+        robot.ia().iAbyPath().enable(robot.ia().area_A3, 0);
+        robot.ia().iAbyPath().enable(robot.ia().area_D4, 0);
+    }
+
+    TRAJ_STATE ts = TRAJ_OK;
+    ROBOTPOSITION zone;
+    //robot.asserv().setLowSpeedForward(true, 60);
+
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+
+    robot.ia().iAbyPath().goToZone("zone_cake_black_B3C3", &zone);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 10, 10,
+            true);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error()
+                << "L_push_cake_black_B3 : zone_cake_black_B3C3 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+                << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+
+        //return false;
+
+    }
+    robot.svgPrintPosition();
+
+    //on ouvre les pinces
+    robot.actions().arm_right_deploy(0);
+    robot.actions().arm_left_deploy(0);
+
+    //robot.asserv().setLowSpeedForward(true, 50);
+    //on pousse
+    ts = robot.ia().iAbyPath().whileMoveForwardTo(1200, 1150, true, 1000000, 10, 10, false);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << "L_push_cake_black_B3 : 1050, 1100 ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+                << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+
+    }
+    robot.svgPrintPosition();
+
+//    //decision
+//    if (robot.B3_is_taken && robot.B4_is_taken) {
+//        return true; //on passe la tache
+//    }
+
+    //on abaisse le gauche en vert
+    if (robot.getMyColor() == PMXGREEN) {
+        robot.actions().fork_front_left_deploy(0);
+        robot.actions().fork_front_right_deploy(1500);
+    } else {
+        robot.actions().fork_front_right_deploy(0);
+        robot.actions().fork_front_left_deploy(1500);
+    }
+
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(1500, 1200, 0, true, 1000000, 3, 3, false);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << "L_push_cake_black_B3 : 1500, 1200, 0 ===== PB COLLISION FINALE - Que fait-on? ts="
+                << ts << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+    }
+
+    //    //on abaisse le droit en vert
+    //    if (robot.getMyColor() == PMXGREEN) {
+    //        robot.actions().fork_front_right_deploy(0);
+    //    } else {
+    //        robot.actions().fork_front_left_deploy(0);
+    //    }
+    //std::this_thread::sleep_for(std::chrono::seconds(2));
+
+    //on releve les fork
+    robot.actions().fork_init_slow(true);
+
+    //on recule
+    robot.asserv().doLineAbs(-200);
+
+    robot.points += 3;
+    robot.points += 3;
+    //on ferme les pinces
     robot.actions().ranger_pinces();
 
     robot.svgPrintPosition();
@@ -627,6 +731,52 @@ bool L_end_of_match()
     return true; //return true si ok sinon false si interruption
 }
 
+bool L_end_of_matchA3()
+{
+
+    LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+//    if (robot.skipEndOfMatch) {
+//        return true;
+//    }
+
+//    if (!robot.A5_is_taken) {
+//        return true;
+//    }
+
+//    if (!robot.force_end_of_match) {
+//        if (robot.chrono().getElapsedTimeInSec() < 48)
+//        {
+//            usleep(1000000);
+//            return false;
+//        }
+//    }
+    robot.logger().info() << "start L_end_of_matchA3" << logs::end;
+
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+
+    //robot.asserv().setLowSpeedForward(true, 40);
+
+    //TODO gérer le gros robot
+
+    TRAJ_STATE ts = TRAJ_OK;
+    ROBOTPOSITION zone;
+    robot.ia().iAbyPath().goToZone("zone_endA3", &zone);
+    ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 55, 55, true, 0);
+    if (ts != TRAJ_FINISHED) {
+        robot.logger().error() << "L_end_of_matchA3 : zone_end ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+                << logs::end;
+        robot.asserv().resetEmergencyOnTraj();
+        //robot.asserv().setLowSpeedForward(true, 40);
+        return false;
+    }
+    robot.svgPrintPosition();
+    robot.points += 15;
+
+    robot.svgPrintPosition();
+    return true; //return true si ok sinon false si interruption
+}
+
 bool L_end_of_matchA4()
 {
 
@@ -673,6 +823,35 @@ bool L_end_of_matchA4()
     return true; //return true si ok sinon false si interruption
 }
 
+/*
+ void L_State_DecisionMakerIA::IASetupActivitiesZone()
+ {
+ logger().debug() << "IASetupActivitiesZone" << logs::end;
+ LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
+
+ logger().debug() << "color = " << robot.getMyColor() << logs::end;
+
+ //definition des zones en zone VERT uniquement
+ //robot.ia().iAbyPath().ia_createZone("zone_end", 0, 1650, 450, 450, 500, 2100, 0);
+ robot.ia().iAbyPath().ia_createZone("zone_end", 1550, 900, 450, 450, 1650, 1200, 0);
+ robot.ia().iAbyPath().ia_createZone("zone_cake_A2", 0, 450, 450, 450, 500, 675, -180);
+ robot.ia().iAbyPath().ia_createZone("zone_cake_D5", 1600, 2100, 450, 450, 1500, 2325, 0);
+ robot.ia().iAbyPath().ia_createZone("zone_cake_A5", 0, 2100, 450, 450, 500, 2325, -180);
+ robot.ia().iAbyPath().ia_createZone("zone_cake_black_B3", 600, 1000, 200, 200, 570, 950, 60);
+ robot.ia().iAbyPath().ia_createZone("zone_cake_D2", 1550, 450, 450, 450, 1500, 675, 0);
+ robot.ia().iAbyPath().ia_createZone("zone_endA4", 0, 1650, 450, 450, 400, 1700, 90);
+
+ robot.ia().iAbyPath().ia_addAction("push_cake_A2", &L_push_cake_A2);
+ robot.ia().iAbyPath().ia_addAction("push_cake_black_B3", &L_push_cake_black_B3);
+ robot.ia().iAbyPath().ia_addAction("push_cake_A5", &L_push_cake_A5);
+ robot.ia().iAbyPath().ia_addAction("push_cake_D5", &L_push_cake_D5);
+ robot.ia().iAbyPath().ia_addAction("push_cake_D2", &L_push_cake_D2);
+ robot.ia().iAbyPath().ia_addAction("end_of_match", &L_end_of_match);
+ robot.ia().iAbyPath().ia_addAction("end_of_matchA4", &L_end_of_matchA4);
+
+ logger().debug() << " END IASetupActivitiesZone" << logs::end;
+ }*/
+
 void L_State_DecisionMakerIA::IASetupActivitiesZone()
 {
     logger().debug() << "IASetupActivitiesZone" << logs::end;
@@ -684,19 +863,22 @@ void L_State_DecisionMakerIA::IASetupActivitiesZone()
     //robot.ia().iAbyPath().ia_createZone("zone_end", 0, 1650, 450, 450, 500, 2100, 0);
     robot.ia().iAbyPath().ia_createZone("zone_end", 1550, 900, 450, 450, 1650, 1200, 0);
     robot.ia().iAbyPath().ia_createZone("zone_cake_A2", 0, 450, 450, 450, 500, 675, -180);
-    robot.ia().iAbyPath().ia_createZone("zone_cake_D5", 1600, 2100, 450, 450, 1500, 2325, 0);
-    robot.ia().iAbyPath().ia_createZone("zone_cake_A5", 0, 2100, 450, 450, 500, 2325, -180);
-    robot.ia().iAbyPath().ia_createZone("zone_cake_black_B3", 600, 1000, 200, 200, 570, 950, 60);
+    //robot.ia().iAbyPath().ia_createZone("zone_cake_D5", 1600, 2100, 450, 450, 1500, 2325, 0);
+    //robot.ia().iAbyPath().ia_createZone("zone_cake_A5", 0, 2100, 450, 450, 500, 2325, -180);
+    //robot.ia().iAbyPath().ia_createZone("zone_cake_black_B3", 600, 1000, 200, 200, 570, 950, 60);
+    robot.ia().iAbyPath().ia_createZone("zone_cake_black_B3C3", 600, 1000, 200, 200, 570, 950, 60);
     robot.ia().iAbyPath().ia_createZone("zone_cake_D2", 1550, 450, 450, 450, 1500, 675, 0);
-    robot.ia().iAbyPath().ia_createZone("zone_endA4", 0, 1650, 450, 450, 400, 1700, 90);
+    //robot.ia().iAbyPath().ia_createZone("zone_endA4", 0, 1650, 450, 450, 400, 1700, 90);
+    robot.ia().iAbyPath().ia_createZone("zone_endA3", 0, 900, 450, 450, 400, 1100, 90);
 
     robot.ia().iAbyPath().ia_addAction("push_cake_A2", &L_push_cake_A2);
-    robot.ia().iAbyPath().ia_addAction("push_cake_black_B3", &L_push_cake_black_B3);
-    robot.ia().iAbyPath().ia_addAction("push_cake_A5", &L_push_cake_A5);
-    robot.ia().iAbyPath().ia_addAction("push_cake_D5", &L_push_cake_D5);
+    robot.ia().iAbyPath().ia_addAction("push_cake_black_B3C3", &L_push_cake_black_B3C3);
+    //robot.ia().iAbyPath().ia_addAction("push_cake_A5", &L_push_cake_A5);
+    //robot.ia().iAbyPath().ia_addAction("push_cake_D5", &L_push_cake_D5);
     robot.ia().iAbyPath().ia_addAction("push_cake_D2", &L_push_cake_D2);
-    robot.ia().iAbyPath().ia_addAction("end_of_match", &L_end_of_match);
-    robot.ia().iAbyPath().ia_addAction("end_of_matchA4", &L_end_of_matchA4);
+    //robot.ia().iAbyPath().ia_addAction("end_of_match", &L_end_of_match);
+    //robot.ia().iAbyPath().ia_addAction("end_of_matchA4", &L_end_of_matchA4);
+    robot.ia().iAbyPath().ia_addAction("end_of_matchA3", &L_end_of_matchA3);
 
     logger().debug() << " END IASetupActivitiesZone" << logs::end;
 }

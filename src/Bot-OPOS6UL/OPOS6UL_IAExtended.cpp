@@ -47,9 +47,11 @@ void OPOS6UL_IAExtended::initPlayground() {
 //2023
 
 
+//zone pour eviter le petit robot
+    p_->add_rectangle_lower_left(500, 500, 350, 350, 0);
 
     //zone bleu adv A3
-    p_->add_rectangle_lower_left(0, 800, 558, 650, 0);
+    p_->add_rectangle_lower_left(area_A3, 0, 800, 558, 650, 0);
     //zone bleu adv D4
     p_->add_rectangle_lower_left(1445, 1550, 558, 650, 0);
 
