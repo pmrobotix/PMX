@@ -107,11 +107,11 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
         logger().debug() << "Arg back set " << args["back"] << ", back = " << back << logs::end;
     }
 
-    robot.asserv().startMotionTimerAndOdo(true);
-
     logger().info() << "COORD avec x=" << coordx << " y=" << coordy << " coorda=" << coorda_deg << logs::end;
 
+    robot.asserv().startMotionTimerAndOdo(false);
     robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXGREEN));
+    robot.asserv().assistedHandling();
 
     robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
     ROBOTPOSITION p = robot.asserv().pos_getPosition();
@@ -148,7 +148,7 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 //                robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
 //                robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
                 while (ts != TRAJ_FINISHED) {
-                    ts = robot.ia().iAbyPath().whileMoveForwardTo(x_dest, y_dest, false, 2000000, 10, 10, false);
+                    ts = robot.ia().iAbyPath().whileMoveForwardTo(x_dest, y_dest, false, 100, 0, 0, false);
                     if (ts == TRAJ_NEAR_OBSTACLE) {
                         logger().info() << "===== TRAJ_NEAR_OBSTACLE CONFIRMED" << logs::end;
                         robot.asserv().resetEmergencyOnTraj("===== TRAJ_NEAR_OBSTACLE CONFIRMED");
@@ -275,8 +275,8 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
     }
     //sleep(1);
     robot.svgPrintPosition();
-    robot.asserv().doLineAbs(200);
-    robot.svgPrintPosition();
+//    robot.asserv().doLineAbs(200);
+//    robot.svgPrintPosition();
 
     robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
     p = robot.asserv().pos_getPosition();

@@ -142,9 +142,9 @@ public:
     //Functions deprecated
     virtual void motion_ActivateReguDist(bool enable) = 0;
     virtual void motion_ActivateReguAngle(bool enable) = 0;
-    virtual void motion_ResetReguDist() = 0;
-    virtual void motion_ResetReguAngle() = 0;
-    virtual TRAJ_STATE motion_DoDirectLine(float dist_mm) = 0; //uniquement en consigne sans le command manager
+    //virtual void motion_ResetReguDist() = 0;
+    //virtual void motion_ResetReguAngle() = 0;
+    //virtual TRAJ_STATE motion_DoDirectLine(float dist_mm) = 0; //uniquement en consigne sans le command manager
 
 };
 

@@ -367,6 +367,7 @@ void AsservDriver::motion_ActivateReguDist(bool enable) {
 void AsservDriver::motion_ActivateReguAngle(bool enable) {
 
 }
+/*
 void AsservDriver::motion_ResetReguDist() {
 
 }
@@ -375,4 +376,4 @@ void AsservDriver::motion_ResetReguAngle() {
 }
 TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_mm) {
     return TRAJ_ERROR;
-}
+}*/

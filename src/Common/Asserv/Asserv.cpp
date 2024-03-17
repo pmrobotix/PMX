@@ -1121,13 +1121,12 @@ TRAJ_STATE Asserv::doCalage(int distmm, int percent)
         else if (distmm < 0)
             asservdriver_->motion_setLowSpeedBackward(true, percent);
 
-        asservdriver_->motion_ActivateReguAngle(false); //TODO A VERIFIER SI NON INVERSE POUR GROS ROBOT !!!!!!!!!!!!!!!!!!!!!!!
-        asservdriver_->motion_ActivateReguDist(true);
+//        asservdriver_->motion_ActivateReguAngle(false);
+//        asservdriver_->motion_ActivateReguDist(true);
         asservdriver_->motion_AssistedHandling();
 
-        TRAJ_STATE ts = asservdriver_->motion_DoDirectLine(distmm); //sans asservissement L/R
+        TRAJ_STATE ts = asservdriver_->motion_DoLine(distmm); //sans asservissement L/R
 
-        //asservdriver_->path_CancelTrajectory();
         asservdriver_->motion_setLowSpeedForward(false);
         asservdriver_->motion_setLowSpeedBackward(false);
 

@@ -923,6 +923,7 @@ void AsservDriver::motion_ActivateReguAngle(bool enable)
 {
     logger().error() << "motion_ActivateReguAngle NOT IMPLEMENTED !!!!!" << logs::end;
 }
+/*
 void AsservDriver::motion_ResetReguDist()
 {
     logger().error() << "motion_ResetReguDist NOT IMPLEMENTED  !!!!!" << logs::end;
@@ -935,4 +936,4 @@ TRAJ_STATE AsservDriver::motion_DoDirectLine(float dist_mm)
 {
     logger().error() << "motion_DoDirectLine NOT IMPLEMENTED  !!!!!" << logs::end;
     return TRAJ_ERROR;
-}
+}*/

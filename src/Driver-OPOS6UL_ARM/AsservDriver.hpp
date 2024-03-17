@@ -153,9 +153,9 @@ public:
     //Functions deprecated
     void motion_ActivateReguDist(bool enable);
     void motion_ActivateReguAngle(bool enable);
-    void motion_ResetReguDist();
-    void motion_ResetReguAngle();
-    TRAJ_STATE motion_DoDirectLine(float dist_mm);
+    //void motion_ResetReguDist();
+    //void motion_ResetReguAngle();
+    //TRAJ_STATE motion_DoDirectLine(float dist_mm);
 
 
 

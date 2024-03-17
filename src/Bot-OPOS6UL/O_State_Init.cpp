@@ -385,7 +385,7 @@ void O_State_Init::setPos()
      robot.actions().ax12_bras_gauche(-1);
      robot.actions().ax12_bras_droit_init(0);
      robot.actions().ax12_bras_gauche_init(-1);*/
-    robot.actions().ax12_bras_droit(0);
+   /* robot.actions().ax12_bras_droit(0);
     robot.actions().ax12_bras_gauche(-1);
     robot.actions().ax12_bras_droit_init(0);
     robot.actions().ax12_bras_gauche_init(-1);
@@ -394,7 +394,7 @@ void O_State_Init::setPos()
     robot.actions().ax12_bras_gauche(-1);
     robot.actions().ax12_bras_droit_init(0);
     robot.actions().ax12_bras_gauche_init(-1);
-    //utils::sleep_for_secs(2);
+    //utils::sleep_for_secs(2);*/
     /*
 
     robot.actions().ax12_bras_droit(0);
