@@ -8,18 +8,18 @@ OPOS6UL_IAExtended::OPOS6UL_IAExtended(std::string botId, Robot *robot) :
         iaz_(robot), iap_(robot)
 {
     opponent_1 = Playground::INVALID;
-    opponent_2 = Playground::INVALID;
-    opponent_3 = Playground::INVALID;
-    opponent_4 = Playground::INVALID;
+//    opponent_2 = Playground::INVALID;
+//    opponent_3 = Playground::INVALID;
+//    opponent_4 = Playground::INVALID;
 
     area_B4 = Playground::INVALID;
     area_C4 = Playground::INVALID;
     area_B3 = Playground::INVALID;
 
     //terrain horizontal
-    //p_ = new SymmetricalPlayground(0.0, 0.0, 3400.0, 2500.0, 0.5, 1.0, 1500.0);
+    p_ = new SymmetricalPlayground(0.0, 0.0, 3400.0, 2500.0, 0.5, 1.0, 1500.0);
     //terrain vertical
-    p_ = new SymmetricalPlayground(0.0, 0.0, 2400.0, 3200.0, 0.5, 1.0, 1000.0);
+    //p_ = new SymmetricalPlayground(0.0, 0.0, 2400.0, 3200.0, 0.5, 1.0, 1000.0);
 
     initPlayground();
 
@@ -27,15 +27,15 @@ OPOS6UL_IAExtended::OPOS6UL_IAExtended(std::string botId, Robot *robot) :
 
 void OPOS6UL_IAExtended::initPlayground() {
     //bordure terrain horizontal
-//    p_->add_rectangle_lower_left(0, 0, 129, 2000, 0); //cote gauche
-//    p_->add_rectangle_lower_left(3000, 0, -129, 2000, 0); //cote droit
-//    p_->add_rectangle_lower_left(0, 0, 3000, 129, 0); //bas
-//    p_->add_rectangle_lower_left(0, 2000 - 129, 3000, 2000, 0); //haut
+    p_->add_rectangle_lower_left(0, 0, 129, 2000, 0); //cote gauche
+    p_->add_rectangle_lower_left(3000, 0, -129, 2000, 0); //cote droit
+    p_->add_rectangle_lower_left(0, 0, 3000, 129, 0); //bas
+    p_->add_rectangle_lower_left(0, 2000 - 129, 3000, 2000, 0); //haut
     //bordure terrain vertical
-    p_->add_rectangle_lower_left(0, 0, 129, 3000, 0); //cote gauche
-    p_->add_rectangle_lower_left(2000, 0, -129, 3000, 0); //cote droit
-    p_->add_rectangle_lower_left(0, 0, 2000, 129, 0); //bas
-    p_->add_rectangle_lower_left(0, 3000 - 129, 2000, 3000, 0); //haut
+//    p_->add_rectangle_lower_left(0, 0, 129, 3000, 0); //cote gauche
+//    p_->add_rectangle_lower_left(2000, 0, -129, 3000, 0); //cote droit
+//    p_->add_rectangle_lower_left(0, 0, 2000, 129, 0); //bas
+//    p_->add_rectangle_lower_left(0, 3000 - 129, 2000, 3000, 0); //haut
 
 
     //bordure terrain lego
@@ -46,26 +46,26 @@ void OPOS6UL_IAExtended::initPlayground() {
 
 //2023
 
-
-//zone pour eviter le petit robot
-    p_->add_rectangle_lower_left(500, 500, 350, 350, 0);
-
-    //zone bleu adv A3
-    p_->add_rectangle_lower_left(area_A3, 0, 800, 558, 650, 0);
-    //zone bleu adv D4
-    p_->add_rectangle_lower_left(1445, 1550, 558, 650, 0);
-
-    //marron C3
-    p_->add_rectangle(1275, 1125, 380, 380, 0);
-    //marron B3
-    p_->add_rectangle(area_B3, 725, 1125, 340, 340, 0);
-
-    //marron C4
-    p_->add_rectangle(area_C4, 1275, 1875, 380, 380, 0);
-
-    //marron B4
-    p_->add_rectangle(this->area_B4, 725, 1875, 340, 340, 0);
-
+//
+////zone pour eviter le petit robot
+//    p_->add_rectangle_lower_left(500, 500, 350, 350, 0);
+//
+//    //zone bleu adv A3
+//    p_->add_rectangle_lower_left(area_A3, 0, 800, 558, 650, 0);
+//    //zone bleu adv D4
+//    p_->add_rectangle_lower_left(1445, 1550, 558, 650, 0);
+//
+//    //marron C3
+//    p_->add_rectangle(1275, 1125, 380, 380, 0);
+//    //marron B3
+//    p_->add_rectangle(area_B3, 725, 1125, 340, 340, 0);
+//
+//    //marron C4
+//    p_->add_rectangle(area_C4, 1275, 1875, 380, 380, 0);
+//
+//    //marron B4
+//    p_->add_rectangle(this->area_B4, 725, 1875, 340, 340, 0);
+//
 
 
 
@@ -127,9 +127,9 @@ void OPOS6UL_IAExtended::initPlayground() {
 
     //opponent
     p_->add_circle(this->opponent_1, -100.0, -100.0, 350.0, 8);
-    p_->add_circle(this->opponent_2, -100.0, -100.0, 350.0, 8);
-    p_->add_circle(this->opponent_3, -100.0, -100.0, 350.0, 8);
-    p_->add_circle(this->opponent_4, -100.0, -100.0, 350.0, 8);
+//    p_->add_circle(this->opponent_2, -100.0, -100.0, 350.0, 8);
+//    p_->add_circle(this->opponent_3, -100.0, -100.0, 350.0, 8);
+//    p_->add_circle(this->opponent_4, -100.0, -100.0, 350.0, 8);
     p_->compute_edges();
     iap_.addPlayground(p_);
     iap_.toSVG();

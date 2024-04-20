@@ -218,7 +218,7 @@ void AsservDriver::parseAsservPosition(string str)
 
         pp_ = p_;
 
-        logger().error() << " ok# " << x << " " << y << " " << a_rad * 180.0 / M_PI << " status=" << CommandStatus << " "
+        logger().debug() << " ok# " << x << " " << y << " " << a_rad * 180.0 / M_PI << " status=" << CommandStatus << " "
                 << PendingCommandCount << " " << lSpeed << " " << rSpeed << " " << debg << logs::end;
     } else {
         logger().error() << " >> parseAsservPosition BAD LINE : " << str << logs::end;
@@ -410,7 +410,7 @@ void AsservDriver::path_CollisionOnTrajectory()
     if (!asservCardStarted_)
         logger().info() << "path_CollisionOnTrajectory() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
     else {
-        logger().error() << " path_CollisionOnTrajectory() HALT " << asservCardStarted_ << logs::end;
+        logger().debug() << " path_CollisionOnTrajectory() HALT " << asservCardStarted_ << logs::end;
 
         //serialPort_.Write("h");
         nucleo_writeSerial('h');

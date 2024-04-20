@@ -19,6 +19,7 @@ void logs::LoggerFactory::initialize()
     add("console", new ConsoleAppender());
     add("svg", new SvgAppender("svgAPF.svg"));
     add("svgia", new SvgAppender("svgIA.svg"));
+    add("svgsensors", new SvgAppender("svgSensors.svg"));
     add("memory", new MemoryAppender());
     //add("file", new FileAppender("logAPF.csv"));
 
@@ -33,22 +34,23 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "OPOS6UL_RobotExtended", "console");
     add(logs::Level::INFO, "OPOS6UL_AsservExtended", "console");
     add(logs::Level::INFO, "OPOS6UL_ActionsExtended", "console");
+    //SVG
+    add(logs::Level::INFO, "Svg4OPOS6UL_Robot", "svg");
+    add(logs::Level::INFO, "IAbyPath4OPOS6UL_Robot", "svgia");
+    add(logs::Level::INFO, "Sensors4OPOS6UL_Robot", "svgsensors");
+
+
+    //SVG specific en parallele //TODO ca pose pb de lock
+    add(logs::Level::INFO, "AsservDriver.OPO.SVG", "svg");
+    add(logs::Level::INFO, "AsservDriver.SIMU.SVG", "svg");
 
     //COMMON
-    add(logs::Level::DEBUG, "Asserv", "console");
+    add(logs::Level::INFO, "Asserv", "console");
     add(logs::Level::INFO, "IAbyPath", "console");
     add(logs::Level::INFO, "Sensors", "console");
     add(logs::Level::INFO, "ServoObjectsSystem", "console");
     add(logs::Level::INFO, "ActionManagerTimer", "console");
     add(logs::Level::INFO, "LedBar", "console");
-
-    //SVG
-    add(logs::Level::INFO, "Svg4OPOS6UL_Robot", "svg");
-    add(logs::Level::INFO, "IAbyPath4OPOS6UL_Robot", "svgia");
-    //SVG specific en parallele //TODO ca pose pb de lock
-    add(logs::Level::INFO, "AsservDriver.OPO.SVG", "svg");
-    add(logs::Level::INFO, "AsservDriver.SIMU.SVG", "svg");
-
 
     //State
     add(logs::Level::INFO, "O_State_Init", "console");

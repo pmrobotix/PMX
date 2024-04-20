@@ -11,7 +11,7 @@
 #include <bits/stl_iterator.h>
 #include <bits/stl_vector.h>
 #include <bits/stringfwd.h>
-#include <simple_svg_1.0.0.hpp>
+
 #include <src/pmr_edge.h>
 #include <src/pmr_node.h>
 #include <src/pmr_path_result.h>
@@ -29,6 +29,7 @@
 #include "../../Log/Logger.hpp"
 #include "../../Log/SvgWriter.hpp"
 #include "../Asserv/Asserv.hpp"
+#include "simple_svg_1.0.0.hpp"
 
 IAbyPath::IAbyPath(Robot *robot)
 {
@@ -65,7 +66,7 @@ void IAbyPath::toSVG()
 
         svg::Document doc("ia", lay);
 
-        doc << svg::elemStart("g") << svg::attribute("transform", "translate(200,3200) scale(1,-1)")
+        doc << svg::elemStart("g") << svg::attribute("transform", "translate(200,2200) scale(1,-1)")
                 << svg::emptyElemEnd(false);
 
         // Red image border.

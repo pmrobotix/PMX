@@ -40,8 +40,8 @@ private:
     ROBOTPOSITION pos_pour_calcul_prec_;
     ARobotPositionShared *robotPositionShared_;
 
-    int x_adv_;
-    int y_adv_;
+//    int x_adv_;
+//    int y_adv_;
 
 public:
 

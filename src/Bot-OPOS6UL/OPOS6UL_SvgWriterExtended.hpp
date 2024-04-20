@@ -10,6 +10,7 @@ class OPOS6UL_SvgWriterExtended: public SvgWriter
 {
 private:
     logs::Logger::LoggerBuffer *fLogBuffer;
+    logs::Logger::LoggerBuffer *fLogBufferSensors;
 public:
 
     OPOS6UL_SvgWriterExtended(std::string botId);

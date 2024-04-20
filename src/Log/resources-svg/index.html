@@ -1,36 +1,93 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//FR">
 <html>
-    <head>
-    <!-- Info de titre contenant des informations supplémentaires sur
-       ce document, non affichées sur la page -->
-    </head>
+<head>
+<title>Demo of Show hide div layer onclick of buttons</title>
+<META NAME="DESCRIPTION" CONTENT="Demo for showing and hiding div">
+<META NAME="KEYWORDS" CONTENT="Demo Show layer, div style set">
+<style type="text/css">
+     div {
+     position: absolute;
 
-    <body>
-       
-        <div id="Layer0" style="opacity: 0.4; position:absolute; left:200px; top:200px; width:0px; height:0px; z-index:1">
-        <object data="table2023.svg" type="image/svg+xml" style="width:2000px; height:3000px;"></object>
-        </div>
-		
-        <!--div id="Layer1" style="opacity: 0.8; position:absolute; left:109px; top:148px; width:0px; height:0px; z-index:1">
-        <object data="table2020.svg" type="image/svg+xml" style="width:3182px; height:2253px;"></object>
-        </div-->
-		
-		
-		<div id="Layer2" style="position:absolute; left:0px; top:0px; width:2500px; height:3400px; z-index:2">
-        <object data="svgEV3.svg" type="image/svg+xml" style="width:2500px; height:3400px;"></object>
-        </div>
+     color: black;
+     border: #0000cc 2px dashed;
+     display: block;
+     }
 
-		<div id="Layer3" style="position:absolute; left:0px; top:0px; width:2500px; height:3400px; z-index:3">
-        <object data="svgAPF.svg" type="image/svg+xml" style="width:2500px; height:3400px;"></object>
-        </div>
-        
-        <div id="Layer4" style="opacity: 0.2; position:absolute; left:0px; top:0px; width:2500px; height:3400px; z-index:0" >
-        <object data="svgIA.svg" type="image/svg+xml" style="width:2500px; height:3400px;"></object>
-        </div>
-		
-		
+     //.button {
+        //background-color: #000000;
+        //color: #FFFFFF;
+        //padding: 10px;
+        //border-radius: 10px;
+        //-moz-border-radius: 10px;
+        //-webkit-border-radius: 10px;
+        //margin:10px
+        //font-size: 100px;
+        //font-family: Arial,Helvetica,sans-serif;
+        //font-weight: bold;
+    //}
+     .big-btn {
+        width: 180px;
+        height: 50px;
+    }
+     .input[type="button"] {
+     font-size: 40px;
+     font-weight: bold;
+     }
+</style>
 
-		
-      
-    </body>
-</html> 
+<script language="JavaScript">
+     function setVisibility(id) {
+
+
+          if(document.getElementById(id).style.display == 'none'){
+
+               document.getElementById(id).style.display = 'inline';
+               document.getElementById(id+'-bt').style.fontWeight = 'bold';
+
+          }else{
+
+               document.getElementById(id).style.display = 'none';
+               document.getElementById(id+'-bt').style.fontWeight = 'normal';
+
+          }
+
+     }
+</script>
+
+</head>
+<body>
+ <div style=" position:fixed;top:200px;z-index:100">
+
+     <input type=button name=type id='svgAPF-bt' value='APF'
+     onclick="setVisibility('svgAPF');" class="input button big-btn">
+<br/><br/><br/><br/>
+     <input type=button name=type id='svgIA-bt' value='IA'
+          onclick="setVisibility('svgIA');" class="input button big-btn">
+<br/><br/><br/><br/>
+     <input type=button name=type id='svgSensors-bt' value='SENSORS'
+          onclick="setVisibility('svgSensors');" class="input button big-btn">
+<br/><br/><br/><br/>
+     <input type=button name=type id='table-bt' value='TABLE'
+          onclick="setVisibility('table');" class="input button big-btn">
+
+</div>
+
+     <div id="table" style="opacity: 0.4; position:absolute; left:200px; top:200px; width:0px; height:0px; z-index:10;display:inline">
+<object data="table2024.svg" type="image/svg+xml" style="width:3000px; height:2000px;"></object>
+</div>
+
+<div id="svgIA" style="opacity: 0.2; position:absolute; left:0px; top:0px; width:3400px; height:2500px; z-index:20;display:inline" >
+<object data="svgIA.svg" type="image/svg+xml" style="width:3400px; height:2500px;"></object>
+</div>
+
+
+
+<div id="svgSensors" style="position:absolute; left:0px; top:0px; width:3400px; height:2500px;z-index:30;display:inline">
+<object data="svgSensors.svg" type="image/svg+xml" style="width:3400px; height:2500px;"></object>
+</div>
+
+<div id="svgAPF" style="position:absolute; left:0px; top:0px; width:3400px; height:2500px;z-index:40;display:inline">
+<object data="svgAPF.svg" type="image/svg+xml" style="width:3400px; height:2500px;"></object>
+</div>
+
+</body>
+</html>

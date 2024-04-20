@@ -1,6 +1,8 @@
 #include "Sensors.hpp"
 
+
 #include <stdlib.h>
+
 #include <algorithm>
 #include <vector>
 
@@ -10,6 +12,8 @@
 #include "../Asserv/Asserv.hpp"
 #include "../Interface.Driver/ARobotPositionShared.hpp"
 #include "Actions.hpp"
+//#include "../../Log/simple_svg_1.0.0_cho.hpp"
+//#include "simple_svg_1.0.0.hpp"
 
 using namespace std;
 
@@ -44,40 +48,68 @@ Sensors::Sensors(Actions &actions, Robot *robot) :
     is_cake_there_in_D2_ = true;
     is_cake_there_in_D5_ = true;
     is_cake_there_in_A5_ = true;
+
+/*
+         int xdim = 3400;
+         int ydim = 2500;
+
+         svg::Dimensions dimensions(xdim, ydim);
+         svg::Layout lay(dimensions, svg::Layout::TopLeft);
+
+         doc_ = new svg::Document("sensors", lay);
+         //svg::Document doc("sensors", lay);
+
+         *doc_ << svg::elemStart("g") << svg::attribute("transform", "translate(200,2200) scale(1,-1)")
+              << svg::emptyElemEnd(false);
+
+              // Red image border.
+              svg::Polygon border(svg::Fill(svg::Color::White), svg::Stroke(5, svg::Color::Red));
+              border << svg::Point(xdim, ydim) << svg::Point(dimensions.width, ydim)
+              << svg::Point(dimensions.width, dimensions.height) << svg::Point(xdim, dimensions.height);
+              *doc_ << border;
+
+              //*doc_ << svg::elemStart("g");
+*/
+
 }
 Sensors::~Sensors()
 {
+
+	//loggerSvg().info() << doc->endToString() << logs::end;
     delete sensorsdriver_;
 }
 
-void Sensors::toSVG()
-{
-    /*
-     int xdim = 2400;
-     int ydim = 3200;
+//void Sensors::toSVG()
+//{
 
-     svg::Dimensions dimensions(xdim, ydim);
-     svg::Layout lay(dimensions, svg::Layout::TopLeft);
+//     int xdim = 3400;
+//     int ydim = 2500;
+//
+//     svg::Dimensions dimensions(xdim, ydim);
+//     svg::Layout lay(dimensions, svg::Layout::TopLeft);
+//
+//     svg::Document doc("sensors", lay);
 
-     svg::Document doc("ia", lay);
+//     doc << svg::elemStart("g") << svg::attribute("transform", "translate(200,2200) scale(1,-1)")
+//     << svg::emptyElemEnd(false);
+//
+//     // Red image border.
+//     svg::Polygon border(svg::Fill(svg::Color::White), svg::Stroke(5, svg::Color::Red));
+//     border << svg::Point(xdim, ydim) << svg::Point(dimensions.width, ydim)
+//     << svg::Point(dimensions.width, dimensions.height) << svg::Point(xdim, dimensions.height);
+//     doc << border;
 
-     doc << svg::elemStart("g") << svg::attribute("transform", "translate(200,3200) scale(1,-1)")
-     << svg::emptyElemEnd(false);
-
-     // Red image border.
-     svg::Polygon border(svg::Fill(svg::Color::White), svg::Stroke(5, svg::Color::Red));
-     border << svg::Point(xdim, ydim) << svg::Point(dimensions.width, ydim)
-     << svg::Point(dimensions.width, dimensions.height) << svg::Point(xdim, dimensions.height);
-     doc << border;
-
+     //*doc_ << svg::elemEnd("g");
+     //loggerSvg().info() << doc_->appendToString() << logs::end;
+     /*
      doc << svg::elemEnd("g");
 
      loggerSvg().info() << doc.toString() << logs::end;
-
+*/
      //loggerSvg().info() << "INIT " << logs::end;
 
-     */
-}
+
+//}
 
 SensorsTimer::SensorsTimer(Sensors &sensors, int timeSpan_ms, std::string name) :
         sensors_(sensors)
@@ -831,6 +863,7 @@ void Sensors::stopTimerSensors()
     logger().debug() << "stopSensors" << logs::end;
     this->actions().stopPTimer("Sensors");
 //this->actions().stopTimer("Sensors");
+
 }
 
 void SensorsTimer::onTimer(utils::Chronometer chrono)

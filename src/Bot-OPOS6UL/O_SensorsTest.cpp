@@ -66,11 +66,11 @@ void O_SensorsTest::run(int argc, char** argv) {
 //    robot.actions().sensors().setIgnoreAllBackNearObstacle(true);
 
 
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
     robot.actions().start();
-    robot.actions().sensors().addTimerSensors(200);
+    robot.actions().sensors().addTimerSensors(62);
     robot.chrono().start();
 
     while (chrono.getElapsedTimeInSec() < 60) {
@@ -99,7 +99,7 @@ void O_SensorsTest::run(int argc, char** argv) {
         back = robot.actions().sensors().back(1);
         logger().info() << " f=" << front << " b=" << back << logs::end;
 
-        utils::sleep_for_micros(200000);
+        utils::sleep_for_micros(62000);
     }
 
     //TEST par front recu

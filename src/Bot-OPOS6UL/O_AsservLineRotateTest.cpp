@@ -110,7 +110,7 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
     logger().info() << "COORD avec x=" << coordx << " y=" << coordy << " coorda=" << coorda_deg << logs::end;
 
     robot.asserv().startMotionTimerAndOdo(false);
-    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXGREEN));
+    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (bool)(robot.getMyColor() != PMXGREEN));
     robot.asserv().assistedHandling();
 
     robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
@@ -122,10 +122,10 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 
     //detection adverse
     robot.actions().start();
-    //robot.actions().sensors().addTimerSensors(200);
+    robot.actions().sensors().addTimerSensors(65);
     robot.chrono().start();
 
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
     //vitesse reduite
@@ -284,7 +284,7 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
             << right << " x=" << p.x << " y=" << p.y << " deg=" << p.theta * 180.0 / M_PI << logs::end;
 
     robot.svgPrintPosition();
-
+    robot.svgPrintEndOfFile();
     logger().info() << "Happy End." << logs::end;
 }
 

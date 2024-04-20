@@ -115,6 +115,7 @@ OPOS6UL_SvgWriterExtended::OPOS6UL_SvgWriterExtended(std::string botId) :
 
     //optimisation du log pour ne créer qu'un seul objet
     fLogBuffer = new logs::Logger::LoggerBuffer(logger(), logs::Level::INFO);
+    fLogBufferSensors = new logs::Logger::LoggerBuffer(loggerSvgSensor(), logs::Level::INFO);
 }
 
 void OPOS6UL_SvgWriterExtended::writePosition_AdvPos(float x, float y, float x_pos_mm, float y_pos_mm, int color)
@@ -124,33 +125,33 @@ void OPOS6UL_SvgWriterExtended::writePosition_AdvPos(float x, float y, float x_p
         this->lock();
 
         if (color == 0) {
-            *fLogBuffer //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL\" />"
+            *fLogBufferSensors //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL\" />"
                     << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\""<< r_adv <<"\" fill=\"none\" stroke=\"slategray\" />"
                     << "<line x1=\"" << x_pos_mm << "\" y1=\"" << -y_pos_mm << "\" x2=\"" << x << "\" y2=\"" << -y
                     << "\" stroke=\"slategray\" stroke-width=\"1\"/>" << logs::flush;
         } else if (color == 1) {
-            *fLogBuffer //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL-ORANGE\"  />"
+            *fLogBufferSensors //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL-ORANGE\"  />"
                     << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\""<< r_adv+6 <<"\" fill=\"none\" stroke=\"orange\" />"
                     << "<line x1=\"" << x_pos_mm << "\" y1=\"" << -y_pos_mm << "\" x2=\"" << x << "\" y2=\"" << -y
                     << "\" stroke=\"ORANGE\" stroke-width=\"1\"/>" << logs::flush;
         } else if (color == 2) {
-            *fLogBuffer //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL-RED\" />"
+            *fLogBufferSensors //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL-RED\" />"
                     << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\""<< r_adv+10 <<"\" fill=\"none\" stroke=\"red\" />"
                     << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\""<< 150 <<"\" fill=\"none\" stroke=\"red\" />"
                     << "<line x1=\"" << x_pos_mm << "\" y1=\"" << -y_pos_mm << "\" x2=\"" << x << "\" y2=\"" << -y
                     << "\" stroke=\"RED\" stroke-width=\"1\"/>" << logs::flush;
         } else if (color == 3) {
-            *fLogBuffer //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL-GREEN\"  />"
+            *fLogBufferSensors //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL-GREEN\"  />"
                     << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\""<< r_adv+4 <<"\" fill=\"none\" stroke=\"green\" />"
                     << "<line x1=\"" << x_pos_mm << "\" y1=\"" << -y_pos_mm << "\" x2=\"" << x << "\" y2=\"" << -y
                     << "\" stroke=\"GREEN\" stroke-width=\"1\"/>" << logs::flush;
         } else if (color == 4) {
-            *fLogBuffer //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL-BLUE\" />"
+            *fLogBufferSensors //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL-BLUE\" />"
                     << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\""<< r_adv+2 <<"\" fill=\"none\" stroke=\"blue\" />"
                     << "<line x1=\"" << x_pos_mm << "\" y1=\"" << -y_pos_mm << "\" x2=\"" << x << "\" y2=\"" << -y
                     << "\" stroke=\"BLUE\" stroke-width=\"1\"/>" << logs::flush;
         } else if (color == 5) {
-            *fLogBuffer //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL-BLACK\" />"
+            *fLogBufferSensors //<< "<use x=\"" << x - dd << "\" y=\"" << -y - dd << "\" xlink:href=\"#bot-OPOS6UL-BLACK\" />"
                     << "<circle cx=\"" << x << "\" cy=\"" << -y << "\" r=\""<< r_adv+8 <<"\" fill=\"none\" stroke=\"black\" />"
                     << "<line x1=\"" << x_pos_mm << "\" y1=\"" << -y_pos_mm << "\" x2=\"" << x << "\" y2=\"" << -y
                     << "\" stroke=\"BLACK\" stroke-width=\"1\"/>" << logs::flush;

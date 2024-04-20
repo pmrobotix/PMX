@@ -10,6 +10,8 @@
 #include "../Utils/Chronometer.hpp"
 #include "AActionsElement.hpp"
 #include "ITimerPosixListener.hpp"
+//#include <simple_svg_1.0.0.hpp>
+
 
 class ASensorsDriver;
 class Robot;
@@ -43,6 +45,8 @@ private:
 
     Robot *robot_;
     ASensorsDriver *sensorsdriver_;
+
+    //svg::Document *doc_;
 
 //    int diameterOpponent_mm_;
     bool remove_outside_table_;
@@ -105,7 +109,7 @@ public:
      */
     ~Sensors();
 
-    void toSVG();
+    //void toSVG();
 
     Robot* robot()
     {

@@ -17,6 +17,7 @@
 #include "../Robot.hpp"
 #include "IACommon.hpp"
 
+
 struct FoundPath;
 
 struct Point;
