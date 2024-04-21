@@ -169,17 +169,19 @@ void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees_, 
     x_mm = getRelativeX(x_mm);
     float thetaInRad = getRelativeAngleRad(degToRad(thetaInDegrees_));
 
-    logger().debug() << "matchcolor [YELLOW=0 BLUE=1]=" << matchColor << " thetaInDegrees=" << thetaInDegrees_
+    logger().debug() << "matchcolor [BLUE=0 YELLOW=1]=" << matchColor << " thetaInDegrees=" << thetaInDegrees_
             << " getRelativeAngle=" << radToDeg(thetaInRad) << " x_mm=" << x_mm << " y_mm=" << y_mm << logs::end;
 
-    if (useAsservType_ == ASSERV_EXT)
-        asservdriver_->odo_SetPosition(x_mm, y_mm, thetaInRad);
-    else if (useAsservType_ == ASSERV_INT_ESIALR)
-        pAsservEsialR_->odo_SetPosition(x_mm, y_mm, thetaInRad);
+//    if (useAsservType_ == ASSERV_EXT)
+//        asservdriver_->odo_SetPosition(x_mm, y_mm, thetaInRad);
+//    else if (useAsservType_ == ASSERV_INT_ESIALR)
+//        pAsservEsialR_->odo_SetPosition(x_mm, y_mm, thetaInRad);
+    setPositionReal(x_mm, y_mm, thetaInRad);
 }
 
 void Asserv::setPositionReal(float x_mm, float y_mm, float thetaInRad)
 {
+
     if (useAsservType_ == ASSERV_EXT)
         asservdriver_->odo_SetPosition(x_mm, y_mm, thetaInRad);
     else if (useAsservType_ == ASSERV_INT_ESIALR)
@@ -201,7 +203,7 @@ ROBOTPOSITION Asserv::pos_getPosition()
         p = pAsservEsialR_->odo_GetPosition();
 
     //mise à jour de la position pour les sensors
-    //probot_->sharedPosition()->setRobotPosition(p);
+    probot_->sharedPosition()->setRobotPosition(p);
     return p;
 }
 float Asserv::pos_getX_mm()

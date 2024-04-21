@@ -45,9 +45,9 @@ Sensors::Sensors(Actions &actions, Robot *robot) :
     y_adv_mm = -1.0;
 
     //2023
-    is_cake_there_in_D2_ = true;
-    is_cake_there_in_D5_ = true;
-    is_cake_there_in_A5_ = true;
+//    is_cake_there_in_D2_ = true;
+//    is_cake_there_in_D5_ = true;
+//    is_cake_there_in_A5_ = true;
 
 /*
          int xdim = 3400;

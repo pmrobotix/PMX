@@ -130,7 +130,7 @@ void O_IAByPathTest::run(int argc, char** argv)
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
     robot.asserv().startMotionTimerAndOdo(true);
-    robot.asserv().setPositionAndColor(70, 190, 0.0, (robot.getMyColor() != PMXGREEN));
+    robot.asserv().setPositionAndColor(70, 190, 0.0, (robot.getMyColor() != PMXBLUE));
 
     robot.asserv().assistedHandling();
 

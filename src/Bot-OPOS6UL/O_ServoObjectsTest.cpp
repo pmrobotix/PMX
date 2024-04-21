@@ -85,6 +85,9 @@ void O_ServoObjectsTest::run(int argc, char **argv)
         robot.actions().ax12_init();
     }
 
+
+
+    /*
     //ASPIRER SIMPLEMENT
     if (action == "TON") {
         robot.actions().turbine_aspiration(true);
@@ -113,12 +116,12 @@ void O_ServoObjectsTest::run(int argc, char **argv)
         robot.actions().moustache_D_init_high(-1, 500);
         sleep(2);
         robot.actions().moustache_D_take_balls(-1, 200);
-        /*
-         robot.actions().aspi_tete_init();
-         robot.actions().aspi_droite(-1, 70);
-         robot.actions().aspi_gauche(-1, 70);
-         robot.actions().aspi_centre(-1);
-         */
+
+//         robot.actions().aspi_tete_init();
+//         robot.actions().aspi_droite(-1, 70);
+//         robot.actions().aspi_gauche(-1, 70);
+//         robot.actions().aspi_centre(-1);
+
         robot.actions().turbine_aspiration(false);
     }
 
@@ -168,7 +171,7 @@ void O_ServoObjectsTest::run(int argc, char **argv)
         robot.actions().funny_action_deploy();
 
     }
-
+*/
     /*//2022
      *
      if (action == "BD") {

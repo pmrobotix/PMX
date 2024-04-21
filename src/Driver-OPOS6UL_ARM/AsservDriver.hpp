@@ -77,7 +77,7 @@ private:
     Mutex m_pos; //mutex pour la mise à jour de la position
     Mutex m_statusCountDown;
 
-    void nucleo_flushSerial();
+    int nucleo_flushSerial();
     int nucleo_writeSerial(char c);
     int nucleo_writeSerialSTR(string str);
 
@@ -109,9 +109,12 @@ public:
     //commandes concernant les codeurs
     long getLeftExternalEncoder();
     long getRightExternalEncoder();
+
+    //TODO
     void getCountsExternal(int32_t* countR, int32_t* countL){} //TODO getCountsExternal
     void getDeltaCountsExternal(int32_t* deltaR, int32_t* deltaL){} //TODO getDeltaCountsExternal
     void getCountsInternal(int32_t* countR, int32_t* countL){} //TODO getCountsInternal
+
     long getLeftInternalEncoder();
     long getRightInternalEncoder();
     void resetEncoders();

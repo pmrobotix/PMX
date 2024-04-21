@@ -31,7 +31,7 @@
 using namespace std;
 
 Robot::Robot() :
-        chrono_("Robot"), myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2022", "/") // use character "/" instead of "-" for arguments
+        chrono_("Robot"), myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2024", "/") // use character "/" instead of "-" for arguments
 {
     points = 0;
     tabletest = false;
@@ -80,7 +80,7 @@ void Robot::configureDefaultConsoleArgs() {
 
     cArgs_.addOption('k', "skip setup");
 
-    cArgs_.addOption('b', "color BLEU"); //(without PMXGREEN!!)
+    cArgs_.addOption('y', "color YELLOW"); //(without PMXBLUE!!)
 
     cArgs_.addArgument("type", "Type of match (t)est/(m)atch/(p)ause", "m");
     {
@@ -236,7 +236,7 @@ void Robot::begin(int argc, char** argv) {
 //    if (cArgs_['c']) {
 //        color = cArgs_['c']["color"];
 //        if (color == "violet" || color == "v") this->setMyColor(PMXBLUE);
-//        else if (color == "yellow" || color == "jaune" || color == "j" || color == "y") this->setMyColor(PMXGREEN);
+//        else if (color == "yellow" || color == "jaune" || color == "j" || color == "y") this->setMyColor(PMXBLUE);
 //        else {
 //            this->setMyColor(PMXNOCOLOR);
 //            logger().error() << "setMyColor(NOCOLOR)" << logs::end;
@@ -246,14 +246,14 @@ void Robot::begin(int argc, char** argv) {
 //    }
 //    else {
 //        //defaut si aucune couleur n'est specifiée
-//        this->setMyColor(PMXGREEN);
+//        this->setMyColor(PMXBLUE);
 //    }
 
-    if (cArgs_['b']) {
-        logger().debug() << "b = " << (int) cArgs_['b'] << logs::end;
-        this->setMyColor(PMXBLUE);
+    if (cArgs_['y']) {
+        logger().debug() << "y = " << (int) cArgs_['y'] << logs::end;
+        this->setMyColor(PMXYELLOW);
     }
-    else this->setMyColor(PMXGREEN);//defaut si aucune couleur n'est specifiée
+    else this->setMyColor(PMXBLUE);//defaut si aucune couleur n'est specifiée
     logger().debug() << "setMyColor done; getMyColor() = " << getMyColor() << logs::end;
 
 

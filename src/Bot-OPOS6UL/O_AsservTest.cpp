@@ -88,9 +88,9 @@ void O_AsservTest::run(int argc, char** argv) {
     logger().info() << "COORD avec x=" << coordx << " y=" << coordy << " a=" << coorda_deg << logs::end;
 
     robot.asserv().startMotionTimerAndOdo(true); //reset et lancement du thread position, attente et moteur à 1 attente
-    robot.setMyColor(PMXGREEN);
+    robot.setMyColor(PMXBLUE);
     while (robot.asserv().pos_getX_mm() < 10) {
-        robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXGREEN));
+        robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXBLUE));
     }
 
 

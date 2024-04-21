@@ -54,7 +54,7 @@ private:
      */
     ServoObjectsSystem servos_;
 
-    ServoUsingMotor lanceurCerises_;
+    //ServoUsingMotor lanceurCerises_;
 
 public:
 
@@ -138,10 +138,10 @@ public:
      * \brief Cette methode retourne l'objet lanceur.
      * \return tirette_.
      */
-    ServoUsingMotor& lanceur()
-    {
-        return lanceurCerises_;
-    }
+//    ServoUsingMotor& lanceur()
+//    {
+//        return lanceurCerises_;
+//    }
 
     /*!
      * \brief Cette methode retourne l'objet sensors.
@@ -180,6 +180,7 @@ public:
 
     void ax12_init()
     {
+    	/*
         ax12_bras_droit();
         ax12_bras_gauche(-1);
         ax12_bras_droit_init();
@@ -190,26 +191,16 @@ public:
         moustache_G_take_balls(-1);
         moustache_D_init_high(-1);
         moustache_G_init_medium_below_D(-1);
-        funny_init(-1);
+        funny_init(-1);*/
 
     }
+//
+//    void turbine_aspiration(int activate)
+//    {
+//        tirette().setGPIO(4, activate);
+//    }
 
-    void turbine_aspiration(int activate)
-    {
-        tirette().setGPIO(4, activate);
-    }
 
-    //0 à 127
-    void lancer_les_balles(int vitesse)
-    {
-
-        lanceur().turn(vitesse);
-    }
-    void stopper_lanceur_de_balles()
-    {
-
-        lanceur().stop();
-    }
 
     void releaseAll()
     {
@@ -241,6 +232,8 @@ public:
 //          }
     }
 
+
+    /*
     void ax12_bras_droit_init(int keep = 0, int speed = 1023)
     {
         servos().setSpeed(AX12_SERVO_BRAS_D, speed);
@@ -309,7 +302,7 @@ public:
         servos().setTorque(AX12_SERVO_MOUSTACHE_GAUCHE, 1023);
         servos().deployWithVelocity(AX12_SERVO_MOUSTACHE_GAUCHE, 528, keep, speed);
     }
-
+*/
     /*
      void aspi_tete_init(int keep = 0, int speed = 150) {
 

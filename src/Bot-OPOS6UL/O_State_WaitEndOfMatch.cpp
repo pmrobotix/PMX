@@ -41,7 +41,7 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
 //    robot.actions().ax12_left_cil_release(-1);
 //    robot.actions().ax12_left_cil_release(-1);
 
-    robot.actions().funny_action_deploy(2000);
+    //robot.actions().funny_action_deploy(2000);
 
     //robot.points += 5;
     robot.displayPoints();

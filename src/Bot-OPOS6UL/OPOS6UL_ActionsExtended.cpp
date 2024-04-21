@@ -6,8 +6,8 @@ OPOS6UL_ActionsExtended::OPOS6UL_ActionsExtended(std::string botId, Robot *robot
         lcd2x16_(botId, *this),
         tirette_(*this),
         sensors_(*this, robot),
-        servos_(botId, *this),
-        lanceurCerises_(botId, *this)
+        servos_(botId, *this)//,
+        //lanceurCerises_(botId, *this)
 
 {
     // VERIF LCD + BUTTONS
@@ -30,11 +30,11 @@ OPOS6UL_ActionsExtended::OPOS6UL_ActionsExtended(std::string botId, Robot *robot
         logger().error() << "sensors is NOT connected !" << logs::end;
     }
 
-    if (!lanceurCerises_.is_connected()) {
-        //Allumer une led d'error
-        ledbar_.set(3, LED_GREEN);
-        logger().error() << "lanceurCerises(MD25) is NOT connected !" << logs::end;
-    }
+//    if (!lanceurCerises_.is_connected()) {
+//        //Allumer une led d'error
+//        ledbar_.set(3, LED_GREEN);
+//        logger().error() << "lanceurCerises(MD25) is NOT connected !" << logs::end;
+//    }
 
     //TODO init des OBJETS si CONNECTE SINON ALLUMER UNE LED
 

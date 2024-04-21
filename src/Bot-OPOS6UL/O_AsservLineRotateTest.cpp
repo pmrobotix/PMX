@@ -110,13 +110,12 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
     logger().info() << "COORD avec x=" << coordx << " y=" << coordy << " coorda=" << coorda_deg << logs::end;
 
     robot.asserv().startMotionTimerAndOdo(false);
-    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (bool)(robot.getMyColor() != PMXGREEN));
+    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (bool)(robot.getMyColor() != PMXBLUE));
     robot.asserv().assistedHandling();
 
     robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
     ROBOTPOSITION p = robot.asserv().pos_getPosition();
-    logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
-            << right << " x=" << p.x << " y=" << p.y << " deg=" << p.theta * 180.0 / M_PI << logs::end;
+    logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; " << " x=" << p.x << " y=" << p.y << " deg=" << p.theta * 180.0 / M_PI << logs::end;
 
     robot.svgPrintPosition();
 
@@ -157,7 +156,9 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
                         logger().info() << "===== COLLISION ASSERV CONFIRMED" << logs::end;
                         robot.asserv().resetEmergencyOnTraj("===== COLLISION ASSERV CONFIRMED");
                     }
+
                     //sleep(3);
+                    robot.asserv().freeMotion();
                     break;
                 }
 //            } else if (d < 0) {
@@ -175,6 +176,7 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 //                        robot.asserv().resetEmergencyOnTraj("===== COLLISION ASSERV CONFIRMED");
 //                    }
 //                    //sleep(3);
+//		                robot.asserv().freeMotion();
 //                    break;
 //                }
 //            }
@@ -195,7 +197,9 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
                     logger().error() << "===== COLLISION ASSERV FINAL" << logs::end;
                     robot.asserv().resetEmergencyOnTraj("rotate ===== COLLISION ASSERV FINAL");
                 }
+
                 //sleep(2);
+                robot.asserv().freeMotion();
                 break;
             }
             robot.svgPrintPosition();
@@ -221,7 +225,9 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
                         robot.asserv().resetEmergencyOnTraj(
                                 "robot.ia().iAbyPath().whileMoveForwardTo FINAL TRAJ_COLLISION");
                     }
+
                     //sleep(2);
+                    robot.asserv().freeMotion();
                     break;
                 }
                 robot.svgPrintPosition();
@@ -246,6 +252,7 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
                                 "robot.ia().iAbyPath().whileMoveForwardTo FINAL TRAJ_COLLISION");
                     }
                     //sleep(2);
+                    robot.asserv().freeMotion();
                     break;
                 }
                 robot.svgPrintPosition();
@@ -267,6 +274,7 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
                     robot.asserv().resetEmergencyOnTraj();
                 }
                 //sleep(3);
+                robot.asserv().freeMotion();
                 break;
             }
         }
@@ -278,10 +286,10 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 //    robot.asserv().doLineAbs(200);
 //    robot.svgPrintPosition();
 
-    robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
+    robot.asserv().freeMotion();
+//    robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders
     p = robot.asserv().pos_getPosition();
-    logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; left= " << left << " ; right= "
-            << right << " x=" << p.x << " y=" << p.y << " deg=" << p.theta * 180.0 / M_PI << logs::end;
+    logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; " << " x=" << p.x << " y=" << p.y << " deg=" << p.theta * 180.0 / M_PI << logs::end;
 
     robot.svgPrintPosition();
     robot.svgPrintEndOfFile();

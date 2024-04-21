@@ -73,11 +73,11 @@ O_State_Init::execute(Robot&)
                 robot.actions().lcd2x16().print("  ");
 
                 if (b == BUTTON_LEFT_KEY) {
-                    logger().info() << "BUTTON_LEFT_KEY - GREEN selected" << logs::end;
+                    logger().info() << "BUTTON_LEFT_KEY - YELLOW selected" << logs::end;
 
                     robot.actions().lcd2x16().setCursor(2, 0);
-                    robot.actions().lcd2x16().print("VERT ");
-                    robot.setMyColor(PMXGREEN);
+                    robot.actions().lcd2x16().print("YELLOW ");
+                    robot.setMyColor(PMXYELLOW);
                 }
                 if (b == BUTTON_RIGHT_KEY) {
                     logger().info() << "BUTTON_RIGHT_KEY - BLUE selected" << logs::end;
@@ -176,13 +176,13 @@ O_State_Init::execute(Robot&)
                 robot.actions().ax12_init();
 
                 //activation de la turbine pour mettre les balles
-                robot.actions().turbine_aspiration(true);
+                //robot.actions().turbine_aspiration(true);
 
                 utils::sleep_for_micros(300000);
             }
             if (b == BUTTON_DOWN_KEY) {
                 //arret de la turbine
-                robot.actions().turbine_aspiration(false);
+                //robot.actions().turbine_aspiration(false);
                 mode++;
                 if (mode > 4)
                     mode = 1;
@@ -252,14 +252,14 @@ O_State_Init::execute(Robot&)
         robot.actions().lcd2x16().setCursor(0, 1);
         robot.actions().lcd2x16().print("WAITING TIRETT...");
         logger().info() << "PMX...WAIT TIRETTE !!!!!!!!!!!!!!!";
-        if (robot.getMyColor() == PMXGREEN) {
-            robot.actions().lcd2x16().setCursor(0, 0);
-            robot.actions().lcd2x16().print("VER");
-            logger().info() << "GREEN";
-        } else {
+        if (robot.getMyColor() == PMXBLUE) {
             robot.actions().lcd2x16().setCursor(0, 0);
             robot.actions().lcd2x16().print("BLU");
             logger().info() << "BLUE  ";
+        } else {
+            robot.actions().lcd2x16().setCursor(0, 0);
+            robot.actions().lcd2x16().print("YEL");
+            logger().info() << "YELLOW";
         }
         logger().info() << logs::end;
 
@@ -291,13 +291,13 @@ O_State_Init::execute(Robot&)
             robot.actions().ledBar().resetAll();
             robot.actions().ledBar().stop(true);
 
-            utils::sleep_for_micros(600000);
+            utils::sleep_for_micros(1000000);
             logger().info() << "Exit by No color! " << logs::end;
             robot.actions().lcd2x16().clear();
             //on quitte le programme!!
             exit(0);
         } else {
-            logger().info() << "COLOR is " << (robot.getMyColor() == PMXGREEN ? "VERT" : "BLUE ") << logs::end;
+            logger().info() << "COLOR is " << (robot.getMyColor() == PMXBLUE ? "BLUE" : "YELLOW ") << logs::end;
         }
 
         robot.actions().lcd2x16().home();
@@ -342,9 +342,9 @@ void O_State_Init::setPos()
 
     robot.asserv().startMotionTimerAndOdo(true);
     if (robot.strategy() == "tabletest")
-        robot.asserv().setPositionAndColor(130, 900 + 130, 0.0, (robot.getMyColor() != PMXGREEN));
+        robot.asserv().setPositionAndColor(130, 900 + 130, 0.0, (robot.getMyColor() != PMXBLUE));
     else
-        robot.asserv().setPositionAndColor(130, 900 + 130, 0.0, (robot.getMyColor() != PMXGREEN));
+        robot.asserv().setPositionAndColor(130, 900 + 130, 0.0, (robot.getMyColor() != PMXBLUE));
     logger().info() << "O_State_Init::setPos() svgPrintPosition x=" << robot.asserv().pos_getX_mm() << " y="
             << robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
     robot.svgPrintPosition();

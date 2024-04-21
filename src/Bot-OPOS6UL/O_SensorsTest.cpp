@@ -21,7 +21,7 @@ void O_SensorsTest::run(int argc, char** argv) {
     logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
 
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-    robot.setMyColor(PMXGREEN);
+    robot.setMyColor(PMXBLUE);
     //robot.asserv().startMotionTimerAndOdo(false); //assistedHandling is enabled with "true" !
     utils::Chronometer chrono("O_SensorsTest");
     chrono.start();
@@ -55,7 +55,7 @@ void O_SensorsTest::run(int argc, char** argv) {
 
     //il faut mettre une position pour le filtre table
     robot.asserv().startMotionTimerAndOdo(false);
-    robot.asserv().setPositionAndColor(1000.0, 600.0, 90.0,(robot.getMyColor() != PMXGREEN));
+    robot.asserv().setPositionAndColor(1000.0, 600.0, 0.0,(bool)(robot.getMyColor() != PMXBLUE));
     robot.svgPrintPosition();
 
     ROBOTPOSITION p = robot.asserv().pos_getPosition();
@@ -66,7 +66,7 @@ void O_SensorsTest::run(int argc, char** argv) {
 //    robot.actions().sensors().setIgnoreAllBackNearObstacle(true);
 
 
-    robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
     robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
     robot.actions().start();
@@ -76,7 +76,13 @@ void O_SensorsTest::run(int argc, char** argv) {
     while (chrono.getElapsedTimeInSec() < 60) {
 
         robot.svgPrintPosition();
-
+        logger().info() << " pos x="
+                            << robot.asserv().pos_getX_mm()
+                            << " y="
+                            << robot.asserv().pos_getY_mm()
+                            << " a="
+                            << robot.asserv().pos_getThetaInDegree()
+                            << logs::end;
         vadv = robot.actions().sensors().getPositionsAdv();
 
         for (ASensorsDriver::bot_positions::size_type i = 0; i < vadv.size(); i++) {
@@ -99,7 +105,7 @@ void O_SensorsTest::run(int argc, char** argv) {
         back = robot.actions().sensors().back(1);
         logger().info() << " f=" << front << " b=" << back << logs::end;
 
-        utils::sleep_for_micros(62000);
+        utils::sleep_for_micros(1000000);
     }
 
     //TEST par front recu
