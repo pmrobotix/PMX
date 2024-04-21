@@ -26,6 +26,7 @@ AsservDriver::AsservDriver() :
 	errorCount_ = 0;
 	statusCountDown_ = 0;
 	read_error_ = -1;
+	asservCardStarted_ = true;
 
 	// Create serial port object and open serial port
 	char errorOpening = serial_.openDevice(SERIAL_PORT, 115200);
