@@ -52,7 +52,7 @@ public:
     void setType(int servo, ServoType type);
 
     //pos AX12 0->1023
-    void setPulsePos(int servo, int pulse, int rate_milli = 0);
+    void setPulsePos(int servo, int pulsewith, int velocity = 0);
 
     void release(int servo);
 
@@ -77,7 +77,7 @@ public:
 
     int getTorque(int servo);
 
-    void setRate(int servo, int speed);
+    void setTorque(int servo, int torque);
 };
 
 #endif

@@ -66,12 +66,12 @@ public:
     /*!
      * \brief definit la position en pulsation(duty cycle = periode de temps du rapport cyclique) en microseconds.
      */
-    virtual void setPulsePos(int servo, int pulse, int rate_milli = 0) = 0;
+    virtual void setPulsePos(int servo, int pulse, int velocity = 0) = 0;
 
     /*!
      * \brief Définit la vitesse de rotation du servo.
      */
-    virtual void setRate(int servo, int milli) = 0;
+    virtual void setTorque(int servo, int torque) = 0;
 
     virtual void setMinPulse(int servo, int value) = 0;
 

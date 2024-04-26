@@ -178,7 +178,7 @@ int CCAx12Teensy::writeI2C(uint8_t * data, uint16_t bytesToWrite) {
 //    }
 //    return 0;
 //}
-
+//TODO deprecated ?
 int CCAx12Teensy::getAddressSize(int address) {
     switch (address) {
         case P_MODEL_NUMBER:
@@ -336,14 +336,18 @@ int CCAx12Teensy::readAXData(uint8_t port, uint8_t id, uint8_t address) {
     }
     // Read response
     uint8_t status[4];
-    int err_read = readI2C(AXT_STATUS, status, 4);
+    int err_read = readI2C(AXT_STATUS, status, 4); //4 getAddressSize(address)+2
     if (err_read < 0) {
         return AXT_ERROR_READ_STATUS;
     }
-    if (checkCRC(status, 4) != 0) {
+    if (checkCRC(status, 4) != 0) { //4 getAddressSize(address)+2
         return AXT_ERROR_CRC;
     }
-    return status[1] + 256 * status[2];
+    if (getAddressSize(address) == 1) //?
+    	return status[1];
+    else
+    	return (status[1] + (status[2] << 8));
+        //return status[1] + 256 * status[2];
 }
 
 /**
