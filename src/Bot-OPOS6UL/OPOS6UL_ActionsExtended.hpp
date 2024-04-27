@@ -242,6 +242,21 @@ public:
 	}
 	void ax12_init()
 	{
+		/*position haute
+		 62020234| O_ServoObjectsTest INFO Lshouldr(1052)= 537
+		 62031706| O_ServoObjectsTest INFO Lelbow  (1062)= 231
+		 62043187| O_ServoObjectsTest INFO Lwrist  (1061)= 170
+		 62054698| O_ServoObjectsTest INFO Lfinger (1003)= 346
+		 62054759| O_ServoObjectsTest INFO
+		 62066189| O_ServoObjectsTest INFO Rshouldr(1008)= 485
+		 62077536| O_ServoObjectsTest INFO Relbow  (1182)= 783
+		 62088864| O_ServoObjectsTest INFO Rwrist  (1063)= 848
+		 62100200| O_ServoObjectsTest INFO Rfinger (1051)= 545
+		*/
+
+
+
+
 //		ax12_init_R();
 //		ax12_init_L();
 		ax12_init_LR();
@@ -257,12 +272,12 @@ public:
 		 2440348| O_ServoObjectsTest INFO Rwrist  (1063)= 476
 		 2451285| O_ServoObjectsTest INFO Rfinger (1051)= 1010
 		 */
-		/*
+
 		 ax12_bras_droit();
 		 ax12_bras_gauche(-1);
 		 ax12_bras_droit_init();
 		 ax12_bras_gauche_init(-1);
-
+		 /*
 		 aspiration_closed_init();
 
 		 moustache_G_take_balls(-1);
@@ -356,7 +371,7 @@ public:
 		logger().info() << "LOAD shoulderR " << shoulderR << " L " << shoulderL << "  elbowR " << elbowR << " L "
 				<< elbowL<< "  fingerR " << fR << " L " << fL  << logs::end;
 	}
-	/*
+
 	 void ax12_bras_droit_init(int keep = 0, int speed = 1023)
 	 {
 	 servos().setSpeed(AX12_SERVO_BRAS_D, speed);
@@ -378,7 +393,7 @@ public:
 	 servos().setSpeed(AX12_SERVO_BRAS_G, speed);
 	 servos().deploy(AX12_SERVO_BRAS_G, 512, keep);
 	 }
-
+/*
 	 void aspiration_closed_init(int keep = 0, int speed = 150)
 	 {
 	 servos().deployWithVelocity(AX12_SERVO_ASPIRATION, 512, keep, speed);

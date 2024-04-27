@@ -44,6 +44,11 @@ void OPOS6UL_IAExtended::initPlayground() {
 //    p_->add_rectangle(0, 1000, 140, 2000, 0); //left
 //    p_->add_rectangle(3000, 1000, 140, 2000, 0); //right
 
+
+    //2024
+    //p_->add_rectangle(500, 800, 380, 380, 0);
+
+
 //2023
 
 //

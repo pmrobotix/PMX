@@ -55,7 +55,7 @@ void ServoDriver::release(int servo)
     }
 }
 
-void ServoDriver::setRate(int servo, int millisec)
+void ServoDriver::setTorque(int servo, int millisec)
 {
     switch (servo) {
 

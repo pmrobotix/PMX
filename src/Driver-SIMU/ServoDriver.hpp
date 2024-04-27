@@ -46,7 +46,7 @@ public:
 
     void release(int servo);
 
-    void setRate(int servo, int millisec);
+    void setTorque(int servo, int millisec);
 
     void turn(int servo, int speed);
 
