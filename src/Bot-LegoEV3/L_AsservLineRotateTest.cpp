@@ -248,12 +248,12 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
                     if (ts == TRAJ_NEAR_OBSTACLE) {
                         logger().error() << "===== TRAJ_NEAR_OBSTACLE CONFIRMED" << logs::end;
                         robot.asserv().resetEmergencyOnTraj(
-                                "robot.ia().iAbyPath().whileMoveForwardTo FINAL TRAJ_NEAR_OBSTACLE");
+                                "robot.ia().iAbyPath().whileMoveBackwardTo FINAL TRAJ_NEAR_OBSTACLE");
                     }
                     if (ts == TRAJ_COLLISION) {
                         logger().error() << "===== COLLISION ASSERV CONFIRMED" << logs::end;
                         robot.asserv().resetEmergencyOnTraj(
-                                "robot.ia().iAbyPath().whileMoveForwardTo FINAL TRAJ_COLLISION");
+                                "robot.ia().iAbyPath().whileMoveBackwardTo FINAL TRAJ_COLLISION");
                     }
                     //sleep(2);
                     break;

@@ -151,7 +151,7 @@ public:
     //void motion_setLowSpeed(bool enable);
     void motion_setLowSpeedForward(bool enable, int percent); //TODO remove enable
     void motion_setLowSpeedBackward(bool enable, int percent); //TODO remove enable
-
+    void motion_setMaxSpeed(bool enable, int speed_dist_m_sec = 0, int speed_angle_rad_sec=0);
 
     //Functions deprecated
     void motion_ActivateReguDist(bool enable);

@@ -326,7 +326,34 @@ O_State_Init::execute(Robot&)
 				goto begin;
 			}
 		}
+		/*pos depose jardiniere
+		 *
 
+		 6660937| O_ServoObjectsTest INFO Lshouldr(1052)= 553
+		  6671847| O_ServoObjectsTest INFO Lelbow  (1062)= 431
+		  6682738| O_ServoObjectsTest INFO Lwrist  (1061)= 785
+		  6693666| O_ServoObjectsTest INFO Lfinger (1003)= 381
+		  6693716| O_ServoObjectsTest INFO
+		  6704594| O_ServoObjectsTest INFO Rshouldr(1008)= 465
+		  6715515| O_ServoObjectsTest INFO Relbow  (1182)= 587
+		  6726726| O_ServoObjectsTest INFO Rwrist  (1063)= 247
+		  6737691| O_ServoObjectsTest INFO Rfinger (1051)= 448
+		  6737744| O_ServoObjectsTest INFO
+
+
+
+		  6031083| O_ServoObjectsTest INFO Lshouldr(1052)= 557
+		   6041990| O_ServoObjectsTest INFO Lelbow  (1062)= 440
+		   6052895| O_ServoObjectsTest INFO Lwrist  (1061)= 811
+		   6063790| O_ServoObjectsTest INFO Lfinger (1003)= 354
+		   6063824| O_ServoObjectsTest INFO
+		   6074710| O_ServoObjectsTest INFO Rshouldr(1008)= 458
+		   6085606| O_ServoObjectsTest INFO Relbow  (1182)= 554
+		   6096483| O_ServoObjectsTest INFO Rwrist  (1063)= 177
+		   6107374| O_ServoObjectsTest INFO Rfinger (1051)= 422
+		   6107422| O_ServoObjectsTest INFO
+
+*/
 	} else
 	{
 		logger().info() << "SKIP SETUP...." << logs::end;
@@ -392,7 +419,7 @@ void O_State_Init::setPos()
 	if (robot.strategy() == "tabletest")
 		robot.asserv().setPositionAndColor(130, 1875 - 130, 0.0, (bool)(robot.getMyColor() != PMXBLUE));
 	else
-		robot.asserv().setPositionAndColor(130, 100 + 130, 0.0, (bool)(robot.getMyColor() != PMXBLUE));
+		robot.asserv().setPositionAndColor(130, 230 , 0.0, (bool)(robot.getMyColor() != PMXBLUE));
 	logger().info() << "O_State_Init::setPos() svgPrintPosition x=" << robot.asserv().pos_getX_mm() << " y="
 			<< robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
 	robot.svgPrintPosition();
@@ -401,17 +428,18 @@ void O_State_Init::setPos()
 
 	robot.asserv().setLowSpeedForward(false, 0); //au cas où par les sensors (si pas de ARU) //a voir si on ne peut pas le mettre ailleurs à l'init
 
-	robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
-	robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+	robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+		robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
 	//robot.asserv().resetDisplayTS();
 	robot.asserv().assistedHandling();
 	TRAJ_STATE ts = TRAJ_OK;
 
-	robot.asserv().setLowSpeedForward(true, 50);
-	ts = robot.asserv().doLineAbs(50);
+	//robot.asserv().setLowSpeedForward(true, 50);
+	//ts = robot.asserv().doLineAbs(50);
 	//robot.asserv().setLowSpeedForward(true, 100);
 
+	robot.actions().ax12_init();
 
 	if (robot.strategy() == "tabletest")
 	{
@@ -422,12 +450,19 @@ void O_State_Init::setPos()
 		ts = robot.asserv().doFaceTo(1000, 1600);
 	}else
 	{
-		//robot.asserv().setLowSpeedForward(true, 30); //35 battery et 50 secteur
+		robot.asserv().setLowSpeedForward(true, 40); //35 battery et 50 secteur
 
-		//ts = robot.asserv().doMoveForwardTo(300, robot.asserv().pos_getY_mm());
-		//ts = robot.asserv().doFaceTo(1000, 1600);
+		ts = robot.asserv().doLineAbs(50);
+//		if(ts >=2 )
+//			logger().info() << "ts = robot.asserv().doLineAbs(50) state=" << ts << logs::end;
+//		ts = robot.asserv().doMoveForwardTo(250, 230);
+//		if(ts >=2 )
+//					logger().info() << "ts = robot.asserv().doMoveForwardTo state=" << ts << logs::end;
+//		ts = robot.asserv().doFaceTo(800, 230);
+//		if(ts >=2 )
+//					logger().info() << "ts = robot.asserv().doFaceTo state=" << ts << logs::end;
 	}
-	robot.actions().ax12_init();
+
 
 	/*
 	 ts = robot.asserv().doLineAbs(200);
@@ -439,6 +474,11 @@ void O_State_Init::setPos()
 	//robot.asserv().displayTS(ts);
 	robot.svgPrintPosition();
 	robot.actions().lcd2x16().println("SET POSITION : OK");
+
+
+	robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+	robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+
 
 	/*
 	 robot.actions().ax12_bras_droit(0);

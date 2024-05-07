@@ -25,6 +25,8 @@ bool O_take_top()
 	robot.logger().info() << "start O_take_top zone_flower_top x=" << zone.x << " y=" << zone.y << logs::end;
 	robot.ia().iAbyPath().goToZone("zone_flower_top", &zone);
 
+
+	ts = TRAJ_OK;
 	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 2000000, 3, 3,
 			true, 40);
 	if (ts != TRAJ_FINISHED)
@@ -39,7 +41,6 @@ bool O_take_top()
 	return true; //return true si ok sinon false si interruption
 }
 
-
 bool O_end_of_match_top()
 {
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
@@ -47,20 +48,38 @@ bool O_end_of_match_top()
 	TRAJ_STATE ts = TRAJ_OK;
 	ROBOTPOSITION zone;
 	robot.logger().info() << "start O_end_of_match_top zone_end_top x=" << zone.x << " y=" << zone.y << logs::end;
+
+
+	ts = robot.ia().iAbyPath().whileMoveForwardTo(1200, 1000, true, 2000000, 10, 10,
+				false);
+		if (ts != TRAJ_FINISHED)
+		{
+			robot.logger().error() << "O_end_of_match_top : zone_end_top  ===== PB COLLISION FINALE - Que fait-on? ts="
+					<< ts << logs::end;
+			robot.asserv().resetEmergencyOnTraj();
+
+		}
+		robot.svgPrintPosition();
+
+
+
 	robot.ia().iAbyPath().goToZone("zone_end_top", &zone);
 
 	robot.logger().info() << "start O_end_of_match_top zone_end_top x=" << zone.x << " y=" << zone.y << logs::end;
 //    //ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 2000000, 50, 50, false, 0);
 	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 2000000, 10, 10,
-			true, 40);
+			true);
 	if (ts != TRAJ_FINISHED)
 	{
-		robot.logger().error() << "O_end_of_match_top : zone_end_top  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
-				<< logs::end;
+		robot.logger().error() << "O_end_of_match_top : zone_end_top  ===== PB COLLISION FINALE - Que fait-on? ts="
+				<< ts << logs::end;
 		robot.asserv().resetEmergencyOnTraj();
 
 	}
 	robot.svgPrintPosition();
+	robot.points += 10;
+	 robot.asserv().doLineAbs(-50);
+
 	/*
 	 robot.actions().ax12_bras_droit(0);
 	 robot.actions().ax12_bras_gauche(-1);
@@ -102,16 +121,17 @@ bool O_end_of_match_bottom()
 	robot.logger().info() << "start O_end_of_match_bottom zone_end_bottom x=" << zone.x << " y=" << zone.y << logs::end;
 //    //ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 2000000, 50, 50, false, 0);
 	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 2000000, 20, 20,
-			true, 40);
+			true);
 	if (ts != TRAJ_FINISHED)
 	{
-		robot.logger().error() << "O_end_of_match_bottom : zone_end_bottom  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+		robot.logger().error()
+				<< "O_end_of_match_bottom : zone_end_bottom  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
 				<< logs::end;
 		robot.asserv().resetEmergencyOnTraj();
 
 	}
 	robot.svgPrintPosition();
-
+	robot.points += 10;
 	return true; //return true si ok sinon false si interruption
 }
 
@@ -125,24 +145,70 @@ bool O_solar_panels()
 	robot.ia().iAbyPath().goToZone("zone_solar", &zone);
 
 	robot.actions().ax12_bras_droit(0);
-	robot.actions().ax12_bras_gauche(0);
+	robot.actions().ax12_bras_gauche(-1 );
+	robot.svgPrintPosition();
+	robot.asserv().setLowSpeedForward(true, 25);
+	/*
+	 robot.logger().info() << "start O_solar_panels zone_solar x=" << zone.x << " y=" << zone.y << logs::end;
+	 //    //ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 2000000, 50, 50, false, 0);
+	 ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 2000000, 3, 20,
+	 true, 40);
+	 if (ts != TRAJ_FINISHED)
+	 {
+	 robot.logger().error() << "O_solar_panels : zone_solar  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+	 << logs::end;
+	 robot.asserv().resetEmergencyOnTraj();
 
-	robot.asserv().setLowSpeedForward(true, 30);
+	 }*/
 
-	robot.logger().info() << "start O_solar_panels zone_solar x=" << zone.x << " y=" << zone.y << logs::end;
-//    //ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 2000000, 50, 50, false, 0);
-	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 2000000, 3, 20,
-			true, 40);
-	if (ts != TRAJ_FINISHED)
-	{
-		robot.logger().error() << "O_solar_panels : zone_solar  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
-				<< logs::end;
-		robot.asserv().resetEmergencyOnTraj();
+//	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 100000, 20, 20,
+//			false);
+	//todo ignorer calage et blocage pour continuer
+	robot.logger().error() << "O_solar_panels : 800, 230  "
+						<< logs::end;
+	ts = TRAJ_OK;
+//	while (ts != TRAJ_FINISHED)
+//	{
+		//800
+		ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(800, 230, 0.0, true, 2000000, 10, 20, false);
+		if (ts != TRAJ_FINISHED)
+		{
+			robot.logger().error() << "O_solar_panels : 800, 230  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+					<< logs::end;
+			robot.asserv().resetEmergencyOnTraj();
 
-	}
+		}
+		robot.svgPrintPosition(4);
+//	}
+
+	robot.points += 15;
+	robot.displayPoints();
+//	robot.actions().ax12_bras_droit(0);
+//		robot.actions().ax12_bras_gauche(-1 );
+//
+//	robot.svgPrintPosition();
+//	robot.logger().error() << "O_solar_panels : 1800, 230  "
+//							<< logs::end;
+//	//1800
+//	ts = TRAJ_OK;
+//	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(1800, 230, 0.0, true, 2000000, 10, 20, false);
+//	if (ts != TRAJ_FINISHED)
+//	{
+//		robot.logger().error() << "O_solar_panels : 1800, 230  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+//				<< logs::end;
+//		robot.asserv().resetEmergencyOnTraj();
+//		robot.svgPrintPosition(4);
+//
+//	}
+//
+//	robot.points += 10;
+//	robot.displayPoints();
+
 	robot.svgPrintPosition();
 
-	robot.points+=15;
+
+	robot.actions().ax12_bras_droit_init(0);
+	robot.actions().ax12_bras_gauche_init(0);
 
 	return true; //return true si ok sinon false si interruption
 }
@@ -153,9 +219,9 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone()
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 	logger().debug() << "color = " << robot.getMyColor() << logs::end;
 
-	robot.ia().iAbyPath().ia_createZone("zone_end_top", 0, 1550, 450, 450, 400, 1600, 90);
+	robot.ia().iAbyPath().ia_createZone("zone_end_top", 0, 1550, 450, 450, 400, 1700, 90);
 	robot.ia().iAbyPath().ia_createZone("zone_end_bottom", 0, 0, 450, 450, 400, 350, 45);
-	robot.ia().iAbyPath().ia_createZone("zone_solar", 800, 0, 450, 100, 800, 200, 0);
+	robot.ia().iAbyPath().ia_createZone("zone_solar", 800, 0, 450, 100, 800, 230, 0);
 
 	robot.ia().iAbyPath().ia_createZone("zone_flower_top", 900, 1300, 200, 100, 1000, 1600, -90);
 

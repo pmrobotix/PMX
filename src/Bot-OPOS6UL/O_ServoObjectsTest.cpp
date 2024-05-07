@@ -177,9 +177,17 @@ void O_ServoObjectsTest::run(int argc, char **argv)
 				//robot.actions().ax12_up_L(2000, 0);
 
 				if (fL)
+				{
+					robot.actions().ax12_bras_droit(0);
 					robot.actions().ax12_close_L(1000, -1);
+
+				}
 				else
+				{
+					robot.actions().ax12_bras_droit_init(0);
 					robot.actions().ax12_open_L(1000, -1);
+
+				}
 				fL = !fL;
 			}
 
@@ -188,9 +196,17 @@ void O_ServoObjectsTest::run(int argc, char **argv)
 				//robot.actions().ax12_up_R(2000, 0);
 
 				if (fR)
+				{
+					robot.actions().ax12_bras_droit(0);
+					robot.actions().ax12_bras_gauche(0);
 					robot.actions().ax12_close_R(1000, -1);
+				}
 				else
+				{
+					robot.actions().ax12_bras_gauche_init(0);
+					robot.actions().ax12_bras_droit_init(0);
 					robot.actions().ax12_open_R(1000, -1);
+				}
 				fR = !fR;
 			}
 

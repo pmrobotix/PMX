@@ -126,6 +126,7 @@ public:
     void motion_ActivateManager(bool enable);
     void motion_setLowSpeedForward(bool enable, int percent = 0);
     void motion_setLowSpeedBackward(bool enable, int percent = 0);
+    void motion_setMaxSpeed(bool enable, int speed_dist_m_sec = 0, int speed_angle_rad_sec=0);
 
     void motion_ActivateReguDist(bool enable);
     void motion_ActivateReguAngle(bool enable);

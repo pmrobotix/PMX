@@ -20,7 +20,7 @@ AAsservDriver* AAsservDriver::create(string, ARobotPositionShared*)
 AsservDriver::AsservDriver() :
 		// //OPOS6UL_UART5=>1 ; OPOS6UL_UART4=>0
 		//serialPort_(SERIAL_ADDRESS, BaudRate::B_115200),
-		connected_(true), pathStatus_(TRAJ_OK), p_( { 0.0, 0.0, 0.0, -1, 0 })//, asservCardStarted_(false)
+		connected_(true), pathStatus_(TRAJ_OK), p_( { 0.0, 0.0, 0.0, -1, 0 })		//, asservCardStarted_(false)
 {
 	pp_ = p_;
 	errorCount_ = 0;
@@ -152,16 +152,16 @@ void AsservDriver::endWhatTodo()
 	if (!this->isFinished()) this->cancel();
 	/*cancel peut causer ca a surveiller!!!!!!!
 	 * nucleo_writeSerialSTR errorCount_=0
-FATAL: exception not rethrown
-Stack trace (most recent call last) in thread 394:
-#4    Object "/lib/libc.so.6", at 0xb6b3b6a1, in gsignal
-#3    Object "/lib/libc.so.6", at 0xb6b2ce05, in
-#2    Object "/lib/libc.so.6", at 0xb6b3c1cf, in
-#1    Object "./Bot_ArmadeusOPOS6UL_ARM", at 0x4d28df, in
-#0    Object "./Bot_ArmadeusOPOS6UL_ARM", at 0x4d2607, in
-Aborted (Signal sent by tkill() 392 0)
-Aborted
-*/
+	 FATAL: exception not rethrown
+	 Stack trace (most recent call last) in thread 394:
+	 #4    Object "/lib/libc.so.6", at 0xb6b3b6a1, in gsignal
+	 #3    Object "/lib/libc.so.6", at 0xb6b2ce05, in
+	 #2    Object "/lib/libc.so.6", at 0xb6b3c1cf, in
+	 #1    Object "./Bot_ArmadeusOPOS6UL_ARM", at 0x4d28df, in
+	 #0    Object "./Bot_ArmadeusOPOS6UL_ARM", at 0x4d2607, in
+	 Aborted (Signal sent by tkill() 392 0)
+	 Aborted
+	 */
 
 }
 
@@ -176,66 +176,72 @@ void AsservDriver::parseAsservPosition(string str)
 		vector<string> out;
 		tokenize(str, delim, out);
 
-		int x = std::stoi(out.operator[](0));
-		int y = std::stoi(out.operator[](1));
-		float a_rad = std::stof(out.operator[](2));
-		int CommandStatus = std::stoi(out.operator[](3));
-		int PendingCommandCount = std::stoi(out.operator[](4));
-		int lSpeed = std::stoi(out.operator[](5));
-		int rSpeed = std::stoi(out.operator[](6));
-		unsigned int debg = std::stoul(out.operator[](7));
-
-		if (p_.debug_nb != debg - 1)
+		if (out.size() == 8) //check de la size pour eviter les erreur stoi ou stoul
 		{
-			read_error_++;
-		} else
-			read_error_ = -1;
-		if (read_error_ > 0) logger().error() << ">> parseAsservPosition : debug number missed !!" << logs::end;
+			int x = std::stoi(out.operator[](0));
+			int y = std::stoi(out.operator[](1));
+			float a_rad = std::stof(out.operator[](2));
+			int CommandStatus = std::stoi(out.operator[](3));
+			int PendingCommandCount = std::stoi(out.operator[](4));
+			int lSpeed = std::stoi(out.operator[](5));
+			int rSpeed = std::stoi(out.operator[](6));
+			unsigned int debg = std::stoul(out.operator[](7));
 
-		//test de depart de trajectoire
-		if (CommandStatus == 0)
-		{
-			m_statusCountDown.lock();
-			statusCountDown_--;
-
-			if (statusCountDown_ <= 0)
+			if (p_.debug_nb != debg - 1)
 			{
-				CommandStatus = 0; //idle
-
+				read_error_++;
 			} else
+				read_error_ = -1;
+			if (read_error_ > 0) logger().error() << ">> parseAsservPosition : debug number missed !!" << logs::end;
+
+			//test de depart de trajectoire
+			if (CommandStatus == 0)
 			{
-				CommandStatus = 1; //running
+				m_statusCountDown.lock();
+				statusCountDown_--;
+
+				if (statusCountDown_ <= 0)
+				{
+					CommandStatus = 0; //idle
+
+				} else
+				{
+					CommandStatus = 1; //running
+				}
+				m_statusCountDown.unlock();
 			}
-			m_statusCountDown.unlock();
-		}
 
-		m_pos.lock();
-		p_.x = (float) x; //mm
-		p_.y = (float) y; //mm
-		p_.theta = a_rad;
-		p_.asservStatus = CommandStatus;
-		p_.debug_nb = debg;
-		m_pos.unlock();
+			m_pos.lock();
+			p_.x = (float) x; //mm
+			p_.y = (float) y; //mm
+			p_.theta = a_rad;
+			p_.asservStatus = CommandStatus;
+			p_.debug_nb = debg;
+			m_pos.unlock();
 
-		//si different du precedent, on affiche
-		if (!(p_.x == pp_.x && p_.y == pp_.y))
+			//si different du precedent, on affiche
+			if (!(p_.x == pp_.x && p_.y == pp_.y))
+			{
+				loggerSvg().info() << "<circle cx=\"" << p_.x << "\" cy=\"" << -p_.y << "\" r=\"1\" fill=\"blue\" />"
+						<< "<line x1=\"" << p_.x << "\" y1=\"" << -p_.y << "\" x2=\"" << p_.x + cos(p_.theta) * 25
+						<< "\" y2=\"" << -p_.y - sin(p_.theta) * 25 << "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
+						<< logs::end;
+			}
+
+			pp_ = p_;
+
+			if (asservCardStarted_ == false)
+			{
+				asservCardStarted_ = true;
+				odo_SetPosition((float) x, (float) y, (float) a_rad);
+
+			}
+			logger().debug() << " ok# " << x << " " << y << " " << a_rad * 180.0 / M_PI << " status=" << CommandStatus
+					<< " " << PendingCommandCount << " " << lSpeed << " " << rSpeed << " " << debg << logs::end;
+		} else
 		{
-			loggerSvg().info() << "<circle cx=\"" << p_.x << "\" cy=\"" << -p_.y << "\" r=\"1\" fill=\"blue\" />"
-					<< "<line x1=\"" << p_.x << "\" y1=\"" << -p_.y << "\" x2=\"" << p_.x + cos(p_.theta) * 25
-					<< "\" y2=\"" << -p_.y - sin(p_.theta) * 25 << "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
-					<< logs::end;
+			logger().error() << " >> parseAsservPosition out BAD LINE : " << str << logs::end;
 		}
-
-		pp_ = p_;
-
-		if (asservCardStarted_ == false)
-		{
-			asservCardStarted_ = true;
-			odo_SetPosition((float)x, (float) y, (float) a_rad);
-
-		}
-		logger().debug() << " ok# " << x << " " << y << " " << a_rad * 180.0 / M_PI << " status=" << CommandStatus
-				<< " " << PendingCommandCount << " " << lSpeed << " " << rSpeed << " " << debg << logs::end;
 	} else
 	{
 		logger().error() << " >> parseAsservPosition BAD LINE : " << str << logs::end;
@@ -265,40 +271,40 @@ void AsservDriver::execute()
 //		if (asservCardStarted_)
 //		{
 
-			char readData[100] = { 0 };
+		char readData[100] = { 0 };
 
-			int err = serial_.readString(readData, '\n', 100, 150);
-			//                \return  >0 success, return the number of bytes read
-			//                    \return  0 timeout is reached
-			//                    \return -1 error while setting the Timeout
-			//                    \return -2 error while reading the byte
-			//                    \return -3 MaxNbBytes is reached
-			if (err <= 0)
+		int err = serial_.readString(readData, '\n', 100, 150);
+		//                \return  >0 success, return the number of bytes read
+		//                    \return  0 timeout is reached
+		//                    \return -1 error while setting the Timeout
+		//                    \return -2 error while reading the byte
+		//                    \return -3 MaxNbBytes is reached
+		if (err <= 0)
+		{
+			//printf("AsservDriver::execute() ERRROR serial_.readString error=%d \n", err);
+			asservCardStarted_ = 0;
+
+		} else
+		{
+
+			std::string sdata(readData);            //sdata + *readData;
+
+			int idx = sdata.find("#");
+			//printf("---serial_.readString SUCCESS : %s idx=%d", readData, idx);
+			if (idx >= 0)
 			{
-				//printf("AsservDriver::execute() ERRROR serial_.readString error=%d \n", err);
-				asservCardStarted_ = 0;
 
-			} else
-			{
-
-				std::string sdata(readData);            //sdata + *readData;
-
-				int idx = sdata.find("#");
-				//printf("---serial_.readString SUCCESS : %s idx=%d", readData, idx);
-				if (idx >= 0)
-				{
-
-					//on coupe la string à idx+2
+				//on coupe la string à idx+2
 //                    string str2analyse = sdata.substr(0, idx + 2);
 //                    sdata = sdata.substr(idx + 2);
 
-					logger().debug() << " => (" << sdata << ") tobeanalysed:" << readData << "!!!" << logs::end;
-					parseAsservPosition(sdata);
+				logger().debug() << " => (" << sdata << ") tobeanalysed:" << readData << "!!!" << logs::end;
+				parseAsservPosition(sdata);
 
-				}
 			}
+		}
 
-			this->yield();
+		this->yield();
 //		}
 		utils::Thread::sleep_for_millis(100);
 
@@ -403,31 +409,30 @@ void AsservDriver::odo_SetPosition(float x_mm, float y_mm, float angle_rad)
 //	if (!asservCardStarted_)
 //	{
 //		logger().error() << "odo_SetPosition() ERROR NUCLEO NOT STARTED " << asservCardStarted_ << logs::end;
-
-		//On met tout de meme a jour pour la valeur initiale et les tests meme si la carte asserv est eteinte
-		m_pos.lock();
-		p_.x = x_mm; //mm
-		p_.y = y_mm; //mm
-		p_.theta = angle_rad;
-		p_.asservStatus = 0;
-		p_.debug_nb = 0;
-		pp_ = p_;
-		m_pos.unlock();
+	//On met tout de meme a jour pour la valeur initiale et les tests meme si la carte asserv est eteinte
+	m_pos.lock();
+	p_.x = x_mm; //mm
+	p_.y = y_mm; //mm
+	p_.theta = angle_rad;
+	p_.asservStatus = 0;
+	p_.debug_nb = 0;
+	pp_ = p_;
+	m_pos.unlock();
 
 //	} else
 //	{
-		nucleo_flushSerial();
-		nucleo_writeSerialSTR(
-				"P" + to_string((int) x_mm) + "#" + to_string((int) y_mm) + "#" + to_string(angle_rad) + "\n");
+	nucleo_flushSerial();
+	nucleo_writeSerialSTR(
+			"P" + to_string((int) x_mm) + "#" + to_string((int) y_mm) + "#" + to_string(angle_rad) + "\n");
 
-		/*nucleo_writeSerialSTR(
-		 "P" + to_string((int) x_mm) + "#" + to_string((int) y_mm) + "#" + to_string(angle_rad) + "\n");
-		 nucleo_writeSerialSTR(
-		 "P" + to_string((int) x_mm) + "#" + to_string((int) y_mm) + "#" + to_string(angle_rad) + "\n");
-		 nucleo_writeSerialSTR(
-		 "P" + to_string((int) x_mm) + "#" + to_string((int) y_mm) + "#" + to_string(angle_rad) + "\n");
-		 */
-		//usleep(100000); //TODO Thread sleep ??? pour etre sur d'attendre la prochaine valeur ? ATTENDRE jusquà la validation de la valeur
+	/*nucleo_writeSerialSTR(
+	 "P" + to_string((int) x_mm) + "#" + to_string((int) y_mm) + "#" + to_string(angle_rad) + "\n");
+	 nucleo_writeSerialSTR(
+	 "P" + to_string((int) x_mm) + "#" + to_string((int) y_mm) + "#" + to_string(angle_rad) + "\n");
+	 nucleo_writeSerialSTR(
+	 "P" + to_string((int) x_mm) + "#" + to_string((int) y_mm) + "#" + to_string(angle_rad) + "\n");
+	 */
+	//usleep(100000); //TODO Thread sleep ??? pour etre sur d'attendre la prochaine valeur ? ATTENDRE jusquà la validation de la valeur
 //		while()
 //		{
 //		nucleo_flushSerial();
@@ -435,7 +440,6 @@ void AsservDriver::odo_SetPosition(float x_mm, float y_mm, float angle_rad)
 //				"P" + to_string((int) x_mm) + "#" + to_string((int) y_mm) + "#" + to_string(angle_rad) + "\n");
 //		}
 //	}
-
 }
 ROBOTPOSITION AsservDriver::odo_GetPosition()
 {
@@ -504,7 +508,7 @@ void AsservDriver::path_ResetEmergencyStop()
 		logger().debug() << "path_ResetEmergencyStop() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
 	else
 	{
-		logger().error() << "path_ResetEmergencyStop() !! " << logs::end;
+		logger().debug() << "path_ResetEmergencyStop() !! " << logs::end;
 
 		m_pos.lock();
 		p_.asservStatus = 0;
@@ -571,6 +575,7 @@ TRAJ_STATE AsservDriver::nucleo_waitEndOfTraj()
 			logger().error() << "_______________________waitEndOfTraj() EMERGENCY STOP OCCURRED  pathStatus_= "
 					<< pathStatus_ << logs::end;
 			return pathStatus_;
+			//return TRAJ_INTERRUPTED;
 		} else
 		{
 			logger().error() << "nucleo_waitEndOfTraj else ERROR !!! p_.asservStatus=" << p_.asservStatus
@@ -743,6 +748,25 @@ void AsservDriver::motion_setLowSpeedForward(bool enable, int percent)
 	} else
 	{
 		nucleo_writeSerialSTR("S" + to_string(percent) + "\n");
+	}
+
+}
+
+void AsservDriver::motion_setMaxSpeed(bool enable, int speed_dist_m_sec, int speed_angle_rad_sec)
+{
+	if (!asservCardStarted_)
+	{
+		logger().debug() << "motion_setMaxSpeed() ERROR NUCLEO NOT STARTED " << asservCardStarted_ << logs::end;
+
+	} else
+	{
+		if (enable)
+		{
+			nucleo_writeSerialSTR("N" + to_string(speed_dist_m_sec) + "#" + to_string(speed_angle_rad_sec) + "\n");
+		} else
+		{
+			nucleo_writeSerial('!');
+		}
 	}
 
 }

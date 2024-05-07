@@ -56,6 +56,9 @@ void OPOS6UL_RobotExtended::displayPoints()
     this->actions().lcd2x16().setCursor(0, 0);
     this->actions().lcd2x16().print("Points = ");
     this->actions().lcd2x16().print(this->points);
+
+
+
 }
 
 void OPOS6UL_RobotExtended::stopExtraActions() {

@@ -207,7 +207,7 @@ public:
 	}
 	void ax12_open_L(int time_eta_ms = 400, int keep_ms = 0)
 	{
-		servos().move_1_servo(time_eta_ms, AX12_SERVO_FINGER_L, 790, keep_ms, 1023, 1023);
+		servos().move_1_servo(time_eta_ms, AX12_SERVO_FINGER_L, 239, keep_ms, 1023);
 	}
 	void ax12_open_R(int time_eta_ms = 1000, int keep_ms = 0)
 	{
@@ -229,7 +229,7 @@ public:
 	}
 	void ax12_close_L(int time_eta_ms = 400, int keep_ms = 0)
 	{
-		servos().move_1_servo(time_eta_ms, AX12_SERVO_FINGER_L, 210, keep_ms, 400, 400);
+		servos().move_1_servo(time_eta_ms, AX12_SERVO_FINGER_L, 790, keep_ms, 400, 400);
 	}
 	void ax12_repli(int time_eta_ms = 1000, int keep_ms = 0)
 	{
@@ -252,14 +252,14 @@ public:
 		 62077536| O_ServoObjectsTest INFO Relbow  (1182)= 783
 		 62088864| O_ServoObjectsTest INFO Rwrist  (1063)= 848
 		 62100200| O_ServoObjectsTest INFO Rfinger (1051)= 545
-		*/
-
-
-
+		 */
 
 //		ax12_init_R();
 //		ax12_init_L();
 		ax12_init_LR();
+
+		ax12_open_L(1000, 0);
+		ax12_open_R(1000, 0);
 		/*
 		 *
 		 2374911| O_ServoObjectsTest INFO Lshouldr(1052)= 501
@@ -273,11 +273,11 @@ public:
 		 2451285| O_ServoObjectsTest INFO Rfinger (1051)= 1010
 		 */
 
-		 ax12_bras_droit();
-		 ax12_bras_gauche(-1);
-		 ax12_bras_droit_init();
-		 ax12_bras_gauche_init(-1);
-		 /*
+		ax12_bras_droit();
+		ax12_bras_gauche(-1);
+		ax12_bras_droit_init();
+		ax12_bras_gauche_init(-1);
+		/*
 		 aspiration_closed_init();
 
 		 moustache_G_take_balls(-1);
@@ -327,8 +327,8 @@ public:
 		 4266787| O_ServoObjectsTest INFO Rwrist  (1063)= 191
 
 		 18870613| O_ServoObjectsTest INFO Rshouldr(1008)= 478
- 18881509| O_ServoObjectsTest INFO Relbow  (1182)= 503
- 18892389| O_ServoObjectsTest INFO Rwrist  (1063)= 195
+		 18881509| O_ServoObjectsTest INFO Relbow  (1182)= 503
+		 18892389| O_ServoObjectsTest INFO Rwrist  (1063)= 195
 
 		 */
 		//servos().deploy(AX12_SERVO_SHOULDER_R, 496, 0);
@@ -369,31 +369,35 @@ public:
 		int fL = servos().getTorque(AX12_SERVO_FINGER_L);
 
 		logger().info() << "LOAD shoulderR " << shoulderR << " L " << shoulderL << "  elbowR " << elbowR << " L "
-				<< elbowL<< "  fingerR " << fR << " L " << fL  << logs::end;
+				<< elbowL << "  fingerR " << fR << " L " << fL << logs::end;
 	}
 
-	 void ax12_bras_droit_init(int keep = 0, int speed = 1023)
-	 {
-	 servos().setSpeed(AX12_SERVO_BRAS_D, speed);
-	 servos().deploy(AX12_SERVO_BRAS_D, 815, keep);
-	 }
-	 void ax12_bras_droit(int keep = 0, int speed = 1023)
-	 {
-	 servos().setSpeed(AX12_SERVO_BRAS_D, speed);
-	 servos().deploy(AX12_SERVO_BRAS_D, 480, keep);
-	 }
+	void ax12_bras_droit_init(int keep = 0, int eta = 400)
+	{
+		//servos().setSpeed(AX12_SERVO_BRAS_D, speed);
+		//servos().deploy(AX12_SERVO_BRAS_D, 815, keep);
+		servos().move_1_servo(eta, AX12_SERVO_BRAS_D, 815, keep);
+	}
+	void ax12_bras_droit(int keep = 0, int eta = 400)
+	{
+		//servos().setSpeed(AX12_SERVO_BRAS_D, speed);
+		//servos().deploy(AX12_SERVO_BRAS_D, 480, keep);
+		servos().move_1_servo(eta, AX12_SERVO_BRAS_D, 495, keep);
+	}
 
-	 void ax12_bras_gauche_init(int keep = 0, int speed = 1023)
-	 {
-	 servos().setSpeed(AX12_SERVO_BRAS_G, speed);
-	 servos().deploy(AX12_SERVO_BRAS_G, 205, keep);
-	 }
-	 void ax12_bras_gauche(int keep = 0, int speed = 1023)
-	 {
-	 servos().setSpeed(AX12_SERVO_BRAS_G, speed);
-	 servos().deploy(AX12_SERVO_BRAS_G, 512, keep);
-	 }
-/*
+	void ax12_bras_gauche_init(int keep = 0, int eta = 400)
+	{
+		//servos().setSpeed(AX12_SERVO_BRAS_G, speed);
+		//servos().deploy(AX12_SERVO_BRAS_G, 205, keep);
+		servos().move_1_servo(eta, AX12_SERVO_BRAS_G, 205, keep);
+	}
+	void ax12_bras_gauche(int keep = 0, int eta = 400)
+	{
+		//servos().setSpeed(AX12_SERVO_BRAS_G, speed);
+		//servos().deploy(AX12_SERVO_BRAS_G, 512, keep);
+		servos().move_1_servo(eta, AX12_SERVO_BRAS_G, 512, keep);
+	}
+	/*
 	 void aspiration_closed_init(int keep = 0, int speed = 150)
 	 {
 	 servos().deployWithVelocity(AX12_SERVO_ASPIRATION, 512, keep, speed);

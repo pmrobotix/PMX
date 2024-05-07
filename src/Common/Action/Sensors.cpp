@@ -586,7 +586,7 @@ int Sensors::front(bool display)
                 }
             } else {
                 if (display)
-                    logger().info() << inside_table << " NOT INSIDE TABLE frontCenter xy=" << botpos.x << " "
+                    logger().debug() << inside_table << " NOT INSIDE TABLE frontCenter xy=" << botpos.x << " "
                             << botpos.y << logs::end;
             }
             // on traite un seul robot par boucle //TODO a garder ? donc un tous les 200ms ? bof bof
@@ -766,7 +766,7 @@ int Sensors::back(bool display)
                     adv_is_detected_back_left_ = false;
                 }
             } else {
-                logger().info() << inside_table << " NOT INSIDE TABLE backCenter xy=" << botpos.x << " " << botpos.y
+                logger().debug() << inside_table << " NOT INSIDE TABLE backCenter xy=" << botpos.x << " " << botpos.y
                         << logs::end;
             }
 
@@ -917,7 +917,8 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
 
         //si 0,1,2,3,4 puis 3 ; low speed
         if (frontLevel >= 3) {
-            sensors_.robot()->passerv()->setLowSpeedForward(true, sensors_.robot()->passerv()->getLowSpeedvalue());
+            //sensors_.robot()->passerv()->setLowSpeedForward(true, sensors_.robot()->passerv()->getLowSpeedvalue());
+            sensors_.robot()->passerv()->setMaxSpeed(true, sensors_.robot()->passerv()->getMaxSpeedDistValue());
         }
 
 //        if (lastdetect_front_level_ >= 3 && nb_sensor_front_a_zero >= 4) {
@@ -926,7 +927,8 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
 
         //si 3 puis 0,1,2 ; vitesse normale => si 3 ou 4 puis 0,1,2 ; vitesse normale
         if (lastdetect_front_level_ >= 3 && frontLevel <= 2) {
-            sensors_.robot()->passerv()->setLowSpeedForward(false);
+            //sensors_.robot()->passerv()->setLowSpeedForward(false);
+            sensors_.robot()->passerv()->setMaxSpeed(false);
             sensors_.robot()->passerv()->resetEmergencyOnTraj("SensorsTimer front=0");
             sensors_.robot()->resetDisplayObstacle();
         }

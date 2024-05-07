@@ -751,6 +751,10 @@ void AsservEsialR::motion_setLowSpeedBackward(bool enable, int percent)
     consignC_->setLowSpeedBackward(enable, percent);
     unlock();
 }
+void AsservEsialR::motion_setMaxSpeed(bool enable, int speed_dist_m_sec, int speed_angle_rad_sec)
+{
+ //TODO
+}
 
 void AsservEsialR::motion_ActivateReguDist(bool enable)
 {

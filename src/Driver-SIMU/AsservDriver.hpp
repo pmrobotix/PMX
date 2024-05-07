@@ -162,6 +162,7 @@ public:
     void motion_ActivateManager(bool enable);
     void motion_setLowSpeedForward(bool enable, int percent);
     void motion_setLowSpeedBackward(bool enable, int percent);
+    void motion_setMaxSpeed(int speed_dist_m_sec, int speed_angle_rad_sec);
 
     //Functions deprecated
     void motion_ActivateReguDist(bool enable);

@@ -195,23 +195,23 @@ void ServoObjectsSystem::hold(int servo)
 }
 int ServoObjectsSystem::getSpeed(int servo)
 {
-	logger().error() << "NOT IMPLEMENTED !!!" << logs::end;
+	logger().error() << "getSpeed NOT IMPLEMENTED !!!" << logs::end;
 	return -1;
 }
 void ServoObjectsSystem::setSpeed(int servo, int speed)
 {
-	logger().error() << "NOT IMPLEMENTED !!!" << logs::end;
+	logger().error() << "setSpeed NOT IMPLEMENTED !!!" << logs::end;
 	//servodriver_->setRate(servo, speed); //torque //TODO le vrai setspeed
 }
 
 void ServoObjectsSystem::turn(int servo, int speed_percent, int keep_millisec)
 {
-	logger().error() << "NOT IMPLEMENTED !!!" << logs::end;
+	logger().error() << "turn NOT IMPLEMENTED !!!" << logs::end;
 }
 
 void ServoObjectsSystem::detectAll()
 {
-	logger().error() << "NOT IMPLEMENTED !!!" << logs::end;
+	logger().error() << "detectAll NOT IMPLEMENTED !!!" << logs::end;
 	for (int i = 0; i < 255; i++)
 	{
 		if (int err = servodriver_->ping(i) == 0)
@@ -223,7 +223,7 @@ void ServoObjectsSystem::detectAll()
 
 void ServoObjectsSystem::detect()
 {
-	logger().error() << "NOT IMPLEMENTED !!!" << logs::end;
+	logger().error() << "detect NOT IMPLEMENTED !!!" << logs::end;
 //    if (servodriver_->ping(51) != 0) {
 //        logger().error() << "ERROR AX12 CONNECTION !!!" << logs::end;
 //    }

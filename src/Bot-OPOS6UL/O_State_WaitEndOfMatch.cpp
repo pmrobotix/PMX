@@ -45,7 +45,8 @@ IAutomateState* O_State_WaitEndOfMatch::execute(Robot&)
 
     //robot.points += 5;
     robot.displayPoints();
-
+    robot.actions().sensors().display(robot.points);
+    robot.actions().sensors().display(robot.points);
 /*
     //TODO danse de fin ?
     robot.actions().ax12_bras_droit(0);

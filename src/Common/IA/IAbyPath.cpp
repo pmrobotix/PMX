@@ -477,12 +477,7 @@ TRAJ_STATE IAbyPath::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaI
     return ts;
 }
 
-//goto avec l'asserv
-//TRAJ_STATE IAbyPath::whileAsservMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us,
-//        int nb_near_obstacle, int nb_collision, bool byPathfinding)
-//{
-//
-//}
+
 //TODO rename whilePathForwardAndRotateTo
 TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us,
         int nb_near_obstacle, int nb_collision, bool byPathfinding, int reculOnObstacleMm, int reculOnCollisionMm)
@@ -512,6 +507,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
         robot_->displayTS(ts);
 
         if (ts == TRAJ_NEAR_OBSTACLE) {
+
             robot_->logger().info() << " ===== TRAJ_NEAR_OBSTACLE essai n°" << f << logs::end;
             f++;
             if (f < nb_near_obstacle)
@@ -528,9 +524,13 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
             }
         }
         if (ts == TRAJ_COLLISION) {
+
             robot_->logger().info() << "===== COLLISION essai n°" << c << logs::end;
+
+
             c++;
             robot_->passerv()->resetEmergencyOnTraj("IAbyPath whileMoveForwardTo TRAJ_COLLISION");
+            //robot_->passerv()->stopMotors();//on arrete les moteurs
             if (reculOnCollisionMm > 0) {
                 //robot_->logger().info() << "IAbyPath::whileMoveForwardTo RECUL de mm=" << reculOnCollisionMm << logs::end;
                 TRAJ_STATE tr = robot_->passerv()->doLineAbs(-reculOnCollisionMm);
@@ -550,11 +550,13 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
             break;
 
         }
-        if (ts == TRAJ_COLLISION || ts == TRAJ_NEAR_OBSTACLE) {
+        //on n'attend pas en cas de collision
+        if ( ts == TRAJ_NEAR_OBSTACLE) //ts == TRAJ_COLLISION ||
+        {
             //temps d'attente avant de recommencer
             utils::sleep_for_micros(wait_tempo_us);
 
-            logger().info() << "WAITms=" << wait_tempo_us / 1000.0 << " AGAIN GOTO+ x=" << xMM << " y=" << yMM
+            logger().debug() << "WAITms=" << wait_tempo_us / 1000.0 << " AGAIN GOTO+ x=" << xMM << " y=" << yMM
                     << logs::end;
         }
         robot_->resetDisplayTS();
@@ -562,7 +564,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignore
     }
 
     robot_->displayTS(ts);
-    logger().info() << "time= " << robot_->chrono().getElapsedTimeInMilliSec() << "ms " << " x="
+    logger().debug() << "time= " << robot_->chrono().getElapsedTimeInMilliSec() << "ms " << " x="
             << robot_->passerv()->pos_getX_mm() << " y=" << robot_->passerv()->pos_getY_mm() << " a="
             << robot_->passerv()->pos_getThetaInDegree() << logs::end;
 
@@ -634,7 +636,7 @@ TRAJ_STATE IAbyPath::whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignor
                 //temps d'attente avant de recommencer
                 utils::sleep_for_micros(wait_tempo_us);
 
-                logger().info() << "WAITms=" << wait_tempo_us / 1000.0 << " AGAIN BAKWARD+ x=" << xMM << " y=" << yMM
+                logger().debug() << "WAITms=" << wait_tempo_us / 1000.0 << " AGAIN BAKWARD+ x=" << xMM << " y=" << yMM
                         << logs::end;
             }
             robot_->resetDisplayTS();

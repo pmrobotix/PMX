@@ -138,6 +138,7 @@ public:
 
     virtual void motion_setLowSpeedForward(bool enable, int percent = 0)=0;
     virtual void motion_setLowSpeedBackward(bool enable, int percent = 0)=0;
+    virtual void motion_setMaxSpeed(bool enable, int speed_dist_m_sec=0, int speed_angle_rad_sec=0)=0;
 
     //Functions deprecated
     virtual void motion_ActivateReguDist(bool enable) = 0;
