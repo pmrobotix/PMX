@@ -914,9 +914,13 @@ void AsservDriver::motion_setLowSpeedBackward(bool enable, int percent)
         simuCurrentSpeed_ = -simuMaxSpeed_;
 }
 
-void AsservDriver::motion_setMaxSpeed(int speed_dist_m_sec, int speed_angle_rad_sec)
+void AsservDriver::motion_setMaxSpeed(bool enable, int speed_dist_m_sec, int speed_angle_rad_sec)
 {
-
+	logger().debug() << " motion_setLowSpeedForward !!!!!" << logs::end;
+	    if (enable)
+	        simuCurrentSpeed_ = simuMaxSpeed_ * (speed_dist_m_sec/12) / 100.0;
+	    else
+	        simuCurrentSpeed_ = simuMaxSpeed_;
 }
 
 //functions deprecated
