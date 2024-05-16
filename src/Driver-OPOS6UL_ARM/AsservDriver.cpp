@@ -178,66 +178,75 @@ void AsservDriver::parseAsservPosition(string str)
 
 		if (out.size() == 8) //check de la size pour eviter les erreur stoi ou stoul
 		{
-			int x = std::stoi(out.operator[](0));
-			int y = std::stoi(out.operator[](1));
-			float a_rad = std::stof(out.operator[](2));
-			int CommandStatus = std::stoi(out.operator[](3));
-			int PendingCommandCount = std::stoi(out.operator[](4));
-			int lSpeed = std::stoi(out.operator[](5));
-			int rSpeed = std::stoi(out.operator[](6));
-			unsigned int debg = std::stoul(out.operator[](7));
-
-			if (p_.debug_nb != debg - 1)
+			try
 			{
-				read_error_++;
-			} else
-				read_error_ = -1;
-			if (read_error_ > 0) logger().error() << ">> parseAsservPosition : debug number missed !!" << logs::end;
+				int x = std::stoi(out.operator[](0));
+				int y = std::stoi(out.operator[](1));
+				float a_rad = std::stof(out.operator[](2));
+				int CommandStatus = std::stoi(out.operator[](3));
+				int PendingCommandCount = std::stoi(out.operator[](4));
+				int lSpeed = std::stoi(out.operator[](5));
+				int rSpeed = std::stoi(out.operator[](6));
+				unsigned int debg = std::stoul(out.operator[](7));
 
-			//test de depart de trajectoire
-			if (CommandStatus == 0)
-			{
-				m_statusCountDown.lock();
-				statusCountDown_--;
-
-				if (statusCountDown_ <= 0)
+				if (p_.debug_nb != debg - 1)
 				{
-					CommandStatus = 0; //idle
-
+					read_error_++;
 				} else
+					read_error_ = -1;
+				if (read_error_ > 0) logger().error() << ">> parseAsservPosition : debug number missed !!" << logs::end;
+
+				//test de depart de trajectoire
+				if (CommandStatus == 0)
 				{
-					CommandStatus = 1; //running
+					m_statusCountDown.lock();
+					statusCountDown_--;
+
+					if (statusCountDown_ <= 0)
+					{
+						CommandStatus = 0; //idle
+
+					} else
+					{
+						CommandStatus = 1; //running
+					}
+					m_statusCountDown.unlock();
 				}
-				m_statusCountDown.unlock();
-			}
 
-			m_pos.lock();
-			p_.x = (float) x; //mm
-			p_.y = (float) y; //mm
-			p_.theta = a_rad;
-			p_.asservStatus = CommandStatus;
-			p_.debug_nb = debg;
-			m_pos.unlock();
+				m_pos.lock();
+				p_.x = (float) x; //mm
+				p_.y = (float) y; //mm
+				p_.theta = a_rad;
+				p_.asservStatus = CommandStatus;
+				p_.debug_nb = debg;
+				m_pos.unlock();
 
-			//si different du precedent, on affiche
-			if (!(p_.x == pp_.x && p_.y == pp_.y))
-			{
-				loggerSvg().info() << "<circle cx=\"" << p_.x << "\" cy=\"" << -p_.y << "\" r=\"1\" fill=\"blue\" />"
-						<< "<line x1=\"" << p_.x << "\" y1=\"" << -p_.y << "\" x2=\"" << p_.x + cos(p_.theta) * 25
-						<< "\" y2=\"" << -p_.y - sin(p_.theta) * 25 << "\" stroke-width=\"0.1\" stroke=\"grey\"  />"
+				//si different du precedent, on affiche
+				if (!(p_.x == pp_.x && p_.y == pp_.y))
+				{
+					loggerSvg().info() << "<circle cx=\"" << p_.x << "\" cy=\"" << -p_.y
+							<< "\" r=\"1\" fill=\"blue\" />" << "<line x1=\"" << p_.x << "\" y1=\"" << -p_.y
+							<< "\" x2=\"" << p_.x + cos(p_.theta) * 25 << "\" y2=\"" << -p_.y - sin(p_.theta) * 25
+							<< "\" stroke-width=\"0.1\" stroke=\"grey\"  />" << logs::end;
+				}
+
+				pp_ = p_;
+
+				if (asservCardStarted_ == false)
+				{
+					asservCardStarted_ = true;
+					odo_SetPosition((float) x, (float) y, (float) a_rad);
+
+				}
+				logger().debug() << " ok# " << x << " " << y << " " << a_rad * 180.0 / M_PI << " status="
+						<< CommandStatus << " " << PendingCommandCount << " " << lSpeed << " " << rSpeed << " " << debg
 						<< logs::end;
-			}
-
-			pp_ = p_;
-
-			if (asservCardStarted_ == false)
+			} catch (const std::exception &e)
 			{
-				asservCardStarted_ = true;
-				odo_SetPosition((float) x, (float) y, (float) a_rad);
+				std::cout << e.what(); // information from length_error printed
+				std::cout << "parseAsservPosition !!!!!!!ERROR msg is: " << str << std::endl;
 
 			}
-			logger().debug() << " ok# " << x << " " << y << " " << a_rad * 180.0 / M_PI << " status=" << CommandStatus
-					<< " " << PendingCommandCount << " " << lSpeed << " " << rSpeed << " " << debg << logs::end;
 		} else
 		{
 			logger().error() << " >> parseAsservPosition out BAD LINE : " << str << logs::end;
@@ -460,6 +469,7 @@ void AsservDriver::path_InterruptTrajectory()
 	else
 	{
 		nucleo_writeSerial('h');
+		nucleo_writeSerial('h');
 		pathStatus_ = TRAJ_INTERRUPTED;
 	}
 }
@@ -473,6 +483,16 @@ void AsservDriver::path_CollisionOnTrajectory()
 		//logger().debug() << " path_CollisionOnTrajectory() HALT " << asservCardStarted_ << logs::end;
 
 		nucleo_writeSerial('h');
+		nucleo_writeSerial('h');
+
+//		while(p_.asservStatus == 2)
+//
+//		{
+//
+//			logger().debug() << " path_CollisionOnTrajectory() HALT " << asservCardStarted_ << logs::end;
+//
+//
+//		}
 		pathStatus_ = TRAJ_NEAR_OBSTACLE;
 	}
 }
@@ -534,7 +554,7 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) //v4 +d
 		m_pos.unlock();
 
 		m_statusCountDown.lock();
-		statusCountDown_ = 2;
+		statusCountDown_ = 5;
 		m_statusCountDown.unlock();
 
 		nucleo_writeSerialSTR("v" + to_string((int) (dist_mm)) + "\n");
@@ -555,36 +575,44 @@ TRAJ_STATE AsservDriver::nucleo_waitEndOfTraj()
 		return TRAJ_ERROR;
 	} else
 	{
-		//on attend la fin de la queue et statut different de running
-		//while (!(p_.queueSize == 0 && p_.asservStatus != 1)) {
-		while (!(p_.asservStatus != 1))
+		//while (!(p_.asservStatus != 1))
+		while (p_.asservStatus == 1)
 		{
-			logger().debug() << "nucleo_waitEndOfTraj statusCountDown_= " << statusCountDown_ << "  p_.asservStatus= "
-					<< p_.asservStatus << logs::end;
-			utils::Thread::sleep_for_millis(5);
+//			logger().error() << "_______________________waitEndOfTraj() statusCountDown_=" <<statusCountDown_ << "  pathStatus_= "
+//																	<< pathStatus_ << " p_.asservStatus=" << p_.asservStatus << logs::end;
+
+			utils::Thread::sleep_for_millis(50);
 		}
+
+		//logger().error() << "__nucleo_waitEndOfTraj  p_.asservStatus= "	<< p_.asservStatus << logs::end;
+
 		if (p_.asservStatus == 3)
 		{
 			return TRAJ_COLLISION;
 		} else if (p_.asservStatus == 0)
 		{
 			statusCountDown_--;
-			if (statusCountDown_ <= 0) return TRAJ_FINISHED;
+
+			if (statusCountDown_ <= 0)
+			{
+				statusCountDown_ = 5;
+				return TRAJ_FINISHED;
+			}
 		} else if (p_.asservStatus == 2)
 		{
-			logger().error() << "_______________________waitEndOfTraj() EMERGENCY STOP OCCURRED  pathStatus_= "
-					<< pathStatus_ << logs::end;
+//			logger().error() << "_______________________waitEndOfTraj() EMERGENCY STOP OCCURRED  pathStatus_= "
+//					<< pathStatus_ << " p_.asservStatus=" << p_.asservStatus << logs::end;
 			return pathStatus_;
 			//return TRAJ_INTERRUPTED;
 		} else
 		{
-			logger().error() << "nucleo_waitEndOfTraj else ERROR !!! p_.asservStatus=" << p_.asservStatus
-					<< " pathStatus_=" << pathStatus_ << logs::end;
+			logger().error() << "____nucleo_waitEndOfTraj else ERROR STATUT IMPOSSIBLE !!! p_.asservStatus=" << p_.asservStatus
+					<< " pathStatus_=" << pathStatus_ << " statusCountDown_=" << statusCountDown_<< logs::end;
 			return TRAJ_ERROR;
 		}
-		logger().error() << "nucleo_waitEndOfTraj Never happened !!! p_.asservStatus=" << p_.asservStatus
-				<< " pathStatus_=" << pathStatus_ << logs::end;
-		return TRAJ_ERROR;
+		logger().error() << "nucleo_waitEndOfTraj INTERRUPTED !!! p_.asservStatus=" << p_.asservStatus
+				<< " pathStatus_=" << pathStatus_  << " statusCountDown_=" << statusCountDown_<< logs::end;
+		return TRAJ_INTERRUPTED;
 	}
 }
 
@@ -601,7 +629,7 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
 		m_pos.unlock();
 
 		m_statusCountDown.lock();
-		statusCountDown_ = 2;
+		statusCountDown_ = 5;
 		m_statusCountDown.unlock();
 
 		nucleo_writeSerialSTR("f" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
@@ -625,7 +653,7 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
 		m_pos.unlock();
 
 		m_statusCountDown.lock();
-		statusCountDown_ = 2;
+		statusCountDown_ = 5;
 		m_statusCountDown.unlock();
 
 		nucleo_writeSerialSTR("t" + to_string(radToDeg(angle_radians)) + "\n");
@@ -652,7 +680,7 @@ TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm)
 		m_pos.unlock();
 
 		m_statusCountDown.lock();
-		statusCountDown_ = 2;
+		statusCountDown_ = 5;
 		m_statusCountDown.unlock();
 
 		nucleo_writeSerialSTR("g" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
@@ -674,7 +702,7 @@ TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm)
 		m_pos.unlock();
 
 		m_statusCountDown.lock();
-		statusCountDown_ = 2;
+		statusCountDown_ = 5;
 		m_statusCountDown.unlock();
 
 		nucleo_writeSerialSTR("b" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
@@ -697,7 +725,7 @@ TRAJ_STATE AsservDriver::motion_GotoChain(float x_mm, float y_mm)
 		m_pos.unlock();
 
 		m_statusCountDown.lock();
-		statusCountDown_ = 2;
+		statusCountDown_ = 5;
 		m_statusCountDown.unlock();
 
 		nucleo_writeSerialSTR("e" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
@@ -719,7 +747,7 @@ TRAJ_STATE AsservDriver::motion_GotoReverseChain(float x_mm, float y_mm)
 		m_pos.unlock();
 
 		m_statusCountDown.lock();
-		statusCountDown_ = 2;
+		statusCountDown_ = 5;
 		m_statusCountDown.unlock();
 
 		nucleo_writeSerialSTR("n" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
@@ -873,12 +901,16 @@ int AsservDriver::nucleo_writeSerial(char c)
 		{
 			printf("nucleo_writeSerial() ERRROR serial_.writeChar error=%d on %c\n", err, c);
 		}
-
-	} catch (...)
+	} catch (const std::exception &e)
 	{
-		printf("nucleo_writeSerial errorCount_=%d\n", errorCount_);
-		errorCount_++;
+		std::cout << e.what(); // information from length_error printed
+		std::cout << "nucleo_writeSerial errorCount_= " << errorCount_ << std::endl;
 	}
+//	} catch (...)
+//	{
+//		printf("nucleo_writeSerial errorCount_=%d\n", errorCount_);
+//		errorCount_++;
+//	}
 	return errorCount_;
 }
 
@@ -891,14 +923,18 @@ int AsservDriver::nucleo_writeSerialSTR(string str)
 		int err = serial_.writeString(str.c_str());
 		if (err < 0)
 		{
-			printf("nucleo_writeSerial() ERRROR serial_.writeString error=%d on %s\n", err, str.c_str());
+			printf("nucleo_writeSerialSTR() ERRROR serial_.writeString error=%d on %s\n", err, str.c_str());
 		} //else printf("nucleo_writeSerial() SUCCESS on %s", strr);
-
-	} catch (...)
+	} catch (const std::exception &e)
 	{
-		printf("nucleo_writeSerialSTR errorCount_=%d\n", errorCount_);
-		errorCount_++;
+		std::cout << e.what(); // information from length_error printed
+		std::cout << "nucleo_writeSerialSTR errorCount_= " << errorCount_ << std::endl;
 	}
+//	} catch (...)
+//	{
+//		printf("nucleo_writeSerialSTR errorCount_=%d\n", errorCount_);
+//		errorCount_++;
+//	}
 	return errorCount_;
 }
 

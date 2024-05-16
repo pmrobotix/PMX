@@ -170,7 +170,7 @@ public:
 	}
 
 	//--------------------------------------------------------------
-	//Actions 2023
+	//Actions 2024
 	//--------------------------------------------------------------
 	void releaseAll()
 	{
@@ -372,30 +372,41 @@ public:
 				<< elbowL << "  fingerR " << fR << " L " << fL << logs::end;
 	}
 
+
+	/*
+	 39297879| O_ServoObjectsTest INFO AX12_SERVO_BRAS_D       N° 1005 pos= 475
+	 39309219| O_ServoObjectsTest INFO AX12_SERVO_BRAS_G       N° 1007 pos= 542
+	 39309266| O_ServoObjectsTest INFO
+
+	 deployé
+	 52812792| O_ServoObjectsTest INFO AX12_SERVO_BRAS_D       N° 1005 pos= 670
+	  52824304| O_ServoObjectsTest INFO AX12_SERVO_BRAS_G       N° 1007 pos= 346
+*/
+
 	void ax12_bras_droit_init(int keep = 0, int eta = 400)
 	{
 		//servos().setSpeed(AX12_SERVO_BRAS_D, speed);
 		//servos().deploy(AX12_SERVO_BRAS_D, 815, keep);
-		servos().move_1_servo(eta, AX12_SERVO_BRAS_D, 815, keep);
+		servos().move_1_servo(eta, AX12_SERVO_BRAS_D, 475, keep);
 	}
 	void ax12_bras_droit(int keep = 0, int eta = 400)
 	{
 		//servos().setSpeed(AX12_SERVO_BRAS_D, speed);
 		//servos().deploy(AX12_SERVO_BRAS_D, 480, keep);
-		servos().move_1_servo(eta, AX12_SERVO_BRAS_D, 495, keep);
+		servos().move_1_servo(eta, AX12_SERVO_BRAS_D, 670, keep);
 	}
 
 	void ax12_bras_gauche_init(int keep = 0, int eta = 400)
 	{
 		//servos().setSpeed(AX12_SERVO_BRAS_G, speed);
 		//servos().deploy(AX12_SERVO_BRAS_G, 205, keep);
-		servos().move_1_servo(eta, AX12_SERVO_BRAS_G, 205, keep);
+		servos().move_1_servo(eta, AX12_SERVO_BRAS_G, 542, keep);
 	}
 	void ax12_bras_gauche(int keep = 0, int eta = 400)
 	{
 		//servos().setSpeed(AX12_SERVO_BRAS_G, speed);
 		//servos().deploy(AX12_SERVO_BRAS_G, 512, keep);
-		servos().move_1_servo(eta, AX12_SERVO_BRAS_G, 512, keep);
+		servos().move_1_servo(eta, AX12_SERVO_BRAS_G, 346, keep);
 	}
 	/*
 	 void aspiration_closed_init(int keep = 0, int speed = 150)

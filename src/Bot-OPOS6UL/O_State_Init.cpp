@@ -419,7 +419,7 @@ void O_State_Init::setPos()
 	if (robot.strategy() == "tabletest")
 		robot.asserv().setPositionAndColor(130, 1875 - 130, 0.0, (bool)(robot.getMyColor() != PMXBLUE));
 	else
-		robot.asserv().setPositionAndColor(130, 230 , 0.0, (bool)(robot.getMyColor() != PMXBLUE));
+		robot.asserv().setPositionAndColor(130, 185 , 0.0, (bool)(robot.getMyColor() != PMXBLUE));
 	logger().info() << "O_State_Init::setPos() svgPrintPosition x=" << robot.asserv().pos_getX_mm() << " y="
 			<< robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
 	robot.svgPrintPosition();
@@ -443,16 +443,18 @@ void O_State_Init::setPos()
 
 	if (robot.strategy() == "tabletest")
 	{
-		robot.asserv().setLowSpeedForward(true, 50); //35 battery et 50 secteur
+		//robot.asserv().setLowSpeedForward(true, 50); //35 battery et 50 secteur
 
 		//ts = robot.asserv().doLineAbs(100);
 		ts = robot.asserv().doMoveForwardTo(300, 1800);
 		ts = robot.asserv().doFaceTo(1000, 1600);
 	}else
 	{
-		robot.asserv().setLowSpeedForward(true, 40); //35 battery et 50 secteur
+		robot.asserv().setLowSpeedForward(true, 40);
+		robot.asserv().setMaxSpeed(true, 200);
+		//robot.asserv().setLowSpeedForward(true, 40); //35 battery et 50 secteur
 
-		ts = robot.asserv().doLineAbs(50);
+//		ts = robot.asserv().doLineAbs(50);
 //		if(ts >=2 )
 //			logger().info() << "ts = robot.asserv().doLineAbs(50) state=" << ts << logs::end;
 //		ts = robot.asserv().doMoveForwardTo(250, 230);
@@ -461,6 +463,16 @@ void O_State_Init::setPos()
 //		ts = robot.asserv().doFaceTo(800, 230);
 //		if(ts >=2 )
 //					logger().info() << "ts = robot.asserv().doFaceTo state=" << ts << logs::end;
+
+
+		ts = robot.asserv().doMoveForwardTo(240, 185, true);
+			if (ts != TRAJ_FINISHED)
+			{
+				robot.logger().error() << "setPos : 240, 185  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+						<< logs::end;
+				robot.asserv().resetEmergencyOnTraj();
+
+			}
 	}
 
 

@@ -176,7 +176,7 @@ public:
 
     //relative motion (depends on current position of the robot)
     TRAJ_STATE doLineAbs(float dist_mm); // if distance <0, move backward
-    TRAJ_STATE doRotateAbs(float degreesRelative);
+    TRAJ_STATE doRotateAbs(float degreesRelative, bool rotate_ignoring_opponent = true);
     TRAJ_STATE doRelativeRotateBy(float thetaInDegreeRelative); //prend automatiquement un angle dans un sens ou dans l'autre suivant la couleur de match
     TRAJ_STATE doCalage(int d, int percent);
     TRAJ_STATE doCalage2(int d, int percent);
@@ -185,9 +185,9 @@ public:
     void doRunPivotRight(int powerL, int powerR, int timemsL);
     //absolute motion (coordinates thinking in the first color of match)
     TRAJ_STATE doFaceTo(float xMM, float yMM);
-    TRAJ_STATE doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_ignored = false);
+    TRAJ_STATE doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_ignore_opponent = true);
 
-    TRAJ_STATE doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree, bool rotate_ignored = false);
+    TRAJ_STATE doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree, bool rotate_ignore_opponent = true);
     TRAJ_STATE doMoveBackwardTo(float xMM, float yMM, bool rotate_ignored = false);
     TRAJ_STATE doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree);
     TRAJ_STATE doMoveForwardTo(float xMM, float yMM, bool rotate_ignored = false, float adjustment = 0);

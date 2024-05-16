@@ -91,13 +91,13 @@ public:
     TRAJ_STATE doMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection = false);
 
     TRAJ_STATE whileMoveForwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us,
-            int nb_near_obstacle, int nb_collision, bool byPathfinding = false, int reculOnObstacleMm = 0, int reculOnCollisionMm = 0);
+            int nb_near_obstacle, int nb_collision, bool byPathfinding = false, int reculOnObstacleMm = 0, int reculOnCollisionMm = 0, bool ignore_collision = false);
     TRAJ_STATE whileMoveBackwardTo(float xMM, float yMM, bool rotate_ignored_detection, int wait_tempo_us,
             int nb_near_obstacle, int nb_collision, bool byPathfinding = false, int reculOnObstacleMm = 0, int reculOnCollisionMm = 0);
     TRAJ_STATE whileMoveRotateTo(float AbsoluteThetaInDegree, int wait_tempo_us, int nb_collision);
     TRAJ_STATE whileMoveForwardAndRotateTo(float xMM, float yMM, float AbsoluteThetaInDegree,
             bool rotate_ignored_detection, int wait_tempo_us, int nb_near_obstacle, int nb_collision,
-            bool byPathfinding = false, int reculMm=0);
+            bool byPathfinding = false, int reculMm=0, bool ignore_collision = false);
     TRAJ_STATE whileMoveBackwardAndRotateTo(float xMM, float yMM, float AbsoluteThetaInDegree,
                 bool rotate_ignored_detection, int wait_tempo_us, int nb_near_obstacle, int nb_collision,
                 bool byPathfinding = false, int reculMm=0);

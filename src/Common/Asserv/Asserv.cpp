@@ -37,6 +37,7 @@ Asserv::Asserv(std::string botId, Robot *robot) //TODO utiliser uniquement robot
 	x_ground_table_ = 2000;
 
 	lowSpeedvalue_ = 30; //valeur par defaut qui est surchargée par chaque extension robot
+	maxSpeedDistValue_ = 200;
 
 }
 Asserv::~Asserv()
@@ -400,6 +401,7 @@ void Asserv::setMaxSpeedDistValue(int value)
 	maxSpeedDistValue_ = value;
 }
 
+//TODO enlever le nom collision, remplacer par opponent !!!
 void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, float y_adv_detect_mm)
 {
 //logger().error() << "warnFrontCollisionOnTraj frontlevel = " << frontlevel << logs::end;
@@ -407,7 +409,7 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
 //            << temp_ignoreFrontCollision_ << logs::end;
 	if (temp_forceRotation_)
 	{
-		//logger().error() << "forceRotation_ = " << temp_forceRotation_ << logs::end;
+		logger().error() << "forceRotation_ = " << temp_forceRotation_ << logs::end;
 		return;
 	}
 	if (temp_ignoreFrontCollision_) return;
@@ -575,10 +577,9 @@ TRAJ_STATE Asserv::doLineAbs(float dist_mm) // if distance <0, move backward
 	return ts;
 }
 
-TRAJ_STATE Asserv::doRotateAbs(float degreesRelative)
+TRAJ_STATE Asserv::doRotateAbs(float degreesRelative, bool rotate_ignoring_opponent)
 {
-//logger().error() << "11============ doRotateAbs temp_forceRotation_=true"  << logs::end;
-	temp_forceRotation_ = true;
+	temp_forceRotation_ = rotate_ignoring_opponent;
 
 	TRAJ_STATE ts;
 	float radians = (degreesRelative * M_PI) / 180.0f;
@@ -591,12 +592,12 @@ TRAJ_STATE Asserv::doRotateAbs(float degreesRelative)
 		ts = TRAJ_ERROR;
 
 	temp_forceRotation_ = false;
-//logger().error() << "22============ doRotateAbs temp_forceRotation_=true"  << logs::end;
+
 	return ts;
 }
 
 //prend automatiquement un angle dans un sens ou dans l'autre suivant la couleur de match
-TRAJ_STATE Asserv::doRelativeRotateBy(float thetaInDegreeRelative)
+TRAJ_STATE Asserv::doRelativeRotateBy(float thetaInDegreeRelative) //TODO rotate_ignore_opponent
 {
 	if (matchColorPosition_ != 0)
 	{
@@ -629,7 +630,7 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
 }
 
 //relative motion (depends on current position of the robot, thinking in the first color of match)
-TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_ignored)
+TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_ignoring_opponent)
 {
 //logger().debug() << "====2 doRotateTo thetaInDegree=" << thetaInDegree << "degrees " << logs::end;
 
@@ -666,18 +667,18 @@ TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_i
 	float degrees = radToDeg(rad);
 	logger().debug() << "==== doRotateTo degrees=" << degrees << " thetaInDegreeAbsolute=" << thetaInDegreeAbsolute
 			<< logs::end;
-	TRAJ_STATE ts = doRotateAbs(degrees);
+	TRAJ_STATE ts = doRotateAbs(degrees, rotate_ignoring_opponent);
 
 	return ts;
 }
 
 //TODO ATTENTION le getPos n'est pas precis puisque les positions sont recup toutes les n ms, donc il faut utiliser l'asserv ext qui possede l'odometrie
-TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored, float adjustment_mm)
+TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignoring_opponent, float adjustment_mm)
 {
 
 	float dx = getRelativeX(xMM) - pos_getX_mm();
 	float dy = yMM - pos_getY_mm();
-	if (std::abs(dx) < 3.0 && std::abs(dy) < 3.0)
+	if (std::abs(dx) < 5.0 && std::abs(dy) < 5.0)
 	{ //Augmenter les valeurs??? par rapport à l'asserv fenetre d'arrivée
 		logger().debug() << "___ TRAJ_FINISHED __doMoveForwardTo (std::abs(dx) < 1.0 && std::abs(dy) < 1.0)"
 				<< logs::end;
@@ -695,25 +696,42 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignored, fl
 			<< " getY=" << pos_getY_mm() << logs::end;
 
 	TRAJ_STATE ts = TRAJ_OK;
-	int count_rotation_ignored = 0;
-	while ((ts != TRAJ_FINISHED))
-	{
+//	int count_rotation_ignored = 0;
+//	while ((ts != TRAJ_FINISHED))
+//	{
 
-		ts = doAbsoluteRotateTo(radToDeg(getRelativeAngleRad(aRadian)), rotate_ignored);
-		if (ts != TRAJ_FINISHED)
+
+
+	temp_forceRotation_ = rotate_ignoring_opponent;
+
+	ts = doAbsoluteRotateTo(radToDeg(getRelativeAngleRad(aRadian)), rotate_ignoring_opponent);
+	if (ts != TRAJ_FINISHED)
+	{
+		if (!rotate_ignoring_opponent)
+			return ts;
+		else
 		{
-			if (!rotate_ignored)
-				return ts;
-			else
+			if (ts == TRAJ_COLLISION || ts == TRAJ_COLLISION_REAR)
 			{
 				//on resette
-				resetEmergencyOnTraj("doMoveForwardTo rotate_ignored");
-				//logger().debug() << " __on passe au doline !!!" << logs::end;
-				count_rotation_ignored++;
-				if (count_rotation_ignored > 10) break;
+				resetEmergencyOnTraj("doMoveForwardTo rotate_ignoring_opponent TRAJ_COLLISION");
+				logger().error() << "doMoveForwardTo rotate_ignoring_opponent resetEmergencyOnTraj TRAJ_COLLISION" << logs::end;
+				//on renvoi pour dire qu'on est en collision en  tournant
+				return ts;
+				//count_rotation_ignored++;
+				//if (count_rotation_ignored > 10) break;
+			}else
+			{
+				resetEmergencyOnTraj("doMoveForwardTo ROTATION TRAJ ERROR CAS NON DESIRE ");
+
+				logger().error() << "doMoveForwardTo ROTATION TRAJ ERROR CAS NON DESIRE  car on ignore l'adversaire!!!!!!!   => on passe au doline !!! ts=" << ts << logs::end;
+				return ts;
 			}
 		}
 	}
+
+
+//	}
 
 	float dist = sqrt(dx * dx + dy * dy);
 	logger().debug() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
@@ -754,11 +772,11 @@ TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM, bool rotate_ignored)
 	return doLineAbs(-dist);
 }
 //deprecated
-TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree, bool rotate_ignored)
+TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree, bool rotate_ignore_opponent)
 {
 	logger().error() << "doMoveForwardAndRotateTo deprecated !!!" << logs::end;
 	TRAJ_STATE ts;
-	ts = doMoveForwardTo(xMM, yMM, rotate_ignored);
+	ts = doMoveForwardTo(xMM, yMM, rotate_ignore_opponent);
 	if (ts != TRAJ_FINISHED) return ts;
 
 	ts = doAbsoluteRotateTo(thetaInDegree);
