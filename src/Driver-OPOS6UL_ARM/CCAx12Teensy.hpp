@@ -23,6 +23,10 @@
 #define AXT_CMD_READ_AX                 21
 #define AXT_CMD_WRITE_AX                22
 
+#define AXT_MOVE_1_SERVO       	31
+#define AXT_MOVE_2_SERVOS		32
+#define AXT_MOVE_3_SERVOS		33
+
 #define AXT_STATUS                      0x88
 #define AXT_OK                          0
 #define AXT_AX_MISSING                  8
@@ -77,96 +81,103 @@
 class CCAx12Teensy: public utils::Mutex {
 private:
 
-    /*!
-     * \brief Retourne le \ref Logger associé à la classe \ref CCAx12Teensy (EV3).
-     */
-    static const logs::Logger & logger() {
-        static const logs::Logger & instance = logs::LoggerFactory::logger("CCAx12Teensy.EV3");
-        return instance;
-    }
+	/*!
+	 * \brief Retourne le \ref Logger associé à la classe \ref CCAx12Teensy (EV3).
+	 */
+	static const logs::Logger& logger()
+	{
+		static const logs::Logger &instance = logs::LoggerFactory::logger("CCAx12Teensy.EV3");
+		return instance;
+	}
 
-    AsI2c i2c_CCAx12Teensy_;
-    bool connected_;
-    utils::Mutex mutex_;
+	AsI2c i2c_CCAx12Teensy_;
+	bool connected_;
+	utils::Mutex mutex_;
 
-    //int i2cHandle_;
-    short int i2c_aAddr_;
+	//int i2cHandle_;
+	short int i2c_aAddr_;
 
-    /*!
-     * \brief Constructeur de la classe.
-     */
-    CCAx12Teensy();
+	/*!
+	 * \brief Constructeur de la classe.
+	 */
+	CCAx12Teensy();
 
-    int getAddressSize(int address);
-    uint8_t computeCRC(uint8_t *buf, uint16_t length);
-    int checkCRC(uint8_t* buf, uint16_t length);
+	int getAddressSize(int address);
+	uint8_t computeCRC(uint8_t *buf, uint16_t length);
+	int checkCRC(uint8_t *buf, uint16_t length);
 
-    int writeI2C(uint8_t * data, uint16_t bytesToWrite);
-    uint8_t readI2C(uint8_t cmd, uint8_t * buf, uint16_t bytesToRead);
+	int writeI2C(uint8_t *data, uint16_t bytesToWrite);
+	uint8_t readI2C(uint8_t cmd, uint8_t *buf, uint16_t bytesToRead);
 
 public:
 
-    static CCAx12Teensy & instance() {
-        static CCAx12Teensy instance; //static instance pour utiliser indiferemment ADC+I2C+LED+autres si dispo
-        return instance;
-    }
+	static CCAx12Teensy& instance()
+	{
+		static CCAx12Teensy instance; //static instance pour utiliser indiferemment ADC+I2C+LED+autres si dispo
+		return instance;
+	}
 
-    /*!
-     * \brief Destructeur de la classe.
-     */
-    virtual inline ~CCAx12Teensy() {
-    }
+	/*!
+	 * \brief Destructeur de la classe.
+	 */
+	virtual inline ~CCAx12Teensy()
+	{
+	}
 
-    // configuration and initialisation avec l'adresse i2c sur le bus
-    //return 0 if ok;
-    bool connect(short int i2c_aAddr);
+	// configuration and initialisation avec l'adresse i2c sur le bus
+	//return 0 if ok;
+	bool connect(short int i2c_aAddr);
 
-    int setLed(uint8_t led, bool on);
+	int setLed(uint8_t led, bool on);
 
-    // Set the led on
-    // @param led :  1 - 9
-    int setLedOn(uint8_t led);
+	// Set the led on
+	// @param led :  1 - 9
+	int setLedOn(uint8_t led);
 
-    // Set the led off
-    // @param led :  1 - 9
-    int setLedOff(uint8_t led);
+	// Set the led off
+	// @param led :  1 - 9
+	int setLedOff(uint8_t led);
 
-    // Get the ADC value (12bits) for -5 to 5 volts
-    // @param ADC :  0 - 9
-    // @returns value : 0 - 4095
-    int getADC(uint8_t adc);
+	// Get the ADC value (12bits) for -5 to 5 volts
+	// @param ADC :  0 - 9
+	// @returns value : 0 - 4095
+	int getADC(uint8_t adc);
 
-    int convertToVoltage(int adc);
+	int convertToVoltage(int adc);
 
-    /**
-     * Ping a Dynamixel Servo
-     * @param port : the port (1-4)
-     * @param id : the id of the dynamixel
-     * @returns AXT_OK is servo is found, AXT_AX_MISSING if not found
-     * (on error, result is <0)
-     */
-    int pingAX(uint8_t port, uint8_t id);
+	/**
+	 * Ping a Dynamixel Servo
+	 * @param port : the port (1-4)
+	 * @param id : the id of the dynamixel
+	 * @returns AXT_OK is servo is found, AXT_AX_MISSING if not found
+	 * (on error, result is <0)
+	 */
+	int pingAX(uint8_t port, uint8_t id);
 
-    /**
-     * Read data at a specified address
-     * @param port : the port (1-4)
-     * @param id : the id of the dynamixel
-     * @param address : address of the data
-     * @returns the data
-     */
-    int readAXData(uint8_t port, uint8_t id, uint8_t address);
+	/**
+	 * Read data at a specified address
+	 * @param port : the port (1-4)
+	 * @param id : the id of the dynamixel
+	 * @param address : address of the data
+	 * @returns the data
+	 */
+	int readAXData(uint8_t port, uint8_t id, uint8_t address);
 
-    /**
-     * Write data at a specified address
-     * @param port : the port (1-4)
-     * @param id : the id of the dynamixel
-     * @param address : address of the data
-     */
-    int writeAXData(uint8_t port, uint8_t id, uint8_t address, uint16_t data);
+	/**
+	 * Write data at a specified address
+	 * @param port : the port (1-4)
+	 * @param id : the id of the dynamixel
+	 * @param address : address of the data
+	 */
+	int writeAXData(uint8_t port, uint8_t id, uint8_t address, uint16_t data);
 
-    bool isConnected() {
-        return connected_;
-    }
+	int move_1_servo(uint8_t port, uint8_t id, uint16_t eta_time_ms, uint16_t position, uint8_t wait_extratime_ms,
+			uint8_t end_keep_torque, uint16_t torque = 1023, uint16_t escape_torque = 1023);
+
+	bool isConnected()
+	{
+		return connected_;
+	}
 
 };
 

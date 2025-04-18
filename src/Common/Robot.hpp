@@ -81,6 +81,7 @@ protected:
     int useExternalEncoder_ = 1;
     int skipSetup_ = 0;
     bool end90s_ = false;
+    bool lastAction_ = false;
     bool waitForInit_ = false;
     std::string strategy_ = "all"; //defaut strategy
     std::string configVRR_ = "VRR"; //defaut config VRR
@@ -130,6 +131,16 @@ public:
     {
         this->end90s_ = end;
     }
+
+
+    bool isLastAction() const
+	{
+		return this->lastAction_;
+	}
+	void lastAction(bool end)
+	{
+		this->lastAction_ = end;
+	}
 
     bool isEmpty() const
     {

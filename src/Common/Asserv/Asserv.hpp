@@ -29,6 +29,9 @@ private:
         return instance;
     }
 
+    bool emergencyStop_;
+
+
 protected:
 
     /*!
@@ -52,6 +55,7 @@ protected:
      * NULL si non defini
      */
     AsservEsialR *pAsservEsialR_;
+
 
     bool temp_ignoreRearCollision_;
     bool temp_ignoreFrontCollision_;
@@ -135,7 +139,7 @@ public:
 
     void setLowSpeedForward(bool enable, int percent = 0);
     virtual void setLowSpeedBackward(bool enable, int percent = 0);
-    void setMaxSpeed(bool enable, int speed_dist_m_sec=0, int speed_angle_rad_sec=0);
+    void setMaxSpeed(bool enable, int speed_dist_percent=0, int speed_angle_percent=0);
 
     virtual void setPositionAndColor(float x_mm, float y_mm, float theta_degrees, bool matchColor); //matchColor = 0 =>en bas à gauche du log svg
     virtual void setPositionReal(float x_mm, float y_mm, float thetaInRad);

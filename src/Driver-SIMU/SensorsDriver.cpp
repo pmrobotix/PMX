@@ -137,8 +137,8 @@ int SensorsDriver::sync()
     //    x_adv_ = 1300.0;
     //    y_adv_ = 1000.0;
 
-    int nb = 0;
-     //   RobotPos pos1 = transformPosTableToPosRobot(nb, 2000.0, 2000.0);
+    int nb = 1;
+        RobotPos pos1 = transformPosTableToPosRobot(nb, 200.0, 1000.0);
     //    RobotPos pos2 = transformPosTableToPosRobot(nb, 600.0, 1000.0);
     //    RobotPos pos3 = transformPosTableToPosRobot(nb, 1300.0, 300.0);
     //    RobotPos pos4 = transformPosTableToPosRobot(nb, 300.0, 400.0);
@@ -151,13 +151,13 @@ int SensorsDriver::sync()
 //        RobotPos pos3 = transformPosTableToPosRobot(nb, 800, 2000);
 //        RobotPos pos4 = transformPosTableToPosRobot(nb, 100, 1400);
 //
-        //vadv_.push_back(pos1);
+        vadv_.push_back(pos1);
         //vadv_.push_back(pos2);
 //        vadv_.push_back(pos3);
 //        vadv_.push_back(pos4);
         //simu des positions adverses
         //bot_pos = { };
-        //vadv_ = { pos1 };
+        vadv_ = { pos1 };
         //bot_pos = { pos1, pos2 };
         //bot_pos = { pos1, pos2, pos3, pos4 };
 

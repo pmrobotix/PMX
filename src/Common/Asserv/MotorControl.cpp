@@ -25,8 +25,7 @@ void MotorControl::runMotorRight(int power, int timems)
 
 void MotorControl::stopMotors()
 {
-	asservdriver_->stopMotorLeft();
-	asservdriver_->stopMotorRight();
+	asservdriver_->stopMotors();
 }
 
 void MotorControl::setMotorLeftPosition(int power, long ticks) //tick à parcourir

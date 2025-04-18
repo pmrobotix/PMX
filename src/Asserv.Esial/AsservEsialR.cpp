@@ -381,6 +381,10 @@ void AsservEsialR::setMotorRightPower(int power, int timems)
 {
     logger().error() << "TODO setMotorRightPower !!!" << logs::end;
 }
+void AsservEsialR::stopMotors()
+{
+    logger().error() << "TODO stopMotors !!!" << logs::end;
+}
 void AsservEsialR::stopMotorLeft()
 {
     logger().error() << "TODO stopMotorLeft !!!" << logs::end;

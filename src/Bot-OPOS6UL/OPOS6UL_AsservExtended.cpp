@@ -23,7 +23,7 @@ OPOS6UL_AsservExtended::OPOS6UL_AsservExtended(std::string botId, OPOS6UL_RobotE
     //set the value setLowSpeedForward for asserv
     setLowSpeedvalue(10);
 
-    setMaxSpeedDistValue(500);
+    setMaxSpeedDistValue(20);
 
     //TODO essayer de surcharger les asservdriver pour avoir accès que log SVG?
     //TODO asservdriver_ = AAsservDriver::create(botId, robot->svgw());
@@ -32,9 +32,12 @@ OPOS6UL_AsservExtended::OPOS6UL_AsservExtended(std::string botId, OPOS6UL_RobotE
 bool OPOS6UL_AsservExtended::filtre_IsInsideTableXY(int x_botpos, int y_botpos)
 {
 
-    //table verticale
-    int table_x = 2000;
-    int table_y = 3000;
+//    //table verticale
+//    int table_x = 2000;
+//    int table_y = 3000;
+    //table horizontale
+    int table_x = 3000;
+    int table_y = 2000;
 
     //on filtre si c'est en dehors de la table verticale! avec 10cm de marge
     if ((x_botpos > 90 && x_botpos < table_x - 90) && (y_botpos > 90 && y_botpos < table_y - 90)) {

@@ -72,7 +72,7 @@ private:
 
     int statusCountDown_;
 
-    TRAJ_STATE pathStatus_;
+    //TRAJ_STATE pathStatus_;
 
     Mutex m_pos; //mutex pour la mise à jour de la position
     Mutex m_statusCountDown;
@@ -101,6 +101,7 @@ public:
     void setMotorRightPosition(int power, long ticks);
     void setMotorLeftPower(int power, int time);
     void setMotorRightPower(int power, int time);
+    void stopMotors();
     void stopMotorLeft();
     void stopMotorRight();
     int getMotorLeftCurrent();
@@ -130,9 +131,9 @@ public:
     ROBOTPOSITION odo_GetPosition();
     int path_GetLastCommandStatus();
     void path_InterruptTrajectory();
-    void path_CollisionOnTrajectory();
-    void path_CollisionRearOnTrajectory();
-    void path_CancelTrajectory();
+//    void path_CollisionOnTrajectory();
+//    void path_CollisionRearOnTrajectory();
+//    void path_CancelTrajectory();
     void path_ResetEmergencyStop();
     TRAJ_STATE motion_DoLine(float dist_mm);
     TRAJ_STATE motion_DoFace(float x_mm, float y_mm);
@@ -151,7 +152,7 @@ public:
     //void motion_setLowSpeed(bool enable);
     void motion_setLowSpeedForward(bool enable, int percent); //TODO remove enable
     void motion_setLowSpeedBackward(bool enable, int percent); //TODO remove enable
-    void motion_setMaxSpeed(bool enable, int speed_dist_m_sec = 0, int speed_angle_rad_sec=0);
+    void motion_setMaxSpeed(bool enable, int speed_dist_percent = 0, int speed_angle_percent=0);
 
     //Functions deprecated
     void motion_ActivateReguDist(bool enable);

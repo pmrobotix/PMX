@@ -146,7 +146,10 @@ void AsservDriver_mbed_i2c::resetExternalEncoders()
 {
     //TODO
 }
-
+void AsservDriver_mbed_i2c::stopMotors()
+{
+    //TODO
+}
 void AsservDriver_mbed_i2c::stopMotorLeft()
 {
     //TODO

@@ -15,6 +15,7 @@ Asserv::Asserv(std::string botId, Robot *robot) //TODO utiliser uniquement robot
 	probot_ = robot;
 
 	useAsservType_ = ASSERV_INT_ESIALR; //default internal asserv
+	emergencyStop_ = false;
 
 	//init des objets
 	if (useAsservType_ == ASSERV_INT_ESIALR)
@@ -32,9 +33,9 @@ Asserv::Asserv(std::string botId, Robot *robot) //TODO utiliser uniquement robot
 
 	//Configuration TABLE
 	//table horizontale
-	//x_ground_table_ = 3000;
+	x_ground_table_ = 3000;
 	//table verticale
-	x_ground_table_ = 2000;
+	//x_ground_table_ = 2000;
 
 	lowSpeedvalue_ = 30; //valeur par defaut qui est surchargée par chaque extension robot
 	maxSpeedDistValue_ = 200;
@@ -143,7 +144,7 @@ void Asserv::setLowSpeedBackward(bool enable, int percent)
 	} else if (useAsservType_ == ASSERV_EXT) asservdriver_->motion_setLowSpeedBackward(enable, percent);
 }
 
-void Asserv::setMaxSpeed(bool enable, int speed_dist_m_sec, int speed_angle_rad_sec)
+void Asserv::setMaxSpeed(bool enable, int speed_dist_percent, int speed_angle_percent)
 {
 	if (useAsservType_ == ASSERV_INT_ESIALR)
 	{
@@ -153,7 +154,10 @@ void Asserv::setMaxSpeed(bool enable, int speed_dist_m_sec, int speed_angle_rad_
 	{
 		if (enable)
 		{
-			asservdriver_->motion_setMaxSpeed(true, speed_dist_m_sec, speed_angle_rad_sec);
+			if (speed_dist_percent>100) speed_dist_percent=100;
+			if (speed_angle_percent>100) speed_angle_percent=100;
+
+			asservdriver_->motion_setMaxSpeed(true, speed_dist_percent, speed_angle_percent);
 
 		} else
 		{
@@ -362,15 +366,31 @@ bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm,
  */
 void Asserv::setEmergencyStop()
 {
+	logger().error() << "Asserv::setEmergencyStop() !!!!!!!!!!!" << logs::end;
+	if (emergencyStop_ == true)
+	{
+		logger().error() << "Asserv::setEmergencyStop() emergencyStop_ ALREADY TRUE!" << logs::end;
+
+	}
+	emergencyStop_ = true;
+
+
 	if (useAsservType_ == ASSERV_EXT)
-		asservdriver_->path_InterruptTrajectory();
-	else if (useAsservType_ == ASSERV_INT_ESIALR) pAsservEsialR_->path_InterruptTrajectory();
+			asservdriver_->path_InterruptTrajectory();
+		else if (useAsservType_ == ASSERV_INT_ESIALR) pAsservEsialR_->path_InterruptTrajectory();
+
+
 }
 
 void Asserv::resetEmergencyOnTraj(std::string message)
 {
-//logger().error() << "=====   resetEmergencyOnTraj message = " << message << logs::end;
-
+	if (emergencyStop_ == false)
+	{
+		logger().error() << "Asserv::resetEmergencyOnTraj() emergencyStop_ IS NOT TRUE!" << logs::end;
+		//return;
+	}
+logger().error() << "=====   resetEmergencyOnTraj message = " << message << logs::end;
+emergencyStop_ = false;
 	if (useAsservType_ == ASSERV_EXT)
 		asservdriver_->path_ResetEmergencyStop();
 	else if (useAsservType_ == ASSERV_INT_ESIALR) pAsservEsialR_->path_ResetEmergencyStop();
@@ -409,16 +429,26 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
 //            << temp_ignoreFrontCollision_ << logs::end;
 	if (temp_forceRotation_)
 	{
-		logger().error() << "forceRotation_ = " << temp_forceRotation_ << logs::end;
+		//logger().error() << "forceRotation_ = " << temp_forceRotation_ << logs::end;
 		return;
 	}
 	if (temp_ignoreFrontCollision_) return;
 
 //3 ou 4
-//.if (frontlevel >= 3) {
-	if (useAsservType_ == ASSERV_EXT)
-		asservdriver_->path_CollisionOnTrajectory();
-	else if (useAsservType_ == ASSERV_INT_ESIALR) pAsservEsialR_->path_CollisionOnTrajectory();
+//.if (frontlevel >= 3) { //TODO ?
+
+	//On ne fait un HALT que si l'asserv n'est pas a IDLE
+	ROBOTPOSITION p = pos_getPosition();
+	if (p.asservStatus == 1)//&& p.queueSize > 0)
+	{
+		logger().error() << "===== Asserv::warnFrontCollisionOnTraj !!!!! " << logs::end;
+
+
+		setEmergencyStop();
+//		if (useAsservType_ == ASSERV_EXT)
+//			asservdriver_->path_CollisionOnTrajectory();
+//		else if (useAsservType_ == ASSERV_INT_ESIALR) pAsservEsialR_->path_CollisionOnTrajectory();
+	}
 //}
 
 	/*
@@ -455,9 +485,10 @@ void Asserv::warnBackCollisionOnTraj(int backlevel, float x_adv_detect_mm, float
 
 	if (backlevel >= 4)
 	{
-		if (useAsservType_ == ASSERV_EXT)
-			asservdriver_->path_CollisionRearOnTrajectory();
-		else if (useAsservType_ == ASSERV_INT_ESIALR) pAsservEsialR_->path_CollisionRearOnTrajectory();
+		setEmergencyStop();
+//		if (useAsservType_ == ASSERV_EXT)
+//			asservdriver_->path_CollisionRearOnTrajectory();
+//		else if (useAsservType_ == ASSERV_INT_ESIALR) pAsservEsialR_->path_CollisionRearOnTrajectory();
 	}
 	/*
 	 //conversion de la position du le terrain et determination du centre du robot adverse
@@ -606,6 +637,30 @@ TRAJ_STATE Asserv::doRelativeRotateBy(float thetaInDegreeRelative) //TODO rotate
 		return doRotateAbs(thetaInDegreeRelative); //jaune
 }
 
+//TODO dans l'asserv
+//TRAJ_STATE Asserv::doFaceReverseTo(float xMM, float yMM)
+//{
+//
+////    logger().error() << "1.============ doFaceTo temp_forceRotation_ = true;"  << logs::end;
+//	temp_forceRotation_ = true; //attention on ne prend pas en compte l'adversaire
+//
+//	float x_match = getRelativeX(xMM);
+////logger().error() << "doFaceTo xMM=" << xMM << " yMM=" << yMM << logs::end;
+//
+//	TRAJ_STATE ts;
+//
+//	if (useAsservType_ == ASSERV_EXT)
+//		ts = asservdriver_->motion_DoFace(x_match, yMM);
+//	else if (useAsservType_ == ASSERV_INT_ESIALR)
+//		ts = pAsservEsialR_->motion_DoFace(x_match, yMM);
+//	else
+//		ts = TRAJ_ERROR;
+//
+//	temp_forceRotation_ = false;
+////    logger().error() << "2.============ doFaceTo temp_forceRotation_ = true;"  << logs::end;
+//	return ts;
+//}
+
 TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
 {
 
@@ -679,8 +734,8 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignoring_op
 	float dx = getRelativeX(xMM) - pos_getX_mm();
 	float dy = yMM - pos_getY_mm();
 	if (std::abs(dx) < 5.0 && std::abs(dy) < 5.0)
-	{ //Augmenter les valeurs??? par rapport à l'asserv fenetre d'arrivée
-		logger().debug() << "___ TRAJ_FINISHED __doMoveForwardTo (std::abs(dx) < 1.0 && std::abs(dy) < 1.0)"
+	{
+		logger().info() << "___ TRAJ_FINISHED __doMoveForwardTo (std::abs(dx) < 5.0 && std::abs(dy) < 5.0)"
 				<< logs::end;
 		return TRAJ_FINISHED;
 	}
@@ -697,10 +752,6 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignoring_op
 
 	TRAJ_STATE ts = TRAJ_OK;
 //	int count_rotation_ignored = 0;
-//	while ((ts != TRAJ_FINISHED))
-//	{
-
-
 
 	temp_forceRotation_ = rotate_ignoring_opponent;
 
@@ -711,55 +762,54 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignoring_op
 			return ts;
 		else
 		{
-			if (ts == TRAJ_COLLISION || ts == TRAJ_COLLISION_REAR)
+			if (ts == TRAJ_INTERRUPTED) //||ts == TRAJ_COLLISION || ts == TRAJ_COLLISION_REAR)
 			{
 				//on resette
-				resetEmergencyOnTraj("doMoveForwardTo rotate_ignoring_opponent TRAJ_COLLISION");
-				logger().error() << "doMoveForwardTo rotate_ignoring_opponent resetEmergencyOnTraj TRAJ_COLLISION" << logs::end;
+				resetEmergencyOnTraj("doMoveForwardTo rotate_ignoring_opponent TRAJ_INTERRUPTED");
+				//logger().error() << "doMoveForwardTo rotate_ignoring_opponent resetEmergencyOnTraj TRAJ_COLLISION" << logs::end;
 				//on renvoi pour dire qu'on est en collision en  tournant
-				return ts;
+				//return ts;
 				//count_rotation_ignored++;
 				//if (count_rotation_ignored > 10) break;
 			}else
 			{
-				resetEmergencyOnTraj("doMoveForwardTo ROTATION TRAJ ERROR CAS NON DESIRE ");
+				resetEmergencyOnTraj("doMoveForwardTo rotate_ignoring_opponent TRAJ_OTHERS!!!! ");
 
-				logger().error() << "doMoveForwardTo ROTATION TRAJ ERROR CAS NON DESIRE  car on ignore l'adversaire!!!!!!!   => on passe au doline !!! ts=" << ts << logs::end;
-				return ts;
+				//logger().error() << "doMoveForwardTo ROTATION TRAJ ERROR CAS NON DESIRE  car on ignore l'adversaire!!!!!!!   => on passe au doline !!! ts=" << ts << logs::end;
+				//return ts;
 			}
 		}
 	}
-
-
-//	}
+	temp_forceRotation_ = false;
 
 	float dist = sqrt(dx * dx + dy * dy);
 	logger().debug() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
+
 	return doLineAbs(dist + adjustment_mm);
 
 }
-TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM, bool rotate_ignored)
+TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM, bool rotate_ignoring_opponent)
 {
 	xMM = getRelativeX(xMM);
 
 	float dx = xMM - pos_getX_mm();
 	float dy = yMM - pos_getY_mm();
-	if (std::abs(dx) < 1.0 && std::abs(dy) < 1.0)
+	if (std::abs(dx) < 5.0 && std::abs(dy) < 5.0)
 	{ //Augmenter les valeurs??? par rapport à l'asserv fenetre d'arrivée
 		return TRAJ_FINISHED;
 	}
-	float aRadian = atan2(dy, dx);
+	float aRadian = M_PI + atan2(dy, dx);
 
 	aRadian = std::fmod(aRadian, 2.0 * M_PI);
 	if (aRadian < -M_PI) aRadian += (2.0 * M_PI);
 	if (aRadian > M_PI) aRadian -= (2.0 * M_PI);
 
-//TODO while et count!!!!!!!!!!!!!
+	temp_forceRotation_ = rotate_ignoring_opponent;
 
-	TRAJ_STATE ts = doAbsoluteRotateTo(radToDeg(getRelativeAngleRad((M_PI + aRadian))));
+	TRAJ_STATE ts = doAbsoluteRotateTo(radToDeg(getRelativeAngleRad(aRadian)));
 	if (ts != TRAJ_FINISHED)
 	{
-		if (!rotate_ignored)
+		if (!rotate_ignoring_opponent)
 			return ts;
 		else
 		{
@@ -768,10 +818,12 @@ TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM, bool rotate_ignored)
 		}
 	}
 
+	temp_forceRotation_ = false;
+
 	float dist = sqrt(dx * dx + dy * dy);
 	return doLineAbs(-dist);
 }
-//deprecated
+//deprecated ?
 TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree, bool rotate_ignore_opponent)
 {
 	logger().error() << "doMoveForwardAndRotateTo deprecated !!!" << logs::end;
@@ -782,7 +834,7 @@ TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInD
 	ts = doAbsoluteRotateTo(thetaInDegree);
 	return ts;
 }
-//deprecated
+//deprecated ?
 TRAJ_STATE Asserv::doMoveBackwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
 {
 	logger().error() << "doMoveBackwardAndRotateTo deprecated !!!" << logs::end;
@@ -872,7 +924,6 @@ int Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, ROBOT
 			<< pos_y_start_mm << " p.x=" << p.x << " p.y=" << p.y << " p.theta=" << p.theta << " degrees="
 			<< p.theta * 180 / M_PI << " delta_jx_mm=" << delta_jx_mm << " delta_ky_mm=" << delta_ky_mm << " mesure_mm="
 			<< mesure_mm
-
 			<< logs::end;
 
 	float dist_real_mm = std::sqrt(
@@ -1223,28 +1274,21 @@ void Asserv::resetEncoders()
 }
 void Asserv::getDeltaEncodersCounts(int *deltaCountR, int *deltaCountL)
 {
-//Pas de difference de type ici, dans tous les cas, on appelle les drivers
 	asservdriver_->getDeltaCountsExternal(deltaCountR, deltaCountL);
 }
 void Asserv::getEncodersCounts(int *countR, int *countL)
 {
-//Pas de difference de type ici, dans tous les cas, on appelle les drivers
 	asservdriver_->getCountsExternal(countR, countL);
 }
 void Asserv::runMotorLeft(int power, int timems)
 {
-//Pas de type ici, dans tous les cas, on appelle les drivers
 	asservdriver_->setMotorLeftPower(power, timems);
 }
 void Asserv::runMotorRight(int power, int timems)
 {
-//Pas de type ici, dans tous les cas, on appelle les drivers
 	asservdriver_->setMotorRightPower(power, timems);
 }
-
 void Asserv::stopMotors()
 {
-//Pas de type ici, dans tous les cas, on appelle les drivers
-	asservdriver_->stopMotorLeft();
-	asservdriver_->stopMotorRight();
+	asservdriver_->stopMotors();
 }

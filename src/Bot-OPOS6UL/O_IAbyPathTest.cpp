@@ -34,7 +34,7 @@ bool O_IAbyPathTest_action1()
 //    robot.asserv().ignoreRearCollision(true);
     robot.ia().iAbyPath().goToZone("zone_1", &zone); //recuperation de la zone
 
-    ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
+    ts = robot.ia().iAbyPath().doPathForwardAndRotateTo(zone.x, zone.y, zone.theta);
     if (ts != TRAJ_OK) {
         robot.logger().info() << "________action1 ts=" << ts << logs::end;
         return false;
@@ -63,7 +63,7 @@ bool O_IAByPathTest_action2()
 //    robot.asserv().ignoreFrontCollision(false);
 //    robot.asserv().ignoreRearCollision(true);
 
-    ts = robot.ia().iAbyPath().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
+    ts = robot.ia().iAbyPath().doPathForwardAndRotateTo(zone.x, zone.y, zone.theta);
     if (ts != TRAJ_OK) {
         robot.logger().info() << "_________action2 ts=" << ts << logs::end;
         return false;

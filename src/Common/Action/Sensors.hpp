@@ -124,7 +124,7 @@ public:
 
     inline bool getAvailableFrontCenter()
     {
-//        logger().error() << " ignoreFrontCenter_=" << ignoreFrontCenter_ << " enableFrontCenter_=" << enableFrontCenter_  << logs::end;
+        //logger().error() << " ignoreFrontCenter_=" << ignoreFrontCenter_ << " enableFrontCenter_=" << enableFrontCenter_  << logs::end;
         return (enableFrontCenter_ & !ignoreFrontCenter_);
     }
 

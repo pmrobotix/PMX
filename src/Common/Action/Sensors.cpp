@@ -459,7 +459,7 @@ int Sensors::left(bool display)
 //retourne 0, sinon le niveau detecté 2 veryClosed, 1 first level
 int Sensors::front(bool display)
 {
-
+	//logger().error() << "FRONT!!!!" << logs::end;
 //on recupere les distances de detection
     int fL = sync("fL");
 //int fC = sync("fC");
@@ -543,8 +543,13 @@ int Sensors::front(bool display)
                 //-3  -3  -3
                 //0  0  0
 
-                //rayon robot + espace coté + rayon adv
-                int thresholdLR = 140 + 20 + 200;
+                //rayon robot + espace coté + rayon adv //TODO ???
+                int thresholdLR = 140 + 20 + 250;
+
+
+
+
+
 
                 level_filtered = this->filtre_levelInFront(thresholdLR, frontCenterThreshold_,
                         frontCenterVeryClosedThreshold_, botpos.d, botpos.x, botpos.y, botpos.theta_deg);
@@ -599,7 +604,12 @@ int Sensors::front(bool display)
 //                        adv_is_detected_front_right_ = false;
 //                        adv_is_detected_front_left_ = false;
 
+    }else
+    {
+    	logger().error() << "ERROR NO getAvailableFrontCenter !!!!"  << logs::end;
+
     }
+
     if (enableFrontRight_) {
         bool fR_filter = this->robot()->passerv()->filtre_IsInsideTable(fR, 1, "fR");
         if (fR_filter) {
@@ -868,8 +878,8 @@ void Sensors::stopTimerSensors()
 
 void SensorsTimer::onTimer(utils::Chronometer chrono)
 {
-    logger().debug() << ">> SensorsTimer::onTimer sensors_.getAvailableFrontCenter()="
-            << sensors_.getAvailableFrontCenter() << logs::end;
+//    logger().error() << ">> SensorsTimer::onTimer sensors_.getAvailableFrontCenter()="
+//            << sensors_.getAvailableFrontCenter() << logs::end;
 
 //get all data sync adn save the position of the robot and precedent position
 
@@ -880,7 +890,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
     }
     if (sensors_.getAvailableFrontCenter()) {
         int frontLevel = sensors_.front(true);
-        //printf("frontLevel=%d\n", frontLevel);
+        //printf("SensorsTimer::onTimer frontLevel=%d\n", frontLevel);
 
         if (frontLevel <= 3) {
             nb_sensor_front_a_zero++;

@@ -50,7 +50,7 @@ AsservDriver::AsservDriver(std::string botid, ARobotPositionShared *aRobotPositi
         //printf("--- AsservDriver - botid == OPOS6UL_Robot\n");
         //CONFIGURATION OPOS6UL_Robot SIMULATEUR CONSOLE  --------------------------------------------
         simuTicksPerMeter_ = 130566.0f; //nb ticks for 1000mm
-        simuMaxSpeed_ = 0.5; //m/s
+        simuMaxSpeed_ = 1.0; //m/s
         simuMaxPower_ = 100.0; //127.0;
         periodTime_us_ = 2000;
         asservSimuStarted_ = true;
@@ -518,6 +518,11 @@ void AsservDriver::resetExternalEncoders()
     logger().error() << "TODO resetExternalEncoders !!!!!" << logs::end;
 }
 
+void AsservDriver::stopMotors()
+{
+	stopMotorLeft();
+	stopMotorRight();
+}
 void AsservDriver::stopMotorLeft()
 {
     //computeCounterL();
@@ -914,11 +919,14 @@ void AsservDriver::motion_setLowSpeedBackward(bool enable, int percent)
         simuCurrentSpeed_ = -simuMaxSpeed_;
 }
 
-void AsservDriver::motion_setMaxSpeed(bool enable, int speed_dist_m_sec, int speed_angle_rad_sec)
+void AsservDriver::motion_setMaxSpeed(bool enable, int percentD, int percentA)
 {
+
+	//TODO faire la vitesse pour tourner
+
 	logger().debug() << " motion_setLowSpeedForward !!!!!" << logs::end;
 	    if (enable)
-	        simuCurrentSpeed_ = simuMaxSpeed_ * (speed_dist_m_sec/12) / 100.0;
+	        simuCurrentSpeed_ = simuMaxSpeed_ * (percentD) / 100.0;
 	    else
 	        simuCurrentSpeed_ = simuMaxSpeed_;
 }

@@ -65,7 +65,7 @@ void ServoDriver::hold(int servo)
 	{
 		servo -= (1000 * port);
 		int r = CCAx12Teensy::instance().writeAXData(port, servo, P_TORQUE_ENABLE, 1);
-		if (r < 0) logger().error() << "hold() ERROR! port=" << port << " servo=" << servo << logs::end;
+		if (r < 0) logger().error() << "hold() ERROR="<< r <<"! port=" << port << " servo=" << servo << logs::end;
 	}
 }
 
@@ -124,7 +124,7 @@ void ServoDriver::release(int servo)
 	{
 		servo -= (1000 * port);
 		int r = CCAx12Teensy::instance().writeAXData(port, servo, P_TORQUE_ENABLE, 0);
-		if (r < 0) logger().debug() << "release() ERROR! port=" << port << " servo=" << servo << logs::end;
+		if (r < 0) logger().debug() << "release() ERROR="<< r <<"! port=" << port << " servo=" << servo << logs::end;
 	}
 }
 
@@ -141,7 +141,7 @@ void ServoDriver::setTorque(int servo, int torque)
 		servo -= (1000 * port);
 		int r = CCAx12Teensy::instance().writeAXData(port, servo, P_TORQUE_LIMIT, constrain(torque, 0, 1023));
 		if (r < 0)
-			logger().error() << "setRate() ERROR! port=" << port << " servo=" << servo << " torque=" << torque
+			logger().error() << "setRate() ERROR="<< r <<"! port=" << port << " servo=" << servo << " torque=" << torque
 					<< logs::end;
 	}
 }
@@ -162,7 +162,7 @@ int ServoDriver::getMoving(int servo)
 		int r = CCAx12Teensy::instance().readAXData(port, servo, P_MOVING);
 		if (r < 0)
 		{
-			logger().error() << "getMoving() ERROR! port=" << port << " servo=" << servo << logs::end;
+			logger().error() << "getMoving() ERROR="<< r <<"! port=" << port << " servo=" << servo << logs::end;
 		}
 		return r;
 	}
@@ -182,7 +182,7 @@ int ServoDriver::getPulsePos(int servo)
 		servo -= (1000 * port);
 
 		int r = CCAx12Teensy::instance().readAXData(port, servo, P_PRESENT_POSITION);
-		if (r < 0) logger().error() << "getPulsePos() ERROR! port=" << port << " servo=" << servo << logs::end;
+		if (r < 0) logger().error() << "getPulsePos() ERROR="<< r <<"! port=" << port << " servo=" << servo << logs::end;
 		return r;
 	}
 	return -2;
@@ -205,14 +205,14 @@ int ServoDriver::ping(int servo)
 		int r = CCAx12Teensy::instance().pingAX(port, servo);
 		if (r < 0)
 		{
-			logger().error() << "ping() ERROR! port=" << port << " servo=" << servo << logs::end;
+			logger().error() << "ping() ERROR="<< r <<"! port=" << port << " servo=" << servo << logs::end;
 			return r;
 		}
 		if (r == AXT_AX_MISSING) return 0;
 		if (r == AXT_OK) return 1;
 	} else
 	{
-		logger().error() << "ping() port ERROR! port=" << port << " servo=" << servo << logs::end;
+		logger().error() << "ping() port ERROR=-10! port=" << port << " servo=" << servo << logs::end;
 		return -10;
 	}
 }
@@ -250,7 +250,7 @@ int ServoDriver::getTorque(int servo)
 		servo -= (1000 * port);
 		int r = CCAx12Teensy::instance().readAXData(port, servo, P_PRESENT_LOAD);
 		if (r < 0)
-			logger().error() << "getTorque() ERROR! port=" << port << " servo=" << servo << " r=" << r << logs::end;
+			logger().error() << "getTorque() ERROR="<< r <<"! port=" << port << " servo=" << servo << " r=" << r << logs::end;
 
 		//removing CW and CCW so the result will be from 0 to 1023
 

@@ -8,15 +8,19 @@
 
 enum TRAJ_STATE
 {
-    TRAJ_OK,			//init before trajectory
+    TRAJ_OK,			//init before trajectory //TODO RENAME TRAJ_IDLE
     TRAJ_FINISHED,                      //trajectory successfully completed
-    TRAJ_ERROR,			//unknown error (not implemented !)
+    		//unknown error (not implemented !)
+	TRAJ_INTERRUPTED,		//trajectory interrupted by software
     TRAJ_COLLISION,			//trajectory interrupted because of a collision (blocked)
     TRAJ_NEAR_OBSTACLE,		//trajectory interrupted because of a near collision (sensors)
-    TRAJ_IMPOSSIBLE,                    //trajectory cancelled by remote user or not found
-    TRAJ_INTERRUPTED,		//trajectory interrupted by software
+
+
     TRAJ_NEAR_OBSTACLE_REAR, //deprecated ?
-    TRAJ_COLLISION_REAR //deprecated ?
+    TRAJ_COLLISION_REAR, //deprecated ?
+
+	TRAJ_IMPOSSIBLE=55,                    //trajectory cancelled by remote user or not found
+	TRAJ_ERROR=99
 };
 /*
  enum MOVEMENT_DIRECTION {
@@ -104,6 +108,7 @@ public:
     virtual void resetEncoders() = 0;
     virtual void resetInternalEncoders() = 0;
     virtual void resetExternalEncoders() = 0;
+    virtual void stopMotors() = 0;
     virtual void stopMotorLeft() = 0;
     virtual void stopMotorRight() = 0;
     virtual int getMotorLeftCurrent() = 0;
@@ -118,9 +123,9 @@ public:
 
     virtual int path_GetLastCommandStatus() = 0; //Deprecated
     virtual void path_InterruptTrajectory() = 0;
-    virtual void path_CollisionOnTrajectory()= 0;
-    virtual void path_CollisionRearOnTrajectory()= 0;
-    virtual void path_CancelTrajectory()= 0;
+    //virtual void path_CollisionOnTrajectory()= 0;
+    //virtual void path_CollisionRearOnTrajectory()= 0;
+    //virtual void path_CancelTrajectory()= 0;
     virtual void path_ResetEmergencyStop() = 0;
 
     virtual TRAJ_STATE motion_DoFace(float x_mm, float y_mm) = 0;

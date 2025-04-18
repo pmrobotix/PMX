@@ -74,6 +74,7 @@ public:
     void setMotorRightPosition(int power, long ticks);
     void setMotorLeftPower(int power, int time);
     void setMotorRightPower(int power, int time);
+    void stopMotors();
     void stopMotorLeft();
     void stopMotorRight();
     int getMotorLeftCurrent();

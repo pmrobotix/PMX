@@ -23,6 +23,7 @@ void O_ServoObjectsTest::configureConsoleArgs(int argc, char **argv) //surcharge
 
 void O_ServoObjectsTest::run(int argc, char **argv)
 {
+	logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
 
 	configureConsoleArgs(argc, argv); //on appelle les parametres specifiques pour ce test
 
@@ -119,6 +120,12 @@ void O_ServoObjectsTest::run(int argc, char **argv)
 		}
 	}
 
+	if (action == "RR")
+	{
+		robot.actions().ax12_retract_in_block(2000);
+		utils::sleep_for_millis(2000);
+	}
+
 	if (action == "I")
 	{
 		robot.actions().ax12_init();
@@ -163,6 +170,25 @@ void O_ServoObjectsTest::run(int argc, char **argv)
 
 			utils::sleep_for_millis(100);
 		}
+
+	}
+	if (action == "TEST")
+	{
+		while (1)
+		{
+			robot.actions().ax12_bras_droit(-1);
+			robot.actions().ax12_bras_droit(-1);
+			robot.actions().ax12_bras_droit_init(-1);
+			robot.actions().ax12_bras_droit_init(-1);
+			robot.actions().ax12_bras_gauche_init(0);
+			//utils::sleep_for_secs(2);
+
+			robot.actions().ax12_bras_gauche(-1);
+			robot.actions().ax12_bras_gauche(-1);
+			robot.actions().ax12_bras_gauche_init(-1);
+			robot.actions().ax12_bras_gauche_init(-1);
+			robot.actions().ax12_bras_droit_init(0);
+		}
 	}
 
 	if (action == "GO")
@@ -181,8 +207,7 @@ void O_ServoObjectsTest::run(int argc, char **argv)
 					robot.actions().ax12_bras_droit(0);
 					robot.actions().ax12_close_L(1000, -1);
 
-				}
-				else
+				} else
 				{
 					robot.actions().ax12_bras_droit_init(0);
 					robot.actions().ax12_open_L(1000, -1);
@@ -200,8 +225,7 @@ void O_ServoObjectsTest::run(int argc, char **argv)
 					robot.actions().ax12_bras_droit(0);
 					robot.actions().ax12_bras_gauche(0);
 					robot.actions().ax12_close_R(1000, -1);
-				}
-				else
+				} else
 				{
 					robot.actions().ax12_bras_gauche_init(0);
 					robot.actions().ax12_bras_droit_init(0);

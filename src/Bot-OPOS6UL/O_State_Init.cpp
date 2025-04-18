@@ -426,32 +426,34 @@ void O_State_Init::setPos()
 
 	robot.actions().lcd2x16().clear();
 
-	robot.asserv().setLowSpeedForward(false, 0); //au cas où par les sensors (si pas de ARU) //a voir si on ne peut pas le mettre ailleurs à l'init
+	//robot.asserv().setLowSpeedForward(false, 0); //au cas où par les sensors (si pas de ARU) //a voir si on ne peut pas le mettre ailleurs à l'init
 
 	robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
-		robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+	robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
 	//robot.asserv().resetDisplayTS();
 	robot.asserv().assistedHandling();
 	TRAJ_STATE ts = TRAJ_OK;
 
-	//robot.asserv().setLowSpeedForward(true, 50);
+	//robot.asserv().setLowSpeedForward(false);
 	//ts = robot.asserv().doLineAbs(50);
 	//robot.asserv().setLowSpeedForward(true, 100);
 
 	robot.actions().ax12_init();
 
-	if (robot.strategy() == "tabletest")
-	{
+	//robot.asserv().setMaxSpeed(true, 50);
+
+//	if (robot.strategy() == "tabletest")
+//	{
 		//robot.asserv().setLowSpeedForward(true, 50); //35 battery et 50 secteur
 
 		//ts = robot.asserv().doLineAbs(100);
-		ts = robot.asserv().doMoveForwardTo(300, 1800);
-		ts = robot.asserv().doFaceTo(1000, 1600);
-	}else
-	{
-		robot.asserv().setLowSpeedForward(true, 40);
-		robot.asserv().setMaxSpeed(true, 200);
+//		ts = robot.asserv().doMoveForwardTo(300, 1800);
+//		ts = robot.asserv().doFaceTo(1000, 1600);
+//	}else
+//	{
+		//robot.asserv().setLowSpeedForward(true, 40);
+
 		//robot.asserv().setLowSpeedForward(true, 40); //35 battery et 50 secteur
 
 //		ts = robot.asserv().doLineAbs(50);
@@ -473,7 +475,7 @@ void O_State_Init::setPos()
 				robot.asserv().resetEmergencyOnTraj();
 
 			}
-	}
+//	}
 
 
 	/*

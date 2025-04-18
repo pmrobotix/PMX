@@ -127,15 +127,15 @@ public:
     int setLed(uint8_t led, bool on);
 
     // Set the led on
-    // @param led :  1 - 9
+    // @param led :  3 - 8
     int setLedOn(uint8_t led);
 
     // Set the led off
-    // @param led :  1 - 9
+    // @param led :  3 - 8
     int setLedOff(uint8_t led);
 
     // Get the ADC value (12bits) for -5 to 5 volts
-    // @param ADC :  0 - 9
+    // @param ADC :  1 - 4
     // @returns value : 0 - 4095
     int getADC(uint8_t adc);
 

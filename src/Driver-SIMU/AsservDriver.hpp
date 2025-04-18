@@ -131,6 +131,7 @@ public:
     void resetEncoders();
     void resetInternalEncoders();
     void resetExternalEncoders();
+    void stopMotors();
     void stopMotorLeft();
     void stopMotorRight();
     int getMotorLeftCurrent();

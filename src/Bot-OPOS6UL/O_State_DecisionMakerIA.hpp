@@ -7,6 +7,16 @@
 #include "../Log/LoggerFactory.hpp"
 #include "../Thread/Thread.hpp"
 
+#define NO_ROTATION_DETECTION true
+#define ROTATION_WITH_DETECTION false
+
+#define WITH_PATHFINDING true
+#define NO_PATHFINDING false
+
+//#define COLLISION_IGNORE true
+//#define COLLISION_WITH false
+
+
 class Robot;
 
 class O_State_DecisionMakerIA: public utils::Thread

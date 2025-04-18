@@ -19,11 +19,11 @@ struct sRobotPosition
     //asserv status
     //0 idle
     //1 running
-    //2 emergency stop
-    //3 blocked/halted
+    //2 emergency stop / halted
+    //3 blocked
     int asservStatus;
 
-    //int queueSize; //deprecated ?
+    unsigned int queueSize;
     //int l_motor_speed; //deprecated ?
     //int r_motor_speed; //deprecated ?
     //MOVEMENT_DIRECTION direction; //deprecated ?

@@ -19,20 +19,20 @@ O_State_DecisionMakerIA::O_State_DecisionMakerIA(Robot &robot) :
 bool O_take_top()
 {
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-	robot.logger().info() << "start O_take_top." << logs::end;
+	robot.logger().info() << __FUNCTION__ << logs::end;
 	TRAJ_STATE ts = TRAJ_OK;
 	ROBOTPOSITION zone;
-	robot.logger().info() << "start O_take_top zone_flower_top x=" << zone.x << " y=" << zone.y << logs::end;
+	robot.logger().info() << __FUNCTION__ << "start zone_flower_top x=" << zone.x << " y=" << zone.y << logs::end;
 	robot.ia().iAbyPath().goToZone("zone_flower_top", &zone);
 
 	ts = TRAJ_OK;
-	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 100000, 5, 2,
-			true, 40);
+	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), NO_ROTATION_DETECTION,
+			100000, 5, 2, NO_PATHFINDING, 40);
 	if (ts != TRAJ_FINISHED)
 	{
-		robot.logger().error() << "O_take_top : zone_flower_top  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+		robot.logger().error() << __FUNCTION__ << " zone_flower_top  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
 				<< logs::end;
-		robot.asserv().stopMotors();
+		//robot.asserv().stopMotors();
 		robot.asserv().resetEmergencyOnTraj();
 
 	}
@@ -41,104 +41,137 @@ bool O_take_top()
 	return true; //return true si ok sinon false si interruption
 }
 
-bool O_end_of()
+bool O_steal_adv()
 {
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-	robot.logger().info() << "start O_end_of_match_top2." << logs::end;
+	robot.logger().info() << __FUNCTION__ << logs::end;
 	TRAJ_STATE ts = TRAJ_OK;
 	ROBOTPOSITION zone;
 
-	robot.asserv().setMaxSpeed(true, 800);
+	if (robot.isLastAction() == true)
+		return true;
+
+	robot.asserv().setMaxSpeed(true, 20);
 
 	robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
 	robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
-	ts = robot.ia().iAbyPath().whileMoveForwardTo(1700, 600, true, 1000000, 10, 15, true);
+	robot.ia().iAbyPath().goToZone("zone_steal_adv", &zone);
+	ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, NO_ROTATION_DETECTION, 1000000, 5, 5, NO_PATHFINDING);
 	if (ts != TRAJ_FINISHED)
 	{
-		robot.logger().error() << "O_end_of_match_top : 1200, 1000  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+		robot.logger().error() << __FUNCTION__ << " 1200, 400  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
 				<< logs::end;
-		robot.asserv().stopMotors();
+		//robot.asserv().stopMotors();
 		robot.asserv().resetEmergencyOnTraj();
-
-		return false;
-	}
-	robot.svgPrintPosition();
-
-	ts = robot.ia().iAbyPath().whileMoveForwardTo(2600, 800, true, 1000000, 10, 15, true);
-	if (ts != TRAJ_FINISHED)
-	{
-		robot.logger().error() << "O_end_of_match_top : 2600, 800  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
-				<< logs::end;
-		robot.asserv().stopMotors();
-		robot.asserv().resetEmergencyOnTraj();
-
-		return false;
-	}
-	robot.svgPrintPosition();
-
-	ts = robot.ia().iAbyPath().whileMoveForwardTo(2600, 800, true, 1000000, 10, 15, true);
-		if (ts != TRAJ_FINISHED)
-		{
-			robot.logger().error() << "O_end_of_match_top : 2600, 800  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
-					<< logs::end;
-			robot.asserv().stopMotors();
-			robot.asserv().resetEmergencyOnTraj();
-
-			return false;
-		}
 		robot.svgPrintPosition();
+		return false;
+	}
+	robot.svgPrintPosition();
 
-	robot.points += 10;
+
+	robot.actions().ax12_init();
+
+	ts = robot.ia().iAbyPath().whileMoveForwardTo(2700, 1000, NO_ROTATION_DETECTION, 1000000, 5, 5, NO_PATHFINDING);
+	if (ts != TRAJ_FINISHED)
+	{
+		robot.logger().error() << __FUNCTION__ << " 2700, 1000  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+				<< logs::end;
+		//robot.asserv().stopMotors();
+		robot.asserv().resetEmergencyOnTraj();
+		robot.svgPrintPosition();
+		return true;
+	}
+	robot.svgPrintPosition();
+
+	robot.points += 2;
 	robot.displayPoints();
+
+	robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+	robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+
+
+	//robot.asserv().setMaxSpeed(false);
+
+	ts = robot.asserv().doLineAbs(-120);
+	robot.svgPrintPosition();
+
+	robot.actions().ax12_retract_in_block(2000);
+
+	robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+	robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+
 	return true; //return true si ok sinon false si interruption
 }
 bool O_end_of_match_top()
 {
+
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-	robot.logger().info() << "start O_end_of_match_top." << logs::end;
+	robot.logger().info() << __FUNCTION__ << logs::end;
 	TRAJ_STATE ts = TRAJ_OK;
 	ROBOTPOSITION zone;
 
+	robot.lastAction(true);
+
+	robot.asserv().setMaxSpeed(true, 40);
+
 	robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
 	robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+//
+//	ts = robot.ia().iAbyPath().whileMoveForwardTo(1200, 1000, NO_ROTATION_DETECTION, 1000000, 10, 4, WITH_PATHFINDING);
+//	if (ts != TRAJ_FINISHED)
+//	{
+//		robot.logger().error() << __FUNCTION__ << " zone_end_top  ===== PB COLLISION FINALE - Que fait-on? ts="
+//				<< ts << logs::end;
+//		robot.asserv().stopMotors();
+//		robot.asserv().resetEmergencyOnTraj();
+//
+//		return false;
+//	}
 
-	ts = robot.ia().iAbyPath().whileMoveForwardTo(1200, 1000, true, 1000000, 10, 4, true);
-	if (ts != TRAJ_FINISHED)
-	{
-		robot.logger().error() << "O_end_of_match_top : zone_end_top  ===== PB COLLISION FINALE - Que fait-on? ts="
-				<< ts << logs::end;
-		robot.asserv().stopMotors();
-		robot.asserv().resetEmergencyOnTraj();
 
-		return false;
-	}
+	ts = robot.asserv().doLineAbs(100);
+	ts = robot.asserv().doLineAbs(-100);
 	robot.svgPrintPosition();
 
-	robot.logger().info() << "start O_end_of_match_top zone_end_top x=" << zone.x << " y=" << zone.y << logs::end;
+	robot.logger().info() << __FUNCTION__ << " start zone_end_top x=" << zone.x << " y=" << zone.y << logs::end;
 
 	robot.ia().iAbyPath().goToZone("zone_end_top", &zone);
 
 	robot.displayPoints();
-//	while (ts != TRAJ_FINISHED)
-//	{
-	robot.logger().info() << "start O_end_of_match_top zone_end_top x=" << zone.x << " y=" << zone.y << logs::end;
-	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 30, 10,
-			true);
+
+	robot.logger().info() << __FUNCTION__ << " start zone_end_top x=" << zone.x << " y=" << zone.y << logs::end;
+	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), NO_ROTATION_DETECTION,
+			1000000, 30, 10, NO_PATHFINDING);
 	if (ts != TRAJ_FINISHED)
 	{
-		robot.logger().error() << "O_end_of_match_top : zone_end_top  ===== PB COLLISION FINALE - Que fait-on? ts="
+		robot.logger().error() << __FUNCTION__ << " zone_end_top  ===== PB COLLISION FINALE - Que fait-on? ts="
 				<< ts << logs::end;
-		robot.asserv().stopMotors();
+		//robot.asserv().stopMotors();
 		robot.asserv().resetEmergencyOnTraj();
+		robot.svgPrintPosition();
 		return false;
 
 	}
 	robot.svgPrintPosition();
-//	}
+
 	robot.points += 10;
 	robot.displayPoints();
-	robot.asserv().doLineAbs(-100);
+
+	ts = robot.asserv().doLineAbs(-280);
+	robot.svgPrintPosition();
+
+	robot.logger().info() << __FUNCTION__ << " turn doFaceTo(400, 1300)"  << logs::end;
+
+	ts= robot.asserv().doFaceTo(700, 1400);
+	robot.svgPrintPosition();
+
+	robot.actions().ax12_bras_droit_full();
+	robot.actions().ax12_bras_gauche_full();
+
+	robot.actions().ax12_up();
+
+	robot.svgPrintPosition();
 
 	/*
 	 robot.actions().ax12_bras_droit(0);
@@ -166,27 +199,28 @@ bool O_end_of_match_top()
 	 robot.actions().ax12_bras_droit_init(0);
 	 robot.actions().ax12_bras_gauche_init(-1);
 	 */
+
 	return true; //return true si ok sinon false si interruption
 }
 
 bool O_end_of_match_bottom()
 {
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-	robot.logger().info() << "start O_end_of_match_bottom." << logs::end;
+	robot.logger().info() << __FUNCTION__ << logs::end;
 	TRAJ_STATE ts = TRAJ_OK;
 	ROBOTPOSITION zone;
-	robot.logger().info() << "start O_end_of_match_bottom zone_end_bottom x=" << zone.x << " y=" << zone.y << logs::end;
+	robot.logger().info() << __FUNCTION__ << " start zone_end_bottom x=" << zone.x << " y=" << zone.y << logs::end;
 	robot.ia().iAbyPath().goToZone("zone_end_bottom", &zone);
 
-	robot.logger().info() << "start O_end_of_match_bottom zone_end_bottom x=" << zone.x << " y=" << zone.y << logs::end;
-	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 100000, 5, 2,
-			true);
+	robot.logger().info() << __FUNCTION__ << "start zone_end_bottom x=" << zone.x << " y=" << zone.y << logs::end;
+	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), NO_ROTATION_DETECTION,
+			100000, 5, 2, NO_PATHFINDING);
 	if (ts != TRAJ_FINISHED)
 	{
 		robot.logger().error()
-				<< "O_end_of_match_bottom : zone_end_bottom  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+		<< __FUNCTION__ << " zone_end_bottom  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
 				<< logs::end;
-		robot.asserv().stopMotors();
+		//robot.asserv().stopMotors();
 		robot.asserv().resetEmergencyOnTraj();
 
 	}
@@ -198,7 +232,7 @@ bool O_end_of_match_bottom()
 bool O_solar_panels()
 {
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
-	robot.logger().info() << "start O_solar_panels." << logs::end;
+	robot.logger().info() << __FUNCTION__ << logs::end;
 	TRAJ_STATE ts = TRAJ_OK;
 
 	robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
@@ -210,14 +244,14 @@ bool O_solar_panels()
 		robot.actions().ax12_bras_droit(-1);
 		robot.actions().ax12_bras_droit_init(-1);
 		robot.actions().ax12_bras_droit_init(-1);
-		robot.actions().ax12_bras_gauche_init(0);
+		robot.actions().ax12_bras_gauche_init(-1);
 	} else
 	{
 		robot.actions().ax12_bras_gauche(-1);
 		robot.actions().ax12_bras_gauche(-1);
 		robot.actions().ax12_bras_gauche_init(-1);
 		robot.actions().ax12_bras_gauche_init(-1);
-		robot.actions().ax12_bras_droit_init(0);
+		robot.actions().ax12_bras_droit_init(-1);
 
 	}
 	robot.svgPrintPosition();
@@ -226,18 +260,19 @@ bool O_solar_panels()
 	robot.displayPoints();
 
 	//robot.asserv().setLowSpeedForward(true, 25);
-	robot.asserv().setMaxSpeed(true, 400);
+	//robot.asserv().setMaxSpeed(true, 25);
 
 	//todo ignorer calage et blocage pour continuer
-	robot.logger().error() << "O_solar_panels : 470, 185  " << logs::end;
+	robot.logger().error() << __FUNCTION__<< " 470, 185  " << logs::end;
 	ts = TRAJ_OK;
 
-	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(470, 185, 0.0, true, 100000, 5, 20, false, 0, true);
+	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(470, 185, 0.0, NO_ROTATION_DETECTION, 1000000, 5, 5, NO_PATHFINDING, 0,
+			true);
 	if (ts != TRAJ_FINISHED)
 	{
-		robot.logger().error() << "O_solar_panels : 470, 185  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+		robot.logger().error() << __FUNCTION__<< " 470, 185  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
 				<< logs::end;
-		robot.asserv().stopMotors();
+		//robot.asserv().stopMotors();
 		robot.asserv().resetEmergencyOnTraj();
 
 	}
@@ -249,14 +284,14 @@ bool O_solar_panels()
 		robot.actions().ax12_bras_droit(-1);
 		robot.actions().ax12_bras_droit_init(-1);
 		robot.actions().ax12_bras_droit_init(-1);
-		robot.actions().ax12_bras_gauche_init(0);
+		robot.actions().ax12_bras_gauche_init(-1);
 	} else
 	{
 		robot.actions().ax12_bras_gauche(-1);
 		robot.actions().ax12_bras_gauche(-1);
 		robot.actions().ax12_bras_gauche_init(-1);
 		robot.actions().ax12_bras_gauche_init(-1);
-		robot.actions().ax12_bras_droit_init(0);
+		robot.actions().ax12_bras_droit_init(-1);
 
 	}
 
@@ -264,12 +299,13 @@ bool O_solar_panels()
 	robot.displayPoints();
 
 	ts = TRAJ_OK;
-	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(695, 185, 0.0, true, 100000, 5, 20, false, 0, true);
+	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(695, 185, 0.0, NO_ROTATION_DETECTION, 1000000, 5, 5, NO_PATHFINDING, 0,
+			true);
 	if (ts != TRAJ_FINISHED)
 	{
-		robot.logger().error() << "O_solar_panels : 695, 185  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+		robot.logger().error() << __FUNCTION__<< " 695, 185  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
 				<< logs::end;
-		robot.asserv().stopMotors();
+		//robot.asserv().stopMotors();
 		robot.asserv().resetEmergencyOnTraj();
 
 	}
@@ -281,32 +317,55 @@ bool O_solar_panels()
 		robot.actions().ax12_bras_droit(-1);
 		robot.actions().ax12_bras_droit_init(-1);
 		robot.actions().ax12_bras_droit_init(-1);
-		robot.actions().ax12_bras_gauche_init(0);
+		robot.actions().ax12_bras_gauche_init(-1);
 	} else
 	{
 		robot.actions().ax12_bras_gauche(-1);
 		robot.actions().ax12_bras_gauche(-1);
 		robot.actions().ax12_bras_gauche_init(-1);
 		robot.actions().ax12_bras_gauche_init(-1);
-		robot.actions().ax12_bras_droit_init(0);
+		robot.actions().ax12_bras_droit_init(-1);
 
 	}
 
 	robot.points += 5;
 	robot.displayPoints();
+
+
+	//PAUSE
+	utils::sleep_for_secs(8);
+
+	robot.asserv().setMaxSpeed(false);
 
 	robot.svgPrintPosition();
+
+	return true; //return true si ok sinon false si interruption
+}
+
+bool O_solar_panels_adv()
+{
+
+	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+	robot.logger().info() << __FUNCTION__ << logs::end;
+	TRAJ_STATE ts = TRAJ_OK;
+
+	robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
+	robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+
+	robot.asserv().setMaxSpeed(true, 90);
 
 	//____________________________4eme
 
 	ts = TRAJ_OK;
-	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(1250, 185, 0.0, true, 100000, 5, 20, false, 0, true);
+	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(1250, 185, 0.0, NO_ROTATION_DETECTION, 2000000, 5, 5, NO_PATHFINDING,
+			0, false);
 	if (ts != TRAJ_FINISHED)
 	{
-		robot.logger().error() << "O_solar_panels : 1250, 185  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+		robot.logger().error() << __FUNCTION__ << " 1250, 185  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
 				<< logs::end;
-		robot.asserv().stopMotors();
+		//robot.asserv().stopMotors();
 		robot.asserv().resetEmergencyOnTraj();
+		robot.svgPrintPosition();
 		return true;
 	}
 	robot.svgPrintPosition(4);
@@ -317,14 +376,14 @@ bool O_solar_panels()
 		robot.actions().ax12_bras_droit(-1);
 		robot.actions().ax12_bras_droit_init(-1);
 		robot.actions().ax12_bras_droit_init(-1);
-		robot.actions().ax12_bras_gauche_init(0);
+		robot.actions().ax12_bras_gauche_init(-1);
 	} else
 	{
 		robot.actions().ax12_bras_gauche(-1);
 		robot.actions().ax12_bras_gauche(-1);
 		robot.actions().ax12_bras_gauche_init(-1);
 		robot.actions().ax12_bras_gauche_init(-1);
-		robot.actions().ax12_bras_droit_init(0);
+		robot.actions().ax12_bras_droit_init(-1);
 
 	}
 
@@ -337,16 +396,18 @@ bool O_solar_panels()
 	robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 	//____________________________5eme
 
-	robot.asserv().setMaxSpeed(true, 200);
+	robot.asserv().setMaxSpeed(true, 20);
 
 	ts = TRAJ_OK;
-	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(1475, 185, 0.0, true, 100000, 5, 20, false, 0, true);
+	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(1460, 185, 0.0, NO_ROTATION_DETECTION, 2000000, 5, 5,
+	NO_PATHFINDING);
 	if (ts != TRAJ_FINISHED)
 	{
-		robot.logger().error() << "O_solar_panels : 1475, 185  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+		robot.logger().error() << __FUNCTION__ << " 1460, 185  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
 				<< logs::end;
-		robot.asserv().stopMotors();
+		//robot.asserv().stopMotors();
 		robot.asserv().resetEmergencyOnTraj();
+		robot.svgPrintPosition();
 		return true;
 
 	}
@@ -358,14 +419,14 @@ bool O_solar_panels()
 		robot.actions().ax12_bras_droit(-1);
 		robot.actions().ax12_bras_droit_init(-1);
 		robot.actions().ax12_bras_droit_init(-1);
-		robot.actions().ax12_bras_gauche_init(0);
+		robot.actions().ax12_bras_gauche_init(-1);
 	} else
 	{
 		robot.actions().ax12_bras_gauche(-1);
 		robot.actions().ax12_bras_gauche(-1);
 		robot.actions().ax12_bras_gauche_init(-1);
 		robot.actions().ax12_bras_gauche_init(-1);
-		robot.actions().ax12_bras_droit_init(0);
+		robot.actions().ax12_bras_droit_init(-1);
 
 	}
 
@@ -377,12 +438,13 @@ bool O_solar_panels()
 	//____________________________6eme
 
 	ts = TRAJ_OK;
-	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(1700, 185, 0.0, true, 100000, 5, 20, 0, true);
+	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(1690, 185, 0.0, NO_ROTATION_DETECTION, 2000000, 5, 5, 0,
+			NO_PATHFINDING);
 	if (ts != TRAJ_FINISHED)
 	{
-		robot.logger().error() << "O_solar_panels : 1700, 185  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+		robot.logger().error() << __FUNCTION__<< " 1690, 185  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
 				<< logs::end;
-		robot.asserv().stopMotors();
+		//robot.asserv().stopMotors();
 		robot.asserv().resetEmergencyOnTraj();
 
 		return true;
@@ -396,14 +458,14 @@ bool O_solar_panels()
 		robot.actions().ax12_bras_droit(-1);
 		robot.actions().ax12_bras_droit_init(-1);
 		robot.actions().ax12_bras_droit_init(-1);
-		robot.actions().ax12_bras_gauche_init(0);
+		robot.actions().ax12_bras_gauche_init(-1);
 	} else
 	{
 		robot.actions().ax12_bras_gauche(-1);
 		robot.actions().ax12_bras_gauche(-1);
 		robot.actions().ax12_bras_gauche_init(-1);
 		robot.actions().ax12_bras_gauche_init(-1);
-		robot.actions().ax12_bras_droit_init(0);
+		robot.actions().ax12_bras_droit_init(-1);
 
 	}
 
@@ -412,14 +474,99 @@ bool O_solar_panels()
 
 	robot.svgPrintPosition();
 
-	ts = robot.asserv().doFaceTo(1500, 1000);
-	robot.logger().info() << "O_solar_panels : doFaceTo(1500, 1000); ts = " << ts << logs::end;
+	robot.actions().ax12_retract_in_block(2000);
+
+
+	robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+	robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+
+	//On recule
+	ts = TRAJ_OK;
+	ts = robot.ia().iAbyPath().whileMoveBackwardTo(1200, 185, NO_ROTATION_DETECTION, 200000, 5, 5, 0,
+			NO_PATHFINDING);
+	if (ts != TRAJ_FINISHED)
+	{
+		robot.logger().error() << __FUNCTION__ << "whileMoveBackwardTo 1700, 185  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+				<< logs::end;
+		//robot.asserv().stopMotors();
+		robot.asserv().resetEmergencyOnTraj();
+		robot.svgPrintPosition();
+		return true;
+
+	}
+	robot.svgPrintPosition(4);
+
+	//ts = robot.asserv().doFaceTo(1500, 1000);
+	//robot.logger().info() << __FUNCTION__ << " doFaceTo(1500, 1000); ts = " << ts << logs::end;
+	//robot.svgPrintPosition();
 
 	//robot.asserv().setMaxSpeed(false);
 	robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
 	robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
 	//_______________________________
+	robot.asserv().setMaxSpeed(false);
+
+	return true; //return true si ok sinon false si interruption
+}
+
+bool O_take_flowers()
+{
+
+	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+	robot.logger().info() << __FUNCTION__ << logs::end;
+	TRAJ_STATE ts = TRAJ_OK;
+	ROBOTPOSITION zone;
+	robot.logger().info() << __FUNCTION__ << " start zone_flower_bottom x=" << zone.x << " y=" << zone.y
+			<< logs::end;
+
+	if (robot.isLastAction() == true)
+			return true;
+
+	if (robot.asserv().pos_getY_mm() < 700)
+		robot.ia().iAbyPath().goToZone("zone_flower_bottom", &zone);
+	else
+		robot.ia().iAbyPath().goToZone("zone_flower_top", &zone);
+
+
+	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), NO_ROTATION_DETECTION,
+			1000000, 5, 2, NO_PATHFINDING);
+	if (ts != TRAJ_FINISHED)
+	{
+		robot.logger().error()
+		<< __FUNCTION__ << " zone_flower_bottom  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+				<< logs::end;
+		//robot.asserv().stopMotors();
+		robot.asserv().resetEmergencyOnTraj();
+
+	}
+	robot.svgPrintPosition();
+
+
+
+	robot.asserv().setMaxSpeed(true, 20);
+
+/*
+
+	robot.asserv().doLineAbs(100);
+	robot.svgPrintPosition();
+
+	robot.asserv().doLineAbs(-100);
+	robot.svgPrintPosition();
+
+	robot.actions().ax12_up();*/
+
+	robot.isEmpty(false);
+
+	//robot.asserv().setMaxSpeed(false);
+	//robot.asserv().setMaxSpeed(true, 50);
+	robot.actions().ax12_init_LR();
+
+	return true; //return true si ok sinon false si interruption
+}
+
+bool O_put_flowers_distributor()
+{
 
 	return true; //return true si ok sinon false si interruption
 }
@@ -434,12 +581,20 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone()
 	robot.ia().iAbyPath().ia_createZone("zone_end_bottom", 0, 0, 450, 450, 400, 350, 45);
 	robot.ia().iAbyPath().ia_createZone("zone_solar", 800, 0, 450, 100, 800, 230, 0);
 
-	robot.ia().iAbyPath().ia_createZone("zone_flower_top", 900, 1300, 200, 100, 1000, 1600, -90);
-	robot.ia().iAbyPath().ia_createZone("zone_flower_bottom", 900, 600, 200, 100, 1000, 300, 90);
+	robot.ia().iAbyPath().ia_createZone("zone_steal_adv", 1900, 600, 200, 100, 1200, 400, 45);
+
+	robot.ia().iAbyPath().ia_createZone("zone_flower_top", 900, 1300, 200, 100, 1000, 1000, 90);
+	//robot.ia().iAbyPath().ia_createZone("zone_flower_bottom", 900, 600, 200, 100, 1000, 400, 90);
+	robot.ia().iAbyPath().ia_createZone("zone_flower_bottom", 900, 600, 200, 100, 1150, 400, 120);
 
 	robot.ia().iAbyPath().ia_addAction("solar_panels", &O_solar_panels);
-	//robot.ia().iAbyPath().ia_addAction("end_of_match_top", &O_end_of_match_top);
-	robot.ia().iAbyPath().ia_addAction("end_of", &O_end_of);
+	robot.ia().iAbyPath().ia_addAction("solar_panels_adv", &O_solar_panels_adv);
+	//robot.ia().iAbyPath().ia_addAction("steal_adv", &O_steal_adv);
+	robot.ia().iAbyPath().ia_addAction("take_flower_bottom", &O_take_flowers);
+	robot.ia().iAbyPath().ia_addAction("put_flowers_distributor", &O_put_flowers_distributor);
+
+	robot.ia().iAbyPath().ia_addAction("end_of_match_top", &O_end_of_match_top);
+
 
 	logger().debug() << " END IASetupActivitiesZone" << logs::end;
 }
@@ -450,28 +605,22 @@ void O_State_DecisionMakerIA::IASetupActivitiesZoneTableTest()
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 	logger().debug() << "color = " << robot.getMyColor() << logs::end;
 
-	robot.ia().iAbyPath().ia_createZone("zone_end_top", 0, 1550, 450, 450, 400, 1700, 90);
-	robot.ia().iAbyPath().ia_createZone("zone_end_bottom", 0, 0, 450, 450, 400, 350, 45);
-	robot.ia().iAbyPath().ia_createZone("zone_solar", 800, 0, 450, 100, 800, 230, 0);
+		robot.ia().iAbyPath().ia_createZone("zone_end_top", 0, 1550, 450, 450, 400, 1700, 90);
+		robot.ia().iAbyPath().ia_createZone("zone_end_bottom", 0, 0, 450, 450, 400, 350, 45);
+		robot.ia().iAbyPath().ia_createZone("zone_solar", 800, 0, 450, 100, 800, 230, 0);
 
-	robot.ia().iAbyPath().ia_createZone("zone_flower_top", 900, 1300, 200, 100, 1000, 1000, -90);
-	robot.ia().iAbyPath().ia_createZone("zone_flower_bottom", 900, 600, 200, 100, 1000, 300, 90);
+		robot.ia().iAbyPath().ia_createZone("zone_steal_adv", 1900, 600, 200, 100, 1200, 400, 45);
 
-	//robot.ia().iAbyPath().ia_addAction("solar_panels", &O_solar_panels);
-	robot.ia().iAbyPath().ia_addAction("end_of_match_top", &O_end_of_match_top);
+		robot.ia().iAbyPath().ia_createZone("zone_flower_top", 900, 1300, 200, 100, 1000, 1000, 90);
+		robot.ia().iAbyPath().ia_createZone("zone_flower_bottom", 900, 600, 200, 100, 1000, 400, 90);
 
-	/*
-	 robot.ia().iAbyPath().ia_createZone("zone_end_top", 0, 1550, 450, 450, 400, 1750, -45);
-	 robot.ia().iAbyPath().ia_createZone("zone_end_bottom", 0, 0, 450, 450, 400, 350, 45);
+//		robot.ia().iAbyPath().ia_addAction("solar_panels", &O_solar_panels);
+//		robot.ia().iAbyPath().ia_addAction("solar_panels_adv", &O_solar_panels_adv);
+		//robot.ia().iAbyPath().ia_addAction("steal_adv", &O_steal_adv);
+		robot.ia().iAbyPath().ia_addAction("take_flower_bottom", &O_take_flowers);
+		robot.ia().iAbyPath().ia_addAction("put_flowers_distributor", &O_put_flowers_distributor);
 
-	 robot.ia().iAbyPath().ia_createZone("zone_flower_top", 900, 1300, 200, 100, 1000, 1600, -90);
-
-	 robot.ia().iAbyPath().ia_createZone("zone_flower_bottom", 900, 600, 200, 100, 1000, 300, 90);
-
-	 robot.ia().iAbyPath().ia_addAction("take_top", &O_take_top);
-
-	 robot.ia().iAbyPath().ia_addAction("end_of_match_bottom", &O_end_of_match_bottom);
-	 */
+		robot.ia().iAbyPath().ia_addAction("end_of_match_top", &O_end_of_match_top);
 	logger().debug() << " END IASetupActivitiesZoneTableTest !!!!!!!!!!!!!!!!!!!!!" << logs::end;
 }
 
@@ -486,7 +635,7 @@ void O_State_DecisionMakerIA::execute()
 		//logger().error() << "waitForInit..." << logs::end;
 	}
 
-	logger().info() << "Strategy to be applied = " << robot.strategy() << logs::end;
+	logger().info() << __FUNCTION__ << " Strategy to be applied = " << robot.strategy() << logs::end;
 
 	if (robot.strategy() == "tabletest")
 	{
@@ -515,7 +664,7 @@ void O_State_DecisionMakerIA::execute()
 		usleep(10000);
 	}
 
-	logger().info() << "O_State_DecisionMakerIA executing..." << logs::end;
+	logger().info() << __FUNCTION__ << " executing..." << logs::end;
 	/*
 	 //init rouge
 	 TRAJ_STATE ts = robot.asserv().doMoveForwardTo(330, 463);
@@ -554,7 +703,7 @@ void O_State_DecisionMakerIA::execute()
 	robot.freeMotion();
 
 	robot.svgPrintEndOfFile();
-	logger().info() << "O_State_DecisionMakerIA svgPrintEndOfFile" << logs::end;
+	logger().info() << __FUNCTION__ << " >>>>>>   svgPrintEndOfFile DONE.........."  << logs::end;
 
 }
 

@@ -20,7 +20,7 @@ AAsservDriver* AAsservDriver::create(string, ARobotPositionShared*)
 AsservDriver::AsservDriver() :
 		// //OPOS6UL_UART5=>1 ; OPOS6UL_UART4=>0
 		//serialPort_(SERIAL_ADDRESS, BaudRate::B_115200),
-		connected_(true), pathStatus_(TRAJ_OK), p_( { 0.0, 0.0, 0.0, -1, 0 })		//, asservCardStarted_(false)
+		connected_(true), p_( { 0.0, 0.0, 0.0, 0, 0, 0 })
 {
 	pp_ = p_;
 	errorCount_ = 0;
@@ -218,6 +218,7 @@ void AsservDriver::parseAsservPosition(string str)
 				p_.y = (float) y; //mm
 				p_.theta = a_rad;
 				p_.asservStatus = CommandStatus;
+				p_.queueSize = PendingCommandCount;
 				p_.debug_nb = debg;
 				m_pos.unlock();
 
@@ -282,7 +283,7 @@ void AsservDriver::execute()
 
 		char readData[100] = { 0 };
 
-		int err = serial_.readString(readData, '\n', 100, 150);
+		int err = serial_.readString(readData, '\n', 200, 150);
 		//                \return  >0 success, return the number of bytes read
 		//                    \return  0 timeout is reached
 		//                    \return -1 error while setting the Timeout
@@ -290,8 +291,9 @@ void AsservDriver::execute()
 		//                    \return -3 MaxNbBytes is reached
 		if (err <= 0)
 		{
-			//printf("AsservDriver::execute() ERRROR serial_.readString error=%d \n", err);
-			asservCardStarted_ = 0;
+			//printf("\n AsservDriver::execute() ERRROR serial_.readString error=%d \n", err);
+			logger().error() << " => AsservDriver::execute() error read serial!!!" << logs::end;
+			asservCardStarted_ = false;
 
 		} else
 		{
@@ -313,7 +315,7 @@ void AsservDriver::execute()
 			}
 		}
 
-		this->yield();
+		//this->yield();
 //		}
 		utils::Thread::sleep_for_millis(100);
 
@@ -373,13 +375,22 @@ void AsservDriver::resetExternalEncoders()
 {
 //TODO
 }
-
+void AsservDriver::stopMotors() // M0 ?
+{
+	if (!asservCardStarted_)
+		logger().error() << "stopMotors() ERROR NOT STARTED " << asservCardStarted_ << logs::end;
+	else
+	{
+		nucleo_writeSerial('h');
+	}
+}
 void AsservDriver::stopMotorLeft()
 {
 	if (!asservCardStarted_)
 		logger().error() << "stopMotorLeft() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
 	else
 	{
+		logger().error() << "stopMotorLeft() ERROR DO NOT USE " << logs::end;
 		nucleo_writeSerial('h');
 	}
 
@@ -390,6 +401,7 @@ void AsservDriver::stopMotorRight()
 		logger().error() << "stopMotorRight() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
 	else
 	{
+		logger().error() << "stopMotorLeft() ERROR DO NOT USE " << logs::end;
 		nucleo_writeSerial('h');
 	}
 }
@@ -425,6 +437,7 @@ void AsservDriver::odo_SetPosition(float x_mm, float y_mm, float angle_rad)
 	p_.theta = angle_rad;
 	p_.asservStatus = 0;
 	p_.debug_nb = 0;
+	p_.queueSize = 0;
 	pp_ = p_;
 	m_pos.unlock();
 
@@ -468,11 +481,18 @@ void AsservDriver::path_InterruptTrajectory()
 		logger().debug() << "path_InterruptTrajectory() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
 	else
 	{
+
+		m_pos.lock();
+		p_.asservStatus = 2;
+		m_pos.unlock();
+		//nucleo_writeSerial('h');
 		nucleo_writeSerial('h');
-		nucleo_writeSerial('h');
-		pathStatus_ = TRAJ_INTERRUPTED;
+		//pathStatus_ = TRAJ_INTERRUPTED;
 	}
 }
+
+/*
+//TODO remove collision / rename opponent
 void AsservDriver::path_CollisionOnTrajectory()
 {
 
@@ -482,7 +502,11 @@ void AsservDriver::path_CollisionOnTrajectory()
 	{
 		//logger().debug() << " path_CollisionOnTrajectory() HALT " << asservCardStarted_ << logs::end;
 
-		nucleo_writeSerial('h');
+		m_pos.lock();
+		p_.asservStatus = 2;
+		m_pos.unlock();
+
+		//nucleo_writeSerial('h');
 		nucleo_writeSerial('h');
 
 //		while(p_.asservStatus == 2)
@@ -493,7 +517,7 @@ void AsservDriver::path_CollisionOnTrajectory()
 //
 //
 //		}
-		pathStatus_ = TRAJ_NEAR_OBSTACLE;
+		//pathStatus_ = TRAJ_NEAR_OBSTACLE;
 	}
 }
 void AsservDriver::path_CollisionRearOnTrajectory()
@@ -505,8 +529,12 @@ void AsservDriver::path_CollisionRearOnTrajectory()
 	else
 	{
 
+		m_pos.lock();
+		p_.asservStatus = 2;
+		m_pos.unlock();
+
 		nucleo_writeSerial('h');
-		pathStatus_ = TRAJ_NEAR_OBSTACLE;
+		//pathStatus_ = TRAJ_NEAR_OBSTACLE;
 	}
 }
 void AsservDriver::path_CancelTrajectory()
@@ -517,10 +545,15 @@ void AsservDriver::path_CancelTrajectory()
 	else
 	{
 
+		m_pos.lock();
+		p_.asservStatus = 2;
+		m_pos.unlock();
+
 		nucleo_writeSerial('h');
-		pathStatus_ = TRAJ_INTERRUPTED;
+		//pathStatus_ = TRAJ_INTERRUPTED;
 	}
 }
+*/
 void AsservDriver::path_ResetEmergencyStop()
 {
 
@@ -535,7 +568,7 @@ void AsservDriver::path_ResetEmergencyStop()
 		m_pos.unlock();
 
 		nucleo_writeSerial('r');
-		pathStatus_ = TRAJ_OK;
+		//pathStatus_ = TRAJ_OK;
 	}
 }
 
@@ -566,6 +599,70 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) //v4 +d
 //1 running
 //2 emergency stop/halted
 //3 blocked
+
+TRAJ_STATE AsservDriver::nucleo_waitEndOfTraj()
+{
+	if (!asservCardStarted_)
+	{
+		logger().error() << "nucleo_waitEndOfTraj() ERROR NUCLEO NOT STARTED " << asservCardStarted_ << logs::end;
+		return TRAJ_ERROR;
+	} else
+	{
+
+//		while (1)
+//		{
+//			logger().error() << "while (1) __nucleo_waitEndOfTraj  p_.asservStatus= "	<< p_.asservStatus
+//								<< " p_.queueSize= "	<< p_.queueSize<< logs::end;
+//			utils::Thread::sleep_for_millis(10);
+//		}
+
+
+		utils::Thread::sleep_for_millis(50);
+//		while (p_.queueSize == 0)
+//		{
+//			utils::Thread::sleep_for_millis(10);
+//		}
+		while (p_.asservStatus == 1)
+		{
+			logger().info() << "__nucleo_waitEndOfTraj while p_.asservStatus= "	<< p_.asservStatus
+								<< " p_.queueSize= "	<< p_.queueSize<< logs::end;
+			utils::Thread::sleep_for_millis(50);
+		}
+//		if (p_.asservStatus == 0 &&p_.queueSize == 0)
+//			//if (p_.asservStatus != 1)
+//			return TRAJ_FINISHED;
+//		else
+//			return TRAJ_INTERRUPTED;
+
+		logger().info() << "__nucleo_waitEndOfTraj end   p_.asservStatus= "	<< p_.asservStatus
+							<< " p_.queueSize= "	<< p_.queueSize<< logs::end;
+
+		if (p_.asservStatus == 3)
+		{
+			return TRAJ_COLLISION;
+		} else if (p_.asservStatus == 0 && p_.queueSize == 0)
+		{
+				return TRAJ_FINISHED;
+
+		} else if (p_.asservStatus == 2)
+		{
+			//			logger().error() << "_______________________waitEndOfTraj() EMERGENCY STOP OCCURRED  pathStatus_= "
+			//					<< pathStatus_ << " p_.asservStatus=" << p_.asservStatus << logs::end;
+			//return pathStatus_;
+			return TRAJ_INTERRUPTED;
+		} else
+		{
+			logger().error() << "____nucleo_waitEndOfTraj else ERROR STATUT IMPOSSIBLE !!! p_.asservStatus="
+					<< p_.asservStatus << " statusCountDown_=" << statusCountDown_
+					<< logs::end;
+			return TRAJ_ERROR;
+		}
+		logger().error() << "nucleo_waitEndOfTraj INTERRUPTED !!! p_.asservStatus=" << p_.asservStatus
+				 << " statusCountDown_=" << statusCountDown_ << logs::end;
+		return TRAJ_ERROR;
+	}
+}
+/*
 TRAJ_STATE AsservDriver::nucleo_waitEndOfTraj()
 {
 
@@ -575,14 +672,15 @@ TRAJ_STATE AsservDriver::nucleo_waitEndOfTraj()
 		return TRAJ_ERROR;
 	} else
 	{
-		//while (!(p_.asservStatus != 1))
-		while (p_.asservStatus == 1)
-		{
-//			logger().error() << "_______________________waitEndOfTraj() statusCountDown_=" <<statusCountDown_ << "  pathStatus_= "
-//																	<< pathStatus_ << " p_.asservStatus=" << p_.asservStatus << logs::end;
+		while (!(p_.asservStatus != 1))
+			while (p_.asservStatus == 1)
+			{
+				//			logger().error() << "_______________________waitEndOfTraj() statusCountDown_=" <<statusCountDown_ << "  pathStatus_= "
+				//																	<< pathStatus_ << " p_.asservStatus=" << p_.asservStatus << logs::end;
 
-			utils::Thread::sleep_for_millis(50);
-		}
+				//utils::Thread::sleep_for_millis(50);
+				utils::Thread::sleep_for_millis(10);
+			}
 
 		//logger().error() << "__nucleo_waitEndOfTraj  p_.asservStatus= "	<< p_.asservStatus << logs::end;
 
@@ -600,21 +698,22 @@ TRAJ_STATE AsservDriver::nucleo_waitEndOfTraj()
 			}
 		} else if (p_.asservStatus == 2)
 		{
-//			logger().error() << "_______________________waitEndOfTraj() EMERGENCY STOP OCCURRED  pathStatus_= "
-//					<< pathStatus_ << " p_.asservStatus=" << p_.asservStatus << logs::end;
+			//			logger().error() << "_______________________waitEndOfTraj() EMERGENCY STOP OCCURRED  pathStatus_= "
+			//					<< pathStatus_ << " p_.asservStatus=" << p_.asservStatus << logs::end;
 			return pathStatus_;
 			//return TRAJ_INTERRUPTED;
 		} else
 		{
-			logger().error() << "____nucleo_waitEndOfTraj else ERROR STATUT IMPOSSIBLE !!! p_.asservStatus=" << p_.asservStatus
-					<< " pathStatus_=" << pathStatus_ << " statusCountDown_=" << statusCountDown_<< logs::end;
+			logger().error() << "____nucleo_waitEndOfTraj else ERROR STATUT IMPOSSIBLE !!! p_.asservStatus="
+					<< p_.asservStatus << " pathStatus_=" << pathStatus_ << " statusCountDown_=" << statusCountDown_
+					<< logs::end;
 			return TRAJ_ERROR;
 		}
 		logger().error() << "nucleo_waitEndOfTraj INTERRUPTED !!! p_.asservStatus=" << p_.asservStatus
-				<< " pathStatus_=" << pathStatus_  << " statusCountDown_=" << statusCountDown_<< logs::end;
+				<< " pathStatus_=" << pathStatus_ << " statusCountDown_=" << statusCountDown_ << logs::end;
 		return TRAJ_INTERRUPTED;
 	}
-}
+}*/
 
 TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
 {
@@ -629,7 +728,7 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
 		m_pos.unlock();
 
 		m_statusCountDown.lock();
-		statusCountDown_ = 5;
+		statusCountDown_ = 2;
 		m_statusCountDown.unlock();
 
 		nucleo_writeSerialSTR("f" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
@@ -653,7 +752,7 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
 		m_pos.unlock();
 
 		m_statusCountDown.lock();
-		statusCountDown_ = 5;
+		statusCountDown_ = 2;
 		m_statusCountDown.unlock();
 
 		nucleo_writeSerialSTR("t" + to_string(radToDeg(angle_radians)) + "\n");
@@ -680,7 +779,7 @@ TRAJ_STATE AsservDriver::motion_Goto(float x_mm, float y_mm)
 		m_pos.unlock();
 
 		m_statusCountDown.lock();
-		statusCountDown_ = 5;
+		statusCountDown_ = 2;
 		m_statusCountDown.unlock();
 
 		nucleo_writeSerialSTR("g" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
@@ -702,7 +801,7 @@ TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm)
 		m_pos.unlock();
 
 		m_statusCountDown.lock();
-		statusCountDown_ = 5;
+		statusCountDown_ = 2;
 		m_statusCountDown.unlock();
 
 		nucleo_writeSerialSTR("b" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
@@ -725,7 +824,7 @@ TRAJ_STATE AsservDriver::motion_GotoChain(float x_mm, float y_mm)
 		m_pos.unlock();
 
 		m_statusCountDown.lock();
-		statusCountDown_ = 5;
+		statusCountDown_ = 2;
 		m_statusCountDown.unlock();
 
 		nucleo_writeSerialSTR("e" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
@@ -747,7 +846,7 @@ TRAJ_STATE AsservDriver::motion_GotoReverseChain(float x_mm, float y_mm)
 		m_pos.unlock();
 
 		m_statusCountDown.lock();
-		statusCountDown_ = 5;
+		statusCountDown_ = 2;
 		m_statusCountDown.unlock();
 
 		nucleo_writeSerialSTR("n" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
@@ -780,7 +879,7 @@ void AsservDriver::motion_setLowSpeedForward(bool enable, int percent)
 
 }
 
-void AsservDriver::motion_setMaxSpeed(bool enable, int speed_dist_m_sec, int speed_angle_rad_sec)
+void AsservDriver::motion_setMaxSpeed(bool enable, int speed_dist_percent, int speed_angle_percent)
 {
 	if (!asservCardStarted_)
 	{
@@ -790,7 +889,7 @@ void AsservDriver::motion_setMaxSpeed(bool enable, int speed_dist_m_sec, int spe
 	{
 		if (enable)
 		{
-			nucleo_writeSerialSTR("N" + to_string(speed_dist_m_sec) + "#" + to_string(speed_angle_rad_sec) + "\n");
+			nucleo_writeSerialSTR("N" + to_string(speed_dist_percent) + "#" + to_string(speed_angle_percent) + "\n");
 		} else
 		{
 			nucleo_writeSerial('!');
@@ -799,7 +898,7 @@ void AsservDriver::motion_setMaxSpeed(bool enable, int speed_dist_m_sec, int spe
 
 }
 
-void AsservDriver::motion_FreeMotion(void)
+void AsservDriver::motion_FreeMotion(void) // TODO En fait Stopmotors = freemotion ?
 {
 	if (!asservCardStarted_)
 	{
