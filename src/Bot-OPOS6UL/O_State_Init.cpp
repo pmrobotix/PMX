@@ -293,16 +293,16 @@ O_State_Init::execute(Robot&)
 		robot.actions().lcd2x16().setCursor(0, 1);
 		robot.actions().lcd2x16().print("WAITING TIRETT...");
 		logger().info() << "PMX...WAIT TIRETTE !!!!!!!!!!!!!!!";
-		if (robot.getMyColor() == PMXBLUE)
-		{
-			robot.actions().lcd2x16().setCursor(0, 0);
-			robot.actions().lcd2x16().print("BLU");
-			logger().info() << "BLUE   ";
-		} else
+		if (robot.getMyColor() == PMXYELLOW)
 		{
 			robot.actions().lcd2x16().setCursor(0, 0);
 			robot.actions().lcd2x16().print("YEL");
 			logger().info() << "YELLOW";
+		} else
+		{
+			robot.actions().lcd2x16().setCursor(0, 0);
+			robot.actions().lcd2x16().print("BLU");
+			logger().info() << "BLUE   ";
 		}
 		logger().info() << logs::end;
 
@@ -372,7 +372,7 @@ O_State_Init::execute(Robot&)
 			exit(0);
 		} else
 		{
-			logger().info() << "COLOR is " << (robot.getMyColor() == PMXBLUE ? "BLUE" : "YELLOW ") << logs::end;
+			logger().info() << "COLOR is " << (robot.getMyColor() == PMXYELLOW ? "YELLOW" : "BLUE ") << logs::end;
 		}
 
 		robot.actions().lcd2x16().home();
@@ -417,9 +417,9 @@ void O_State_Init::setPos()
 
 	robot.asserv().startMotionTimerAndOdo(true);
 	if (robot.strategy() == "tabletest")
-		robot.asserv().setPositionAndColor(130, 1875 - 130, 0.0, (bool)(robot.getMyColor() != PMXBLUE));
+		robot.asserv().setPositionAndColor(130, 1875 - 130, 0.0, (bool)(robot.getMyColor() != PMXYELLOW));
 	else
-		robot.asserv().setPositionAndColor(130, 185 , 0.0, (bool)(robot.getMyColor() != PMXBLUE));
+		robot.asserv().setPositionAndColor(130, 185 , 0.0, (bool)(robot.getMyColor() != PMXYELLOW));
 	logger().info() << "O_State_Init::setPos() svgPrintPosition x=" << robot.asserv().pos_getX_mm() << " y="
 			<< robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
 	robot.svgPrintPosition();

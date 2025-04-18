@@ -64,11 +64,11 @@ void O_Asserv_SquareTest::run(int argc, char** argv) {
         logger().info() << "Arg nb set " << args["nb"] << ", nb = " << nb << logs::end;
     }
 
-    robot.setMyColor(PMXBLUE);
+    robot.setMyColor(PMXYELLOW);
 
     robot.asserv().startMotionTimerAndOdo(true);
 
-    robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() != PMXBLUE));
+    robot.asserv().setPositionAndColor(0.0, 300.0, 0.0, (robot.getMyColor() != PMXYELLOW));
     robot.svgPrintPosition();
 
     robot.actions().start();

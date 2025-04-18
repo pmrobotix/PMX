@@ -249,11 +249,11 @@ void Robot::begin(int argc, char** argv) {
 //        this->setMyColor(PMXBLUE);
 //    }
 
-    if (cArgs_['y']) {
-        logger().debug() << "y = " << (int) cArgs_['y'] << logs::end;
-        this->setMyColor(PMXYELLOW);
+    if (cArgs_['b']) {
+        logger().debug() << "b = " << (int) cArgs_['b'] << logs::end;
+        this->setMyColor(PMXBLUE);
     }
-    else this->setMyColor(PMXBLUE);//defaut si aucune couleur n'est specifiée
+    else this->setMyColor(PMXYELLOW);//defaut si aucune couleur n'est specifiée
     logger().debug() << "setMyColor done; getMyColor() = " << getMyColor() << logs::end;
 
 

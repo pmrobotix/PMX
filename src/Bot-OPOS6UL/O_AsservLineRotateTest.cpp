@@ -116,7 +116,7 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 	logger().info() << "COORD avec cx=" << coordx << " cy=" << coordy << " coorda=" << coorda_deg << logs::end;
 
 	robot.asserv().startMotionTimerAndOdo(false);
-	robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (bool) (robot.getMyColor() != PMXBLUE));
+	robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (bool) (robot.getMyColor() != PMXYELLOW));
 	robot.asserv().assistedHandling();
 
 	robot.asserv().getEncodersCounts(&right, &left); //accumulated encoders

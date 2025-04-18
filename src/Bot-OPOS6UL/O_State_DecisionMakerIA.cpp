@@ -238,7 +238,7 @@ bool O_solar_panels()
 	robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
 	robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 
-	if (robot.getMyColor() == PMXBLUE)
+	if (robot.getMyColor() == PMXYELLOW)
 	{
 		robot.actions().ax12_bras_droit(-1);
 		robot.actions().ax12_bras_droit(-1);
@@ -278,7 +278,7 @@ bool O_solar_panels()
 	}
 	robot.svgPrintPosition(4);
 
-	if (robot.getMyColor() == PMXBLUE)
+	if (robot.getMyColor() == PMXYELLOW)
 	{
 		robot.actions().ax12_bras_droit(-1);
 		robot.actions().ax12_bras_droit(-1);
@@ -311,7 +311,7 @@ bool O_solar_panels()
 	}
 	robot.svgPrintPosition(4);
 
-	if (robot.getMyColor() == PMXBLUE)
+	if (robot.getMyColor() == PMXYELLOW)
 	{
 		robot.actions().ax12_bras_droit(-1);
 		robot.actions().ax12_bras_droit(-1);
@@ -370,7 +370,7 @@ bool O_solar_panels_adv()
 	}
 	robot.svgPrintPosition(4);
 
-	if (robot.getMyColor() == PMXBLUE)
+	if (robot.getMyColor() == PMXYELLOW)
 	{
 		robot.actions().ax12_bras_droit(-1);
 		robot.actions().ax12_bras_droit(-1);
@@ -413,7 +413,7 @@ bool O_solar_panels_adv()
 	}
 	robot.svgPrintPosition(4);
 
-	if (robot.getMyColor() == PMXBLUE)
+	if (robot.getMyColor() == PMXYELLOW)
 	{
 		robot.actions().ax12_bras_droit(-1);
 		robot.actions().ax12_bras_droit(-1);
@@ -452,7 +452,7 @@ bool O_solar_panels_adv()
 	}
 	robot.svgPrintPosition(4);
 
-	if (robot.getMyColor() == PMXBLUE)
+	if (robot.getMyColor() == PMXYELLOW)
 	{
 		robot.actions().ax12_bras_droit(-1);
 		robot.actions().ax12_bras_droit(-1);
