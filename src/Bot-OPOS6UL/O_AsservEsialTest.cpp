@@ -169,14 +169,14 @@ void O_AsservEsialTest::run(int argc, char** argv) {
     if (step == 4) {
         logger().info() << "ETAPE 4 : on avance pour regler D" << logs::end;
         robot.asserv().assistedHandling();
-        robot.asserv().doLineAbs(100);
+        robot.asserv().doLine(100);
         sleep(1);
     }
 
     if (step == 5) {
         logger().info() << "ETAPE 5 : on tourne pour regler D" << logs::end;
         robot.asserv().assistedHandling();
-        robot.asserv().doRotateAbs(90);
+        robot.asserv().doRelativeRotateDeg(90);
         sleep(1);
 
     }

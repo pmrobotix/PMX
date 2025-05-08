@@ -736,6 +736,7 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
 	}
 }
 
+//Rotation relative
 TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
 {
 

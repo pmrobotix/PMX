@@ -53,9 +53,9 @@ void IAbyZone::ia_createZone(const char* name, float minX, float minY, float wid
     z->startAngle = startAngleDeg;
 
     if (robot_ != NULL) {
-        z->startX = robot_->passerv()->getRelativeXMin(z->startX);
-        z->minX = robot_->passerv()->getRelativeXMin(z->minX, z->width);
-        z->startAngle = radToDeg(robot_->passerv()->getRelativeAngleRad(degToRad(z->startAngle)));
+        z->startX = robot_->passerv()->changeMatchXMin(z->startX);
+        z->minX = robot_->passerv()->changeMatchXMin(z->minX, z->width);
+        z->startAngle = radToDeg(robot_->passerv()->changeMatchAngleRad(degToRad(z->startAngle)));
     } else {
         logger().error() << "robot_ is NULL !" << logs::end;
         std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -123,7 +123,7 @@ void IAbyZone::ia_setPath(const char* zone1Name, const char* zone2Name, float x,
     zp->y = y;
 
     if (robot_ != NULL) {
-        zp->x = robot_->passerv()->getRelativeX(zp->x);
+        zp->x = robot_->passerv()->changeMatchX(zp->x);
     } else {
         logger().error() << "robot_ is NULL !" << logs::end;
         std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -292,12 +292,12 @@ void IAbyZone::goToZone(const char *zoneName, ROBOTPOSITION *path_p, ROBOTPOSITI
     if (path != NULL) {
         printf("%s (line %d) : goToZone FROM %s TO %s using path (%f,%f)\n", __FUNCTION__, __LINE__, zCurrent->name,
                 z->name, path->x, path->y);
-        path_p->x = robot_->passerv()->getRelativeX(path->x);
+        path_p->x = robot_->passerv()->changeMatchX(path->x);
         path_p->y = path->y;
     }
-    zone_p->x = robot_->passerv()->getRelativeX(z->startX);
+    zone_p->x = robot_->passerv()->changeMatchX(z->startX);
     zone_p->y = z->startY;
-    zone_p->theta = robot_->passerv()->getRelativeAngleRad(degToRad(z->startAngle));
+    zone_p->theta = robot_->passerv()->changeMatchAngleRad(degToRad(z->startAngle));
 
     printf("----%s (line %d) : goToZone FROM %s TO %s using path (%f,%f)\n", __FUNCTION__, __LINE__, zCurrent->name,
             z->name, path->x, path->y);

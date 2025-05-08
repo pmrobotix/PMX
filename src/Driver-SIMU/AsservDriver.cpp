@@ -575,7 +575,9 @@ int AsservDriver::path_GetLastCommandStatus()
 }
 void AsservDriver::path_InterruptTrajectory()
 {
-    logger().error() << "TODO path_InterruptTrajectory !!!!!" << logs::end;
+	emergencyStop_ = true;
+	stopMotorLeft();
+	stopMotorRight();
 }
 void AsservDriver::path_CollisionOnTrajectory()
 {
@@ -593,7 +595,9 @@ void AsservDriver::path_CollisionRearOnTrajectory()
 }
 void AsservDriver::path_CancelTrajectory()
 {
-    logger().error() << "TODO path_CancelTrajectory !!!!!" << logs::end;
+	emergencyStop_ = true;
+	stopMotorLeft();
+	stopMotorRight();
 }
 void AsservDriver::path_ResetEmergencyStop()
 {
@@ -771,10 +775,11 @@ TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
     return TRAJ_FINISHED;
 }
 
+//Rotation relative
 TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
 {
     if (emergencyStop_)
-        return TRAJ_NEAR_OBSTACLE;
+        return TRAJ_NEAR_OBSTACLE; //TODO TRAJ_INTERUPTED ???
     //int increment_time_us = 5000;
     int increment_time_us = periodTime_us_ * 4; //us
 
@@ -784,18 +789,15 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
     for (int nb = 0; nb < nb_increment; nb++) {
 
         if (emergencyStop_)
-            return TRAJ_NEAR_OBSTACLE;
+            return TRAJ_NEAR_OBSTACLE; //TODO TRAJ_INTERUPTED ???
 
         m_pos.lock();
-
         float temp = p_.theta + temp_angle;
-
         temp = std::fmod(temp, 2.0 * M_PI);
         if (temp < -M_PI)
             temp += (2.0 * M_PI);
         if (temp > M_PI)
             temp -= (2.0 * M_PI);
-
         p_.theta = temp;
         m_pos.unlock();
         utils::sleep_for_micros(increment_time_us);
@@ -803,20 +805,11 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
 
     m_pos.lock();
     float temp = theta_init + angle_radians;
-
-//    if (temp >= M_PI) {
-//        temp -= 2.0 * M_PI;
-//    }
-//    else if (temp < -M_PI) {
-//        temp += 2.0 * M_PI;
-//    }
-
     temp = std::fmod(temp, 2.0 * M_PI);
     if (temp < -M_PI)
         temp += (2.0 * M_PI);
     if (temp > M_PI)
         temp -= (2.0 * M_PI);
-
     p_.theta = temp;
     m_pos.unlock();
 

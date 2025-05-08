@@ -179,17 +179,22 @@ public:
     TRAJ_STATE gotoReverseChain(float xMM, float yMM);
 
     //relative motion (depends on current position of the robot)
-    TRAJ_STATE doLineAbs(float dist_mm); // if distance <0, move backward
-    TRAJ_STATE doRotateAbs(float degreesRelative, bool rotate_ignoring_opponent = true);
-    TRAJ_STATE doRelativeRotateBy(float thetaInDegreeRelative); //prend automatiquement un angle dans un sens ou dans l'autre suivant la couleur de match
+    TRAJ_STATE doLine(float dist_mm); // if distance <0, move backward
+    TRAJ_STATE doRelativeRotateDeg(float degreesRelative, bool rotate_ignoring_opponent = true);
+    TRAJ_STATE doRelativeRotateRad(float radRelative, bool rotate_ignoring_opponent = true);
+    TRAJ_STATE doRelativeRotateByMatchColor(float thetaInDegreeRelative, bool rotate_ignoring_opponent = true); //prend automatiquement un angle dans un sens ou dans l'autre suivant la couleur de match
+    TRAJ_STATE doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_ignore_opponent = true);
+
+    TRAJ_STATE doFaceTo(float xMM, float yMM);
+
     TRAJ_STATE doCalage(int d, int percent);
     TRAJ_STATE doCalage2(int d, int percent);
+
+
     //pivot motion
     void doRunPivotLeft(int powerL, int powerR, int timemsR);
     void doRunPivotRight(int powerL, int powerR, int timemsL);
-    //absolute motion (coordinates thinking in the first color of match)
-    TRAJ_STATE doFaceTo(float xMM, float yMM);
-    TRAJ_STATE doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_ignore_opponent = true);
+
 
     TRAJ_STATE doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree, bool rotate_ignore_opponent = true);
     TRAJ_STATE doMoveBackwardTo(float xMM, float yMM, bool rotate_ignored = false);
@@ -226,7 +231,7 @@ public:
     }
 
     //transformation suivant la couleur de match
-    inline float getRelativeX(float x_mm, float width = 0.0)
+    inline float changeMatchX(float x_mm, float width = 0.0)//TODO replace by getMatchX
     {
         //printf("matchcolor:%d", matchColorPosition_);
         //logger().error() << "color==" << matchColorPosition_ << " width=" << width<< logs::end;
@@ -236,7 +241,7 @@ public:
         return x_mm + width;
     }
 
-    inline float getRelativeXMin(float x_mm, float width = 0.0)
+    inline float changeMatchXMin(float x_mm, float width = 0.0)
     {
         //printf("matchcolor:%d", matchColorPosition_);
         //logger().error() << "color==" << matchColorPosition_ << " width=" << width<< logs::end;
@@ -246,7 +251,7 @@ public:
         return x_mm;
     }
 
-    inline float getRelativeAngleRad(float rad)
+    inline float changeMatchAngleRad(float rad)
     {
         if (matchColorPosition_ != 0) {
             float limit = (M_PI - rad);
@@ -261,43 +266,6 @@ public:
         }
         return rad;
     }
-
-    //transformation suivant la couleur de match
-//    inline float getRelativeAngle(float degrees)
-//    {
-//        if (matchColorPosition_ != 0) {
-//            float limit = (180.0 - degrees);
-//
-//            limit = std::fmod(limit, 360.0);
-//            if (limit < -180.0)
-//                limit += 360.0;
-//            if (limit > 180.0)
-//                limit -= 360.0;
-//
-//            return limit;
-//        }
-//        return degrees;
-//    }
-
-//    //TODO a tester
-//    inline float limitAngle(float limit)
-//    {
-//        // On ajuste l'angle à parcourir pour ne pas faire plus d'un demi-tour
-//        // Exemple, tourner de 340 degrés est plus chiant que de tourner de -20 degrés
-//
-//        limit = std::fmod(limit, 360);
-//        if (limit < -180)
-//            limit += 180;
-//        if (limit > 180)
-//            limit -= 180;
-////        if (degrees >= 180) {
-////            degrees -= 2.0 * 180;
-////        }
-////        else if (degrees < -180) {
-////            degrees += 2.0 * 180;
-////        }
-//        return limit;
-//    }
 
 
     inline float degToRad(float deg)

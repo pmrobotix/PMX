@@ -417,9 +417,9 @@ void O_State_Init::setPos()
 
 	robot.asserv().startMotionTimerAndOdo(true);
 	if (robot.strategy() == "tabletest")
-		robot.asserv().setPositionAndColor(130, 1875 - 130, 0.0, (bool)(robot.getMyColor() != PMXYELLOW));
+		robot.asserv().setPositionAndColor(1275, 130, 90.0, (bool)(robot.getMyColor() != PMXYELLOW));
 	else
-		robot.asserv().setPositionAndColor(130, 185 , 0.0, (bool)(robot.getMyColor() != PMXYELLOW));
+		robot.asserv().setPositionAndColor(1275, 130 , 90.0, (bool)(robot.getMyColor() != PMXYELLOW));
 	logger().info() << "O_State_Init::setPos() svgPrintPosition x=" << robot.asserv().pos_getX_mm() << " y="
 			<< robot.asserv().pos_getY_mm() << " a=" << robot.asserv().pos_getThetaInDegree() << logs::end;
 	robot.svgPrintPosition();
@@ -467,14 +467,14 @@ void O_State_Init::setPos()
 //					logger().info() << "ts = robot.asserv().doFaceTo state=" << ts << logs::end;
 
 
-		ts = robot.asserv().doMoveForwardTo(240, 185, true);
-			if (ts != TRAJ_FINISHED)
-			{
-				robot.logger().error() << "setPos : 240, 185  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
-						<< logs::end;
-				robot.asserv().resetEmergencyOnTraj();
+		ts = robot.asserv().doMoveForwardAndRotateTo(1275, 300, 135.0, true);
+		if (ts != TRAJ_FINISHED)
+		{
+			robot.logger().error() << "setPos : 1275, 300, 135.0  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
+					<< logs::end;
+			robot.asserv().resetEmergencyOnTraj();
 
-			}
+		}
 //	}
 
 

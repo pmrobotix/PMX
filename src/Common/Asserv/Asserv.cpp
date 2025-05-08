@@ -154,8 +154,8 @@ void Asserv::setMaxSpeed(bool enable, int speed_dist_percent, int speed_angle_pe
 	{
 		if (enable)
 		{
-			if (speed_dist_percent>100) speed_dist_percent=100;
-			if (speed_angle_percent>100) speed_angle_percent=100;
+			if (speed_dist_percent > 100) speed_dist_percent = 100;
+			if (speed_angle_percent > 100) speed_angle_percent = 100;
 
 			asservdriver_->motion_setMaxSpeed(true, speed_dist_percent, speed_angle_percent);
 
@@ -197,8 +197,8 @@ void Asserv::setPositionAndColor(float x_mm, float y_mm, float thetaInDegrees_, 
 {
 	setMatchColorPosition(matchColor);
 
-	x_mm = getRelativeX(x_mm);
-	float thetaInRad = getRelativeAngleRad(degToRad(thetaInDegrees_));
+	x_mm = changeMatchX(x_mm);
+	float thetaInRad = changeMatchAngleRad(degToRad(thetaInDegrees_));
 
 	logger().debug() << "matchcolor [BLUE=0 YELLOW=1]=" << matchColor << " thetaInDegrees=" << thetaInDegrees_
 			<< " getRelativeAngle=" << radToDeg(thetaInRad) << " x_mm=" << x_mm << " y_mm=" << y_mm << logs::end;
@@ -371,14 +371,14 @@ void Asserv::setEmergencyStop()
 	{
 		logger().error() << "Asserv::setEmergencyStop() emergencyStop_ ALREADY TRUE!" << logs::end;
 
-	}
-	emergencyStop_ = true;
+	} else
+	{
+		emergencyStop_ = true;
 
-
-	if (useAsservType_ == ASSERV_EXT)
+		if (useAsservType_ == ASSERV_EXT)
 			asservdriver_->path_InterruptTrajectory();
 		else if (useAsservType_ == ASSERV_INT_ESIALR) pAsservEsialR_->path_InterruptTrajectory();
-
+	}
 
 }
 
@@ -389,8 +389,8 @@ void Asserv::resetEmergencyOnTraj(std::string message)
 		logger().error() << "Asserv::resetEmergencyOnTraj() emergencyStop_ IS NOT TRUE!" << logs::end;
 		//return;
 	}
-logger().error() << "=====   resetEmergencyOnTraj message = " << message << logs::end;
-emergencyStop_ = false;
+	logger().error() << "=====   resetEmergencyOnTraj message = " << message << logs::end;
+	emergencyStop_ = false;
 	if (useAsservType_ == ASSERV_EXT)
 		asservdriver_->path_ResetEmergencyStop();
 	else if (useAsservType_ == ASSERV_INT_ESIALR) pAsservEsialR_->path_ResetEmergencyStop();
@@ -424,14 +424,16 @@ void Asserv::setMaxSpeedDistValue(int value)
 //TODO enlever le nom collision, remplacer par opponent !!!
 void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, float y_adv_detect_mm)
 {
-//logger().error() << "warnFrontCollisionOnTraj frontlevel = " << frontlevel << logs::end;
+	logger().error() << "warnFrontCollisionOnTraj frontlevel = " << frontlevel << logs::end;
 //    logger().error() << "temp_forceRotation_ = " << temp_forceRotation_ << " temp_ignoreFrontCollision_="
 //            << temp_ignoreFrontCollision_ << logs::end;
+
 	if (temp_forceRotation_)
 	{
 		//logger().error() << "forceRotation_ = " << temp_forceRotation_ << logs::end;
 		return;
 	}
+
 	if (temp_ignoreFrontCollision_) return;
 
 //3 ou 4
@@ -439,10 +441,11 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
 
 	//On ne fait un HALT que si l'asserv n'est pas a IDLE
 	ROBOTPOSITION p = pos_getPosition();
-	if (p.asservStatus == 1)//&& p.queueSize > 0)
+
+	logger().error() << "HAAAAAAAAAAAALT p.asservStatus = " << p.asservStatus << logs::end;
+	if (true) //p.asservStatus == 1 && p.queueSize > 0)
 	{
 		logger().error() << "===== Asserv::warnFrontCollisionOnTraj !!!!! " << logs::end;
-
 
 		setEmergencyStop();
 //		if (useAsservType_ == ASSERV_EXT)
@@ -514,7 +517,7 @@ void Asserv::warnBackCollisionOnTraj(int backlevel, float x_adv_detect_mm, float
 
 TRAJ_STATE Asserv::gotoChain(float xMM, float yMM)
 {
-	float x_match = getRelativeX(xMM);
+	float x_match = changeMatchX(xMM);
 	temp_ignoreRearCollision_ = true;
 	TRAJ_STATE ts;
 	if (useAsservType_ == ASSERV_EXT)
@@ -529,7 +532,7 @@ TRAJ_STATE Asserv::gotoChain(float xMM, float yMM)
 
 TRAJ_STATE Asserv::gotoXY(float xMM, float yMM)
 {
-	float x_match = getRelativeX(xMM);
+	float x_match = changeMatchX(xMM);
 //temp_ignoreRearCollision_ = true;
 
 	TRAJ_STATE ts;
@@ -547,7 +550,7 @@ TRAJ_STATE Asserv::gotoXY(float xMM, float yMM)
 
 TRAJ_STATE Asserv::gotoReverse(float xMM, float yMM)
 {
-	float x_match = getRelativeX(xMM);
+	float x_match = changeMatchX(xMM);
 	temp_ignoreFrontCollision_ = true;
 	TRAJ_STATE ts;
 	if (useAsservType_ == ASSERV_EXT)
@@ -563,7 +566,7 @@ TRAJ_STATE Asserv::gotoReverse(float xMM, float yMM)
 
 TRAJ_STATE Asserv::gotoReverseChain(float xMM, float yMM)
 {
-	float x_match = getRelativeX(xMM);
+	float x_match = changeMatchX(xMM);
 	temp_ignoreFrontCollision_ = true;
 	TRAJ_STATE ts;
 	if (useAsservType_ == ASSERV_EXT)
@@ -577,7 +580,7 @@ TRAJ_STATE Asserv::gotoReverseChain(float xMM, float yMM)
 	return ts;
 }
 
-TRAJ_STATE Asserv::doLineAbs(float dist_mm) // if distance <0, move backward
+TRAJ_STATE Asserv::doLine(float dist_mm) // if distance <0, move backward
 {
 
 	if (dist_mm > 0)
@@ -608,35 +611,43 @@ TRAJ_STATE Asserv::doLineAbs(float dist_mm) // if distance <0, move backward
 	return ts;
 }
 
-TRAJ_STATE Asserv::doRotateAbs(float degreesRelative, bool rotate_ignoring_opponent)
+TRAJ_STATE Asserv::doRelativeRotateDeg(float degreesRelative, bool rotate_ignoring_opponent)
 {
-	temp_forceRotation_ = rotate_ignoring_opponent;
 
 	TRAJ_STATE ts;
-	float radians = (degreesRelative * M_PI) / 180.0f;
+	//float radians = (degreesRelative * M_PI) / 180.0f;
+	float rad = degToRad(degreesRelative);
+	doRelativeRotateRad(rad, rotate_ignoring_opponent);
 
+	return ts;
+}
+
+TRAJ_STATE Asserv::doRelativeRotateRad(float radiansRelative, bool rotate_ignoring_opponent)
+{
+	TRAJ_STATE ts;
+	temp_forceRotation_ = rotate_ignoring_opponent;
 	if (useAsservType_ == ASSERV_EXT)
-		ts = asservdriver_->motion_DoRotate(radians);
+		ts = asservdriver_->motion_DoRotate(radiansRelative);
 	else if (useAsservType_ == ASSERV_INT_ESIALR)
-		ts = pAsservEsialR_->motion_DoRotate(radians);
+		ts = pAsservEsialR_->motion_DoRotate(radiansRelative);
 	else
 		ts = TRAJ_ERROR;
 
 	temp_forceRotation_ = false;
 
 	return ts;
+
 }
 
 //prend automatiquement un angle dans un sens ou dans l'autre suivant la couleur de match
-TRAJ_STATE Asserv::doRelativeRotateBy(float thetaInDegreeRelative) //TODO rotate_ignore_opponent
+TRAJ_STATE Asserv::doRelativeRotateByMatchColor(float thetaInDegreeRelative, bool rotate_ignoring_opponent)
 {
 	if (matchColorPosition_ != 0)
 	{
-		return doRotateAbs(-thetaInDegreeRelative); //bleu
+		return doRelativeRotateDeg(-thetaInDegreeRelative, rotate_ignoring_opponent); //couleur de match secondaire
 	} else
-		return doRotateAbs(thetaInDegreeRelative); //jaune
+		return doRelativeRotateDeg(thetaInDegreeRelative, rotate_ignoring_opponent); //couleur de match primaire
 }
-
 //TODO dans l'asserv
 //TRAJ_STATE Asserv::doFaceReverseTo(float xMM, float yMM)
 //{
@@ -667,7 +678,7 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
 //    logger().error() << "1.============ doFaceTo temp_forceRotation_ = true;"  << logs::end;
 	temp_forceRotation_ = true; //attention on ne prend pas en compte l'adversaire
 
-	float x_match = getRelativeX(xMM);
+	float x_match = changeMatchX(xMM);
 //logger().error() << "doFaceTo xMM=" << xMM << " yMM=" << yMM << logs::end;
 
 	TRAJ_STATE ts;
@@ -684,7 +695,7 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
 	return ts;
 }
 
-//relative motion (depends on current position of the robot, thinking in the first color of match)
+//absolute motion (depends on current position of the robot, thinking in the first color of match) [-179;0;+180] of the field
 TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_ignoring_opponent)
 {
 //logger().debug() << "====2 doRotateTo thetaInDegree=" << thetaInDegree << "degrees " << logs::end;
@@ -693,36 +704,30 @@ TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_i
 //float degrees = getRelativeAngle(thetaInDegreeAbsolute) - currentThetaInDegree;
 //float degrees = radToDeg(getRelativeAngleRad(degToRad(thetaInDegreeAbsolute))) - currentThetaInDegree;
 
-	float rad = getRelativeAngleRad(degToRad(thetaInDegreeAbsolute)) - pos_getTheta();
+	float rad = changeMatchAngleRad(degToRad(thetaInDegreeAbsolute)) - pos_getTheta();
 
 //// force it to be the positive remainder, so that 0 <= angle < 360
-//
 //    degrees = (((int) (degrees * 1000.0f) + 360000) % 360000) / 1000.0f;
-//
 ////reduction sur une plage de [0 à 360]
 //    if (degrees >= 360.0) {
 //        degrees = ((int) (degrees * 1000.0f) % 360000) / 1000.0f;
-//
 //    }
 //    if (degrees < -360.0) {
 //        int d = (int) -(degrees * 1000.0f);
 //        d = d % 360000;
 //        degrees = -d / 1000.0f;
 //    }
-
 // force into the minimum absolute value residue class, so that -180 < angle <= 180
 //    if (degrees >= 180)
 //        degrees -= 360;
-//float rad = degToRad(degrees);
 
 	rad = std::fmod(rad, 2.0 * M_PI);
 	if (rad < -M_PI) rad += (2.0 * M_PI);
 	if (rad > M_PI) rad -= (2.0 * M_PI);
 
-	float degrees = radToDeg(rad);
-	logger().debug() << "==== doRotateTo degrees=" << degrees << " thetaInDegreeAbsolute=" << thetaInDegreeAbsolute
-			<< logs::end;
-	TRAJ_STATE ts = doRotateAbs(degrees, rotate_ignoring_opponent);
+	logger().debug() << "==== doRotateTo degrees=" << radToDeg(rad) << " thetaInDegreeAbsolute="
+			<< thetaInDegreeAbsolute << logs::end;
+	TRAJ_STATE ts = doRelativeRotateRad(rad, rotate_ignoring_opponent);
 
 	return ts;
 }
@@ -731,7 +736,7 @@ TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_i
 TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignoring_opponent, float adjustment_mm)
 {
 
-	float dx = getRelativeX(xMM) - pos_getX_mm();
+	float dx = changeMatchX(xMM) - pos_getX_mm();
 	float dy = yMM - pos_getY_mm();
 	if (std::abs(dx) < 5.0 && std::abs(dy) < 5.0)
 	{
@@ -747,15 +752,16 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignoring_op
 
 	logger().debug() << "doMoveForwardTo doRotateTo degrees=" << (aRadian * 180.0f) / M_PI << " dx=" << dx << " dy="
 			<< dy << "  (aRadian * 180.0f) / M_PI)= " << (aRadian * 180.0f) / M_PI << " get="
-			<< radToDeg(getRelativeAngleRad(aRadian)) << " xMM=" << xMM << " yMM=" << yMM << " getX=" << pos_getX_mm()
+			<< radToDeg(changeMatchAngleRad(aRadian)) << " xMM=" << xMM << " yMM=" << yMM << " getX=" << pos_getX_mm()
 			<< " getY=" << pos_getY_mm() << logs::end;
 
 	TRAJ_STATE ts = TRAJ_OK;
 //	int count_rotation_ignored = 0;
 
 	temp_forceRotation_ = rotate_ignoring_opponent;
+	temp_forceRotation_ = false;
 
-	ts = doAbsoluteRotateTo(radToDeg(getRelativeAngleRad(aRadian)), rotate_ignoring_opponent);
+	ts = doAbsoluteRotateTo(radToDeg(changeMatchAngleRad(aRadian)), rotate_ignoring_opponent);
 	if (ts != TRAJ_FINISHED)
 	{
 		if (!rotate_ignoring_opponent)
@@ -771,7 +777,7 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignoring_op
 				//return ts;
 				//count_rotation_ignored++;
 				//if (count_rotation_ignored > 10) break;
-			}else
+			} else
 			{
 				resetEmergencyOnTraj("doMoveForwardTo rotate_ignoring_opponent TRAJ_OTHERS!!!! ");
 
@@ -785,12 +791,12 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignoring_op
 	float dist = sqrt(dx * dx + dy * dy);
 	logger().debug() << " __doMoveForwardTo dist sqrt(dx * dx + dy * dy)=" << dist << logs::end;
 
-	return doLineAbs(dist + adjustment_mm);
+	return doLine(dist + adjustment_mm);
 
 }
 TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM, bool rotate_ignoring_opponent)
 {
-	xMM = getRelativeX(xMM);
+	xMM = changeMatchX(xMM);
 
 	float dx = xMM - pos_getX_mm();
 	float dy = yMM - pos_getY_mm();
@@ -806,7 +812,7 @@ TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM, bool rotate_ignoring_o
 
 	temp_forceRotation_ = rotate_ignoring_opponent;
 
-	TRAJ_STATE ts = doAbsoluteRotateTo(radToDeg(getRelativeAngleRad(aRadian)));
+	TRAJ_STATE ts = doAbsoluteRotateTo(radToDeg(changeMatchAngleRad(aRadian)));
 	if (ts != TRAJ_FINISHED)
 	{
 		if (!rotate_ignoring_opponent)
@@ -821,8 +827,10 @@ TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM, bool rotate_ignoring_o
 	temp_forceRotation_ = false;
 
 	float dist = sqrt(dx * dx + dy * dy);
-	return doLineAbs(-dist);
+	return doLine(-dist);
 }
+
+
 //deprecated ?
 TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree, bool rotate_ignore_opponent)
 {
@@ -919,19 +927,18 @@ int Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, ROBOT
 		float delta_ky_mm, float mesure_mm, float robot_size_l_mm)
 {
 
-	float pos_x_start_mm_conv = getRelativeX(pos_x_start_mm);
+	float pos_x_start_mm_conv = changeMatchX(pos_x_start_mm);
 	logger().debug() << "adjustRealPosition : pos_x_start_mm=" << pos_x_start_mm_conv << " pos_y_start_mm="
 			<< pos_y_start_mm << " p.x=" << p.x << " p.y=" << p.y << " p.theta=" << p.theta << " degrees="
 			<< p.theta * 180 / M_PI << " delta_jx_mm=" << delta_jx_mm << " delta_ky_mm=" << delta_ky_mm << " mesure_mm="
-			<< mesure_mm
-			<< logs::end;
+			<< mesure_mm << logs::end;
 
 	float dist_real_mm = std::sqrt(
 			(((p.x) - pos_x_start_mm_conv) * ((p.x) - pos_x_start_mm_conv))
 					+ (((p.y) - pos_y_start_mm) * ((p.y) - pos_y_start_mm)));
 
 	float dist_x_when_mesuring_mm = std::abs(p.x - pos_x_start_mm_conv);
-	float position_rel_theta_when_mesuring_rad = getRelativeAngleRad(p.theta); //on cherche juste l'angle relatif qu'on soit en couleur A ou B
+	float position_rel_theta_when_mesuring_rad = changeMatchAngleRad(p.theta); //on cherche juste l'angle relatif qu'on soit en couleur A ou B
 
 //calcul de l'angle entre les 2 rayons de cercle = angle_rad
 	float alphap_rad = acos((dist_x_when_mesuring_mm / dist_real_mm));
@@ -951,7 +958,7 @@ int Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, ROBOT
 
 //on determine le croisement des 2 cercles en fct des coord et des rayons
 	auto r = eq_2CirclesCrossed_getXY(pos_x_start_mm_conv, pos_y_start_mm, dist_real_mm,
-			getRelativeX(pos_x_start_mm, dist_xDCp_mm), 0.0, BCprim_mm, robot_size_l_mm);
+			changeMatchX(pos_x_start_mm, dist_xDCp_mm), 0.0, BCprim_mm, robot_size_l_mm);
 
 	float err = std::get<0>(r);
 
@@ -974,7 +981,7 @@ int Asserv::adjustRealPosition(float pos_x_start_mm, float pos_y_start_mm, ROBOT
 //float new_teta = getRelativeAngle((position_rel_theta_when_mesuring_rad + (alphap_rad - new_alphap)) * 180.0 / M_PI) * M_PI / 180.0;
 
 //TODO essaie de correction de l'angle
-	float new_teta = getRelativeAngleRad((position_rel_theta_when_mesuring_rad - (alphap_rad - new_alphap)));
+	float new_teta = changeMatchAngleRad((position_rel_theta_when_mesuring_rad - (alphap_rad - new_alphap)));
 
 	logger().debug() << "new pos : x=" << new_x_mm << " y=" << new_y_mm << " a=" << new_teta << " degrees="
 			<< new_teta * 180 / M_PI << logs::end;
@@ -1046,10 +1053,10 @@ bool Asserv::calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b
 		float y_depart_mm)
 {
 	logger().error() << "calculate : " << " d2_theo_bordure_mm= " << d2_theo_bordure_mm << " d2b_bordure_mm= "
-			<< d2b_bordure_mm << " x_depart_mm= " << getRelativeX(x_depart_mm) << " y_depart_mm= " << y_depart_mm
+			<< d2b_bordure_mm << " x_depart_mm= " << changeMatchX(x_depart_mm) << " y_depart_mm= " << y_depart_mm
 			<< logs::end;
 
-	x_depart_mm = getRelativeX(x_depart_mm);
+	x_depart_mm = changeMatchX(x_depart_mm);
 
 	if (abs(d2b_bordure_mm - d2_theo_bordure_mm) >= 5)
 	{
@@ -1098,7 +1105,7 @@ bool Asserv::calculateDriftLeftSideAndSetPos(float d2_theo_bordure_mm, float d2b
 				<< " a_deg= " << new_teta * 180.0 / M_PI << logs::end;
 		//regle de 3 pour modifier le x (decalage sur aire de depart qui influe sur le x)
 
-		setPositionAndColor(getRelativeX(new_x), new_y, radToDeg(getRelativeAngleRad(new_teta)), matchColorPosition_);
+		setPositionAndColor(changeMatchX(new_x), new_y, radToDeg(changeMatchAngleRad(new_teta)), matchColorPosition_);
 
 		return true;
 	} else

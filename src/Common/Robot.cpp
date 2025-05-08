@@ -80,7 +80,7 @@ void Robot::configureDefaultConsoleArgs() {
 
     cArgs_.addOption('k', "skip setup");
 
-    cArgs_.addOption('y', "color YELLOW"); //(without PMXBLUE!!)
+    cArgs_.addOption('b', "color BLUE"); //(without PMXYELLOW!!)
 
     cArgs_.addArgument("type", "Type of match (t)est/(m)atch/(p)ause", "m");
     {
@@ -89,16 +89,9 @@ void Robot::configureDefaultConsoleArgs() {
         cArgs_.addOption(cOpt);
     }
 
-    //deprecated, replaced by /v
-//    {
-//        Arguments::Option cOpt('c', "");
-//        cOpt.addArgument("color", "color of robot [y]ellow/[v]iolet", "y");
-//        cArgs_.addOption(cOpt);
-//    }
-
     {
-        Arguments::Option cOpt('s', "");
-        cOpt.addArgument("strategy", "name of the strategy", "all");
+        Arguments::Option cOpt('t', "");
+        cOpt.addArgument("strategy", "name of the strategy of match", "all");
         cArgs_.addOption(cOpt);
     }
 }

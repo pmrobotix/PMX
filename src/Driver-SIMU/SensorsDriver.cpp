@@ -139,7 +139,7 @@ int SensorsDriver::sync()
 
     int nb = 1;
         RobotPos pos1 = transformPosTableToPosRobot(nb, 200.0, 1000.0);
-    //    RobotPos pos2 = transformPosTableToPosRobot(nb, 600.0, 1000.0);
+        //RobotPos pos2 = transformPosTableToPosRobot(nb, 700.0, 500.0);
     //    RobotPos pos3 = transformPosTableToPosRobot(nb, 1300.0, 300.0);
     //    RobotPos pos4 = transformPosTableToPosRobot(nb, 300.0, 400.0);
 
@@ -157,7 +157,7 @@ int SensorsDriver::sync()
 //        vadv_.push_back(pos4);
         //simu des positions adverses
         //bot_pos = { };
-        vadv_ = { pos1 };
+        //vadv_ = { pos1 };
         //bot_pos = { pos1, pos2 };
         //bot_pos = { pos1, pos2, pos3, pos4 };
 
