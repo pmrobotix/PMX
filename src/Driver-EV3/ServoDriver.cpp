@@ -425,6 +425,10 @@ int ServoDriver::getTorque(int servo) {
     logger().error() << "getTorque() NOT IMPLEMENTED" << logs::end;
     return -1;
 }
+void ServoDriver::setTorque(int servo, int torque)
+{
+	//TODO
+}
 
 int ServoDriver::ping(int servo) {
     logger().debug() << "ping() NOT IMPLEMENTED" << logs::end;

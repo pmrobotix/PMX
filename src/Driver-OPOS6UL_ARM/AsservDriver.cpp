@@ -715,7 +715,7 @@ TRAJ_STATE AsservDriver::nucleo_waitEndOfTraj()
 	}
 }*/
 
-TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
+TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm, bool back_reversed)
 {
 	if (!asservCardStarted_)
 	{
@@ -731,7 +731,12 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
 		statusCountDown_ = 2;
 		m_statusCountDown.unlock();
 
-		nucleo_writeSerialSTR("f" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
+		if (back_reversed == false)
+			nucleo_writeSerialSTR("f" + to_string((int) (x_mm)) + "#" + to_string((int) (y_mm)) + "\n");
+		else
+		{
+			//TODO reverse in asserv
+		}
 		return nucleo_waitEndOfTraj();
 	}
 }

@@ -270,7 +270,7 @@ void CommandManagerA::computeGoToAngle()
     float deltaX = currCMD.value - odometrie->getX(); // Différence entre la cible et le robot selon X
     float deltaY = currCMD.secValue - odometrie->getY(); // Différence entre la cible et le robot selon Y
 
-            // Angle à parcourir
+    // Angle à parcourir
     float deltaTheta = computeDeltaTheta(deltaX, deltaY);
 
     //TODO a tester en conditions réelles et extrêmes de mauvaises utilisations
@@ -281,7 +281,7 @@ void CommandManagerA::computeGoToAngle()
 }
 
 /*
- * On a une commande GoToAngleReverse(x,y), on veut que le cap du robot pointe vers ce point
+ * On a une commande GoToAngleReverse(x,y), on veut que le cap du robot pointe vers ce point le cul en arrière
  */
 void CommandManagerA::computeGoToAngleReverse()
 {
@@ -289,8 +289,8 @@ void CommandManagerA::computeGoToAngleReverse()
     float deltaX = currCMD.value - odometrie->getX(); // Différence entre la cible et le robot selon X
     float deltaY = currCMD.secValue - odometrie->getY(); // Différence entre la cible et le robot selon Y
 
-            // Angle à parcourir
-    float deltaTheta = computeDeltaTheta(deltaX, deltaY);
+    // Angle à parcourir
+    float deltaTheta = computeDeltaThetaReverse(deltaX, deltaY);
 
     //TODO a tester en conditions réelles et extrêmes de mauvaises utilisations
     // La consigne à atteindre en angle est la somme du deltaTheta en UO et de l'accumulateur du régu
@@ -329,8 +329,8 @@ float CommandManagerA::computeDeltaThetaReverse(float deltaX, float deltaY)
     // Cap que doit atteindre le robot
     float thetaCible = atan2(deltaY, deltaX);
 
-    // La différence entre le thetaCible (= cap à atteindre) et le theta (= cap actuel du robot) donne l'angle à parcourir
-    float deltaTheta = -(thetaCible - odometrie->getTheta());
+    // La différence entre le thetaCible (= cap à atteindre) et le theta (= cap actuel du robot) donne l'angle à parcourir + 180 degrees
+    float deltaTheta = (thetaCible - odometrie->getTheta()) + PI;
 
     // On ajuste l'angle à parcourir pour ne pas faire plus d'un demi-tour
     // Exemple, tourner de 340 degrés est plus chiant que de tourner de -20 degrés

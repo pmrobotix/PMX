@@ -636,7 +636,6 @@ TRAJ_STATE Asserv::doRelativeRotateRad(float radiansRelative, bool rotate_ignori
 	temp_forceRotation_ = false;
 
 	return ts;
-
 }
 
 //prend automatiquement un angle dans un sens ou dans l'autre suivant la couleur de match
@@ -648,33 +647,9 @@ TRAJ_STATE Asserv::doRelativeRotateByMatchColor(float thetaInDegreeRelative, boo
 	} else
 		return doRelativeRotateDeg(thetaInDegreeRelative, rotate_ignoring_opponent); //couleur de match primaire
 }
-//TODO dans l'asserv
-//TRAJ_STATE Asserv::doFaceReverseTo(float xMM, float yMM)
-//{
-//
-////    logger().error() << "1.============ doFaceTo temp_forceRotation_ = true;"  << logs::end;
-//	temp_forceRotation_ = true; //attention on ne prend pas en compte l'adversaire
-//
-//	float x_match = getRelativeX(xMM);
-////logger().error() << "doFaceTo xMM=" << xMM << " yMM=" << yMM << logs::end;
-//
-//	TRAJ_STATE ts;
-//
-//	if (useAsservType_ == ASSERV_EXT)
-//		ts = asservdriver_->motion_DoFace(x_match, yMM);
-//	else if (useAsservType_ == ASSERV_INT_ESIALR)
-//		ts = pAsservEsialR_->motion_DoFace(x_match, yMM);
-//	else
-//		ts = TRAJ_ERROR;
-//
-//	temp_forceRotation_ = false;
-////    logger().error() << "2.============ doFaceTo temp_forceRotation_ = true;"  << logs::end;
-//	return ts;
-//}
 
-TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
+TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM, bool back_face)
 {
-
 //    logger().error() << "1.============ doFaceTo temp_forceRotation_ = true;"  << logs::end;
 	temp_forceRotation_ = true; //attention on ne prend pas en compte l'adversaire
 
@@ -684,9 +659,9 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
 	TRAJ_STATE ts;
 
 	if (useAsservType_ == ASSERV_EXT)
-		ts = asservdriver_->motion_DoFace(x_match, yMM);
+		ts = asservdriver_->motion_DoFace(x_match, yMM, back_face);
 	else if (useAsservType_ == ASSERV_INT_ESIALR)
-		ts = pAsservEsialR_->motion_DoFace(x_match, yMM);
+		ts = pAsservEsialR_->motion_DoFace(x_match, yMM, back_face);
 	else
 		ts = TRAJ_ERROR;
 
@@ -698,14 +673,10 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM)
 //absolute motion (depends on current position of the robot, thinking in the first color of match) [-179;0;+180] of the field
 TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_ignoring_opponent)
 {
-//logger().debug() << "====2 doRotateTo thetaInDegree=" << thetaInDegree << "degrees " << logs::end;
-
-//float currentThetaInDegree = pos_getThetaInDegree();
-//float degrees = getRelativeAngle(thetaInDegreeAbsolute) - currentThetaInDegree;
-//float degrees = radToDeg(getRelativeAngleRad(degToRad(thetaInDegreeAbsolute))) - currentThetaInDegree;
 
 	float rad = changeMatchAngleRad(degToRad(thetaInDegreeAbsolute)) - pos_getTheta();
 
+	rad = WrapAngle2PI(rad);
 //// force it to be the positive remainder, so that 0 <= angle < 360
 //    degrees = (((int) (degrees * 1000.0f) + 360000) % 360000) / 1000.0f;
 ////reduction sur une plage de [0 à 360]
@@ -721,9 +692,9 @@ TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_i
 //    if (degrees >= 180)
 //        degrees -= 360;
 
-	rad = std::fmod(rad, 2.0 * M_PI);
-	if (rad < -M_PI) rad += (2.0 * M_PI);
-	if (rad > M_PI) rad -= (2.0 * M_PI);
+//	rad = std::fmod(rad, 2.0 * M_PI);
+//	if (rad < -M_PI) rad += (2.0 * M_PI);
+//	if (rad > M_PI) rad -= (2.0 * M_PI);
 
 	logger().debug() << "==== doRotateTo degrees=" << radToDeg(rad) << " thetaInDegreeAbsolute="
 			<< thetaInDegreeAbsolute << logs::end;
@@ -746,9 +717,10 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignoring_op
 	}
 	float aRadian = atan2(dy, dx);
 
-	aRadian = std::fmod(aRadian, 2.0 * M_PI);
-	if (aRadian < -M_PI) aRadian += (2.0 * M_PI);
-	if (aRadian > M_PI) aRadian -= (2.0 * M_PI);
+	aRadian = WrapAngle2PI(aRadian);
+//	aRadian = std::fmod(aRadian, 2.0 * M_PI);
+//	if (aRadian < -M_PI) aRadian += (2.0 * M_PI);
+//	if (aRadian > M_PI) aRadian -= (2.0 * M_PI);
 
 	logger().debug() << "doMoveForwardTo doRotateTo degrees=" << (aRadian * 180.0f) / M_PI << " dx=" << dx << " dy="
 			<< dy << "  (aRadian * 180.0f) / M_PI)= " << (aRadian * 180.0f) / M_PI << " get="
@@ -806,9 +778,10 @@ TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM, bool rotate_ignoring_o
 	}
 	float aRadian = M_PI + atan2(dy, dx);
 
-	aRadian = std::fmod(aRadian, 2.0 * M_PI);
-	if (aRadian < -M_PI) aRadian += (2.0 * M_PI);
-	if (aRadian > M_PI) aRadian -= (2.0 * M_PI);
+	aRadian = WrapAngle2PI(aRadian);
+//	aRadian = std::fmod(aRadian, 2.0 * M_PI);
+//	if (aRadian < -M_PI) aRadian += (2.0 * M_PI);
+//	if (aRadian > M_PI) aRadian -= (2.0 * M_PI);
 
 	temp_forceRotation_ = rotate_ignoring_opponent;
 

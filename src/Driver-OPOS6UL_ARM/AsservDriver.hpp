@@ -136,7 +136,7 @@ public:
 //    void path_CancelTrajectory();
     void path_ResetEmergencyStop();
     TRAJ_STATE motion_DoLine(float dist_mm);
-    TRAJ_STATE motion_DoFace(float x_mm, float y_mm);
+    TRAJ_STATE motion_DoFace(float x_mm, float y_mm, bool back_reversed);
     //TRAJ_STATE motion_DoFaceReverse(float x_mm, float y_mm);
     TRAJ_STATE motion_DoRotate(float angle_radians); //relative rotation
     TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);

@@ -24,7 +24,7 @@ void O_AsservLineRotateTest::configureConsoleArgs(int argc, char **argv) //surch
 {
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
-	robot.getArgs().addArgument("d", "distance mm");
+	robot.getArgs().addArgument("d", "distance mm", "0");
 	robot.getArgs().addArgument("a", "angle degres", "0");
 	robot.getArgs().addArgument("back", "backwards[0,1]", "0");
 
@@ -42,8 +42,13 @@ void O_AsservLineRotateTest::configureConsoleArgs(int argc, char **argv) //surch
 
 	//mode de drive
 	Arguments::Option cOptMode('m', "mode used for test");
-	cOptMode.addArgument("mode", "mode number", "0");
+	cOptMode.addArgument("mode", "mode number", "1");
 	robot.getArgs().addOption(cOptMode);
+
+	//mode de pathfinding
+	Arguments::Option cOptPMode('p', "mode pathfinding");
+	cOptPMode.addArgument("pmode", "mode number", "0");
+	robot.getArgs().addOption(cOptPMode);
 
 	//speed
 	Arguments::Option cOptSpeed('s', "speed en %");
@@ -70,6 +75,10 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 	logger().info() << "N° " << this->position() << " - Executing - " << this->desc() << logs::end;
 	configureConsoleArgs(argc, argv);
 
+	float dd = 0.0;
+	float aa = 0.0;
+	bool bback = false;
+
 	float d = 0.0;
 	float a = 0.0;
 	bool back = false;
@@ -92,6 +101,8 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 	float coordx = 0.0;
 	float coordy = 0.0;
 	float coorda_deg = 0.0;
+
+	int pathfindingMode = 0;
 
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
@@ -215,98 +226,72 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 		robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 	}
 
-	if (m == 0)
-	{
-		if (back == 0)
-		{
-			if (d != 0)
-			{
-				ts = robot.asserv().doLine(d);
-				robot.svgPrintPosition();
-			}
-		} else //En arrière (la demande d'angle relatif ne change pas)
-		{
-			if (d != 0)
-			{
-				ts = robot.asserv().doLine(-d);
-				robot.svgPrintPosition();
-			}
-		}
-		if (a != 0)
-		{
-			ts = robot.asserv().doRelativeRotateDeg(a);
-			robot.svgPrintPosition();
-		}
-
-		if (back2 == 0)
-		{
-			if (d2 != 0)
-			{
-				ts = robot.asserv().doLine(d2);
-				robot.svgPrintPosition();
-			}
-
-		} else //En arrière (la demande d'angle relatif ne change pas)
-		{
-			if (d2 != 0)
-			{
-				ts = robot.asserv().doLine(-d2);
-				robot.svgPrintPosition();
-			}
-		}
-		if (a2 != 0)
-		{
-			ts = robot.asserv().doRelativeRotateDeg(a2);
-			robot.svgPrintPosition();
-		}
-
-		if (back3 == 0)
-		{
-			if (d3 != 0)
-			{
-				ts = robot.asserv().doLine(d3);
-				robot.svgPrintPosition();
-			}
-
-		} else //En arrière (la demande d'angle relatif ne change pas)
-		{
-			if (d3 != 0)
-			{
-				ts = robot.asserv().doLine(-d3);
-				robot.svgPrintPosition();
-			}
-		}
-		if (a3 != 0)
-		{
-			ts = robot.asserv().doRelativeRotateDeg(a3);
-			robot.svgPrintPosition();
-		}
-
-		if (back4 == 0)
-		{
-			if (d4 != 0)
-			{
-				ts = robot.asserv().doLine(d4);
-				robot.svgPrintPosition();
-			}
-
-		} else //En arrière (la demande d'angle relatif ne change pas)
-		{
-			if (d4 != 0)
-			{
-				ts = robot.asserv().doLine(-d4);
-				robot.svgPrintPosition();
-			}
-		}
-		if (a4 != 0)
-		{
-			ts = robot.asserv().doRelativeRotateDeg(a4);
-			robot.svgPrintPosition();
-		}
-
-	} else if (m == 1)
+	for (int nb = 1; nb <= 4; nb++)
 	{
 
+		if (nb == 1)
+		{
+			bback = back;
+			aa = a;
+			dd = d;
+		}
+		if (nb == 2)
+		{
+			bback = back2;
+			aa = a2;
+			dd = d2;
+		}
+		if (nb == 3)
+		{
+			bback = back3;
+			aa = a3;
+			dd = d3;
+		}
+		if (nb == 4)
+		{
+			bback = back4;
+			aa = a4;
+			dd = d4;
+		}
+
+		if (dd != 0)
+		{
+			if (bback == 0)
+			{
+				if (pathfindingMode == 0)
+				{
+					ts = robot.asserv().doLine(dd);
+				} else if (pathfindingMode == 1)
+				{
+					//While()...
+				} else if (pathfindingMode == 2)
+				{
+					//while avec pathfinding
+				}
+			} else //En arrière (la demande d'angle relatif ne change pas)
+			{
+				ts = robot.asserv().doLine(-dd);
+			}
+			robot.svgPrintPosition();
+		}
+		if (m == 0) //mouvement en relatif
+		{
+			if (aa != 0)
+			{
+				ts = robot.asserv().doRelativeRotateDeg(aa);
+				robot.svgPrintPosition();
+			}
+		} else if (m == 1) //mode angle absolu
+		{
+			ts = robot.asserv().doAbsoluteRotateTo(aa);
+			robot.svgPrintPosition();
+		}
+
+		/*else if (m == 2) //mode angle faceto //TODO FaceTO??? x,y ca ajoute des parametres...
+		 {
+		 ts = robot.asserv().doFaceTo(afx, afy);
+		 robot.svgPrintPosition();
+		 }*/
 	}
 
 	/*

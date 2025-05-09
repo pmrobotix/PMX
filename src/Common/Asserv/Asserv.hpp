@@ -185,7 +185,7 @@ public:
     TRAJ_STATE doRelativeRotateByMatchColor(float thetaInDegreeRelative, bool rotate_ignoring_opponent = true); //prend automatiquement un angle dans un sens ou dans l'autre suivant la couleur de match
     TRAJ_STATE doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_ignore_opponent = true);
 
-    TRAJ_STATE doFaceTo(float xMM, float yMM);
+    TRAJ_STATE doFaceTo(float xMM, float yMM, bool back_face = false);
 
     TRAJ_STATE doCalage(int d, int percent);
     TRAJ_STATE doCalage2(int d, int percent);
@@ -256,11 +256,12 @@ public:
         if (matchColorPosition_ != 0) {
             float limit = (M_PI - rad);
 
-            limit = std::fmod(limit, 2.0 * M_PI);
-            if (limit < -M_PI)
-                limit += (2.0 * M_PI);
-            if (limit > M_PI)
-                limit -= (2.0 * M_PI);
+            limit = WrapAngle2PI(limit);
+//            limit = std::fmod(limit, 2.0 * M_PI);
+//            if (limit < -M_PI)
+//                limit += (2.0 * M_PI);
+//            if (limit > M_PI)
+//                limit -= (2.0 * M_PI);
 
             return limit;
         }
@@ -276,6 +277,29 @@ public:
     inline float radToDeg(float rad)
     {
         return rad * 180.0 / M_PI;
+    }
+
+    inline float WrapAngle2PI(float rad)
+    {
+    //// force it to be the positive remainder, so that 0 <= angle < 360
+    //    degrees = (((int) (degrees * 1000.0f) + 360000) % 360000) / 1000.0f;
+    ////reduction sur une plage de [0 à 360]
+    //    if (degrees >= 360.0) {
+    //        degrees = ((int) (degrees * 1000.0f) % 360000) / 1000.0f;
+    //    }
+    //    if (degrees < -360.0) {
+    //        int d = (int) -(degrees * 1000.0f);
+    //        d = d % 360000;
+    //        degrees = -d / 1000.0f;
+    //    }
+    // force into the minimum absolute value residue class, so that -180 < angle <= 180
+    //    if (degrees >= 180)
+    //        degrees -= 360;
+
+    	rad = std::fmod(rad, 2.0 * M_PI);
+    	if (rad < -M_PI) rad += (2.0 * M_PI);
+    	if (rad > M_PI) rad -= (2.0 * M_PI);
+    	return rad;
     }
 };
 

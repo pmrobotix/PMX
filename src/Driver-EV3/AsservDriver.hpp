@@ -80,6 +80,8 @@ public:
     void stopMotorLeft();
     void stopMotorRight();
 
+    void stopMotors();
+
     int getMotorLeftCurrent();
     int getMotorRightCurrent();
 
@@ -97,7 +99,7 @@ public:
     void path_CancelTrajectory();
     void path_ResetEmergencyStop();
 
-    TRAJ_STATE motion_DoFace(float x_mm, float y_mm);
+    TRAJ_STATE motion_DoFace(float x_mm, float y_mm, bool back_reversed);
     TRAJ_STATE motion_DoLine(float dist_mm);
     TRAJ_STATE motion_DoRotate(float angle_radians);
     TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius);
@@ -112,9 +114,10 @@ public:
     void motion_ActivateManager(bool enable);
     void motion_setLowSpeedForward(bool enable, int percent);
     void motion_setLowSpeedBackward(bool enable, int percent);
-
+    void motion_setMaxSpeed(bool enable, int speed_dist_m_sec=0, int speed_angle_rad_sec=0);
     void motion_ActivateReguDist(bool enable);
     void motion_ActivateReguAngle(bool enable);
+
     /*
     void motion_ResetReguDist();
     void motion_ResetReguAngle();

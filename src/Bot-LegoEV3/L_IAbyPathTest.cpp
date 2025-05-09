@@ -140,7 +140,7 @@ void L_IAByPathTest::run(int argc, char** argv)
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
     robot.asserv().startMotionTimerAndOdo(true);
-    robot.asserv().setPositionAndColor(800, 150, 0.0, (robot.getMyColor() != PMXGREEN));
+    robot.asserv().setPositionAndColor(800, 150, 0.0, (robot.getMyColor() != PMXYELLOW));
     robot.svgPrintPosition();
     robot.chrono().start();
     IASetup();
@@ -161,7 +161,7 @@ void L_IAByPathTest::IASetup()
     if (robot.getMyColor() == PMXBLUE) {
         robot.ia().iAbyPath().ia_createZone("zone_deposeplot", 0, 700, 100, 400, 300, 770, 180);
         robot.ia().iAbyPath().ia_createZone("zone_plot2", 100, 500, 200, 100, 280, 600, -135);
-    } else if (robot.getMyColor() == PMXGREEN) {
+    } else if (robot.getMyColor() == PMXYELLOW) {
         robot.ia().iAbyPath().ia_createZone("zone_deposeplot", 0, 700, 100, 400, 300, 840, 180);
         robot.ia().iAbyPath().ia_createZone("zone_plot2", 100, 500, 200, 100, 250, 650, -135);
 

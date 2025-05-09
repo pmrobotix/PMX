@@ -251,6 +251,11 @@ void AsservDriver::stopMotorRight() {
     else logger().error() << "NOT CONNECTED! NO stopMotorRight" << logs::end;
 }
 
+void AsservDriver::stopMotors() {
+	stopMotorRight();
+	stopMotorLeft();
+}
+
 void AsservDriver::resetEncoders() {
     resetInternalEncoders();
     resetExternalEncoders();
@@ -306,7 +311,7 @@ void AsservDriver::path_CancelTrajectory() {
 void AsservDriver::path_ResetEmergencyStop() {
 }
 
-TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm) {
+TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm, bool back_reversed) {
     return TRAJ_ERROR;
 }
 TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm) {
@@ -358,6 +363,11 @@ void AsservDriver::motion_setLowSpeedForward(bool enable, int) {
 }
 
 void AsservDriver::motion_setLowSpeedBackward(bool enable, int) {
+
+}
+
+void AsservDriver::motion_setMaxSpeed(bool enable, int speed_dist_m_sec, int speed_angle_rad_sec)
+{
 
 }
 

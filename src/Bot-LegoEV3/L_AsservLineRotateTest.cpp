@@ -123,7 +123,7 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
 
     logger().info() << "COORD avec x=" << coordx << " y=" << coordy << " a=" << coorda_deg << logs::end;
 
-    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXGREEN));
+    robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (robot.getMyColor() != PMXYELLOW));
     //utils::sleep_for_micros(300000); //pause pour bien prendre en compte la position ?
 
     robot.asserv().getEncodersCounts(&right, &left);
@@ -313,7 +313,7 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
     robot.svgPrintPosition();
 */
     //utils::sleep_for_micros(300000);
-    ts = robot.asserv().doLineAbs(300);
+    ts = robot.asserv().doLine(300);
     logger().info() << "===== doLineAbs(300) TS=" << ts << logs::end;
     robot.svgPrintPosition();
 

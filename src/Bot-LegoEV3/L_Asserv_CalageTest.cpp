@@ -45,9 +45,9 @@ void L_Asserv_CalageTest::run(int argc, char **argv)
 
     TRAJ_STATE ts = TRAJ_OK;
     logger().info() << "Start Asserv " << logs::end;
-    robot.setMyColor(PMXGREEN);
+    robot.setMyColor(PMXYELLOW);
     robot.asserv().startMotionTimerAndOdo(true);
-    robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXGREEN));
+    robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXYELLOW));
     ROBOTPOSITION p = robot.asserv().pos_getPosition();
     logger().info() << "p= " << p.x * 1000.0 << " " << p.y * 1000.0 << " mm " << p.theta * 180.0f / M_PI << "° "
             << p.asservStatus << logs::end;
@@ -85,7 +85,7 @@ void L_Asserv_CalageTest::run(int argc, char **argv)
     logger().info() << "doLineAbs inverse" << logs::end;
 
     ts = TRAJ_OK;
-    ts = robot.asserv().doLineAbs(-d);
+    ts = robot.asserv().doLine(-d);
     logger().info() << "TRAJ= " << ts << logs::end;
     if (ts != TRAJ_FINISHED) {
         robot.asserv().resetEmergencyOnTraj();

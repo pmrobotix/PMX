@@ -192,7 +192,7 @@ public:
         int sw = 0;
         while (sw > 10) {
             sw++;
-            //                if (robot.getMyColor() == PMXGREEN) {
+            //                if (robot.getMyColor() == PMXYELLOW) {
             if (sw % 2) {
                 fork_front_right_deploy_half(0);
                 fork_front_left_init(0);

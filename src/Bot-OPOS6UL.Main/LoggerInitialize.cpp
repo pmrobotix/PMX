@@ -66,7 +66,7 @@ void logs::LoggerFactory::initialize()
     add(logs::Level::INFO, "O_Asserv_SquareTest", "console");
     add(logs::Level::INFO, "O_LedBarTest", "console");
     add(logs::Level::INFO, "O_AsservEsialTest", "console");
-    add(logs::Level::INFO, "O_AsservLineRotateTest", "console");
+    add(logs::Level::DEBUG, "O_AsservLineRotateTest", "console");
     add(logs::Level::INFO, "O_AsservTest", "console");
     add(logs::Level::INFO, "O_ButtonBarTest", "console");
     add(logs::Level::INFO, "O_GroveColorTest", "console");

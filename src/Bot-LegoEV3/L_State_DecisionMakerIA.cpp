@@ -92,7 +92,7 @@ bool L_push_cake_A2()
 
     ///on avance doucement
     robot.asserv().setLowSpeedForward(true, 30);
-    robot.asserv().doLineAbs(200);
+    robot.asserv().doLine(200);
     robot.svgPrintPosition();
 
     //on ferme les fork pour prendre les cakes
@@ -119,7 +119,7 @@ bool L_push_cake_A2()
     robot.actions().fork_init_slow(true);
 
     //on recule
-    robot.asserv().doLineAbs(-150);
+    robot.asserv().doLine(-150);
     robot.points += 9;
     //on ferme les pinces
     //robot.actions().init_servos();
@@ -190,7 +190,7 @@ bool L_push_cake_D2()
 
     ///on avance doucement
     robot.asserv().setLowSpeedForward(true, 30);
-    robot.asserv().doLineAbs(200);
+    robot.asserv().doLine(200);
     robot.svgPrintPosition();
 
     //on ferme les fork pour prendre les cakes
@@ -217,7 +217,7 @@ bool L_push_cake_D2()
     robot.actions().fork_init_slow(true);
 
     //on recule
-    robot.asserv().doLineAbs(-180);
+    robot.asserv().doLine(-180);
     robot.points += 6;
     //on ferme les pinces
     //robot.actions().init_servos();
@@ -232,7 +232,7 @@ bool L_push_cake_black_B3C3()
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     robot.logger().info() << "start L_push_cake_black_B3C3" << logs::end;
 
-    if (robot.getMyColor() == PMXGREEN) {
+    if (robot.getMyColor() == PMXYELLOW) {
         robot.ia().iAbyPath().enable(robot.ia().area_B3, 0);
 //        robot.ia().iAbyPath().enable(robot.ia().area_B4, 0);
 //
@@ -295,7 +295,7 @@ bool L_push_cake_black_B3C3()
 //    }
 
     //on abaisse le gauche en vert
-    if (robot.getMyColor() == PMXGREEN) {
+    if (robot.getMyColor() == PMXYELLOW) {
         robot.actions().fork_front_left_deploy(0);
         robot.actions().fork_front_right_deploy(1500);
     } else {
@@ -311,7 +311,7 @@ bool L_push_cake_black_B3C3()
     }
 
     //    //on abaisse le droit en vert
-    //    if (robot.getMyColor() == PMXGREEN) {
+    //    if (robot.getMyColor() == PMXYELLOW) {
     //        robot.actions().fork_front_right_deploy(0);
     //    } else {
     //        robot.actions().fork_front_left_deploy(0);
@@ -322,7 +322,7 @@ bool L_push_cake_black_B3C3()
     robot.actions().fork_init_slow(true);
 
     //on recule
-    robot.asserv().doLineAbs(-200);
+    robot.asserv().doLine(-200);
 
     robot.points += 3;
     robot.points += 3;
@@ -338,7 +338,7 @@ bool L_push_cake_black_B3()
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     robot.logger().info() << "start L_push_cake_black_B3" << logs::end;
 
-    if (robot.getMyColor() == PMXGREEN) {
+    if (robot.getMyColor() == PMXYELLOW) {
 //        robot.ia().iAbyPath().enable(robot.ia().area_B3, 0);
 //        robot.ia().iAbyPath().enable(robot.ia().area_B4, 0);
 //
@@ -401,7 +401,7 @@ bool L_push_cake_black_B3()
     }
 
     //on abaisse le gauche en vert
-    if (robot.getMyColor() == PMXGREEN) {
+    if (robot.getMyColor() == PMXYELLOW) {
         robot.actions().fork_front_left_deploy(0);
         robot.actions().fork_front_right_deploy(1500);
     } else {
@@ -420,7 +420,7 @@ bool L_push_cake_black_B3()
     }
 
 //    //on abaisse le droit en vert
-//    if (robot.getMyColor() == PMXGREEN) {
+//    if (robot.getMyColor() == PMXYELLOW) {
 //        robot.actions().fork_front_right_deploy(0);
 //    } else {
 //        robot.actions().fork_front_left_deploy(0);
@@ -431,7 +431,7 @@ bool L_push_cake_black_B3()
     robot.actions().fork_init_slow(true);
 
     //on recule
-    robot.asserv().doLineAbs(-100);
+    robot.asserv().doLine(-100);
 
     if (!robot.B3_is_taken) {
         robot.logger().error() << "robot.B3_is_taken=" << robot.B3_is_taken << logs::end;
@@ -487,7 +487,7 @@ bool L_push_cake_A5()
 
     ///on avance doucement
     robot.asserv().setLowSpeedForward(true, 25);
-    robot.asserv().doLineAbs(350); //on attend un calage (pas trop fort car il saute
+    robot.asserv().doLine(350); //on attend un calage (pas trop fort car il saute
     robot.asserv().setLowSpeedForward(false);
     robot.svgPrintPosition();
 
@@ -496,7 +496,7 @@ bool L_push_cake_A5()
     //robot.actions().fork_front_left_deploy(0);
     robot.actions().fork_open_take_slow(true);
 
-    robot.asserv().doLineAbs(-80);
+    robot.asserv().doLine(-80);
     robot.svgPrintPosition();
 
     robot.asserv().setLowSpeedForward(false);
@@ -522,7 +522,7 @@ bool L_push_cake_A5()
     robot.actions().fork_init_slow(true);
 
     //on recule
-    robot.asserv().doLineAbs(-150);
+    robot.asserv().doLine(-150);
     robot.svgPrintPosition();
 
     robot.points += 9;
@@ -554,7 +554,7 @@ bool L_push_cake_D5()
 
     //PATCH 50 en vert!!!!!!!!
     int y_patch = 0;
-//    if (robot.getMyColor() == PMXGREEN) {
+//    if (robot.getMyColor() == PMXYELLOW) {
 //        y_patch = 50;
 //    }
 
@@ -588,7 +588,7 @@ bool L_push_cake_D5()
 
     ///on avance doucement
     robot.asserv().setLowSpeedForward(true, 25);
-    robot.asserv().doLineAbs(350);        //calage pas trop fort pour ne pas faire sauter les roues codeuses
+    robot.asserv().doLine(350);        //calage pas trop fort pour ne pas faire sauter les roues codeuses
     robot.asserv().setLowSpeedForward(false);
     robot.svgPrintPosition();
 
@@ -597,7 +597,7 @@ bool L_push_cake_D5()
     //robot.actions().fork_front_left_deploy(0);
     robot.actions().fork_open_take_slow(true);
 
-    robot.asserv().doLineAbs(-80);
+    robot.asserv().doLine(-80);
     robot.svgPrintPosition();
 
 //    robot.asserv().setLowSpeedForward(false);
@@ -625,7 +625,7 @@ bool L_push_cake_D5()
     robot.actions().fork_init_slow(true);
 
     //on recule
-    robot.asserv().doLineAbs(-150);
+    robot.asserv().doLine(-150);
     robot.svgPrintPosition();
 
     robot.points += 9;
@@ -635,13 +635,13 @@ bool L_push_cake_D5()
     //on ferme les pinces
     robot.actions().init_servos();
 
-    if (robot.getMyColor() == PMXGREEN) {
+    if (robot.getMyColor() == PMXYELLOW) {
         robot.asserv().doFaceTo(1700, 0);
     } else {
         robot.asserv().doFaceTo(300, 0);
     }
     robot.svgPrintPosition();
-    robot.asserv().doLineAbs(50);
+    robot.asserv().doLine(50);
     robot.svgPrintPosition();
 
     //si pas d'adversaire, on pousse pour end of match
@@ -650,7 +650,7 @@ bool L_push_cake_D5()
         robot.actions().arm_right_deploy(0);
         robot.actions().arm_left_deploy(0);
 
-        if (robot.getMyColor() == PMXGREEN) {
+        if (robot.getMyColor() == PMXYELLOW) {
             robot.ia().iAbyPath().enable(robot.ia().area_D4, 0);
         } else {
             robot.ia().iAbyPath().enable(robot.ia().area_A4, 0);
@@ -668,11 +668,11 @@ bool L_push_cake_D5()
             //return false;
         }
         robot.svgPrintPosition();
-        robot.asserv().doLineAbs(-140);
+        robot.asserv().doLine(-140);
         robot.points += 15;
 
         //
-        if (robot.getMyColor() == PMXGREEN) {
+        if (robot.getMyColor() == PMXYELLOW) {
             robot.ia().iAbyPath().enable(robot.ia().area_D3, 1);
         } else {
             robot.ia().iAbyPath().enable(robot.ia().area_A3, 1);

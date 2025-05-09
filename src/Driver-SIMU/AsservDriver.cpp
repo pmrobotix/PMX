@@ -604,7 +604,7 @@ void AsservDriver::path_ResetEmergencyStop()
     emergencyStop_ = false;
 }
 
-TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
+TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm, bool back_face)
 {
     if (emergencyStop_)
         return TRAJ_NEAR_OBSTACLE;
@@ -622,16 +622,14 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
     // Cap que doit atteindre le robot
     float thetaCible = atan2f(deltaY, deltaX);
 
-    // La différence entre le thetaCible (= cap à atteindre) et le theta (= cap actuel du robot) donne l'angle à parcourir
+    // La différence entre le thetaCible (= cap à atteindre) et le theta (= cap actuel du robot) donne l'angle à parcourir + 180
     float deltaTheta = thetaCible - t_init;
+
+    if (back_face)
+    	deltaTheta += M_PI;
 
     // On ajuste l'angle à parcourir pour ne pas faire plus d'un demi-tour
     // Exemple, tourner de 340 degrés est plus chiant que de tourner de -20 degrés
-//    if (deltaTheta > M_PI) {
-//        deltaTheta -= 2.0 * M_PI;
-//    } else if (deltaTheta < -M_PI) {
-//        deltaTheta += 2.0 * M_PI;
-//    }
 
     deltaTheta = std::fmod(deltaTheta, 2.0 * M_PI);
     if (deltaTheta < -M_PI)
@@ -646,7 +644,7 @@ TRAJ_STATE AsservDriver::motion_DoFace(float x_mm, float y_mm)
 
     return TRAJ_FINISHED;
 }
-
+/*
 TRAJ_STATE AsservDriver::motion_DoFaceReverse(float x_mm, float y_mm)
 {
     if (emergencyStop_)
@@ -690,7 +688,7 @@ TRAJ_STATE AsservDriver::motion_DoFaceReverse(float x_mm, float y_mm)
 
     return TRAJ_FINISHED;
 }
-
+*/
 TRAJ_STATE AsservDriver::motion_DoLine(float dist_mm)
 {
     if (emergencyStop_)
@@ -850,7 +848,7 @@ TRAJ_STATE AsservDriver::motion_GotoReverse(float x_mm, float y_mm)
 {
     if (emergencyStop_)
         return TRAJ_NEAR_OBSTACLE;
-    motion_DoFaceReverse(x_mm, y_mm);
+    motion_DoFace(x_mm, y_mm, true);
 
     m_pos.lock();
     float dx = x_mm - p_.x;

@@ -128,7 +128,7 @@ public:
     //virtual void path_CancelTrajectory()= 0;
     virtual void path_ResetEmergencyStop() = 0;
 
-    virtual TRAJ_STATE motion_DoFace(float x_mm, float y_mm) = 0;
+    virtual TRAJ_STATE motion_DoFace(float x_mm, float y_mm, bool back_face) = 0;
     virtual TRAJ_STATE motion_DoLine(float dist_mm) = 0;
     virtual TRAJ_STATE motion_DoRotate(float angle_radians) = 0;
     virtual TRAJ_STATE motion_DoArcRotate(float angle_radians, float radius) = 0;

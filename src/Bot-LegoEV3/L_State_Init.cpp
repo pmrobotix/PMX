@@ -101,7 +101,7 @@ L_State_Init::execute(Robot&)
                     robot.actions().ledBar().stop(true);
                     robot.actions().ledBar().set(1, LED_GREEN);
                     robot.actions().ledBar().set(0, LED_OFF);
-                    robot.setMyColor(PMXGREEN);
+                    robot.setMyColor(PMXYELLOW);
                 }
                 if (b == BUTTON_RIGHT_KEY) {
 
@@ -181,13 +181,13 @@ L_State_Init::execute(Robot&)
             if (b == BUTTON_UP_KEY) {
                 //logger().info() << "BUTTON_UP_KEY - MECA" << logs::end;
 
-                if (robot.getMyColor() == PMXGREEN) {
+                if (robot.getMyColor() == PMXYELLOW) {
                     robot.actions().arm_right_deploy(0);
                 } else {
                     robot.actions().arm_left_deploy(0);
                 }
 
-                if (robot.getMyColor() == PMXGREEN) {
+                if (robot.getMyColor() == PMXYELLOW) {
 //                    robot.actions().square_push_right(1500);
 //                    robot.actions().square_middle_init(1500);
                 } else {
@@ -195,7 +195,7 @@ L_State_Init::execute(Robot&)
 //                    robot.actions().square_middle_init(1500);
                 }
 
-                if (robot.getMyColor() == PMXGREEN) {
+                if (robot.getMyColor() == PMXYELLOW) {
                     robot.actions().arm_right_init(0);
                 } else {
                     robot.actions().arm_left_init(0);
@@ -226,7 +226,7 @@ L_State_Init::execute(Robot&)
             bool c = robot.actions().sensors().is_connected();
             if (c) {
                 sw++;
-                //                if (robot.getMyColor() == PMXGREEN) {
+                //                if (robot.getMyColor() == PMXYELLOW) {
                 if (sw % 20) {
                     robot.actions().fork_front_right_deploy_half(0);
                     robot.actions().fork_front_left_init(0);
@@ -288,7 +288,7 @@ L_State_Init::execute(Robot&)
             bool c = robot.actions().sensors().is_connected();
             if (c) {
                 sw++;
-//                if (robot.getMyColor() == PMXGREEN) {
+//                if (robot.getMyColor() == PMXYELLOW) {
                 if (sw % 2) {
 //                    robot.actions().fork_front_right_deploy_half(0);
 //                    robot.actions().fork_front_left_init(0);
@@ -311,7 +311,7 @@ L_State_Init::execute(Robot&)
         robot.actions().fork_front_right_init(0);
 
         //tirette
-        if (robot.getMyColor() == PMXGREEN)
+        if (robot.getMyColor() == PMXYELLOW)
             robot.actions().ledBar().startTimerAlternate(500000, 500000, 0x81, 0x3C, LED_GREEN, false);
         else
             robot.actions().ledBar().startTimerAlternate(500000, 500000, 0x81, 0x3C, LED_AMBER, false);
@@ -323,7 +323,7 @@ L_State_Init::execute(Robot&)
 
         robot.actions().lcd().clear();
         //logger().info() << "PMX...WAIT TIRETTE !";
-        if (robot.getMyColor() == PMXGREEN) {
+        if (robot.getMyColor() == PMXYELLOW) {
             //logger().info() << "VERT ";
             robot.actions().lcd().display_content_string("VERT", 3, 2);
         } else {
@@ -368,7 +368,7 @@ L_State_Init::execute(Robot&)
             logger().error() << "PMXNOCOLOR !!!" << logs::end;
             exit(0);
         } else {
-            logger().info() << "COLOR is " << (robot.getMyColor() == PMXGREEN ? "VERT" : "BLEU  ") << logs::end;
+            logger().info() << "COLOR is " << (robot.getMyColor() == PMXYELLOW ? "VERT" : "BLEU  ") << logs::end;
         }
 
         logger().info() << "ENLEVER TIRETTE !!!" << logs::end;
@@ -418,21 +418,21 @@ void L_State_Init::setPos()
 
     //robot place a gauche de la ligne verte foncée!!!
 
-    robot.asserv().setPositionAndColor(447 - 126, 126, 90.0, (robot.getMyColor() != PMXGREEN)); //au coin du distributeur
+    robot.asserv().setPositionAndColor(447 - 126, 126, 90.0, (robot.getMyColor() != PMXYELLOW)); //au coin du distributeur
     robot.svgPrintPosition();
 
     //active l'asservissement
     robot.asserv().assistedHandling();
     robot.svgPrintPosition();
 
-    robot.asserv().doLineAbs(100);
+    robot.asserv().doLine(100);
 
     robot.asserv().doMoveForwardTo(450 - 160, 300);
 
 //Faire un faceTo sur le point de destination
     robot.asserv().doFaceTo(500, 675);
 
-    //robot.asserv().doLineAbs(-10);
+    //robot.asserv().doLine(-10);
 
     robot.points += 5; //panier present
 

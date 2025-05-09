@@ -94,6 +94,8 @@ public:
 
     int getTorque(int servo);
 
+    void setTorque(int servo, int torque);
+
     int ping(int);
 
 };

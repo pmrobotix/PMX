@@ -70,7 +70,7 @@ bool LegoEV3AsservExtended::filtre_IsInsideTableXY(int x_botpos, int y_botpos)
     int table_y = 3000;
 
     //filtre de prise des elements de jeux par l'adversaire
-    if (getRobot()->getMyColor() == PMXGREEN) {
+    if (getRobot()->getMyColor() == PMXYELLOW) {
         if (x_botpos > 600 && x_botpos < 850 && y_botpos < 1250 && y_botpos > 1000) {
 
 //TODO afficher en SVG et faire un ensure sur plusieurs fois
@@ -164,7 +164,7 @@ bool LegoEV3AsservExtended::filtre_IsInsideTableXY(int x_botpos, int y_botpos)
  << y_mm << " t_deg:" << theta_deg << logs::end;
 
  //filtre de prise des elements de jeux par l'adversaire
- if (getRobot()->getMyColor() == PMXGREEN) {
+ if (getRobot()->getMyColor() == PMXYELLOW) {
  if (*x_botpos > 650 && *x_botpos < 850 && *y_botpos < 1250 && *y_botpos > 1000) {
 
  getRobot()->B3_is_taken = true;

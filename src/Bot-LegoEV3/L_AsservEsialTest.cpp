@@ -47,7 +47,7 @@ void L_AsservEsialTest::run(int argc, char **argv) {
     }
 
     robot.asserv().startMotionTimerAndOdo(false);
-    robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXGREEN));
+    robot.asserv().setPositionAndColor(0.0, 0.0, 0.0, (robot.getMyColor() != PMXYELLOW));
 
     robot.chrono().start();
 
@@ -158,7 +158,7 @@ void L_AsservEsialTest::run(int argc, char **argv) {
         logger().info() << "ETAPE 4 : on avance pour regler D" << logs::end;
         robot.asserv().disablePID(); //allow to deactivate QuadRamp
         robot.asserv().assistedHandling();
-        robot.asserv().doLineAbs(dist);
+        robot.asserv().doLine(dist);
         sleep(1);
     }
 
@@ -166,21 +166,21 @@ void L_AsservEsialTest::run(int argc, char **argv) {
         logger().info() << "ETAPE 5 : on tourne pour regler D" << logs::end;
         robot.asserv().disablePID(); //allow deactivate QuadRamp
         robot.asserv().assistedHandling();
-        robot.asserv().doRotateAbs(dist);
+        robot.asserv().doAbsoluteRotateTo(dist);
         sleep(1);
     }
 
     if (step == 6) {
         logger().info() << "ETAPE 6 : on avance avec QuadRamp de " << dist << logs::end;
         robot.asserv().assistedHandling();
-        robot.asserv().doLineAbs(dist);
+        robot.asserv().doLine(dist);
         sleep(1);
     }
 
     if (step == 7) {
         logger().info() << "ETAPE 7 : on tourne avec QuadRamp de " << dist << logs::end;
         robot.asserv().assistedHandling();
-        robot.asserv().doRotateAbs(dist);
+        robot.asserv().doAbsoluteRotateTo(dist);
         sleep(1);
     }
 

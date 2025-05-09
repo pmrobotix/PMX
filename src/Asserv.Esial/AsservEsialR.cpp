@@ -623,21 +623,22 @@ TRAJ_STATE AsservEsialR::motion_DoLine(float dist_mm)
     unlock();
     return waitEndOfTraj();
 }
-TRAJ_STATE AsservEsialR::motion_DoFace(float x_mm, float y_mm)
+TRAJ_STATE AsservEsialR::motion_DoFace(float x_mm, float y_mm, bool back_face)
 {
-    lock();
-    commandM_->addGoToAngle(x_mm, y_mm);
-    unlock();
+	if (back_face)
+	{
+		lock();
+		commandM_->addGoToAngleReverse(x_mm, y_mm);
+		unlock();
+	}else
+	{
+		lock();
+		commandM_->addGoToAngle(x_mm, y_mm);
+		unlock();
+	}
 //    logger().error() << "_______________________motion_DoFace waitEndOfTraj()  pathStatus_= " << pathStatus_
 //            << logs::end;
 
-    return waitEndOfTraj();
-}
-TRAJ_STATE AsservEsialR::motion_DoFaceReverse(float x_mm, float y_mm)
-{
-    lock();
-    commandM_->addGoToAngleReverse(x_mm, y_mm);
-    unlock();
     return waitEndOfTraj();
 }
 
@@ -686,7 +687,7 @@ TRAJ_STATE AsservEsialR::motion_Goto(float x_mm, float y_mm)
 
 TRAJ_STATE AsservEsialR::motion_GotoReverse(float x_mm, float y_mm)
 {
-    motion_DoFaceReverse(x_mm, y_mm);
+    motion_DoFace(x_mm, y_mm, true);
 
     lock();
     float dx = x_mm - p_.x;
