@@ -191,6 +191,7 @@ void OPOS6UL_SvgWriterExtended::writePosition_AdvPos(float x, float y, float x_p
  */
 
 //angle en radian
+//COLOR 0:GRIS / 1:ORANGE / 2:RED / 3:GREEN / 4:BLUE / 5:BLACK
 void OPOS6UL_SvgWriterExtended::writePosition_Bot(float x, float y, float angle_rad, int color)
 {
     //printf("writePosition_Bot done_=%d\n", done_);

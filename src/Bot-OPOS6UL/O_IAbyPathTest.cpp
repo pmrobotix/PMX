@@ -27,7 +27,7 @@ bool O_IAbyPathTest_action1()
 
     robot.logger().info() << "start action1." << logs::end;
 
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
     ROBOTPOSITION zone;
 
 //    robot.asserv().ignoreFrontCollision(false);
@@ -35,7 +35,7 @@ bool O_IAbyPathTest_action1()
     robot.ia().iAbyPath().goToZone("zone_1", &zone); //recuperation de la zone
 
     ts = robot.ia().iAbyPath().doPathForwardAndRotateTo(zone.x, zone.y, zone.theta);
-    if (ts != TRAJ_OK) {
+    if (ts != TRAJ_IDLE) {
         robot.logger().info() << "________action1 ts=" << ts << logs::end;
         return false;
     }
@@ -51,7 +51,7 @@ bool O_IAByPathTest_action2()
 {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
     robot.logger().info() << "start action2." << logs::end;
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
     ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_2", &zone); //recuperation de la zone
@@ -64,7 +64,7 @@ bool O_IAByPathTest_action2()
 //    robot.asserv().ignoreRearCollision(true);
 
     ts = robot.ia().iAbyPath().doPathForwardAndRotateTo(zone.x, zone.y, zone.theta);
-    if (ts != TRAJ_OK) {
+    if (ts != TRAJ_IDLE) {
         robot.logger().info() << "_________action2 ts=" << ts << logs::end;
         return false;
     }

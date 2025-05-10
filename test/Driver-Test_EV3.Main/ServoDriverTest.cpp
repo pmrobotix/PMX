@@ -57,7 +57,7 @@ void test::ServoDriverTest::testServos() {
     usleep(500000);
     int wait_us = 200000;
     int rate_ms = 200; //1000 means that it will take a 180 degree servo 2 second to move from 0 to 180 degrees.
-    servodriver_->setRate(servo, rate_ms);
+    //servodriver_->setRate(servo, rate_ms);
     for (int n = 0; n < 60; n++) {
         for (int p = 0; p < 100; p=p+10) {
             servodriver_->setPulsePos(servo, p);

@@ -22,16 +22,16 @@ bool action1()
 {
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     robot.logger().info() << "start action1." << logs::end;
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
     ROBOTPOSITION path, zone;
 
     robot.ia().iAbyZone().goToZone("zone1", &path, &zone);
     ts = robot.asserv().doMoveForwardTo(path.x, path.y);
-    if (ts != TRAJ_OK)
+    if (ts != TRAJ_IDLE)
         return false;
     robot.svgPrintPosition();
     ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
-    if (ts != TRAJ_OK)
+    if (ts != TRAJ_IDLE)
         return false;
 
     robot.svgPrintPosition();
@@ -45,16 +45,16 @@ bool action2()
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     robot.logger().info() << "start action2." << logs::end;
 
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
     ROBOTPOSITION path, zone;
 
     robot.ia().iAbyZone().goToZone("zone2", &path, &zone);
     ts = robot.asserv().doMoveForwardTo(path.x, path.y);
-    if (ts != TRAJ_OK)
+    if (ts != TRAJ_IDLE)
         return false;
     robot.svgPrintPosition();
     ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
-    if (ts != TRAJ_OK)
+    if (ts != TRAJ_IDLE)
         return false;
 
     robot.svgPrintPosition();
@@ -68,16 +68,16 @@ bool action3()
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     robot.logger().info() << "start action3." << logs::end;
 
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
     ROBOTPOSITION path, zone;
 
     robot.ia().iAbyZone().goToZone("zone3", &path, &zone);
     ts = robot.asserv().doMoveForwardTo(path.x, path.y);
-    if (ts != TRAJ_OK)
+    if (ts != TRAJ_IDLE)
         return false;
     robot.svgPrintPosition();
     ts = robot.asserv().doMoveForwardAndRotateTo(zone.x, zone.y, zone.theta);
-    if (ts != TRAJ_OK)
+    if (ts != TRAJ_IDLE)
         return false;
 
     robot.svgPrintPosition();

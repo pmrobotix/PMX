@@ -100,19 +100,20 @@ void OPOS6UL_RobotExtended::resetDisplayTS()
 //display des statuts de trajectoire
 void OPOS6UL_RobotExtended::displayTS(TRAJ_STATE ts)
 {
-    svgPrintPosition(2);
 
     if (ts == TRAJ_NEAR_OBSTACLE) {
 
         actions().ledBar().setOn(4);
+        svgPrintPosition(3);
     }
     if (ts == TRAJ_COLLISION) {
         actions().ledBar().setOn(2);
         actions().ledBar().setOn(1);
+        svgPrintPosition(5);
     }
     if (ts == TRAJ_FINISHED) {
         actions().ledBar().setOn(0);
-
+        svgPrintPosition(3);
     }
 }
 

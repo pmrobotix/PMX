@@ -88,6 +88,36 @@ public:
      */
     virtual ~Asserv();
 
+
+    /*!
+     * \brief return the name of trajectory state.
+     */
+    std::string getTraj(TRAJ_STATE ts)
+    {
+    	switch (ts) {
+    	case TRAJ_IDLE:
+    		return "TRAJ_IDLE";
+    	case TRAJ_FINISHED:
+    		return "TRAJ_FINISHED";
+    	case TRAJ_INTERRUPTED:
+    		return "TRAJ_INTERRUPTED";
+    	case TRAJ_IMPOSSIBLE:
+    		return "TRAJ_IMPOSSIBLE";
+    	case TRAJ_NEAR_OBSTACLE:
+    		return "TRAJ_NEAR_OBSTACLE";
+    	case TRAJ_COLLISION:
+    		return "TRAJ_COLLISION";
+    	case TRAJ_REAR_OBSTACLE:
+    		return "TRAJ_REAR_OBSTACLE";
+    	case TRAJ_REAR_COLLISION:
+    		return "TRAJ_REAR_COLLISION";
+    	case TRAJ_ERROR:
+    		return "TRAJ_ERROR";
+    	default:
+    		return "DEFAULT_IMPOSSIBLE!";
+    	}
+    }
+
     //FONCTIONS DE BASE de l'ASSERV
     /*!
      * \brief reset Encoders.
@@ -255,19 +285,11 @@ public:
     {
         if (matchColorPosition_ != 0) {
             float limit = (M_PI - rad);
-
             limit = WrapAngle2PI(limit);
-//            limit = std::fmod(limit, 2.0 * M_PI);
-//            if (limit < -M_PI)
-//                limit += (2.0 * M_PI);
-//            if (limit > M_PI)
-//                limit -= (2.0 * M_PI);
-
             return limit;
         }
         return rad;
     }
-
 
     inline float degToRad(float deg)
     {
@@ -279,28 +301,6 @@ public:
         return rad * 180.0 / M_PI;
     }
 
-    inline float WrapAngle2PI(float rad)
-    {
-    //// force it to be the positive remainder, so that 0 <= angle < 360
-    //    degrees = (((int) (degrees * 1000.0f) + 360000) % 360000) / 1000.0f;
-    ////reduction sur une plage de [0 à 360]
-    //    if (degrees >= 360.0) {
-    //        degrees = ((int) (degrees * 1000.0f) % 360000) / 1000.0f;
-    //    }
-    //    if (degrees < -360.0) {
-    //        int d = (int) -(degrees * 1000.0f);
-    //        d = d % 360000;
-    //        degrees = -d / 1000.0f;
-    //    }
-    // force into the minimum absolute value residue class, so that -180 < angle <= 180
-    //    if (degrees >= 180)
-    //        degrees -= 360;
-
-    	rad = std::fmod(rad, 2.0 * M_PI);
-    	if (rad < -M_PI) rad += (2.0 * M_PI);
-    	if (rad > M_PI) rad -= (2.0 * M_PI);
-    	return rad;
-    }
 };
 
 #endif

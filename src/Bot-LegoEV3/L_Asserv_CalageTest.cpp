@@ -43,7 +43,7 @@ void L_Asserv_CalageTest::run(int argc, char **argv)
         logger().info() << "Arg a set " << args["a"] << ", a = " << a << logs::end;
     }
 
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
     logger().info() << "Start Asserv " << logs::end;
     robot.setMyColor(PMXYELLOW);
     robot.asserv().startMotionTimerAndOdo(true);
@@ -57,7 +57,7 @@ void L_Asserv_CalageTest::run(int argc, char **argv)
     //robot.asserv().doRunPivotRight(600, 520, 2500);
 
 
-    ts = TRAJ_OK;
+    ts = TRAJ_IDLE;
     logger().info() << "GO distance calage mm=" << d << logs::end;
     ts = robot.asserv().doCalage(d, 50);
     logger().info() << "TRAJ= " << ts << logs::end;
@@ -84,7 +84,7 @@ void L_Asserv_CalageTest::run(int argc, char **argv)
 */
     logger().info() << "doLineAbs inverse" << logs::end;
 
-    ts = TRAJ_OK;
+    ts = TRAJ_IDLE;
     ts = robot.asserv().doLine(-d);
     logger().info() << "TRAJ= " << ts << logs::end;
     if (ts != TRAJ_FINISHED) {

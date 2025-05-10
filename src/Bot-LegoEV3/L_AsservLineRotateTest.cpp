@@ -77,7 +77,7 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
     float coordx = 0.0;
     float coordy = 0.0;
     float coorda_deg = 0.0;
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
 
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
 
@@ -147,7 +147,7 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
     robot.asserv().setLowSpeedBackward(true, s);
 
     for (int num = 1; num <= nb; num++) {
-        ts = TRAJ_OK;
+        ts = TRAJ_IDLE;
         if (d != 0) {
             //logger().info() << "go...d=" << d << "mm" << logs::end;
             //calcul de coord
@@ -213,7 +213,7 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
 
         if (!(x == 0 && y == 0)) {
             if (!back) {
-                ts = TRAJ_OK;
+                ts = TRAJ_IDLE;
                 logger().info() << "go Forward... x=" << x << ", y=" << y << logs::end;
                 robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
                 robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
@@ -236,7 +236,7 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
                 }
                 robot.svgPrintPosition();
             } else {
-                ts = TRAJ_OK;
+                ts = TRAJ_IDLE;
                 logger().info() << "go Backward... x=" << x << ", y=" << y << logs::end;
                 robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
                 robot.actions().sensors().setIgnoreBackNearObstacle(true, false, true);
@@ -289,7 +289,7 @@ void L_AsservLineRotateTest::run(int argc, char **argv)
     }
     //utils::sleep_for_micros(3000000);
 
-    ts = TRAJ_OK;
+    ts = TRAJ_IDLE;
     //robot.asserv().resetEmergencyOnTraj();
 //    ts = robot.asserv().doLineAbs(400);
 //    logger().info() << "===== doLineAbs(400) TS=" << ts << logs::end;

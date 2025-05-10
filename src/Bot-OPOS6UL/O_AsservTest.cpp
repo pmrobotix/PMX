@@ -60,7 +60,7 @@ void O_AsservTest::run(int argc, char **argv)
 	float coordx = 0.0;
 	float coordy = 0.0;
 	float coorda_deg = 0.0;
-	TRAJ_STATE ts = TRAJ_OK;
+	TRAJ_STATE ts = TRAJ_IDLE;
 
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 

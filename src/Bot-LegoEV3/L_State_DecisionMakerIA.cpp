@@ -24,7 +24,7 @@ bool L_push_cake_A2()
     LegoEV3RobotExtended &robot = LegoEV3RobotExtended::instance();
     robot.logger().info() << "start L_push_cake_A2" << logs::end;
 
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
     ROBOTPOSITION zone;
 
     robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
@@ -46,7 +46,7 @@ bool L_push_cake_A2()
 
 //    robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
 //    robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-    ts = TRAJ_OK;
+    ts = TRAJ_IDLE;
     robot.ia().iAbyPath().goToZone("zone_cake_A2", &zone);
     ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 10, 10,
             true);
@@ -142,7 +142,7 @@ bool L_push_cake_D2()
     //en cas de D2 on supprime la fin normale endofmatch
     robot.skipEndOfMatch = true;
 
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
     ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_cake_D2", &zone);
@@ -253,7 +253,7 @@ bool L_push_cake_black_B3C3()
         robot.ia().iAbyPath().enable(robot.ia().area_D4, 0);
     }
 
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
     ROBOTPOSITION zone;
     //robot.asserv().setLowSpeedForward(true, 60);
 
@@ -359,7 +359,7 @@ bool L_push_cake_black_B3()
         robot.ia().iAbyPath().enable(robot.ia().area_D4, 0);
     }
 
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
     ROBOTPOSITION zone;
     //robot.asserv().setLowSpeedForward(true, 60);
 
@@ -459,7 +459,7 @@ bool L_push_cake_A5()
         return true;
     }
 
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
     ROBOTPOSITION zone;
 
     robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
@@ -547,7 +547,7 @@ bool L_push_cake_D5()
 
     //robot.asserv().setLowSpeedForward(true, 40);
 
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
     ROBOTPOSITION zone;
 
     robot.ia().iAbyPath().goToZone("zone_cake_D5", &zone);
@@ -656,7 +656,7 @@ bool L_push_cake_D5()
             robot.ia().iAbyPath().enable(robot.ia().area_A4, 0);
         }
         //sans pathfinding
-        TRAJ_STATE ts = TRAJ_OK;
+        TRAJ_STATE ts = TRAJ_IDLE;
         ROBOTPOSITION zone;
         robot.ia().iAbyPath().goToZone("zone_end", &zone);
         ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 1000000, 55, 55, false, 0);
@@ -713,7 +713,7 @@ bool L_end_of_match()
 
     //TODO gérer le gros robot
 
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
     ROBOTPOSITION zone;
     robot.ia().iAbyPath().goToZone("zone_end", &zone);
     ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 1000000, 55, 55, true, 0);
@@ -759,7 +759,7 @@ bool L_end_of_matchA3()
 
     //TODO gérer le gros robot
 
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
     ROBOTPOSITION zone;
     robot.ia().iAbyPath().goToZone("zone_endA3", &zone);
     ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), true, 1000000, 55, 55, true, 0);
@@ -805,7 +805,7 @@ bool L_end_of_matchA4()
 
     //TODO gérer le gros robot
 
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
     ROBOTPOSITION zone;
     robot.ia().iAbyPath().goToZone("zone_endA4", &zone);
     ts = robot.ia().iAbyPath().whileMoveForwardTo(zone.x, zone.y, true, 1000000, 55, 55, true, 0);

@@ -59,7 +59,7 @@ AAsservDriver * AAsservDriver::create(std::string)
 
 AsservDriver_mbed_i2c::AsservDriver_mbed_i2c() :
         mbedI2c_(0) //OPOS6UL_UART5=>1 ; OPOS6UL_UART4=>0
-                , connected_(false), asservMbedStarted_(false), pathStatus_(TRAJ_OK), p_( { 0.0, 0.0, 0.0, -1, 0 })
+                , connected_(false), asservMbedStarted_(false), pathStatus_(TRAJ_IDLE), p_( { 0.0, 0.0, 0.0, -1, 0 })
 {
     errorCount_ = 0;
     if (mbedI2c_.setSlaveAddr(MBED_ADDRESS) < 0) //0xAA>>1 = 0x55
@@ -283,41 +283,7 @@ void AsservDriver_mbed_i2c::path_InterruptTrajectory()
         pathStatus_ = TRAJ_INTERRUPTED;
     }
 }
-void AsservDriver_mbed_i2c::path_CollisionOnTrajectory()
-{
-    if (!connected_)
-        return;
-    if (!asservMbedStarted_)
-        logger().info() << "path_CollisionOnTrajectory() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
-    else {
-        logger().error() << "path_CollisionOnTrajectory() HALT " << asservMbedStarted_ << logs::end;
-        mbed_writeI2c('h', 0, NULL);
-        pathStatus_ = TRAJ_NEAR_OBSTACLE;
-    }
-}
-void AsservDriver_mbed_i2c::path_CollisionRearOnTrajectory()
-{
-    if (!connected_)
-        return;
-    if (!asservMbedStarted_)
-        logger().info() << "path_CollisionRearOnTrajectory() ERROR MBED NOT STARTED " << asservMbedStarted_
-                << logs::end;
-    else {
-        mbed_writeI2c('h', 0, NULL);
-        pathStatus_ = TRAJ_NEAR_OBSTACLE;
-    }
-}
-void AsservDriver_mbed_i2c::path_CancelTrajectory()
-{
-    if (!connected_)
-        return;
-    if (!asservMbedStarted_)
-        logger().debug() << "path_CancelTrajectory() ERROR MBED NOT STARTED " << asservMbedStarted_ << logs::end;
-    else {
-        mbed_writeI2c('h', 0, NULL);
-        pathStatus_ = TRAJ_INTERRUPTED;
-    }
-}
+
 void AsservDriver_mbed_i2c::path_ResetEmergencyStop()
 {
     if (!connected_)
@@ -327,7 +293,7 @@ void AsservDriver_mbed_i2c::path_ResetEmergencyStop()
     else {
         logger().error() << "path_ResetEmergencyStop() !! " << logs::end;
         mbed_writeI2c('r', 0, NULL);
-        pathStatus_ = TRAJ_OK;
+        pathStatus_ = TRAJ_IDLE;
     }
 }
 TRAJ_STATE AsservDriver_mbed_i2c::motion_DoLine(float dist_meters) //v4 +d

@@ -21,7 +21,7 @@ bool O_end_of_match_top()
 
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 	robot.logger().info() << __FUNCTION__ << logs::end;
-	TRAJ_STATE ts = TRAJ_OK;
+	TRAJ_STATE ts = TRAJ_IDLE;
 	ROBOTPOSITION zone;
 
 	robot.lastAction(true);
@@ -122,7 +122,7 @@ bool O_push_prise_bas()
 
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 	robot.logger().info() << __FUNCTION__ << logs::end;
-	TRAJ_STATE ts = TRAJ_OK;
+	TRAJ_STATE ts = TRAJ_IDLE;
 	ROBOTPOSITION zone;
 
 	robot.asserv().setMaxSpeed(true, 40);

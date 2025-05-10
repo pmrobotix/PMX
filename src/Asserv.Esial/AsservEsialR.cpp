@@ -33,7 +33,7 @@ AsservEsialR::AsservEsialR(Robot *robot) :
 
     periodNb_ = 0;
     loopDelayInMillisec_ = 0;
-    pathStatus_ = TRAJ_OK;
+    pathStatus_ = TRAJ_IDLE;
 
     p_ = { 0, 0, 0, 0 };
 
@@ -287,7 +287,6 @@ void AsservEsialR::execute()
 
     while (1) {
         if (run_) {
-
             current = chronoTimer_.getElapsedTimeInMicroSec();
             nb++;
             odo_->refresh();
@@ -303,6 +302,8 @@ void AsservEsialR::execute()
                 commandM_->perform();
                 unlock();
             }
+
+
 
             //            long t4 = chronoTimer_.getElapsedTimeInMicroSec();
 
@@ -510,6 +511,8 @@ void AsservEsialR::path_InterruptTrajectory()
     pathStatus_ = TRAJ_INTERRUPTED;
     unlock();
 }
+
+/*
 void AsservEsialR::path_CollisionOnTrajectory()
 {
     lock();
@@ -531,7 +534,7 @@ void AsservEsialR::path_CollisionRearOnTrajectory()
     lock();
     //printf("path_CollisionRearOnTrajectory() sent !!!!!\n");
     commandM_->setEmergencyStop();
-    pathStatus_ = TRAJ_NEAR_OBSTACLE;
+    pathStatus_ = TRAJ_REAR_OBSTACLE;
     unlock();
 }
 void AsservEsialR::path_CancelTrajectory()
@@ -539,15 +542,16 @@ void AsservEsialR::path_CancelTrajectory()
     lock();
     //printf("path_CancelTrajectory() sent !!!!!\n");
     commandM_->setEmergencyStop();
-    pathStatus_ = TRAJ_IMPOSSIBLE;
+    pathStatus_ = TRAJ_INTERRUPTED;
     unlock();
 }
+*/
 void AsservEsialR::path_ResetEmergencyStop()
 {
     lock();
     logger().debug() << "______________________path_ResetEmergencyStop() !!!!!!!!!!!!!! " << logs::end;
     commandM_->resetEmergencyStop();
-    pathStatus_ = TRAJ_OK;
+    pathStatus_ = TRAJ_IDLE;
     unlock();
 }
 
@@ -671,7 +675,7 @@ TRAJ_STATE AsservEsialR::motion_Goto(float x_mm, float y_mm)
 {
     TRAJ_STATE r = motion_DoFace(x_mm, y_mm);
 
-    //PATCH CHAFF MAGIQUE!
+    //TODO PATCH CHAFF MAGIQUE! A GARDER ??
     if (r != TRAJ_FINISHED) {
         return r;
     }

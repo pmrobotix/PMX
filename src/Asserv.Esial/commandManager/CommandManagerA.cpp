@@ -73,7 +73,7 @@ bool CommandManagerA::addGoToAngleReverse(int32_t posXInmm, int32_t posYInmm)
  */
 void CommandManagerA::perform()
 {
-//printf("\nCommandManagerA::perform() commandStatus= %d\n", commandStatus);
+//printf("\n___CommandManagerA::perform() commandStatus= %d\n", commandStatus);
     // Arrêt d'urgence! On n'accepte aucune commande.
     if (commandStatus == STATUS_HALTED || commandStatus == STATUS_BLOCKED) {    //Ajouter cho 2019
         while (currCMD.type != CMD_NULL) { //On s'assure que la liste des commandes est vide
@@ -383,7 +383,7 @@ void CommandManagerA::computeEnchainement()
 void CommandManagerA::setEmergencyStop()  //Gestion d'un éventuel arrêt d'urgence
 {
 
-    //printf("----setEmergencyStop getPendingCmdCount()=%d current:%d\n", getPendingCmdCount(),currCMD.type);
+    printf("----setEmergencyStop getPendingCmdCount()=%d current:%d\n", getPendingCmdCount(),currCMD.type);
 
     cnsgCtrl->setQuadRamp_Angle(false); //Ajouter cho 2019
     cnsgCtrl->setQuadRamp_Dist(false);
@@ -394,16 +394,16 @@ void CommandManagerA::setEmergencyStop()  //Gestion d'un éventuel arrêt d'urge
     while (currCMD.type != CMD_NULL) {
         currCMD = liste->dequeue();
     }
-//    while (nextCMD.type != CMD_NULL) {
-//        nextCMD = liste->dequeue();
-//    }
+    while (nextCMD.type != CMD_NULL) {
+        nextCMD = liste->dequeue();
+    }
     nextCMD.type = CMD_NULL;
 
     //printf("===== commandStatus = STATUS_HALTED!!!\n");
     commandStatus = STATUS_HALTED;
 
     //debug
-    //printf("----setEmergencyStop getPendingCmdCount()=%d current:%d\n", getPendingCmdCount(),currCMD.type);
+    printf("----setEmergencyStop getPendingCmdCount()=%d current:%d\n", getPendingCmdCount(),currCMD.type);
 }
 
 void CommandManagerA::resetEmergencyStop()

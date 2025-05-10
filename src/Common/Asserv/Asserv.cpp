@@ -366,17 +366,16 @@ bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm,
  */
 void Asserv::setEmergencyStop()
 {
-	logger().error() << "Asserv::setEmergencyStop() !!!!!!!!!!!" << logs::end;
+	logger().debug() << "Asserv::setEmergencyStop() !!!!!!!!!!!" << logs::end;
 	if (emergencyStop_ == true)
 	{
-		logger().error() << "Asserv::setEmergencyStop() emergencyStop_ ALREADY TRUE!" << logs::end;
+		logger().debug() << "Asserv::setEmergencyStop() emergencyStop_ ALREADY TRUE!" << logs::end;
 
 	} else
 	{
 		emergencyStop_ = true;
 
-		if (useAsservType_ == ASSERV_EXT)
-			asservdriver_->path_InterruptTrajectory();
+		if (useAsservType_ == ASSERV_EXT) asservdriver_->path_InterruptTrajectory();
 		else if (useAsservType_ == ASSERV_INT_ESIALR) pAsservEsialR_->path_InterruptTrajectory();
 	}
 
@@ -386,10 +385,10 @@ void Asserv::resetEmergencyOnTraj(std::string message)
 {
 	if (emergencyStop_ == false)
 	{
-		logger().error() << "Asserv::resetEmergencyOnTraj() emergencyStop_ IS NOT TRUE!" << logs::end;
+		logger().debug() << "Asserv::resetEmergencyOnTraj() emergencyStop_ IS NOT TRUE!" << logs::end;
 		//return;
 	}
-	logger().error() << "=====   resetEmergencyOnTraj message = " << message << logs::end;
+	logger().debug() << "=====   resetEmergencyOnTraj message = " << message << logs::end;
 	emergencyStop_ = false;
 	if (useAsservType_ == ASSERV_EXT)
 		asservdriver_->path_ResetEmergencyStop();
@@ -424,15 +423,11 @@ void Asserv::setMaxSpeedDistValue(int value)
 //TODO enlever le nom collision, remplacer par opponent !!!
 void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, float y_adv_detect_mm)
 {
-	logger().error() << "warnFrontCollisionOnTraj frontlevel = " << frontlevel << logs::end;
+	logger().info() << "warnFrontCollisionOnTraj frontlevel = " << frontlevel << logs::end;
 //    logger().error() << "temp_forceRotation_ = " << temp_forceRotation_ << " temp_ignoreFrontCollision_="
 //            << temp_ignoreFrontCollision_ << logs::end;
 
-	if (temp_forceRotation_)
-	{
-		//logger().error() << "forceRotation_ = " << temp_forceRotation_ << logs::end;
-		return;
-	}
+	if (temp_forceRotation_) return;
 
 	if (temp_ignoreFrontCollision_) return;
 
@@ -442,10 +437,11 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
 	//On ne fait un HALT que si l'asserv n'est pas a IDLE
 	ROBOTPOSITION p = pos_getPosition();
 
-	logger().error() << "HAAAAAAAAAAAALT p.asservStatus = " << p.asservStatus << logs::end;
-	if (true) //p.asservStatus == 1 && p.queueSize > 0)
+	logger().debug() <<__FUNCTION__ << " HAAAAAAAAAAAALT p.asservStatus = " << p.asservStatus << logs::end;
+	//if (true)
+	if (p.asservStatus == 1 )// && p.queueSize > 0)
 	{
-		logger().error() << "===== Asserv::warnFrontCollisionOnTraj !!!!! " << logs::end;
+		logger().error() << "===== Asserv::warnFrontCollisionOnTraj !!!!! TODO if true ???? " << logs::end;
 
 		setEmergencyStop();
 //		if (useAsservType_ == ASSERV_EXT)
@@ -673,28 +669,9 @@ TRAJ_STATE Asserv::doFaceTo(float xMM, float yMM, bool back_face)
 //absolute motion (depends on current position of the robot, thinking in the first color of match) [-179;0;+180] of the field
 TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_ignoring_opponent)
 {
-
 	float rad = changeMatchAngleRad(degToRad(thetaInDegreeAbsolute)) - pos_getTheta();
 
 	rad = WrapAngle2PI(rad);
-//// force it to be the positive remainder, so that 0 <= angle < 360
-//    degrees = (((int) (degrees * 1000.0f) + 360000) % 360000) / 1000.0f;
-////reduction sur une plage de [0 à 360]
-//    if (degrees >= 360.0) {
-//        degrees = ((int) (degrees * 1000.0f) % 360000) / 1000.0f;
-//    }
-//    if (degrees < -360.0) {
-//        int d = (int) -(degrees * 1000.0f);
-//        d = d % 360000;
-//        degrees = -d / 1000.0f;
-//    }
-// force into the minimum absolute value residue class, so that -180 < angle <= 180
-//    if (degrees >= 180)
-//        degrees -= 360;
-
-//	rad = std::fmod(rad, 2.0 * M_PI);
-//	if (rad < -M_PI) rad += (2.0 * M_PI);
-//	if (rad > M_PI) rad -= (2.0 * M_PI);
 
 	logger().debug() << "==== doRotateTo degrees=" << radToDeg(rad) << " thetaInDegreeAbsolute="
 			<< thetaInDegreeAbsolute << logs::end;
@@ -703,10 +680,9 @@ TRAJ_STATE Asserv::doAbsoluteRotateTo(float thetaInDegreeAbsolute, bool rotate_i
 	return ts;
 }
 
-//TODO ATTENTION le getPos n'est pas precis puisque les positions sont recup toutes les n ms, donc il faut utiliser l'asserv ext qui possede l'odometrie
+//Move forward jusquà une position donnée en fonction de la position du robot (getPos)
 TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignoring_opponent, float adjustment_mm)
 {
-
 	float dx = changeMatchX(xMM) - pos_getX_mm();
 	float dy = yMM - pos_getY_mm();
 	if (std::abs(dx) < 5.0 && std::abs(dy) < 5.0)
@@ -718,16 +694,13 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignoring_op
 	float aRadian = atan2(dy, dx);
 
 	aRadian = WrapAngle2PI(aRadian);
-//	aRadian = std::fmod(aRadian, 2.0 * M_PI);
-//	if (aRadian < -M_PI) aRadian += (2.0 * M_PI);
-//	if (aRadian > M_PI) aRadian -= (2.0 * M_PI);
 
 	logger().debug() << "doMoveForwardTo doRotateTo degrees=" << (aRadian * 180.0f) / M_PI << " dx=" << dx << " dy="
 			<< dy << "  (aRadian * 180.0f) / M_PI)= " << (aRadian * 180.0f) / M_PI << " get="
 			<< radToDeg(changeMatchAngleRad(aRadian)) << " xMM=" << xMM << " yMM=" << yMM << " getX=" << pos_getX_mm()
 			<< " getY=" << pos_getY_mm() << logs::end;
 
-	TRAJ_STATE ts = TRAJ_OK;
+	TRAJ_STATE ts = TRAJ_IDLE;
 //	int count_rotation_ignored = 0;
 
 	temp_forceRotation_ = rotate_ignoring_opponent;
@@ -777,11 +750,7 @@ TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM, bool rotate_ignoring_o
 		return TRAJ_FINISHED;
 	}
 	float aRadian = M_PI + atan2(dy, dx);
-
 	aRadian = WrapAngle2PI(aRadian);
-//	aRadian = std::fmod(aRadian, 2.0 * M_PI);
-//	if (aRadian < -M_PI) aRadian += (2.0 * M_PI);
-//	if (aRadian > M_PI) aRadian -= (2.0 * M_PI);
 
 	temp_forceRotation_ = rotate_ignoring_opponent;
 
@@ -1158,8 +1127,8 @@ TRAJ_STATE Asserv::doCalage2(int distmm, int percent)
 		pAsservEsialR_->motion_ResetReguDist();
 
 		pAsservEsialR_->motion_AssistedHandling();
-		TRAJ_STATE ts = TRAJ_OK;
-		while (ts == TRAJ_OK)
+		TRAJ_STATE ts = TRAJ_IDLE;
+		while (ts == TRAJ_IDLE)
 		{
 			ts = pAsservEsialR_->motion_DoDirectLine(distmm); //sans asservissement L/R
 			std::this_thread::yield();

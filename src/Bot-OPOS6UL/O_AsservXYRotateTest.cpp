@@ -152,12 +152,12 @@ void O_AsservXYRotateTest::run(int argc, char **argv)
 	//Definition du path
 	//bool byPathfinding = false;
 
-	TRAJ_STATE ts = TRAJ_OK;
+	TRAJ_STATE ts = TRAJ_IDLE;
 
 	for (int num = 1; num <= nb; num++)
 	{
 		logger().info() << "Go essai num= " << num << " / " << nb << logs::end;
-		ts = TRAJ_OK;
+		ts = TRAJ_IDLE;
 		if (d != 0)
 		{
 			logger().info() << "go ...d=" << d << "mm" << logs::end;
@@ -226,7 +226,7 @@ void O_AsservXYRotateTest::run(int argc, char **argv)
 
 			}
 		}
-		ts = TRAJ_OK;
+		ts = TRAJ_IDLE;
 		if (a != 0.0)
 		{
 			logger().info() << "go Rotate..." << a << " deg" << logs::end;
@@ -250,7 +250,7 @@ void O_AsservXYRotateTest::run(int argc, char **argv)
 
 			robot.svgPrintPosition();
 		}
-		ts = TRAJ_OK;
+		ts = TRAJ_IDLE;
 		if (!(x == 0.0 && y == 0.0))
 		{
 			if (!back)
@@ -306,7 +306,7 @@ void O_AsservXYRotateTest::run(int argc, char **argv)
 				robot.svgPrintPosition();
 			}
 		}
-		ts = TRAJ_OK;
+		ts = TRAJ_IDLE;
 		if (a != 0)
 		{
 			robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);

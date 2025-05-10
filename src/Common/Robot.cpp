@@ -57,6 +57,7 @@ Robot::~Robot() {
     logs::LoggerFactory::instance().stopLog();
 }
 
+//COLOR 0:GRIS / 1:ORANGE / 2:RED / 3:GREEN / 4:BLUE / 5:BLACK
 void Robot::svgPrintPosition(int color) {
 
     if (asserv_default_ != NULL) {

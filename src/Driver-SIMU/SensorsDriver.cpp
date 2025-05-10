@@ -88,11 +88,7 @@ RobotPos SensorsDriver::transformPosTableToPosRobot(int nb, float x_table, float
 
     float alpha_rad = b_rad - p.theta + M_PI_2;
 
-    alpha_rad = std::fmod(alpha_rad, 2.0 * M_PI);
-    if (alpha_rad < -M_PI)
-        alpha_rad += (2.0 * M_PI);
-    if (alpha_rad > M_PI)
-        alpha_rad -= (2.0 * M_PI);
+    alpha_rad= WrapAngle2PI(alpha_rad);
 
     //angle entre l'axe devant le robot et le segment entre les milieu des 2 robots
     float alpha_deg = (alpha_rad * 180.0 / M_PI); //a_deg_rep_robot

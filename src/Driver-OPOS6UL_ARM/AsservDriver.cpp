@@ -476,18 +476,14 @@ int AsservDriver::path_GetLastCommandStatus()
 
 void AsservDriver::path_InterruptTrajectory()
 {
-
 	if (!asservCardStarted_)
 		logger().debug() << "path_InterruptTrajectory() ERROR MBED NOT STARTED " << asservCardStarted_ << logs::end;
 	else
 	{
-
 		m_pos.lock();
 		p_.asservStatus = 2;
 		m_pos.unlock();
-		//nucleo_writeSerial('h');
 		nucleo_writeSerial('h');
-		//pathStatus_ = TRAJ_INTERRUPTED;
 	}
 }
 
@@ -568,7 +564,6 @@ void AsservDriver::path_ResetEmergencyStop()
 		m_pos.unlock();
 
 		nucleo_writeSerial('r');
-		//pathStatus_ = TRAJ_OK;
 	}
 }
 
@@ -754,7 +749,7 @@ TRAJ_STATE AsservDriver::motion_DoRotate(float angle_radians)
 	} else
 	{
 		m_pos.lock();
-		p_.asservStatus = 1;
+		p_.asservStatus = 1;//running
 		m_pos.unlock();
 
 		m_statusCountDown.lock();

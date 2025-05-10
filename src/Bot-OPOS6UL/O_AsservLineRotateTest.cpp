@@ -24,7 +24,7 @@ void O_AsservLineRotateTest::configureConsoleArgs(int argc, char **argv) //surch
 {
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
-	robot.getArgs().addArgument("d", "distance mm", "0");
+	robot.getArgs().addArgument("d", "distance mm");
 	robot.getArgs().addArgument("a", "angle degres", "0");
 	robot.getArgs().addArgument("back", "backwards[0,1]", "0");
 
@@ -98,11 +98,11 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 	int B = 0;
 	int m = 0;
 	int s = 0;
+	int pathfindingMode = 0;
+
 	float coordx = 0.0;
 	float coordy = 0.0;
 	float coorda_deg = 0.0;
-
-	int pathfindingMode = 0;
 
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
@@ -180,6 +180,9 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 	m = atoi(args['m']["mode"].c_str());
 	logger().info() << "Arg m set " << args['m']["mode"] << ", m = " << m << logs::end;
 
+	pathfindingMode = atoi(args['p']["pmode"].c_str());
+	logger().info() << "Arg p set " << args['p']["pmode"] << ", pathfindingMode = " << pathfindingMode << logs::end;
+
 	coordx = atof(args['+']["coordx"].c_str());
 	coordy = atof(args['+']["coordy"].c_str());
 	coorda_deg = atof(args['+']["coorda"].c_str());
@@ -189,9 +192,9 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 	robot.asserv().setPositionAndColor(coordx, coordy, coorda_deg, (bool) (robot.getMyColor() != PMXYELLOW));
 	robot.asserv().assistedHandling();
 
-	ROBOTPOSITION p = robot.asserv().pos_getPosition();
-	logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; " << " px=" << p.x << " py="
-			<< p.y << " pa_deg=" << p.theta * 180.0 / M_PI << logs::end;
+	ROBOTPOSITION pos = robot.asserv().pos_getPosition();
+	logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; " << " px=" << pos.x << " py="
+			<< pos.y << " pa_deg=" << pos.theta * 180.0 / M_PI << logs::end;
 
 	robot.svgPrintPosition();
 
@@ -219,7 +222,7 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 	//Definition du path
 	//bool byPathfinding = false;
 
-	TRAJ_STATE ts = TRAJ_OK;
+	TRAJ_STATE ts = TRAJ_IDLE;
 	if (B == 1)
 	{
 		robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
@@ -261,12 +264,25 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 				if (pathfindingMode == 0)
 				{
 					ts = robot.asserv().doLine(dd);
+					if (ts >= TRAJ_INTERRUPTED)
+					{
+						logger().info() << robot.asserv().getTraj(ts) << " =====  CONFIRMED AFTER n ;WHAT TO DO ?" << logs::end;
+					}
+
 				} else if (pathfindingMode == 1)
 				{
-					//While()...
+					ts = robot.ia().iAbyPath().whileDoLine(dd, false, 2000000, 4, 5);
+					if (ts >= TRAJ_INTERRUPTED)
+					{
+						logger().info() << robot.asserv().getTraj(ts) << " =====  CONFIRMED AFTER n ;WHAT TO DO ?" << logs::end;
+					}
+
 				} else if (pathfindingMode == 2)
 				{
 					//while avec pathfinding
+
+
+
 				}
 			} else //En arrière (la demande d'angle relatif ne change pas)
 			{
@@ -478,9 +494,9 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 	robot.asserv().freeMotion();
 	robot.asserv().setMaxSpeed(false);
 
-	p = robot.asserv().pos_getPosition();
-	logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; " << " x=" << p.x << " y=" << p.y
-			<< " deg=" << p.theta * 180.0 / M_PI << logs::end;
+	pos = robot.asserv().pos_getPosition();
+	logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; " << " x=" << pos.x << " y="
+			<< pos.y << " deg=" << pos.theta * 180.0 / M_PI << logs::end;
 
 	robot.svgPrintPosition();
 	robot.svgPrintEndOfFile();

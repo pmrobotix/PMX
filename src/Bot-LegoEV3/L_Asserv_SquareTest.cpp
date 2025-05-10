@@ -74,7 +74,7 @@ void L_Asserv_SquareTest::run(int argc, char** argv)
     robot.actions().sensors().addTimerSensors(200);
 
     chrono.start();
-    TRAJ_STATE ts = TRAJ_OK;
+    TRAJ_STATE ts = TRAJ_IDLE;
     int f = 0;
     for (int n = 1; n <= nb; n++) {
         logger().info() << "doMoveForwardTo " << " x=" << x << " y=" << y << logs::end;

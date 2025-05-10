@@ -433,7 +433,7 @@ void O_State_Init::setPos()
 
 	//robot.asserv().resetDisplayTS();
 	robot.asserv().assistedHandling();
-	TRAJ_STATE ts = TRAJ_OK;
+	TRAJ_STATE ts = TRAJ_IDLE;
 
 	//robot.asserv().setLowSpeedForward(false);
 	//ts = robot.asserv().doLineAbs(50);

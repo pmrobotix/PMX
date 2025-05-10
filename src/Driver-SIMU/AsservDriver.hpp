@@ -140,11 +140,10 @@ public:
     //fonctions asservissements externe par defaut
     void odo_SetPosition(float x_mm, float y_mm, float angle_rad);
     ROBOTPOSITION odo_GetPosition();
+
     int path_GetLastCommandStatus(); //deprecated
+
     void path_InterruptTrajectory();
-    void path_CollisionOnTrajectory();
-    void path_CollisionRearOnTrajectory();
-    void path_CancelTrajectory();
     void path_ResetEmergencyStop();
 
     TRAJ_STATE motion_DoFace(float x_mm, float y_mm, bool back_face = false);
@@ -167,6 +166,8 @@ public:
     //Functions deprecated
     void motion_ActivateReguDist(bool enable);
     void motion_ActivateReguAngle(bool enable);
+
+
     /*void motion_ResetReguDist();
     void motion_ResetReguAngle();
     TRAJ_STATE motion_DoDirectLine(float dist_mm); //uniquement en consigne sans le command manager

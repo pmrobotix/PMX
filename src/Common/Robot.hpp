@@ -246,6 +246,7 @@ public:
         actions_default_ = action;
     }
 
+    //COLOR 0:GRIS / 1:ORANGE / 2:RED / 3:GREEN / 4:BLUE / 5:BLACK
     void svgPrintPosition(int color = 0);
 
     void svgPrintEndOfFile();
