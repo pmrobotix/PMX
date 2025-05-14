@@ -23,8 +23,8 @@ Asserv::Asserv(std::string botId, Robot *robot) //TODO utiliser uniquement robot
 	else
 		pAsservEsialR_ = NULL;
 
-	temp_ignoreRearCollision_ = false;
-	temp_ignoreFrontCollision_ = false;
+	temp_ignoreBackDetection_ = false;
+	temp_ignoreFrontDetection_ = false;
 	temp_forceRotation_ = false;
 
 	matchColorPosition_ = false;
@@ -148,7 +148,7 @@ void Asserv::setMaxSpeed(bool enable, int speed_dist_percent, int speed_angle_pe
 {
 	if (useAsservType_ == ASSERV_INT_ESIALR)
 	{
-		//TODO
+		//TODO setMaxSpeed ASSERV_INT_ESIALR
 
 	} else if (useAsservType_ == ASSERV_EXT)
 	{
@@ -364,6 +364,8 @@ bool Asserv::filtre_IsInsideTable(int dist_detect_mm, int lateral_pos_sensor_mm,
  return false;
  }
  */
+
+
 void Asserv::setEmergencyStop()
 {
 	logger().debug() << "Asserv::setEmergencyStop() !!!!!!!!!!!" << logs::end;
@@ -375,7 +377,8 @@ void Asserv::setEmergencyStop()
 	{
 		emergencyStop_ = true;
 
-		if (useAsservType_ == ASSERV_EXT) asservdriver_->path_InterruptTrajectory();
+		if (useAsservType_ == ASSERV_EXT)
+			asservdriver_->path_InterruptTrajectory();
 		else if (useAsservType_ == ASSERV_INT_ESIALR) pAsservEsialR_->path_InterruptTrajectory();
 	}
 
@@ -420,35 +423,40 @@ void Asserv::setMaxSpeedDistValue(int value)
 	maxSpeedDistValue_ = value;
 }
 
-//TODO enlever le nom collision, remplacer par opponent !!!
-void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, float y_adv_detect_mm)
+void Asserv::warnFrontDetectionOnTraj(int frontlevel, float x_adv_detect_mm, float y_adv_detect_mm)
 {
-	logger().info() << "warnFrontCollisionOnTraj frontlevel = " << frontlevel << logs::end;
-//    logger().error() << "temp_forceRotation_ = " << temp_forceRotation_ << " temp_ignoreFrontCollision_="
-//            << temp_ignoreFrontCollision_ << logs::end;
-
 	if (temp_forceRotation_) return;
+	if (temp_ignoreFrontDetection_) return;
 
-	if (temp_ignoreFrontCollision_) return;
+//	logger().info() << "warnFrontDetectionOnTraj frontlevel = " << frontlevel << logs::end;
+//	logger().error() << "temp_forceRotation_ = " << temp_forceRotation_ << " temp_ignoreFrontDetection_="
+//			<< temp_ignoreFrontDetection_ << logs::end;
 
-//3 ou 4
-//.if (frontlevel >= 3) { //TODO ?
-
-	//On ne fait un HALT que si l'asserv n'est pas a IDLE
-	ROBOTPOSITION p = pos_getPosition();
-
-	logger().debug() <<__FUNCTION__ << " HAAAAAAAAAAAALT p.asservStatus = " << p.asservStatus << logs::end;
-	//if (true)
-	if (p.asservStatus == 1 )// && p.queueSize > 0)
+	if (frontlevel == 2)
 	{
-		logger().error() << "===== Asserv::warnFrontCollisionOnTraj !!!!! TODO if true ???? " << logs::end;
-
-		setEmergencyStop();
-//		if (useAsservType_ == ASSERV_EXT)
-//			asservdriver_->path_CollisionOnTrajectory();
-//		else if (useAsservType_ == ASSERV_INT_ESIALR) pAsservEsialR_->path_CollisionOnTrajectory();
+		setMaxSpeed(false);
+		return;
 	}
-//}
+	//3  => on baisse la vitesse
+	if (frontlevel == 3)
+	{
+		//setLowSpeedBackward(true, getLowSpeedvalue());
+		setMaxSpeed(true, getMaxSpeedDistValue());
+		return;
+	}
+
+	if (frontlevel == 4)
+	{
+		//On ne fait un HALT que si l'asserv n'est pas a IDLE
+		ROBOTPOSITION p = pos_getPosition();
+
+		//logger().debug() << __FUNCTION__ << " HAAAAAAAAAAAALT p.asservStatus = " << p.asservStatus << logs::end;
+		//if (true)
+		if (p.asservStatus == 1) // && p.queueSize > 0)
+		{
+			setEmergencyStop();
+		}
+	}
 
 	/*
 	 //conversion de la position du le terrain et determination du centre du robot adverse
@@ -472,22 +480,40 @@ void Asserv::warnFrontCollisionOnTraj(int frontlevel, float x_adv_detect_mm, flo
 	 << logs::end;*/
 }
 
-void Asserv::warnBackCollisionOnTraj(int backlevel, float x_adv_detect_mm, float y_adv_detect_mm) //x positif devant le robot, y positif le coté gauche
+void Asserv::warnBackDetectionOnTraj(int backlevel, float x_adv_detect_mm, float y_adv_detect_mm) //x positif devant le robot, y positif le coté gauche
 {
 	if (temp_forceRotation_) return;
-	if (temp_ignoreRearCollision_) return;
+	if (temp_ignoreBackDetection_) return;
+//	logger().info() << "asserv warnBackDetectionOnTraj backlevel = " << backlevel << logs::end;
+//		logger().error() << "temp_forceRotation_ = " << temp_forceRotation_ << " temp_ignoreBackDetection_="
+//				<< temp_ignoreBackDetection_ << logs::end;
 
-	if (backlevel >= 3)
+
+
+	if (backlevel == -2)
 	{
-		setLowSpeedBackward(true, getLowSpeedvalue());
+		setMaxSpeed(false);
+		return;
+	}
+	//3  => on baisse la vitesse
+	if (backlevel == -3)
+	{
+		//setLowSpeedBackward(true, getLowSpeedvalue());
+		setMaxSpeed(true, getMaxSpeedDistValue());
+		return;
 	}
 
-	if (backlevel >= 4)
+	if (backlevel == -4)
 	{
-		setEmergencyStop();
-//		if (useAsservType_ == ASSERV_EXT)
-//			asservdriver_->path_CollisionRearOnTrajectory();
-//		else if (useAsservType_ == ASSERV_INT_ESIALR) pAsservEsialR_->path_CollisionRearOnTrajectory();
+		//On ne fait un HALT que si l'asserv n'est pas a IDLE
+		ROBOTPOSITION p = pos_getPosition();
+
+		//logger().debug() << __FUNCTION__ << " HAAAAAAAAAAAALT p.asservStatus = " << p.asservStatus << logs::end;
+		//if (true)
+		if (p.asservStatus == 1) // && p.queueSize > 0)
+		{
+			setEmergencyStop();
+		}
 	}
 	/*
 	 //conversion de la position du le terrain et determination du centre du robot adverse
@@ -514,7 +540,7 @@ void Asserv::warnBackCollisionOnTraj(int backlevel, float x_adv_detect_mm, float
 TRAJ_STATE Asserv::gotoChain(float xMM, float yMM)
 {
 	float x_match = changeMatchX(xMM);
-	temp_ignoreRearCollision_ = true;
+	//temp_ignoreRearCollision_ = true;
 	TRAJ_STATE ts;
 	if (useAsservType_ == ASSERV_EXT)
 		ts = asservdriver_->motion_GotoChain(x_match, yMM);
@@ -522,7 +548,7 @@ TRAJ_STATE Asserv::gotoChain(float xMM, float yMM)
 		ts = pAsservEsialR_->motion_GotoChain(x_match, yMM);
 	else
 		ts = TRAJ_ERROR;
-	temp_ignoreRearCollision_ = false;
+	//temp_ignoreRearCollision_ = false;
 	return ts;
 }
 
@@ -547,7 +573,7 @@ TRAJ_STATE Asserv::gotoXY(float xMM, float yMM)
 TRAJ_STATE Asserv::gotoReverse(float xMM, float yMM)
 {
 	float x_match = changeMatchX(xMM);
-	temp_ignoreFrontCollision_ = true;
+	//temp_ignoreFrontCollision_ = true;
 	TRAJ_STATE ts;
 	if (useAsservType_ == ASSERV_EXT)
 		ts = asservdriver_->motion_GotoReverse(x_match, yMM);
@@ -556,14 +582,14 @@ TRAJ_STATE Asserv::gotoReverse(float xMM, float yMM)
 
 	else
 		ts = TRAJ_ERROR;
-	temp_ignoreFrontCollision_ = false;
+	//temp_ignoreFrontCollision_ = false;
 	return ts;
 }
 
 TRAJ_STATE Asserv::gotoReverseChain(float xMM, float yMM)
 {
 	float x_match = changeMatchX(xMM);
-	temp_ignoreFrontCollision_ = true;
+	//temp_ignoreFrontCollision_ = true;
 	TRAJ_STATE ts;
 	if (useAsservType_ == ASSERV_EXT)
 		ts = asservdriver_->motion_GotoReverseChain(x_match, yMM);
@@ -572,7 +598,7 @@ TRAJ_STATE Asserv::gotoReverseChain(float xMM, float yMM)
 
 	else
 		ts = TRAJ_ERROR;
-	temp_ignoreFrontCollision_ = false;
+	//temp_ignoreFrontCollision_ = false;
 	return ts;
 }
 
@@ -581,10 +607,10 @@ TRAJ_STATE Asserv::doLine(float dist_mm) // if distance <0, move backward
 
 	if (dist_mm > 0)
 	{
-		temp_ignoreRearCollision_ = true;
+		temp_ignoreBackDetection_ = true;
 	} else
 	{
-		temp_ignoreFrontCollision_ = true;
+		temp_ignoreFrontDetection_ = true;
 	}
 
 	TRAJ_STATE ts;
@@ -598,10 +624,10 @@ TRAJ_STATE Asserv::doLine(float dist_mm) // if distance <0, move backward
 
 	if (dist_mm > 0)
 	{
-		temp_ignoreRearCollision_ = false;
+		temp_ignoreBackDetection_ = false;
 	} else
 	{
-		temp_ignoreFrontCollision_ = false;
+		//temp_ignoreFrontDetection_ = false;
 	}
 
 	return ts;
@@ -771,7 +797,6 @@ TRAJ_STATE Asserv::doMoveBackwardTo(float xMM, float yMM, bool rotate_ignoring_o
 	float dist = sqrt(dx * dx + dy * dy);
 	return doLine(-dist);
 }
-
 
 //deprecated ?
 TRAJ_STATE Asserv::doMoveForwardAndRotateTo(float xMM, float yMM, float thetaInDegree, bool rotate_ignore_opponent)

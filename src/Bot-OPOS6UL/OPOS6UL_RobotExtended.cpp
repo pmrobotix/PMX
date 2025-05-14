@@ -123,7 +123,7 @@ void OPOS6UL_RobotExtended::resetDisplayObstacle()
 
 }
 
-void OPOS6UL_RobotExtended::displayObstacle(int level)
+void OPOS6UL_RobotExtended::displayObstacle(int level) //TODO Front ou back ?
 {
     if (level == 1)
 

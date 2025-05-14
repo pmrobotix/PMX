@@ -109,13 +109,27 @@ RobotPos SensorsDriver::transformPosTableToPosRobot(int nb, float x_table, float
 
 ASensorsDriver::bot_positions SensorsDriver::getvPositionsAdv()
 {
-
     return vadv_;
-
 }
+
+
+//FOR TEST ONLY
+void SensorsDriver::addvPositionsAdv(float x, float y)
+{
+	int nb = 1;
+	RobotPos pos1 = transformPosTableToPosRobot(nb, x, y);
+	vadv_.push_back(pos1);
+}
+//FOR TEST ONLY
+void SensorsDriver::clearPositionsAdv()
+{
+	vadv_.clear();
+}
+
+
+
 int SensorsDriver::sync()
 {
-
     //simulation de recuperation des données de la balise par la transaction i2c
     //prise en compte de la position du robot à se moment pour les futures calculs, voir la version precedentes
     //pos_pour_calcul_prec_ = pos_pour_calcul_;
@@ -135,7 +149,7 @@ int SensorsDriver::sync()
 
     int nb = 1;
         RobotPos pos1 = transformPosTableToPosRobot(nb, 200.0, 1000.0);
-        //RobotPos pos2 = transformPosTableToPosRobot(nb, 700.0, 500.0);
+        RobotPos pos2 = transformPosTableToPosRobot(nb, 1100.0, 1000.0);
     //    RobotPos pos3 = transformPosTableToPosRobot(nb, 1300.0, 300.0);
     //    RobotPos pos4 = transformPosTableToPosRobot(nb, 300.0, 400.0);
 
@@ -148,7 +162,7 @@ int SensorsDriver::sync()
 //        RobotPos pos4 = transformPosTableToPosRobot(nb, 100, 1400);
 //
         vadv_.push_back(pos1);
-        //vadv_.push_back(pos2);
+        vadv_.push_back(pos2);
 //        vadv_.push_back(pos3);
 //        vadv_.push_back(pos4);
         //simu des positions adverses

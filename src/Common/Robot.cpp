@@ -31,7 +31,7 @@
 using namespace std;
 
 Robot::Robot() :
-        chrono_("Robot"), myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2024", "/") // use character "/" instead of "-" for arguments
+        chrono_("Robot"), myColor_(PMXNOCOLOR), cArgs_("", "(c) PM-ROBOTIX 2025", "/") // use character "/" instead of "-" for arguments
 {
     points = 0;
     tabletest = false;
@@ -56,6 +56,79 @@ Robot::~Robot() {
     //Stop le log s'il existe (core dump sinon)
     logs::LoggerFactory::instance().stopLog();
 }
+
+
+
+TRAJ_STATE Robot::whileDoLine(float distMM, bool rotate_ignoring_opponent, int wait_tempo_us, int nb_near_obstacle,
+		int nb_collision, int reculOnObstacleMm, int reculOnCollisionMm, bool ignore_collision)
+{
+	logger().error() << __FUNCTION__ << logs::end;
+
+	TRAJ_STATE ts = TRAJ_IDLE;
+	int f = 1;
+	float x_init = asserv().pos_getX_mm();
+	float y_init = asserv().pos_getY_mm();
+
+	int d_parcourue = 0;
+	int d_restant = distMM;
+
+	while (ts != TRAJ_FINISHED)
+	{
+
+		//calcul de la distance restante en fonction de la couleur de match
+		ts = asserv().doLine(d_restant);
+		displayTS(ts);
+
+		// nouvelle position: distance parcourue
+		d_parcourue = std::sqrt(((x_init-asserv().pos_getX_mm() ) * (x_init-asserv().pos_getX_mm()))
+				+ ((y_init-asserv().pos_getY_mm())*(y_init-asserv().pos_getY_mm())) );
+
+		d_restant = distMM - d_parcourue;
+		logger().error() << "d_parcourue = " << d_parcourue << " d_restant=" << d_restant  << logs::end;
+
+		if (ts >= TRAJ_INTERRUPTED)
+		{
+			logger().info() << "TRAJ_= " << asserv().getTraj(ts) << logs::end;
+			//temps d'attente avant de recommencer
+			utils::sleep_for_micros(wait_tempo_us);
+			f++;
+
+			asserv().stopMotors(); //h
+
+			if (f < nb_near_obstacle)
+			{
+				asserv().resetEmergencyOnTraj("Robot::whileDoLine TRAJ_>10 : " + ts);
+			}
+			if (reculOnObstacleMm > 0)
+			{
+				if (distMM < 0)
+					reculOnObstacleMm = -reculOnObstacleMm;
+				TRAJ_STATE tr = asserv().doLine(reculOnObstacleMm);
+				if (tr != TRAJ_IDLE)
+				{
+					asserv().resetEmergencyOnTraj("Robot::whileDoLine(-reculOnObstacleMm); TRAJ_INTERRUPTED!");
+				}
+			}
+
+			if (f >= nb_near_obstacle)
+			{
+				break;
+			}
+		}
+
+
+	}
+
+	displayTS(ts); //fait le print svg avec la couleur
+	logger().debug() << "time= " << chrono().getElapsedTimeInMilliSec() << "ms " << " x="
+			<< asserv().pos_getX_mm() << " y=" << asserv().pos_getY_mm() << " a="
+			<< asserv().pos_getThetaInDegree() << logs::end;
+
+	return ts;
+}
+
+
+
 
 //COLOR 0:GRIS / 1:ORANGE / 2:RED / 3:GREEN / 4:BLUE / 5:BLACK
 void Robot::svgPrintPosition(int color) {

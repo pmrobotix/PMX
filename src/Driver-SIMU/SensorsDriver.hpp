@@ -68,6 +68,11 @@ public:
 
     RobotPos transformPosTableToPosRobot(int nb, float x_table, float y_table);
 
+    //ONLY FOR TEST
+    void addvPositionsAdv(float x, float y);
+    void clearPositionsAdv();
+
+
     int rightSide();
     int leftSide();
 

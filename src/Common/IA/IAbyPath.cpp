@@ -383,7 +383,7 @@ void IAbyPath::playgroundFindPath(FoundPath *&path, Point &start, Point &end)
 {
 	p_->find_path(path, start, end);
 }
-//TODO rename doMoveForwardTo par doPathForwardTo! et faire le backward!!!
+
 TRAJ_STATE IAbyPath::doPathForwardTo(float xMM, float yMM, bool rotate_ignoring_opponent)
 {
 	TRAJ_STATE ts = TRAJ_IDLE;
@@ -566,7 +566,7 @@ TRAJ_STATE IAbyPath::doPathForwardAndFaceTo(float xMM, float yMM, float f_x, flo
 }
 
 //TODO deprecated : n'est pas utilisé ?
-TRAJ_STATE IAbyPath::doPathForwardAndRotateTo(float xMM, float yMM, float thetaInDegree)
+TRAJ_STATE IAbyPath::doPathForwardAndRotateTo(float xMM, float yMM, float absThetaInDegree)
 {
 	TRAJ_STATE ts = TRAJ_IDLE;
 	ts = doPathForwardTo(xMM, yMM);
@@ -575,7 +575,7 @@ TRAJ_STATE IAbyPath::doPathForwardAndRotateTo(float xMM, float yMM, float thetaI
 		return ts;
 	}
 
-	ts = robot_->passerv()->doAbsoluteRotateTo(thetaInDegree);
+	ts = robot_->passerv()->doAbsoluteRotateTo(absThetaInDegree, true);
 	robot_->svgPrintPosition();
 	if (ts != TRAJ_FINISHED)
 	{
@@ -583,10 +583,16 @@ TRAJ_STATE IAbyPath::doPathForwardAndRotateTo(float xMM, float yMM, float thetaI
 	}
 	return ts;
 }
-
+/*//=> trasféré sur Robot.cpp
 TRAJ_STATE IAbyPath::whileDoLine(float distMM, bool rotate_ignoring_opponent, int wait_tempo_us, int nb_near_obstacle,
 		int nb_collision, int reculOnObstacleMm, int reculOnCollisionMm, bool ignore_collision)
 {
+	if (distMM < 0 )
+	{
+		//on enleve la detection devant et inversement
+		//robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+	}
+
 	logger().error() << __FUNCTION__ << logs::end;
 	TRAJ_STATE ts = TRAJ_IDLE;
 	int f = 1;
@@ -622,7 +628,7 @@ TRAJ_STATE IAbyPath::whileDoLine(float distMM, bool rotate_ignoring_opponent, in
 
 			if (f < nb_near_obstacle)
 			{
-				//robot_->passerv()->resetEmergencyOnTraj("IAbyPath whileMoveForwardTo TRAJ_>10 : " + ts); //pour autoriser le level de detection 3 puis 4
+				robot_->passerv()->resetEmergencyOnTraj("IAbyPath whileMoveForwardTo TRAJ_>10 : " + ts); //pour autoriser le level de detection 3 puis 4
 			}
 			//			if (reculOnObstacleMm > 0)
 			//			{
@@ -633,6 +639,8 @@ TRAJ_STATE IAbyPath::whileDoLine(float distMM, bool rotate_ignoring_opponent, in
 			//							" IAbyPathdoLineAbs(-reculOnObstacleMm); TRAJ_INTERRUPTED"); //pour autoriser le level de detection 1 puis 2
 			//				}
 			//			}
+
+
 			if (f >= nb_near_obstacle)
 			{
 				break;
@@ -648,7 +656,7 @@ TRAJ_STATE IAbyPath::whileDoLine(float distMM, bool rotate_ignoring_opponent, in
 			<< robot_->passerv()->pos_getThetaInDegree() << logs::end;
 
 	return ts;
-}
+}*/
 
 //TODO rename whilePathForwardAndRotateTo
 TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignoring_opponent, int wait_tempo_us,

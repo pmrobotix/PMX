@@ -42,7 +42,7 @@ void O_AsservLineRotateTest::configureConsoleArgs(int argc, char **argv) //surch
 
 	//mode de drive
 	Arguments::Option cOptMode('m', "mode used for test");
-	cOptMode.addArgument("mode", "mode number", "1");
+	cOptMode.addArgument("mode", "1:relative 2:absolute", "1");
 	robot.getArgs().addOption(cOptMode);
 
 	//mode de pathfinding
@@ -205,7 +205,7 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 		robot.actions().sensors().addTimerSensors(62);
 
 		robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
-		robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+		robot.actions().sensors().setIgnoreBackNearObstacle(true, false, true);
 	} else
 	{
 		robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
@@ -216,18 +216,12 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 	//vitesse reduite
 //    robot.asserv().setLowSpeedForward(true, s);
 //    robot.asserv().setLowSpeedBackward(true, s);
-
 	robot.asserv().setMaxSpeed(true, s, s);
 
 	//Definition du path
 	//bool byPathfinding = false;
 
 	TRAJ_STATE ts = TRAJ_IDLE;
-	if (B == 1)
-	{
-		robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
-		robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-	}
 
 	for (int nb = 1; nb <= 4; nb++)
 	{
@@ -259,35 +253,58 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 
 		if (dd != 0)
 		{
-			if (bback == 0)
+//			if (bback == 0)
+//			{
+			if (bback == 1)
 			{
-				if (pathfindingMode == 0)
-				{
-					ts = robot.asserv().doLine(dd);
-					if (ts >= TRAJ_INTERRUPTED)
-					{
-						logger().info() << robot.asserv().getTraj(ts) << " =====  CONFIRMED AFTER n ;WHAT TO DO ?" << logs::end;
-					}
-
-				} else if (pathfindingMode == 1)
-				{
-					ts = robot.ia().iAbyPath().whileDoLine(dd, false, 2000000, 4, 5);
-					if (ts >= TRAJ_INTERRUPTED)
-					{
-						logger().info() << robot.asserv().getTraj(ts) << " =====  CONFIRMED AFTER n ;WHAT TO DO ?" << logs::end;
-					}
-
-				} else if (pathfindingMode == 2)
-				{
-					//while avec pathfinding
-
-
-
-				}
-			} else //En arrière (la demande d'angle relatif ne change pas)
-			{
-				ts = robot.asserv().doLine(-dd);
+				dd = -dd;
 			}
+			if (pathfindingMode == 0)
+			{
+
+				ts = robot.asserv().doLine(dd);
+				if (ts >= TRAJ_INTERRUPTED)
+				{
+					logger().info() << robot.asserv().getTraj(ts) << " =====  CONFIRMED AFTER n ;WHAT TO DO ?"
+							<< logs::end;
+					robot.asserv().resetEmergencyOnTraj(" doLine: " + ts);
+
+//						robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+//						robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+					//robot.actions().sensors().clearPositionsAdv();
+				}
+
+			} else if (pathfindingMode == 1)
+			{
+				ts = robot.whileDoLine(dd, false, 2000000, 4, 5, 50);
+				if (ts >= TRAJ_INTERRUPTED)
+				{
+					logger().info() << robot.asserv().getTraj(ts) << " =====  CONFIRMED AFTER n ;WHAT TO DO ?"
+							<< logs::end;
+					robot.asserv().resetEmergencyOnTraj(" whileDoLine: " + ts);
+
+					//on recule de 2cm
+//					if (bback == 1)
+//					{
+//						ts = robot.asserv().doLine(100);
+//					} else
+//						ts = robot.asserv().doLine(-100);
+
+					//on decide de continuer ici au niveau de la prise de decision apres les n essais.
+					robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
+					robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
+					//robot.actions().sensors().clearPositionsAdv();
+				}
+
+			} else if (pathfindingMode == 2)
+			{
+				//while avec pathfinding
+
+			}
+//			} else //En arrière (la demande d'angle relatif ne change pas)
+//			{
+//				ts = robot.asserv().doLine(-dd);
+//			}
 			robot.svgPrintPosition();
 		}
 		if (m == 0) //mouvement en relatif

@@ -57,8 +57,8 @@ protected:
     AsservEsialR *pAsservEsialR_;
 
 
-    bool temp_ignoreRearCollision_;
-    bool temp_ignoreFrontCollision_;
+    bool temp_ignoreBackDetection_;
+    bool temp_ignoreFrontDetection_;
     bool temp_forceRotation_;
 
     //0=>LEFT with coordinate x, y, angle
@@ -178,8 +178,8 @@ public:
     //virtual bool filtre_IsInFront(int threshold_mm, int dist_mm, int x_mm, int y_mm, float theta);
     //virtual bool filtre_IsInBack(int threshold_mm, int dist_mm, int x_mm, int y_mm, float theta);
 
-    virtual void warnFrontCollisionOnTraj(int frontlevel, float x_adv__mm, float y_adv_mm); // X, Y dans le repère du robot
-    virtual void warnBackCollisionOnTraj(int backlevel, float x_adv_mm, float y_adv_mm); // X, Y dans le repère du robot
+    virtual void warnFrontDetectionOnTraj(int frontlevel, float x_adv__mm, float y_adv_mm); // X, Y dans le repère du robot
+    virtual void warnBackDetectionOnTraj(int backlevel, float x_adv_mm, float y_adv_mm); // X, Y dans le repère du robot
 
     virtual void update_adv(); //TODO remove
 
