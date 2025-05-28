@@ -425,8 +425,10 @@ void Asserv::setMaxSpeedDistValue(int value)
 
 void Asserv::warnFrontDetectionOnTraj(int frontlevel, float x_adv_detect_mm, float y_adv_detect_mm)
 {
+//	logger().error() << "temp_forceRotation_ = " << temp_forceRotation_ << " temp_ignoreFrontDetection_="
+//				<< temp_ignoreFrontDetection_ << logs::end;
 	if (temp_forceRotation_) return;
-	if (temp_ignoreFrontDetection_) return;
+	if (temp_ignoreFrontDetection_) return; //TODO back detection
 
 //	logger().info() << "warnFrontDetectionOnTraj frontlevel = " << frontlevel << logs::end;
 //	logger().error() << "temp_forceRotation_ = " << temp_forceRotation_ << " temp_ignoreFrontDetection_="
@@ -447,15 +449,16 @@ void Asserv::warnFrontDetectionOnTraj(int frontlevel, float x_adv_detect_mm, flo
 
 	if (frontlevel == 4)
 	{
+
 		//On ne fait un HALT que si l'asserv n'est pas a IDLE
 		ROBOTPOSITION p = pos_getPosition();
 
-		//logger().debug() << __FUNCTION__ << " HAAAAAAAAAAAALT p.asservStatus = " << p.asservStatus << logs::end;
+		logger().debug() << __FUNCTION__ << " HAAAAAAAAAAAALT p.asservStatus = " << p.asservStatus << logs::end;
 		//if (true)
-		if (p.asservStatus == 1) // && p.queueSize > 0)
-		{
+//		if (p.asservStatus == 1) // && p.queueSize > 0)
+//		{
 			setEmergencyStop();
-		}
+//		}
 	}
 
 	/*
@@ -627,7 +630,7 @@ TRAJ_STATE Asserv::doLine(float dist_mm) // if distance <0, move backward
 		temp_ignoreBackDetection_ = false;
 	} else
 	{
-		//temp_ignoreFrontDetection_ = false;
+		temp_ignoreFrontDetection_ = false;
 	}
 
 	return ts;
@@ -730,7 +733,7 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignoring_op
 //	int count_rotation_ignored = 0;
 
 	temp_forceRotation_ = rotate_ignoring_opponent;
-	temp_forceRotation_ = false;
+	//temp_forceRotation_ = false;
 
 	ts = doAbsoluteRotateTo(radToDeg(changeMatchAngleRad(aRadian)), rotate_ignoring_opponent);
 	if (ts != TRAJ_FINISHED)
@@ -739,7 +742,7 @@ TRAJ_STATE Asserv::doMoveForwardTo(float xMM, float yMM, bool rotate_ignoring_op
 			return ts;
 		else
 		{
-			if (ts == TRAJ_INTERRUPTED) //||ts == TRAJ_COLLISION || ts == TRAJ_COLLISION_REAR)
+			if (ts >= TRAJ_INTERRUPTED) //||ts == TRAJ_COLLISION || ts == TRAJ_COLLISION_REAR)
 			{
 				//on resette
 				resetEmergencyOnTraj("doMoveForwardTo rotate_ignoring_opponent TRAJ_INTERRUPTED");
@@ -1239,6 +1242,63 @@ TRAJ_STATE Asserv::doCalage(int distmm, int percent)
 	} else
 		return TRAJ_ERROR;
 }
+
+TRAJ_STATE Asserv::doCalageNew(float dist_mm, int percent, float timeout_ms) // if distance <0, move backward
+{
+	if (useAsservType_ == ASSERV_INT_ESIALR)
+	{
+		if (dist_mm > 0)
+			pAsservEsialR_->motion_setLowSpeedForward(true, percent);
+		else if (dist_mm < 0) pAsservEsialR_->motion_setLowSpeedBackward(true, percent);
+
+		pAsservEsialR_->motion_ActivateReguAngle(false);
+		pAsservEsialR_->motion_ActivateReguDist(true);
+		pAsservEsialR_->motion_ResetReguAngle();
+		pAsservEsialR_->motion_ResetReguDist();
+
+		pAsservEsialR_->motion_AssistedHandling();
+
+		//TODO implementer le timeout ??
+
+		TRAJ_STATE ts = pAsservEsialR_->motion_DoDirectLine(dist_mm); //sans asservissement L/R
+
+		//pAsservEsialR_->path_CancelTrajectory();
+		pAsservEsialR_->motion_setLowSpeedForward(false);
+		pAsservEsialR_->motion_setLowSpeedBackward(false);
+
+		pAsservEsialR_->motion_ResetReguAngle();
+		pAsservEsialR_->motion_ResetReguDist();
+		pAsservEsialR_->motion_ActivateReguAngle(true);
+		pAsservEsialR_->motion_ActivateReguDist(true);
+		resetEmergencyOnTraj("doCalage");
+
+		return ts;
+	} else if (useAsservType_ == ASSERV_EXT)
+	{
+
+		if (dist_mm > 0)
+			asservdriver_->motion_setLowSpeedForward(true, percent);
+		else if (dist_mm < 0) asservdriver_->motion_setLowSpeedBackward(true, percent);
+
+        asservdriver_->motion_ActivateReguAngle(false);
+        asservdriver_->motion_ActivateReguDist(true);
+
+        //TODO implementer le timeout ??
+		TRAJ_STATE ts = asservdriver_->motion_DoLine(dist_mm);
+
+		asservdriver_->motion_setLowSpeedForward(false);
+		asservdriver_->motion_setLowSpeedBackward(false);
+
+		asservdriver_->motion_ActivateReguAngle(true);
+		asservdriver_->motion_ActivateReguDist(true);
+		//resetEmergencyOnTraj("doCalage");
+
+		return ts;
+	} else
+		return TRAJ_ERROR;
+}
+
+
 
 //FONCTION ASSERV DE BASE
 

@@ -49,8 +49,9 @@ bool O_end_of_match_top()
 	robot.displayPoints();
 
 	robot.logger().info() << __FUNCTION__ << " start zone_end_top x=" << zone.x << " y=" << zone.y << logs::end;
-	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), ROTATION_WITH_DETECTION,
-			1000000, 30, 10, NO_PATHFINDING);
+	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), NO_ROTATION_DETECTION,
+			2000000, 20, 10, NO_PATHFINDING);
+	//ts = robot.whileDoLine(1000,true, 3000000,5);
 	if (ts != TRAJ_FINISHED)
 	{
 		robot.logger().error() << __FUNCTION__ << " zone_end_top  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts
@@ -68,10 +69,12 @@ bool O_end_of_match_top()
 	while (robot.chrono().getElapsedTimeInSec() <= 96)
 	{
 		utils::sleep_for_secs(1);
+
 	}
 
-	ts = robot.asserv().doLine(200);
+	ts = robot.asserv().doLine(451);
 	robot.svgPrintPosition();
+
 
 	robot.points += 20;
 	robot.displayPoints();
@@ -191,7 +194,7 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone()
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 	logger().debug() << "color = " << robot.getMyColor() << logs::end;
 
-	robot.ia().iAbyPath().ia_createZone("zone_end_top", 150, 1550, 450, 450, 450, 1300, 90);
+	robot.ia().iAbyPath().ia_createZone("zone_end_top", 150, 1550, 450, 450, 350, 1100, 90);
 	robot.ia().iAbyPath().ia_createZone("zone_start", 1000, 0, 450, 450, 1300, 400, 90);
 	robot.ia().iAbyPath().ia_createZone("zone_prise_bas", 550, 0, 450, 100, 775, 550, -90);
 
@@ -224,7 +227,7 @@ void O_State_DecisionMakerIA::IASetupActivitiesZoneTableTest()
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 	logger().debug() << "color = " << robot.getMyColor() << logs::end;
 
-	robot.ia().iAbyPath().ia_createZone("zone_end_top", 150, 1550 - 420, 450, 450, 450, 1300 - 420, 90);
+	robot.ia().iAbyPath().ia_createZone("zone_end_top", 150, 1550 - 420, 450, 450, 350, 1100 - 420, 90);
 	robot.ia().iAbyPath().ia_createZone("zone_start", 1000, 0, 450, 450, 1300, 400, 90);
 	robot.ia().iAbyPath().ia_createZone("zone_prise_bas", 550, 0, 450, 100, 775, 550, -90);
 
@@ -283,6 +286,19 @@ void O_State_DecisionMakerIA::execute()
 	}
 
 	logger().info() << __FUNCTION__ << " executing..." << logs::end;
+
+	TRAJ_STATE ts = TRAJ_IDLE;
+	//On recule pour deposer le drapeau
+	ts = robot.asserv().doLine(-79);
+
+	robot.actions().ax12_GO_banderole();
+	std::this_thread::sleep_for(std::chrono::seconds(1));
+
+	robot.points += 20;
+	robot.displayPoints();
+	robot.asserv().setMaxSpeed(true, 40, 40);
+	ts = robot.asserv().doLine(150);
+
 	/*
 	 //init rouge
 	 TRAJ_STATE ts = robot.asserv().doMoveForwardTo(330, 463);
@@ -312,7 +328,9 @@ void O_State_DecisionMakerIA::execute()
 	//On ajoute le timer de detection
 	robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
 	robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-	robot.actions().sensors().addTimerSensors(65);
+	robot.actions().sensors().addTimerSensors(62);
+
+	//ts = robot.whileDoLine(1000, false, 2000000, 4, 5, 50);
 
 	robot.ia().iAbyPath().ia_start();        //launch IA
 

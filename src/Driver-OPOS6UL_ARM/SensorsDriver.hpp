@@ -69,6 +69,9 @@ public:
     int sync(); //synchronise les données avec la balise, return 0 if success, -1 if error.
     ASensorsDriver::bot_positions getvPositionsAdv(); //retourne les dernieres positions connues
 
+    void addvPositionsAdv(float x, float y) ;
+    void clearPositionsAdv() ;
+
     int frontLeft(); //retourne la dernière distance minimum gauche (en mm) apres le sync
     int frontCenter();
     int frontRight(); //retourne la dernière distance minimum droite (en mm) en mm apres le sync

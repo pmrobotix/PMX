@@ -55,43 +55,54 @@ void O_ServoObjectsTest::run(int argc, char **argv)
 		robot.actions().servos().release(robot.actions().AX12_SERVO_BRAS_D);
 		robot.actions().servos().release(robot.actions().AX12_SERVO_BRAS_G);
 
-		robot.actions().servos().release(robot.actions().AX12_SERVO_FINGER_L);
-		robot.actions().servos().release(robot.actions().AX12_SERVO_FINGER_R);
-		robot.actions().servos().release(robot.actions().AX12_SERVO_WRIST_L);
-		robot.actions().servos().release(robot.actions().AX12_SERVO_WRIST_R);
-		robot.actions().servos().release(robot.actions().AX12_SERVO_ELBOW_L);
-		robot.actions().servos().release(robot.actions().AX12_SERVO_ELBOW_R);
-		robot.actions().servos().release(robot.actions().AX12_SERVO_SHOULDER_L);
-		robot.actions().servos().release(robot.actions().AX12_SERVO_SHOULDER_R);
+		robot.actions().servos().release(robot.actions().AX12_SERVO_BANDEROLE);
+		robot.actions().servos().release(robot.actions().AX12_SERVO_ELEVATOR);
 
+		/*
+		 robot.actions().servos().release(robot.actions().AX12_SERVO_FINGER_L);
+		 robot.actions().servos().release(robot.actions().AX12_SERVO_FINGER_R);
+		 robot.actions().servos().release(robot.actions().AX12_SERVO_WRIST_L);
+		 robot.actions().servos().release(robot.actions().AX12_SERVO_WRIST_R);
+		 robot.actions().servos().release(robot.actions().AX12_SERVO_ELBOW_L);
+		 robot.actions().servos().release(robot.actions().AX12_SERVO_ELBOW_R);
+		 robot.actions().servos().release(robot.actions().AX12_SERVO_SHOULDER_L);
+		 robot.actions().servos().release(robot.actions().AX12_SERVO_SHOULDER_R);
+		 */
 		while (1)
 		{
+			logger().info() << "AX12_SERVO_ELEVATOR     N° " << robot.actions().AX12_SERVO_ELEVATOR << " pos= "
+					<< robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_ELEVATOR) << logs::end;
+
+			logger().info() << "AX12_SERVO_BANDEROLE    N° " << robot.actions().AX12_SERVO_BANDEROLE << " pos= "
+					<< robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_BANDEROLE) << logs::end;
+
 			logger().info() << "AX12_SERVO_BRAS_D       N° " << robot.actions().AX12_SERVO_BRAS_D << " pos= "
 					<< robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_BRAS_D) << logs::end;
 			logger().info() << "AX12_SERVO_BRAS_G       N° " << robot.actions().AX12_SERVO_BRAS_G << " pos= "
 					<< robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_BRAS_G) << logs::end;
 			logger().info() << logs::end;
 
-			logger().info() << "Lshouldr(" << robot.actions().AX12_SERVO_SHOULDER_L << ")= "
-					<< robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_SHOULDER_L) << logs::end;
-			logger().info() << "Lelbow  (" << robot.actions().AX12_SERVO_ELBOW_L << ")= "
-					<< robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_ELBOW_L) << logs::end;
-			logger().info() << "Lwrist  (" << robot.actions().AX12_SERVO_WRIST_L << ")= "
-					<< robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_WRIST_L) << logs::end;
-			logger().info() << "Lfinger (" << robot.actions().AX12_SERVO_FINGER_L << ")= "
-					<< robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_FINGER_L) << logs::end;
+			/*
+			 logger().info() << "Lshouldr(" << robot.actions().AX12_SERVO_SHOULDER_L << ")= "
+			 << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_SHOULDER_L) << logs::end;
+			 logger().info() << "Lelbow  (" << robot.actions().AX12_SERVO_ELBOW_L << ")= "
+			 << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_ELBOW_L) << logs::end;
+			 logger().info() << "Lwrist  (" << robot.actions().AX12_SERVO_WRIST_L << ")= "
+			 << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_WRIST_L) << logs::end;
+			 logger().info() << "Lfinger (" << robot.actions().AX12_SERVO_FINGER_L << ")= "
+			 << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_FINGER_L) << logs::end;
 
-			logger().info() << logs::end;
+			 logger().info() << logs::end;
 
-			logger().info() << "Rshouldr(" << robot.actions().AX12_SERVO_SHOULDER_R << ")= "
-					<< robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_SHOULDER_R) << logs::end;
-			logger().info() << "Relbow  (" << robot.actions().AX12_SERVO_ELBOW_R << ")= "
-					<< robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_ELBOW_R) << logs::end;
-			logger().info() << "Rwrist  (" << robot.actions().AX12_SERVO_WRIST_R << ")= "
-					<< robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_WRIST_R) << logs::end;
-			logger().info() << "Rfinger (" << robot.actions().AX12_SERVO_FINGER_R << ")= "
-					<< robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_FINGER_R) << logs::end;
-
+			 logger().info() << "Rshouldr(" << robot.actions().AX12_SERVO_SHOULDER_R << ")= "
+			 << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_SHOULDER_R) << logs::end;
+			 logger().info() << "Relbow  (" << robot.actions().AX12_SERVO_ELBOW_R << ")= "
+			 << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_ELBOW_R) << logs::end;
+			 logger().info() << "Rwrist  (" << robot.actions().AX12_SERVO_WRIST_R << ")= "
+			 << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_WRIST_R) << logs::end;
+			 logger().info() << "Rfinger (" << robot.actions().AX12_SERVO_FINGER_R << ")= "
+			 << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_FINGER_R) << logs::end;
+			 */
 			/*init
 			 33114776| O_ServoObjectsTest INFO Lshouldr(1052)= 504
 			 33125692| O_ServoObjectsTest INFO Lelbow  (1062)= 232
@@ -189,6 +200,13 @@ void O_ServoObjectsTest::run(int argc, char **argv)
 			robot.actions().ax12_bras_gauche_init(-1);
 			robot.actions().ax12_bras_droit_init(0);
 		}
+	}
+
+	if (action == "B")
+	{
+		robot.actions().ax12_init_banderole(500, -1);
+		robot.actions().ax12_GO_banderole(500, -1);
+		robot.actions().ax12_init_banderole(500, -1);
 	}
 
 	if (action == "GO")

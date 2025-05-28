@@ -217,6 +217,8 @@ public:
 
     TRAJ_STATE doFaceTo(float xMM, float yMM, bool back_face = false);
 
+    TRAJ_STATE doCalageNew(float dist_mm, int percent, float timeout_ms);
+
     TRAJ_STATE doCalage(int d, int percent);
     TRAJ_STATE doCalage2(int d, int percent);
 

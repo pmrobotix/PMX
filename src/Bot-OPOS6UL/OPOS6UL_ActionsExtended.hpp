@@ -63,8 +63,8 @@ public:
 	 * [num port] * 1000 + [num servo]
 	 */
 	enum ServoAx12Label {
-		AX12_SERVO_BRAS_D = 1 * 1000 + 5, //AX12
-		AX12_SERVO_BRAS_G = 1000 + 7, //AX12
+		AX12_SERVO_BRAS_D = 1 * 1000 + 7, //AX12
+		AX12_SERVO_BRAS_G = 1000 + 5, //AX12
 
 		AX12_SERVO_FINGER_R = 1000 + 51,
 		AX12_SERVO_WRIST_R = 1000 + 63,
@@ -75,6 +75,10 @@ public:
 		AX12_SERVO_WRIST_L = 1000 + 61,
 		AX12_SERVO_ELBOW_L = 1000 + 62,
 		AX12_SERVO_SHOULDER_L = 1000 + 52,
+
+		AX12_SERVO_BANDEROLE = 1000 + 12,
+
+		AX12_SERVO_ELEVATOR = 1000 + 102,
 
 		AX12_enumTypeEnd
 	};
@@ -177,6 +181,7 @@ public:
 		//logger().error() << "releaseAll()" << logs::end;
 		servos().release(AX12_SERVO_BRAS_D);
 		servos().release(AX12_SERVO_BRAS_G);
+		servos().release(AX12_SERVO_BANDEROLE);
 
 		servos().release(AX12_SERVO_ELBOW_L);
 		servos().release(AX12_SERVO_ELBOW_R);
@@ -278,6 +283,9 @@ public:
 //		ax12_init_L();
 		ax12_init_LR();
 
+		ax12_init_banderole();
+
+
 		ax12_open_L(1000, 0);
 		ax12_open_R(1000, 0);
 		/*
@@ -336,6 +344,24 @@ public:
 		servos().move_2_servos(time_eta_ms, AX12_SERVO_ELBOW_R, 782, AX12_SERVO_WRIST_R, 484, 0, 1023, 1023);
 		servos().move_2_servos(time_eta_ms, AX12_SERVO_ELBOW_L, 232, AX12_SERVO_WRIST_L, 533, keep_ms, 1023, 1023);
 	}
+
+
+
+
+	void ax12_init_banderole(int time_eta_ms = 2000, int keep_ms = -1)
+	{
+		servos().move_1_servo(time_eta_ms, AX12_SERVO_BANDEROLE, 670, keep_ms, 1023);
+
+
+	}
+
+	void ax12_GO_banderole(int time_eta_ms = 2000, int keep_ms = -1)
+	{
+		servos().move_1_servo(time_eta_ms, AX12_SERVO_BANDEROLE, 512, keep_ms, 1023);
+
+
+	}
+
 	//keep_millisec = -1 : wait moving until position
 	//keep_millisec > 0 : time ms to wait then release
 	//keep_millisec = 0 : continue and hold
@@ -406,7 +432,7 @@ public:
 	{
 		//servos().setSpeed(AX12_SERVO_BRAS_D, speed);
 		//servos().deploy(AX12_SERVO_BRAS_D, 815, keep);
-		servos().move_1_servo(eta, AX12_SERVO_BRAS_D, 475, keep);
+		servos().move_1_servo(eta, AX12_SERVO_BRAS_D, 512, keep);
 	}
 	void ax12_bras_droit(int keep = 0, int eta = 400)
 	{
@@ -424,7 +450,7 @@ public:
 	{
 		//servos().setSpeed(AX12_SERVO_BRAS_G, speed);
 		//servos().deploy(AX12_SERVO_BRAS_G, 205, keep);
-		servos().move_1_servo(eta, AX12_SERVO_BRAS_G, 542, keep);
+		servos().move_1_servo(eta, AX12_SERVO_BRAS_G, 512, keep);
 	}
 	void ax12_bras_gauche(int keep = 0, int eta = 400)
 	{

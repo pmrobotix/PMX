@@ -687,7 +687,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignori
 		robot_->svgPrintPosition();
 		robot_->displayTS(ts);
 
-		if (ts == TRAJ_INTERRUPTED) //TODO TRAJ_NEAR_OBSTACLE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		if (ts == TRAJ_NEAR_OBSTACLE)
 		{
 
 			robot_->logger().info() << " ===== TRAJ_INTERRUPTED essai n°" << f << " / " << nb_near_obstacle

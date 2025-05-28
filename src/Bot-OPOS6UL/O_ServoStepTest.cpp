@@ -119,7 +119,9 @@ void O_ServoStepTest::run(int argc, char** argv) {
             pos = current_pos+step;
             if (pos >= 4095) pos = 4095;
             logger().info() << "+" << step << " pos=" << pos << logs::end;
-            robot.actions().servos().deployWithVelocity(num, pos, speed, -1);
+            //robot.actions().servos().deployWithVelocity(num, pos, speed, -1);
+            robot.actions().servos().deploy(num, pos, -1);
+            		//move_1_servo(speed, num, pos, -1);
         }
 
         if (touch == BUTTON_DOWN_KEY) {
@@ -127,7 +129,9 @@ void O_ServoStepTest::run(int argc, char** argv) {
             if (pos <= 0) pos = 0;
             logger().info() << "-" << step << " pos=" << pos << logs::end;
 
-            robot.actions().servos().deployWithVelocity(num, pos, speed, -1);
+            //robot.actions().servos().deployWithVelocity(num, pos, speed, -1);
+            robot.actions().servos().deploy(num, pos, -1);
+            //move_1_servo(speed, num, pos, -1);
 
         }
 

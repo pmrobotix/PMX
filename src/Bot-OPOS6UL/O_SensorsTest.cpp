@@ -83,7 +83,7 @@ void O_SensorsTest::run(int argc, char** argv) {
                             << " a="
                             << robot.asserv().pos_getThetaInDegree()
                             << logs::end;
-        vadv = robot.actions().sensors().getPositionsAdv();
+        vadv = robot.actions().sensors().setPositionsAdvByBeacon();
 
         for (ASensorsDriver::bot_positions::size_type i = 0; i < vadv.size(); i++) {
             logger().info() << " vadv nb="

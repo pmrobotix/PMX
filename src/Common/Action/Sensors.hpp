@@ -46,6 +46,8 @@ private:
 
 	//svg::Document *doc_;
 
+	ASensorsDriver::bot_positions opponents_last_positions;
+
 //    int diameterOpponent_mm_;
 	bool remove_outside_table_;
 
@@ -143,8 +145,8 @@ public:
 	//acces directement aux capteurs
 	int sync(std::string sensorname);
 
-	//get la liste des positions adverses
-	ASensorsDriver::bot_positions getPositionsAdv();
+	//recupere la liste des positions adverses par la balise
+	ASensorsDriver::bot_positions setPositionsAdvByBeacon();
 
 	void clearPositionsAdv();
 

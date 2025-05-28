@@ -43,6 +43,8 @@ Sensors::Sensors(Actions &actions, Robot *robot) :
 	x_adv_mm = -1.0;
 	y_adv_mm = -1.0;
 
+	opponents_last_positions.clear();
+
 	//2023
 //    is_cake_there_in_D2_ = true;
 //    is_cake_there_in_D5_ = true;
@@ -128,6 +130,7 @@ SensorsTimer::SensorsTimer(Sensors &sensors, int timeSpan_ms, std::string name) 
 	nb_sensor_level2 = 0;
 	nb_sensor_b_level2 = 0;
 
+
 	//initialise le timer avec le nom et la periode.
 	this->init(name_, timeSpan_ms * 1000);
 }
@@ -205,10 +208,11 @@ void Sensors::setIgnoreAllBackNearObstacle(bool ignore)
 	ignoreBackRight_ = ignore;
 }
 
-ASensorsDriver::bot_positions Sensors::getPositionsAdv()
+ASensorsDriver::bot_positions Sensors::setPositionsAdvByBeacon()
 {
 	//recupere les données qui ont ete enregistrées par le sync
-	return sensorsdriver_->getvPositionsAdv();
+	opponents_last_positions = sensorsdriver_->getvPositionsAdv();
+	return opponents_last_positions;
 }
 
 void Sensors::clearPositionsAdv()
@@ -362,7 +366,7 @@ int Sensors::filtre_levelInFront(int threshold_LR_mm, int threshold_Front_mm, in
 		float dist_adv_mm, float x_adv_mm, float y_adv_mm, float theta_adv_deg)
 {
 
-	logger().error() << __FUNCTION__ << " threshold_LR_mm=" << threshold_LR_mm << " threshold_Front_mm="
+	logger().debug() << __FUNCTION__ << " threshold_LR_mm=" << threshold_LR_mm << " threshold_Front_mm="
 			<< threshold_Front_mm << " threshold_veryclosed_front_mm=" << threshold_veryclosed_front_mm << " dist_mm="
 			<< dist_adv_mm << " x_mm=" << x_adv_mm << " y_mm=" << y_adv_mm << " theta_adv_deg=" << theta_adv_deg
 			<< logs::end;
@@ -583,7 +587,7 @@ int Sensors::front(bool display)
 	if (getAvailableFrontCenter())
 	{
 		// detection avec la balise (on se sert de la variable du capteur au centre)
-		vpos = Sensors::getPositionsAdv();
+		vpos = Sensors::setPositionsAdvByBeacon();
 		int level_filtered = false;
 		bool inside_table = true;
 		float x_pos_adv_table = -1;
@@ -768,7 +772,7 @@ int Sensors::back(bool display)
 	if (getAvailableBackCenter())
 	{
 		// detection avec la balise (on se sert de la variable du capteur au centre)
-		vpos = Sensors::getPositionsAdv();
+		vpos = Sensors::setPositionsAdvByBeacon();
 		int level_filtered = false;
 		bool inside_table = true;
 		float x_pos_adv_table = -1;

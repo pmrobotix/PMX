@@ -115,8 +115,6 @@ TRAJ_STATE Robot::whileDoLine(float distMM, bool rotate_ignoring_opponent, int w
 				break;
 			}
 		}
-
-
 	}
 
 	displayTS(ts); //fait le print svg avec la couleur

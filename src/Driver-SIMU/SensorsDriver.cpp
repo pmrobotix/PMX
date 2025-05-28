@@ -161,8 +161,8 @@ int SensorsDriver::sync()
 //        RobotPos pos3 = transformPosTableToPosRobot(nb, 800, 2000);
 //        RobotPos pos4 = transformPosTableToPosRobot(nb, 100, 1400);
 //
-        vadv_.push_back(pos1);
-        vadv_.push_back(pos2);
+        //vadv_.push_back(pos1);
+        //vadv_.push_back(pos2);
 //        vadv_.push_back(pos3);
 //        vadv_.push_back(pos4);
         //simu des positions adverses

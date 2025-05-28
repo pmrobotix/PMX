@@ -62,7 +62,7 @@ bool ServoObjectsSystem::setup(int servo, AServoDriver::ServoType type, int valu
 	}
 	return true;
 }
-
+//DEPRECATED ? A RETESTER
 //keep_millisec = -1 : wait moving until position
 //keep_millisec > 0 : time to wait millisec
 //keep_millisec = 0 : continue and hold
@@ -751,7 +751,7 @@ void ServoObjectsTimer::onTimer(utils::Chronometer chrono)
 		servoObjectsSystem_.servodriver()->setPulsePos(servo2_, pos2apply2, 0);
 
 	}
-	if (tms >= eta_ms_)
+	if (tms >= eta_ms_) //TODO aller qd meme jusqu'à position, meme si le temps est fini et meetre un warning
 	{
 
 		logger().debug() << "requestToStop_ = true; t=" << chrono.getElapsedTimeInMilliSec() << logs::end;
