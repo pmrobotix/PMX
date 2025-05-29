@@ -27,6 +27,7 @@ bool O_end_of_match_top()
 	robot.lastAction(true);
 
 	robot.asserv().setMaxSpeed(true, 40);
+	//robot.asserv().setLowSpeedForward(true, 20);
 
 	robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
 	robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
@@ -49,9 +50,9 @@ bool O_end_of_match_top()
 	robot.displayPoints();
 
 	robot.logger().info() << __FUNCTION__ << " start zone_end_top x=" << zone.x << " y=" << zone.y << logs::end;
-	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), NO_ROTATION_DETECTION,
+	ts = robot.ia().iAbyPath().whileMoveForwardAndRotateTo(zone.x, zone.y, radToDeg(zone.theta), ROTATION_WITH_DETECTION,
 			2000000, 20, 10, NO_PATHFINDING);
-	//ts = robot.whileDoLine(1000,true, 3000000,5);
+//	ts = robot.whileDoLine(600, false, 2000000, 10);
 	if (ts != TRAJ_FINISHED)
 	{
 		robot.logger().error() << __FUNCTION__ << " zone_end_top  ===== PB COLLISION FINALE - Que fait-on? ts=" << ts

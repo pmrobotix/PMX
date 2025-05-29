@@ -722,7 +722,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignori
 
 			robot_->logger().info() << "===== COLLISION essai n°" << c << " / " << nb_collision << logs::end;
 
-			robot_->passerv()->stopMotors();
+			//robot_->passerv()->stopMotors();
 
 			//temps d'attente avant de recommencer
 			utils::sleep_for_micros(wait_tempo_us);
@@ -752,7 +752,7 @@ TRAJ_STATE IAbyPath::whileMoveForwardTo(float xMM, float yMM, bool rotate_ignori
 		if (ts == TRAJ_IMPOSSIBLE)
 		{
 			robot_->logger().info() << "===== TRAJ IMPOSSIBLE  TRAJ IMPOSSIBLE !!!" << logs::end;
-			robot_->passerv()->stopMotors();
+			//robot_->passerv()->stopMotors();
 			robot_->passerv()->resetEmergencyOnTraj("whileMoveForwardTo TRAJ_IMPOSSIBLE");
 
 			break;

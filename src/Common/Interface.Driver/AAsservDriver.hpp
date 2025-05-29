@@ -15,10 +15,10 @@ enum TRAJ_STATE {
 	TRAJ_NEAR_OBSTACLE = 100,		//trajectory interrupted because of a near collision (sensors)
 	TRAJ_COLLISION = 101,		//trajectory interrupted because of a collision (asserv blocked)
 
-	TRAJ_REAR_OBSTACLE,		//deprecated ?
-	TRAJ_REAR_COLLISION, 	//deprecated ?
+	TRAJ_REAR_OBSTACLE = 200,		//deprecated ?
+	TRAJ_REAR_COLLISION = 201, 	//deprecated ?
 
-	TRAJ_ERROR = 99
+	TRAJ_ERROR = 999
 };
 
 /*

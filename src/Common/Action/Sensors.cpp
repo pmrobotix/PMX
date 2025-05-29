@@ -376,10 +376,10 @@ int Sensors::filtre_levelInFront(int threshold_LR_mm, int threshold_Front_mm, in
 	int ydist_adv = (int) y_adv_mm; //coordy (devant la balise!) à partir du centre du robot jusque le bord du robot adv
 
 	//patch balise!!!!!!!!!!!!!!!!
-//	if (xdist_adv > 0) xdist_adv += 50;
-//	if (xdist_adv < 0) xdist_adv -= 50;
-//	if (ydist_adv > 0) ydist_adv += 50;
-//	if (ydist_adv < 0) ydist_adv -= 50;
+	if (xdist_adv > 0) xdist_adv += 50;
+	if (xdist_adv < 0) xdist_adv -= 50;
+	if (ydist_adv > 0) ydist_adv += 50;
+	if (ydist_adv < 0) ydist_adv -= 50;
 
 	//si devant le robot adverse - axe y devant la balise, axe x sur la droite du robot
 	if (ydist_adv > 0)
@@ -430,10 +430,10 @@ int Sensors::filtre_levelInBack(int threshold_LR_mm, int threshold_Back_mm, int 
 	int ydist_adv = (int) y_adv_mm; //coordy (devant la balise!) à partir du centre du robot jusque le bord du robot adv
 
 	//patch balise!!!!!!!!!!!!!!!!
-//	if (xdist_adv > 0) xdist_adv += 50;
-//	if (xdist_adv < 0) xdist_adv -= 50;
-//	if (ydist_adv > 0) ydist_adv += 50;
-//	if (ydist_adv < 0) ydist_adv -= 50;
+	if (xdist_adv > 0) xdist_adv += 50;
+	if (xdist_adv < 0) xdist_adv -= 50;
+	if (ydist_adv > 0) ydist_adv += 50;
+	if (ydist_adv < 0) ydist_adv -= 50;
 
 	//si devant le robot adverse - axe y devant la balise, axe x sur la droite du robot
 	if (ydist_adv < 0)
@@ -1044,7 +1044,7 @@ void SensorsTimer::onTimer(utils::Chronometer chrono)
 			//sensors_.robot()->passerv()->setLowSpeedForward(false);
 			//sensors_.robot()->passerv()->setMaxSpeed(false);
 			sensors_.robot()->passerv()->warnFrontDetectionOnTraj(frontLevel, sensors_.x_adv_mm, sensors_.y_adv_mm);
-			sensors_.robot()->passerv()->resetEmergencyOnTraj("SensorsTimer front=0");
+			//sensors_.robot()->passerv()->resetEmergencyOnTraj("SensorsTimer front=0");
 			sensors_.robot()->resetDisplayObstacle();
 		}
 

@@ -130,7 +130,7 @@ void O_ServoObjectsTest::run(int argc, char **argv)
 			utils::sleep_for_millis(500);
 		}
 	}
-
+/*
 	if (action == "RR")
 	{
 		robot.actions().ax12_retract_in_block(2000);
@@ -183,6 +183,7 @@ void O_ServoObjectsTest::run(int argc, char **argv)
 		}
 
 	}
+	*/
 	if (action == "TEST")
 	{
 		while (1)
@@ -223,12 +224,12 @@ void O_ServoObjectsTest::run(int argc, char **argv)
 				if (fL)
 				{
 					robot.actions().ax12_bras_droit(0);
-					robot.actions().ax12_close_L(1000, -1);
+					//robot.actions().ax12_close_L(1000, -1);
 
 				} else
 				{
 					robot.actions().ax12_bras_droit_init(0);
-					robot.actions().ax12_open_L(1000, -1);
+					//robot.actions().ax12_open_L(1000, -1);
 
 				}
 				fL = !fL;
@@ -242,19 +243,19 @@ void O_ServoObjectsTest::run(int argc, char **argv)
 				{
 					robot.actions().ax12_bras_droit(0);
 					robot.actions().ax12_bras_gauche(0);
-					robot.actions().ax12_close_R(1000, -1);
+					//robot.actions().ax12_close_R(1000, -1);
 				} else
 				{
 					robot.actions().ax12_bras_gauche_init(0);
 					robot.actions().ax12_bras_droit_init(0);
-					robot.actions().ax12_open_R(1000, -1);
+					//robot.actions().ax12_open_R(1000, -1);
 				}
 				fR = !fR;
 			}
 
 			if (b == BUTTON_UP_KEY)
 			{
-				robot.actions().ax12_up(2000, 0);
+				//robot.actions().ax12_up(2000, 0);
 			}
 			if (b == BUTTON_DOWN_KEY)
 			{

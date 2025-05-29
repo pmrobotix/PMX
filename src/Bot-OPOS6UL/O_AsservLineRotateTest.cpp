@@ -25,19 +25,19 @@ void O_AsservLineRotateTest::configureConsoleArgs(int argc, char **argv) //surch
 	OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
 
 	robot.getArgs().addArgument("d", "distance mm");
-	robot.getArgs().addArgument("a", "angle degres", "0");
+	robot.getArgs().addArgument("a", "angle degres", "-1");
 	robot.getArgs().addArgument("back", "backwards[0,1]", "0");
 
-	robot.getArgs().addArgument("d2", "distance mm", "0");
-	robot.getArgs().addArgument("a2", "angle degres", "0");
+	robot.getArgs().addArgument("d2", "distance mm", "-1");
+	robot.getArgs().addArgument("a2", "angle degres", "-1");
 	robot.getArgs().addArgument("back2", "backwards[0,1]", "0");
 
-	robot.getArgs().addArgument("d3", "distance mm", "0");
-	robot.getArgs().addArgument("a3", "angle degres", "0");
+	robot.getArgs().addArgument("d3", "distance mm", "-1");
+	robot.getArgs().addArgument("a3", "angle degres", "-1");
 	robot.getArgs().addArgument("back3", "backwards[0,1]", "0");
 
-	robot.getArgs().addArgument("d4", "distance mm", "0");
-	robot.getArgs().addArgument("a4", "angle degres", "0");
+	robot.getArgs().addArgument("d4", "distance mm", "-1");
+	robot.getArgs().addArgument("a4", "angle degres", "-1");
 	robot.getArgs().addArgument("back4", "backwards[0,1]", "0");
 
 	//mode de drive
@@ -205,7 +205,7 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 		robot.actions().sensors().addTimerSensors(62);
 
 		robot.actions().sensors().setIgnoreFrontNearObstacle(true, false, true);
-		robot.actions().sensors().setIgnoreBackNearObstacle(true, false, true);
+		robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
 	} else
 	{
 		robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
@@ -214,7 +214,7 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 	robot.chrono().start();
 
 	//vitesse reduite
-//    robot.asserv().setLowSpeedForward(true, s);
+//	robot.asserv().setLowSpeedForward(true, s);
 //    robot.asserv().setLowSpeedBackward(true, s);
 	robot.asserv().setMaxSpeed(true, s, s);
 
@@ -251,8 +251,10 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 			dd = d4;
 		}
 
-		if (dd != 0)
+		if (dd != -1)
 		{
+			logger().info() << "=> TRAJET n°: " << nb << logs::end;
+
 //			if (bback == 0)
 //			{
 			if (bback == 1)
@@ -261,22 +263,45 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 			}
 			if (pathfindingMode == 0)
 			{
-
+				logger().info() <<  " doline 1 " << logs::end;
 				ts = robot.asserv().doLine(dd);
 				if (ts >= TRAJ_INTERRUPTED)
 				{
 					logger().info() << robot.asserv().getTraj(ts) << " =====  CONFIRMED AFTER n ;WHAT TO DO ?"
 							<< logs::end;
 					robot.asserv().resetEmergencyOnTraj(" doLine: " + ts);
-
-//						robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
-//						robot.actions().sensors().setIgnoreBackNearObstacle(true, true, true);
-					//robot.actions().sensors().clearPositionsAdv();
+				}
+				utils::sleep_for_micros(1000000);
+				logger().info() <<  " doline 2 " << logs::end;
+				ts = robot.asserv().doLine(dd);
+				if (ts >= TRAJ_INTERRUPTED)
+				{
+					logger().info() << robot.asserv().getTraj(ts) << " =====  CONFIRMED AFTER n ;WHAT TO DO ?"
+							<< logs::end;
+					robot.asserv().resetEmergencyOnTraj(" doLine: " + ts);
+				}
+				utils::sleep_for_micros(1000000);
+				logger().info() <<  " doline 3 " << logs::end;
+				ts = robot.asserv().doLine(dd);
+				if (ts >= TRAJ_INTERRUPTED)
+				{
+					logger().info() << robot.asserv().getTraj(ts) << " =====  CONFIRMED AFTER n ;WHAT TO DO ?"
+							<< logs::end;
+					robot.asserv().resetEmergencyOnTraj(" doLine: " + ts);
+				}
+				utils::sleep_for_micros(1000000);
+				logger().info() <<  " doline 4 " << logs::end;
+				ts = robot.asserv().doLine(dd);
+				if (ts >= TRAJ_INTERRUPTED)
+				{
+					logger().info() << robot.asserv().getTraj(ts) << " =====  CONFIRMED AFTER n ;WHAT TO DO ?"
+							<< logs::end;
+					robot.asserv().resetEmergencyOnTraj(" doLine: " + ts);
 				}
 
 			} else if (pathfindingMode == 1)
 			{
-				ts = robot.whileDoLine(dd, false, 2000000, 4, 5, 50);
+				ts = robot.whileDoLine(dd, false, 2000000, 5, 5, 50);
 				if (ts >= TRAJ_INTERRUPTED)
 				{
 					logger().info() << robot.asserv().getTraj(ts) << " =====  CONFIRMED AFTER n ;WHAT TO DO ?"
@@ -284,11 +309,11 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 					robot.asserv().resetEmergencyOnTraj(" whileDoLine: " + ts);
 
 					//on recule de 2cm
-//					if (bback == 1)
-//					{
-//						ts = robot.asserv().doLine(100);
-//					} else
-//						ts = robot.asserv().doLine(-100);
+					if (bback == 1)
+					{
+						ts = robot.asserv().doLine(20);
+					} else
+						ts = robot.asserv().doLine(-20);
 
 					//on decide de continuer ici au niveau de la prise de decision apres les n essais.
 					robot.actions().sensors().setIgnoreFrontNearObstacle(true, true, true);
@@ -309,14 +334,26 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 		}
 		if (m == 0) //mouvement en relatif
 		{
-			if (aa != 0)
+			if (aa != -1)
 			{
 				ts = robot.asserv().doRelativeRotateDeg(aa);
+				if (ts >= TRAJ_INTERRUPTED)
+				{
+					logger().info() << robot.asserv().getTraj(ts)
+							<< " doRelativeRotateDeg =====  CONFIRMED AFTER 1 turn ;WHAT TO DO ?" << logs::end;
+					robot.asserv().resetEmergencyOnTraj(" doRelativeRotateDeg: " + ts);
+				}
 				robot.svgPrintPosition();
 			}
 		} else if (m == 1) //mode angle absolu
 		{
 			ts = robot.asserv().doAbsoluteRotateTo(aa);
+			if (ts >= TRAJ_INTERRUPTED)
+			{
+				logger().info() << robot.asserv().getTraj(ts)
+						<< " doRelativeRotateDeg =====  CONFIRMED AFTER 1 turn ;WHAT TO DO ?" << logs::end;
+				robot.asserv().resetEmergencyOnTraj(" doAbsoluteRotateTo: " + ts);
+			}
 			robot.svgPrintPosition();
 		}
 
@@ -505,11 +542,11 @@ void O_AsservLineRotateTest::run(int argc, char **argv)
 	 //d += d;
 	 }
 	 */
-	robot.asserv().stopMotors();
+	//robot.asserv().stopMotors(); deprecated ???
 	robot.svgPrintPosition();
 
 	robot.asserv().freeMotion();
-	robot.asserv().setMaxSpeed(false);
+	//robot.asserv().setMaxSpeed(false);
 
 	pos = robot.asserv().pos_getPosition();
 	logger().info() << "time= " << robot.chrono().getElapsedTimeInMilliSec() << "ms ; " << " x=" << pos.x << " y="

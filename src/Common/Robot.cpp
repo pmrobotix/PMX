@@ -74,7 +74,7 @@ TRAJ_STATE Robot::whileDoLine(float distMM, bool rotate_ignoring_opponent, int w
 
 	while (ts != TRAJ_FINISHED)
 	{
-
+		ts = TRAJ_IDLE;
 		//calcul de la distance restante en fonction de la couleur de match
 		ts = asserv().doLine(d_restant);
 		displayTS(ts);
@@ -85,19 +85,21 @@ TRAJ_STATE Robot::whileDoLine(float distMM, bool rotate_ignoring_opponent, int w
 
 		d_restant = distMM - d_parcourue;
 		logger().error() << "d_parcourue = " << d_parcourue << " d_restant=" << d_restant  << logs::end;
-
+		logger().error() << "TRAJ_1= " << asserv().getTraj(ts) << logs::end;
 		if (ts >= TRAJ_INTERRUPTED)
 		{
-			logger().info() << "TRAJ_= " << asserv().getTraj(ts) << logs::end;
+			logger().error() << "TRAJ_2= " << asserv().getTraj(ts) << logs::end;
 			//temps d'attente avant de recommencer
 			utils::sleep_for_micros(wait_tempo_us);
 			f++;
+			logger().error() << "EMERGENCY STOP"  << logs::end;
 
-			asserv().stopMotors(); //h
+			//asserv().stopMotors(); //h setEmergencyStop =>M0  donc non necessaire ??
 
 			if (f < nb_near_obstacle)
 			{
-				asserv().resetEmergencyOnTraj("Robot::whileDoLine TRAJ_>10 : " + ts);
+				logger().error() << "reset EMERGENCY STOPTRAJ_>" << f << " ts= " << ts  << logs::end;
+				asserv().resetEmergencyOnTraj("Robot::whileDoLine TRAJ_ >f : ts= " + ts);
 			}
 			if (reculOnObstacleMm > 0)
 			{
@@ -386,7 +388,7 @@ void Robot::stopMotionTimerAndActionManager() {
 
 void Robot::freeMotion() {
     this->passerv()->freeMotion();
-    this->passerv()->stopMotors();
+    //this->passerv()->stopMotors();
 }
 
 void Robot::resetDisplayTS() {

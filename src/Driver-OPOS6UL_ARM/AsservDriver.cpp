@@ -375,13 +375,15 @@ void AsservDriver::resetExternalEncoders()
 {
 //TODO
 }
-void AsservDriver::stopMotors() // M0 ?
+
+
+void AsservDriver::stopMotors() //DEPRECATED en asserv ext ?? ne pas faire de h halt (il faut faire un reset apres
 {
 	if (!asservCardStarted_)
 		logger().error() << "stopMotors() ERROR NOT STARTED " << asservCardStarted_ << logs::end;
 	else
 	{
-		nucleo_writeSerial('h');
+		motion_FreeMotion();
 	}
 }
 void AsservDriver::stopMotorLeft()
@@ -391,7 +393,7 @@ void AsservDriver::stopMotorLeft()
 	else
 	{
 		logger().error() << "stopMotorLeft() ERROR DO NOT USE " << logs::end;
-		nucleo_writeSerial('h');
+		motion_FreeMotion();
 	}
 
 }
@@ -402,7 +404,7 @@ void AsservDriver::stopMotorRight()
 	else
 	{
 		logger().error() << "stopMotorLeft() ERROR DO NOT USE " << logs::end;
-		nucleo_writeSerial('h');
+		motion_FreeMotion();
 	}
 }
 
@@ -611,17 +613,21 @@ TRAJ_STATE AsservDriver::nucleo_waitEndOfTraj()
 //			utils::Thread::sleep_for_millis(10);
 //		}
 
+		while (!(p_.asservStatus != 1))//utils::Thread::sleep_for_millis(50);
+		{
+			utils::Thread::sleep_for_millis(5);
+		}
 
-		utils::Thread::sleep_for_millis(50);
 //		while (p_.queueSize == 0)
 //		{
 //			utils::Thread::sleep_for_millis(10);
 //		}
 		while (p_.asservStatus == 1)
 		{
-			logger().info() << "__nucleo_waitEndOfTraj while p_.asservStatus= "	<< p_.asservStatus
+			logger().debug() << "__nucleo_waitEndOfTraj while p_.asservStatus= "	<< p_.asservStatus
 								<< " p_.queueSize= "	<< p_.queueSize<< logs::end;
-			utils::Thread::sleep_for_millis(50);
+			//utils::Thread::sleep_for_millis(50);
+			utils::Thread::sleep_for_millis(5);
 		}
 //		if (p_.asservStatus == 0 &&p_.queueSize == 0)
 //			//if (p_.asservStatus != 1)
@@ -629,7 +635,7 @@ TRAJ_STATE AsservDriver::nucleo_waitEndOfTraj()
 //		else
 //			return TRAJ_INTERRUPTED;
 
-		logger().info() << "__nucleo_waitEndOfTraj end   p_.asservStatus= "	<< p_.asservStatus
+		logger().debug() << "__nucleo_waitEndOfTraj end   p_.asservStatus= "	<< p_.asservStatus
 							<< " p_.queueSize= "	<< p_.queueSize<< logs::end;
 
 		if (p_.asservStatus == 3)
